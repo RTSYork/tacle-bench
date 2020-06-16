@@ -64,7 +64,7 @@ void complex_updates_init( void )
                             &complex_updates_C[ 0 ], &complex_updates_D[ 0 ] );
 
   /* avoid constant propagation */
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0 ; i < N ; i++ ) {
     complex_updates_A[ i ] += x;
     complex_updates_B[ i ] += x;
@@ -78,7 +78,7 @@ void complex_updates_pin_down( float *pa, float *pb, float *pc, float *pd )
 {
   register int i;
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0; i < N; i++ ) {
     *pa++ = 2;
     *pa++ = 1;
@@ -97,7 +97,7 @@ int complex_updates_return( void )
   float check_sum = 0;
   int i;
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0; i < N; i++ )
     check_sum += complex_updates_D[ i ];
 
@@ -111,12 +111,12 @@ int complex_updates_return( void )
 
 void complex_updates_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   register float *p_a = &complex_updates_A[ 0 ], *p_b = &complex_updates_B[ 0 ];
   register float *p_c = &complex_updates_C[ 0 ], *p_d = &complex_updates_D[ 0 ];
   int i;
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0 ; i < N ; i++, p_a++ ) {
     *p_d    = *p_c++ + *p_a++ * *p_b++ ;
     *p_d++ -=          *p_a   * *p_b-- ;

@@ -59,22 +59,22 @@ void lift_init()
     Apply volatile XOR-bitmask to entire input array.
   */
   p = ( unsigned char * ) &lift_ctrl_io_in[ 0 ];
-  _Pragma( "loopbound min 40 max 40" )
+  #pragma loopbound min 40 max 40
   for ( i = 0; i < sizeof( lift_ctrl_io_in ); ++i, ++p )
     *p ^= bitmask;
 
   p = ( unsigned char * ) &lift_ctrl_io_out[ 0 ];
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0; i < sizeof( lift_ctrl_io_out ); ++i, ++p )
     *p ^= bitmask;
 
   p = ( unsigned char * ) &lift_ctrl_io_analog[ 0 ];
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0; i < sizeof( lift_ctrl_io_analog ); ++i, ++p )
     *p ^= bitmask;
 
   p = ( unsigned char * ) &lift_ctrl_io_led[ 0 ];
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0; i < sizeof( lift_ctrl_io_led ); ++i, ++p )
     *p ^= bitmask;
 
@@ -107,9 +107,9 @@ void lift_controller()
 
 void  lift_main()
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   int i = 0;
-  _Pragma( "loopbound min 1001 max 1001" )
+  #pragma loopbound min 1001 max 1001
   while ( 1 ) {
     /* zero input stimulus */
     lift_simio_in = 0;

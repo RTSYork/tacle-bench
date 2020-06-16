@@ -90,7 +90,7 @@ int ros_th3_return( void )
 
 void ros_th3_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   uint64_t tsimu = 300*200;
   ros_th3_check = ros_th3_run_rosace( tsimu );
 }
@@ -110,7 +110,7 @@ int ros_th3_run_rosace( uint64_t nbstep ){
 void* ros_th3_thread3( void* arg ) {
   uint64_t mystep_simu = step_simu;
   
-  _Pragma( "loopbound min 60000 max 60000" )
+  #pragma loopbound min 60000 max 60000
   while( mystep_simu<max_step_simu ) {
     // --- 100 Hz ---
     if( mystep_simu%2 == 0 ) {

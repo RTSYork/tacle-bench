@@ -34,7 +34,7 @@ void anagram_swapi( char *ii, char *ij, unsigned long es )
 
   i = ( char * )ii;
   j = ( char * )ij;
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   do {
     c = *i;
     *i ++ = *j;
@@ -75,7 +75,7 @@ void anagram_qsorts( char *a, unsigned long n, unsigned long es )
   char *pi, *pj, *pn;
   volatile unsigned int flowfactdummy = 0;
         counter2++;
-  _Pragma( "loopbound min 0 max 3" )
+  #pragma loopbound min 0 max 3
   while ( n > 1 ) {
     if ( n > 10 )
       pi = anagram_pivot( a, n, es );
@@ -86,16 +86,16 @@ void anagram_qsorts( char *a, unsigned long n, unsigned long es )
     pi = a;
     pn = a + n * es;
     pj = pn;
-    _Pragma( "loopbound min 0 max 10" )  
+    #pragma loopbound min 0 max 10  
     while ( 1 ) {
       /* wcc note: this assignment expression was added to avoid assignment of
          multiple loop bound annotations to same loop (cf. Ticket #0002323). */
       flowfactdummy ++;
-      _Pragma( "loopbound min 1 max 6" )
+      #pragma loopbound min 1 max 6
       do {
         pi += es;
       } while ( pi < pn && anagram_CompareFrequency( pi, a ) < 0 );
-      _Pragma( "loopbound min 1 max 7" )
+      #pragma loopbound min 1 max 7
       do {
         pj -= es;
       } while ( pj > a && anagram_CompareFrequency( pj, a ) > 0 );
@@ -118,9 +118,9 @@ void anagram_qsorts( char *a, unsigned long n, unsigned long es )
 
 void anagram_qsort( void *va, unsigned long n, unsigned long es )
 {
-  _Pragma( "marker call_qsorts" )
+  #pragma marker call_qsorts
   anagram_qsorts( ( char * )va, n, es );
-  _Pragma( "flowrestriction 1*anagram_qsorts <= 17*call_qsorts" )
+  #pragma flowrestriction 1*anagram_qsorts <= 17*call_qsorts
   printf("2: %d\n", counter2);
 }
 
@@ -146,7 +146,7 @@ void anagram_bzero( char *p, unsigned long len )
 {
   unsigned long i;
 
-  _Pragma( "loopbound min 8 max 800" )
+  #pragma loopbound min 8 max 800
   for ( i = 0; i < len; ++ i ){
     *p ++ = '\0';}
 }

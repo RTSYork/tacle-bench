@@ -298,10 +298,10 @@ void anagram_ReadDict( void )
   volatile char bitmask = 0;
 
   len = 0;
-  _Pragma( "loopbound min 2279 max 2279" )
+  #pragma loopbound min 2279 max 2279
   for ( i = 0; i < anagram_DICTWORDS; i ++ ) {
     unsigned strlen = 0;
-    _Pragma( "loopbound min 1 max 5" )
+    #pragma loopbound min 1 max 5
     while ( anagram_dictionary[ i ][ strlen ] != 0 )
       strlen ++;
     len += strlen + 2;
@@ -309,13 +309,13 @@ void anagram_ReadDict( void )
 
   pchBase = anagram_pchDictionary = ( char * )anagram_malloc( len );
 
-  _Pragma( "loopbound min 2279 max 2279" )
+  #pragma loopbound min 2279 max 2279
   for ( i = 0; i < anagram_DICTWORDS; i ++ ) {
     int index = 0;
     pch = pchBase + 2; /* reserve for length */
     cLetters = 0;
 
-    _Pragma( "loopbound min 1 max 5" )
+    #pragma loopbound min 1 max 5
     while ( anagram_dictionary[ i ][ index ] != '\0' ) {
       if ( anagram_isalpha( anagram_dictionary[ i ][ index ] ) )
         cLetters ++;
@@ -345,7 +345,7 @@ int anagram_return( void )
   int i;
   char const *answer = "duke rip amy";
 
-  _Pragma( "loopbound min 12 max 12" )
+  #pragma loopbound min 12 max 12
   for ( i = 0; i < 12; i++ )
     if ( answer[ i ] != anagram_buffer[ i ] )
       return 1;
@@ -406,7 +406,7 @@ void anagram_BuildMask( char const *pchPhrase )
 
   /* Tabulate letter frequencies in the phrase */
   anagram_cchPhraseLength = 0;
-  _Pragma( "loopbound min 11 max 11" )
+  #pragma loopbound min 11 max 11
   while ( ( ch = *pchPhrase ++ ) != '\0' ) {
     if ( anagram_isalpha( ch ) ) {
       ch = anagram_tolower( ch );
@@ -419,13 +419,13 @@ void anagram_BuildMask( char const *pchPhrase )
   iq = 0;               /* which quad being used */
   cbtUsed = 0;          /* bits used so far */
 
-  _Pragma( "loopbound min 26 max 26" )
+  #pragma loopbound min 26 max 26
   for ( i = 0; i < anagram_ALPHABET; i ++ ) {
     if ( anagram_alPhrase[ i ].uFrequency == 0 ) {
       anagram_auGlobalFrequency[ i ] = ~0u;  /* to make it sort last */
     } else {
       anagram_auGlobalFrequency[ i ] = 0u;
-      _Pragma( "loopbound min 1 max 2" )
+      #pragma loopbound min 1 max 2
       for ( cbtNeed = 1, qNeed = 1;
             anagram_alPhrase[ i ].uFrequency >= qNeed;
             cbtNeed ++, qNeed <<= 1 )
@@ -481,7 +481,7 @@ void anagram_BuildWord( char *pchWord )
                  sizeof( unsigned char ) * anagram_ALPHABET );
 
   /* Build frequency table */
-  _Pragma( "loopbound min 3 max 5" )
+  #pragma loopbound min 3 max 5
   while ( ( i = *pch ++ ) != '\0' ) {
     if ( !anagram_isalpha( i ) )
       continue;
@@ -492,7 +492,7 @@ void anagram_BuildWord( char *pchWord )
   }
 
   /* Update global count */
-  _Pragma( "loopbound min 26 max 26" )
+  #pragma loopbound min 26 max 26
   for ( i = 0; i < anagram_ALPHABET; i ++ )
     anagram_auGlobalFrequency[ i ] += cchFrequency[ i ];
 
@@ -504,7 +504,7 @@ void anagram_BuildWord( char *pchWord )
 
   pw->pchWord = pchWord;
   pw->cchLength = cchLength;
-  _Pragma( "loopbound min 26 max 26" )
+  #pragma loopbound min 26 max 26
   for ( i = 0; i < anagram_ALPHABET; i ++ ) {
     pw->aqMask[ anagram_alPhrase[i].iq ] |=
       ( anagram_Quad )cchFrequency[ i ] << anagram_alPhrase[ i ].uShift;
@@ -519,7 +519,7 @@ void anagram_AddWords( void )
 
   anagram_cpwCand = 0;
 
-  _Pragma( "loopbound min 1967 max 1967" )
+  #pragma loopbound min 1967 max 1967
   while ( *pch ) {
     if ( ( pch[ 1 ] >= anagram_cchMinLength &&
            pch[ 1 ] + anagram_cchMinLength <= anagram_cchPhraseLength )
@@ -534,9 +534,9 @@ void anagram_DumpWords( void )
 {
   int i, j;
   int offset = 0;
-  _Pragma( "loopbound min 3 max 3" )        
+  #pragma loopbound min 3 max 3        
   for ( i = 0; i < anagram_cpwLast; i ++ ) {
-    _Pragma( "loopbound min 3 max 5" )
+    #pragma loopbound min 3 max 5
     for ( j = 0; anagram_apwSol[ i ]->pchWord[ j ] != '\0'; j ++ )
       anagram_buffer[ offset + j ] = anagram_apwSol[ i ]->pchWord[ j ];
     offset += j;
@@ -558,7 +558,7 @@ void anagram_FindAnagram( anagram_Quad *pqMask, anagram_PPWord ppwStart,
   anagram_PPWord ppwEnd = &anagram_apwCand[ 0 ];
   ppwEnd += anagram_cpwCand;
 
-  _Pragma( "loopbound min 0 max 6" )
+  #pragma loopbound min 0 max 6
   while ( 1 ) {
     iq = anagram_alPhrase[ anagram_achByFrequency[iLetter] ].iq;
     qMask = anagram_alPhrase[ anagram_achByFrequency[iLetter] ].uBits <<
@@ -568,7 +568,7 @@ void anagram_FindAnagram( anagram_Quad *pqMask, anagram_PPWord ppwStart,
     iLetter ++;
   }
 
-  _Pragma( "loopbound min 0 max 11" )
+  #pragma loopbound min 0 max 11
   while ( ppwStart < ppwEnd ) {
     pw = *ppwStart;
 
@@ -622,7 +622,7 @@ void anagram_SortCandidates( void )
   int i;
 
   /* Sort the letters by frequency */
-  _Pragma( "loopbound min 26 max 26" )
+  #pragma loopbound min 26 max 26
   for ( i = 0; i < anagram_ALPHABET; i ++ )
     anagram_achByFrequency[ i ] = i;
   anagram_qsort( anagram_achByFrequency, anagram_ALPHABET, sizeof( int ) );
@@ -631,10 +631,10 @@ void anagram_SortCandidates( void )
 
 void anagram_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   int i;
 
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0; i < 3; i ++ ) {
     anagram_Reset();
     anagram_BuildMask( anagram_achPhrase[ i ] );
@@ -644,9 +644,9 @@ void anagram_main( void )
 
     anagram_cpwLast = 0;
     anagram_SortCandidates();
-    _Pragma( "marker call_find" )
+    #pragma marker call_find
     anagram_FindAnagram( anagram_aqMainMask, anagram_apwCand, 0 );
-    _Pragma( "flowrestriction 1*anagram_FindAnagram <= 51*call_find" )
+    #pragma flowrestriction 1*anagram_FindAnagram <= 51*call_find
   }
   printf("1: %d\n", counter1);
 }

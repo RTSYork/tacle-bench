@@ -77,9 +77,9 @@ void cjpeg_wrbmp_initInput( void )
     }
   };
 
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0; i < 3; i++ ) {
-    _Pragma( "loopbound min 256 max 256" )  
+    #pragma loopbound min 256 max 256  
     for ( j = 0; j < 256; j++ )
       cjpeg_wrbmp_colormap[ i ][ j ] = tmp[ i ][ j ];
   }

@@ -55,7 +55,7 @@ const long petrinet_CHECKSUM = 0;
 
 void petrinet_main( void )
 {
-  _Pragma ( "entrypoint" )
+  #pragma entrypoint
   int dummy_i;
   /*   dummy_i = 17; Takes too much time */
   dummy_i = 2;
@@ -63,7 +63,7 @@ void petrinet_main( void )
   #ifdef PROFILING
   main_iters_dummy_i = 0;
   #endif
-  _Pragma( "loopbound min 2 max 2" )
+  #pragma loopbound min 2 max 2
   while ( dummy_i > 0 ) {
     #ifdef PROFILING
     main_iters_dummy_i++;
@@ -958,15 +958,15 @@ int petrinet_return( void )
   int checksum = 0;
   int i;
 
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0; i < 3; ++i )
     checksum += petrinet_P1_marking_member_0[i];
 
-  _Pragma( "loopbound min 5 max 5" )
+  #pragma loopbound min 5 max 5
   for ( i = 0; i < 5; ++i )
     checksum += petrinet_P2_marking_member_0[i];
 
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0; i < 6; ++i )
     checksum += petrinet_P3_marking_member_0[i];
 

@@ -59,9 +59,9 @@ int recursion_return()
 
 void recursion_main( void )
 {
-  _Pragma( "entrypoint" )
-  _Pragma( "marker recursivecall" )
-  _Pragma( "flowrestriction 1*fib <= 177*recursivecall" )
+  #pragma entrypoint
+  #pragma marker recursivecall
+  #pragma flowrestriction 1*fib <= 177*recursivecall
   recursion_result = recursion_fib( recursion_input );
 }
 

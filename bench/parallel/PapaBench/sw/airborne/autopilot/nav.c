@@ -72,7 +72,7 @@ static void route_to( uint8_t last_wp, uint8_t wp );
 
 #define DegOfRad(x) ((x) / M_PI * 180.)
 #define RadOfDeg(x) ((x)/180. * M_PI)
-#define NormCourse(x) { _Pragma( "loopbound min 0 max 0") while (x < 0) x += 360; _Pragma("loopbound min 0 max 0" ) while (x >= 360) x -= 360;}
+#define NormCourse(x) { #pragma loopbound min 0 max 0") while (x < 0) x += 360; _Pragma("loopbound min 0 max 0 while (x >= 360) x -= 360;}
 
 static float qdr; /* Degrees from 0 to 360 */
 
@@ -187,9 +187,9 @@ void nav_home( void )
                waypoints[ WP_HOME ].y + sin( alpha_carrot )*fabs( 50 ) );
     qdr = DegOfRad( M_PI / 2 - alpha_carrot );
     {
-      _Pragma( "loopbounds min 0 max 2" )
+      #pragma loopbounds min 0 max 2
       while ( qdr < 0 ) qdr += 360;
-      _Pragma( "loopbounds min 0 max 2" )
+      #pragma loopbounds min 0 max 2
       while ( qdr >= 360 ) qdr -= 360;
     }
   }

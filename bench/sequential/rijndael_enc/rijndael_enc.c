@@ -71,7 +71,7 @@ void rijndael_enc_init( void )
   unsigned i;
   volatile int x = 0;
   rijndael_enc_fin.size ^= x;
-  _Pragma( "loopbound min 31369 max 31369" )
+  #pragma loopbound min 31369 max 31369
   for ( i = 0; i < rijndael_enc_fin.size; i++ )
     rijndael_enc_fin.data[ i ] ^= x;
 
@@ -82,7 +82,7 @@ void rijndael_enc_init( void )
   int by = 0;
 
   i = 0;                  /* this is a count for the input digits processed */
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   while ( i < 64 && *cp ) { /* the maximum key length is 32 bytes and       */
     /* hence at most 64 hexadecimal digits            */
     ch = rijndael_enc_toupper( *cp++ );     /* process a hexadecimal digit  */
@@ -140,7 +140,7 @@ void rijndael_enc_fillrand( unsigned char *buf, int len )
     a[ 1 ] = 0x35fe;
   }
 
-  _Pragma( "loopbound min 1 max 16" )
+  #pragma loopbound min 1 max 16
   for ( i = 0; i < len; ++i ) {
     if ( count == 4 ) {
       *( unsigned long * )r = RAND( a[ 0 ], a[ 1 ] );
@@ -168,7 +168,7 @@ void rijndael_enc_encfile( struct rijndael_enc_FILE *fin, struct aes *ctx )
   inbuf[ 0 ] = ( ( char )flen & 15 ) | ( inbuf[ 0 ] & ~15 );
 
   /* TODO: this is necessarily an input-dependent loop bound */
-  _Pragma( "loopbound min 1960 max 1960" )
+  #pragma loopbound min 1960 max 1960
   while ( !rijndael_enc_feof(
             fin ) ) {             /* loop to encrypt the input file   */
     /* input 1st 16 bytes to buf[ 1..16 ] */
@@ -176,7 +176,7 @@ void rijndael_enc_encfile( struct rijndael_enc_FILE *fin, struct aes *ctx )
     /* is the length code    */
     if ( i < l ) break;           /* if end of the input file reached */
 
-    _Pragma( "loopbound min 16 max 16" )
+    #pragma loopbound min 16 max 16
     for ( i = 0; i < 16; ++i )    /* xor in previous cipher text      */
       inbuf[ i ] ^= outbuf[ i ];
 
@@ -199,11 +199,11 @@ void rijndael_enc_encfile( struct rijndael_enc_FILE *fin, struct aes *ctx )
     ++i;                              /* in the first block           */
 
   if ( i ) {                          /* if bytes remain to be output */
-    _Pragma( "loopbound min 6 max 6" )
+    #pragma loopbound min 6 max 6
     while ( i < 16 )                  /* clear empty buffer positions */
       inbuf[ i++ ] = 0;
 
-    _Pragma( "loopbound min 16 max 16" )
+    #pragma loopbound min 16 max 16
     for ( i = 0; i < 16; ++i )        /* xor in previous cipher text  */
       inbuf[ i ] ^= outbuf[ i ];
 
@@ -215,7 +215,7 @@ void rijndael_enc_encfile( struct rijndael_enc_FILE *fin, struct aes *ctx )
 
 void rijndael_enc_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   struct aes ctx[ 1 ];
 
   /* encryption in Cipher Block Chaining mode */

@@ -301,7 +301,7 @@ void md5_update ( MD5_CTX *context, unsigned char *input,
     md5_memcpy ( ( POINTER )&context->buffer[ index ], ( POINTER )input, partLen );
     md5_transform ( context->state, context->buffer );
 
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( i = partLen; i + 63 < inputLen; i += 64 )
       md5_transform ( context->state, &input[ i ] );
 
@@ -350,7 +350,7 @@ void md5_memset ( POINTER output, int value, unsigned int len )
 {
   unsigned int i;
 
-  _Pragma( "loopbound min 128 max 208" )
+  #pragma loopbound min 128 max 208
   for ( i = 0; i < len; i++ )
     ( ( char * )output )[ i ] = ( char )value;
 }
@@ -453,7 +453,7 @@ void md5_encode ( unsigned char *output, UINT4 *input, int len )
   int i = 0,
       j;
 
-  _Pragma( "loopbound min 2 max 16" )
+  #pragma loopbound min 2 max 16
   for ( j = 0; j < len; j += 4 ) {
     output[ j ] = ( unsigned char )( input[ i ] & 0xff );
     output[ j + 1 ] = ( unsigned char )( ( input[ i ] >> 8 ) & 0xff );
@@ -470,7 +470,7 @@ void md5_decode ( UINT4 *output, unsigned char *input, unsigned int len )
 {
   unsigned int i, j;
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0, j = 0; j < len; i++, j += 4 ) {
     output[ i ] = ( ( UINT4 )input[ j ] ) | ( ( ( UINT4 )input[ j + 1 ] ) << 8 ) |
                 ( ( ( UINT4 )input[ j + 2 ] ) << 16 ) | ( ( ( UINT4 )input[ j + 3 ] ) << 24 );
@@ -483,7 +483,7 @@ void md5_memcpy ( POINTER output, POINTER input, unsigned int len )
 {
   unsigned int i;
 
-  _Pragma( "loopbound min 0 max 55" )
+  #pragma loopbound min 0 max 55
   for ( i = 0; i < len; i++ )
     output[ i ] = input[ i ];
 }
@@ -503,7 +503,7 @@ void md5_R_memset ( POINTER output, int value, unsigned int len )
 // Basic implementation of C's memset
 void md5_memset_x( unsigned char *ptr, int value, unsigned long len )
 {
-  _Pragma( "loopbound min 16 max 64" )
+  #pragma loopbound min 16 max 64
   while ( len-- )
     *ptr++ = value;
 
@@ -539,7 +539,7 @@ int md5_R_RandomUpdate ( R_RANDOM_STRUCT *randomStruct, unsigned char *block,
   /* add digest to state */
   x = 0;
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0; i < 16; i++ ) {
     x += randomStruct->state[ 15 - i ] + digest[ 15 - i ];
     randomStruct->state[ 15 - i ] = ( unsigned char )x;
@@ -574,7 +574,7 @@ void md5_InitRandomStruct ( R_RANDOM_STRUCT *randomStruct )
   /* Initialize with all zero seed bytes, which will not yield an actual
        random number output.
   */
-  _Pragma( "loopbound min 256 max 256" )
+  #pragma loopbound min 256 max 256
   while ( 1 ) {
     md5_R_GetRandomBytesNeeded ( &bytesNeeded, randomStruct );
     if ( bytesNeeded == 0 )
@@ -606,7 +606,7 @@ int md5_return( void )
 
 void md5_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   R_RANDOM_STRUCT randomStruct;
   R_RANDOM_STRUCT randomStruct2;
   /* We first generate parameters, and then do some key exchange each followed by a key computation...*/
@@ -614,7 +614,7 @@ void md5_main( void )
 
   md5_InitRandomStruct ( &randomStruct );
 
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   while ( keys_exchanged != EXCHANGEKEYS ) {
     keys_exchanged++;
     md5_InitRandomStruct ( &randomStruct2 );

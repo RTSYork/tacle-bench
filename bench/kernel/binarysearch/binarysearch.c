@@ -90,7 +90,7 @@ void binarysearch_init( void )
 
   binarysearch_initSeed();
 
-  _Pragma( "loopbound min 15 max 15" )
+  #pragma loopbound min 15 max 15
   for ( i = 0; i < 15; ++i ) {
     binarysearch_data[ i ].key = binarysearch_randomInteger();
     binarysearch_data[ i ].value = binarysearch_randomInteger();
@@ -116,7 +116,7 @@ int binarysearch_binary_search( int x )
   up = 14;
   fvalue = -1;
 
-  _Pragma( "loopbound min 1 max 4" )
+  #pragma loopbound min 1 max 4
   while ( low <= up ) {
     mid = ( low + up ) >> 1;
 
@@ -143,7 +143,7 @@ int binarysearch_binary_search( int x )
 
 void binarysearch_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   binarysearch_result = binarysearch_binary_search( 8 );
 }
 

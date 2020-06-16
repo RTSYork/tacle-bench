@@ -55,7 +55,7 @@ void duff_init()
     Apply volatile XOR-bitmask to entire input array.
   */
   p = ( unsigned char * ) &duff_source[  0  ];
-  _Pragma( "loopbound min 400 max 400" )
+  #pragma loopbound min 400 max 400
   for ( i = 0; i < sizeof( duff_source ); ++i, ++p )
     *p ^= bitmask;
 }
@@ -75,7 +75,7 @@ void duff_initialize( char *arr, int length )
 {
   int i;
 
-  _Pragma( "loopbound min 100 max 100" )
+  #pragma loopbound min 100 max 100
   for ( i = 0; i < length; i++ )
     arr[ i ] = length - i;
 }
@@ -85,7 +85,7 @@ void duff_copy( char *to, char *from, int count )
 {
   int n = ( count + 7 ) / 8;
 
-  _Pragma( "marker outside" )
+  #pragma marker outside
   switch ( count % 8 ) {
     case 0:
       do {
@@ -103,13 +103,13 @@ void duff_copy( char *to, char *from, int count )
       case 2:
         *to++ = *from++;
       case 1:
-        _Pragma( "marker inside" )
+        #pragma marker inside
         *to++ = *from++;
 
 
       } while ( --n > 0 );
   }
-  _Pragma( "flowrestriction 1*inside <= 6*outside" )
+  #pragma flowrestriction 1*inside <= 6*outside
 }
 
 
@@ -119,7 +119,7 @@ void duff_copy( char *to, char *from, int count )
 
 void duff_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   duff_copy( duff_target, duff_source, 43 );
 }
 

@@ -99,7 +99,7 @@ unsigned char prime_prime ( unsigned int n )
   unsigned int i;
   if ( prime_even ( n ) )
     return ( n == 2 );
-  _Pragma( "loopbound min 0 max 16" )               
+  #pragma loopbound min 0 max 16               
   for ( i = 3; i * i <= n; i += 2 ) {
     if ( prime_divides ( i, n ) ) /* ai: loop here min 0 max 357 end; */
       return 0;
@@ -122,7 +122,7 @@ void prime_swap ( unsigned int *a, unsigned int *b )
 
 void prime_main()
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   prime_swap ( &prime_x, &prime_y );
 
   prime_result = !( !prime_prime( prime_x ) && !prime_prime( prime_y ) );

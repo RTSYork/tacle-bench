@@ -308,7 +308,7 @@ float susan_sqrtf( float val )
   flag = 0;
   if ( val == 0 ) x = 0;
   else {
-    _Pragma( "loopbound min 19 max 19" )  
+    #pragma loopbound min 19 max 19  
     for ( i = 1; i < 20; i++ ) {
       if ( !flag ) {
         dx = ( val - ( x * x ) ) / ( 2.0f * x );
@@ -354,7 +354,7 @@ int susan_getint( struct wccFILE *fd )
   char dummy[ 10000 ];
 
   c = susan_wccfgetc( fd );
-  _Pragma( "loopbound min 0 max 3" )
+  #pragma loopbound min 0 max 3
   while ( 1 ) { /* find next integer */
     if ( c == '#' ) /* if we're at a comment, read to end of line */
       susan_wccfgets( dummy, 9000, fd );
@@ -368,7 +368,7 @@ int susan_getint( struct wccFILE *fd )
 
   /* we're at the start of a number, continue until we hit a non-number */
   i = 0;
-  _Pragma( "loopbound min 1 max 2" )
+  #pragma loopbound min 1 max 2
   while ( 1 ) {
     i = ( i * 10 ) + ( c - '0' );
     c = susan_wccfgetc( fd );
@@ -413,7 +413,7 @@ void susan_get_image( struct wccFILE *fd,
 void susan_put_image( int x_size, int y_size )
 {
   int i;
-  _Pragma( "loopbound min 7220 max 7220" )
+  #pragma loopbound min 7220 max 7220
   for ( i = 0; i < x_size * y_size; i++ )
     ;
 }
@@ -423,7 +423,7 @@ void susan_int_to_uchar( char *r, uchar *in, int size )
 {
   int i, max_r = r[ 0 ], min_r = r[ 0 ];
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 0; i < size; i++ ) {
     if ( r[ i ] > max_r )
       max_r = r[ i ];
@@ -433,7 +433,7 @@ void susan_int_to_uchar( char *r, uchar *in, int size )
 
   if ( max_r == min_r ) {
     /* Should not occur in TACLeBench. */
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( i = 0; i < size; i++ )
       in[ i ] = ( uchar )( 0 );
 
@@ -441,7 +441,7 @@ void susan_int_to_uchar( char *r, uchar *in, int size )
   }
   max_r -= min_r;
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 0; i < size; i++ )
     in[ i ] = ( uchar )( ( int )( ( int )( r[ i ] - min_r ) * 255 ) / max_r );
 }
@@ -455,7 +455,7 @@ void susan_setup_brightness_lut( uchar **bp, int thresh, int form )
   *bp = ( unsigned char * )susan_wccmalloc( 516 );
   *bp = *bp + 258;
 
-  _Pragma( "loopbound min 513 max 513" )
+  #pragma loopbound min 513 max 513
   for ( k = -256; k < 257; k++ ) {
     temp = ( ( float )k ) / ( ( float )thresh );
     temp = temp * temp;
@@ -475,9 +475,9 @@ void susan_principle( uchar *in, char *r, uchar *bp,
 
   susan_wccmemset( r, 0, x_size * y_size * sizeof( int ) );
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 3; i < y_size - 3; i++ ) {
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( j = 3; j < x_size - 3; j++ ) {
       n = 100;
       p = in + ( i - 3 ) * x_size + j - 1;
@@ -548,9 +548,9 @@ void susan_principle_small( uchar *in, char *r, uchar *bp,
 
   susan_wccmemset( r, 0, x_size * y_size * sizeof( int ) );
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 1; i < y_size - 1; i++ ) {
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( j = 1; j < x_size - 1; j++ ) {
       n = 100;
       p = in + ( i - 1 ) * x_size + j - 1;
@@ -590,9 +590,9 @@ uchar susan_median( uchar *in, int i, int j, int x_size )
   p[ 6 ] = in[ ( i + 1 ) * x_size + j   ];
   p[ 7 ] = in[ ( i + 1 ) * x_size + j + 1 ];
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( k = 0; k < 7; k++ ) {
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( l = 0; l < ( 7 - k ); l++ ) {
       if ( p[ l ] > p[ l + 1 ] ) {
         tmp = p[ l ];
@@ -612,13 +612,13 @@ void susan_enlarge( uchar **in, uchar *tmp_image,
 {
   int   i, j;
 
-  _Pragma( "loopbound min 95 max 95" )
+  #pragma loopbound min 95 max 95
   for ( i = 0; i < *y_size; i++ ) { /* copy *in into tmp_image */
     susan_wccmemcpy( tmp_image + ( i + border ) * ( *x_size + 2 * border ) + border,
                      *in + i * *x_size, *x_size );
   }
 
-  _Pragma( "loopbound min 7 max 7" )
+  #pragma loopbound min 7 max 7
   for ( i = 0; i < border;
         i++ ) { /* copy top and bottom rows; invert as many as necessary */
     susan_wccmemcpy( tmp_image + ( border - 1 - i ) * ( *x_size + 2 * border ) +
@@ -629,9 +629,9 @@ void susan_enlarge( uchar **in, uchar *tmp_image,
                      *in + ( *y_size - i - 1 ) * *x_size, *x_size );
   }
 
-  _Pragma( "loopbound min 7 max 7" )
+  #pragma loopbound min 7 max 7
   for ( i = 0; i < border; i++ ) { /* copy left and right columns */
-    _Pragma( "loopbound min 109 max 109" )
+    #pragma loopbound min 109 max 109
     for ( j = 0; j < *y_size + 2 * border; j++ ) {
       tmp_image[ j * ( *x_size + 2 * border ) + border - 1 - i ] = tmp_image[ j *
           ( *x_size + 2 * border ) + border + i ];
@@ -689,9 +689,9 @@ void susan_smoothing( int three_by_three, uchar *in, float dt,
     dpt    = dp;
     temp   = -( dt * dt );
 
-    _Pragma( "loopbound min 15 max 15" )
+    #pragma loopbound min 15 max 15
     for ( i = -mask_size; i <= mask_size; i++ ) {
-      _Pragma( "loopbound min 15 max 15" )
+      #pragma loopbound min 15 max 15
       for ( j = -mask_size; j <= mask_size; j++ ) {
         x = ( int ) ( 100.0 * susan_expf( ( ( float )( ( i * i ) +
                                             ( j * j ) ) ) / temp ) );
@@ -700,9 +700,9 @@ void susan_smoothing( int three_by_three, uchar *in, float dt,
     }
 
     /* {{{ main section */
-    _Pragma( "loopbound min 95 max 95" )
+    #pragma loopbound min 95 max 95
     for ( i = mask_size; i < y_size - mask_size; i++ ) {
-      _Pragma( "loopbound min 76 max 76" )
+      #pragma loopbound min 76 max 76
       for ( j = mask_size; j < x_size - mask_size; j++ ) {
         area = 0;
         total = 0;
@@ -710,9 +710,9 @@ void susan_smoothing( int three_by_three, uchar *in, float dt,
         ip = in + ( ( i - mask_size ) * x_size ) + j - mask_size;
         centre = in[ i * x_size + j ];
         cp = bp + centre;
-        _Pragma( "loopbound min 15 max 15" )
+        #pragma loopbound min 15 max 15
         for ( y = -mask_size; y <= mask_size; y++ ) {
-          _Pragma( "loopbound min 15 max 15" )
+          #pragma loopbound min 15 max 15
           for ( x = -mask_size; x <= mask_size; x++ ) {
             brightness = *ip++;
             tmp = *dpt++ * *( cp - brightness );
@@ -732,9 +732,9 @@ void susan_smoothing( int three_by_three, uchar *in, float dt,
     /* 3x3 constant mask */
 
     /* {{{ main section */
-    _Pragma( "loopbound min 15 max 15" )            //neue Änderung min max 107
+    #pragma loopbound min 15 max 15            //neue Änderung min max 107
     for ( i = 1; i < y_size - 1; i++ ) {
-      _Pragma( "loopbound min 15 max 15" )          //neue Änderung min max 88
+      #pragma loopbound min 15 max 15          //neue Änderung min max 88
       for ( j = 1; j < x_size - 1; j++ ) {
         area = 0;
         total = 0;
@@ -801,7 +801,7 @@ void susan_edge_draw( uchar *in, uchar *mid,
   if ( drawing_mode == 0 ) {
     /* mark 3x3 white block around each edge point */
     midp = mid;
-    _Pragma( "loopbound min 7220 max 7220" )
+    #pragma loopbound min 7220 max 7220
     for ( i = 0; i < x_size * y_size; i++ ) {
       if ( *midp < 8 ) {
         inp = in + ( midp - mid ) - x_size - 1;
@@ -823,7 +823,7 @@ void susan_edge_draw( uchar *in, uchar *mid,
 
   /* now mark 1 black pixel at each edge point */
   midp = mid;
-  _Pragma( "loopbound min 7220 max 7220" )
+  #pragma loopbound min 7220 max 7220
   for ( i = 0; i < x_size * y_size; i++ ) {
     if ( *midp < 8 )
       *( in + ( midp - mid ) ) = 0;
@@ -841,9 +841,9 @@ void susan_thin( char *r, uchar *mid, int x_size, int y_size )
         m, n, a, b, x, y, i, j;
   uchar *mp;
 
-  _Pragma( "loopbound min 87 max 87" )
+  #pragma loopbound min 87 max 87
   for ( i = 4; i < y_size - 4; i++ ) {
-    _Pragma( "loopbound min 68 max 68" )
+    #pragma loopbound min 68 max 68
     for ( j = 4; j < x_size - 4; j++ ) {
       if ( mid[ i * x_size + j ] < 8 ) {
         centre = r[ i * x_size + j ];
@@ -975,9 +975,9 @@ void susan_thin( char *r, uchar *mid, int x_size, int y_size )
           }
 
           m = 0;   /* find the highest point */
-          _Pragma( "loopbound min 3 max 3" )
+          #pragma loopbound min 3 max 3
           for ( y = 0; y < 3; y++ )
-            _Pragma( "loopbound min 3 max 3" )
+            #pragma loopbound min 3 max 3
             for ( x = 0; x < 3; x++ )
               if ( l[ y + y + y + x ] > m ) {
                 m = l[ y + y + y + x ];
@@ -1142,9 +1142,9 @@ void susan_edges( uchar *in, char *r, uchar *mid, uchar *bp,
 
   susan_wccmemset( r, 0, x_size * y_size );
 
-  _Pragma( "loopbound min 89 max 89" )
+  #pragma loopbound min 89 max 89
   for ( i = 3; i < y_size - 3; i++ ) {
-    _Pragma( "loopbound min 70 max 70" )
+    #pragma loopbound min 70 max 70
     for ( j = 3; j < x_size - 3; j++ ) {
       n = 100;
       p = in + ( i - 3 ) * x_size + j - 1;
@@ -1205,9 +1205,9 @@ void susan_edges( uchar *in, char *r, uchar *mid, uchar *bp,
     }
   }
 
-  _Pragma( "loopbound min 87 max 87" )
+  #pragma loopbound min 87 max 87
   for ( i = 4; i < y_size - 4; i++ ) {
-    _Pragma( "loopbound min 68 max 68" )
+    #pragma loopbound min 68 max 68
     for ( j = 4; j < x_size - 4; j++ ) {
       if ( r[ i * x_size + j ] > 0 ) {
         m = r[ i * x_size + j ];
@@ -1553,9 +1553,9 @@ void susan_edges_small( uchar *in, char *r, uchar *mid, uchar *bp,
 
   susan_wccmemset( r, 0, x_size * y_size );
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 1; i < y_size - 1; i++ ) {
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( j = 1; j < x_size - 1; j++ ) {
       n = 100;
       p = in + ( i - 1 ) * x_size + j - 1;
@@ -1580,9 +1580,9 @@ void susan_edges_small( uchar *in, char *r, uchar *mid, uchar *bp,
     }
   }
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 2; i < y_size - 2; i++ ) {
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( j = 2; j < x_size - 2; j++ ) {
       if ( r[ i * x_size + j ] > 0 ) {
         m = r[ i * x_size + j ];
@@ -1733,7 +1733,7 @@ void susan_corner_draw( uchar *in, CORNER_LIST corner_list,
   uchar *p;
   int   n = 0;
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( corner_list[ n ].info != 7 ) {
     if ( drawing_mode == 0 ) {
       p = in + ( corner_list[ n ].y - 1 ) * x_size + corner_list[ n ].x - 1;
@@ -1772,9 +1772,9 @@ void susan_corners( uchar *in, char *r, uchar *bp,
   cgx = ( char * )susan_wccmalloc( x_size * y_size );
   cgy = ( char * )susan_wccmalloc( x_size * y_size );
 
-  _Pragma( "loopbound min 85 max 85" )
+  #pragma loopbound min 85 max 85
   for ( i = 5; i < y_size - 5; i++ ) {
-    _Pragma( "loopbound min 66 max 66" )
+    #pragma loopbound min 66 max 66
     for ( j = 5; j < x_size - 5; j++ ) {
       n = 100;
       p = in + ( i - 3 ) * x_size + j - 1;
@@ -2011,9 +2011,9 @@ void susan_corners( uchar *in, char *r, uchar *bp,
 
   /* to locate the local maxima */
   n = 0;
-  _Pragma( "loopbound min 85 max 85" )
+  #pragma loopbound min 85 max 85
   for ( i = 5; i < y_size - 5; i++ ) {
-    _Pragma( "loopbound min 66 max 66" )
+    #pragma loopbound min 66 max 66
     for ( j = 5; j < x_size - 5; j++ ) {
       x = r[ i * x_size + j ];
       if ( x > 0 )  {
@@ -2127,9 +2127,9 @@ void susan_corners_quick( uchar *in, char *r, uchar *bp,
 
   susan_wccmemset( r, 0, x_size * y_size );
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 7; i < y_size - 7; i++ ) {
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( j = 7; j < x_size - 7; j++ ) {
       n = 100;
       p = in + ( i - 3 ) * x_size + j - 1;
@@ -2228,9 +2228,9 @@ void susan_corners_quick( uchar *in, char *r, uchar *bp,
 
   /* to locate the local maxima */
   n = 0;
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 7; i < y_size - 7; i++ ) {
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( j = 7; j < x_size - 7; j++ ) {
       x = r[ i * x_size + j ];
       if ( x > 0 )  {
@@ -2488,7 +2488,7 @@ void susan_init( void )
 
 void susan_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   susan_call_susan( &susan_file, 0 );
   susan_wccfreeall();
   susan_call_susan( &susan_file, 1 );

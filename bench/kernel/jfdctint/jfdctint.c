@@ -149,7 +149,7 @@ void jfdctint_init()
   /* Set array to random values */
   seed = 1;
 
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0; i < 64; i++ ) {
     seed = ( ( seed * 133 ) + 81 ) % 65535;
     jfdctint_data[ i ] = seed;
@@ -162,7 +162,7 @@ int jfdctint_return()
 {
   int checksum = 0;
   int i;
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0; i < 64; ++i )
     checksum += jfdctint_data[ i ];
   return ( ( checksum == jfdctint_CHECKSUM ) ? 0 : -1 );
@@ -186,7 +186,7 @@ void jfdctint_jpeg_fdct_islow( void )
   /* furthermore, we scale the results by 2**PASS1_BITS. */
 
   dataptr = jfdctint_data;
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( ctr = DCTSIZE - 1; ctr >= 0; ctr-- ) {
 
     tmp0 = dataptr[ 0 ] + dataptr[ 7 ];
@@ -239,7 +239,7 @@ void jfdctint_jpeg_fdct_islow( void )
   }
 
   dataptr = jfdctint_data;
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( ctr = DCTSIZE - 1; ctr >= 0; ctr-- ) {
     tmp0 = dataptr[ DCTSIZE * 0 ] + dataptr[ DCTSIZE * 7 ];
     tmp7 = dataptr[ DCTSIZE * 0 ] - dataptr[ DCTSIZE * 7 ];
@@ -306,7 +306,7 @@ void jfdctint_jpeg_fdct_islow( void )
 */
 void jfdctint_main( void )
 {
-  _Pragma ( "entrypoint" )
+  #pragma entrypoint
   jfdctint_jpeg_fdct_islow();
 }
 

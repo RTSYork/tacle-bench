@@ -11404,7 +11404,7 @@ void mpeg2_init( void )
     Apply volatile XOR-bitmask to entire input array.
   */
   p = ( unsigned char * ) &mpeg2_oldorgframe[ 0 ];
-  _Pragma( "loopbound min 90112 max 90112" )
+  #pragma loopbound min 90112 max 90112
   for ( i = 0; i < sizeof( mpeg2_oldorgframe ); ++i, ++p )
     *p ^= bitmask;
 }
@@ -11416,16 +11416,16 @@ int mpeg2_return( void )
   int i, j, k, l;
 
 
-  _Pragma( "loopbound min 352 max 352" )
+  #pragma loopbound min 352 max 352
   for ( i = 0; i < 352; i++ ) {
     j = 0;
-    _Pragma( "loopbound min 2 max 2" )
+    #pragma loopbound min 2 max 2
     for ( ; j < 2; j++ ) {
       k = 0;
-      _Pragma( "loopbound min 2 max 2" )
+      #pragma loopbound min 2 max 2
       for ( ; k < 2; k++ ) {
         l = 0;
-        _Pragma( "loopbound min 2 max 2" )
+        #pragma loopbound min 2 max 2
         for ( ; l < 2; l++ )
           checksum += mpeg2_mbinfo[ i ].MV[ j ][ k ][ l ];
       }
@@ -11471,10 +11471,10 @@ void mpeg2_motion_estimation( unsigned char *oldorg, unsigned char *neworg,
 
 
   /* loop through all macroblocks of the picture */
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( j = 0; j < mpeg2_height2; j += 16 ) {
     i = 0;
-    _Pragma( "loopbound min 22 max 22" )
+    #pragma loopbound min 22 max 22
     for ( ; i < mpeg2_width; i += 16 ) {
       if ( mpeg2_pict_struct == 3 )
         mpeg2_frame_ME(
@@ -12460,10 +12460,10 @@ void mpeg2_dpframe_estimate( unsigned char *ref, unsigned char *mb, int i,
   /* initialize minimum dual prime distortion to large value */
   vmc = 1 << 30;
 
-  _Pragma( "loopbound min 2 max 2" )
+  #pragma loopbound min 2 max 2
   for ( pref = 0; pref < 2; pref++ ) {
     ppred = 0;
-    _Pragma( "loopbound min 2 max 2" )
+    #pragma loopbound min 2 max 2
     for ( ; ppred < 2; ppred++ ) {
       /*
         convert Cartesian absolute to relative motion vector
@@ -12519,10 +12519,10 @@ void mpeg2_dpframe_estimate( unsigned char *ref, unsigned char *mb, int i,
 
       if ( ( is >= 0 ) && ( is <= ( mpeg2_width - 16 ) << 1 ) &&
            ( js >= 0 ) && ( js <= ( mpeg2_height - 16 ) ) ) {
-        _Pragma( "loopbound min 3 max 3" )
+        #pragma loopbound min 3 max 3
         for ( delta_y = -1; delta_y <= 1; delta_y++ ) {
           delta_x = -1;
-          _Pragma( "loopbound min 3 max 3" )
+          #pragma loopbound min 3 max 3
           for ( ; delta_x <= 1; delta_x++ ) {
             /* opposite field coordinates */
             it = it0 + delta_x;
@@ -12643,10 +12643,10 @@ void mpeg2_dpfield_estimate( unsigned char *topref, unsigned char *botref,
   /* initialize minimum dual prime distortion to large value */
   vmc_dp = 1 << 30;
 
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( delta_y = -1; delta_y <= 1; delta_y++ ) {
     delta_x = -1;
-    _Pragma( "loopbound min 3 max 3" )
+    #pragma loopbound min 3 max 3
     for ( ; delta_x <= 1; delta_x++ ) {
       /* opposite field coordinates */
       io = io0 + delta_x;
@@ -12743,11 +12743,11 @@ int mpeg2_fullsearch( unsigned char *org, unsigned char *ref,
 
   sxy = ( sx > sy ) ? sx : sy;
 
-  _Pragma( "loopbound min 3 max 7" )
+  #pragma loopbound min 3 max 7
   for ( l = 1; l <= sxy; l++ ) {
     i = i0 - l;
     j = j0 - l;
-    _Pragma( "loopbound min 8 max 56" )
+    #pragma loopbound min 8 max 56
     for ( k = 0; k < 8 * l; k++ ) {
       if ( ( i >= ilow ) && ( i <= ihigh ) && ( j >= jlow ) &&
            ( j <= jhigh ) ) {
@@ -12784,10 +12784,10 @@ int mpeg2_fullsearch( unsigned char *org, unsigned char *ref,
   jlow = jmin - ( jmin > 0 );
   jhigh = jmin + ( jmin < ( ( ymax - h ) << 1 ) );
 
-  _Pragma( "loopbound min 2 max 3" )
+  #pragma loopbound min 2 max 3
   for ( j = jlow; j <= jhigh; j++ ) {
     i = ilow;
-    _Pragma( "loopbound min 2 max 3" )
+    #pragma loopbound min 2 max 3
     for ( ; i <= ihigh; i++ ) {
       d =
         mpeg2_dist1(
@@ -12830,7 +12830,7 @@ int mpeg2_dist1( unsigned char *blk1, unsigned char *blk2, int lx, int hx,
   p2 = blk2;
 
   if ( !hx && !hy ) {
-    _Pragma( "loopbound min 0 max 16" )
+    #pragma loopbound min 0 max 16
     for ( j = 0; j < h; j++ ) {
       if ( ( v = p1[ 0 ] - p2[ 0 ] ) < 0 )
         v = -v;
@@ -12905,10 +12905,10 @@ int mpeg2_dist1( unsigned char *blk1, unsigned char *blk2, int lx, int hx,
   } else
 
     if ( hx && !hy ) {
-      _Pragma( "loopbound min 8 max 16" )
+      #pragma loopbound min 8 max 16
       for ( j = 0; j < h; j++ ) {
         i = 0;
-        _Pragma( "loopbound min 16 max 16" )
+        #pragma loopbound min 16 max 16
         for ( ; i < 16; i++ ) {
           v = ( ( unsigned int )( p1[ i ] + p1[ i + 1 ] + 1 ) >> 1 ) - p2[ i ];
           if ( v >= 0 )
@@ -12923,10 +12923,10 @@ int mpeg2_dist1( unsigned char *blk1, unsigned char *blk2, int lx, int hx,
 
       if ( !hx && hy ) {
         p1a = p1 + lx;
-        _Pragma( "loopbound min 8 max 16" )
+        #pragma loopbound min 8 max 16
         for ( j = 0; j < h; j++ ) {
           i = 0;
-          _Pragma( "loopbound min 16 max 16" )
+          #pragma loopbound min 16 max 16
           for ( ; i < 16; i++ ) {
             v = ( ( unsigned int )( p1[ i ] + p1a[ i ] + 1 ) >> 1 ) - p2[ i ];
             if ( v >= 0 )
@@ -12940,10 +12940,10 @@ int mpeg2_dist1( unsigned char *blk1, unsigned char *blk2, int lx, int hx,
         }
       } else { /* if (hx && hy) */
         p1a = p1 + lx;
-        _Pragma( "loopbound min 8 max 16" )
+        #pragma loopbound min 8 max 16
         for ( j = 0; j < h; j++ ) {
           i = 0;
-          _Pragma( "loopbound min 16 max 16" )
+          #pragma loopbound min 16 max 16
           for ( ; i < 16; i++ ) {
             v =
               ( ( unsigned int )
@@ -12985,10 +12985,10 @@ int mpeg2_dist2( unsigned char *blk1, unsigned char *blk2, int lx, int hx,
   p2 = blk2;
 
   if ( !hx && !hy ) {
-    _Pragma( "loopbound min 8 max 16" )
+    #pragma loopbound min 8 max 16
     for ( j = 0; j < h; j++ ) {
       i = 0;
-      _Pragma( "loopbound min 16 max 16" )
+      #pragma loopbound min 16 max 16
       for ( ; i < 16; i++ ) {
         v = p1[ i ] - p2[ i ];
         s += v * v;
@@ -12999,10 +12999,10 @@ int mpeg2_dist2( unsigned char *blk1, unsigned char *blk2, int lx, int hx,
   } else
 
     if ( hx && !hy ) {
-      _Pragma( "loopbound min 8 max 16" )
+      #pragma loopbound min 8 max 16
       for ( j = 0; j < h; j++ ) {
         i = 0;
-        _Pragma( "loopbound min 16 max 16" )
+        #pragma loopbound min 16 max 16
         for ( ; i < 16; i++ ) {
           v = ( ( unsigned int )( p1[ i ] + p1[ i + 1 ] + 1 ) >> 1 ) - p2[ i ];
           s += v * v;
@@ -13014,10 +13014,10 @@ int mpeg2_dist2( unsigned char *blk1, unsigned char *blk2, int lx, int hx,
 
       if ( !hx && hy ) {
         p1a = p1 + lx;
-        _Pragma( "loopbound min 8 max 16" )
+        #pragma loopbound min 8 max 16
         for ( j = 0; j < h; j++ ) {
           i = 0;
-          _Pragma( "loopbound min 16 max 16" )
+          #pragma loopbound min 16 max 16
           for ( ; i < 16; i++ ) {
             v = ( ( unsigned int )( p1[ i ] + p1a[ i ] + 1 ) >> 1 ) - p2[ i ];
             s += v * v;
@@ -13028,10 +13028,10 @@ int mpeg2_dist2( unsigned char *blk1, unsigned char *blk2, int lx, int hx,
         }
       } else { /* if (hx && hy) */
         p1a = p1 + lx;
-        _Pragma( "loopbound min 8 max 16" )
+        #pragma loopbound min 8 max 16
         for ( j = 0; j < h; j++ ) {
           i = 0;
-          _Pragma( "loopbound min 16 max 16" )
+          #pragma loopbound min 16 max 16
           for ( ; i < 16; i++ ) {
             v =
               ( ( unsigned int )
@@ -13077,10 +13077,10 @@ int mpeg2_bdist1( unsigned char *pf, unsigned char *pb, unsigned char *p2,
 
   s = 0;
 
-  _Pragma( "loopbound min 8 max 16" )
+  #pragma loopbound min 8 max 16
   for ( j = 0; j < h; j++ ) {
     i = 0;
-    _Pragma( "loopbound min 16 max 16" )
+    #pragma loopbound min 16 max 16
     for ( ; i < 16; i++ ) {
       v =
         ( ( ( ( unsigned int )( *pf++ + *pfa++ + *pfb++ + *pfc++ + 2 ) >> 2 ) +
@@ -13135,10 +13135,10 @@ int mpeg2_bdist2( unsigned char *pf, unsigned char *pb, unsigned char *p2,
 
   s = 0;
 
-  _Pragma( "loopbound min 8 max 16" )
+  #pragma loopbound min 8 max 16
   for ( j = 0; j < h; j++ ) {
     i = 0;
-    _Pragma( "loopbound min 16 max 16" )
+    #pragma loopbound min 16 max 16
     for ( ; i < 16; i++ ) {
       v =
         ( ( ( ( unsigned int )( *pf++ + *pfa++ + *pfb++ + *pfc++ + 2 ) >> 2 ) +
@@ -13175,10 +13175,10 @@ int mpeg2_variance( unsigned char *p, int lx )
 
   s = s2 = 0;
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( j = 0; j < 16; j++ ) {
     i = 0;
-    _Pragma( "loopbound min 16 max 16" )
+    #pragma loopbound min 16 max 16
     for ( ; i < 16; i++ ) {
       v = *p++;
       s += v;
@@ -13197,7 +13197,7 @@ int mpeg2_variance( unsigned char *p, int lx )
 
 void mpeg2_main( void )
 {
-  _Pragma ( "entrypoint" )
+  #pragma entrypoint
   mpeg2_motion_estimation(
     mpeg2_oldorgframe, mpeg2_oldorgframe, mpeg2_oldorgframe, mpeg2_oldorgframe,
     mpeg2_oldorgframe, mpeg2_oldorgframe, 7, 7, 3, 3, mpeg2_mbinfo, 0, 0 );

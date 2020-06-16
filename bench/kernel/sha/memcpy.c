@@ -35,7 +35,7 @@ void *sha_glibc_memcpy( void *dstpp, const void *srcpp, size_t len )
     len -= ( -dstp ) % OPSIZ;
 
     __nbytes = ( -dstp ) % OPSIZ;
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     while ( __nbytes > 0 ) {
       BYTE __x = ( ( BYTE * ) srcp )[ 0 ];
       srcp += 1;
@@ -60,7 +60,7 @@ void *sha_glibc_memcpy( void *dstpp, const void *srcpp, size_t len )
 
   /* There are just a few bytes to copy.  Use byte memory operations.  */
   __nbytes = len;
-  _Pragma( "loopbound min 0 max 7" )
+  #pragma loopbound min 0 max 7
   while ( __nbytes > 0 ) {
     BYTE __x = ( ( BYTE * ) srcp )[ 0 ];
     srcp += 1;

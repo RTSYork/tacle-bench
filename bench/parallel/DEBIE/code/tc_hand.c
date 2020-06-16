@@ -135,7 +135,7 @@ void InitTC_LookUp( void )
   /* Loop variable */
 
 
-  _Pragma( "loopbound min 128 max 128" )
+  #pragma loopbound min 128 max 128
   for ( i = 0; i < 128; i++ ) TC_look_up[ i ] = ALL_INVALID;
 
   TC_look_up[ START_ACQUISITION ]            = ONLY_EQUAL;
@@ -628,7 +628,7 @@ void MemoryPatch( telecommand_t EXTERNAL *command )
           /* Write to the data memory. */
 
           if ( address <= ( END_SRAM3 - MEM_BUFFER_SIZE + 1 ) ) {
-            _Pragma( "loopbound min 32 max 32" )
+            #pragma loopbound min 32 max 32
             for ( i = 0; i < MEM_BUFFER_SIZE; i++ )
               SET_DATA_BYTE( address + i, memory_transfer_buffer[ i ] );
           }
@@ -1243,7 +1243,7 @@ void ExecuteCommand( telecommand_t EXTERNAL *command )
     case START_ACQUISITION:
       error_flag = 0;
 
-      _Pragma( "loopbound min 4 max 4" )
+      #pragma loopbound min 4 max 4
       for ( i = SU_1; i <= SU_4; i++ ) {
         if ( ( ReadSensorUnit( i ) == start_switching_e ) ||
              ( ReadSensorUnit( i ) == switching_e ) ) {
@@ -1336,7 +1336,7 @@ static EXTERNAL telecommand_t received_command;
 /* to xdata area).                                                        */
 
 
-void _Pragma( "entrypoint" ) InitTelecommandTask ( void )
+void #pragma entrypoint InitTelecommandTask ( void )
 
 /* Purpose        : Initialize the global state of Telecommand Execution     */
 /* Interface      : inputs      - none                                       */
@@ -1366,7 +1366,7 @@ void _Pragma( "entrypoint" ) InitTelecommandTask ( void )
 }
 
 
-void _Pragma( "entrypoint" ) HandleTelecommand ( void )
+void #pragma entrypoint HandleTelecommand ( void )
 
 /* Purpose        : Waits for and handles one Telecommand from the TC ISR    */
 /* Interface      : inputs      - Telecommand Execution task mailbox         */
@@ -1488,7 +1488,7 @@ PRIORITY( TC_TM_INTERFACE_PR )
 {
   InitTelecommandTask ();
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( 1 )
     HandleTelecommand ();
 }

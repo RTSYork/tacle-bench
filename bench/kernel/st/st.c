@@ -78,7 +78,7 @@ void st_initialize( float *array )
 {
   register int i;
 
-  _Pragma( "loopbound min 1000 max 1000" )
+  #pragma loopbound min 1000 max 1000
   for ( i = 0; i < 1000; i++ )
     array[ i ] = i + st_randomInteger();
 }
@@ -130,7 +130,7 @@ float st_sqrtf( float val )
   if ( val == 0 )
     x = 0;
   else {
-    _Pragma( "loopbound min 19 max 19" )
+    #pragma loopbound min 19 max 19
     for ( i = 1; i < 20; i++ ) {
       if ( !flag ) {
         dx = ( val - ( x * x ) ) / ( 2.0f * x );
@@ -163,7 +163,7 @@ void st_calc_Sum_Mean( float *array, float *sum, float *mean )
 
   *sum = 0;
 
-  _Pragma( "loopbound min 1000 max 1000" )
+  #pragma loopbound min 1000 max 1000
   for ( i = 0; i < 1000; i++ )
     *sum += array[ i ];
   *mean = *sum / 1000;
@@ -175,7 +175,7 @@ void st_calc_Var_Stddev( float *array, float mean, float *var, float *stddev )
   int i;
   float diffs = 0.0f;
 
-  _Pragma( "loopbound min 1000 max 1000" )
+  #pragma loopbound min 1000 max 1000
   for ( i = 0; i < 1000; i++ )
     diffs += st_square( array[ i ] - mean );
 
@@ -190,7 +190,7 @@ void st_calc_LinCorrCoef( float *arrayA, float *arrayB, float meanA,
   int i;
   float numerator = 0.0f, Aterm = 0.0f, Bterm = 0.0f;
 
-  _Pragma( "loopbound min 1000 max 1000" )
+  #pragma loopbound min 1000 max 1000
   for ( i = 0; i < 1000; i++ ) {
     numerator += ( arrayA[ i ] - meanA ) * ( arrayB[ i ] - meanB );
     Aterm += st_square( arrayA[ i ] - meanA );
@@ -207,7 +207,7 @@ void st_calc_LinCorrCoef( float *arrayA, float *arrayB, float meanA,
 
 void st_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   st_calc_Sum_Mean( st_arrayA, &st_sumA, &st_meanA );
   st_calc_Var_Stddev( st_arrayA, st_meanA, &st_varA, &st_stddevA );
 

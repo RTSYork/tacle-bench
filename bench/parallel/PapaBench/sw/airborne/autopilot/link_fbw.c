@@ -47,7 +47,7 @@ void link_fbw_init( void )
 
 void link_fbw_send( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   if ( spi_cur_slave != SPI_NONE ) {
     spi_nb_ovrn++;
     return;

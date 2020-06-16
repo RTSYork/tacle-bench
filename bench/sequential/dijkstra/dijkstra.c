@@ -69,9 +69,9 @@ void dijkstra_init( void )
 {
   int i, k;
   volatile int x = 0;
-  _Pragma( "loopbound min 100 max 100" )
+  #pragma loopbound min 100 max 100
   for ( i = 0; i < NUM_NODES; i++ ) {
-    _Pragma( "loopbound min 100 max 100" )
+    #pragma loopbound min 100 max 100
     for ( k = 0; k < NUM_NODES; k++ )
       dijkstra_AdjMatrix[ i ][ k ] ^= x;
   }
@@ -104,7 +104,7 @@ int dijkstra_enqueue( int node, int dist, int prev )
     dijkstra_queueHead = newItem;
   else {
     /* TODO: where does this magic loop bound come from? */
-    _Pragma( "loopbound min 0 max 313" )
+    #pragma loopbound min 0 max 313
     while ( last->next )
       last = last->next;
     last->next = newItem;
@@ -136,7 +136,7 @@ int dijkstra_find( int chStart, int chEnd )
   int cost, dist = 0;
   int i;
 
-  _Pragma( "loopbound min 100 max 100" )
+  #pragma loopbound min 100 max 100
   for ( ch = 0; ch < NUM_NODES; ch++ ) {
     dijkstra_rgnNodes[ ch ].dist = NONE;
     dijkstra_rgnNodes[ ch ].prev = NONE;
@@ -151,10 +151,10 @@ int dijkstra_find( int chStart, int chEnd )
       return OUT_OF_MEMORY;
 
     /* TODO: where does this magic loop bound come from? */
-    _Pragma( "loopbound min 618 max 928" )
+    #pragma loopbound min 618 max 928
     while ( dijkstra_qcount() > 0 ) {
       dijkstra_dequeue ( &node, &dist, &prev );
-      _Pragma( "loopbound min 100 max 100" )
+      #pragma loopbound min 100 max 100
       for ( i = 0; i < NUM_NODES; i++ ) {
         if ( ( cost = dijkstra_AdjMatrix[ node ][ i ] ) != NONE ) {
           if ( ( NONE == dijkstra_rgnNodes[ i ].dist ) ||
@@ -173,11 +173,11 @@ int dijkstra_find( int chStart, int chEnd )
 
 void dijkstra_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   int i, j;
 
   /* finds 20 shortest paths between nodes */
-  _Pragma( "loopbound min 20 max 20" )
+  #pragma loopbound min 20 max 20
   for ( i = 0, j = NUM_NODES / 2; i < 20; i++, j++ ) {
     j = j % NUM_NODES;
     if ( dijkstra_find( i, j ) == OUT_OF_MEMORY ) {

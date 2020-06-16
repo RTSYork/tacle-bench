@@ -111,7 +111,7 @@ void uart_print_string( const uint8_t *s )
 {
   #ifndef WCET_ANALYSIS
   uint8_t i = 0;
-  _Pragma( "loopbound min 100 max 100" )
+  #pragma loopbound min 100 max 100
   while ( s[ i ] ) {
     uart_transmit( s[ i ] );
     i++;

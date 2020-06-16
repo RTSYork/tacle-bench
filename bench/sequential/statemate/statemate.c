@@ -1001,7 +1001,7 @@ void statemate_FH_DU( void )
   // patched for wcet: replacing while statement by for
   //while (!statemate_stable)
   int i;
-  _Pragma( "loopbound min 100 max 100" )
+  #pragma loopbound min 100 max 100
   for ( i = 0; i < 100; i++ ) {
     statemate_stable = 1;
     statemate_step++;
@@ -1257,7 +1257,7 @@ int statemate_return()
 {
   unsigned long int checksum = 0;
   int index;
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( index = 63 ; index >= 0 ; index-- )
     checksum += ( unsigned long ) ( statemate_bitlist[ index ] << index );
   return ( checksum == 18446744073709551614ul );
@@ -1265,7 +1265,7 @@ int statemate_return()
 
 void statemate_main( void )
 {
-  _Pragma ( "entrypoint" )
+  #pragma entrypoint
   statemate_FH_DU();
 }
 

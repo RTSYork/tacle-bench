@@ -514,7 +514,7 @@ float basicmath___ieee754_sqrtf( float x )
   /* normalize x */
   m = ( ix >> 23 );
   if ( m == 0 ) {   /* subnormal x */
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( i = 0; ( ix & 0x00800000 ) == 0; i++ )
       ix <<= 1;
     m -= i - 1;
@@ -530,7 +530,7 @@ float basicmath___ieee754_sqrtf( float x )
   q = s = 0;    /* q = sqrt(x) */
   r = 0x01000000;   /* r = moving bit from right to left */
 
-  _Pragma( "loopbound min 25 max 25" )
+  #pragma loopbound min 25 max 25
   while ( r != 0 ) {
     t = s + r;
     if ( t <= ix ) {

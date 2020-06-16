@@ -771,7 +771,7 @@ void Set_AD_Unlimited ( void )
   printf ( "Set AD Unlimited\n" );
   #endif
 
-  _Pragma( "loopbound min 40 max 40" )
+  #pragma loopbound min 40 max 40
   for ( c = 0; c < AD_CHANNELS; c++ ) {
     ad_limit[ c ].min = 0;
     ad_limit[ c ].max = 0xffff;
@@ -936,7 +936,7 @@ void Set_AD_Delay ( int delay )
 /* Sets ad_conv_delay[ all ] = delay. */
 {
   int i;
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0; i < AD_NUM_CONV; i++ )
     ad_conv_delay[ i ] = delay;
 }
@@ -950,7 +950,7 @@ void Random_AD_Delay ( void )
 /* Sets random ad_conv_delay[  ]. */
 {
   int i;
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0; i < AD_NUM_CONV; i++ )
     ad_conv_delay[ i ] = ( Next_Rand ( &ad_delay_rand ) % ( ADC_MAX_TRIES + 10 ) );
 }
@@ -1860,7 +1860,7 @@ static void Send_Patch_Code (
 
   /* Send the patch contents, 16 words = 32 octets: */
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0; i < 16; i++ ) {
     Send_TC_Word ( ( ( uint_least16_t ) i ) << 6 );
     sum ^= ( tc_word >> 8 ) ^ ( tc_word & 0xff );
@@ -1902,7 +1902,7 @@ static void Send_Patch_Data (
 
   /* Send the patch contents, 16 words = 32 octets: */
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0; i < 16; i++ ) {
     Send_TC_Word ( ( ( uint_least16_t ) i ) << 6 );
     sum ^= ( tc_word >> 8 ) ^ ( tc_word & 0xff );
@@ -1935,7 +1935,7 @@ static void Read_Data_Memory ( uint16_t address )
 
   /* The 16 first words of data: */
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0; i < 16; i++ ) {
     Check ( telemetry_pointer < telemetry_end_pointer );
 
@@ -2581,7 +2581,7 @@ void Monitoring_Task_Tests ( void )
 
   /* The first 9 seconds: */
 
-  _Pragma( "loopbound min 9 max 9" )
+  #pragma loopbound min 9 max 9
   for ( sec = 1; sec <= 9; sec ++ ) {
     Monitor_Health ( Prob6a );
 
@@ -2602,7 +2602,7 @@ void Monitoring_Task_Tests ( void )
 
   /* The remaining 170 seconds of the full period: */
 
-  _Pragma( "loopbound min 170 max 170" )
+  #pragma loopbound min 170 max 170
   for ( sec = 11; sec <= 180; sec ++ )
     Monitor_Health ( Prob6a );
 
@@ -2618,7 +2618,7 @@ void Monitoring_Task_Tests ( void )
 
   total_adc_hits = 0;
 
-  _Pragma( "loopbound min 180 max 180" )
+  #pragma loopbound min 180 max 180
   for ( sec = 1; sec <= 180; sec ++ ) {
     max_adc_hits = 1;
     Monitor_Health ( Prob6b );
@@ -2641,7 +2641,7 @@ void Monitoring_Task_Tests ( void )
 
   total_adc_hits = 0;
 
-  _Pragma( "loopbound min 180 max 180" )
+  #pragma loopbound min 180 max 180
   for ( sec = 1; sec <= 180; sec ++ ) {
     max_adc_hits = HIT_BUDGET_DEFAULT;
     Monitor_Health ( Prob6c );
@@ -2667,7 +2667,7 @@ void Monitoring_Task_Tests ( void )
 
   tot_errors = 0;
 
-  _Pragma( "loopbound min 106 max 106" )
+  #pragma loopbound min 106 max 106
   do {
     if ( tot_errors == 4 ) check_current_errors = 5;
 
@@ -2676,7 +2676,7 @@ void Monitoring_Task_Tests ( void )
        we save it for last.
     */
 
-    _Pragma( "loopbound min 180 max 180" )
+    #pragma loopbound min 180 max 180
     for ( sec = 1; sec <= 180; sec ++ )
       Monitor_Health ( Prob6d );
 
@@ -2699,7 +2699,7 @@ void Monitoring_Task_Tests ( void )
 
   tot_errors = 0;
   
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   do {
     if ( tot_errors == 4 ) check_current_errors = 5;
 
@@ -2708,7 +2708,7 @@ void Monitoring_Task_Tests ( void )
        we save it for last.
     */
 
-    _Pragma( "loopbound min 180 max 180" ) 
+    #pragma loopbound min 180 max 180 
     for ( sec = 1; sec <= 180; sec ++ ) {
       max_adc_hits = HIT_BUDGET_DEFAULT;
       if ( sec > 2 * tot_errors ) ad_random_failures = 2;
@@ -2751,7 +2751,7 @@ void TM_Tests ( void )
 
   Check ( TC_state == register_TM_e );
 
-  _Pragma( "loopbound min 62 max 62" )
+  #pragma loopbound min 62 max 62
   for ( octets = 0; octets < sizeof ( telemetry_data_t ); octets += 2 ) {
 
     if ( telemetry_pointer != ( unsigned char * ) &telemetry_data.time ) {
@@ -2778,7 +2778,7 @@ void TM_Tests ( void )
 
   Check ( TC_state == register_TM_e );
 
-  _Pragma( "loopbound min 20 max 20" )
+  #pragma loopbound min 20 max 20
   for ( octets = 0; octets < 40; octets += 2 ) {
 
     if ( telemetry_pointer != ( unsigned char * ) &telemetry_data.time ) {
@@ -2817,7 +2817,7 @@ void TM_Tests ( void )
 
   octets = 0;
 
-  _Pragma( "loopbound min 22 max 22" )
+  #pragma loopbound min 22 max 22
   while ( mail_count[ TCTM_MAILBOX ] == 0 ) {
     if ( telemetry_pointer < telemetry_end_pointer ) {
       FOR_PROBLEM( Prob2a );
@@ -2973,7 +2973,7 @@ static void Hit_ISR_Tests ( void )
   Set_AD_Delay ( 2 );
   ad_conv_num = 0;
   
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( su = 0; su < NUM_SU; su ++ ) {
     Trigger_SU_Hit ( su, Prob3a );
 
@@ -2988,7 +2988,7 @@ static void Hit_ISR_Tests ( void )
 
   CASE( "Hit Trigger, budget left, no A/D errors, SU self test ok" );
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( su = 0; su < NUM_SU; su++ ) {
     /* Right self test pulse: */
 
@@ -3009,7 +3009,7 @@ static void Hit_ISR_Tests ( void )
 
   CASE( "Hit Trigger, budget left, no A/D errors, SU self test wrong" );
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( su = 0; su < NUM_SU; su++ ) {
     /* Wrong self test pulse: */
 
@@ -3034,7 +3034,7 @@ static void Hit_ISR_Tests ( void )
 
   self_test_SU_number = NO_SU;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( su = 0; su < NUM_SU; su++ ) SU_state[ su ] = off_e;
 
   CASE( "Hit Trigger, budget left, all A/D delays at limit but ok" );
@@ -3045,7 +3045,7 @@ static void Hit_ISR_Tests ( void )
 
   ad_conv_num = 0;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( su = 0; su < NUM_SU; su ++ ) {
     Trigger_SU_Hit ( su, Prob3b );
 
@@ -3066,7 +3066,7 @@ static void Hit_ISR_Tests ( void )
 
   ad_conv_delay[ 0 ] = ADC_MAX_TRIES + 1;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( su = 0; su < NUM_SU; su ++ ) {
     ad_conv_num = su;
     /* Offset starting index to make a different channel fail. */
@@ -3090,7 +3090,7 @@ static void Hit_ISR_Tests ( void )
 
   su = NUM_SU - 1;
 
-  _Pragma( "loopbound min 80 max 80" )
+  #pragma loopbound min 80 max 80
   while ( hit_budget_left > 0 ) {
     Random_AD_Delay ();
 
@@ -3128,9 +3128,9 @@ void Report_Event_Histo ( void )
   int class;
 
   #if defined(TRACE_HARNESS)
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ )
-    _Pragma( "loopbound min 10 max 10" )  
+    #pragma loopbound min 10 max 10  
     for ( class = 0; class < NUM_CLASSES; class ++ ) {
       printf ( "Events from SU %d, class %d: %d\n",
                sen, class, science_data.event_counter[ sen ][ class ] );
@@ -3167,7 +3167,7 @@ static void Acquisition_Tests ( void )
 
   /* Send the SWITCH ON commands: */
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ ) {
     Check ( SU_state[ sen ] == off_e );
 
@@ -3189,13 +3189,13 @@ static void Acquisition_Tests ( void )
 
   Monitor_Health ( Prob6a );
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ )
     Check ( SU_state[ sen ] == switching_e );
 
   Monitor_Health ( Prob6a );
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ )
     Check ( SU_state[ sen ] == on_e );
 
@@ -3219,7 +3219,7 @@ static void Acquisition_Tests ( void )
 
   Check ( ( telemetry_data.mode_status & MODE_BITS_MASK ) == ACQUISITION );
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ )
     Check ( SU_state[ sen ] == acquisition_e );
 
@@ -3247,7 +3247,7 @@ static void Acquisition_Tests ( void )
 
   hits = 0;
 
-  _Pragma( "loopbound min 2625 max 2625" )
+  #pragma loopbound min 2625 max 2625
   while ( free_slot_index < max_events ) {
     hits ++;
     internal_time ++;
@@ -3266,7 +3266,7 @@ static void Acquisition_Tests ( void )
 
   CASE( "Hits with Science Data full" );
 
-  _Pragma( "loopbound min 2625 max 2625" )
+  #pragma loopbound min 2625 max 2625
   while ( hits > 0 ) {
     hits --;
     internal_time ++;
@@ -3304,7 +3304,7 @@ static void Acquisition_Tests ( void )
 
   octets = 0;
 
-  _Pragma( "loopbound min 17676 max 17676" )
+  #pragma loopbound min 17676 max 17676
   while ( mail_count[ TCTM_MAILBOX ] == 0 ) {
     if ( telemetry_pointer < telemetry_end_pointer ) {
       FOR_PROBLEM( Prob2a );
@@ -3379,7 +3379,7 @@ static void Acquisition_Tests ( void )
 
   Check ( ( telemetry_data.mode_status & MODE_BITS_MASK ) == STAND_BY );
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ )
     Check ( SU_state[ sen ] == on_e );
 
@@ -3387,7 +3387,7 @@ static void Acquisition_Tests ( void )
 
   /* Send the SWITCH OFF commands: */
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ ) {
     Exec_TC ( switch_su_cmd[ sen ], OFF_VALUE, Prob4a );
 
@@ -3407,7 +3407,7 @@ void SU_Self_Test_Tests ( void )
 
   /* Send the SWITCH ON commands: */
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ ) {
     Check ( SU_state[ sen ] == off_e );
 
@@ -3429,13 +3429,13 @@ void SU_Self_Test_Tests ( void )
 
   Monitor_Health ( Prob6a );
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ )
     Check ( SU_state[ sen ] == switching_e );
 
   Monitor_Health ( Prob6a );
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ )
     Check ( SU_state[ sen ] == on_e );
 
@@ -3469,7 +3469,7 @@ void SU_Self_Test_Tests ( void )
 
   /* Run Monitoring up to but not including round_7_e: */
 
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   while ( health_mon_round != round_7_e )
     Monitor_Health ( Prob6a );
 
@@ -3511,7 +3511,7 @@ void SU_Self_Test_Tests ( void )
 
   /* Run Monitoring up to but not including round_7_e: */
 
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   while ( health_mon_round != round_7_e )
     Monitor_Health ( Prob6a );
 
@@ -3546,7 +3546,7 @@ void SU_Self_Test_Tests ( void )
   Set_AD_Delay ( 2 );
   ad_conv_num = 0;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ ) {
     self_test_SU_number = sen + SU1;
 
@@ -3572,7 +3572,7 @@ void SU_Self_Test_Tests ( void )
   Set_AD_Delay ( 2 );
   ad_conv_num = 0;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ ) {
     self_test_SU_number = sen + SU1;
 
@@ -3599,7 +3599,7 @@ void SU_Self_Test_Tests ( void )
   Set_AD_Delay ( 2 );
   ad_conv_num = 0;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ ) {
     self_test_SU_number = sen + SU1;
 
@@ -3624,7 +3624,7 @@ void SU_Self_Test_Tests ( void )
 
   /* Send the SWITCH OFF commands: */
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( sen = 0; sen < NUM_SU; sen ++ ) {
     Exec_TC ( switch_su_cmd[ sen ], OFF_VALUE, Prob4a );
 
@@ -3663,7 +3663,7 @@ void StartSystem( unsigned char task_number )
 
   /* Testing the ISRs and tasks: */
 
-  _Pragma( "loopbound min 1 max 1" )
+  #pragma loopbound min 1 max 1
   do {
     test_round ++;
 

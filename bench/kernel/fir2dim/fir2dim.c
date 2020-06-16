@@ -66,22 +66,22 @@ void fir2dim_init()
     Apply volatile XOR-bitmask to entire input array.
   */
   p = ( unsigned char * ) &fir2dim_coefficients[  0  ];
-  _Pragma( "loopbound min 36 max 36" )
+  #pragma loopbound min 36 max 36
   for ( i = 0; i < sizeof( fir2dim_coefficients ); ++i, ++p )
     *p ^= bitmask;
 
   p = ( unsigned char * ) &fir2dim_image[  0  ];
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0; i < sizeof( fir2dim_image ); ++i, ++p )
     *p ^= bitmask;
 
   p = ( unsigned char * ) &fir2dim_array[  0  ];
-  _Pragma( "loopbound min 144 max 144" )
+  #pragma loopbound min 144 max 144
   for ( i = 0; i < sizeof( fir2dim_array ); ++i, ++p )
     *p ^= bitmask;
 
   p = ( unsigned char * ) &fir2dim_output[  0  ];
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0; i < sizeof( fir2dim_output ); ++i, ++p )
     *p ^= bitmask;
 }
@@ -102,37 +102,37 @@ void fir2dim_pin_down( float *pimage, float *parray, float *pcoeff,
 {
   register float    i, f;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( i = 0 ; i < 4 ; i++ ) {
-    _Pragma( "loopbound min 4 max 4" )
+    #pragma loopbound min 4 max 4
     for ( f = 0 ; f < 4 ; f++ )
       *pimage++ = 1 ;
   }
 
   pimage = pimage - 4 * 4  ;
 
-  _Pragma( "loopbound min 9 max 9" )
+  #pragma loopbound min 9 max 9
   for ( i = 0; i < 3 * 3; i++ )
     *pcoeff++ = 1;
 
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0 ; i < 6 ; i++ )
     *parray++ = 0 ;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( f = 0 ; f < 4; f++ ) {
     *parray++ = 0 ;
-    _Pragma( "loopbound min 4 max 4" )
+    #pragma loopbound min 4 max 4
     for ( i = 0 ; i < 4 ; i++ )
       *parray++ = *pimage++ ;
     *parray++ = 0 ;
   }
 
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0 ; i < 6 ; i++ )
     *parray++ = 0 ;
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0 ; i < 4 * 4; i++ )
     *poutput++ = 0 ;
 }
@@ -144,7 +144,7 @@ void fir2dim_pin_down( float *pimage, float *parray, float *pcoeff,
 
 void fir2dim_main()
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   register float *parray  = &fir2dim_array[ 0 ], *parray2, *parray3 ;
   register float *pcoeff  = &fir2dim_coefficients[ 0 ] ;
   register float *poutput = &fir2dim_output[ 0 ]       ;
@@ -155,10 +155,10 @@ void fir2dim_main()
 
   poutput = &fir2dim_output[ 0 ]       ;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( k = 0 ; k < 4 ; k++ ) {
 
-    _Pragma( "loopbound min 4 max 4" )
+    #pragma loopbound min 4 max 4
     for ( f = 0 ; f < 4 ; f++ ) {
       pcoeff = &fir2dim_coefficients[ 0 ] ;
       parray = &fir2dim_array[ k * 6 + f ] ;
@@ -167,15 +167,15 @@ void fir2dim_main()
 
       *poutput = 0 ;
 
-      _Pragma( "loopbound min 3 max 3" )
+      #pragma loopbound min 3 max 3
       for ( i = 0 ; i < 3 ; i++ )
         *poutput += *pcoeff++ **parray++ ;
 
-      _Pragma( "loopbound min 3 max 3" )
+      #pragma loopbound min 3 max 3
       for ( i = 0 ; i < 3 ; i++ )
         *poutput += *pcoeff++ **parray2++ ;
 
-      _Pragma( "loopbound min 3 max 3" )
+      #pragma loopbound min 3 max 3
       for ( i = 0 ; i < 3 ; i++ )
         *poutput += *pcoeff++ **parray3++ ;
 

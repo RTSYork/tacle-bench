@@ -68,9 +68,9 @@ void course_pid_run( void )
 {
   float err = estimator_hspeed_dir - desired_course;
   //NORM_RAD_ANGLE(err);
-  _Pragma( "loopbound min 0 max 1" )
+  #pragma loopbound min 0 max 1
   while ( err > M_PI ) err -= 2 * M_PI;
-  _Pragma( "loopbound min 0 max 1" )
+  #pragma loopbound min 0 max 1
   while ( err < -M_PI ) err += 2 * M_PI;
   nav_desired_roll = course_pgain * err; //  * fspeed / AIR_SPEED;
   if ( nav_desired_roll > max_roll )

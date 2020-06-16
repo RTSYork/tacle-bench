@@ -27,7 +27,7 @@ int ammunition_isspace( int c )
 void *ammunition_memcpy( void *dest, const void *src, size_t size )
 {
   size_t i;
-  _Pragma( "loopbound min 2 max 6" )
+  #pragma loopbound min 2 max 6
   for ( i = 0; i < size; i++ )
     ( ( unsigned char * )dest )[ i ] = ( ( unsigned char * )src )[ i ];
 
@@ -38,7 +38,7 @@ void *ammunition_memcpy( void *dest, const void *src, size_t size )
 void *ammunition_memset( void *s, int c, size_t n )
 {
   size_t i;
-  _Pragma( "loopbound min 0 max 4" )
+  #pragma loopbound min 0 max 4
   for ( i = 0; i < n; i++ )
     ( ( unsigned char * )s )[ i ] = ( unsigned char )c;
 
@@ -50,7 +50,7 @@ int ammunition_memcmp ( const void *mem1, const void *mem2, size_t size )
 {
   const unsigned char *p1 = ( const unsigned char * ) mem1,
                        *p2 = ( const unsigned char * ) mem2;
-  _Pragma( "loopbound min 0 max 4" )
+  #pragma loopbound min 0 max 4
   while ( size-- )
     if ( *p1 != *p2 )
       return ( *p1 - *p2 );
@@ -72,11 +72,11 @@ void *ammunition_memmove ( void *s1, const void *s2, size_t n )
             && ( char * ) s2 + n <= ( char * ) s1 ) )
     return ( void * ) ammunition_memcpy ( s1, s2, n );
   if ( ( char * ) s1 < ( char * ) s2 && ( char * ) s1 + n > ( char * ) s2 ) {
-    _Pragma( "loopbound min 0 max 4" )
+    #pragma loopbound min 0 max 4
     for ( i = 0; ( size_t ) i < n; i++ )
       ( ( char * ) s1 ) [ i ] = ( ( char * ) s2 ) [ i ];
   } else {
-    _Pragma( "loopbound min 0 max 4" )
+    #pragma loopbound min 0 max 4
     for ( i = n - 1; i >= 0; i-- )
       ( ( char * ) s1 )[ i ] = ( ( char * ) s2 ) [ i ];
   }
@@ -85,7 +85,7 @@ void *ammunition_memmove ( void *s1, const void *s2, size_t n )
 
 int ammunition_strcmp ( const char *str1, const char *str2 )
 {
-  _Pragma( "loopbound min 1 max 4008" )
+  #pragma loopbound min 1 max 4008
   while ( *str1 && ( *str1 == *str2 ) )
     str1++, str2++;
   return *( const unsigned char * )str1 - *( const unsigned char * )str2;
@@ -99,7 +99,7 @@ int ammunition_atoi ( const char *str )
   int readingPos = 0;
   if ( str[ 0 ] == '-' || str[ 0 ] == '+' )
     readingPos++;
-  _Pragma( "loopbound min 1 max 1" )
+  #pragma loopbound min 1 max 1
   do {
     result *= 10;
     result += str[ readingPos++ ] - 48;
@@ -115,7 +115,7 @@ int ammunition_sprintf_d( char *s, int number )
   char digits = 0;
   unsigned char writePos = 0;
   long long copyOfNumber = number;
-  _Pragma( "loopbound min 1 max 10" )
+  #pragma loopbound min 1 max 10
   do {
     digits++;
     copyOfNumber /= 10;
@@ -129,7 +129,7 @@ int ammunition_sprintf_d( char *s, int number )
   s[ writePos ] = 0;
 
   copyOfNumber = number;
-  _Pragma( "loopbound min 1 max 10" )
+  #pragma loopbound min 1 max 10
   do {
     s[ --writePos ] = 48 + ( ( copyOfNumber >= 0 ?
                              copyOfNumber : -copyOfNumber ) % 10 );
@@ -146,7 +146,7 @@ int ammunition_sprintf_u( char *s, unsigned int number )
   char digits = 0;
   unsigned char writePos = 0;
   unsigned long long copyOfNumber = number;
-  _Pragma( "loopbound min 1 max 10" )
+  #pragma loopbound min 1 max 10
   do {
     digits++;
     copyOfNumber /= 10;
@@ -156,7 +156,7 @@ int ammunition_sprintf_u( char *s, unsigned int number )
   s[ writePos ] = 0;
 
   copyOfNumber = number;
-  _Pragma( "loopbound min 1 max 10" )
+  #pragma loopbound min 1 max 10
   do {
     s[ --writePos ] = 48 + ( copyOfNumber % 10 );
     copyOfNumber /= 10;

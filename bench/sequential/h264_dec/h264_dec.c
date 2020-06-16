@@ -72,17 +72,17 @@ void h264_dec_init ()
     Apply volatile XOR-bitmask to entire input array.
   */
   p = ( unsigned char * ) &h264_dec_mv_array[  0  ];
-  _Pragma( "loopbound min 33800 max 33800" )                    
+  #pragma loopbound min 33800 max 33800                    
   for ( i = 0; i < sizeof( h264_dec_mv_array ); ++i, ++p )
     *p ^= bitmask;
 
   p = ( unsigned char * ) &h264_dec_list_imgUV[  0  ];
-  _Pragma( "loopbound min 16200 max 16200" )                    
+  #pragma loopbound min 16200 max 16200                    
   for ( i = 0; i < sizeof( h264_dec_list_imgUV ); ++i, ++p )
     *p ^= bitmask;
 
   p = ( unsigned char * ) &h264_dec_img_m7[  0  ];
-  _Pragma( "loopbound min 1024 max 1024" )
+  #pragma loopbound min 1024 max 1024
   for ( i = 0; i < sizeof( h264_dec_img_m7 ); ++i, ++p )
     *p ^= bitmask;
 
@@ -147,14 +147,14 @@ void h264_dec_decode_one_macroblock( struct h264_dec_img_par *img )
     f3 = f1_x * f1_y;
     f4 = f3 >> 1;
 
-    _Pragma( "loopbound min 2 max 2" )
+    #pragma loopbound min 2 max 2
     for ( uv = 0; uv < 2; uv++ ) {
       intra_prediction = 0;
 
 
-      _Pragma( "loopbound min 1 max 1" )
+      #pragma loopbound min 1 max 1
       for ( b8 = 0; b8 < ( img->num_blk8x8_uv / 2 ); b8++ ) {
-        _Pragma( "loopbound min 4 max 4" )
+        #pragma loopbound min 4 max 4
         for ( b4 = 0; b4 < 4; b4++ ) {
           joff = 0;
           j4 = img->pix_c_y + joff;
@@ -167,10 +167,10 @@ void h264_dec_decode_one_macroblock( struct h264_dec_img_par *img )
           if ( !intra_prediction ) {
             if ( pred_dir != 2 ) {
 
-              _Pragma( "loopbound min 4 max 4" )
+              #pragma loopbound min 4 max 4
               for ( jj = 0; jj < 4; jj++ ) {
                 jf = ( ( j4 + jj ) / ( img->mb_cr_size_y / 4 ) ) % 64;
-                _Pragma( "loopbound min 4 max 4" )
+                #pragma loopbound min 4 max 4
                 for ( ii = 0; ii < 4; ii++ ) {
                   ifx = ( ( i4 + ii ) / ( img->mb_cr_size_x / 4 ) ) % 64;
                   i1 = ( i4 + ii ) * f1_x + h264_dec_mv_array[ jf ][ ifx ][ 0 ];
@@ -229,10 +229,10 @@ void h264_dec_decode_one_macroblock( struct h264_dec_img_par *img )
               }
             } else {
 
-              _Pragma( "loopbound min 4 max 4" )
+              #pragma loopbound min 4 max 4
               for ( jj = 0; jj < 4; jj++ ) {
                 jf = ( j4 + jj ) / ( img->mb_cr_size_y / 4 );
-                _Pragma( "loopbound min 4 max 4" )
+                #pragma loopbound min 4 max 4
                 for ( ii = 0; ii < 4; ii++ ) {
                   ifx = ( i4 + ii ) / ( img->mb_cr_size_x / 4 );
                   direct_pdir = 2;
@@ -542,10 +542,10 @@ void h264_dec_decode_one_macroblock( struct h264_dec_img_par *img )
           }
 
           if ( !smb ) {
-            _Pragma( "loopbound min 4 max 4" )
+            #pragma loopbound min 4 max 4
             for ( ii = 0; ii < 4; ii++ ) {
               jj = 0;
-              _Pragma( "loopbound min 4 max 4" )
+              #pragma loopbound min 4 max 4
               for ( ; jj < 4; jj++ ) {
                 if ( !residue_transform_flag ) {
                   h264_dec_dec_picture_imgUV[ uv ][ ( j4 + jj ) % 64 ]
@@ -559,18 +559,18 @@ void h264_dec_decode_one_macroblock( struct h264_dec_img_par *img )
       }
 
       if ( smb ) {
-        _Pragma( "loopbound min 2 max 2" )
+        #pragma loopbound min 2 max 2
         for ( j = 4; j < 6; j++ ) {
           joff = ( j - 4 ) * 4;
           j4 = img->pix_c_y + joff;
-          _Pragma( "loopbound min 2 max 2" )
+          #pragma loopbound min 2 max 2
           for ( i = 0; i < 2; i++ ) {
             ioff = i * 4;
             i4 = img->pix_c_x + ioff;
 
-            _Pragma( "loopbound min 4 max 4" )
+            #pragma loopbound min 4 max 4
             for ( ii = 0; ii < 4; ii++ )
-              _Pragma( "loopbound min 4 max 4" )
+              #pragma loopbound min 4 max 4
               for ( jj = 0; jj < 4; jj++ ) {
                 h264_dec_dec_picture_imgUV[ uv ][ ( j4 + jj ) % 64 ]
                 [ ( i4 + ii ) % 54 ]
@@ -590,7 +590,7 @@ void h264_dec_decode_one_macroblock( struct h264_dec_img_par *img )
 
 void  h264_dec_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   h264_dec_decode_one_macroblock( &h264_dec_img );
 }
 

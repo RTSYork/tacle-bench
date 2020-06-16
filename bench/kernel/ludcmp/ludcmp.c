@@ -46,10 +46,10 @@ void ludcmp_init( void )
   double          w;
   volatile int    x = 0;
 
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0; i <= n; i++ ) {
     w = 0;
-    _Pragma( "loopbound min 6 max 6" )
+    #pragma loopbound min 6 max 6
     for ( j = 0; j <= n; j++ ) {
       ludcmp_a[ i ][ j ] = ( i + 1 ) + ( j + 1 );
 
@@ -72,7 +72,7 @@ int ludcmp_return( void )
   int i, n = 5;
   double checksum = ludcmp_chkerr;
 
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0; i <= n; i++ )
     checksum += ludcmp_x[ i ];
 
@@ -102,17 +102,17 @@ int ludcmp_test( int n, double eps )
   if ( n > 99 || eps <= 0 )
     return ( 999 );
 
-  _Pragma( "loopbound min 5 max 5" )
+  #pragma loopbound min 5 max 5
   for ( i = 0; i < n; i++ ) {
     if ( ludcmp_fabs( ludcmp_a[ i ][ i ] ) <= eps )
       return ( 1 );
 
-    _Pragma( "loopbound min 1 max 5" )
+    #pragma loopbound min 1 max 5
     for ( j = i + 1; j <= n; j++ ) {
       w = ludcmp_a[ j ][ i ];
 
       if ( i != 0 ) {
-        _Pragma( "loopbound min 1 max 4" )
+        #pragma loopbound min 1 max 4
         for ( k = 0; k < i; k++ )
           w -= ludcmp_a[ j ][ k ] * ludcmp_a[ k ][ i ];
       }
@@ -120,11 +120,11 @@ int ludcmp_test( int n, double eps )
       ludcmp_a[ j ][ i ] = w / ludcmp_a[ i ][ i ];
     }
 
-    _Pragma( "loopbound min 1 max 5" )
+    #pragma loopbound min 1 max 5
     for ( j = i + 1; j <= n; j++ ) {
       w = ludcmp_a[ i + 1 ][ j ];
 
-      _Pragma( "loopbound min 1 max 5" )
+      #pragma loopbound min 1 max 5
       for ( k = 0; k <= i; k++ )
         w -= ludcmp_a[ i + 1 ][ k ] * ludcmp_a[ k ][ j ];
 
@@ -134,11 +134,11 @@ int ludcmp_test( int n, double eps )
 
   y[ 0 ] = ludcmp_b[ 0 ];
 
-  _Pragma( "loopbound min 5 max 5" )
+  #pragma loopbound min 5 max 5
   for ( i = 1; i <= n; i++ ) {
     w = ludcmp_b[ i ];
 
-    _Pragma( "loopbound min 1 max 5" )
+    #pragma loopbound min 1 max 5
     for ( j = 0; j < i; j++ )
       w -= ludcmp_a[ i ][ j ] * y[ j ];
 
@@ -147,11 +147,11 @@ int ludcmp_test( int n, double eps )
 
   ludcmp_x[ n ] = y[ n ] / ludcmp_a[ n ][ n ];
 
-  _Pragma( "loopbound min 5 max 5" )
+  #pragma loopbound min 5 max 5
   for ( i = n - 1; i >= 0; i-- ) {
     w = y[ i ];
 
-    _Pragma( "loopbound min 1 max 5" )
+    #pragma loopbound min 1 max 5
     for ( j = i + 1; j <= n; j++ )
       w -= ludcmp_a[ i ][ j ] * ludcmp_x[ j ];
 
@@ -163,7 +163,7 @@ int ludcmp_test( int n, double eps )
 
 void ludcmp_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   int n = 5;
   double eps = 1;
   ludcmp_chkerr = ludcmp_test( n, eps );

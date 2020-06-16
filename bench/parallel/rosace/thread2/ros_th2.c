@@ -90,7 +90,7 @@ int ros_th2_return( void )
 
 void ros_th2_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   uint64_t tsimu = 300*200;
   ros_th2_check = ros_th2_run_rosace( tsimu );
 }
@@ -111,7 +111,7 @@ int ros_th2_run_rosace( uint64_t nbstep ){
 void* ros_th2_thread2( void* arg ) {
   uint64_t mystep_simu = step_simu;
   
-  _Pragma( "loopbound min 60000 max 60000" )
+  #pragma loopbound min 60000 max 60000
   while( mystep_simu<max_step_simu ) {           //step_simu zu mystep_simu geändert
     // --- 200 Hz ---
     CALL( ELEVATOR );

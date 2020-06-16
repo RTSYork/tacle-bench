@@ -27,7 +27,7 @@
 
 int quicksort_strcmp( const char *str1, const char *str2 )
 {
-  _Pragma( "loopbound min 0 max 11" )
+  #pragma loopbound min 0 max 11
   while ( *str1 && ( *str1 == *str2 ) )
     ++str1, ++str2; 
   
@@ -70,7 +70,7 @@ void quicksort_swapi( char *ii, char *ij, unsigned long es )
   i = ( char * ) ii;
   j = ( char * ) ij;
 
-  _Pragma( "loopbound min 20 max 24" )
+  #pragma loopbound min 20 max 24
   do {
     c = *i;
     *i++ = *j;

@@ -67,7 +67,7 @@ int main( void )
 
   /* Wait 0.5s (for modem init ?) */
   init_cpt = 30;
-  _Pragma( "loopbound min 31 max 31" )
+  #pragma loopbound min 31 max 31
   while ( init_cpt ) {
     if ( timer_periodic() )
       init_cpt--;

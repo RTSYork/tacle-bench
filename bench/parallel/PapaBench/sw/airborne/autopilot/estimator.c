@@ -141,15 +141,15 @@ void estimator_update_ir_estim( void )
     if ( dt > 0.1 ) { // Against division by zero
       float phi = ( estimator_hspeed_dir - last_hspeed_dir );
       //NORM_RAD_ANGLE(phi);
-      _Pragma( "loopbounds min 0 max 1" )
+      #pragma loopbounds min 0 max 1
       while ( phi > M_PI ) phi -= 2 * M_PI;
-      _Pragma( "loopbounds min 0 max 1" )
+      #pragma loopbounds min 0 max 1
       while ( phi < -M_PI ) phi += 2 * M_PI;
       phi = phi / dt * NOMINAL_AIRSPEED / g; /* tan linearized */
       //NORM_RAD_ANGLE(phi);
-      _Pragma( "loopbounds min 0 max 1" )
+      #pragma loopbounds min 0 max 1
       while ( phi > M_PI ) phi -= 2 * M_PI;
-      _Pragma( "loopbounds min 0 max 1" )
+      #pragma loopbounds min 0 max 1
       while ( phi < -M_PI ) phi += 2 * M_PI;
       estimator_ir = ( float )ir_roll;
       estimator_rad = phi;

@@ -96,7 +96,7 @@ void lms_init( void )
     lms_input[1] = lms_sinus(1) + noise * v2;
   }
 
-  _Pragma( "loopbound min 100 max 100" )
+  #pragma loopbound min 100 max 100
   for ( k = 2 ; k < N ; k += 2 ) {
     double v1, v2, r;
     const double scaleFactor = 0.000000000931322574615478515625;
@@ -131,7 +131,7 @@ float lms_calc( float x,
   int i;
 
   // shift history
-  _Pragma( "loopbound min 20 max 20" )
+  #pragma loopbound min 20 max 20
   for ( i = l ; i >= 1 ; i-- )
     history[ i ] = history[ i - 1 ];
   history[ 0 ] = x;
@@ -140,14 +140,14 @@ float lms_calc( float x,
   float y = 0.0;
   *sigma = alpha * x * x + ( 1 - alpha ) * ( *sigma );
 
-  _Pragma( "loopbound min 21 max 21" )
+  #pragma loopbound min 21 max 21
   for ( i = 0 ; i <= l ; i++ )
     y += b[ i ] * history[ i ];
 
   // update coefficients
   float e = mu * ( d - y ) / ( *sigma );
 
-  _Pragma( "loopbound min 21 max 21" )
+  #pragma loopbound min 21 max 21
   for ( i = 0 ; i <= l ; i++ )
     b[ i ] += e * history[ i ];
 
@@ -157,19 +157,19 @@ float lms_calc( float x,
 
 void lms_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   int i;
   float b[ L + 1 ];
   float history[ L + 1 ];
   float sigma = 2.0;
 
-  _Pragma( "loopbound min 21 max 21" )
+  #pragma loopbound min 21 max 21
   for ( i = 0; i <= L; i++ ) {
     b[ i ] = 0.0;
     history[ i ] = 0.0;
   }
 
-  _Pragma( "loopbound min 201 max 201" )
+  #pragma loopbound min 201 max 201
   for ( i = 0 ; i < N ; i++ ) {
     lms_output[ i ] = lms_calc( lms_input[ i ],
                               lms_input[ i + 1 ],
@@ -184,7 +184,7 @@ int lms_return( void )
   int i;
   double sum = 0.0;
 
-  _Pragma( "loopbound min 201 max 201" )
+  #pragma loopbound min 201 max 201
   for ( i = 0 ; i < N ; i++ ) {
       sum += lms_output[i];
   }

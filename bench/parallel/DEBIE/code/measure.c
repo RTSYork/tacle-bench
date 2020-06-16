@@ -66,7 +66,7 @@ uint_least8_t EXTERNAL hit_budget_left  = HIT_BUDGET_DEFAULT;
 #pragma REGISTERBANK(1)
 #endif
 
-void _Pragma( "entrypoint" ) InitHitTriggerTask ( void )
+void #pragma entrypoint InitHitTriggerTask ( void )
 
 /* Purpose        : Initialize the global state of Hit Trigger handling      */
 /* Interface      : inputs  - none                                           */
@@ -84,7 +84,7 @@ void _Pragma( "entrypoint" ) InitHitTriggerTask ( void )
   ENABLE_HIT_TRIGGER;
 }
 
-void _Pragma( "entrypoint" ) HandleHitTrigger ( void )
+void #pragma entrypoint HandleHitTrigger ( void )
 
 /* Purpose        : Wait for and handle one Hit Trigger interrupt            */
 /* Interface      : inputs  - Five analog outputs from Peak Detectors        */
@@ -163,7 +163,7 @@ void _Pragma( "entrypoint" ) HandleHitTrigger ( void )
 
     conversion_try_count = 0;
 
-    _Pragma( "loopbound min 0 max 25" )
+    #pragma loopbound min 0 max 25
     while (   conversion_try_count < ADC_MAX_TRIES
               && END_OF_ADC != CONVERSION_ACTIVE ) {
       conversion_try_count++;
@@ -223,7 +223,7 @@ void _Pragma( "entrypoint" ) HandleHitTrigger ( void )
     /* Delay of 100 microseconds (+ function call overhead). */
 
 
-    _Pragma( "loopbound min 5 max 5" )
+    #pragma loopbound min 5 max 5
     for ( i = 0; i < NUM_CH; i++ ) {
 
       ShortDelay( delay_limit );
@@ -239,7 +239,7 @@ void _Pragma( "entrypoint" ) HandleHitTrigger ( void )
 
       conversion_try_count = 0;
 
-      _Pragma( "loopbound min 0 max 25" )
+      #pragma loopbound min 0 max 25
       while (   conversion_try_count < ADC_MAX_TRIES
                 && END_OF_ADC != CONVERSION_ACTIVE ) {
         conversion_try_count++;
@@ -297,7 +297,7 @@ void HitTriggerTask( void ) TASK( HIT_TRIGGER_ISR_TASK ) PRIORITY(
 {
   InitHitTriggerTask ();
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( 1 )
     HandleHitTrigger ();
 }
@@ -317,7 +317,7 @@ static EXTERNAL uint16_t trigger_unit;
 /* Number of the triggering Sensor Unit.                                  */
 
 
-void _Pragma( "entrypoint" ) InitAcquisitionTask ( void )
+void #pragma entrypoint InitAcquisitionTask ( void )
 /* Purpose        : Initialize the global state of the Acquisition task.     */
 /* Interface      : inputs      - none                                       */
 /*                  outputs     - ACQ_mail static fields.                    */
@@ -332,7 +332,7 @@ void _Pragma( "entrypoint" ) InitAcquisitionTask ( void )
 }
 
 
-void _Pragma( "entrypoint" ) HandleAcquisition ( void )
+void #pragma entrypoint HandleAcquisition ( void )
 
 /* Purpose        : Acquires the data for one hit event.                     */
 /* Interface      : inputs      - Acquisition task mailbox                   */
@@ -461,7 +461,7 @@ void _Pragma( "entrypoint" ) HandleAcquisition ( void )
       checksum_pointer = ( EXTERNAL unsigned char * )event;
       event_checksum = 0;
       
-      _Pragma( "loopbound min 27 max 27" )
+      #pragma loopbound min 27 max 27
       for ( i = 1; i < sizeof( event_record_t ); i++ ) {
         event_checksum ^= *checksum_pointer;
         checksum_pointer++;
@@ -514,7 +514,7 @@ void AcquisitionTask( void ) TASK( ACQUISITION_TASK ) PRIORITY( ACQUISITION_PR )
 {
   InitAcquisitionTask ();
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( 1 )
     HandleAcquisition ();
 }

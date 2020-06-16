@@ -27,7 +27,7 @@ void *susan_wccmemcpy( void *dstpp, const void *srcpp, unsigned int len )
   unsigned long int dstp = ( long int ) dstpp;
   unsigned long int srcp = ( long int ) srcpp;
 
-  _Pragma( "loopbound min 76 max 76" )
+  #pragma loopbound min 76 max 76
   while ( len > 0 ) {
     char __x = ( ( char * ) srcp )[ 0 ];
     srcp += 1;
@@ -44,7 +44,7 @@ void susan_wccmemset( void *p, int value, unsigned int num )
   unsigned long i;
   char *char_ptr = ( char * )p;
 
-  _Pragma( "loopbound min 7220 max 7220" )
+  #pragma loopbound min 7220 max 7220
   for ( i = 0; i < num; ++i )
     *char_ptr++ = ( unsigned char )value;
 }

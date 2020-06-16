@@ -11,7 +11,7 @@ size_t susan_wccfread( void *ptr, size_t size, size_t count,
   size_t number_of_chars_to_read =
     stream->size - stream->cur_pos >= size * count ?
     size * count : stream->size - stream->cur_pos;
-  _Pragma( "loopbound min 7220 max 7220" )
+  #pragma loopbound min 7220 max 7220
   while ( i < stream->cur_pos + number_of_chars_to_read )
     ( ( unsigned char * )ptr )[ i2++ ] = stream->data[ i++ ];
   stream->cur_pos += number_of_chars_to_read;
@@ -33,7 +33,7 @@ char *susan_wccfgets( char *str, int num, struct wccFILE *stream )
     return 0;
 
   int pos = 0;
-  _Pragma( "loopbound min 57 max 57" )
+  #pragma loopbound min 57 max 57
   while ( pos < num - 1 && !susan_wccfeof( stream ) ) {
     str[ pos ] = stream->data[ stream->cur_pos ];
     if ( str[ pos ] == '\n' )

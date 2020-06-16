@@ -233,7 +233,7 @@ unsigned int FindMinQualityRecord( void )
   /* First event is selected and compared against */
   /* the following events in the science_data.    */
 
-  _Pragma( "loopbound min 1260 max 1260" )
+  #pragma loopbound min 1260 max 1260
   for ( i = 1; i < max_events; i++ ) {
     time = GetElapsedTime( i );
 
@@ -442,17 +442,17 @@ void ClearEvents( void )
   /* Telecommand Execution task has higher priority than */
   /* Acquisition task.                                   */
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( i = 0; i < NUM_SU; i++ ) {
     telemetry_data.SU_hits[ i ] = 0;
 
-    _Pragma( "loopbound min 10 max 10" )
+    #pragma loopbound min 10 max 10
     for ( j = 0; j < NUM_CLASSES; j++ )
       science_data.event_counter[ i ][ j ] = 0;
     /*event counters are cleared in science_data                           */
   }
 
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( i = 0; i < event_queue_length; i++ ) {
     /* Events from the event queue are copied to the Science */
     /* Data memory.                                          */

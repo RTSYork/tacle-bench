@@ -228,12 +228,12 @@ int adpcm_enc_sin( int rad )
 
 
   /* MAX dependent on rad's value, say 50 */
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( rad > 2 * PI )
     rad -= 2 * PI;
 
   /* MAX dependent on rad's value, say 50 */
-  _Pragma( "loopbound min 0 max 1999" )
+  #pragma loopbound min 0 max 1999
   while ( rad < -2 * PI )
     rad += 2 * PI;
 
@@ -245,7 +245,7 @@ int adpcm_enc_sin( int rad )
 
   /* REALLY: while(my_fabs(diff) >= 0.00001) { */
   /* MAX: 1000 */
-  _Pragma( "loopbound min 849 max 2424" )
+  #pragma loopbound min 849 max 2424
   while ( adpcm_enc_fabs( diff ) >= 1 ) {
     diff = ( diff * ( -( rad * rad ) ) ) / ( ( 2 * inc ) * ( 2 * inc + 1 ) );
     app = app + diff;
@@ -279,7 +279,7 @@ int adpcm_enc_encode( int xin1, int xin2 )
 
   /* main multiply accumulate loop for samples and coefficients */
   /* MAX: 10 */
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( i = 0; i < 10; i++ ) {
     xa += ( long long )( *tqmf_ptr++ ) * ( *h_ptr++ );
     xb += ( long long )( *tqmf_ptr++ ) * ( *h_ptr++ );
@@ -292,7 +292,7 @@ int adpcm_enc_encode( int xin1, int xin2 )
   /* update delay line tqmf */
   tqmf_ptr1 = tqmf_ptr - 2;
   /* MAX: 22 */
-  _Pragma( "loopbound min 22 max 22" )
+  #pragma loopbound min 22 max 22
   for ( i = 0; i < 22; i++ )
     *tqmf_ptr-- = *tqmf_ptr1--;
 
@@ -436,7 +436,7 @@ int adpcm_enc_filtez( int *bpl, int *dlt )
   zl = ( long long )( *bpl++ ) * ( *dlt++ );
 
   /* MAX: 5 */
-  _Pragma( "loopbound min 5 max 5" )
+  #pragma loopbound min 5 max 5
   for ( i = 1; i < 6; i++ )
     zl += ( long long )( *bpl++ ) * ( *dlt++ );
 
@@ -472,7 +472,7 @@ int adpcm_enc_quantl( int el, int detl )
 
   /* determine mil based on decision levels and detl gain */
   /* MAX: 30 */
-  _Pragma( "loopbound min 1 max 30" )
+  #pragma loopbound min 1 max 30
   for ( mil = 0; mil < 30; mil++ ) {
     decis = ( adpcm_enc_decis_levl[ mil ] * ( long long )detl ) >> 15L;
     if ( wd <= decis )
@@ -541,13 +541,13 @@ void adpcm_enc_upzero( int dlt, int *dlti, int *bli )
 
   /*if dlt is zero, then no sum into bli */
   if ( dlt == 0 ) {
-    _Pragma( "loopbound min 6 max 6" )
+    #pragma loopbound min 6 max 6
     for ( i = 0; i < 6; i++ ) {
       bli[ i ] = ( int )( ( 255L * bli[ i ] ) >> 8L ); /* leak factor of 255/256 */
     }
 
   } else {
-    _Pragma( "loopbound min 6 max 6" )
+    #pragma loopbound min 6 max 6
     for ( i = 0; i < 6; i++ ) {
       if ( ( long long )dlt * dlti[ i ] >= 0 )
         wd2 = 128;
@@ -671,19 +671,19 @@ void adpcm_enc_reset( void )
   adpcm_enc_nbh = adpcm_enc_ah1 = adpcm_enc_ah2 = adpcm_enc_ph1 = adpcm_enc_ph2 =
                                     adpcm_enc_rh1 = adpcm_enc_rh2 = 0;
 
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0; i < 6; i++ ) {
     adpcm_enc_delay_dltx[ i ] = 0;
     adpcm_enc_delay_dhx[ i ] = 0;
   }
 
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0; i < 6; i++ ) {
     adpcm_enc_delay_bpl[ i ] = 0;
     adpcm_enc_delay_bph[ i ] = 0;
   }
 
-  _Pragma( "loopbound min 23 max 23" )
+  #pragma loopbound min 23 max 23
   for ( i = 0; i < 23; i++ )
     adpcm_enc_tqmf[ i ] = 0;
 
@@ -707,7 +707,7 @@ void adpcm_enc_init( void )
   /* XXmain_0, MAX: 2 */
   /* Since the number of times we loop in my_sin depends on the argument we
      add the fact: xxmain_0:[  ]: */
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0 ; i < SIZE ; i++ ) {
     adpcm_enc_test_data[ i ] = ( int ) j * adpcm_enc_cos( f * PI * i );
 
@@ -722,7 +722,7 @@ int adpcm_enc_return( void )
   int i;
   int check_sum = 0;
 
-  _Pragma( "loopbound min 2 max 2" )
+  #pragma loopbound min 2 max 2
   for ( i = 0 ; i < IN_END ; i += 2 )
     check_sum += adpcm_enc_compressed[ i / 2 ];
 
@@ -736,10 +736,10 @@ int adpcm_enc_return( void )
 
 void adpcm_enc_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   int i;
   /* MAX: 2 */
-  _Pragma( "loopbound min 2 max 2" )
+  #pragma loopbound min 2 max 2
   for ( i = 0 ; i < IN_END ; i += 2 )
     adpcm_enc_compressed[ i / 2 ] = adpcm_enc_encode( adpcm_enc_test_data[ i ],
                                   adpcm_enc_test_data[ i + 1 ] );

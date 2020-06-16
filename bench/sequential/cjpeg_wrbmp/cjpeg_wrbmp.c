@@ -116,7 +116,7 @@ void cjpeg_wrbmp_finish_output_bmp( cjpeg_wrbmp_j_decompress_ptr cinfo )
     ( cjpeg_wrbmp_cd_progress_ptr ) cinfo->progress;
 
   // Write the file body from our virtual array
-  _Pragma( "loopbound min 30 max 30" )
+  #pragma loopbound min 30 max 30
   for ( row = cinfo->output_height; row > 0; --row ) {
     if ( progress != 0 ) {
       progress->pub.pass_counter = ( long )( cinfo->output_height - row );
@@ -140,7 +140,7 @@ void cjpeg_wrbmp_write_colormap( cjpeg_wrbmp_j_decompress_ptr
 
     if ( cinfo->out_color_components == 3 ) {
       // Normal case with RGB colormap
-      _Pragma( "loopbound min 256 max 256" )
+      #pragma loopbound min 256 max 256
       for ( i = 0; i < num_colors; i++ ) {
         cjpeg_wrbmp_putc_modified( CJPEG_WRBMP_GETJSAMPLE(
                                      cjpeg_wrbmp_colormap[ 2 ][ i ] ) );
@@ -154,7 +154,7 @@ void cjpeg_wrbmp_write_colormap( cjpeg_wrbmp_j_decompress_ptr
       }
     } else {
       // Grayscale colormap (only happens with grayscale quantization)
-      _Pragma( "loopbound min 256 max 256" )
+      #pragma loopbound min 256 max 256
       for ( i = 0; i < num_colors; i++ ) {
 
         cjpeg_wrbmp_putc_modified( CJPEG_WRBMP_GETJSAMPLE(
@@ -170,7 +170,7 @@ void cjpeg_wrbmp_write_colormap( cjpeg_wrbmp_j_decompress_ptr
     }
   } else {
     // If no colormap, must be grayscale data.  Generate a linear "map".
-    _Pragma( "loopbound min 256 max 256" )
+    #pragma loopbound min 256 max 256
     for ( i = 0; i < 256; i++ ) {
       cjpeg_wrbmp_putc_modified( i );
       cjpeg_wrbmp_putc_modified( i );
@@ -182,7 +182,7 @@ void cjpeg_wrbmp_write_colormap( cjpeg_wrbmp_j_decompress_ptr
   }
 
   // Pad colormap with zeros to ensure specified number of colormap entries.
-  _Pragma( "loopbound min 512 max 512" )
+  #pragma loopbound min 512 max 512
   for ( ; i < map_colors; i++ ) {
     cjpeg_wrbmp_putc_modified( 0 );
     cjpeg_wrbmp_putc_modified( 0 );
@@ -195,7 +195,7 @@ void cjpeg_wrbmp_write_colormap( cjpeg_wrbmp_j_decompress_ptr
 
 void cjpeg_wrbmp_main()
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   cjpeg_wrbmp_finish_output_bmp( &cjpeg_wrbmp_jpeg_dec_1 );
   cjpeg_wrbmp_write_colormap(    &cjpeg_wrbmp_jpeg_dec_1, 768, 4, 1 );
 

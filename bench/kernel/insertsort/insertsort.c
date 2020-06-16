@@ -52,7 +52,7 @@ void insertsort_initialize( unsigned int *array )
 {
 
   register volatile int i;
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( i = 0; i < 10; i++ )
     insertsort_a[ i ] = array[ i ];
 
@@ -77,7 +77,7 @@ int insertsort_return()
 {
   int i, returnValue = 0;
 
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( i = 0; i < 10; i++ )
     returnValue += insertsort_a[ i ];
 
@@ -92,13 +92,13 @@ int insertsort_return()
 
 void insertsort_main()
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   int  i, j, temp;
   i = 2;
 
   insertsort_iters_i = 0;
 
-  _Pragma( "loopbound min 9 max 9" )
+  #pragma loopbound min 9 max 9
   while ( i <= 10 ) {
 
     insertsort_iters_i++;
@@ -107,7 +107,7 @@ void insertsort_main()
 
     insertsort_iters_a = 0;
 
-    _Pragma( "loopbound min 1 max 9" )
+    #pragma loopbound min 1 max 9
     while ( insertsort_a[ j ] < insertsort_a[ j - 1 ] ) {
       insertsort_iters_a++;
 

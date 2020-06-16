@@ -209,7 +209,7 @@ void gsm_dec_Coefficients_0_12( word *LARpp_j_1, word *LARpp_j, word *LARp )
   int i;
   longword ltmp;
 
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( i = 1; i <= 8; i++, LARp++, LARpp_j_1++, LARpp_j++ ) {
     *LARp = GSM_ADD( SASR( *LARpp_j_1, 2 ), SASR( *LARpp_j, 2 ) );
     *LARp = GSM_ADD( *LARp, SASR( *LARpp_j_1, 1 ) );
@@ -229,7 +229,7 @@ void gsm_dec_LARp_to_rp( word *LARp ) /* [ 0..7 ] IN/OUT  */
   word temp;
   longword ltmp;
 
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( i = 1; i <= 8; i++, LARp++ ) {
 
     /* temp = GSM_ABS( *LARp );
@@ -268,13 +268,13 @@ void gsm_dec_Decoder( struct gsm_state *S,
   word erp[ 40 ], wt[ 160 ];
   word *drp = S->dp0 + 120;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( j = 0; j <= 3; j++, xmaxcr++, bcr++, Ncr++, Mcr++, xMcr += 13 ) {
 
     gsm_dec_RPE_Decoding( *xmaxcr, *Mcr, xMcr, erp );
     gsm_dec_Long_Term_Synthesis_Filtering( S, *Ncr, *bcr, erp, drp );
 
-    _Pragma( "loopbound min 40 max 40" )
+    #pragma loopbound min 40 max 40
     for ( k = 0; k <= 39; k++ )
       wt[ j * 40 + k ] = drp[ k ];
   }
@@ -312,7 +312,7 @@ void gsm_dec_Long_Term_Synthesis_Filtering(
       signal drp[ 0..39 ]
   */
 
-  _Pragma( "loopbound min 40 max 40" )
+  #pragma loopbound min 40 max 40
   for ( k = 0; k <= 39; k++ ) {
     drpp = GSM_MULT_R( brp, drp[ k - Nr ] );
     drp[ k ] = GSM_ADD( erp[ k ], drpp );
@@ -323,7 +323,7 @@ void gsm_dec_Long_Term_Synthesis_Filtering(
       drp[  -1..-120  ]
   */
 
-  _Pragma( "loopbound min 120 max 120" )
+  #pragma loopbound min 120 max 120
   for ( k = 0; k <= 119; k++ )
     drp[ -120 + k ] = drp[ -80 + k ];
 }
@@ -368,14 +368,14 @@ void gsm_dec_RPE_grid_positioning(
       i--;
   }
 
-  _Pragma( "loopbound min 12 max 12" )
+  #pragma loopbound min 12 max 12
   do {
     *ep++ = 0;
     *ep++ = 0;
     *ep++ = *xMp++;
   } while ( --i );
 
-  _Pragma( "loopbound min 0 max 3" )
+  #pragma loopbound min 0 max 3
   while ( ++Mc < 4 )
     *ep++ = 0; 
 
@@ -400,7 +400,7 @@ void gsm_dec_APCM_inverse_quantization( word *xMc, /* [ 0..12 ] IN  */
   temp2 = gsm_dec_sub( 6, exp ); /* see 4.2-15 for exp  */
   temp3 = gsm_dec_asl( 1, gsm_dec_sub( temp2, 1 ) );
 
-  _Pragma( "loopbound min 13 max 13" )
+  #pragma loopbound min 13 max 13
   for ( i = 13; i--; ) {
 
     /* temp = gsm_sub( *xMc++ << 1, 7 ); */
@@ -447,7 +447,7 @@ void gsm_dec_APCM_quantization_xmaxc_to_exp_mant( word xmaxc,      /* IN   */
     exp = -4;
     mant = 7;
   } else {
-    _Pragma( "loopbound min 0 max 3" )
+    #pragma loopbound min 0 max 3
     while ( mant <= 7 ) {
       mant = mant << 1 | 1;
       exp--;
@@ -470,7 +470,7 @@ void gsm_dec_Postprocessing( struct gsm_state *S, word *s )
   longword ltmp; /* for GSM_ADD */
   word tmp;
 
-  _Pragma( "loopbound min 159 max 159" )
+  #pragma loopbound min 159 max 159
   for ( k = 160; --k; ++s ) {
     tmp = GSM_MULT_R( msr, 28180 );
     msr = GSM_ADD( *s, tmp );          /* Deemphasis       */
@@ -483,7 +483,7 @@ void gsm_dec_Coefficients_13_26( word *LARpp_j_1, word *LARpp_j, word *LARp )
 {
   int i;
   longword ltmp;
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( i = 1; i <= 8; i++, LARpp_j_1++, LARpp_j++, LARp++ )
     *LARp = GSM_ADD( SASR( *LARpp_j_1, 1 ), SASR( *LARpp_j, 1 ) );
 }
@@ -492,7 +492,7 @@ void gsm_dec_Coefficients_40_159( word *LARpp_j, word *LARp )
 {
   int i;
 
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( i = 1; i <= 8; i++, LARp++, LARpp_j++ )
     *LARp = *LARpp_j;
 }
@@ -508,10 +508,10 @@ void gsm_dec_Short_term_synthesis_filtering( struct gsm_state *S,
   word sri, tmp1, tmp2;
   longword ltmp; /* for GSM_ADD  & GSM_SUB */
 
-  _Pragma( "loopbound min 12 max 119" )
+  #pragma loopbound min 12 max 119
   while ( --k ) {
     sri = *wt++;
-    _Pragma( "loopbound min 8 max 8" )
+    #pragma loopbound min 8 max 8
     for ( i = 8; i--; ) {
 
       /* sri = GSM_SUB( sri, gsm_mult_r( rrp[ i ], v[ i ] ) );
@@ -573,7 +573,7 @@ void gsm_dec_Coefficients_27_39( word *LARpp_j_1, word *LARpp_j, word *LARp )
   int i;
   longword ltmp;
 
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( i = 1; i <= 8; i++, LARpp_j_1++, LARpp_j++, LARp++ ) {
     *LARp = GSM_ADD( SASR( *LARpp_j_1, 2 ), SASR( *LARpp_j, 2 ) );
     *LARp = GSM_ADD( *LARp, SASR( *LARpp_j, 1 ) );
@@ -592,7 +592,7 @@ gsm gsm_dec_create( void )
 
   r = &gsm_dec_state;
 
-  _Pragma( "loopbound min 648 max 648" )
+  #pragma loopbound min 648 max 648
   for ( i = 0; i < sizeof( *r ); i++ )
     ( ( char * )r )[ i ] = 0 + x;
 
@@ -732,14 +732,14 @@ int gsm_dec_decode( gsm s, gsm_byte *c, gsm_signal *target )
 
 void gsm_dec_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   gsm r;
   unsigned i;
   gsm_dec_result = 0;
 
   r = gsm_dec_state_ptr;
 
-  _Pragma( "loopbound min 20 max 20" )
+  #pragma loopbound min 20 max 20
   for ( i = 0; i < SAMPLES; i++ ) {
     if ( gsm_dec_decode( r, gsm_dec_gsmdata + i * sizeof( gsm_frame ),
                          gsm_dec_pcmdata + i * 160 ) ) {

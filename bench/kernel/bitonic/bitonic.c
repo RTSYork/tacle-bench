@@ -50,7 +50,7 @@ void bitonic_init( void )
   /** Initialize array "a" with data **/
   int i;
 
-  _Pragma( "loopbound min 32 max 32" )
+  #pragma loopbound min 32 max 32
   for ( i = 0; i < 32; i++ )
     bitonic_a[ i ] = ( 32 - i );
 }
@@ -94,7 +94,7 @@ void bitonic_merge( int lo, int cnt, int dir )
 {
   int k = cnt / 2;
   int i;
-  _Pragma( "loopbound min 0 max 16" )
+  #pragma loopbound min 0 max 16
   for ( i = lo; i < lo + k; i++ )
     bitonic_compare( i, i + k, dir );
 
@@ -113,7 +113,7 @@ void bitonic_sort( int lo, int cnt, int dir )
 {
   int k = cnt;
   k /= 2;
-  _Pragma( "marker recMerge" )
+  #pragma marker recMerge
 
   if ( cnt > 1 ) {
     bitonic_sort( lo, k, bitonic_ASCENDING );
@@ -121,7 +121,7 @@ void bitonic_sort( int lo, int cnt, int dir )
   }
 
   bitonic_merge( lo, cnt, dir );
-  _Pragma( "flowrestriction 1*bitonicMerge <= 31*recMerge" )
+  #pragma flowrestriction 1*bitonicMerge <= 31*recMerge
 
   return;
 }
@@ -133,17 +133,17 @@ void bitonic_sort( int lo, int cnt, int dir )
 
 void bitonic_main( void )
 {
-  _Pragma ( "entrypoint" )
+  #pragma entrypoint
   int i;
 
   /** When called with parameters lo = 0, cnt = a.length() and dir =
     ASCENDING, procedure bitonicSort sorts the whole array a. **/
-  _Pragma( "marker recSort" )
+  #pragma marker recSort
   bitonic_sort( 0, 32, bitonic_ASCENDING );
-  _Pragma( "flowrestriction 1*bitonicSort <= 63*recSort" )
+  #pragma flowrestriction 1*bitonicSort <= 63*recSort
 
   /** Loop through array, printing out each element **/
-  _Pragma( "loopbound min 32 max 32" )
+  #pragma loopbound min 32 max 32
   for ( i = 0; i < 32; i++ ) {
   }
 }

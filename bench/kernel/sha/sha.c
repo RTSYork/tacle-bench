@@ -54,10 +54,10 @@ void sha_transform( struct SHA_INFO *sha_info )
   int i;
   LONG temp, A, B, C, D, E, W[ 80 ];
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0; i < 16; ++i )
     W[ i ] = sha_info->data[ i ];
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 16; i < 80; ++i )
     W[ i ] = W[ i - 3 ] ^ W[ i - 8 ] ^ W[ i - 14 ] ^ W[ i - 16 ];
 
@@ -68,16 +68,16 @@ void sha_transform( struct SHA_INFO *sha_info )
   E = sha_info->digest[ 4 ];
 
 
-  _Pragma( "loopbound min 20 max 20" )
+  #pragma loopbound min 20 max 20
   for ( i = 0; i < 20; ++i )
     FUNC( 1, i );
-  _Pragma( "loopbound min 20 max 20" )
+  #pragma loopbound min 20 max 20
   for ( i = 20; i < 40; ++i )
     FUNC( 2, i );
-  _Pragma( "loopbound min 20 max 20" )
+  #pragma loopbound min 20 max 20
   for ( i = 40; i < 60; ++i )
     FUNC( 3, i );
-  _Pragma( "loopbound min 20 max 20" )
+  #pragma loopbound min 20 max 20
   for ( i = 60; i < 80; ++i )
     FUNC( 4, i );
   sha_info->digest[ 0 ] += A;
@@ -96,7 +96,7 @@ void sha_byte_reverse( LONG *buffer, int count )
 
   count /= sizeof( LONG );
   cp = ( BYTE * ) buffer;
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0; i < count; ++i ) {
     ct[ 0 ] = cp[ 0 ];
     ct[ 1 ] = cp[ 1 ];
@@ -132,7 +132,7 @@ size_t sha_fread( void *ptr, size_t size, size_t count,
   size_t number_of_chars_to_read =
     stream->size - stream->cur_pos >= size * count ?
     size * count : stream->size - stream->cur_pos;
-  _Pragma( "loopbound min 0 max 8192" )
+  #pragma loopbound min 0 max 8192
   while ( i < stream->cur_pos + number_of_chars_to_read )
     ( ( unsigned char * )ptr )[ i2++ ] = stream->data[ i++ ];
   stream->cur_pos += number_of_chars_to_read;
@@ -146,7 +146,7 @@ void sha_update( struct SHA_INFO *sha_info, BYTE *buffer, int count )
     ++sha_info->count_hi;
   sha_info->count_lo += ( LONG ) count << 3;
   sha_info->count_hi += ( LONG ) count >> 29;
-  _Pragma( "loopbound min 8 max 128" )
+  #pragma loopbound min 8 max 128
   while ( count >= SHA_BLOCKSIZE ) {
     sha_glibc_memcpy( sha_info->data, buffer, SHA_BLOCKSIZE );
     sha_byte_reverse( sha_info->data, SHA_BLOCKSIZE );
@@ -188,7 +188,7 @@ void sha_stream( struct SHA_INFO *sha_info, struct SHA_MY_FILE *fin )
 {
   int i;
   BYTE data[ BLOCK_SIZE ];
-  _Pragma( "loopbound min 5 max 5" )
+  #pragma loopbound min 5 max 5
   while ( ( i = sha_fread( data, 1, BLOCK_SIZE, fin ) ) > 0 )
     sha_update( sha_info, data, i );
 
@@ -197,7 +197,7 @@ void sha_stream( struct SHA_INFO *sha_info, struct SHA_MY_FILE *fin )
 
 void sha_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   struct SHA_MY_FILE fin;
   fin.data = sha_data;
   fin.size = 32743;  // set size = 3247552 for input_large

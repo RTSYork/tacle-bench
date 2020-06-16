@@ -81,7 +81,7 @@ static uint8_t ppm_cpt, last_ppm_cpt;
 static void to_autopilot_from_last_radio ( void )
 {
   uint8_t i;
-  _Pragma( "loopbound min 9 max 9" )
+  #pragma loopbound min 9 max 9
   for ( i = 0; i < RADIO_CTL_NB; i++ )
     to_mega128.channels[ i ] = last_radio[ i ];
   to_mega128.status = ( radio_ok ? _BV( STATUS_RADIO_OK ) : 0 );
@@ -100,7 +100,7 @@ static void to_autopilot_from_last_radio ( void )
 
 void send_data_to_autopilot_task( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   #ifndef WCET_ANALYSIS
   if ( !SpiIsSelected() && spi_was_interrupted ) {
     spi_was_interrupted = FALSE;
@@ -178,7 +178,7 @@ int main( void )
 
 void test_ppm_task( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   if ( ppm_valid ) {
     ppm_valid = FALSE;
     ppm_cpt++;
@@ -200,14 +200,14 @@ void test_ppm_task( void )
 }
 void check_failsafe_task( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   if ( ( mode == MODE_MANUAL && !radio_ok ) ||
        ( mode == MODE_AUTO && !mega128_ok ) )
     servo_set( failsafe );
 }
 void check_mega128_values_task( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   #ifndef WCET_ANALYSIS
   if ( !SpiIsSelected() && spi_was_interrupted ) {
     if ( mega128_receive_valid ) {

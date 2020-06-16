@@ -144,7 +144,7 @@ unsigned short int Check_RAM (
     return start;
   }
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( start <= end_address ) {
     range = end_address - start;
     /* Number of bytes to check, less one. */
@@ -405,7 +405,7 @@ void CopyProgramCode( void )
   code_address_t i;
   INDIRECT_INTERNAL unsigned char code_byte;
 
-  _Pragma( "loopbound min 28672 max 28672" )
+  #pragma loopbound min 28672 max 28672
   for ( i = PROGRAM_COPY_START; i < PROGRAM_COPY_END; i++ ) {
     code_byte = GET_CODE_BYTE( i );
     SET_DATA_BYTE( ( data_address_t )i, code_byte );
@@ -537,7 +537,7 @@ void PatchCode( memory_patch_variables_t EXTERNAL *patch_variables )
 
   /* Memory block is copied from SRAM3 to SRAM1. */
 
-  _Pragma( "loopbound min 32 max 32" )
+  #pragma loopbound min 32 max 32
   for ( i = 0 ; i < patch_variables -> data_amount ; i++ ) {
     old_checksum ^= GET_DATA_BYTE( patch_variables -> destination + i );
     patch_value   = *( patch_variables -> source + i );

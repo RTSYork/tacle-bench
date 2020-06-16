@@ -71,7 +71,7 @@ void rijndael_dec_init( void )
   unsigned i;
   volatile int x = 0;
   rijndael_dec_fin.size ^= x;
-  _Pragma( "loopbound min 32768 max 32768" )
+  #pragma loopbound min 32768 max 32768
   for ( i = 0; i < rijndael_dec_fin.size; i++ )
     rijndael_dec_fin.data[ i ] ^= x;
 
@@ -82,7 +82,7 @@ void rijndael_dec_init( void )
   int by = 0;
 
   i = 0;                  /* this is a count for the input digits processed */
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   while ( i < 64 && *cp ) { /* the maximum key length is 32 bytes and       */
     /* hence at most 64 hexadecimal digits            */
     ch = rijndael_dec_toupper( *cp++ );     /* process a hexadecimal digit  */
@@ -139,7 +139,7 @@ void rijndael_dec_decfile( struct rijndael_dec_FILE *fin, struct aes *ctx )
 
   rijndael_dec_checksum += outbuf[ 15 ];
 
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 0; i < 16; ++i )      /* xor with previous input          */
     outbuf[ i ] ^= inbuf1[ i ];
 
@@ -147,7 +147,7 @@ void rijndael_dec_decfile( struct rijndael_dec_FILE *fin, struct aes *ctx )
   bp2 = inbuf2;
 
   /* TODO: this is necessarily an input-dependent loop bound */
-  _Pragma( "loopbound min 2046 max 2046" )
+  #pragma loopbound min 2046 max 2046
   while ( 1 ) {
     i = rijndael_dec_fread( bp1, 1, 16, fin );   /* read next encrypted block    */
     /* to first input buffer        */
@@ -161,7 +161,7 @@ void rijndael_dec_decfile( struct rijndael_dec_FILE *fin, struct aes *ctx )
 
     rijndael_dec_checksum += outbuf[ 15 ];
 
-    _Pragma( "loopbound min 16 max 16" )
+    #pragma loopbound min 16 max 16
     for ( i = 0; i < 16; ++i )  /* xor it with previous input block */
       outbuf[ i ] ^= bp2[ i ];
 
@@ -172,7 +172,7 @@ void rijndael_dec_decfile( struct rijndael_dec_FILE *fin, struct aes *ctx )
 
 void rijndael_dec_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   struct aes ctx[ 1 ];
 
   /* decryption in Cipher Block Chaining mode */

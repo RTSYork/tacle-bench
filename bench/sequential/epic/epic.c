@@ -626,7 +626,7 @@ void epic_init( void )
 {
   int i;
 
-  _Pragma( "loopbound min 4096 max 4096" )
+  #pragma loopbound min 4096 max 4096
   for ( i = 0; i < X_SIZE * Y_SIZE; ++i )
     epic_image[ i ] *= SCALE_FACTOR;
 }
@@ -651,7 +651,7 @@ void epic_build_pyr( float *image, int x_size, int y_size, int num_levels,
   x_level = x_size;
   y_level = y_size;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( level = 0;  level < num_levels; ++level ) {
     epic_build_level( image, x_level, y_level, lo_filter, hi_filter,
                       filter_size, image );
@@ -720,12 +720,12 @@ void epic_internal_transpose( float *mat, int rows, int cols )
   register float swap_val;
 
   /* loop, ignoring first and last elements */
-  _Pragma( "loopbound min 14 max 2399" )
+  #pragma loopbound min 14 max 2399
   for ( current_pos = 1; current_pos < modulus; ++current_pos ) {
     /* Compute swap position */
     swap_pos = current_pos;
 
-    _Pragma( "loopbound min 1 max 2" )
+    #pragma loopbound min 1 max 2
     do {
       swap_pos = ( swap_pos * cols ) % modulus;
     } while ( swap_pos < current_pos );
@@ -773,21 +773,21 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
   res_pos = 0;
   first_col = xgrid_start - x_fmid + xgrid_step;
 
-  _Pragma( "loopbound min 1 max 4" )
+  #pragma loopbound min 1 max 4
   for ( y_pos = ygrid_start - y_fmid - 1; y_pos < 0; y_pos += ygrid_step ) {
-    _Pragma( "loopbound min 1 max 4" )
+    #pragma loopbound min 1 max 4
     for ( x_pos = xgrid_start - x_fmid;   /* top-left corner */
           x_pos < 0;
           x_pos += xgrid_step ) {
       epic_reflect1( filt, x_fdim, y_fdim, x_pos, y_pos, temp, FILTER );
       sum = 0.0f;
       x_filt = y_im_lin = 0;
-      _Pragma( "loopbound min 1 max 15" )
+      #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
         im_pos = y_im_lin;
 
-        _Pragma( "loopbound min 1 max 15" )
+        #pragma loopbound min 1 max 15
         for ( ; x_filt < y_filt_lin; ++x_filt ) {
           sum += image[ im_pos ] * temp[ x_filt ];
           ++im_pos;
@@ -799,17 +799,17 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
     }
     first_col = x_pos + 1;
     epic_reflect1( filt, x_fdim, y_fdim, 0, y_pos, temp, FILTER );
-    _Pragma( "loopbound min 41 max 46" )
+    #pragma loopbound min 41 max 46
     for ( x_pos = first_col;          /* top edge */
           x_pos < last_ctr_col;
           x_pos += xgrid_step ) {
       sum = 0.0f;
       x_filt = y_im_lin = 0;
-      _Pragma( "loopbound min 1 max 15" )
+      #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
         im_pos = x_pos + y_im_lin;
-        _Pragma( "loopbound min 1 max 15" )
+        #pragma loopbound min 1 max 15
         for ( ; x_filt < y_filt_lin; ++x_filt ) {
           sum += image[ im_pos ] * temp[ x_filt ];
           ++im_pos;
@@ -820,19 +820,19 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
       ++res_pos;
     }
     rt_edge_res_pos = res_pos + x_res_dim;   /* save this for later ... */
-    _Pragma( "loopbound min 1 max 4" )
+    #pragma loopbound min 1 max 4
     for ( x_pos += ( 1 - last_ctr_col );  /* top-right corner */
           x_pos < x_stop;
           x_pos += xgrid_step ) {
       epic_reflect1( filt, x_fdim, y_fdim, x_pos, y_pos, temp, FILTER );
       sum = 0.0f;
       x_filt = y_im_lin = 0;
-      _Pragma( "loopbound min 1 max 15" )
+      #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
         im_pos = y_im_lin + last_ctr_col;
 
-        _Pragma( "loopbound min 1 max 15" )
+        #pragma loopbound min 1 max 15
         for ( ; x_filt < y_filt_lin; ++x_filt ) {
           sum += image[ im_pos ] * temp[ x_filt ];
           ++im_pos;
@@ -846,22 +846,22 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
 
   first_row = x_dim * ( y_pos + 1 ); /* need this to go down the sides */
   prev_res_pos = res_pos;
-  _Pragma( "loopbound min 1 max 4" )
+  #pragma loopbound min 1 max 4
   for ( x_pos = xgrid_start - x_fmid;      /* left edge */
         x_pos < 1;
         x_pos += xgrid_step ) {
     res_pos = prev_res_pos;
     epic_reflect1( filt, x_fdim, y_fdim, x_pos, 0, temp, FILTER );
-    _Pragma( "loopbound min 41 max 97" )
+    #pragma loopbound min 41 max 97
     for ( y_pos = first_row; y_pos < last_ctr_row;
           y_pos += ygrid_step_full ) {
       sum = 0.0f;
       x_filt = 0, y_im_lin = y_pos;
-      _Pragma( "loopbound min 1 max 15" )
+      #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
         im_pos = y_im_lin;
-        _Pragma( "loopbound min 1 max 15" )
+        #pragma loopbound min 1 max 15
         for ( ; x_filt < y_filt_lin; x_filt++ ) {
           sum += image[ im_pos ] * temp[ x_filt ];
           ++im_pos;
@@ -874,22 +874,22 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
     prev_res_pos++;
   }
   epic_reflect1( filt, x_fdim, y_fdim, 0, 0, temp, FILTER );
-  _Pragma( "loopbound min 41 max 97" )
+  #pragma loopbound min 41 max 97
   for ( y_pos = first_row; /* center region of image */
         y_pos < last_ctr_row;
         y_pos += ygrid_step_full ) {
     res_pos = prev_res_pos;
-    _Pragma( "loopbound min 41 max 46" )
+    #pragma loopbound min 41 max 46
     for ( x_pos = first_col;
           x_pos < last_ctr_col;
           x_pos += xgrid_step ) {
       sum = 0.0f;
       x_filt = 0, y_im_lin = y_pos;
-      _Pragma( "loopbound min 1 max 15" )
+      #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
         im_pos = x_pos + y_im_lin;
-        _Pragma( "loopbound min 1 max 15" )
+        #pragma loopbound min 1 max 15
         for ( ; x_filt < y_filt_lin; ++x_filt ) {
           sum += image[ im_pos ] * temp[ x_filt ];
           ++im_pos;
@@ -902,22 +902,22 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
     prev_res_pos += x_res_dim;
   }
   prev_res_pos = rt_edge_res_pos;
-  _Pragma( "loopbound min 1 max 4" )
+  #pragma loopbound min 1 max 4
   for ( x_pos += ( 1 - last_ctr_col );           /* right edge */
         x_pos < x_stop;
         x_pos += xgrid_step ) {
     res_pos = prev_res_pos;
     epic_reflect1( filt, x_fdim, y_fdim, x_pos, 0, temp, FILTER );
-    _Pragma( "loopbound min 41 max 97" )
+    #pragma loopbound min 41 max 97
     for ( y_pos = first_row; y_pos < last_ctr_row;
           y_pos += ygrid_step_full ) {
       sum = 0.0f;
       x_filt = 0, y_im_lin = y_pos;
-      _Pragma( "loopbound min 1 max 15" )
+      #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim;
             y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
-        _Pragma( "loopbound min 1 max 15" )
+        #pragma loopbound min 1 max 15
         for ( im_pos = y_im_lin + last_ctr_col;
               x_filt < y_filt_lin;
               ++x_filt ) {
@@ -933,21 +933,21 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
   }       /* end mid */
 
   res_pos -= ( x_res_dim - 1 );          /* go to lower left corner */
-  _Pragma( "loopbound min 1 max 4" )
+  #pragma loopbound min 1 max 4
   for ( y_pos = ( ( y_pos - last_ctr_row ) / x_dim ) + 1; /* bottom */
         y_pos < y_stop;
         y_pos += ygrid_step ) {
-    _Pragma( "loopbound min 1 max 4" )
+    #pragma loopbound min 1 max 4
     for ( x_pos = xgrid_start - x_fmid;    /* bottom-left corner */
           x_pos < 1;
           x_pos += xgrid_step ) {
       epic_reflect1( filt, x_fdim, y_fdim, x_pos, y_pos, temp, FILTER );
       sum = 0.0f;
       x_filt = 0, y_im_lin = last_ctr_row;
-      _Pragma( "loopbound min 1 max 15" )
+      #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
-        _Pragma( "loopbound min 1 max 15" )
+        #pragma loopbound min 1 max 15
         for ( im_pos = y_im_lin;
               x_filt < y_filt_lin;
               ++x_filt ) {
@@ -960,16 +960,16 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
       ++res_pos;
     }
     epic_reflect1( filt, x_fdim, y_fdim, 0, y_pos, temp, FILTER );
-    _Pragma( "loopbound min 41 max 46" )
+    #pragma loopbound min 41 max 46
     for ( x_pos = first_col;        /* bottom edge */
           x_pos < last_ctr_col;
           x_pos += xgrid_step ) {
       sum = 0.0f;
       x_filt = 0, y_im_lin = last_ctr_row;
-      _Pragma( "loopbound min 1 max 15" )
+      #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
-        _Pragma( "loopbound min 1 max 15" )
+        #pragma loopbound min 1 max 15
         for ( im_pos = x_pos + y_im_lin;
               x_filt < y_filt_lin;
               ++x_filt ) {
@@ -981,17 +981,17 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
       result[ res_pos ] = sum;
       ++res_pos;
     }
-    _Pragma( "loopbound min 1 max 4" )
+    #pragma loopbound min 1 max 4
     for ( x_pos += 1 - last_ctr_col; /* bottom-right corner */
           x_pos < x_stop;
           x_pos += xgrid_step ) {
       epic_reflect1( filt, x_fdim, y_fdim, x_pos, y_pos, temp, FILTER );
       sum = 0.0f;
       x_filt = 0, y_im_lin = last_ctr_row;
-      _Pragma( "loopbound min 1 max 15" )
+      #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
-        _Pragma( "loopbound min 1 max 15" )
+        #pragma loopbound min 1 max 15
         for ( im_pos = y_im_lin + last_ctr_col;
               x_filt < y_filt_lin;
               ++x_filt ) {
@@ -1059,7 +1059,7 @@ void epic_reflect1( float *filt, int x_dim, int y_dim, int x_pos, int y_pos,
   int mx_pos = ( x_dim / 2 ) + 1;
   int my_pos = ( y_dim / 2 ) + 1;
 
-  _Pragma( "loopbound min 15 max 15" )
+  #pragma loopbound min 15 max 15
   for ( i = 0; i < filt_sz; ++i ) result[ i ] = 0.0f;
 
   /* if EXPAND and filter is centered on image edge, do not reflect */
@@ -1081,10 +1081,10 @@ void epic_reflect1( float *filt, int x_dim, int y_dim, int x_pos, int y_pos,
 
   y_edge = y_edge_dist;
   /* reflect at boundary of image */
-  _Pragma( "loopbound min 1 max 15" )
+  #pragma loopbound min 1 max 15
   for ( y_filt = y_start; y_filt < y_stop; y_filt += x_dim ) {
     x_edge = x_edge_dist;
-    _Pragma( "loopbound min 1 max 15" )
+    #pragma loopbound min 1 max 15
     for ( x_filt = y_filt + x_start; x_filt < y_filt + x_stop; ++x_filt ) {
       result[ abs( y_base - abs( y_edge ) ) + abs( x_base - abs( x_edge ) ) ]
       += filt[ x_filt ];
@@ -1096,11 +1096,11 @@ void epic_reflect1( float *filt, int x_dim, int y_dim, int x_pos, int y_pos,
   /* if EXPAND and filter is not centered on image edge, mult edge by 2 */
   if ( f_or_e IS EXPAND ) {
     if ( ( abs( x_pos ) ISNT mx_pos ) AND ( x_pos ISNT 0 ) )
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       for ( y_filt = x_base; y_filt < filt_sz; y_filt += x_dim )
         result[ y_filt ] += result[ y_filt ];
     if ( ( abs( y_pos ) ISNT my_pos ) AND ( y_pos ISNT 0 ) )
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       for ( x_filt = y_base; x_filt < y_base + x_dim; ++x_filt )
         result[ x_filt ] += result[ x_filt ];
   }
@@ -1113,7 +1113,7 @@ void epic_reflect1( float *filt, int x_dim, int y_dim, int x_pos, int y_pos,
 
 void epic_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   epic_build_pyr( epic_image, X_SIZE, Y_SIZE, NUM_LEVELS, epic_lo_filter,
                   epic_hi_filter, FILTER_SIZE );
 }
@@ -1122,7 +1122,7 @@ int epic_return()
 {
   int i;
   int checksum = 0;
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0 ; i < X_SIZE * Y_SIZE ; i += Y_SIZE + 1 )
     checksum += epic_image[ i ];
   return ( checksum == 43968 ? 0 : 1 );

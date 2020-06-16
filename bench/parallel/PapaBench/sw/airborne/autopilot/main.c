@@ -375,7 +375,7 @@ inline uint8_t inflight_calib_mode_update ( void )
 */
 void radio_control_task( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   bool_t calib_mode_changed;
   if ( link_fbw_receive_valid ) {
     uint8_t mode_changed = FALSE;
@@ -466,7 +466,7 @@ void course_run( void )
 
 void altitude_control_task( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   if ( pprz_mode == PPRZ_MODE_AUTO2 || pprz_mode == PPRZ_MODE_HOME ) {
     if ( vertical_mode == VERTICAL_MODE_AUTO_ALT )
       altitude_pid_run();
@@ -474,7 +474,7 @@ void altitude_control_task( void )
 }
 void climb_control_task( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   if ( pprz_mode == PPRZ_MODE_AUTO2 || pprz_mode == PPRZ_MODE_HOME ) {
     if ( vertical_mode >= VERTICAL_MODE_AUTO_CLIMB )
       climb_pid_run();
@@ -614,7 +614,7 @@ void periodic_task( void )
 
 void stabilisation_task( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   ir_update();
   estimator_update_state_infrared();
   roll_pitch_pid_run(); // Set  desired_aileron & desired_elevator

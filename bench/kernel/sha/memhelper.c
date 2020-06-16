@@ -98,7 +98,7 @@ void sha_wordcopy_fwd_aligned( long int dstp, long int srcp, size_t len )
       }
   }
 
-  _Pragma( "loopbound min 1 max 2" )            //max 1
+  #pragma loopbound min 1 max 2            //max 1
   do {
     switch ( switch_target ) {
       case 8:

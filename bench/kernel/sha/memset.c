@@ -38,7 +38,7 @@ void *sha_glibc_memset( void *dstpp, int c, size_t len )
 
     /* There are at least some bytes to set.
       No need to test for LEN == 0 in this alignment loop.  */
-    _Pragma( "loopbound min 3 max 3" )
+    #pragma loopbound min 3 max 3
     while ( dstp % OPSIZ != 0 ) {
       ( ( BYTE * ) dstp )[ 0 ] = c;
       dstp += 1;
@@ -47,7 +47,7 @@ void *sha_glibc_memset( void *dstpp, int c, size_t len )
 
     /* Write 8 `op_t' per iteration until less than 8 `op_t' remain.  */
     xlen = len / ( OPSIZ * 8 );
-    _Pragma( "loopbound min 0 max 1" )
+    #pragma loopbound min 0 max 1
     while ( xlen > 0 ) {
       ( ( op_t * ) dstp )[ 0 ] = cccc;
       ( ( op_t * ) dstp )[ 1 ] = cccc;
@@ -64,7 +64,7 @@ void *sha_glibc_memset( void *dstpp, int c, size_t len )
 
     /* Write 1 `op_t' per iteration until less than OPSIZ bytes remain.  */
     xlen = len / OPSIZ;
-    _Pragma( "loopbound min 1 max 2" )      
+    #pragma loopbound min 1 max 2      
     while ( xlen > 0 ) {
       ( ( op_t * ) dstp )[ 0 ] = cccc;
       dstp += OPSIZ;
@@ -74,7 +74,7 @@ void *sha_glibc_memset( void *dstpp, int c, size_t len )
   }
 
   /* Write the last few bytes.  */
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( len > 0 ) {
     ( ( BYTE * ) dstp )[ 0 ] = c;
     dstp += 1;

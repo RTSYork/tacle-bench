@@ -84,7 +84,7 @@ LPFData fmref_lpf_data;
 
 void fmref_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   int i;
   EqualizerData eq_data;
 
@@ -103,7 +103,7 @@ void fmref_main( void )
   /* run_demod needs 1 input, OK here. */
   /* run_equalizer needs 51 inputs (same reason as for LPF).  This means
      running the pipeline up to demod 50 times in advance: */
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0; i < 64; i++ ) {
     if ( fmref_fb1.rlen - fmref_fb1.rpos < NUM_TAPS + 1 )
       fmref_get_floats( &fmref_fb1 );
@@ -112,7 +112,7 @@ void fmref_main( void )
   }
 
   /* Main loop: */
-  _Pragma( "loopbound min 2 max 2" )
+  #pragma loopbound min 2 max 2
   while ( fmref_numiters-- > 0 ) {
     /* The low-pass filter will need NUM_TAPS+1 items; read them if we
        need to. */
@@ -133,7 +133,7 @@ void fmref_fb_compact( FloatBuffer *fb )
   char *target;
   target = ( char * )( fb->buff );
   source = ( char * )( fb->buff + fb->rpos );
-  _Pragma( "loopbound min 0 max 60" )
+  #pragma loopbound min 0 max 60
   for ( i = 0; i < fb->rlen - fb->rpos; i++ )
     target[ i ] = source[ i ];
   fb->rlen -= fb->rpos;
@@ -162,7 +162,7 @@ void fmref_get_floats( FloatBuffer *fb )
   fmref_fb_compact( fb );
 
   /* Fill the remaining space in fb with 1.0. */
-  _Pragma( "loopbound min 140 max 200" )
+  #pragma loopbound min 140 max 200
   while ( fb->rlen < IN_BUFFER_LEN ) {
     fb->buff[ fb->rlen++ ] = ( float )x;
     x++;
@@ -181,7 +181,7 @@ void fmref_init_lpf_data( LPFData *data, float freq, int taps, int decimation )
   data->taps = taps;
   data->decimation = decimation;
 
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0; i < taps; i++ ) {
     if ( i - m / 2 == 0.0f )
       data->coeff[ i ] = w / M_PI;
@@ -196,7 +196,7 @@ void fmref_run_lpf( FloatBuffer *fbin, FloatBuffer *fbout, LPFData *data )
   float sum = 0.0f;
   int i = 0;
 
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0; i < data->taps; i++ )
     sum += fbin->buff[ fbin->rpos + i ] * data->coeff[ i ];
 
@@ -225,16 +225,16 @@ void fmref_init_equalizer( EqualizerData *data )
   /* Equalizer structure: there are ten band-pass filters, with
      cutoffs as shown below.  The outputs of these filters get added
      together.  Each band-pass filter is LPF(high)-LPF(low). */
-  _Pragma( "loopbound min 11 max 11" )
+  #pragma loopbound min 11 max 11
   for ( i = 0; i < EQUALIZER_BANDS + 1; i++ )
     fmref_init_lpf_data( &data->lpf[ i ], fmref_eq_cutoffs[ i ], 64, 0 );
 
   /* Also initialize member buffers. */
-  _Pragma( "loopbound min 11 max 11" )
+  #pragma loopbound min 11 max 11
   for ( i = 0; i < EQUALIZER_BANDS + 1; i++ )
     data->fb[ i ].rpos = data->fb[ i ].rlen = 0;
 
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( i = 0; i < EQUALIZER_BANDS; i++ ) {
     // the gain amplifies the middle bands the most
     float val = ( ( ( float )i ) - ( ( ( float )( EQUALIZER_BANDS - 1 ) ) /
@@ -255,7 +255,7 @@ void fmref_run_equalizer( FloatBuffer *fbin, FloatBuffer *fbout,
   rpos = fbin->rpos;
 
   /* Run the child filters. */
-  _Pragma( "loopbound min 11 max 11" )
+  #pragma loopbound min 11 max 11
   for ( i = 0; i < EQUALIZER_BANDS + 1; i++ ) {
     fbin->rpos = rpos;
     fmref_run_lpf( fbin, &data->fb[ i ], &data->lpf[ i ] );
@@ -264,7 +264,7 @@ void fmref_run_equalizer( FloatBuffer *fbin, FloatBuffer *fbout,
 
   /* Now process the results of the filters.  Remember that each band is
      output(hi)-output(lo). */
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( i = 0; i < EQUALIZER_BANDS; i++ )
     sum += ( lpf_out[ i + 1 ] - lpf_out[ i ] ) * data->gain[ i ];
 

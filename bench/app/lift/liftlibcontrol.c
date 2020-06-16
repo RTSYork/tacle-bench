@@ -120,14 +120,14 @@ void lift_check_level()
   int i;
   int middle = lift_one_level >> 2;
   if ( lift_cntValid ) {
-    _Pragma( "loopbound min 14 max 14" )
+    #pragma loopbound min 14 max 14
     for ( lift_level = 1; lift_level < 14; ++lift_level ) {
       if ( lift_cnt < lift_levelPos[ lift_level ] - middle )
         break;
     }
   } else
     lift_level = 0;
-  _Pragma( "loopbound min 14 max 14" )
+  #pragma loopbound min 14 max 14
   for ( i = 0; i < 14; ++i )
     lift_ctrl_io_led[ i ] = ( i == lift_level - 1 );
 }

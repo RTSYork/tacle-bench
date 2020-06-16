@@ -70,9 +70,9 @@ int cosf_return( void )
 
 void cosf_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   float i;
-  _Pragma( "loopbound min 100 max 100" )
+  #pragma loopbound min 100 max 100
   for ( i = 0.0f; i < 10; i += 0.1f )
     cosf_solutions += basicmath___cosf( i );
 }

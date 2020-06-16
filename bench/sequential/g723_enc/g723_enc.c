@@ -248,7 +248,7 @@ int g723_enc_quan(
       j = 0,
       k = 1;
 
-  _Pragma( "loopbound min 3 max 15" )
+  #pragma loopbound min 3 max 15
   for ( i = 0; i < size; ++i ) {
 
     if ( k ) {
@@ -277,7 +277,7 @@ g723_enc_predictor_zero(
   int   sezi;
 
   sezi = g723_enc_fmult( state_ptr->b[ 0 ] >> 2, state_ptr->dq[ 0 ] );
-  _Pragma( "loopbound min 5 max 5" )
+  #pragma loopbound min 5 max 5
   for ( i = 1; i < 6; i++ )     /* ACCUM */
     sezi += g723_enc_fmult( state_ptr->b[ i ] >> 2, state_ptr->dq[ i ] );
 
@@ -546,7 +546,7 @@ g723_enc_update(
         state_ptr->a[ 0 ] = a1ul;
 
     /* UPB : update predictor zeros b[ 6 ] */
-    _Pragma( "loopbound min 6 max 6" )
+    #pragma loopbound min 6 max 6
     for ( cnt = 0; cnt < 6; cnt++ ) {
       if ( code_size == 5 )   /* for 40Kbps G.723 */
         state_ptr->b[ cnt ] -= state_ptr->b[ cnt ] >> 9;
@@ -562,7 +562,7 @@ g723_enc_update(
     }
   }
 
-  _Pragma( "loopbound min 5 max 5" )
+  #pragma loopbound min 5 max 5
   for ( cnt = 5; cnt > 0; cnt-- )
     state_ptr->dq[ cnt ] = state_ptr->dq[ cnt - 1 ];
   /* FLOAT A : convert dq[ 0 ] to 4-bit exp, 6-bit mantissa f.p. */
@@ -796,13 +796,13 @@ g723_enc_init_state(
   state_ptr->dml = 0;
   state_ptr->ap = 0;
 
-  _Pragma( "loopbound min 2 max 2" )
+  #pragma loopbound min 2 max 2
   for ( cnta = 0; cnta < 2; cnta++ ) {
     state_ptr->a[ cnta ] = 0;
     state_ptr->pk[ cnta ] = 0;
     state_ptr->sr[ cnta ] = 32;
   }
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( cnta = 0; cnta < 6; cnta++ ) {
     state_ptr->b[ cnta ] = 0;
     state_ptr->dq[ cnta ] = 32;
@@ -817,7 +817,7 @@ void g723_enc_init()
   volatile int x = 0;
   g723_enc_init_state( &g723_enc_state );
 
-  _Pragma( "loopbound min 256 max 256" )
+  #pragma loopbound min 256 max 256
   for ( i = 0; i < 256; i++ )
     g723_enc_INPUT[ i ] += x;
 }
@@ -828,7 +828,7 @@ int g723_enc_return()
   int i;
   int check_sum = 0;
 
-  _Pragma( "loopbound min 256 max 256" )
+  #pragma loopbound min 256 max 256
   for ( i = 0; i < 256; i++ )
     check_sum += g723_enc_OUTPUT[ i ];
 
@@ -841,7 +841,7 @@ int g723_enc_return()
 
 void g723_enc_main()
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
 //  struct g72x_state state;
   short   sample_short; //mv
   unsigned char   code;
@@ -855,7 +855,7 @@ void g723_enc_main()
   in_coding = AUDIO_ENCODING_ALAW;
   in_buf = &sample_short;
 
-  _Pragma( "loopbound min 256 max 256" )
+  #pragma loopbound min 256 max 256
   for ( i = 0; i < 256; i++ ) {
     *in_buf = g723_enc_INPUT[ i ];
     code = g723_enc_g723_24_encoder( sample_short, in_coding, &g723_enc_state );
@@ -863,7 +863,7 @@ void g723_enc_main()
   }
 
   /* Write zero codes until all residual codes are written out */
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( resid )
     resid = g723_enc_pack_output( 0, enc_bits );
 }

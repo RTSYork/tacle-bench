@@ -114,7 +114,7 @@ servo_init( void )
   cbi( _4017_CLOCK_PORT, _4017_CLOCK_PIN );
 
   /* Set all servos at their midpoints */
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( i = 0 ; i < _4017_NB_CHANNELS ; i++ )
     //    servo_widths[ i ] = SERVO_MIN;
     servo_widths[ i ] = ( SERVO_MIN + SERVO_MAX ) / 2;
@@ -173,13 +173,13 @@ void servo_set_one( uint8_t servo, uint16_t value_us )
 }
 
 void
-_Pragma( "entrypoint" ) servo_transmit( void )
+#pragma entrypoint servo_transmit( void )
 {
   uint8_t servo;
   uart_transmit( ( uint8_t )0 );
   uart_transmit( ( uint8_t )0 );
 
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( servo = 0; servo < _4017_NB_CHANNELS; servo++ ) {
     uart_transmit( ( uint8_t )( servo_widths[ servo ] >> 8 ) );
     uart_transmit( ( uint8_t )( servo_widths[ servo ] & 0xff ) );

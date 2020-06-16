@@ -413,7 +413,7 @@ void powerwindow_Booleaninputarray_initialize( powerwindow_boolean_T *arrayA,
 {
 
   register int i;
-//    _Pragma( "loopbound min powerwindow_input_length max powerwindow_input_length" )
+//    #pragma loopbound min powerwindow_input_length max powerwindow_input_length
   for ( i = 0; i < powerwindow_input_length; i++ )
     arrayA[ i ] = arrayB[ i ];
 }
@@ -423,7 +423,7 @@ void powerwindow_Uint8inputarray_initialize( powerwindow_uint8_T *arrayA,
 {
 
   register int i;
-//    _Pragma( "loopbound min powerwindow_input_length max powerwindow_input_length" )
+//    #pragma loopbound min powerwindow_input_length max powerwindow_input_length
   for ( i = 0; i < powerwindow_input_length; i++ )
     arrayA[ i ] = arrayB[ i ];
 }
@@ -669,7 +669,7 @@ void powerwindow_init( void )
 
 void powerwindow_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   /* Attach powerwindow_main to a timer or interrupt service routine with
      period 0.005 seconds (the model's base sample time) here.  The
      call syntax for powerwindow_main is

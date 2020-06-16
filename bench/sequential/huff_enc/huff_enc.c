@@ -158,7 +158,7 @@ void huff_enc_init( void )
 int huff_enc_return( void )
 {
   int i;
-  _Pragma( "loopbound min 419 max 419" )
+  #pragma loopbound min 419 max 419
   for ( i = 0; i < huff_enc_encoded_len; i++ ) {
     if ( huff_enc_encoded[ i ] != huff_enc_output[ i ] ) return i + 1;
   }
@@ -204,7 +204,7 @@ void huff_enc_write_bin_val( huff_enc_t_bin_val bin_val )
   unsigned char bin_pos = ( bin_val.bits_nb - 1 ) & 7;
   unsigned int pos_byte = ( bin_val.bits_nb - 1 ) >> 3;
 
-  _Pragma( "loopbound min 1 max 9" )
+  #pragma loopbound min 1 max 9
   for ( bit_indice = 1;                                                     
         bit_indice <= bin_val.bits_nb;
         bit_indice++ ) {
@@ -255,7 +255,7 @@ void huff_enc_write_header( huff_enc_t_bin_val codes_table[ 257 ] )
   bin_val_to_0.bits_nb = 1;
   *bin_val_to_1.bits = 1;
   bin_val_to_1.bits_nb = 1;
-  _Pragma( "loopbound min 256 max 256" )
+  #pragma loopbound min 256 max 256
   for ( i = 0, j = 0; j <= 255; j++ )
     if ( codes_table[ j ].bits_nb ) i++;
   /* From there, i contains the number of bytes of the several
@@ -269,7 +269,7 @@ void huff_enc_write_header( huff_enc_t_bin_val codes_table[ 257 ] )
     *bin_val.bits = ( unsigned char )( i - 1 );
     huff_enc_write_bin_val( bin_val );
     bin_val.bits_nb = 8;
-    _Pragma( "loopbound min 256 max 256" )
+    #pragma loopbound min 256 max 256
     for ( j = 0; j <= 255; j++ )
       if ( codes_table[ j ].bits_nb ) {
         *bin_val.bits = ( unsigned char )j;
@@ -278,7 +278,7 @@ void huff_enc_write_header( huff_enc_t_bin_val codes_table[ 257 ] )
   } else {
     /* Encoding of the appeared bytes with a block of bits */
     huff_enc_write_bin_val( bin_val_to_1 );
-    _Pragma( "loopbound min 256 max 256" )
+    #pragma loopbound min 256 max 256
     for ( j = 0; j <= 255; j++ )
       if ( codes_table[ j ].bits_nb )
         huff_enc_write_bin_val( bin_val_to_1 );
@@ -286,7 +286,7 @@ void huff_enc_write_header( huff_enc_t_bin_val codes_table[ 257 ] )
   };
   /* Second part of the header: Specifies the encoding of the bytes
      (fictive or not) that appear in the source of encoding */
-  _Pragma( "loopbound min 257 max 257" )
+  #pragma loopbound min 257 max 257
   for ( i = 0; i <= 256; i++ )
     if ( ( j = codes_table[ i ].bits_nb ) != 0 ) {
       if ( j < 33 ) {
@@ -324,7 +324,7 @@ void huff_enc_swapi( char *ii, char *ij, unsigned long es )
 
   i = ( char * )ii;
   j = ( char * )ij;
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   do {
     c = *i;
     *i++ = *j;
@@ -368,7 +368,7 @@ void huff_enc_qsort( char *a, unsigned long n, unsigned long es )       //wird i
   unsigned int flowfactdummy = 0;
   counter1++;
   printf("%d\n", counter1);
-  _Pragma( "loopbound min 0 max 7" )
+  #pragma loopbound min 0 max 7
   while ( n > 1 ) {
     if ( n > 10 )
       pi = huff_enc_pivot( a, n, es );
@@ -380,16 +380,16 @@ void huff_enc_qsort( char *a, unsigned long n, unsigned long es )       //wird i
     pi = a;
     pn = a + n * es;
     pj = pn;
-    _Pragma( "loopbound min 0 max 109" )
+    #pragma loopbound min 0 max 109
     while ( 1 ) {
       /* wcc note: this assignment expression was added to avoid assignment of
          multiple loop bound annotations to same loop (cf. Ticket #0002323). */
       flowfactdummy++;
-      _Pragma( "loopbound min 1 max 19" )
+      #pragma loopbound min 1 max 19
       do {
         pi += es;
       } while ( pi < pn && huff_enc_weighhuff_enc_t_tree_comp( pi, a ) < 0 );
-      _Pragma( "loopbound min 1 max 25" )
+      #pragma loopbound min 1 max 25
       do {
         pj -= es;
       } while ( pj > a && huff_enc_weighhuff_enc_t_tree_comp( pj, a ) > 0 );
@@ -425,7 +425,7 @@ huff_enc_t_tree *huff_enc_build_tree_encoding( huff_enc_t_tree heap[ 514 ] )
   huff_enc_t_tree *ptr_fictive_tree;
 
   /* Sets up the occurrences number of all bytes to 0 */
-  _Pragma( "loopbound min 257 max 257" )
+  #pragma loopbound min 257 max 257
   for ( i = 0; i <= 256; i++ ) {
     occurrences_table[ i ] = &heap[ heap_top++ ];
     occurrences_table[ i ]->byte = i;
@@ -436,7 +436,7 @@ huff_enc_t_tree *huff_enc_build_tree_encoding( huff_enc_t_tree heap[ 514 ] )
   /* Valids the occurrences of 'occurrences_table' with regard to the data to
      compress */
   if ( !huff_enc_end_of_data() ) {
-    _Pragma( "loopbound min 600 max 600" )
+    #pragma loopbound min 600 max 600
     while ( !huff_enc_end_of_data() ) {
       i = huff_enc_read_byte();
       occurrences_table[ i ]->weight++;
@@ -446,13 +446,13 @@ huff_enc_t_tree *huff_enc_build_tree_encoding( huff_enc_t_tree heap[ 514 ] )
     /* Sorts the occurrences table depending on the weight of each character */
     huff_enc_qsort( ( char * )occurrences_table, 257, sizeof( huff_enc_t_tree * ) );
 
-    _Pragma( "loopbound min 218 max 218" )
+    #pragma loopbound min 218 max 218
     for ( i = 256; ( i != 0 ) && ( !occurrences_table[ i ]->weight ); i-- )
       ; 
     i++;
     /* From there, 'i' gives the number of different bytes with a 0 occurrence
        in the stream to compress */
-    _Pragma( "loopbound min 38 max 38" )
+    #pragma loopbound min 38 max 38
     while ( i > 0 ) {
       /* Looks up (i+1)/2 times the occurrence table to link the nodes in an
          unique tree */
@@ -497,7 +497,7 @@ void huff_enc_encode_codes_table( huff_enc_t_tree *tree,
       /* The sub-trees on left begin with an bit set to 1 */
     {
       tmp_code_val = *code_val;
-      _Pragma( "loopbound min 31 max 31" )
+      #pragma loopbound min 31 max 31
       for ( i = 31; i > 0; i-- )
         code_val->bits[ i ] = ( code_val->bits[ i ] << 1 ) |
                             ( code_val->bits[ i - 1 ] >> 7 );
@@ -510,7 +510,7 @@ void huff_enc_encode_codes_table( huff_enc_t_tree *tree,
       /* The sub-trees on right begin with an bit set to 0 */
     {
       tmp_code_val = *code_val;
-      _Pragma( "loopbound min 31 max 31" )
+      #pragma loopbound min 31 max 31
       for ( i = 31; i > 0; i-- )
         code_val->bits[ i ] = ( code_val->bits[ i ] << 1 ) |
                             ( code_val->bits[ i - 1 ] >> 7 );
@@ -534,19 +534,19 @@ void huff_enc_create_codes_table( huff_enc_t_tree *tree,
   unsigned int i, j;
   huff_enc_t_bin_val code_val;
 
-  _Pragma( "loopbound min 32 max 32" )
+  #pragma loopbound min 32 max 32
   for ( i = 0; i < 32; i++ )
     code_val.bits[ i ] = 0;
   code_val.bits_nb = 0;
-  _Pragma( "loopbound min 257 max 257" )
+  #pragma loopbound min 257 max 257
   for ( j = 0; j < 257; j++ ) {
-    _Pragma( "loopbound min 32 max 32" )
+    #pragma loopbound min 32 max 32
     for ( i = 0; i < 32; i++ )
       codes_table[ j ].bits[ i ] = 0;
     codes_table[ j ].bits_nb = 0;
   }
-  _Pragma( "marker call_encode" )
-  _Pragma( "flowrestriction 1*huff_enc_encode_codes_table <= 77*call_encode" )
+  #pragma marker call_encode
+  #pragma flowrestriction 1*huff_enc_encode_codes_table <= 77*call_encode
   huff_enc_encode_codes_table( tree, codes_table, &code_val );
 }
 
@@ -558,7 +558,7 @@ void huff_enc_main()
    Errors: None
 */
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   huff_enc_t_tree *tree;
   huff_enc_t_tree heap[ 514 ];
   huff_enc_t_bin_val encoding_table[ 257 ];
@@ -573,7 +573,7 @@ void huff_enc_main()
     huff_enc_write_header( encoding_table );
     /* Writes the defintion of the encoding */
     huff_enc_beginning_of_data();  /* Real compression of the data */
-    _Pragma( "loopbound min 600 max 600" )
+    #pragma loopbound min 600 max 600
     while ( !huff_enc_end_of_data() ) {
       byte_read = huff_enc_read_byte();
       huff_enc_write_bin_val( encoding_table[ byte_read ] );

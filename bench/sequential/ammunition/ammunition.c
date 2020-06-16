@@ -59,7 +59,7 @@ int ammunition_result;
 void ammunition_reset_str_bits( char *str, char *s )
 {
   int i;
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( i = 0; i < 8; i++ ) {
     str[ i ] = 0;
     s[ i ] = 0;
@@ -71,19 +71,19 @@ void ammunition_reset_str_arithm( char *str, char *s, char *d, char *e,
                                   char *g )
 {
   int i;
-  _Pragma( "loopbound min 20 max 20" )
+  #pragma loopbound min 20 max 20
   for ( i = 0; i < 20; i++ ) {
     str[ i ] = 0;
     s[ i ] = 0;
   }
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( i = 0; i < 4; i++ ) {
     d[ i ] = 0;
     e[ i ] = 0;
   }
 
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0; i < 6; i++ )
     g[ i ] = 0;
 }
@@ -100,16 +100,16 @@ int ammunition_bits_test()
   /* Test 1 */
   ammunition_reset_str_bits( str, str1 );
 
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0; i < sizeof ( str ) * CHAR_BIT; i++ ) {
     if ( BIT ( str, i ) )
       result = 1;
   }
 
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0; i < sizeof ( str ) * CHAR_BIT; i++ ) {
     SET_BIT ( str, i, 1 );
-    _Pragma( "loopbound min 64 max 64" )
+    #pragma loopbound min 64 max 64
     for ( j = 0; j < sizeof ( str ) * CHAR_BIT; j++ )
       if ( j <= i ) {
         if ( BIT ( str, j ) == 0 )
@@ -122,21 +122,21 @@ int ammunition_bits_test()
   /* Test 2 */
   ammunition_reset_str_bits( str, str1 );
 
-  _Pragma( "loopbound min 64 max 64" )
+  #pragma loopbound min 64 max 64
   for ( i = 0; i < sizeof ( str ) * CHAR_BIT; i++ )
     if ( !ammunition_is_zero_bit_string (
            str, i, ( sizeof ( str ) * CHAR_BIT - i ) / 2 + 1 ) )
       result = 1;
   ammunition_bit_string_set ( str, 13, 1, 35 );
-  _Pragma( "loopbound min 13 max 13" )
+  #pragma loopbound min 13 max 13
   for ( i = 0; i < 13; i++ )
     if ( !ammunition_is_zero_bit_string ( str, i, 13 - i ) )
       result = 1;
-  _Pragma( "loopbound min 35 max 35" )
+  #pragma loopbound min 35 max 35
   for ( i = 13; i < 48; i++ )
     if ( ammunition_is_zero_bit_string ( str, i, 48 - i ) )
       result = 1;
-  _Pragma( "loopbound min 16 max 16" )
+  #pragma loopbound min 16 max 16
   for ( i = 48; i < sizeof ( str ) * CHAR_BIT; i++ )
     if ( !ammunition_is_zero_bit_string ( str, i,
                                           sizeof ( str ) * CHAR_BIT - i ) )
@@ -145,7 +145,7 @@ int ammunition_bits_test()
   /* Test 3 */
   ammunition_reset_str_bits( str, str1 );
 
-  _Pragma( "loopbound min 42 max 42" )
+  #pragma loopbound min 42 max 42
   for ( i = 0; i + i / 2 + 1 < sizeof ( str ) * CHAR_BIT; i++ ) {
     ammunition_bit_string_set ( str, i, 1, i / 2 + 1 );
     if ( !ammunition_is_zero_bit_string ( str, 0, i - 1 ) )
@@ -163,17 +163,17 @@ int ammunition_bits_test()
 
   ammunition_bit_string_set ( str, 2, 1, 43 );
   ammunition_bit_string_set ( str1, 2, 1, 40 );
-  _Pragma( "loopbound min 42 max 42" )
+  #pragma loopbound min 42 max 42
   for ( i = 0; i < 42; i++ )
     if ( ammunition_bit_string_comparison ( str, i, str1, i, 42 - i ) != 0 )
       result = 1;
-  _Pragma( "loopbound min 43 max 43" )
+  #pragma loopbound min 43 max 43
   for ( i = 0; i < 43; i++ )
     if ( ammunition_bit_string_comparison ( str, i, str1, i,
                                             sizeof ( str ) * CHAR_BIT - i )
          <= 0 )
       result = 1;
-  _Pragma( "loopbound min 43 max 43" )
+  #pragma loopbound min 43 max 43
   for ( i = 0; i < 43; i++ )
     if ( ammunition_bit_string_comparison ( str1, i, str, i,
                                             sizeof ( str ) * CHAR_BIT - i )
@@ -184,7 +184,7 @@ int ammunition_bits_test()
   ammunition_reset_str_bits( str, str1 );
 
   ammunition_bit_string_set ( str, 2, 1, 43 );
-  _Pragma( "loopbound min 59 max 59" )
+  #pragma loopbound min 59 max 59
   for ( i = 0; i + 5 < sizeof ( str ) * CHAR_BIT; i++ ) {
     ammunition_bit_string_copy ( str1, i + 5, str, i,
                                  sizeof ( str ) * CHAR_BIT - i - 5 );
@@ -198,7 +198,7 @@ int ammunition_bits_test()
 
   ammunition_bit_string_set ( str, 2, 1, 43 );
   ammunition_bit_string_set ( str1, 2, 1, 43 );
-  _Pragma( "loopbound min 59 max 59" )
+  #pragma loopbound min 59 max 59
   for ( i = 0; i + 5 < sizeof ( str ) * CHAR_BIT; i++ ) {
     ammunition_bit_string_set ( str, 0, 0, sizeof ( str ) * CHAR_BIT );
     ammunition_bit_string_set ( str, 2, 1, 43 );
@@ -214,7 +214,7 @@ int ammunition_bits_test()
 
   ammunition_bit_string_set ( str, 2, 1, 43 );
   ammunition_bit_string_set ( str1, 2, 1, 43 );
-  _Pragma( "loopbound min 59 max 59" )
+  #pragma loopbound min 59 max 59
   for ( i = 0; i + 5 < sizeof ( str ) * CHAR_BIT; i++ ) {
     ammunition_bit_string_set ( str, 0, 0, sizeof ( str ) * CHAR_BIT );
     ammunition_bit_string_set ( str, 2, 1, 43 );
@@ -257,7 +257,7 @@ int ammunition_arithm_test()
   ammunition_integer_to_string( 4, d, s );
   if ( ammunition_strcmp ( s, str ) != 0 )
     result = 1;
-  _Pragma( "loopbound min 4000 max 4000" )
+  #pragma loopbound min 4000 max 4000
   for ( i = -2000; i < 2000 ; i++ ) {
     ammunition_sprintf_d( str, i );
     ammunition_integer_from_string ( 4, str, d );
@@ -281,7 +281,7 @@ int ammunition_arithm_test()
   ammunition_unsigned_integer_to_string ( 4, d, s );
   if ( ammunition_strcmp ( s, str ) != 0 )
     result = 1;
-  _Pragma( "loopbound min 4000 max 4000" )
+  #pragma loopbound min 4000 max 4000
   for ( i = 0; i < 4000 ; i++ ) {
     ammunition_sprintf_u( str, i );
     ammunition_unsigned_integer_from_string ( 4, str, d );
@@ -312,7 +312,7 @@ int ammunition_arithm_test()
   ammunition_sprintf_d( str, INT_MAX );
   if ( ammunition_strcmp ( s, str ) != 0 )
     result = 1;
-  _Pragma( "loopbound min 4000 max 4000" )
+  #pragma loopbound min 4000 max 4000
   for ( i = -2000; i < 2000 ; i++ ) {
     ammunition_sprintf_d( str, i );
     ammunition_integer_from_string ( 4, str, d );
@@ -346,7 +346,7 @@ int ammunition_arithm_test()
   ammunition_sprintf_u( str, UINT_MAX );
   if ( ammunition_strcmp ( s, str ) != 0 )
     result = 1;
-  _Pragma( "loopbound min 4000 max 4000" )
+  #pragma loopbound min 4000 max 4000
   for ( i = 0; i < 4000 ; i++ ) {
     ammunition_sprintf_u( str, i );
     ammunition_unsigned_integer_from_string ( 4, str, d );
@@ -380,7 +380,7 @@ int ammunition_arithm_test()
   ammunition_sprintf_d( str, INT_MIN );
   if ( ammunition_strcmp ( s, str ) != 0 )
     result = 1;
-  _Pragma( "loopbound min 4000 max 4000" )
+  #pragma loopbound min 4000 max 4000
   for ( i = -2000; i < 2000 ; i++ ) {
     ammunition_sprintf_d( str, i );
     ammunition_integer_from_string ( 4, str, d );
@@ -412,7 +412,7 @@ int ammunition_arithm_test()
   ammunition_unsigned_integer_to_string ( 4, d, s );
   if ( ammunition_strcmp ( s, "0" ) != 0 )
     result = 1;
-  _Pragma( "loopbound min 4000 max 4000" )
+  #pragma loopbound min 4000 max 4000
   for ( i = 0; i < 4000 ; i++ ) {
     ammunition_sprintf_u( str, i );
     ammunition_unsigned_integer_from_string ( 4, str, d );
@@ -463,7 +463,7 @@ int ammunition_arithm_test()
   ammunition_sprintf_d( str, ( INT_MIN / 2 ) * 2 );
   if ( ammunition_strcmp ( s, str ) != 0 )
     result = 1;
-  _Pragma( "loopbound min 4000 max 4000" )
+  #pragma loopbound min 4000 max 4000
   for ( i = -2000; i < 2000 ; i++ ) {
     ammunition_sprintf_d( str, i );
     ammunition_integer_from_string ( 4, str, d );
@@ -498,7 +498,7 @@ int ammunition_arithm_test()
   ammunition_sprintf_u( str, ( UINT_MAX / 2 ) * 2 );
   if ( ammunition_strcmp ( s, str ) != 0 )
     result = 1;
-  _Pragma( "loopbound min 4000 max 4000" )
+  #pragma loopbound min 4000 max 4000
   for ( i = 0; i < 4000 ; i++ ) {
     ammunition_sprintf_u( str, i );
     ammunition_unsigned_integer_from_string ( 4, str, d );
@@ -520,7 +520,7 @@ int ammunition_arithm_test()
   ammunition_divide_integer ( 4, d, e, d );
   if ( !ammunition_overflow_bit )
     result = 1;
-  _Pragma( "loopbound min 4000 max 4000" )
+  #pragma loopbound min 4000 max 4000
   for ( i = -2000; i < 2000 ; i++ ) {
     ammunition_sprintf_d( str, i );
     ammunition_integer_from_string ( 4, str, d );
@@ -550,7 +550,7 @@ int ammunition_arithm_test()
   ammunition_divide_unsigned_integer ( 4, d, e, d );
   if ( !ammunition_overflow_bit )
     result = 1;
-  _Pragma( "loopbound min 4000 max 4000" )
+  #pragma loopbound min 4000 max 4000
   for ( i = 0; i < 4000 ; i++ ) {
     ammunition_sprintf_u( str, i );
     ammunition_unsigned_integer_from_string ( 4, str, d );
@@ -572,7 +572,7 @@ int ammunition_arithm_test()
   ammunition_unsigned_integer_remainder ( 4, d, e, d );
   if ( !ammunition_overflow_bit )
     result = 1;
-  _Pragma( "loopbound min 4000 max 4000" )
+  #pragma loopbound min 4000 max 4000
   for ( i = 0; i < 4000 ; i++ ) {
     ammunition_sprintf_u( str, i );
     ammunition_unsigned_integer_from_string ( 4, str, d );
@@ -1165,7 +1165,7 @@ int ammunition_return( void )
 
 void ammunition_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   ammunition_result |= ammunition_bits_test();
   ammunition_result |= ammunition_arithm_test();
 }

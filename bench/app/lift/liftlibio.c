@@ -26,13 +26,13 @@ void lift_io_init()
 void lift_ctrl_set_vals()
 {
   int val = 0, i;
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( i = 4 - 1; i >= 0; --i ) {
     val <<= 1;
     val |= lift_ctrl_io_out[ i ] ? 1 : 0;
   }
   lift_simio_out = val;
-  _Pragma( "loopbound min 14 max 14" )
+  #pragma loopbound min 14 max 14
   for ( i = 14 - 1; i >= 0; --i ) {
     val <<= 1;
     val |= lift_ctrl_io_led[ i ] ? 1 : 0;
@@ -52,7 +52,7 @@ void lift_ctrl_get_vals()
   lift_ctrl_dly1 = in0;
   /* majority voting for input values
      delays input value change by one period */
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( i = 0; i < 10; ++i ) {
     lift_ctrl_io_in[ i ] = ( ( in0 & 1 ) + ( in1 & 1 ) + ( in2 & 1 ) ) > 1;
     in0 >>= 1;

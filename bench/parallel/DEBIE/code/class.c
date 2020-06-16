@@ -44,7 +44,7 @@ unsigned char RoughLogarithm ( unsigned int x )
   greatest_non_zero_bit = 0;
   shifted = x;
 
-  _Pragma( "loopbound min 15 max 15" )
+  #pragma loopbound min 15 max 15
   while ( shifted ) {
     greatest_non_zero_bit++;
     shifted >>= 1;
@@ -265,7 +265,7 @@ void InitClassification( void )
   uint_least8_t EXTERNAL i;
   /* Loop variable. */
 
-  _Pragma( "loopbound min 5 max 5" )
+  #pragma loopbound min 5 max 5
   for ( i = 0; i < NUM_QCOEFF; i++ )
     telemetry_data.coefficient[ i ] = DEFAULT_COEFF;
 

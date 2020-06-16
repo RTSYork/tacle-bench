@@ -148,7 +148,7 @@ void huff_dec_init( void )
 int huff_dec_return( void )
 {
   int i;
-  _Pragma( "loopbound min 600 max 600" )
+  #pragma loopbound min 600 max 600
   for ( i = 0; i < huff_dec_plaintext_len; i++ ) {
     if ( huff_dec_plaintext[ i ] != huff_dec_output[ i ] ) return i + 1;
   }
@@ -208,9 +208,9 @@ unsigned int huff_dec_read_code_n_bits( unsigned int n )
   unsigned int result = 0;
   unsigned i = n;
 
-  _Pragma ( "loopbound min 1 max 1" )
+  #pragma loopbound min 1 max 1
   while ( i ) {
-    _Pragma ( "loopbound min 0 max 2" )
+    #pragma loopbound min 0 max 2
     while ( ( huff_dec_byte_nb_to_read < 9 ) && ( !huff_dec_end_of_data() ) ) {
       huff_dec_val_to_read = ( huff_dec_val_to_read << 8 ) + huff_dec_read_byte();
       huff_dec_byte_nb_to_read += 8;
@@ -239,10 +239,10 @@ void huff_dec_read_header( t_bin_val codes_table[ 257 ] )
   unsigned int i, j;
   unsigned num_byte;
 
-  _Pragma ( "loopbound min 257 max 257" )
+  #pragma loopbound min 257 max 257
   for ( i = 0; i < 257; i++ ) {
     codes_table[ i ].bits_nb = 0;
-    _Pragma ( "loopbound min 32 max 32" )
+    #pragma loopbound min 32 max 32
     for ( j = 0; j < 32; j++ )
       codes_table[ i ].bits[ j ] = 0;
   }
@@ -251,13 +251,13 @@ void huff_dec_read_header( t_bin_val codes_table[ 257 ] )
   if ( huff_dec_read_code_1_bit() ) {
     /* First bit=0 => Present bytes coded on n*8 bits
                 =1 => Present bytes coded on 256 bits */
-    _Pragma ( "loopbound min 256 max 256" )
+    #pragma loopbound min 256 max 256
     for ( i = 0; i <= 255; i++ )
       codes_table[ i ].presence = huff_dec_read_code_1_bit();
   }
   else {
     i = huff_dec_read_code_n_bits( 5 ) + 1;
-    _Pragma ( "loopbound min 1 max 32" )
+    #pragma loopbound min 1 max 32
     while ( i ) {
       codes_table[ huff_dec_read_code_n_bits( 8 ) ].presence = 1;
       i--;
@@ -267,7 +267,7 @@ void huff_dec_read_header( t_bin_val codes_table[ 257 ] )
   /* Presence of a fictive 256-byte is enforced! */
 
   /* == Decoding the second part of the header == */
-  _Pragma ( "loopbound min 257 max 257" )
+  #pragma loopbound min 257 max 257
   for ( i = 0; i <= 256; i++ )
     if ( codes_table[ i ].presence ) {
       if ( huff_dec_read_code_1_bit() )
@@ -286,7 +286,7 @@ void huff_dec_read_header( t_bin_val codes_table[ 257 ] )
         num_byte--;
       }
 
-      _Pragma ( "loopbound min 0 max 1" )
+      #pragma loopbound min 0 max 1
       while ( j >= 8 ) {
         /* Reads the bits that takes one byte, at least */
         codes_table[ i ].bits[ num_byte ] =
@@ -315,9 +315,9 @@ huff_dec_t_tree *huff_dec_tree_encoding( t_bin_val codes_table[ 257 ],
   ptr_tree->byte = 257;
   ptr_tree->left_ptr = 0;
   ptr_tree->right_ptr = 0;
-  _Pragma ( "loopbound min 257 max 257" )
+  #pragma loopbound min 257 max 257
   for ( i = 0; i <= 256; i++ ) {
-    _Pragma ( "loopbound min 0 max 9" )
+    #pragma loopbound min 0 max 9
     for ( current_node = ptr_tree, j = codes_table[ i ].bits_nb; j; j-- ) {
       if ( codes_table[ i ].bits[ ( j - 1 ) >> 3 ] & ( 1 << ( (
              j - 1 ) & 7 ) ) )
@@ -350,7 +350,7 @@ void huff_dec_main( void )
    Errors: An input/output error could disturb the running of the program
 */
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   t_bin_val encoding_table[ 257 ];
   huff_dec_t_tree heap[ 514 ]; /* space for dynamically allocated nodes */
   huff_dec_t_tree *ptr_tree;
@@ -359,10 +359,10 @@ void huff_dec_main( void )
   if ( !huff_dec_end_of_data() ) { /* Are there data to compress? */
     huff_dec_read_header( encoding_table );
     ptr_tree = huff_dec_tree_encoding( encoding_table, heap );
-    _Pragma ( "loopbound min 601 max 601" )
+    #pragma loopbound min 601 max 601
     do {
       current_node = ptr_tree;
-      _Pragma ( "loopbound min 3 max 9" )
+      #pragma loopbound min 3 max 9
       while ( current_node->byte == 257 )
         if ( huff_dec_read_code_1_bit() )
           /* Bit=1 => Got to left in the node of the tree

@@ -637,14 +637,14 @@ float x, y[];
   e0  = ( ix >> 23 ) - 134; /* e0 = ilogb(z)-7; */
   SET_FLOAT_WORD( z, ix - ( ( int32_t )( e0 << 23 ) ) );
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 0; i < 2; i++ ) {
     tx[ i ] = ( float )( ( int32_t )( z ) );
     z     = ( z - tx[ i ] ) * two8;
   }
   tx[ 2 ] = z;
   nx = 3;
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( tx[ nx - 1 ] == zero )  {
     nx--; /* skip zero term */
   }
@@ -711,7 +711,7 @@ float x;
   /* normalize x */
   m = ( ix >> 23 );
   if ( m == 0 ) {   /* subnormal x */
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( i = 0; ( ix & 0x00800000 ) == 0; i++ )
       ix <<= 1;
     m -= i - 1;
@@ -727,7 +727,7 @@ float x;
   q = s = 0;    /* q = sqrt(x) */
   r = 0x01000000;   /* r = moving bit from right to left */
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( r != 0 ) {
     t = s + r;
     if ( t <= ix ) {
@@ -893,12 +893,12 @@ int32_t ipio2[];
   /* set up f[0] to f[jx+jk] where f[jx+jk] = ipio2[jv+jk] */
   j = jv - jx;
   m = jx + jk;
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 0; i <= m; i++, j++ )
     f[i] = ( j < 0 ) ? zero : ( float ) ipio2[ j ];
 
   /* compute q[0],q[1],...q[jk] */
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 0; i <= jk; i++ ) {
     for ( j = 0, fw = 0.0f; j <= jx; j++ ) fw += x[ j ] * f[ jx + i - j ];
     q[ i ] = fw;
@@ -908,7 +908,7 @@ int32_t ipio2[];
 recompute:
   ;
   /* distill q[] into iq[] reversingly */
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = 0, j = jz, z = q[ jz ]; j > 0; i++, j-- ) {
     fw    =  ( float )( ( int32_t )( twon8 * z ) );
     iq[i] =  ( int32_t )( z - two8 * fw );
@@ -935,7 +935,7 @@ recompute:
   if ( ih > 0 ) { /* q > 0.5 */
     n += 1;
     carry = 0;
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( i = 0; i < jz ; i++ ) { /* compute 1-q */
       j = iq[ i ];
       if ( carry == 0 ) {
@@ -965,19 +965,19 @@ recompute:
   /* check if recomputation is needed */
   if ( z == zero ) {
     j = 0;
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( i = jz - 1; i >= jk; i-- )
       j |= iq[ i ];
     if ( j == 0 ) { /* need recomputation */
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       for ( k = 1; iq[ jk - k ] == 0; k++ ) {
         ;   /* k = no. of terms needed */
       }
 
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       for ( i = jz + 1; i <= jz + k; i++ ) { /* add q[jz+1] to q[jz+k] */
         f[ jx + i ] = ( float ) ipio2[ jv + i ];
-        _Pragma( "loopbound min 0 max 0" )
+        #pragma loopbound min 0 max 0
         for ( j = 0, fw = 0.0f; j <= jx; j++ ) fw += x[ j ] * f[ jx + i - j ];
         q[i] = fw;
       }
@@ -990,7 +990,7 @@ recompute:
   if ( z == ( float )0.0f ) {
     jz -= 1;
     q0 -= 8;
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     while ( iq[ jz ] == 0 ) {
       jz--;
       q0 -= 8;
@@ -1008,16 +1008,16 @@ recompute:
 
   /* convert integer "bit" chunk to floating-point value */
   fw = __scalbnf( one, q0 );
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = jz; i >= 0; i-- ) {
     q[ i ] = fw * ( float )iq[ i ];
     fw *= twon8;
   }
 
   /* compute PIo2[0,...,jp]*q[jz,...,0] */
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( i = jz; i >= 0; i-- ) {
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     for ( fw = 0.0f, k = 0; k <= jp && k <= jz - i; k++ )
       fw += PIo2[ k ] * q[ i + k ];
     fq[ jz - i ] = fw;
@@ -1027,7 +1027,7 @@ recompute:
   switch ( prec ) {
     case 0:
       fw = 0.0f;
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       for ( i = jz; i >= 0; i-- )
         fw += fq[ i ];
       y[ 0 ] = ( ih == 0 ) ? fw : -fw;
@@ -1035,30 +1035,30 @@ recompute:
     case 1:
     case 2:
       fw = 0.0f;
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       for ( i = jz; i >= 0; i-- )
         fw += fq[ i ];
       y[ 0 ] = ( ih == 0 ) ? fw : -fw;
       fw = fq[ 0 ] - fw;
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       for ( i = 1; i <= jz; i++ )
         fw += fq[ i ];
       y[ 1 ] = ( ih == 0 ) ? fw : -fw;
       break;
     case 3:;  /* painful */
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       for ( i = jz; i > 0; i-- ) {
         fw      = fq[ i - 1 ] + fq[ i ];
         fq[ i ]  += fq[ i - 1 ] - fw;
         fq[ i - 1 ] = fw;
       }
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       for ( i = jz; i > 1; i-- ) {
         fw      = fq[ i - 1 ] + fq[ i ];
         fq[ i ]  += fq[ i - 1 ] - fw;
         fq[ i - 1 ] = fw;
       }
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       for ( fw = 0.0f, i = jz; i >= 2; i-- )
         fw += fq[ i ];
 

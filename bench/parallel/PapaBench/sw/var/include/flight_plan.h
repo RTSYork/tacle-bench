@@ -459,9 +459,9 @@ static inline void auto_nav( void )
                            carrot_y + sin( alpha_carrot )*fabs( 50 ) );
                 qdr = DegOfRad( M_PI / 2 - alpha_carrot );
                 {
-                  _Pragma( "loopbounds min 0 max 1" )
+                  #pragma loopbounds min 0 max 1
                   while ( qdr < 0 ) qdr += 360;
-                  _Pragma( "loopbounds min 0 max 1" )
+                  #pragma loopbounds min 0 max 1
                   while ( qdr >= 360 ) qdr -= 360;
                 }
               }

@@ -118,7 +118,7 @@ void isqrt_usqrt( unsigned long x, struct int_sqrt *q )
 
   int i;
 
-  _Pragma( "loopbound min 32 max 32" )
+  #pragma loopbound min 32 max 32
   for ( i = 0; i < BITSPERLONG; i++ ) { /* NOTE 1 */
     r = ( r << 2 ) + TOP2BITS( x );
     x <<= 2;                            /* NOTE 2 */
@@ -135,9 +135,9 @@ void isqrt_usqrt( unsigned long x, struct int_sqrt *q )
 
 void isqrt_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   /* perform some integer square roots */
-  _Pragma( "loopbound min 1000 max 1000" )
+  #pragma loopbound min 1000 max 1000
   for ( isqrt_i = 1; isqrt_i < 1001; isqrt_i += 1 ) {
     isqrt_usqrt( isqrt_i, &isqrt_q );
     isqrt_checksum += isqrt_q.frac;

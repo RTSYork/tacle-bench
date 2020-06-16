@@ -47,7 +47,7 @@ int main( void )
   // do not run simulation for ever, just exit here
   return 0;
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( 1 ) {
     /* StartSystem has failed, so we just      */
     /* wait here for a while for the Watch Dog */

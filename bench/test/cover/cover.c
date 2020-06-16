@@ -65,7 +65,7 @@ int cover_swi120( int c )
 {
   int i;
 
-  _Pragma( "loopbound min 120 max 120" )
+  #pragma loopbound min 120 max 120
   for ( i = 0; i < 120; i++ ) {
     switch ( i ) {
       case 0:
@@ -441,7 +441,7 @@ int cover_swi50( int c )
 {
   int i;
 
-  _Pragma( "loopbound min 50 max 50" )
+  #pragma loopbound min 50 max 50
   for ( i = 0; i < 50; i++ ) {
     switch ( i ) {
       case 0:
@@ -637,7 +637,7 @@ int cover_swi10( int c )
 {
   int i;
 
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( i = 0; i < 10; i++ ) {
     switch ( i ) {
       case 0:
@@ -681,7 +681,7 @@ int cover_swi10( int c )
 
 void cover_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   cover_cnt = cover_swi10( cover_cnt );
 
   cover_cnt = cover_swi50( cover_cnt );

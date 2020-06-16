@@ -55,9 +55,9 @@ double pp_sin( double x )
 
   xi = x;
   sign = 1;
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( xi < -1.57079632679489661923 ) xi += 6.28318530717958647692;
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( xi > 4.71238898038468985769 ) xi -= 6.28318530717958647692;
   if ( xi > 1.57079632679489661923 ) {
     xi -= 3.141592653589793238462643;

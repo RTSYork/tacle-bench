@@ -114,7 +114,7 @@ void fft_bit_reduct( register int *int_pointer )
   register int tmpr, max = 2, m, n = N_FFT << 1 ;
 
   /* do the bit reversal scramble of the input data */
-  _Pragma( "loopbound min 1024 max 1024" )
+  #pragma loopbound min 1024 max 1024
   for ( i = 0; i < ( n - 1 ) ; i += 2 ) {
     if ( j > i ) {
       tmpr = *( int_pointer + j ) ;
@@ -128,7 +128,7 @@ void fft_bit_reduct( register int *int_pointer )
 
     m = N_FFT;
 
-    _Pragma( "loopbound min 0 max 10" )
+    #pragma loopbound min 0 max 10
     while ( m >= 2 && j >= m ) {
       j -= m ;
       m >>= 1;
@@ -141,17 +141,17 @@ void fft_bit_reduct( register int *int_pointer )
     register int *p, *q ;
     register int tmpi, fr = 0, level, k, l ;
 
-    _Pragma( "loopbound min 10 max 10" )
+    #pragma loopbound min 10 max 10
     while ( n > max ) {
       level = max << 1;
 
-      _Pragma( "loopbound min 1 max 512" ) 
+      #pragma loopbound min 1 max 512 
       for ( m = 1; m < max; m += 2 ) {
         l = *( data_pointer + fr );
         k = *( data_pointer + fr + 1 ) ;
         fr += 2 ;
 
-        _Pragma( "loopbound min 1 max 512" )
+        #pragma loopbound min 1 max 512
         for ( i = m; i <= n; i += level ) {
           j = i + max;
           p = int_pointer + j;
@@ -181,7 +181,7 @@ void fft_bit_reduct( register int *int_pointer )
 
         p = int_pointer;
 
-        _Pragma( "loopbound min 2048 max 2048" )
+        #pragma loopbound min 2048 max 2048
         for ( f = 0 ; f < 2 * N_FFT; f++ ) {
           *p = *p >> 1;
           p++;
@@ -204,7 +204,7 @@ float fft_exp2f( float x )
   int i;
   float ret = 2.0f;
 
-  _Pragma( "loopbound min 13 max 13" )
+  #pragma loopbound min 13 max 13
   for ( i = 1; i < x; ++i )
     ret *= 2.0f;
 
@@ -253,7 +253,7 @@ void fft_float2fract( void )
   float f ;
   int   j, i ;
 
-  _Pragma( "loopbound min 1024 max 1024" )
+  #pragma loopbound min 1024 max 1024
   for ( j = 0 ; j < N_FFT ; j++ ) {
     f = fft_input[ j ];
     i = fft_convert( f );
@@ -272,7 +272,7 @@ void fft_pin_down( int input_data[  ] )
   pd = &input_data[ 0 ];
   ps = &fft_inputfract[ 0 ];
 
-  _Pragma( "loopbound min 1024 max 1024" )
+  #pragma loopbound min 1024 max 1024
   for ( f = 0; f < N_FFT; f++ ) {
     *pd++ = *ps++  ; /* fill in with real data */
     *pd++ = 0 ;      /* imaginary data is equal zero */
@@ -288,12 +288,12 @@ void fft_init( void )
   fft_pin_down( &fft_input_data[ 0 ] );
 
   /* avoid constant propagation of input values */
-  _Pragma( "loopbound min 2046 max 2046" ) 
+  #pragma loopbound min 2046 max 2046 
   for ( i = 0; i < 2 * ( N_FFT - 1 ); i++ ) {
     fft_input_data[ i ] += x;
     fft_twidtable[ i ] += x;
   }
-  _Pragma( "loopbound min 2 max 2" )
+  #pragma loopbound min 2 max 2
   for ( ; i < 2 * N_FFT; i++ )
     fft_input_data[ i ] += x;
 
@@ -305,7 +305,7 @@ int fft_return( void )
   int check_sum = 0;
   int i = 0;
 
-  _Pragma( "loopbound min 2048 max 2048" )
+  #pragma loopbound min 2048 max 2048
   for ( i = 0; i < 2 * N_FFT; ++i )
     check_sum += fft_input_data[ i ];
 
@@ -319,7 +319,7 @@ int fft_return( void )
 
 void fft_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   fft_bit_reduct( &fft_input_data[ 0 ] );
 }
 

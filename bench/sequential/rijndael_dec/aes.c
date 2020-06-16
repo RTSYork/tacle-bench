@@ -87,7 +87,7 @@ aes_ret rijndael_dec_set_key( byte in_key[  ], const word n_bytes,
 
   switch ( cx->Nkey ) {
     case 4:
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       do {
         kf[ 4 ] = kf[ 0 ] ^ ls_box( kf[ 3 ], 3 ) ^ rijndael_dec_rcon_tab[ rci++ ];
         kf[ 5 ] = kf[ 1 ] ^ kf[ 4 ];
@@ -100,7 +100,7 @@ aes_ret rijndael_dec_set_key( byte in_key[  ], const word n_bytes,
     case 6:
       cx->e_key[ 4 ] = word_in( in_key + 16 );
       cx->e_key[ 5 ] = word_in( in_key + 20 );
-      _Pragma( "loopbound min 0 max 0" )
+      #pragma loopbound min 0 max 0
       do {
         kf[  6 ] = kf[ 0 ] ^ ls_box( kf[ 5 ], 3 ) ^ rijndael_dec_rcon_tab[ rci++ ];
         kf[  7 ] = kf[ 1 ] ^ kf[  6 ];
@@ -117,7 +117,7 @@ aes_ret rijndael_dec_set_key( byte in_key[  ], const word n_bytes,
       cx->e_key[ 5 ] = word_in( in_key + 20 );
       cx->e_key[ 6 ] = word_in( in_key + 24 );
       cx->e_key[ 7 ] = word_in( in_key + 28 );
-      _Pragma( "loopbound min 7 max 7" )
+      #pragma loopbound min 7 max 7
       do {
         kf[  8 ] = kf[ 0 ] ^ ls_box( kf[ 7 ], 3 ) ^ rijndael_dec_rcon_tab[ rci++ ];
         kf[  9 ] = kf[ 1 ] ^ kf[  8 ];
@@ -141,7 +141,7 @@ aes_ret rijndael_dec_set_key( byte in_key[  ], const word n_bytes,
     cpy( kt, kf );
     kt -= 2 * nc;
 
-    _Pragma( "loopbound min 13 max 13" )
+    #pragma loopbound min 13 max 13
     for ( i = 1; i < cx->Nrnd; ++i ) {
       mix( kt, kf );
       kt -= 2 * nc;

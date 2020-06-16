@@ -48,7 +48,7 @@ int bitcount_bit_shifter( long int x )
   int n;
   unsigned int i;
 
-  _Pragma( "loopbound min 31 max 31" )
+  #pragma loopbound min 31 max 31
   for ( i = n = 0; x && ( i < ( sizeof( long ) * 8 ) ); ++i, x >>= 1 )
     n += ( int )( x & 1L );
   return n;
@@ -91,11 +91,11 @@ unsigned long bitcount_random( void )
 
 void bitcount_main()
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   unsigned int i, j;
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( i = 0; i < FUNCS; i++ ) {
-    _Pragma( "loopbound min 10 max 10" )
+    #pragma loopbound min 10 max 10
     for ( j = 0, bitcount_seed = bitcount_random(); j < bitcount_iterations;
           j++, bitcount_seed += 13 ) {
       // The original calls were done by function pointers
@@ -107,12 +107,12 @@ void bitcount_main()
           bitcount_res = bitcount_bitcount( bitcount_seed );
           break;
         case 2: {
-            _Pragma( "marker call_ntbl" )
+            #pragma marker call_ntbl
             bitcount_res = bitcount_ntbl_bitcnt( bitcount_seed );
             break;
           }
         case 3: {
-            _Pragma( "marker call_btbl" )
+            #pragma marker call_btbl
             bitcount_res = bitcount_btbl_bitcnt( bitcount_seed );
             break;
           }
@@ -134,8 +134,8 @@ void bitcount_main()
       bitcount_n += bitcount_res;
     }
   }
-  _Pragma( "flowrestriction 1*ntbl_bitcount <= 8*call_ntbl" )
-  _Pragma( "flowrestriction 1*btbl_bitcount <= 4*call_btbl" )
+  #pragma flowrestriction 1*ntbl_bitcount <= 8*call_ntbl
+  #pragma flowrestriction 1*btbl_bitcount <= 4*call_btbl
 }
 
 int main( void )

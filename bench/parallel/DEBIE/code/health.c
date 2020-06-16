@@ -414,7 +414,7 @@ void Clear_SU_Error( void )
   sensor_index_t EXTERNAL i;
 
   DISABLE_INTERRUPT_MASTER;
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( i = 0; i < NUM_SU; i++ ) {
     telemetry_data.SU_status[ i ] &= SUPPLY_VOLTAGE_MASK;
     /* Error bits in the SU# status register are cleared. */
@@ -665,7 +665,7 @@ void Boot( void )
 
     fill_pointer = ( EXTERNAL unsigned char *DIRECT_INTERNAL )&telemetry_data;
 
-    _Pragma( "loopbound min 124 max 124" )
+    #pragma loopbound min 124 max 124
     for ( i = 0; i < sizeof( telemetry_data ); i++ ) {
       *fill_pointer = 0;
       fill_pointer++;
@@ -772,7 +772,7 @@ uint_least8_t EXTERNAL health_mon_round = HEALTH_COUNT;
 /* which altogether equal 10 secs.                                        */
 
 
-void _Pragma( "entrypoint" ) InitHealthMonitoring ( void )
+void #pragma entrypoint InitHealthMonitoring ( void )
 /* Purpose        : Initialize the health monitoring for DEBIE.              */
 /* Interface      : inputs      - none                                       */
 /*                                                                           */
@@ -800,7 +800,7 @@ void _Pragma( "entrypoint" ) InitHealthMonitoring ( void )
 }
 
 
-void _Pragma( "entrypoint" ) HandleHealthMonitoring ( void )
+void #pragma entrypoint HandleHealthMonitoring ( void )
 /* Purpose        : One round of health monitoring for DEBIE.                */
 /* Interface      : inputs      - telemetry_data                             */
 /*                                                                           */
@@ -862,7 +862,7 @@ PRIORITY( HEALTH_MONITORING_PR )
 {
   InitHealthMonitoring ();
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( 1 )
     HandleHealthMonitoring ();
 }
@@ -1177,7 +1177,7 @@ void MeasureTemperature( sensor_index_t SU_index )
 
 
 
-  _Pragma( "loopbound min 2 max 2" )
+  #pragma loopbound min 2 max 2
   for ( j = 0; j < NUM_TEMP; j++ )
 
   {
@@ -1330,7 +1330,7 @@ void LowVoltageCurrent( void )
   {
     /*  An error is detected, output current is limited.                   */
 
-    _Pragma( "loopbound min 4 max 4" )
+    #pragma loopbound min 4 max 4
     for ( i = 0; i < NUM_SU; i++ )
 
     {
@@ -1612,7 +1612,7 @@ void CalculateChecksum( uint_least8_t checksum_count )
   }
 
 
-  _Pragma( "loopbound min 547 max 547" )
+  #pragma loopbound min 547 max 547
   for ( i = check_start; i <= check_end; i++ )
 
   {
@@ -1705,7 +1705,7 @@ void Convert_AD ( ADC_parameters_t EXTERNAL *ADC_parameters )
 
   conversion_count = 0;
 
-  _Pragma( "loopbound min 0 max 5" )
+  #pragma loopbound min 0 max 5
   while ( conversion_count < ADC_parameters -> conversion_max_tries
           && ( END_OF_ADC != CONVERSION_ACTIVE ) ) {
     /* Previous conversion is still active.                                */
@@ -1856,7 +1856,7 @@ void VoltageFailure( channel_t ADC_channel )
 
         }
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( i = 0; i < NUM_SU; i++ )
 
   {
@@ -1952,7 +1952,7 @@ void DelayAwhile ( unsigned short duration )
 /* Algorithm      : Call ShortDelay() as many times as necessary to delay    */
 /*                  for at least the desired duration.                       */
 {
-  _Pragma( "loopbound min 1 max 1" )
+  #pragma loopbound min 1 max 1
   while ( duration > MAX_SHORT_DELAY ) {
     ShortDelay ( MAX_SHORT_DELAY );
     duration = duration - MAX_SHORT_DELAY;
@@ -2017,7 +2017,7 @@ void Read_AD_Channel ( ADC_parameters_t EXTERNAL *ADC_parameters )
   /* Limits the number of conversion attempts repeated because */
   /* of particle hit interrupts. Assumed to be at least 1.     */
 
-  _Pragma( "loopbound min 1 max 8" )
+  #pragma loopbound min 1 max 8
   while ( tries_left > 0 ) {
     confirm_hit_result = 0;
     /* Clear interrupt indicating flag.                                    */
@@ -2277,7 +2277,7 @@ void SelfTest_SU( sensor_index_t self_test_SU_index )
   /* HV Status register is checked. */
 
   /* SU voltages are measured */
-  _Pragma( "loopbound min 7 max 7" )
+  #pragma loopbound min 7 max 7
   for ( i = channel_0_e; i <= channel_6_e; i++ ) {
     MeasureVoltage( i );
     /* All voltage channels are measured. */

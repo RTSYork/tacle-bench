@@ -81,12 +81,12 @@ int  minver_mmul( int row_a, int col_a, int row_b, int col_b )
   if ( row_c < 1 || row_b < 1 || col_c < 1 || col_a != row_b )
     return ( 999 );
 
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0; i < row_c; i++ ) {
-    _Pragma( "loopbound min 3 max 3" )
+    #pragma loopbound min 3 max 3
     for ( j = 0; j < col_c; j++ ) {
       w = 0.0;
-      _Pragma( "loopbound min 3 max 3" )
+      #pragma loopbound min 3 max 3
       for ( k = 0; k < row_b; k++ )
         w += minver_a[ i ][ k ] * minver_b[ k ][ j ];
 
@@ -109,13 +109,13 @@ int minver_minver( int side, double eps )
   if ( side < 2 || side > 500 || eps <= 0.0 )
     return ( 999 );
   w1 = 1.0;
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0; i < side; i++ )
     work[ i ] = i;
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( k = 0; k < side; k++ ) {
     wmax = 0.0;
-    _Pragma( "loopbound min 1 max 3" )
+    #pragma loopbound min 1 max 3
     for ( i = k; i < side; i++ ) {
       w = minver_fabs( minver_a[ i ][ k ] );
       if ( w > wmax ) {
@@ -135,22 +135,22 @@ int minver_minver( int side, double eps )
       iw = work[ k ];
       work[ k ] = work[ r ];
       work[ r ] = iw;
-      _Pragma( "loopbound min 3 max 3" )
+      #pragma loopbound min 3 max 3
       for ( j = 0; j < side; j++ ) {
         w = minver_a[ k ][ j ];
         minver_a[ k ][ j ] = minver_a[ r ][ j ];
         minver_a[ r ][ j ] = w;
       }
     }
-    _Pragma( "loopbound min 3 max 3" )
+    #pragma loopbound min 3 max 3
     for ( i = 0; i < side; i++ )
       minver_a[ k ][ i ] /= pivot;
-    _Pragma( "loopbound min 3 max 3" )
+    #pragma loopbound min 3 max 3
     for ( i = 0; i < side; i++ ) {
       if ( i != k ) {
         w = minver_a[ i ][ k ];
         if ( w != 0.0 ) {
-          _Pragma( "loopbound min 3 max 3" )
+          #pragma loopbound min 3 max 3
           for ( j = 0; j < side; j++ ) {
             if ( j != k ) minver_a[ i ][ j ] -= w * minver_a[ k ][ j ];
           }
@@ -161,16 +161,16 @@ int minver_minver( int side, double eps )
     }
     minver_a[ k ][ k ] = 1.0 / pivot;
   }
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0; i < side; ) {
-    _Pragma( "loopbound min 1 max 3" )
+    #pragma loopbound min 1 max 3
     while ( 1 ) {
       k = work[ i ];
       if ( k == i ) break;
       iw = work[ k ];
       work[ k ] = work[ i ];
       work[ i ] = iw;
-      _Pragma( "loopbound min 3 max 3" )
+      #pragma loopbound min 3 max 3
       for ( j = 0; j < side; j++ ) {
         w = minver_a [k ][ i ];
         minver_a[ k ][ i ] = minver_a[ k ][ k ];
@@ -193,9 +193,9 @@ void minver_init()
   int i, j;
   volatile int x = 0;
 
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0; i < 3; i++ ) {
-    _Pragma( "loopbound min 3 max 3" )
+    #pragma loopbound min 3 max 3
     for ( j = 0; j < 3; j++ )
       minver_a[ i ][ j ] += x;
   }
@@ -207,9 +207,9 @@ int minver_return()
   int i, j;
   double check_sum = 0;
 
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0; i < 3; i++ ) {
-    _Pragma( "loopbound min 3 max 3" )
+    #pragma loopbound min 3 max 3
     for ( j = 0; j < 3; j++ )
       check_sum += minver_a_i[ i ][ j ];
   }
@@ -225,21 +225,21 @@ int minver_return()
 
 void minver_main()
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   int i, j;
   double eps;
   eps = 1.0e-6;
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0; i < 3; i++ ) {
-    _Pragma( "loopbound min 3 max 3" )
+    #pragma loopbound min 3 max 3
     for ( j = 0; j < 3; j++ )
       minver_aa[ i ][ j ] = minver_a[ i ][ j ];
   }
 
   minver_minver( 3, eps );
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0; i < 3; i++ ) {
-    _Pragma( "loopbound min 3 max 3" )
+    #pragma loopbound min 3 max 3
     for ( j = 0; j < 3; j++ )
       minver_a_i[ i ][ j ] = minver_a[ i ][ j ];
   }

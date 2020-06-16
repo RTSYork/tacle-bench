@@ -46,7 +46,7 @@ int ammunition_add_unsigned_integer_without_overflow_reaction
   int digit_num;
   int carry;
   unsigned int sum;
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( digit_num = size - 1, carry = 0; digit_num >= 0; digit_num-- ) {
     sum = ( ( ( unsigned char * ) op1 ) [ digit_num ]
             + ( ( unsigned char * ) op2 ) [ digit_num ] + carry );
@@ -72,7 +72,7 @@ int ammunition_subtract_unsigned_integer_without_overflow_reaction
   int carry;
   int subtraction;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( digit_num = size - 1, carry = 0; digit_num >= 0; digit_num-- ) {
     subtraction = ( ( ( unsigned char * ) op1 ) [ digit_num ]
                     - ( ( unsigned char * ) op2 ) [ digit_num ] - carry );
@@ -96,7 +96,7 @@ void ammunition_make_complementary_code
   int carry;
   int subtraction;
 
-  _Pragma( "loopbound min 2 max 6" )
+  #pragma loopbound min 2 max 6
   for ( digit_num = size - 1, carry = 0; digit_num >= 0; digit_num-- ) {
     subtraction = ( 0 - ( ( unsigned char * ) operand ) [ digit_num ] - carry );
     if ( subtraction != 0 ) {
@@ -119,7 +119,7 @@ int ammunition_multiply_unsigned_integer_by_digit_without_overflow_reaction
   unsigned int carry;
   unsigned int sum;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( digit_num = size - 1, carry = 0; digit_num >= 0; digit_num-- ) {
     sum = ( ( ( unsigned char * ) operand ) [ digit_num ] * digit + carry );
     if ( sum > UCHAR_MAX ) {
@@ -252,10 +252,10 @@ int ammunition_multiply_unsigned_integer_without_overflow_reaction
   unsigned char long_result [ 2 * MAX_INTEGER_OPERAND_SIZE ];
 
   ammunition_memset ( long_result + size, 0, ( size_t ) size );
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( op2_digit_num = size - 1; op2_digit_num >= 0; op2_digit_num-- ) {
     if ( ( ( unsigned char * ) op2 ) [ op2_digit_num ] != 0 ) {
-      _Pragma( "loopbound min 4 max 4" )
+      #pragma loopbound min 4 max 4
       for ( op1_digit_num = size - 1, carry = 0; op1_digit_num >= 0;
             op1_digit_num-- ) {
         partial_sum
@@ -272,7 +272,7 @@ int ammunition_multiply_unsigned_integer_without_overflow_reaction
       long_result [ op2_digit_num ] = 0;
   }
   overflow_flag = 0;
-  _Pragma( "loopbound min 0 max 4" )
+  #pragma loopbound min 0 max 4
   for ( result_digit_number = size - 1; result_digit_number >= 0;
         result_digit_number-- ) {
     if ( long_result [ result_digit_number ] != 0 ) {
@@ -369,7 +369,7 @@ int ammunition_divide_unsigned_integer_without_overflow_reaction
   unsigned char normalized_op2 [ MAX_INTEGER_OPERAND_SIZE ];
   unsigned char extended_normalized_op2 [ MAX_INTEGER_OPERAND_SIZE + 1 ];
 
-  _Pragma( "loopbound min 3 max 4" )
+  #pragma loopbound min 3 max 4
   for ( op2_digit_number = 0; op2_digit_number < size; op2_digit_number++ ) {
     if ( ( ( unsigned char * ) op2 ) [ op2_digit_number ] != 0 )
       break;
@@ -390,7 +390,7 @@ int ammunition_divide_unsigned_integer_without_overflow_reaction
       digit = ( ( unsigned char * ) op2 ) [ first_nonzero_digit_number ];
       ammunition_memcpy ( result, op1, ( size_t ) size );
       remainder = 0;
-      _Pragma( "loopbound min 4 max 4" )
+      #pragma loopbound min 4 max 4
       for ( digit_num = 0; digit_num < size; digit_num++ ) {
         divisable = ( remainder * ( UCHAR_MAX + 1 )
                       + ( ( unsigned char * ) result ) [ digit_num ] );
@@ -414,7 +414,7 @@ int ammunition_divide_unsigned_integer_without_overflow_reaction
   ammunition_multiply_unsigned_integer_by_digit_without_overflow_reaction
   ( size, normalized_op2, scale );
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   for ( scaled_op1_digit_num = 0;
         scaled_op1_digit_num <= first_nonzero_digit_number;
         scaled_op1_digit_num++ ) {
@@ -432,7 +432,7 @@ int ammunition_divide_unsigned_integer_without_overflow_reaction
             + scaled_op1 [ scaled_op1_digit_num + 1 ] )
           / normalized_op2 [ first_nonzero_digit_number ];
 
-    _Pragma( "loopbound min 0 max 0" )
+    #pragma loopbound min 0 max 0
     while ( normalized_op2 [ first_nonzero_digit_number + 1 ] * q_approximation
             > ( ( ( unsigned long long int ) scaled_op1 [ scaled_op1_digit_num ]
                   * ( UCHAR_MAX + 1 )
@@ -591,7 +591,7 @@ ammunition_unsigned_integer_shift_right ( int size, const void *operand,
     ammunition_overflow_bit = 0;
     byte_shift = bits / CHAR_BIT;
     bit_shift = bits % CHAR_BIT;
-    _Pragma( "loopbound min 0 max 2" )
+    #pragma loopbound min 0 max 2
     for ( byte_number = ( byte_shift >= size ? 0 : size - byte_shift );
           byte_number < size; byte_number++ )
       if ( ( ( unsigned char * ) operand ) [ byte_number ] != 0 ) {
@@ -606,7 +606,7 @@ ammunition_unsigned_integer_shift_right ( int size, const void *operand,
       ammunition_memset ( result, 0, ( size_t ) byte_shift );
       if ( bit_shift == 0 )
         return;
-      _Pragma( "loopbound min 3 max 3" )
+      #pragma loopbound min 3 max 3
       for ( byte_number = byte_shift, carry = 0; byte_number < size;
             byte_number++ ) {
         byte = ( ( unsigned char * ) result ) [ byte_number ];
@@ -648,7 +648,7 @@ ammunition_integer_shift_right ( int size, const void *operand, int bits,
     ammunition_overflow_bit = 0;
     byte_shift = bits / CHAR_BIT;
     bit_shift = bits % CHAR_BIT;
-    _Pragma( "loopbound min 0 max 2" )
+    #pragma loopbound min 0 max 2
     for ( byte_number = ( byte_shift >= size ? 0 : size - byte_shift );
           byte_number < size; byte_number++ )
       if ( ( ( unsigned char * ) operand ) [ byte_number ] != 0 ) {
@@ -667,7 +667,7 @@ ammunition_integer_shift_right ( int size, const void *operand, int bits,
         return;
       carry = ( ( ( operand_sign ? UCHAR_MAX : 0 ) << ( CHAR_BIT - bit_shift ) )
                 & UCHAR_MAX );
-      _Pragma( "loopbound min 3 max 3" )
+      #pragma loopbound min 3 max 3
       for ( byte_number = byte_shift; byte_number < size; byte_number++ ) {
         byte = ( ( unsigned char * ) result ) [ byte_number ];
         ( ( unsigned char * ) result ) [ byte_number ]
@@ -706,7 +706,7 @@ ammunition_unsigned_integer_shift_left ( int size, const void *operand,
     ammunition_overflow_bit = 0;
     byte_shift = bits / CHAR_BIT;
     bit_shift = bits % CHAR_BIT;
-    _Pragma( "loopbound min 0 max 2" )
+    #pragma loopbound min 0 max 2
     for ( byte_number = 0; byte_number < byte_shift && byte_number < size;
           byte_number++ )
       if ( ( ( unsigned char * ) operand ) [ byte_number ] != 0 ) {
@@ -722,7 +722,7 @@ ammunition_unsigned_integer_shift_left ( int size, const void *operand,
                           ( size_t ) byte_shift );
       if ( bit_shift == 0 )
         return;
-      _Pragma( "loopbound min 2 max 3" )
+      #pragma loopbound min 2 max 3
       for ( byte_number = size - byte_shift - 1, carry = 0;
             byte_number >= 0; byte_number-- ) {
         byte = ( ( unsigned char * ) result ) [ byte_number ];
@@ -764,7 +764,7 @@ ammunition_integer_shift_left ( int size, const void *operand, int bits,
     ammunition_overflow_bit = 0;
     byte_shift = bits / CHAR_BIT;
     bit_shift = bits % CHAR_BIT;
-    _Pragma( "loopbound min 0 max 2" )
+    #pragma loopbound min 0 max 2
     for ( byte_number = 0; byte_number < byte_shift && byte_number < size;
           byte_number++ )
       if ( ( ( unsigned char * ) operand ) [ byte_number ]
@@ -781,7 +781,7 @@ ammunition_integer_shift_left ( int size, const void *operand, int bits,
                           ( size_t ) byte_shift );
       if ( bit_shift == 0 )
         return;
-      _Pragma( "loopbound min 2 max 3" )
+      #pragma loopbound min 2 max 3
       for ( byte_number = size - byte_shift - 1, carry = 0;
             byte_number >= 0; byte_number-- ) {
         byte = ( ( unsigned char * ) result ) [ byte_number ];
@@ -813,7 +813,7 @@ ammunition_integer_or ( int size, const void *op1, const void *op2,
 {
   int byte_number;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( byte_number = 0; byte_number < size; byte_number++ ) {
     ( ( unsigned char * ) result ) [ byte_number ]
       = ( ( unsigned char * ) op1 ) [ byte_number ]
@@ -840,7 +840,7 @@ ammunition_integer_and ( int size, const void *op1, const void *op2,
 {
   int byte_number;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( byte_number = 0; byte_number < size; byte_number++ ) {
     ( ( unsigned char * ) result ) [ byte_number ]
       = ( ( unsigned char * ) op1 ) [ byte_number ]
@@ -866,7 +866,7 @@ ammunition_integer_not ( int size, const void *operand, void *result )
 {
   int byte_number;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( byte_number = 0; byte_number < size; byte_number++ ) {
     ( ( unsigned char * ) result ) [ byte_number ]
       = ( ( unsigned char * ) operand ) [ byte_number ] ^ UCHAR_MAX;
@@ -937,7 +937,7 @@ int ammunition_bytes_comparison ( const void *op1, const void *op2, int size )
   const unsigned char *str1 = ( unsigned const char * )op1;
   const unsigned char *str2 = ( unsigned const char * )op2;
 
-  _Pragma( "loopbound min 1 max 4" )
+  #pragma loopbound min 1 max 4
   while ( size > 0 && *str1 == *str2 ) {
     str1++;
     str2++;
@@ -1094,7 +1094,7 @@ ammunition_change_unsigned_integer_size ( int operand_size, const void *operand,
                          operand, ( size_t ) operand_size );
     ammunition_memset ( result, 0, ( size_t ) ( result_size - operand_size ) );
   } else {
-    _Pragma( "loopbound min 1 max 2" )
+    #pragma loopbound min 1 max 2
     for ( operand_digit_number = 0;
           operand_digit_number < operand_size - result_size;
           operand_digit_number++ ) {
@@ -1130,7 +1130,7 @@ ammunition_change_integer_size ( int operand_size, const void *operand,
     ammunition_memset ( result, ( operand_sign ? UCHAR_MAX : 0 ),
                         ( size_t ) ( result_size - operand_size ) );
   } else {
-    _Pragma( "loopbound min 2 max 2" )
+    #pragma loopbound min 2 max 2
     for ( operand_digit_number = 0;
           operand_digit_number < operand_size - result_size;
           operand_digit_number++ ) {
@@ -1177,10 +1177,10 @@ ammunition_unsigned_integer_to_based_string ( int size, const void *operand,
 
   ammunition_memcpy ( operand_copy, operand, ( size_t ) size );
   length = 0;
-  _Pragma( "loopbound min 1 max 10" )
+  #pragma loopbound min 1 max 10
   do {
     nonzero_flag = 0 /* FALSE */;
-    _Pragma( "loopbound min 2 max 6" )
+    #pragma loopbound min 2 max 6
     for ( digit_num = 0, remainder = 0; digit_num < size; digit_num++ ) {
       divisable = remainder * ( UCHAR_MAX + 1 ) + operand_copy [ digit_num ];
       remainder = divisable % base;
@@ -1192,7 +1192,7 @@ ammunition_unsigned_integer_to_based_string ( int size, const void *operand,
                                             : 'a' + remainder - 10 );
   } while ( nonzero_flag ); 
   result [ length ] = '\0';
-  _Pragma( "loopbound min 0 max 5" )
+  #pragma loopbound min 0 max 5
   for ( i = 0; i < length / 2; i++ ) {
     temporary = result [ i ];
     result [ i ] = result [ length - i - 1 ];
@@ -1265,7 +1265,7 @@ int ammunition_add_digit_to_unsigned_integer_without_overflow_reaction
   unsigned int carry;
   unsigned int sum;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( digit_num = size - 1, carry = digit; digit_num >= 0;
         digit_num-- ) {
     sum = ( ( unsigned char * ) operand ) [ digit_num ] + carry;
@@ -1293,7 +1293,7 @@ int ammunition_string_to_unsigned_integer_without_overflow_reaction
   int overflow_flag;
 
   ammunition_memset ( result, 0, ( size_t ) size );
-  _Pragma( "loopbound min 1 max 10" )
+  #pragma loopbound min 1 max 10
   for ( overflow_flag = 0; ammunition_isdigit ( *operand ); operand++ ) {
     overflow_flag
       = overflow_flag ||
@@ -1324,7 +1324,7 @@ ammunition_unsigned_integer_from_string ( int size, const char *operand,
 {
   char *first_nondigit;
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( ammunition_isspace ( *operand ) )
     operand++;
   ammunition_overflow_bit
@@ -1352,7 +1352,7 @@ ammunition_integer_from_string ( int size, const char *operand, void *result )
   char *first_nondigit;
   int unsigned_result_sign;
 
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( ammunition_isspace ( *operand ) )
     operand++;
   negative_number_flag = 0; /* FALSE */

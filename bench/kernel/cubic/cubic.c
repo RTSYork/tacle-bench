@@ -90,7 +90,7 @@ int cubic_return( void )
 
 void cubic_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   /* solve some cubic functions */
   /* should get 3 solutions: 2, 6 & 2.5   */
   cubic_solveCubic( cubic_a1, cubic_b1, cubic_c1, cubic_d1, &cubic_solutions, cubic_x );
@@ -103,13 +103,13 @@ void cubic_main( void )
   cubic_checksum += cubic_solutions;
 
   /* Now solve some random equations */
-  _Pragma( "loopbound min 5 max 5" )
+  #pragma loopbound min 5 max 5
   for ( cubic_a1 = 1; cubic_a1 < 10; cubic_a1 += 2 ) {
-    _Pragma( "loopbound min 5 max 5" )
+    #pragma loopbound min 5 max 5
     for ( cubic_b1 = 10; cubic_b1 > 0; cubic_b1 -= 2 ) {
-      _Pragma( "loopbound min 7 max 7" )
+      #pragma loopbound min 7 max 7
       for ( cubic_c1 = 5; cubic_c1 < 15; cubic_c1 += 1.5f ) {
-        _Pragma( "loopbound min 5 max 5" )
+        #pragma loopbound min 5 max 5
         for ( cubic_d1 = -1; cubic_d1 > -11; cubic_d1 -= 2 ) {
           cubic_solveCubic( cubic_a1, cubic_b1, cubic_c1, cubic_d1, &cubic_solutions, cubic_x );
           cubic_checksum += cubic_solutions;

@@ -79,11 +79,11 @@ void iir_init( void )
   volatile char bitmask = 0;
 
 
-  _Pragma( "loopbound min 20 max 20" )
+  #pragma loopbound min 20 max 20
   for ( f = 0 ; f < 5 * 4; f++ )
     iir_coefficients[ f ] = 7;
 
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( f = 0 ; f < 2 * 4; f++ )
     iir_wi[ f ] = 0;
 
@@ -93,12 +93,12 @@ void iir_init( void )
     Apply volatile XOR-bitmask to entire input array.
   */
   p = ( unsigned char * ) &iir_coefficients[ 0 ];
-  _Pragma( "loopbound min 80 max 80" )
+  #pragma loopbound min 80 max 80
   for ( i = 0; i < sizeof( iir_coefficients ); ++i, ++p )
     *p ^= bitmask;
 
   p = ( unsigned char * ) &iir_wi[ 0 ];
-  _Pragma( "loopbound min 32 max 32" )
+  #pragma loopbound min 32 max 32
   for ( i = 0; i < sizeof( iir_wi ); ++i, ++p )
     *p ^= bitmask;
 }
@@ -110,7 +110,7 @@ int iir_return( void )
   int f;
 
 
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( f = 0 ; f < 2 * 4; f++ )
     checksum += iir_wi[ f ];
 
@@ -124,7 +124,7 @@ int iir_return( void )
 
 void iir_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   register float w;
   int f;
   register volatile float *ptr_coeff, *ptr_wi1, *ptr_wi2;
@@ -137,7 +137,7 @@ void iir_main( void )
 
   y = iir_x ;
 
-  _Pragma( "loopbound min 4 max 4" )
+  #pragma loopbound min 4 max 4
   for ( f = 0 ; f < 4 ; f++ ) {
     w = y - *ptr_coeff++ * *ptr_wi1;
     w -= *ptr_coeff++ * *ptr_wi2;

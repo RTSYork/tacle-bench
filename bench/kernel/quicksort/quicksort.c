@@ -68,14 +68,14 @@ void quicksort_init( void )
   unsigned int read_counter = 0;
 
   /* constant propagation border */
-  _Pragma( "loopbound min 3000 max 3000" )
+  #pragma loopbound min 3000 max 3000
   for ( i = 0; i < 3000; i++ )
     quicksort_input_vector[  i  ] += quicksort_const_prop_border_i;
 
   /* Init arrays */
-  _Pragma( "loopbound min 681 max 681" )
+  #pragma loopbound min 681 max 681
   for ( i = 0; i < 681; i++ ) {
-    _Pragma( "loopbound min 1 max 20" )
+    #pragma loopbound min 1 max 20
     for ( j = 0; j < 20 - 1; j++ ) {
       quicksort_strings[  i  ][  j  ] = quicksort_input_string[  i  ][  j  ];
       quicksort_strings[  i  ][  j  ] += quicksort_const_prop_border_c;
@@ -88,7 +88,7 @@ void quicksort_init( void )
     quicksort_strings[  i  ][  20 - 1  ] = '\0';
   }
 
-  _Pragma( "loopbound min 1000 max 1000" )
+  #pragma loopbound min 1000 max 1000
   for ( i = 0; i < 1000; i++ ) {
     x = quicksort_vectors[  i  ].x = quicksort_input_vector[  read_counter++  ];
     y = quicksort_vectors[  i  ].y = quicksort_input_vector[  read_counter++  ];
@@ -124,7 +124,7 @@ void quicksort_str( char *a, unsigned long n, unsigned long es )
   char *pi, *pj, *pn;
 
 
-  _Pragma( "loopbound min 0 max 8" )
+  #pragma loopbound min 0 max 8
   while ( n > 1 ) {
     if ( n > 10 )
       pi = quicksort_pivot_strings( a, n, es );
@@ -136,14 +136,14 @@ void quicksort_str( char *a, unsigned long n, unsigned long es )
     pn = a + n * es;
     pj = pn;
 
-    _Pragma( "loopbound min 0 max 169" )
+    #pragma loopbound min 0 max 169
     while ( 1 ) {
-      _Pragma( "loopbound min 1 max 26" )
+      #pragma loopbound min 1 max 26
       do
         pi += es;
       while ( ( pi < pn ) && ( quicksort_compare_strings( pi, a ) < 0 ) );
 
-      _Pragma( "loopbound min 1 max 23" )
+      #pragma loopbound min 1 max 23
       do
         pj -= es;
       while ( ( pj > a ) && ( quicksort_compare_strings( pj, a ) > 0 ) );
@@ -173,7 +173,7 @@ void quicksort_vec( char *a, unsigned long n, unsigned long es )
   char *pi, *pj, *pn;
 
 
-  _Pragma( "loopbound min 0 max 15" )
+  #pragma loopbound min 0 max 15
   while ( n > 1 ) {
     if ( n > 10 )
       pi = quicksort_pivot_vectors( a, n, es );
@@ -185,14 +185,14 @@ void quicksort_vec( char *a, unsigned long n, unsigned long es )
     pn = a + n * es;
     pj = pn;
 
-    _Pragma( "loopbound min 1 max 250" )
+    #pragma loopbound min 1 max 250
     while ( 1 ) {
-      _Pragma( "loopbound min 1 max 51" )
+      #pragma loopbound min 1 max 51
       do
         pi += es;
       while ( ( pi < pn ) && ( quicksort_compare_vectors( pi, a ) < 0 ) );
 
-      _Pragma( "loopbound min 1 max 27" )
+      #pragma loopbound min 1 max 27
       do
         pj -= es;
       while ( ( pj > a ) && ( quicksort_compare_vectors( pj, a ) > 0 ) );
@@ -224,13 +224,13 @@ void quicksort_vec( char *a, unsigned long n, unsigned long es )
 
 void quicksort_main( void )
 {
-  _Pragma ( "entrypoint" )
-  _Pragma( "marker recursivecall" )
-  _Pragma( "flowrestriction 1*quicksort_str <= 521*recursivecall" )
+  #pragma entrypoint
+  #pragma marker recursivecall
+  #pragma flowrestriction 1*quicksort_str <= 521*recursivecall
   quicksort_str( *quicksort_strings, 681, sizeof( char[  20  ] ) );
 
-  _Pragma( "marker recursivecall2" )
-  _Pragma( "flowrestriction 1*quicksort_vec <= 650*recursivecall2" )
+  #pragma marker recursivecall2
+  #pragma flowrestriction 1*quicksort_vec <= 650*recursivecall2
   quicksort_vec(
     ( char * ) quicksort_vectors, 1000,
     sizeof( struct quicksort_3DVertexStruct ) );

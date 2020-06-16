@@ -89,7 +89,7 @@ adc_init( void )
             | ( 1 << ADSC );
 
   /* Init to 0 (usefull ?) */
-  _Pragma( "loopbound min 8 max 8" )
+  #pragma loopbound min 8 max 8
   for ( i = 0; i < NB_ADC; i++ )
     buffers[ i ] = ( struct adc_buf * )0;
 }

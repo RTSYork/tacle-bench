@@ -225,11 +225,11 @@ int adpcm_dec_sin( int rad )
 
 
   /* MAX dependent on rad's value, say 50 */
-  _Pragma( "loopbound min 0 max 0" )
+  #pragma loopbound min 0 max 0
   while ( rad > 2 * PI )
     rad -= 2 * PI; 
 
-  _Pragma( "loopbound min 0 max 1999" )
+  #pragma loopbound min 0 max 1999
   while ( rad < -2 * PI )
     rad += 2 * PI;
 
@@ -241,7 +241,7 @@ int adpcm_dec_sin( int rad )
 
   /* REALLY: while(my_fabs(diff) >= 0.00001) { */
   /* MAX: 1000 */
-  _Pragma( "loopbound min 849 max 2424" )
+  #pragma loopbound min 849 max 2424
   while ( adpcm_dec_fabs( diff ) >= 1 ) {
     diff = ( diff * ( -( rad * rad ) ) ) / ( ( 2 * inc ) * ( 2 * inc + 1 ) );
     app = app + diff;
@@ -391,7 +391,7 @@ void adpcm_dec_decode( int input )
   xa2 = ( long ) adpcm_dec_xs * ( *h_ptr++ );
 
   /* main multiply accumulate loop for samples and coefficients */
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( i = 0; i < 10; i++ ) {
     xa1 += ( long )( *ac_ptr++ ) * ( *h_ptr++ );
     xa2 += ( long )( *ad_ptr++ ) * ( *h_ptr++ );
@@ -409,7 +409,7 @@ void adpcm_dec_decode( int input )
   ac_ptr1 = ac_ptr - 1;
   ad_ptr1 = ad_ptr - 1;
 
-  _Pragma( "loopbound min 10 max 10" )
+  #pragma loopbound min 10 max 10
   for ( i = 0; i < 10; i++ ) {
     *ac_ptr-- = *ac_ptr1--;
     *ad_ptr-- = *ad_ptr1--;
@@ -433,7 +433,7 @@ int adpcm_dec_filtez( int *bpl, int *dlt )
   zl = ( long )( *bpl++ ) * ( *dlt++ );
 
   /* MAX: 5 */
-  _Pragma( "loopbound min 5 max 5" )
+  #pragma loopbound min 5 max 5
   for ( i = 1; i < 6; i++ )
     zl += ( long )( *bpl++ ) * ( *dlt++ );
 
@@ -499,13 +499,13 @@ void adpcm_dec_upzero( int dlt, int *dlti, int *bli )
 
   /*if dlt is zero, then no sum into bli */
   if ( dlt == 0 ) {
-    _Pragma( "loopbound min 6 max 6" )
+    #pragma loopbound min 6 max 6
     for ( i = 0; i < 6; i++ ) {
       bli[ i ] = ( int )( ( 255L * bli[ i ] ) >> 8L ); /* leak factor of 255/256 */
     }
 
   } else {
-    _Pragma( "loopbound min 6 max 6" )
+    #pragma loopbound min 6 max 6
     for ( i = 0; i < 6; i++ ) {
       if ( ( long )dlt * dlti[ i ] >= 0 )
         wd2 = 128;
@@ -623,7 +623,7 @@ void adpcm_dec_reset()
   adpcm_dec_dec_nbh = adpcm_dec_dec_ah1 = adpcm_dec_dec_ah2 = adpcm_dec_dec_ph1 =
       adpcm_dec_dec_ph2 = adpcm_dec_dec_rh1 = adpcm_dec_dec_rh2 = 0;
 
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0; i < 6; i++ ) {
     ////delay_dltx[ i ] = 0;
     adpcm_dec_delay_dhx[ i ] = 0;
@@ -631,7 +631,7 @@ void adpcm_dec_reset()
     adpcm_dec_dec_del_dhx[ i ] = 0;
   }
 
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0; i < 6; i++ ) {
     //delay_bpl[ i ] = 0;
     adpcm_dec_delay_bph[ i ] = 0;
@@ -639,7 +639,7 @@ void adpcm_dec_reset()
     adpcm_dec_dec_del_bph[ i ] = 0;
   }
 
-  _Pragma( "loopbound min 11 max 11" )
+  #pragma loopbound min 11 max 11
   for ( i = 0; i < 11; i++ ) {
     adpcm_dec_accumc[ i ] = 0;
     adpcm_dec_accumd[ i ] = 0;
@@ -663,7 +663,7 @@ void adpcm_dec_init()
   /* XXmain_0, MAX: 2 */
   /* Since the number of times we loop in adpcm_dec_sin depends on the
      argument we add the fact: xxmain_0:[  ]: */
-  _Pragma( "loopbound min 3 max 3" )
+  #pragma loopbound min 3 max 3
   for ( i = 0 ; i < SIZE ; i++ ) {
     adpcm_dec_test_data[ i ] = ( int ) j * adpcm_dec_cos( f * PI * i );
 
@@ -676,7 +676,7 @@ int adpcm_dec_return()
 {
   int i;
   int check_sum = 0;
-  _Pragma( "loopbound min 2 max 2" )
+  #pragma loopbound min 2 max 2
   for ( i = 0; i < IN_END; i += 2 )
     check_sum += ( adpcm_dec_result[ i ] + adpcm_dec_result[ i + 1 ] );
 
@@ -689,10 +689,10 @@ int adpcm_dec_return()
 
 void adpcm_dec_main( void )
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   int i;
 
-  _Pragma( "loopbound min 2 max 2" )
+  #pragma loopbound min 2 max 2
   for ( i = 0 ; i < IN_END ; i += 2 ) {
     adpcm_dec_decode( adpcm_dec_compressed[ i / 2 ] );
     adpcm_dec_result[ i ] = adpcm_dec_xout1;

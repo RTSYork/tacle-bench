@@ -79,14 +79,14 @@ int fac_fac ( int n )
 
 void fac_main ()
 {
-  _Pragma( "entrypoint" )
+  #pragma entrypoint
   int i;
 
-  _Pragma( "loopbound min 6 max 6" )
+  #pragma loopbound min 6 max 6
   for ( i = 0;  i <= fac_n; i++ ) {
-    _Pragma( "marker recursivecall" )
+    #pragma marker recursivecall
     fac_s += fac_fac ( i );
-    _Pragma( "flowrestriction 1*fac_fac <= 6*recursivecall" )
+    #pragma flowrestriction 1*fac_fac <= 6*recursivecall
   }
   printf("%d\n", counter1);
 }
