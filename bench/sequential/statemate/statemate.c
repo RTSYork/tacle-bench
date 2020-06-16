@@ -1263,8 +1263,9 @@ int statemate_return()
   return ( checksum == 18446744073709551614ul );
 }
 
-void _Pragma ( "entrypoint" ) statemate_main( void )
+void statemate_main( void )
 {
+  _Pragma ( "entrypoint" )
   statemate_FH_DU();
 }
 

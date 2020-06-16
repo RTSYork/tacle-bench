@@ -82,8 +82,9 @@ int main( void )
 FloatBuffer fmref_fb1, fmref_fb2, fmref_fb3, fmref_fb4;
 LPFData fmref_lpf_data;
 
-void _Pragma( "entrypoint" ) fmref_main( void )
+void fmref_main( void )
 {
+  _Pragma( "entrypoint" )
   int i;
   EqualizerData eq_data;
 

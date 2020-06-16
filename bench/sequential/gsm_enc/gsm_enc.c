@@ -2201,8 +2201,9 @@ int gsm_enc_return( void )
   return gsm_enc_result;
 }
 
-void _Pragma( "entrypoint" ) gsm_enc_main( void )
+void gsm_enc_main( void )
 {
+  _Pragma( "entrypoint" )
   gsm r;
   unsigned i;
   gsm_enc_result = 0;

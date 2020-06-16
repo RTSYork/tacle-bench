@@ -223,8 +223,9 @@ int minver_return()
 */
 
 
-void _Pragma( "entrypoint" ) minver_main()
+void minver_main()
 {
+  _Pragma( "entrypoint" )
   int i, j;
   double eps;
   eps = 1.0e-6;

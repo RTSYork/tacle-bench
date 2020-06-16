@@ -131,8 +131,9 @@ void bitonic_sort( int lo, int cnt, int dir )
   Main functions
 */
 
-void _Pragma ( "entrypoint" ) bitonic_main( void )
+void bitonic_main( void )
 {
+  _Pragma ( "entrypoint" )
   int i;
 
   /** When called with parameters lo = 0, cnt = a.length() and dir =

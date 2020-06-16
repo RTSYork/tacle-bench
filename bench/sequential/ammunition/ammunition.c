@@ -1163,8 +1163,9 @@ int ammunition_return( void )
   Main functions
 */
 
-void _Pragma( "entrypoint" ) ammunition_main( void )
+void ammunition_main( void )
 {
+  _Pragma( "entrypoint" )
   ammunition_result |= ammunition_bits_test();
   ammunition_result |= ammunition_arithm_test();
 }

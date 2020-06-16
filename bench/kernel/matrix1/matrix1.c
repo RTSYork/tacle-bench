@@ -133,8 +133,9 @@ int matrix1_return( void )
   Main functions
 */
 
-void _Pragma ( "entrypoint" ) matrix1_main( void )
+void matrix1_main( void )
 {
+  _Pragma ( "entrypoint" )
   register int *p_a = &matrix1_A[ 0 ];
   register int *p_b = &matrix1_B[ 0 ];
   register int *p_c = &matrix1_C[ 0 ];

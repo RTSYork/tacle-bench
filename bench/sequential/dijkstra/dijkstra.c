@@ -171,8 +171,9 @@ int dijkstra_find( int chStart, int chEnd )
   return 0;
 }
 
-void _Pragma( "entrypoint" ) dijkstra_main( void )
+void dijkstra_main( void )
 {
+  _Pragma( "entrypoint" )
   int i, j;
 
   /* finds 20 shortest paths between nodes */

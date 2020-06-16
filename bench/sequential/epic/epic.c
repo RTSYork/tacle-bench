@@ -1111,8 +1111,9 @@ void epic_reflect1( float *filt, int x_dim, int y_dim, int x_pos, int y_pos,
   Main functions
 */
 
-void _Pragma( "entrypoint" ) epic_main( void )
+void epic_main( void )
 {
+  _Pragma( "entrypoint" )
   epic_build_pyr( epic_image, X_SIZE, Y_SIZE, NUM_LEVELS, epic_lo_filter,
                   epic_hi_filter, FILTER_SIZE );
 }

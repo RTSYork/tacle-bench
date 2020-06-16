@@ -13195,8 +13195,9 @@ int mpeg2_variance( unsigned char *p, int lx )
   Main functions
 */
 
-void _Pragma ( "entrypoint" ) mpeg2_main( void )
+void mpeg2_main( void )
 {
+  _Pragma ( "entrypoint" )
   mpeg2_motion_estimation(
     mpeg2_oldorgframe, mpeg2_oldorgframe, mpeg2_oldorgframe, mpeg2_oldorgframe,
     mpeg2_oldorgframe, mpeg2_oldorgframe, 7, 7, 3, 3, mpeg2_mbinfo, 0, 0 );

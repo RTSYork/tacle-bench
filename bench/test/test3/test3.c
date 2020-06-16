@@ -5063,8 +5063,9 @@ void test3_func_0_0( void )
   Main functions
 */
 
-void _Pragma ( "entrypoint" ) test3_main( void )
+void test3_main( void )
 {
+  _Pragma ( "entrypoint" )
   test3_func_0_0();
 }
 

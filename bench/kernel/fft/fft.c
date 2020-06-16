@@ -317,8 +317,9 @@ int fft_return( void )
   Main functions
 */
 
-void _Pragma( "entrypoint" ) fft_main( void )
+void fft_main( void )
 {
+  _Pragma( "entrypoint" )
   fft_bit_reduct( &fft_input_data[ 0 ] );
 }
 

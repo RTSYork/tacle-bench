@@ -90,8 +90,9 @@ int insertsort_return()
 */
 
 
-void _Pragma( "entrypoint" ) insertsort_main()
+void insertsort_main()
 {
+  _Pragma( "entrypoint" )
   int  i, j, temp;
   i = 2;
 

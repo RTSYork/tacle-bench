@@ -667,8 +667,9 @@ void powerwindow_init( void )
 
 }
 
-void _Pragma( "entrypoint" ) powerwindow_main( void )
+void powerwindow_main( void )
 {
+  _Pragma( "entrypoint" )
   /* Attach powerwindow_main to a timer or interrupt service routine with
      period 0.005 seconds (the model's base sample time) here.  The
      call syntax for powerwindow_main is

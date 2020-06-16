@@ -89,8 +89,9 @@ unsigned long bitcount_random( void )
   return ( t );
 }
 
-void _Pragma( "entrypoint" ) bitcount_main()
+void bitcount_main()
 {
+  _Pragma( "entrypoint" )
   unsigned int i, j;
   _Pragma( "loopbound min 8 max 8" )
   for ( i = 0; i < FUNCS; i++ ) {

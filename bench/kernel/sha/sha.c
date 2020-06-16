@@ -195,8 +195,9 @@ void sha_stream( struct SHA_INFO *sha_info, struct SHA_MY_FILE *fin )
   sha_final( sha_info );
 }
 
-void _Pragma( "entrypoint" ) sha_main( void )
+void sha_main( void )
 {
+  _Pragma( "entrypoint" )
   struct SHA_MY_FILE fin;
   fin.data = sha_data;
   fin.size = 32743;  // set size = 3247552 for input_large

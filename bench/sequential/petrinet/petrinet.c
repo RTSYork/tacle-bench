@@ -53,8 +53,9 @@ volatile long petrinet_P3_marking_member_0[ 6 ];
 
 const long petrinet_CHECKSUM = 0;
 
-void _Pragma ( "entrypoint" ) petrinet_main( void )
+void petrinet_main( void )
 {
+  _Pragma ( "entrypoint" )
   int dummy_i;
   /*   dummy_i = 17; Takes too much time */
   dummy_i = 2;

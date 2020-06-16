@@ -734,8 +734,9 @@ int adpcm_enc_return( void )
   Main functions
 */
 
-void _Pragma( "entrypoint" ) adpcm_enc_main( void )
+void adpcm_enc_main( void )
 {
+  _Pragma( "entrypoint" )
   int i;
   /* MAX: 2 */
   _Pragma( "loopbound min 2 max 2" )

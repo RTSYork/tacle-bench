@@ -109,8 +109,9 @@ int complex_updates_return( void )
   Main functions
 */
 
-void _Pragma( "entrypoint" ) complex_updates_main( void )
+void complex_updates_main( void )
 {
+  _Pragma( "entrypoint" )
   register float *p_a = &complex_updates_A[ 0 ], *p_b = &complex_updates_B[ 0 ];
   register float *p_c = &complex_updates_C[ 0 ], *p_d = &complex_updates_D[ 0 ];
   int i;

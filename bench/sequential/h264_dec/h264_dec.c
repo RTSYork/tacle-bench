@@ -588,8 +588,9 @@ void h264_dec_decode_one_macroblock( struct h264_dec_img_par *img )
   Main functions
 */
 
-void _Pragma( "entrypoint" )  h264_dec_main( void )
+void  h264_dec_main( void )
 {
+  _Pragma( "entrypoint" )
   h264_dec_decode_one_macroblock( &h264_dec_img );
 }
 

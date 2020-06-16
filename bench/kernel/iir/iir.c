@@ -122,8 +122,9 @@ int iir_return( void )
   Main functions
 */
 
-void _Pragma( "entrypoint" ) iir_main( void )
+void iir_main( void )
 {
+  _Pragma( "entrypoint" )
   register float w;
   int f;
   register volatile float *ptr_coeff, *ptr_wi1, *ptr_wi2;

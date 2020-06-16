@@ -551,13 +551,14 @@ void huff_enc_create_codes_table( huff_enc_t_tree *tree,
 }
 
 
-void _Pragma( "entrypoint" ) huff_enc_main()
+void huff_enc_main()
 /* Returned parameters: None
    Action: Compresses with Huffman method all bytes read by the function
            'huff_enc_read_byte'
    Errors: None
 */
 {
+  _Pragma( "entrypoint" )
   huff_enc_t_tree *tree;
   huff_enc_t_tree heap[ 514 ];
   huff_enc_t_bin_val encoding_table[ 257 ];

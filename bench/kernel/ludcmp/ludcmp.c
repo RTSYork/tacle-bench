@@ -161,8 +161,9 @@ int ludcmp_test( int n, double eps )
   return ( 0 );
 }
 
-void _Pragma( "entrypoint" ) ludcmp_main( void )
+void ludcmp_main( void )
 {
+  _Pragma( "entrypoint" )
   int n = 5;
   double eps = 1;
   ludcmp_chkerr = ludcmp_test( n, eps );

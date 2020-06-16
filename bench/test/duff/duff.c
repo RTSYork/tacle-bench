@@ -117,8 +117,9 @@ void duff_copy( char *to, char *from, int count )
   Main functions
 */
 
-void _Pragma( "entrypoint" ) duff_main( void )
+void duff_main( void )
 {
+  _Pragma( "entrypoint" )
   duff_copy( duff_target, duff_source, 43 );
 }
 

@@ -189,8 +189,9 @@ int pm_return( void )
   Core benchmark functions
 */
 
-void _Pragma( "entrypoint" ) pm_main( void )
+void pm_main( void )
 {
+  _Pragma( "entrypoint" )
   pm_init_lib( &pm_lib );
   pm_init_pattern( &pm_pattern );
   pm_init_data( &pm_data, &pm_lib, &pm_pattern );

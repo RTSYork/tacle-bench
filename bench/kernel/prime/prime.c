@@ -120,8 +120,9 @@ void prime_swap ( unsigned int *a, unsigned int *b )
   Main functions
 */
 
-void _Pragma( "entrypoint" ) prime_main()
+void prime_main()
 {
+  _Pragma( "entrypoint" )
   prime_swap ( &prime_x, &prime_y );
 
   prime_result = !( !prime_prime( prime_x ) && !prime_prime( prime_y ) );

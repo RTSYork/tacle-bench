@@ -839,8 +839,9 @@ int g723_enc_return()
   Main functions
 */
 
-void _Pragma( "entrypoint" ) g723_enc_main()
+void g723_enc_main()
 {
+  _Pragma( "entrypoint" )
 //  struct g72x_state state;
   short   sample_short; //mv
   unsigned char   code;

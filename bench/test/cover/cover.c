@@ -679,8 +679,9 @@ int cover_swi10( int c )
 }
 
 
-void _Pragma( "entrypoint" ) cover_main( void )
+void cover_main( void )
 {
+  _Pragma( "entrypoint" )
   cover_cnt = cover_swi10( cover_cnt );
 
   cover_cnt = cover_swi50( cover_cnt );

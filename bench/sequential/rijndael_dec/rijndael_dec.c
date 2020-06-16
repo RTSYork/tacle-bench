@@ -170,8 +170,9 @@ void rijndael_dec_decfile( struct rijndael_dec_FILE *fin, struct aes *ctx )
   }
 }
 
-void _Pragma( "entrypoint" ) rijndael_dec_main( void )
+void rijndael_dec_main( void )
 {
+  _Pragma( "entrypoint" )
   struct aes ctx[ 1 ];
 
   /* decryption in Cipher Block Chaining mode */

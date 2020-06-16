@@ -222,8 +222,9 @@ void quicksort_vec( char *a, unsigned long n, unsigned long es )
   Main functions
 */
 
-void _Pragma ( "entrypoint" ) quicksort_main( void )
+void quicksort_main( void )
 {
+  _Pragma ( "entrypoint" )
   _Pragma( "marker recursivecall" )
   _Pragma( "flowrestriction 1*quicksort_str <= 521*recursivecall" )
   quicksort_str( *quicksort_strings, 681, sizeof( char[  20  ] ) );

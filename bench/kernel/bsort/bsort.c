@@ -113,8 +113,9 @@ int bsort_BubbleSort( int Array[] )
 }
 
 
-void _Pragma( "entrypoint" ) bsort_main( void )
+void bsort_main( void )
 {
+  _Pragma( "entrypoint" )
   bsort_BubbleSort( bsort_Array );
 }
 

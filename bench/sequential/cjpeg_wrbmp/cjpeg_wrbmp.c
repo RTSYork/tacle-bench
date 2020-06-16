@@ -193,8 +193,9 @@ void cjpeg_wrbmp_write_colormap( cjpeg_wrbmp_j_decompress_ptr
   }
 }
 
-void _Pragma( "entrypoint" ) cjpeg_wrbmp_main()
+void cjpeg_wrbmp_main()
 {
+  _Pragma( "entrypoint" )
   cjpeg_wrbmp_finish_output_bmp( &cjpeg_wrbmp_jpeg_dec_1 );
   cjpeg_wrbmp_write_colormap(    &cjpeg_wrbmp_jpeg_dec_1, 768, 4, 1 );
 

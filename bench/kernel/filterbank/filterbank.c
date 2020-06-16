@@ -66,8 +66,9 @@ int filterbank_return( void )
   Core benchmark functions
 */
 
-void _Pragma( "entrypoint" ) filterbank_main( void )
+void filterbank_main( void )
 {
+  _Pragma( "entrypoint" )
   float r[ 256 ];
   float y[ 256 ];
   float H[ 8 ][ 32 ];

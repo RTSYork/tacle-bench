@@ -304,8 +304,9 @@ void jfdctint_jpeg_fdct_islow( void )
    The switching latency, including the function call/return time,
    is measured to be equal to 1.1us (22 clock cycles).
 */
-void _Pragma ( "entrypoint" ) jfdctint_main( void )
+void jfdctint_main( void )
 {
+  _Pragma ( "entrypoint" )
   jfdctint_jpeg_fdct_islow();
 }
 

@@ -374,8 +374,9 @@ int ndes_return()
   return ( ndes_icd.r + ndes_icd.l  + ( -8390656 ) ) != 0 ;
 }
 
-void _Pragma( "entrypoint" ) ndes_main()
+void ndes_main()
 {
+  _Pragma( "entrypoint" )
   ndes_des( ndes_inp, ndes_key, &ndes_newkey, ndes_isw, &ndes_out );
 }
 

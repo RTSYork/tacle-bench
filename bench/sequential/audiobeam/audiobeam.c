@@ -566,8 +566,9 @@ void audiobeam_calc_single_pos( float source_location[ 3 ],
   Main functions
 */
 
-void _Pragma( "entrypoint" ) audiobeam_main( void )
+void audiobeam_main( void )
 {
+  _Pragma( "entrypoint" )
   char hamming = 1;
   audiobeam_calc_single_pos( audiobeam_source_location,
                              audiobeam_mic_locations,

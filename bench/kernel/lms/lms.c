@@ -155,8 +155,9 @@ float lms_calc( float x,
 }
 
 
-void _Pragma( "entrypoint" ) lms_main( void )
+void lms_main( void )
 {
+  _Pragma( "entrypoint" )
   int i;
   float b[ L + 1 ];
   float history[ L + 1 ];

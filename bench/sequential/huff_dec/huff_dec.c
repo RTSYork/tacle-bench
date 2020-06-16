@@ -342,13 +342,14 @@ huff_dec_t_tree *huff_dec_tree_encoding( t_bin_val codes_table[ 257 ],
 }
 
 
-void _Pragma( "entrypoint" ) huff_dec_main( void )
+void huff_dec_main( void )
 /* Returned parameters: None
    Action: Decompresses with Huffman method all bytes read by the function
            'read_code_1_bit' and 'read_code_n_bits'
    Errors: An input/output error could disturb the running of the program
 */
 {
+  _Pragma( "entrypoint" )
   t_bin_val encoding_table[ 257 ];
   huff_dec_t_tree heap[ 514 ]; /* space for dynamically allocated nodes */
   huff_dec_t_tree *ptr_tree;

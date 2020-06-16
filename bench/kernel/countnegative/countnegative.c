@@ -126,8 +126,9 @@ void countnegative_sum( matrix Array )
 /*
   The main function
 */
-void _Pragma( "entrypoint" ) countnegative_main ( void )
+void countnegative_main ( void )
 {
+  _Pragma( "entrypoint" )
   countnegative_sum(  countnegative_array );
 }
 

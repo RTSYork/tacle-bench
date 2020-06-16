@@ -142,8 +142,9 @@ void fir2dim_pin_down( float *pimage, float *parray, float *pcoeff,
   Main functions
 */
 
-void _Pragma( "entrypoint" ) fir2dim_main()
+void fir2dim_main()
 {
+  _Pragma( "entrypoint" )
   register float *parray  = &fir2dim_array[ 0 ], *parray2, *parray3 ;
   register float *pcoeff  = &fir2dim_coefficients[ 0 ] ;
   register float *poutput = &fir2dim_output[ 0 ]       ;

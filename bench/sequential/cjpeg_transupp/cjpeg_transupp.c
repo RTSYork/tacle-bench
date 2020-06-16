@@ -678,8 +678,9 @@ void cjpeg_transupp_do_transverse( j_compress_ptr dstinfo )
   Main functions
 */
 
-void _Pragma ( "entrypoint" ) cjpeg_transupp_main( void )
+void cjpeg_transupp_main( void )
 {
+  _Pragma ( "entrypoint" )
   cjpeg_transupp_dstinfo.image_width = 227;
   cjpeg_transupp_dstinfo.image_height = 149;
 

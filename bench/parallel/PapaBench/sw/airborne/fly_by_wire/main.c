@@ -98,8 +98,9 @@ static void to_autopilot_from_last_radio ( void )
   #endif
 }
 
-void _Pragma( "entrypoint" ) send_data_to_autopilot_task( void )
+void send_data_to_autopilot_task( void )
 {
+  _Pragma( "entrypoint" )
   #ifndef WCET_ANALYSIS
   if ( !SpiIsSelected() && spi_was_interrupted ) {
     spi_was_interrupted = FALSE;
@@ -175,8 +176,9 @@ int main( void )
 }
 #endif
 
-void _Pragma( "entrypoint" ) test_ppm_task( void )
+void test_ppm_task( void )
 {
+  _Pragma( "entrypoint" )
   if ( ppm_valid ) {
     ppm_valid = FALSE;
     ppm_cpt++;
@@ -196,14 +198,16 @@ void _Pragma( "entrypoint" ) test_ppm_task( void )
   if ( time_since_last_ppm >= REALLY_STALLED_TIME )
     radio_really_lost = TRUE;
 }
-void _Pragma( "entrypoint" ) check_failsafe_task( void )
+void check_failsafe_task( void )
 {
+  _Pragma( "entrypoint" )
   if ( ( mode == MODE_MANUAL && !radio_ok ) ||
        ( mode == MODE_AUTO && !mega128_ok ) )
     servo_set( failsafe );
 }
-void _Pragma( "entrypoint" ) check_mega128_values_task( void )
+void check_mega128_values_task( void )
 {
+  _Pragma( "entrypoint" )
   #ifndef WCET_ANALYSIS
   if ( !SpiIsSelected() && spi_was_interrupted ) {
     if ( mega128_receive_valid ) {

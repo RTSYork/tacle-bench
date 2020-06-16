@@ -2486,8 +2486,9 @@ void susan_init( void )
   // bt=50; /* Brightness threshold, all modes, (default=20) */
 }
 
-void _Pragma( "entrypoint" ) susan_main( void )
+void susan_main( void )
 {
+  _Pragma( "entrypoint" )
   susan_call_susan( &susan_file, 0 );
   susan_wccfreeall();
   susan_call_susan( &susan_file, 1 );

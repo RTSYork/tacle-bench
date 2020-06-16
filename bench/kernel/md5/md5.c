@@ -604,8 +604,9 @@ int md5_return( void )
   return md5_bytesNeeded;
 }
 
-void _Pragma( "entrypoint" ) md5_main( void )
+void md5_main( void )
 {
+  _Pragma( "entrypoint" )
   R_RANDOM_STRUCT randomStruct;
   R_RANDOM_STRUCT randomStruct2;
   /* We first generate parameters, and then do some key exchange each followed by a key computation...*/

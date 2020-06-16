@@ -141,8 +141,9 @@ int binarysearch_binary_search( int x )
   Main functions
 */
 
-void _Pragma( "entrypoint" ) binarysearch_main( void )
+void binarysearch_main( void )
 {
+  _Pragma( "entrypoint" )
   binarysearch_result = binarysearch_binary_search( 8 );
 }
 

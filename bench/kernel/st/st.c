@@ -205,8 +205,9 @@ void st_calc_LinCorrCoef( float *arrayA, float *arrayB, float meanA,
   Main functions
 */
 
-void _Pragma( "entrypoint" ) st_main( void )
+void st_main( void )
 {
+  _Pragma( "entrypoint" )
   st_calc_Sum_Mean( st_arrayA, &st_sumA, &st_meanA );
   st_calc_Var_Stddev( st_arrayA, st_meanA, &st_varA, &st_stddevA );
 

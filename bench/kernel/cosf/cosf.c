@@ -68,8 +68,9 @@ int cosf_return( void )
   Main functions
 */
 
-void _Pragma( "entrypoint" ) cosf_main( void )
+void cosf_main( void )
 {
+  _Pragma( "entrypoint" )
   float i;
   _Pragma( "loopbound min 100 max 100" )
   for ( i = 0.0f; i < 10; i += 0.1f )

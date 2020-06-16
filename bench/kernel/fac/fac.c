@@ -77,8 +77,9 @@ int fac_fac ( int n )
 */
 
 
-void _Pragma( "entrypoint" ) fac_main ()
+void fac_main ()
 {
+  _Pragma( "entrypoint" )
   int i;
 
   _Pragma( "loopbound min 6 max 6" )

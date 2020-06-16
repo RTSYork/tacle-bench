@@ -687,8 +687,9 @@ int adpcm_dec_return()
   Main functions
 */
 
-void _Pragma( "entrypoint" ) adpcm_dec_main( void )
+void adpcm_dec_main( void )
 {
+  _Pragma( "entrypoint" )
   int i;
 
   _Pragma( "loopbound min 2 max 2" )

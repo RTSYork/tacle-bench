@@ -629,8 +629,9 @@ void anagram_SortCandidates( void )
 }
 
 
-void _Pragma( "entrypoint" ) anagram_main( void )
+void anagram_main( void )
 {
+  _Pragma( "entrypoint" )
   int i;
 
   _Pragma( "loopbound min 3 max 3" )

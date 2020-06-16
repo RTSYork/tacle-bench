@@ -105,8 +105,9 @@ void lift_controller()
   Main functions
 */
 
-void  _Pragma( "entrypoint" ) lift_main()
+void  lift_main()
 {
+  _Pragma( "entrypoint" )
   int i = 0;
   _Pragma( "loopbound min 1001 max 1001" )
   while ( 1 ) {

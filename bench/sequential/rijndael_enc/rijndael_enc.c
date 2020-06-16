@@ -213,8 +213,9 @@ void rijndael_enc_encfile( struct rijndael_enc_FILE *fin, struct aes *ctx )
   }
 }
 
-void _Pragma( "entrypoint" ) rijndael_enc_main( void )
+void rijndael_enc_main( void )
 {
+  _Pragma( "entrypoint" )
   struct aes ctx[ 1 ];
 
   /* encryption in Cipher Block Chaining mode */
