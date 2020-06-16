@@ -248,12 +248,13 @@ void huff_dec_read_header( t_bin_val codes_table[ 257 ] )
   }
 
   /* == Decoding of the first part of the header === */
-  if ( huff_dec_read_code_1_bit() )
+  if ( huff_dec_read_code_1_bit() ) {
     /* First bit=0 => Present bytes coded on n*8 bits
                 =1 => Present bytes coded on 256 bits */
     _Pragma ( "loopbound min 256 max 256" )
     for ( i = 0; i <= 255; i++ )
       codes_table[ i ].presence = huff_dec_read_code_1_bit();
+  }
   else {
     i = huff_dec_read_code_n_bits( 5 ) + 1;
     _Pragma ( "loopbound min 1 max 32" )
