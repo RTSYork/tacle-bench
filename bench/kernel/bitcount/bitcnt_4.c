@@ -20,7 +20,7 @@
 
 #include "bitops.h"   /* from Snippets */
 
-static char bitcount_bits[ 256 ];
+static char bitcount_bits4[ 256 ];
 
 /*
 **  Count bits in each nybble
@@ -52,13 +52,13 @@ void bitcount_init4( void )
   };
 
   for ( i = 0; i < 256; i++ )
-    bitcount_bits[ i ] = bitcount_bits_tmp[ i ];
+    bitcount_bits4[ i ] = bitcount_bits_tmp[ i ];
 }
 
 int bitcount_ntbl_bitcnt( unsigned long x )
 {
     
-  int cnt = bitcount_bits[ ( int )( x & 0x0000000FL ) ];
+  int cnt = bitcount_bits4[ ( int )( x & 0x0000000FL ) ];
 
   if ( 0L != ( x >>= 4 ) )
     cnt += bitcount_ntbl_bitcnt( x );
@@ -73,7 +73,7 @@ int bitcount_ntbl_bitcnt( unsigned long x )
 int bitcount_btbl_bitcnt( unsigned long x )
 {
 
-  int cnt = bitcount_bits[  ( ( char * ) & x )[ 0 ] & 0xFF  ];
+  int cnt = bitcount_bits4[  ( ( char * ) & x )[ 0 ] & 0xFF  ];
 
   if ( 0L != ( x >>= 8 ) )
     cnt += bitcount_btbl_bitcnt( x );

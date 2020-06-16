@@ -20,7 +20,7 @@
 
 #include "bitops.h"
 
-static char bitcount_bits[ 256 ];
+static char bitcount_bits3[ 256 ];
 
 /*
 **  Count bits in each nybble
@@ -52,20 +52,20 @@ void bitcount_init3( void )
   };
 
   for ( i = 0; i < 256; i++ )
-    bitcount_bits[ i ] = bitcount_bits_tmp[ i ];
+    bitcount_bits3[ i ] = bitcount_bits_tmp[ i ];
 }
 
 int bitcount_ntbl_bitcount( long int x )
 {
   return
-    bitcount_bits[  ( int ) ( x & 0x0000000FUL )  ] +
-    bitcount_bits[  ( int )( ( x & 0x000000F0UL ) >> 4 )  ] +
-    bitcount_bits[  ( int )( ( x & 0x00000F00UL ) >> 8 )  ] +
-    bitcount_bits[  ( int )( ( x & 0x0000F000UL ) >> 12 ) ] +
-    bitcount_bits[  ( int )( ( x & 0x000F0000UL ) >> 16 ) ] +
-    bitcount_bits[  ( int )( ( x & 0x00F00000UL ) >> 20 ) ] +
-    bitcount_bits[  ( int )( ( x & 0x0F000000UL ) >> 24 ) ] +
-    bitcount_bits[  ( int )( ( x & 0xF0000000UL ) >> 28 ) ];
+    bitcount_bits3[  ( int ) ( x & 0x0000000FUL )  ] +
+    bitcount_bits3[  ( int )( ( x & 0x000000F0UL ) >> 4 )  ] +
+    bitcount_bits3[  ( int )( ( x & 0x00000F00UL ) >> 8 )  ] +
+    bitcount_bits3[  ( int )( ( x & 0x0000F000UL ) >> 12 ) ] +
+    bitcount_bits3[  ( int )( ( x & 0x000F0000UL ) >> 16 ) ] +
+    bitcount_bits3[  ( int )( ( x & 0x00F00000UL ) >> 20 ) ] +
+    bitcount_bits3[  ( int )( ( x & 0x0F000000UL ) >> 24 ) ] +
+    bitcount_bits3[  ( int )( ( x & 0xF0000000UL ) >> 28 ) ];
 }
 
 /*
@@ -83,8 +83,8 @@ int bitcount_BW_btbl_bitcount( long int x )
 
   U.y = x;
 
-  return bitcount_bits[  U.ch[ 0 ]  ] + bitcount_bits[  U.ch[ 1 ]  ] +
-         bitcount_bits[  U.ch[ 3 ]  ] + bitcount_bits[  U.ch[ 2 ]  ];
+  return bitcount_bits3[  U.ch[ 0 ]  ] + bitcount_bits3[  U.ch[ 1 ]  ] +
+         bitcount_bits3[  U.ch[ 3 ]  ] + bitcount_bits3[  U.ch[ 2 ]  ];
 }
 
 /*
@@ -98,9 +98,9 @@ int bitcount_AR_btbl_bitcount( long int x )
   unsigned char *ptr = ( unsigned char * ) & x ;
   int accu ;
 
-  accu = bitcount_bits[  *ptr++  ];
-  accu += bitcount_bits[  *ptr++  ];
-  accu += bitcount_bits[  *ptr++  ];
-  accu += bitcount_bits[  *ptr  ];
+  accu = bitcount_bits3[  *ptr++  ];
+  accu += bitcount_bits3[  *ptr++  ];
+  accu += bitcount_bits3[  *ptr++  ];
+  accu += bitcount_bits3[  *ptr  ];
   return accu;
 }
