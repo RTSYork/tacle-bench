@@ -1386,26 +1386,34 @@ void gsm_enc_Long_term_analysis_filtering (
   int      k;
   longword ltmp;
 
-# undef STEP
-# define STEP(BP)         \
-  _Pragma("loopbound min 40 max 40") \
-  for (k = 0; k <= 39; k++) {     \
-    dpp[ k ]  = GSM_MULT_R( BP, dp[ k - Nc ]);  \
-    e[ k ]  = GSM_SUB( d[ k ], dpp[ k ] );  \
-  }
-
   switch ( bc ) {
     case 0:
-      STEP(  3277 );
+      _Pragma("loopbound min 40 max 40")
+      for (k = 0; k <= 39; k++) {
+        dpp[ k ]  = GSM_MULT_R( 3277, dp[ k - Nc ]);
+        e[ k ]  = GSM_SUB( d[ k ], dpp[ k ] );
+      }
       break;
     case 1:
-      STEP( 11469 );
+      _Pragma("loopbound min 40 max 40")
+      for (k = 0; k <= 39; k++) {
+        dpp[ k ]  = GSM_MULT_R( 11469, dp[ k - Nc ]);
+        e[ k ]  = GSM_SUB( d[ k ], dpp[ k ] );
+      }
       break;
     case 2:
-      STEP( 21299 );
+      _Pragma("loopbound min 40 max 40")
+      for (k = 0; k <= 39; k++) {
+        dpp[ k ]  = GSM_MULT_R( 21299, dp[ k - Nc ]);
+        e[ k ]  = GSM_SUB( d[ k ], dpp[ k ] );
+      }
       break;
     case 3:
-      STEP( 32767 );
+      _Pragma("loopbound min 40 max 40")
+      for (k = 0; k <= 39; k++) {
+        dpp[ k ]  = GSM_MULT_R( 32767, dp[ k - Nc ]);
+        e[ k ]  = GSM_SUB( d[ k ], dpp[ k ] );
+      }
       break;
   }
 }
@@ -1713,21 +1721,28 @@ void gsm_enc_Autocorrelation (
   */
 
   if ( scalauto > 0 ) {
-
-#   define SCALE(n) \
-  case n: \
-    _Pragma("loopbound min 160 max 160") \
-    for (k = 0; k <= 159; k++) \
-      s[ k ] = GSM_MULT_R( s[ k ], 16384 >> (n-1) );\
-    break;
-
     switch ( scalauto ) {
-        SCALE( 1 )
-        SCALE( 2 )
-        SCALE( 3 )
-        SCALE( 4 )
+      case 1:
+        _Pragma("loopbound min 160 max 160")
+        for (k = 0; k <= 159; k++)
+          s[ k ] = GSM_MULT_R( s[ k ], 16384 >> 0 );
+          break;
+      case 2:
+        _Pragma("loopbound min 160 max 160")
+        for (k = 0; k <= 159; k++)
+          s[ k ] = GSM_MULT_R( s[ k ], 16384 >> 1 );
+          break;
+      case 3:
+        _Pragma("loopbound min 160 max 160")
+        for (k = 0; k <= 159; k++)
+          s[ k ] = GSM_MULT_R( s[ k ], 16384 >> 2 );
+          break;
+      case 4:
+        _Pragma("loopbound min 160 max 160")
+        for (k = 0; k <= 159; k++)
+          s[ k ] = GSM_MULT_R( s[ k ], 16384 >> 3 );
+          break;
     }
-# undef SCALE
   }
 
   /*  Compute the L_ACF[ .. ].
@@ -1864,8 +1879,12 @@ void gsm_enc_Reflection_coefficients (
     temp = GSM_ABS( temp );
     if ( P[ 0 ] < temp ) {
                 
-      for ( i = n; i <= 8; i++ ) *r++ = 0; _Pragma( "marker inner-marker" ) 
-      return; _Pragma( "flowrestriction 1*inner-marker <= 36*outer-marker" )
+      for ( i = n; i <= 8; i++ ) {
+        _Pragma( "marker inner-marker" )
+        *r++ = 0;
+      }
+      _Pragma( "flowrestriction 1*inner-marker <= 36*outer-marker" )
+      return; 
     }
 
     *r = gsm_enc_div( temp, P[ 0 ] );
