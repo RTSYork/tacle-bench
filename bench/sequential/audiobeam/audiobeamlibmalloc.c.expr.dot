@@ -1,0 +1,264 @@
+strict graph "" {
+	graph [bb="0,0,956.17,1059",
+		newrank=true
+	];
+	node [label="\N"];
+	{
+		graph [rank=same,
+			rankdir=LR
+		];
+		rank2	[height=0.5,
+			label="",
+			pos="3.6716,666",
+			style=invis,
+			width=0.013889];
+		30	[fillcolor=green,
+			height=0.5,
+			label="=",
+			pos="230.67,666",
+			style="filled,bold",
+			width=0.75];
+		rank2 -- 30	[pos="3.1335,668.39 0.87505,679.13 -6.6395,723.01 17.672,737.75 47.127,755.61 141.59,752.59 172.67,737.75 196.09,726.57 213.09,700.81 \
+222.43,683.39",
+			style=invis];
+		43	[fillcolor=green,
+			height=0.5,
+			label="+=",
+			pos="606.67,666",
+			style="filled,bold",
+			width=0.75];
+		30 -- 43	[pos="257.84,666 365.04,666 472.23,666 579.42,666",
+			style=invis];
+		54	[fillcolor=red,
+			height=0.65278,
+			label="\<ret\>",
+			pos="863.67,666",
+			shape=square,
+			style="filled,bold",
+			width=0.65278];
+		43 -- 54	[pos="633.78,666 702.48,666 771.17,666 839.87,666",
+			style=invis];
+		end	[height=0.5,
+			label="",
+			pos="955.67,666",
+			style=invis,
+			width=0.013889];
+		54 -- end	[pos="887.39,666 909.97,666 932.56,666 955.14,666",
+			style=invis];
+	}
+	subgraph cluster30 {
+		graph [bb="12.672,8,368.67,1051",
+			label="audiobeamlibmalloc.c:10:8",
+			lheight=0.21,
+			lp="190.67,1039.5",
+			lwidth=2.08
+		];
+		30;
+		34	[fillcolor=green,
+			height=0.5,
+			label=Cast,
+			pos="230.67,540",
+			style=filled,
+			width=0.75];
+		30 -- 34	[dir=back,
+			pos="s,230.67,647.76 230.67,637.75 230.67,613.46 230.67,578.66 230.67,558.1"];
+		35	[fillcolor=green,
+			height=1.041,
+			label="Typename
+name: None
+quals: []",
+			pos="119.67,414",
+			style=filled,
+			width=1.6303];
+		34 -- 35	[dir=back,
+			pos="s,217.06,523.8 210.34,516.28 192.89,496.8 167.57,468.51 148.12,446.78"];
+		39	[fillcolor=green,
+			height=0.74639,
+			label="UnaryOp
+op: &",
+			pos="243.67,414",
+			style=filled,
+			width=1.316];
+		34 -- 39	[dir=back,
+			pos="s,232.45,522.02 233.52,511.79 235.74,490.67 238.79,461.59 240.96,440.83"];
+		40	[fillcolor=green,
+			height=0.5,
+			label=ArrayRef,
+			pos="243.67,273",
+			style=filled,
+			width=1.2277];
+		39 -- 40	[dir=back,
+			pos="s,243.67,386.86 243.67,376.79 243.67,349.23 243.67,312.52 243.67,291.25"];
+		31	[fillcolor=green,
+			height=0.74639,
+			label="PtrDecl
+quals: []",
+			pos="230.67,831",
+			style=filled,
+			width=1.2178];
+		31 -- 30	[dir=back,
+			pos="s,230.67,803.81 230.67,793.76 230.67,759.63 230.67,709.99 230.67,684.12"];
+		32	[fillcolor=lightblue,
+			height=1.0278,
+			label=currentPos,
+			pos="230.67,983",
+			shape=square,
+			style=filled,
+			width=1.0278];
+		32 -- 31	[dir=back,
+			pos="s,230.67,945.69 230.67,935.49 230.67,910.02 230.67,879.4 230.67,858.11"];
+		41	[fillcolor=lightblue,
+			height=2.3472,
+			label=audiobeam_simulated_heap,
+			pos="105.67,100.5",
+			shape=square,
+			style=filled,
+			width=2.3472];
+		40 -- 41	[dir=back,
+			pos="s,230.44,255.65 223.93,247.61 210.54,231.06 191.96,208.11 173.5,185.3"];
+		42	[fillcolor=lightblue,
+			height=2.1111,
+			label=audiobeam_freeHeapPos,
+			pos="284.67,100.5",
+			shape=square,
+			style=filled,
+			width=2.1111];
+		40 -- 42	[dir=back,
+			pos="s,247.75,255.03 250.1,245.28 254.55,226.77 260.71,201.16 266.6,176.67"];
+		36	[fillcolor=green,
+			height=0.74639,
+			label="PtrDecl
+quals: []",
+			pos="119.67,540",
+			style=filled,
+			width=1.2178];
+		36 -- 35	[dir=back,
+			pos="s,119.67,513.01 119.67,502.91 119.67,486.84 119.67,467.93 119.67,451.78"];
+		37	[fillcolor=lightblue,
+			height=1.4722,
+			label="TypeDecl
+declname: None
+quals: []",
+			pos="119.67,666",
+			shape=square,
+			style=filled,
+			width=1.4722];
+		37 -- 36	[dir=back,
+			pos="s,119.67,612.77 119.67,602.73 119.67,590.16 119.67,577.6 119.67,567.13"];
+	}
+	subgraph cluster43 {
+		graph [bb="376.67,213,772.67,938",
+			label="audiobeamlibmalloc.c:12:3",
+			lheight=0.21,
+			lp="574.67,926.5",
+			lwidth=2.08
+		];
+		43;
+		45	[fillcolor=yellow,
+			height=0.5,
+			label="&",
+			pos="606.67,540",
+			style=filled,
+			width=0.75];
+		43 -- 45	[dir=back,
+			pos="s,606.67,647.76 606.67,637.75 606.67,613.46 606.67,578.66 606.67,558.1"];
+		46	[fillcolor=yellow,
+			height=0.5,
+			label="+",
+			pos="658.67,414",
+			style=filled,
+			width=0.75];
+		45 -- 46	[dir=back,
+			pos="s,613.58,522.53 617.53,513.12 627.82,488.57 642.98,452.41 651.74,431.53"];
+		49	[fillcolor=yellow,
+			height=0.5,
+			label=Cast,
+			pos="554.67,414",
+			style=filled,
+			width=0.75];
+		45 -- 49	[dir=back,
+			pos="s,599.77,522.53 595.82,513.12 585.52,488.57 570.36,452.41 561.61,431.53"];
+		47	[fillcolor=lightblue,
+			height=1.4444,
+			label=numberOfBytes,
+			pos="658.67,273",
+			shape=square,
+			style=filled,
+			width=1.4444];
+		46 -- 47	[dir=back,
+			pos="s,658.67,395.96 658.67,385.5 658.67,368.26 658.67,345.49 658.67,325.03"];
+		48	[fillcolor=pink,
+			height=0.5,
+			label=4,
+			pos="746.67,273",
+			shape=square,
+			style=filled,
+			width=0.5];
+		46 -- 48	[dir=back,
+			pos="s,670.27,397.48 676.43,389.05 689.05,371.64 706.1,347.31 719.67,325 726.34,314.04 733.09,301.29 738.17,291.28"];
+		50	[fillcolor=yellow,
+			height=1.041,
+			label="Typename
+name: None
+quals: []",
+			pos="443.67,273",
+			style=filled,
+			width=1.6303];
+		49 -- 50	[dir=back,
+			pos="s,542.58,397.86 536.14,389.79 517.99,367.07 490.18,332.24 469.8,306.72"];
+		53	[fillcolor=pink,
+			height=0.94444,
+			label="0xfffffffc",
+			pos="554.67,273",
+			shape=square,
+			style=filled,
+			width=0.94444];
+		49 -- 53	[dir=back,
+			pos="s,554.67,395.96 554.67,385.74 554.67,363.2 554.67,331.13 554.67,307.12"];
+		44	[fillcolor=lightblue,
+			height=2.1111,
+			label=audiobeam_freeHeapPos,
+			pos="606.67,831",
+			shape=square,
+			style=filled,
+			width=2.1111];
+		44 -- 43	[dir=back,
+			pos="s,606.67,754.7 606.67,744.49 606.67,721.49 606.67,698.92 606.67,684.13"];
+		51	[fillcolor=lightblue,
+			height=1.4722,
+			label="TypeDecl
+declname: None
+quals: []",
+			pos="443.67,414",
+			shape=square,
+			style=filled,
+			width=1.4722];
+		51 -- 50	[dir=back,
+			pos="s,443.67,360.85 443.67,350.57 443.67,336.98 443.67,323.04 443.67,310.83"];
+	}
+	subgraph cluster54 {
+		graph [bb="780.67,495,946.67,720.5",
+			label="audiobeamlibmalloc.c:13:3",
+			lheight=0.21,
+			lp="863.67,709",
+			lwidth=2.08
+		];
+		54;
+		55	[fillcolor=lightblue,
+			height=1.0278,
+			label=currentPos,
+			pos="863.67,540",
+			shape=square,
+			style=filled,
+			width=1.0278];
+		54 -- 55	[dir=back,
+			pos="s,863.67,642.26 863.67,631.79 863.67,614.95 863.67,594.47 863.67,577.23"];
+	}
+	rank1	[height=0.5,
+		label="",
+		pos="3.6716,831",
+		style=invis,
+		width=0.013889];
+	rank1 -- rank2	[pos="3.6716,812.86 3.6716,781.64 3.6716,715.81 3.6716,684.4",
+		style=invis];
+}

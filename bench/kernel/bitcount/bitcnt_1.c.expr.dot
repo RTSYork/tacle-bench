@@ -1,0 +1,187 @@
+strict graph "" {
+	graph [bb="0,0,461,393",
+		newrank=true
+	];
+	node [label="\N"];
+	{
+		graph [rank=same,
+			rankdir=LR
+		];
+		rank2	[height=0.5,
+			label="",
+			pos="0.5,255.5",
+			style=invis,
+			width=0.013889];
+		84	[fillcolor=green,
+			height=0.5,
+			label="=",
+			pos="59.5,255.5",
+			style="filled,bold",
+			width=0.75];
+		rank2 -- 84	[pos="1.4219,255.5 11.707,255.5 21.991,255.5 32.276,255.5",
+			style=invis];
+		95	[fillcolor=green,
+			height=0.5,
+			label="=",
+			pos="177.5,255.5",
+			style="filled,bold",
+			width=0.75];
+		84 -- 95	[pos="86.695,255.5 107.86,255.5 129.02,255.5 150.19,255.5",
+			style=invis];
+		103	[fillcolor=green,
+			height=0.5,
+			label="p++",
+			pos="296.5,255.5",
+			style="filled,bold",
+			width=0.75];
+		95 -- 103	[pos="204.93,255.5 226.39,255.5 247.85,255.5 269.31,255.5",
+			style=invis];
+		105	[fillcolor=red,
+			height=0.65278,
+			label="\<ret\>",
+			pos="401.5,255.5",
+			shape=square,
+			style="filled,bold",
+			width=0.65278];
+		103 -- 105	[pos="323.57,255.5 341.63,255.5 359.69,255.5 377.76,255.5",
+			style=invis];
+		end	[height=0.5,
+			label="",
+			pos="460.5,255.5",
+			style=invis,
+			width=0.013889];
+		105 -- end	[pos="425.01,255.5 436.65,255.5 448.3,255.5 459.95,255.5",
+			style=invis];
+	}
+	subgraph cluster105 {
+		graph [bb="353.5,152,451.5,310",
+			label="bitcnt_1.c:35:3",
+			lheight=0.21,
+			lp="402.5,298.5",
+			lwidth=1.14
+		];
+		105;
+		106	[fillcolor=lightblue,
+			height=0.5,
+			label=n,
+			pos="401.5,178",
+			shape=square,
+			style=filled,
+			width=0.5];
+		105 -- 106	[dir=back,
+			pos="s,401.5,231.85 401.5,221.76 401.5,212.93 401.5,203.71 401.5,196.11"];
+	}
+	subgraph cluster84 {
+		graph [bb="9.5,152,107.5,385",
+			label="bitcnt_1.c:24:7",
+			lheight=0.21,
+			lp="58.5,373.5",
+			lwidth=1.14
+		];
+		84;
+		87	[fillcolor=pink,
+			height=0.5,
+			label=0,
+			pos="59.5,178",
+			shape=square,
+			style=filled,
+			width=0.5];
+		84 -- 87	[dir=back,
+			pos="s,59.5,237.37 59.5,227.11 59.5,216.73 59.5,205.22 59.5,196.06"];
+		85	[fillcolor=lightblue,
+			height=0.5,
+			label=n,
+			pos="59.5,336",
+			shape=square,
+			style=filled,
+			width=0.5];
+		85 -- 84	[dir=back,
+			pos="s,59.5,317.97 59.5,307.67 59.5,296.3 59.5,283.47 59.5,273.5"];
+	}
+	subgraph cluster95 {
+		graph [bb="115.5,8,239.5,385",
+			label="bitcnt_1.c:33:22",
+			lheight=0.21,
+			lp="177.5,373.5",
+			lwidth=1.24
+		];
+		95;
+		97	[fillcolor=yellow,
+			height=0.5,
+			label="&",
+			pos="177.5,178",
+			style=filled,
+			width=0.75];
+		95 -- 97	[dir=back,
+			pos="s,177.5,237.37 177.5,227.11 177.5,216.73 177.5,205.22 177.5,196.06"];
+		98	[fillcolor=lightblue,
+			height=0.5,
+			label=x,
+			pos="141.5,106",
+			shape=square,
+			style=filled,
+			width=0.5];
+		97 -- 98	[dir=back,
+			pos="s,169.15,160.76 164.48,151.69 159.77,142.53 154.57,132.41 150.31,124.12"];
+		99	[fillcolor=yellow,
+			height=0.5,
+			label="-",
+			pos="204.5,106",
+			style=filled,
+			width=0.75];
+		97 -- 99	[dir=back,
+			pos="s,183.9,160.41 187.51,151.06 191,142.01 194.82,132.09 197.96,123.96"];
+		100	[fillcolor=lightblue,
+			height=0.5,
+			label=x,
+			pos="154.5,34",
+			shape=square,
+			style=filled,
+			width=0.5];
+		99 -- 100	[dir=back,
+			pos="s,193.4,89.465 187.53,81.237 180.79,71.807 173.19,61.159 166.97,52.461"];
+		101	[fillcolor=pink,
+			height=0.5,
+			label=1,
+			pos="208.5,34",
+			shape=square,
+			style=filled,
+			width=0.5];
+		99 -- 101	[dir=back,
+			pos="s,205.49,87.697 206.06,77.665 206.55,69.054 207.08,59.791 207.52,52.104"];
+		96	[fillcolor=lightblue,
+			height=0.5,
+			label=x,
+			pos="177.5,336",
+			shape=square,
+			style=filled,
+			width=0.5];
+		96 -- 95	[dir=back,
+			pos="s,177.5,317.97 177.5,307.67 177.5,296.3 177.5,283.47 177.5,273.5"];
+	}
+	subgraph cluster103 {
+		graph [bb="247.5,152,345.5,304.5",
+			label="bitcnt_1.c:32:7",
+			lheight=0.21,
+			lp="296.5,293",
+			lwidth=1.14
+		];
+		103;
+		104	[fillcolor=lightblue,
+			height=0.5,
+			label=n,
+			pos="296.5,178",
+			shape=square,
+			style=filled,
+			width=0.5];
+		103 -- 104	[dir=back,
+			pos="s,296.5,237.37 296.5,227.11 296.5,216.73 296.5,205.22 296.5,196.06"];
+	}
+	rank1	[height=0.5,
+		label="",
+		pos="0.5,336",
+		style=invis,
+		width=0.013889];
+	rank1 -- rank2	[pos="0.5,317.97 0.5,304.8 0.5,286.66 0.5,273.5",
+		style=invis];
+}
