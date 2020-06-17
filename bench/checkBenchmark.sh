@@ -13,7 +13,7 @@ PASS=0
 FAIL_COMP=0
 FAIL_EXEC=0
 
-for dir in */; do
+for dir in app/ kernel/ sequential/ test/; do
 
     cd "$dir"
 
@@ -39,10 +39,10 @@ for dir in */; do
             $EXEC ./a.out &>/dev/null
             RETURNVALUE=$(echo $?)
             if [ $RETURNVALUE -eq 0 ]; then
-                printf "passed. \n"
+                printf "passed\n"
                 ((PASS++))
             else
-                printf "failed (wrong return value $RETURNVALUE). \n"
+                printf "failed ($RETURNVALUE)\n"
                 ((FAIL_EXEC++))
             fi
         else

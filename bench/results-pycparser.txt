@@ -1,0 +1,173 @@
+Checking app/lift/lift.c ... passed
+Checking app/lift/liftlibcontrol.c ... passed
+Checking app/lift/liftlibio.c ... passed
+
+Checking app/powerwindow/powerwindow.c ... failed (1)
+Checking app/powerwindow/powerwindow_PW_Control_DRV.c ... passed
+Checking app/powerwindow/powerwindow_PW_Control_PSG_BackL.c ... passed
+Checking app/powerwindow/powerwindow_PW_Control_PSG_BackR.c ... passed
+Checking app/powerwindow/powerwindow_PW_Control_PSG_Front.c ... passed
+Checking app/powerwindow/powerwindow_const_params.c ... passed
+Checking app/powerwindow/powerwindow_controlexclusion.c ... passed
+Checking app/powerwindow/powerwindow_debounce.c ... passed
+Checking app/powerwindow/powerwindow_inputs.c ... passed
+Checking app/powerwindow/powerwindow_powerwindow_control.c ... passed
+Checking app/powerwindow/wcclib.c ... passed
+
+
+Checking kernel/binarysearch/binarysearch.c ... passed
+
+Checking kernel/bitcount/bitcnt_1.c ... passed
+Checking kernel/bitcount/bitcnt_2.c ... passed
+Checking kernel/bitcount/bitcnt_3.c ... passed
+Checking kernel/bitcount/bitcnt_4.c ... passed
+Checking kernel/bitcount/bitcount.c ... failed (1)
+
+Checking kernel/bitonic/bitonic.c ... failed (1)
+
+Checking kernel/bsort/bsort.c ... passed
+
+Checking kernel/complex_updates/complex_updates.c ... passed
+
+Checking kernel/cosf/cosf.c ... failed (1)
+Checking kernel/cosf/wcclibm.c ... failed (1)
+
+Checking kernel/countnegative/countnegative.c ... passed
+
+Checking kernel/cubic/cubic.c ... failed (1)
+Checking kernel/cubic/wcclibm.c ... failed (1)
+
+Checking kernel/deg2rad/deg2rad.c ... passed
+
+Checking kernel/fac/fac.c ... passed
+
+Checking kernel/fft/fft.c ... passed
+Checking kernel/fft/fft_input.c ... passed
+
+Checking kernel/filterbank/filterbank.c ... passed
+
+Checking kernel/fir2dim/fir2dim.c ... passed
+
+Checking kernel/iir/iir.c ... passed
+
+Checking kernel/insertsort/insertsort.c ... passed
+
+Checking kernel/isqrt/basicmath_libc.c ... passed
+Checking kernel/isqrt/isqrt.c ... failed (1)
+Checking kernel/isqrt/wcclibm.c ... failed (1)
+
+Checking kernel/jfdctint/jfdctint.c ... passed
+
+Checking kernel/lms/lms.c ... failed (1)
+
+Checking kernel/ludcmp/ludcmp.c ... passed
+
+Checking kernel/matrix1/matrix1.c ... passed
+
+Checking kernel/md5/md5.c ... failed (1)
+
+Checking kernel/minver/minver.c ... passed
+
+Checking kernel/pm/pm.c ... passed
+Checking kernel/pm/pm_input.c ... passed
+Checking kernel/pm/pm_libm.c ... passed
+Checking kernel/pm/pm_stdlib.c ... passed
+
+Checking kernel/prime/prime.c ... passed
+
+Checking kernel/quicksort/input.c ... passed
+Checking kernel/quicksort/quicksort.c ... failed (1)
+Checking kernel/quicksort/quicksortlibm.c ... failed (1)
+Checking kernel/quicksort/quicksortstdlib.c ... passed
+
+Checking kernel/rad2deg/rad2deg.c ... passed
+
+Checking kernel/recursion/recursion.c ... passed
+
+Checking kernel/sha/input_small.c ... passed
+Checking kernel/sha/memcpy.c ... passed
+Checking kernel/sha/memhelper.c ... passed
+Checking kernel/sha/memset.c ... passed
+Checking kernel/sha/sha.c ... failed (1)
+
+Checking kernel/st/st.c ... passed
+
+
+Checking sequential/adpcm_dec/adpcm_dec.c ... failed (1)
+
+Checking sequential/adpcm_enc/adpcm_enc.c ... passed
+
+Checking sequential/ammunition/ammunition.c ... passed
+Checking sequential/ammunition/ammunition_libc.c ... passed
+Checking sequential/ammunition/arithm.c ... passed
+Checking sequential/ammunition/bits.c ... passed
+
+Checking sequential/anagram/anagram.c ... passed
+Checking sequential/anagram/anagram_input.c ... passed
+Checking sequential/anagram/anagram_stdlib.c ... failed (1)
+
+Checking sequential/audiobeam/audiobeam.c ... failed (1)
+Checking sequential/audiobeam/audiobeaminput.c ... passed
+Checking sequential/audiobeam/audiobeamlibm.c ... passed
+Checking sequential/audiobeam/audiobeamlibmalloc.c ... passed
+
+Checking sequential/cjpeg_transupp/cjpeg_transupp.c ... passed
+
+Checking sequential/cjpeg_wrbmp/cjpeg_wrbmp.c ... failed (1)
+Checking sequential/cjpeg_wrbmp/input.c ... passed
+
+Checking sequential/dijkstra/dijkstra.c ... passed
+Checking sequential/dijkstra/input.c ... passed
+
+Checking sequential/epic/epic.c ... failed (1)
+
+Checking sequential/fmref/fmref.c ... failed (1)
+Checking sequential/fmref/wcclibm.c ... failed (1)
+
+Checking sequential/g723_enc/g723_enc.c ... failed (1)
+
+Checking sequential/gsm_dec/gsm_dec.c ... passed
+
+Checking sequential/gsm_enc/gsm_enc.c ... failed (1)
+
+Checking sequential/h264_dec/h264_dec.c ... failed (1)
+Checking sequential/h264_dec/h264_decinput.c ... passed
+
+Checking sequential/huff_dec/huff_dec.c ... passed
+
+Checking sequential/huff_enc/huff_enc.c ... failed (1)
+
+Checking sequential/mpeg2/mpeg2.c ... passed
+
+Checking sequential/ndes/ndes.c ... passed
+
+Checking sequential/petrinet/petrinet.c ... failed (1)
+
+Checking sequential/rijndael_dec/aes.c ... failed (1)
+Checking sequential/rijndael_dec/input_small_enc.c ... passed
+Checking sequential/rijndael_dec/rijndael_dec.c ... passed
+Checking sequential/rijndael_dec/rijndael_dec_libc.c ... passed
+
+Checking sequential/rijndael_enc/aes.c ... failed (1)
+Checking sequential/rijndael_enc/input_small.c ... passed
+Checking sequential/rijndael_enc/rijndael_enc.c ... passed
+Checking sequential/rijndael_enc/rijndael_enc_libc.c ... passed
+
+Checking sequential/statemate/statemate.c ... failed (1)
+
+Checking sequential/susan/input.c ... passed
+Checking sequential/susan/susan.c ... failed (1)
+Checking sequential/susan/wccfile.c ... passed
+Checking sequential/susan/wcclibm.c ... failed (1)
+Checking sequential/susan/wccmalloc.c ... failed (1)
+
+
+Checking test/cover/cover.c ... passed
+
+Checking test/duff/duff.c ... passed
+
+Checking test/test3/test3.c ... passed
+
+
+PASS: 78/110
+FAIL: 32/110

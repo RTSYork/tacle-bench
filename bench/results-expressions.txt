@@ -1,0 +1,173 @@
+Generating expression graphs for app/lift/lift.c ... passed
+Generating expression graphs for app/lift/liftlibcontrol.c ... passed
+Generating expression graphs for app/lift/liftlibio.c ... passed
+
+Generating expression graphs for app/powerwindow/powerwindow.c ... passed
+Generating expression graphs for app/powerwindow/powerwindow_PW_Control_DRV.c ... passed
+Generating expression graphs for app/powerwindow/powerwindow_PW_Control_PSG_BackL.c ... passed
+Generating expression graphs for app/powerwindow/powerwindow_PW_Control_PSG_BackR.c ... passed
+Generating expression graphs for app/powerwindow/powerwindow_PW_Control_PSG_Front.c ... passed
+Generating expression graphs for app/powerwindow/powerwindow_const_params.c ... passed
+Generating expression graphs for app/powerwindow/powerwindow_controlexclusion.c ... passed
+Generating expression graphs for app/powerwindow/powerwindow_debounce.c ... passed
+Generating expression graphs for app/powerwindow/powerwindow_inputs.c ... passed
+Generating expression graphs for app/powerwindow/powerwindow_powerwindow_control.c ... passed
+Generating expression graphs for app/powerwindow/wcclib.c ... passed
+
+
+Generating expression graphs for kernel/binarysearch/binarysearch.c ... passed
+
+Generating expression graphs for kernel/bitcount/bitcnt_1.c ... passed
+Generating expression graphs for kernel/bitcount/bitcnt_2.c ... passed
+Generating expression graphs for kernel/bitcount/bitcnt_3.c ... passed
+Generating expression graphs for kernel/bitcount/bitcnt_4.c ... passed
+Generating expression graphs for kernel/bitcount/bitcount.c ... passed
+
+Generating expression graphs for kernel/bitonic/bitonic.c ... passed
+
+Generating expression graphs for kernel/bsort/bsort.c ... passed
+
+Generating expression graphs for kernel/complex_updates/complex_updates.c ... passed
+
+Generating expression graphs for kernel/cosf/cosf.c ... passed
+Generating expression graphs for kernel/cosf/wcclibm.c ... passed
+
+Generating expression graphs for kernel/countnegative/countnegative.c ... passed
+
+Generating expression graphs for kernel/cubic/cubic.c ... passed
+Generating expression graphs for kernel/cubic/wcclibm.c ... passed
+
+Generating expression graphs for kernel/deg2rad/deg2rad.c ... passed
+
+Generating expression graphs for kernel/fac/fac.c ... passed
+
+Generating expression graphs for kernel/fft/fft.c ... passed
+Generating expression graphs for kernel/fft/fft_input.c ... passed
+
+Generating expression graphs for kernel/filterbank/filterbank.c ... passed
+
+Generating expression graphs for kernel/fir2dim/fir2dim.c ... passed
+
+Generating expression graphs for kernel/iir/iir.c ... passed
+
+Generating expression graphs for kernel/insertsort/insertsort.c ... passed
+
+Generating expression graphs for kernel/isqrt/basicmath_libc.c ... passed
+Generating expression graphs for kernel/isqrt/isqrt.c ... passed
+Generating expression graphs for kernel/isqrt/wcclibm.c ... passed
+
+Generating expression graphs for kernel/jfdctint/jfdctint.c ... passed
+
+Generating expression graphs for kernel/lms/lms.c ... passed
+
+Generating expression graphs for kernel/ludcmp/ludcmp.c ... passed
+
+Generating expression graphs for kernel/matrix1/matrix1.c ... passed
+
+Generating expression graphs for kernel/md5/md5.c ... passed
+
+Generating expression graphs for kernel/minver/minver.c ... passed
+
+Generating expression graphs for kernel/pm/pm.c ... passed
+Generating expression graphs for kernel/pm/pm_input.c ... passed
+Generating expression graphs for kernel/pm/pm_libm.c ... passed
+Generating expression graphs for kernel/pm/pm_stdlib.c ... passed
+
+Generating expression graphs for kernel/prime/prime.c ... passed
+
+Generating expression graphs for kernel/quicksort/input.c ... passed
+Generating expression graphs for kernel/quicksort/quicksort.c ... passed
+Generating expression graphs for kernel/quicksort/quicksortlibm.c ... passed
+Generating expression graphs for kernel/quicksort/quicksortstdlib.c ... passed
+
+Generating expression graphs for kernel/rad2deg/rad2deg.c ... passed
+
+Generating expression graphs for kernel/recursion/recursion.c ... passed
+
+Generating expression graphs for kernel/sha/input_small.c ... passed
+Generating expression graphs for kernel/sha/memcpy.c ... passed
+Generating expression graphs for kernel/sha/memhelper.c ... passed
+Generating expression graphs for kernel/sha/memset.c ... passed
+Generating expression graphs for kernel/sha/sha.c ... passed
+
+Generating expression graphs for kernel/st/st.c ... passed
+
+
+Generating expression graphs for sequential/adpcm_dec/adpcm_dec.c ... passed
+
+Generating expression graphs for sequential/adpcm_enc/adpcm_enc.c ... passed
+
+Generating expression graphs for sequential/ammunition/ammunition.c ... passed
+Generating expression graphs for sequential/ammunition/ammunition_libc.c ... passed
+Generating expression graphs for sequential/ammunition/arithm.c ... passed
+Generating expression graphs for sequential/ammunition/bits.c ... passed
+
+Generating expression graphs for sequential/anagram/anagram.c ... passed
+Generating expression graphs for sequential/anagram/anagram_input.c ... passed
+Generating expression graphs for sequential/anagram/anagram_stdlib.c ... passed
+
+Generating expression graphs for sequential/audiobeam/audiobeam.c ... passed
+Generating expression graphs for sequential/audiobeam/audiobeaminput.c ... passed
+Generating expression graphs for sequential/audiobeam/audiobeamlibm.c ... passed
+Generating expression graphs for sequential/audiobeam/audiobeamlibmalloc.c ... passed
+
+Generating expression graphs for sequential/cjpeg_transupp/cjpeg_transupp.c ... passed
+
+Generating expression graphs for sequential/cjpeg_wrbmp/cjpeg_wrbmp.c ... passed
+Generating expression graphs for sequential/cjpeg_wrbmp/input.c ... passed
+
+Generating expression graphs for sequential/dijkstra/dijkstra.c ... passed
+Generating expression graphs for sequential/dijkstra/input.c ... passed
+
+Generating expression graphs for sequential/epic/epic.c ... passed
+
+Generating expression graphs for sequential/fmref/fmref.c ... passed
+Generating expression graphs for sequential/fmref/wcclibm.c ... passed
+
+Generating expression graphs for sequential/g723_enc/g723_enc.c ... passed
+
+Generating expression graphs for sequential/gsm_dec/gsm_dec.c ... passed
+
+Generating expression graphs for sequential/gsm_enc/gsm_enc.c ... passed
+
+Generating expression graphs for sequential/h264_dec/h264_dec.c ... passed
+Generating expression graphs for sequential/h264_dec/h264_decinput.c ... passed
+
+Generating expression graphs for sequential/huff_dec/huff_dec.c ... failed (1)
+
+Generating expression graphs for sequential/huff_enc/huff_enc.c ... failed (1)
+
+Generating expression graphs for sequential/mpeg2/mpeg2.c ... failed (1)
+
+Generating expression graphs for sequential/ndes/ndes.c ... passed
+
+Generating expression graphs for sequential/petrinet/petrinet.c ... passed
+
+Generating expression graphs for sequential/rijndael_dec/aes.c ... passed
+Generating expression graphs for sequential/rijndael_dec/input_small_enc.c ... passed
+Generating expression graphs for sequential/rijndael_dec/rijndael_dec.c ... passed
+Generating expression graphs for sequential/rijndael_dec/rijndael_dec_libc.c ... passed
+
+Generating expression graphs for sequential/rijndael_enc/aes.c ... passed
+Generating expression graphs for sequential/rijndael_enc/input_small.c ... passed
+Generating expression graphs for sequential/rijndael_enc/rijndael_enc.c ... passed
+Generating expression graphs for sequential/rijndael_enc/rijndael_enc_libc.c ... passed
+
+Generating expression graphs for sequential/statemate/statemate.c ... passed
+
+Generating expression graphs for sequential/susan/input.c ... passed
+Generating expression graphs for sequential/susan/susan.c ... passed
+Generating expression graphs for sequential/susan/wccfile.c ... passed
+Generating expression graphs for sequential/susan/wcclibm.c ... passed
+Generating expression graphs for sequential/susan/wccmalloc.c ... passed
+
+
+Generating expression graphs for test/cover/cover.c ... passed
+
+Generating expression graphs for test/duff/duff.c ... passed
+
+Generating expression graphs for test/test3/test3.c ... passed
+
+
+PASS: 107/110
+FAIL: 3/110

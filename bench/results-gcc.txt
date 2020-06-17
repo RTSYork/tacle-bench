@@ -1,0 +1,70 @@
+Entering app/ 
+Checking lift/ ...passed
+Checking powerwindow/ ...passed
+Leaving app/ 
+
+Entering kernel/ 
+Checking binarysearch/ ...passed
+Checking bitcount/ ...passed
+Checking bitonic/ ...passed
+Checking bsort/ ...passed
+Checking complex_updates/ ...passed
+Checking cosf/ ...passed
+Checking countnegative/ ...passed
+Checking cubic/ ...passed
+Checking deg2rad/ ...passed
+Checking fac/ ...passed
+Checking fft/ ...passed
+Checking filterbank/ ...passed
+Checking fir2dim/ ...passed
+Checking iir/ ...passed
+Checking insertsort/ ...passed
+Checking isqrt/ ...passed
+Checking jfdctint/ ...passed
+Checking lms/ ...passed
+Checking ludcmp/ ...passed
+Checking matrix1/ ...passed
+Checking md5/ ...passed
+Checking minver/ ...passed
+Checking pm/ ...passed
+Checking prime/ ...passed
+Checking quicksort/ ...passed
+Checking rad2deg/ ...passed
+Checking recursion/ ...passed
+Checking sha/ ...passed
+Checking st/ ...passed
+Leaving kernel/ 
+
+Entering sequential/ 
+Checking adpcm_dec/ ...passed
+Checking adpcm_enc/ ...passed
+Checking ammunition/ ...passed
+Checking anagram/ ...passed
+Checking audiobeam/ ...passed
+Checking cjpeg_transupp/ ...passed
+Checking cjpeg_wrbmp/ ...passed
+Checking dijkstra/ ...passed
+Checking epic/ ...passed
+Checking fmref/ ...passed
+Checking g723_enc/ ...passed
+Checking gsm_dec/ ...passed
+Checking gsm_enc/ ...passed
+Checking h264_dec/ ...passed
+Checking huff_dec/ ...passed
+Checking huff_enc/ ...passed
+Checking mpeg2/ ...passed
+Checking ndes/ ...passed
+Checking petrinet/ ...passed
+Checking rijndael_dec/ ...passed
+Checking rijndael_enc/ ...passed
+Checking statemate/ ...passed
+Checking susan/ ...passed
+Leaving sequential/ 
+
+Entering test/ 
+Checking cover/ ...passed
+Checking duff/ ...passed
+Checking test3/ ...passed
+Leaving test/ 
+
+PASS: 57, FAIL_COMP: 0, FAIL_EXEC: 0
