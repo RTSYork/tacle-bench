@@ -28,10 +28,10 @@ extern word gsm_enc_asr   ( word a, int n );
 #define GSM_MULT_R(a, b) /* word a, word b, !(a == b == MIN_WORD) */  \
   (SASR( ((longword)(a) * (longword)(b) + 16384), 15 ))
 
-# define GSM_MULT(a,b)   /* word a, word b, !(a == b == MIN_WORD) */  \
+ #define GSM_MULT(a,b)   /* word a, word b, !(a == b == MIN_WORD) */  \
   (SASR( ((longword)(a) * (longword)(b)), 15 ))
 
-# define GSM_L_ADD(a, b)  \
+ #define GSM_L_ADD(a, b)  \
   ( (a) <  0 ? ( (b) >= 0 ? (a) + (b) \
      : (utmp = (ulongword)-((a) + 1) + (ulongword)-((b) + 1)) \
        >= MAX_LONGWORD ? MIN_LONGWORD : -(longword)utmp-2 )   \
@@ -43,11 +43,11 @@ extern word gsm_enc_asr   ( word a, int n );
   ((ulongword)((ltmp = (longword)(a) + (longword)(b)) - MIN_WORD) > \
     MAX_WORD - MIN_WORD ? (ltmp > 0 ? MAX_WORD : MIN_WORD) : ltmp)
 
-# define GSM_SUB(a, b)  \
+ #define GSM_SUB(a, b)  \
   ((ltmp = (longword)(a) - (longword)(b)) >= MAX_WORD \
   ? MAX_WORD : ltmp <= MIN_WORD ? MIN_WORD : ltmp)
 
-# define GSM_ABS(a) ((a) < 0 ? ((a) == MIN_WORD ? MAX_WORD : -(a)) : (a))
+ #define GSM_ABS(a) ((a) < 0 ? ((a) == MIN_WORD ? MAX_WORD : -(a)) : (a))
 
 #define saturate(x)   \
   ((x) < MIN_WORD ? MIN_WORD : (x) > MAX_WORD ? MAX_WORD: (x))
@@ -944,10 +944,10 @@ void gsm_enc_Gsm_RPE_Encoding (
 
 unsigned int umul_table[  513  ][  256  ];
 
-# define umul(x9, x15)  \
+ #define umul(x9, x15)  \
   ((int)(umul_table[ x9 ][ x15 & 0x0FF ] + (umul_table[ x9 ][  x15 >> 8  ] << 8)))
 
-# define table_mul(a, b)  \
+ #define table_mul(a, b)  \
   ( (a < 0)  ? ((b < 0) ? umul(-a, -b) : -umul(-a, b))  \
          : ((b < 0) ? -umul(a, -b) :  umul(a, b)))
 
@@ -1028,11 +1028,11 @@ void gsm_enc_Calculation_of_the_LTP_parameters (
   #pragma loopbound min 81 max 81
   for ( lambda = 40; lambda <= 120; lambda++ ) {
 
-# undef STEP
+ #undef STEP
     # ifdef USE_TABLE_MUL
-#   define STEP(k) (table_mul(wt[ k ], dp[ k - lambda ]))
+   #define STEP(k) (table_mul(wt[ k ], dp[ k - lambda ]))
     # else
-#   define STEP(k) (wt[ k ] * dp[ k - lambda ])
+   #define STEP(k) (wt[ k ] * dp[ k - lambda ])
     # endif
 
     longword L_result;
@@ -1206,8 +1206,8 @@ void gsm_enc_Calculation_of_the_LTP_parameters (
     float  S0 = 0, S1 = 0, S2 = 0, S3 = 0, S4 = 0,
            S5 = 0, S6 = 0, S7 = 0, S8 = 0;
 
-#   undef STEP
-#   define  STEP(K, a, b, c, d, e, f, g, h) \
+   #undef STEP
+   #define  STEP(K, a, b, c, d, e, f, g, h) \
     W = wt_float[ K ];    \
     E = W * a; S8 += E;   \
     E = W * b; S7 += E;   \
@@ -1220,14 +1220,14 @@ void gsm_enc_Calculation_of_the_LTP_parameters (
     a  = lp[ K ];     \
     E = W * a; S0 += E
 
-#   define  STEP_A(K) STEP(K, a, b, c, d, e, f, g, h)
-#   define  STEP_B(K) STEP(K, b, c, d, e, f, g, h, a)
-#   define  STEP_C(K) STEP(K, c, d, e, f, g, h, a, b)
-#   define  STEP_D(K) STEP(K, d, e, f, g, h, a, b, c)
-#   define  STEP_E(K) STEP(K, e, f, g, h, a, b, c, d)
-#   define  STEP_F(K) STEP(K, f, g, h, a, b, c, d, e)
-#   define  STEP_G(K) STEP(K, g, h, a, b, c, d, e, f)
-#   define  STEP_H(K) STEP(K, h, a, b, c, d, e, f, g)
+   #define  STEP_A(K) STEP(K, a, b, c, d, e, f, g, h)
+   #define  STEP_B(K) STEP(K, b, c, d, e, f, g, h, a)
+   #define  STEP_C(K) STEP(K, c, d, e, f, g, h, a, b)
+   #define  STEP_D(K) STEP(K, d, e, f, g, h, a, b, c)
+   #define  STEP_E(K) STEP(K, e, f, g, h, a, b, c, d)
+   #define  STEP_F(K) STEP(K, f, g, h, a, b, c, d, e)
+   #define  STEP_G(K) STEP(K, g, h, a, b, c, d, e, f)
+   #define  STEP_H(K) STEP(K, h, a, b, c, d, e, f, g)
 
     STEP_A( 0 );
     STEP_B( 1 );
@@ -1654,7 +1654,7 @@ void gsm_enc_Gsm_Short_Term_Analysis_Filter (
   word    LARp[ 8 ];
 
 #undef  FILTER
-#   define  FILTER  gsm_enc_Short_term_analysis_filtering
+   #define  FILTER  gsm_enc_Short_term_analysis_filtering
 
   gsm_enc_Decoding_of_the_coded_Log_Area_Ratios( LARc, LARpp_j );
 
@@ -1751,9 +1751,9 @@ void gsm_enc_Autocorrelation (
     word   *sp = s;
     word    sl = *sp;
 #undef STEP
-#   define STEP(k)   L_ACF[ k ] += ((longword)sl * sp[  -(k)  ]);
+   #define STEP(k)   L_ACF[ k ] += ((longword)sl * sp[  -(k)  ]);
 
-# define NEXTI   sl = *++sp
+ #define NEXTI   sl = *++sp
 
 
     #pragma loopbound min 9 max 9
@@ -1968,8 +1968,8 @@ void gsm_enc_Quantization_and_coding (
       MIC[ 0..7 ] = minimum of the LARc[ 0..7 ]
   */
 
-# undef STEP
-# define  STEP( A, B, MAC, MIC )    \
+ #undef STEP
+ #define  STEP( A, B, MAC, MIC )    \
   temp = GSM_MULT( A,   *LAR ); \
   temp = GSM_ADD(  temp,   B ); \
   temp = GSM_ADD(  temp, 256 ); \
@@ -1987,7 +1987,7 @@ void gsm_enc_Quantization_and_coding (
   STEP(   8534,  -341,   3,  -4 );
   STEP(   9036, -1144,   3,  -4 );
 
-# undef STEP
+ #undef STEP
 }
 
 void gsm_enc_Gsm_LPC_Analysis (

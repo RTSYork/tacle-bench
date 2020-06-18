@@ -20,7 +20,7 @@
 #ifndef powerwindow_RTW_HEADER_powerwindow_PW_Control_DRV_h_
 #define powerwindow_RTW_HEADER_powerwindow_PW_Control_DRV_h_
 #ifndef powerwindow_PW_Control_DRV_COMMON_INCLUDES_
-# define powerwindow_PW_Control_DRV_COMMON_INCLUDES_
+ #define powerwindow_PW_Control_DRV_COMMON_INCLUDES_
 #include "../powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
 #endif                                 /* powerwindow_PW_Control_DRV_COMMON_INCLUDES_ */
 
@@ -35,15 +35,15 @@
 
 /* Macros for accessing real-time model data structure */
 #ifndef powerwindow_PW_DRV_rtmGetErrorStatus
-# define powerwindow_PW_DRV_rtmGetErrorStatus(rtm)        ((rtm)->errorStatus)
+ #define powerwindow_PW_DRV_rtmGetErrorStatus(rtm)        ((rtm)->errorStatus)
 #endif
 
 #ifndef powerwindow_PW_DRV_rtmSetErrorStatus
-# define powerwindow_PW_DRV_rtmSetErrorStatus(rtm, val)   ((rtm)->errorStatus = (val))
+ #define powerwindow_PW_DRV_rtmSetErrorStatus(rtm, val)   ((rtm)->errorStatus = (val))
 #endif
 
 #ifndef powerwindow_PW_DRV_rtmGetErrorStatusPointer
-# define powerwindow_PW_DRV_rtmGetErrorStatusPointer(rtm) ((const powerwindow_char_T **)(&((rtm)->errorStatus)))
+ #define powerwindow_PW_DRV_rtmGetErrorStatusPointer(rtm) ((const powerwindow_char_T **)(&((rtm)->errorStatus)))
 #endif
 
 /* Block states (auto storage) for system '<Root>' */

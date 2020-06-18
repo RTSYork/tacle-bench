@@ -23,19 +23,19 @@
 
 /* Macros for accessing real-time model data structure */
 #ifndef powerwindow_rtmGetErrorStatus
-# define powerwindow_rtmGetErrorStatus(rtm)        (*((rtm)->errorStatus))
+ #define powerwindow_rtmGetErrorStatus(rtm)        (*((rtm)->errorStatus))
 #endif
 
 #ifndef powerwindow_rtmSetErrorStatus
-# define powerwindow_rtmSetErrorStatus(rtm, val)   (*((rtm)->errorStatus) = (val))
+ #define powerwindow_rtmSetErrorStatus(rtm, val)   (*((rtm)->errorStatus) = (val))
 #endif
 
 #ifndef powerwindow_rtmGetErrorStatusPointer
-# define powerwindow_rtmGetErrorStatusPointer(rtm) (rtm)->errorStatus
+ #define powerwindow_rtmGetErrorStatusPointer(rtm) (rtm)->errorStatus
 #endif
 
 #ifndef powerwindow_rtmSetErrorStatusPointer
-# define powerwindow_rtmSetErrorStatusPointer(rtm, val) ((rtm)->errorStatus = (val))
+ #define powerwindow_rtmSetErrorStatusPointer(rtm, val) ((rtm)->errorStatus = (val))
 #endif
 #endif                                 /* RTW_HEADER_debounce_private_h_ */
 

@@ -155,131 +155,131 @@
 #define    EERE         0
 
 #if defined (__AVR_AT94K__)
-#  include <arch/ioat94k.h>
+  #include <arch/ioat94k.h>
 #elif defined (__AVR_AT43USB320__)
-#  include <arch/io43u32x.h>
+  #include <arch/io43u32x.h>
 #elif defined (__AVR_AT43USB355__)
-#  include <arch/io43u35x.h>
+  #include <arch/io43u35x.h>
 #elif defined (__AVR_AT76C711__)
-#  include <arch/io76c711.h>
+  #include <arch/io76c711.h>
 #elif defined (__AVR_AT86RF401__)
-#  include <arch/io86r401.h>
+  #include <arch/io86r401.h>
 #elif defined (__AVR_ATmega128__)
-#  include <arch/iom128.h>
+  #include <arch/iom128.h>
 #elif defined (__AVR_AT90CAN128__)
-#  include <arch/iocan128.h>
+  #include <arch/iocan128.h>
 #elif defined (__AVR_ATmega64__)
-#  include <arch/iom64.h>
+  #include <arch/iom64.h>
 #elif defined (__AVR_ATmega645__)
-#  include <arch/iom645.h>
+  #include <arch/iom645.h>
 #elif defined (__AVR_ATmega6450__)
-#  include <arch/iom6450.h>
+  #include <arch/iom6450.h>
 #elif defined (__AVR_ATmega103__)
-#  include <arch/iom103.h>
+  #include <arch/iom103.h>
 #elif defined (__AVR_ATmega32__)
-#  include <arch/iom32.h>
+  #include <arch/iom32.h>
 #elif defined (__AVR_ATmega323__)
-#  include <arch/iom323.h>
+  #include <arch/iom323.h>
 #elif defined (__AVR_ATmega325__)
-#  include <arch/iom325.h>
+  #include <arch/iom325.h>
 #elif defined (__AVR_ATmega3250__)
-#  include <arch/iom3250.h>
+  #include <arch/iom3250.h>
 #elif defined (__AVR_ATmega16__)
-#  include <arch/iom16.h>
+  #include <arch/iom16.h>
 #elif defined (__AVR_ATmega161__)
-#  include <arch/iom161.h>
+  #include <arch/iom161.h>
 #elif defined (__AVR_ATmega162__)
-#  include <arch/iom162.h>
+  #include <arch/iom162.h>
 #elif defined (__AVR_ATmega163__)
-#  include <arch/iom163.h>
+  #include <arch/iom163.h>
 #elif defined (__AVR_ATmega165__)
-#  include <arch/iom165.h>
+  #include <arch/iom165.h>
 #elif defined (__AVR_ATmega168__)
-#  include <arch/iom168.h>
+  #include <arch/iom168.h>
 #elif defined (__AVR_ATmega169__)
-#  include <arch/iom169.h>
+  #include <arch/iom169.h>
 #elif defined (__AVR_ATmega8__)
-#  include <arch/iom8.h>
+  #include <arch/iom8.h>
 #elif defined (__AVR_ATmega48__)
-#  include <arch/iom48.h>
+  #include <arch/iom48.h>
 #elif defined (__AVR_ATmega88__)
-#  include <arch/iom88.h>
+  #include <arch/iom88.h>
 #elif defined (__AVR_ATmega8515__)
-#  include <arch/iom8515.h>
+  #include <arch/iom8515.h>
 #elif defined (__AVR_ATmega8535__)
-#  include <arch/iom8535.h>
+  #include <arch/iom8535.h>
 #elif defined (__AVR_AT90S8535__)
-#  include <arch/io8535.h>
+  #include <arch/io8535.h>
 #elif defined (__AVR_AT90C8534__)
-#  include <arch/io8534.h>
+  #include <arch/io8534.h>
 #elif defined (__AVR_AT90S8515__)
-#  include <arch/io8515.h>
+  #include <arch/io8515.h>
 #elif defined (__AVR_AT90S4434__)
-#  include <arch/io4434.h>
+  #include <arch/io4434.h>
 #elif defined (__AVR_AT90S4433__)
-#  include <arch/io4433.h>
+  #include <arch/io4433.h>
 #elif defined (__AVR_AT90S4414__)
-#  include <arch/io4414.h>
+  #include <arch/io4414.h>
 #elif defined (__AVR_ATtiny22__)
-#  include <arch/iotn22.h>
+  #include <arch/iotn22.h>
 #elif defined (__AVR_ATtiny26__)
-#  include <arch/iotn26.h>
+  #include <arch/iotn26.h>
 #elif defined (__AVR_AT90S2343__)
-#  include <arch/io2343.h>
+  #include <arch/io2343.h>
 #elif defined (__AVR_AT90S2333__)
-#  include <arch/io2333.h>
+  #include <arch/io2333.h>
 #elif defined (__AVR_AT90S2323__)
-#  include <arch/io2323.h>
+  #include <arch/io2323.h>
 #elif defined (__AVR_AT90S2313__)
-#  include <arch/io2313.h>
+  #include <arch/io2313.h>
 #elif defined (__AVR_ATtiny2313__)
-#  include <arch/iotn2313.h>
+  #include <arch/iotn2313.h>
 #elif defined (__AVR_ATtiny13__)
-#  include <arch/iotn13.h>
+  #include <arch/iotn13.h>
 /* avr1: the following only supported for assembler programs */
 #elif defined (__AVR_ATtiny28__)
-#  include <arch/iotn28.h>
+  #include <arch/iotn28.h>
 #elif defined (__AVR_AT90S1200__)
-#  include <arch/io1200.h>
+  #include <arch/io1200.h>
 #elif defined (__AVR_ATtiny15__)
-#  include <arch/iotn15.h>
+  #include <arch/iotn15.h>
 #elif defined (__AVR_ATtiny12__)
-#  include <arch/iotn12.h>
+  #include <arch/iotn12.h>
 #elif defined (__AVR_ATtiny11__)
-#  include <arch/iotn11.h>
+  #include <arch/iotn11.h>
 #else
-#  if !defined(__COMPILING_AVR_LIBC__)
-#    warning "device type not defined"
-#  endif
+  #if !defined(__COMPILING_AVR_LIBC__)
+    #warning "device type not defined"
+  #endif
 #endif
 
 #include <arch/portpins.h>
 
 #if __AVR_ARCH__ != 1
-#  if XRAMEND < 0x100 && !defined(__COMPILING_AVR_LIBC__)
-#    undef SP
-#    define SP     _SFR_IO8(0x3D)
-#    undef SPH
-#  endif
+  #if XRAMEND < 0x100 && !defined(__COMPILING_AVR_LIBC__)
+    #undef SP
+    #define SP     _SFR_IO8(0x3D)
+    #undef SPH
+  #endif
 #endif
 
 #if E2END == 0 && !defined(__COMPILING_AVR_LIBC__)
-# undef EECR
-# undef EEDR
-# undef EEARL
-# undef EEMWE
-# undef EEWE
-# undef EERE
+ #undef EECR
+ #undef EEDR
+ #undef EEARL
+ #undef EEMWE
+ #undef EEWE
+ #undef EERE
 #endif
 #if E2END < 0x100 && !defined(__COMPILING_AVR_LIBC__)
-# undef EEAR
-# if E2END > 0
-#   define EEAR _SFR_IO8(0x1E)
-# endif
-# undef EEARH
+ #undef EEAR
+ #if E2END > 0
+   #define EEAR _SFR_IO8(0x1E)
+ #endif
+ #undef EEARH
 #endif
 #if !defined(SIG_EEPROM_READY)
-# undef EERIE
+ #undef EERIE
 #endif
 
 #endif /* _AVR_IO_H_ */

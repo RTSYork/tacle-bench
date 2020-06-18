@@ -73,7 +73,7 @@ ppm_init( void )
   #elif PPM_RX_TYPE == RXJR
   sbi( TCCR1B, ICES1 );
   #else
-# error "ppm.h: Unknown receiver type in PPM_RX_TYPE"
+ #error "ppm.h: Unknown receiver type in PPM_RX_TYPE"
   #endif
 
   /* No noise cancelation */
