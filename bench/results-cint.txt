@@ -1,63 +1,63 @@
-Checking app/lift/ ... passed. 
-Checking app/powerwindow/ ... passed. 
+Checking app/lift/ ... passed
+Checking app/powerwindow/ ... passed
 
-Checking kernel/binarysearch/ ... passed. 
-Checking kernel/bitcount/ ... passed. 
-Checking kernel/bitonic/ ... passed. 
-Checking kernel/bsort/ ... passed. 
+Checking kernel/binarysearch/ ... passed
+Checking kernel/bitcount/ ... passed
+Checking kernel/bitonic/ ... passed
+Checking kernel/bsort/ ... passed
 Checking kernel/complex_updates/ ... failed (1)
-Checking kernel/cosf/ ... passed. 
-Checking kernel/countnegative/ ... passed. 
-Checking kernel/cubic/ ... passed. 
-Checking kernel/deg2rad/ ... passed. 
-Checking kernel/fac/ ... passed. 
-Checking kernel/fft/ ... passed. 
-Checking kernel/filterbank/ ... passed. 
+Checking kernel/cosf/ ... passed
+Checking kernel/countnegative/ ... passed
+Checking kernel/cubic/ ... passed
+Checking kernel/deg2rad/ ... passed
+Checking kernel/fac/ ... passed
+Checking kernel/fft/ ... passed
+Checking kernel/filterbank/ ... passed
 Checking kernel/fir2dim/ ... failed (1)
 Checking kernel/iir/ ... failed (1)
-Checking kernel/insertsort/ ... passed. 
-Checking kernel/isqrt/ ... passed. 
+Checking kernel/insertsort/ ... passed
+Checking kernel/isqrt/ ... passed
 Checking kernel/jfdctint/ ... failed (255)
-Checking kernel/lms/ ... passed. 
-Checking kernel/ludcmp/ ... passed. 
+Checking kernel/lms/ ... passed
+Checking kernel/ludcmp/ ... passed
 Checking kernel/matrix1/ ... failed (1)
 Checking kernel/md5/ ... failed (1)
-Checking kernel/minver/ ... passed. 
-Checking kernel/pm/ ... passed. 
-Checking kernel/prime/ ... passed. 
-Checking kernel/quicksort/ ... passed. 
-Checking kernel/rad2deg/ ... passed. 
-Checking kernel/recursion/ ... passed. 
-Checking kernel/sha/ ... passed. 
-Checking kernel/st/ ... passed. 
+Checking kernel/minver/ ... passed
+Checking kernel/pm/ ... passed
+Checking kernel/prime/ ... passed
+Checking kernel/quicksort/ ... passed
+Checking kernel/rad2deg/ ... passed
+Checking kernel/recursion/ ... passed
+Checking kernel/sha/ ... passed
+Checking kernel/st/ ... passed
 
 Checking sequential/adpcm_dec/ ... failed (1)
-Checking sequential/adpcm_enc/ ... passed. 
-Checking sequential/ammunition/ ... passed. 
-Checking sequential/anagram/ ... passed. 
-Checking sequential/audiobeam/ ... passed. 
-Checking sequential/cjpeg_transupp/ ... passed. 
+Checking sequential/adpcm_enc/ ... passed
+Checking sequential/ammunition/ ... passed
+Checking sequential/anagram/ ... passed
+Checking sequential/audiobeam/ ... passed
+Checking sequential/cjpeg_transupp/ ... passed
 Checking sequential/cjpeg_wrbmp/ ... failed (1)
-Checking sequential/dijkstra/ ... passed. 
+Checking sequential/dijkstra/ ... passed
 Checking sequential/epic/ ... failed (1)
-Checking sequential/fmref/ ... passed. 
+Checking sequential/fmref/ ... passed
 Checking sequential/g723_enc/ ... failed (1)
 Checking sequential/gsm_dec/ ... failed (139)
 Checking sequential/gsm_enc/ ... failed (1)
-Checking sequential/h264_dec/ ... passed. 
-Checking sequential/huff_dec/ ... passed. 
-Checking sequential/huff_enc/ ... passed. 
-Checking sequential/mpeg2/ ... passed. 
-Checking sequential/ndes/ ... passed. 
-Checking sequential/petrinet/ ... passed. 
+Checking sequential/h264_dec/ ... passed
+Checking sequential/huff_dec/ ... passed
+Checking sequential/huff_enc/ ... passed
+Checking sequential/mpeg2/ ... passed
+Checking sequential/ndes/ ... passed
+Checking sequential/petrinet/ ... passed
 Checking sequential/rijndael_dec/ ... failed (1)
 Checking sequential/rijndael_enc/ ... failed (1)
-Checking sequential/statemate/ ... passed. 
-Checking sequential/susan/ ... passed. 
+Checking sequential/statemate/ ... passed
+Checking sequential/susan/ ... passed
 
-Checking test/cover/ ... passed. 
+Checking test/cover/ ... passed
 Checking test/duff/ ... failed (1)
-Checking test/test3/ ... passed. 
+Checking test/test3/ ... passed
 
 PASS: 42/57
 FAIL: 15/57

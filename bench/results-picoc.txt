@@ -1,11 +1,11 @@
-Checking app/lift/ ... failed (1)
+Checking app/lift/ ... passed
 Checking app/powerwindow/ ... failed (1)
 
 Checking kernel/binarysearch/ ... passed
 Checking kernel/bitcount/ ... failed (1)
 Checking kernel/bitonic/ ... passed
 Checking kernel/bsort/ ... failed (1)
-Checking kernel/complex_updates/ ... failed (1)
+Checking kernel/complex_updates/ ... passed
 Checking kernel/cosf/ ... failed (1)
 Checking kernel/countnegative/ ... failed (139)
 Checking kernel/cubic/ ... failed (1)
@@ -13,8 +13,8 @@ Checking kernel/deg2rad/ ... passed
 Checking kernel/fac/ ... failed (1)
 Checking kernel/fft/ ... failed (1)
 Checking kernel/filterbank/ ... failed (64)
-Checking kernel/fir2dim/ ... failed (1)
-Checking kernel/iir/ ... failed (1)
+Checking kernel/fir2dim/ ... passed
+Checking kernel/iir/ ... passed
 Checking kernel/insertsort/ ... passed
 Checking kernel/isqrt/ ... failed (1)
 Checking kernel/jfdctint/ ... passed
@@ -56,8 +56,8 @@ Checking sequential/statemate/ ... failed (1)
 Checking sequential/susan/ ... failed (1)
 
 Checking test/cover/ ... passed
-Checking test/duff/ ... failed (1)
+Checking test/duff/ ... passed
 Checking test/test3/ ... failed (1)
 
-PASS: 13/57
-FAIL: 44/57
+PASS: 18/57
+FAIL: 39/57

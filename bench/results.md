@@ -17,8 +17,6 @@ FAIL:   0/110
 Notes:
 - Needs to use GCC `cpp` in order to correctly parse `_Pragma()` (clang `cpp` doesn't work)
 - Has more success with GCC `cpp` output than clang, even without `_Pragma()`
-
-Issues:
 - Does not support pragmas in the middle of other statements (i.e. between the return type and name of a function definition)
 
 
@@ -28,7 +26,7 @@ Expressions
 PASS: 107/110
 FAIL:   3/110
 
-Issues:
+Notes:
 - All three tests parse ok but take a very long time to create output then fail, suggesting that graphviz generation is probably an issue.
 
 sequential/huff_dec/huff_dec.c ... failed (bad return value 1).
@@ -39,15 +37,12 @@ sequential/mpeg2/mpeg2.c ... failed (bad return value 1).
 PicoC
 ---
 
-PASS: 13/57
-FAIL: 44/57
-
-Issues:
-- Doesn't support `extern` properly
-- Global variables seemingly share scope across all files
-- Pragmas must be on their own line (i.e. not in the middle of a definition)
+PASS: 18/57
+FAIL: 39/57
 
 Notes:
+- Global variables seemingly share scope across all files
+- Pragmas must be on their own line (i.e. not in the middle of a definition)
 - Doesn't fully take into account types, qualifiers or storage classes, so results might be inconsistent
 
 
