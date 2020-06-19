@@ -23,7 +23,7 @@
 /*
   Forward declaration of functions
 */
-int printf(const char * restrict format, ... );
+/* int printf(const char * restrict format, ... ); */
 int fac_fac( int n );
 void fac_init();
 int fac_return();
@@ -88,7 +88,7 @@ void fac_main ()
     fac_s += fac_fac ( i );
     #pragma flowrestriction 1*fac_fac <= 6*recursivecall
   }
-  printf("%d\n", counter1);
+  /* printf("%d\n", counter1); */
 }
 
 

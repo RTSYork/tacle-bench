@@ -37,8 +37,8 @@ sequential/mpeg2/mpeg2.c ... failed (bad return value 1).
 PicoC
 ---
 
-PASS: 18/57
-FAIL: 39/57
+PASS: 19/57
+FAIL: 38/57
 
 Notes:
 - Global variables seemingly share scope across all files
