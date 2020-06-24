@@ -23,7 +23,7 @@ Checking kernel/ludcmp/ ... passed
 Checking kernel/matrix1/ ... failed (1)
 Checking kernel/md5/ ... failed (1)
 Checking kernel/minver/ ... passed
-Checking kernel/pm/ ... failed (1)
+Checking kernel/pm/ ... failed (139)
 Checking kernel/prime/ ... passed
 Checking kernel/quicksort/ ... failed (1)
 Checking kernel/rad2deg/ ... failed (255)
@@ -38,13 +38,13 @@ Checking sequential/anagram/ ... failed (1)
 Checking sequential/audiobeam/ ... failed (1)
 Checking sequential/cjpeg_transupp/ ... failed (1)
 Checking sequential/cjpeg_wrbmp/ ... failed (1)
-Checking sequential/dijkstra/ ... failed (1)
+Checking sequential/dijkstra/ ... passed
 Checking sequential/epic/ ... failed (1)
 Checking sequential/fmref/ ... failed (1)
 Checking sequential/g723_enc/ ... passed
 Checking sequential/gsm_dec/ ... failed (1)
 Checking sequential/gsm_enc/ ... failed (1)
-Checking sequential/h264_dec/ ... failed (1)
+Checking sequential/h264_dec/ ... passed
 Checking sequential/huff_dec/ ... failed (1)
 Checking sequential/huff_enc/ ... failed (1)
 Checking sequential/mpeg2/ ... failed (1)
@@ -59,5 +59,5 @@ Checking test/cover/ ... passed
 Checking test/duff/ ... passed
 Checking test/test3/ ... failed (1)
 
-PASS: 19/57
-FAIL: 38/57
+PASS: 21/57
+FAIL: 36/57
