@@ -70,14 +70,14 @@ void mpeg2_field_ME( unsigned char *, unsigned char *, unsigned char *,
 void mpeg2_frame_estimate( unsigned char *, unsigned char *, unsigned char *,
                            int, int, int, int, int *, int *, int *, int *,
                            int *, int *, int *, int *, int *, int *,
-                           int[ 2 ][ 2 ], int[ 2 ][ 2 ] );
+                           int imins[ 2 ][ 2 ], int jmins[ 2 ][ 2 ] );
 void mpeg2_field_estimate( unsigned char *, unsigned char *, unsigned char *,
                            unsigned char *, unsigned char *, int, int, int, int,
                            int, int *, int *, int *, int *, int *, int *, int *,
                            int *, int *, int *, int *, int *, int *, int * );
 void mpeg2_dpframe_estimate( unsigned char *, unsigned char *, int, int,
-                             int[ 2 ][ 2 ], int[ 2 ][ 2 ], int *, int *, int *,
-                             int *, int *, int * );
+                             int iminf[ 2 ][ 2 ], int jminf[ 2 ][ 2 ], int *,
+                             int *, int *, int *, int *, int * );
 void mpeg2_dpfield_estimate( unsigned char *, unsigned char *, unsigned char *,
                              int, int, int, int, int *, int *, int *, int * );
 int mpeg2_fullsearch( unsigned char *, unsigned char *, unsigned char *, int,
