@@ -1,8 +1,5 @@
 #!/bin/bash
 
-let STACKSIZE="4*1024*1024"
-export STACKSIZE
-
 COMMAND=~/picoc/cmake-build-debug/picoc
 OPTIONS=""
 
