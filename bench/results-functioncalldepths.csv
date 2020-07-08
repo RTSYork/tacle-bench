@@ -1,0 +1,23 @@
+Benchmark,Function call depth
+app/lift,5
+kernel/binarysearch,3
+kernel/bitonic,9
+kernel/complex_updates,3
+kernel/deg2rad,2
+kernel/fac,8
+kernel/fir2dim,3
+kernel/iir,2
+kernel/insertsort,3
+kernel/jfdctint,3
+kernel/ludcmp,4
+kernel/minver,4
+kernel/prime,5
+kernel/recursion,12
+sequential/adpcm_dec,5
+sequential/dijkstra,4
+sequential/g723_enc,6
+sequential/h264_dec,3
+sequential/mpeg2,7
+sequential/petrinet,2
+test/cover,3
+test/duff,3
