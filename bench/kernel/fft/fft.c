@@ -285,7 +285,7 @@ void fft_init( void )
   int i;
   volatile int x = 0;
 
-  fft_pin_down( &fft_input_data[ 0 ] );
+  fft_pin_down( fft_input_data );
 
   /* avoid constant propagation of input values */
   #pragma loopbound min 2046 max 2046 
