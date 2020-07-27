@@ -74,12 +74,14 @@ int bitcount_ntbl_bitcount( long int x )
 **  by Bruce Wedding, works best on Watcom & Borland
 */
 
-int bitcount_BW_btbl_bitcount( long int x )
-{
-  union {
+union U_type {
     unsigned char ch[ 4 ];
     long y;
-  } U;
+};
+
+int bitcount_BW_btbl_bitcount( long int x )
+{
+  union U_type U;
 
   U.y = x;
 
