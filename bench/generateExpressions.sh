@@ -1,7 +1,7 @@
 #!/bin/bash
 
 COMMAND=~/expressions/expressions.py
-OPTIONS=" -c cpp-9 -p -d "
+OPTIONS=" -c cpp-10 -p -d "
 
 PASS=0
 FAIL=0

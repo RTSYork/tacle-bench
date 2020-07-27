@@ -3,7 +3,13 @@
 COMMAND=~/picoc/cmake-build-debug/picoc
 OPTIONS="-d5"
 
-printf "Benchmark,Function call depth\n"
+printf "Benchmark"
+for i in {0..32}
+do
+   printf ",$i"
+done
+
+printf "\n"
 
 for dir in app/ kernel/ sequential/ test/; do
 
