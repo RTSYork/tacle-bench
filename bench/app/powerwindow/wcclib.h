@@ -1,13 +1,15 @@
 #ifndef _WCCLIB
 #define _WCCLIB
 
-#define size_t       unsigned long
-#define int32_t      int
-#define uint32_t     unsigned int
-#define u_int16_t    unsigned short
-#define u_int32_t    unsigned int
+typedef unsigned long size_t;
+typedef int int32_t;
+typedef unsigned int uint32_t;
+typedef unsigned short u_int16_t;
+typedef unsigned int u_int32_t;
 
+#ifndef NULL
 #define NULL ( (void *) 0)
+#endif
 
 void *memset( void *s, int c, size_t n );
 

@@ -21,13 +21,13 @@
 #define powerwindow_RTW_HEADER_debounce_h_
 #ifndef powerwindow_debounce_COMMON_INCLUDES_
 #define powerwindow_debounce_COMMON_INCLUDES_
-#include "../powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
+#include "powerwindow_rtwtypes.h"
 #endif                                 /* debounce_COMMON_INCLUDES_ */
 
-#include "../powerwindow_HeaderFiles/powerwindow_debounce_types.h"
+#include "powerwindow_debounce_types.h"
 
 /* Shared type includes */
-#include "../powerwindow_HeaderFiles/powerwindow_model_reference_types.h"
+#include "powerwindow_model_reference_types.h"
 
 /* Block signals for model 'powerwindow_debounce_main' */
 typedef struct {

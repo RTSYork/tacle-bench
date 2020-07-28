@@ -21,15 +21,15 @@
 #define powerwindow_RTW_HEADER_controlexclusion_h_
 #ifndef powerwindow_controlexclusion_COMMON_INCLUDES_
 #define powerwindow_controlexclusion_COMMON_INCLUDES_
-#include "../powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
+#include "powerwindow_rtwtypes.h"
 
-#include "../powerwindow_HeaderFiles/powerwindow_rtw_solver.h"
+#include "powerwindow_rtw_solver.h"
 #endif                                 /* powerwindow_controlexclusion_COMMON_INCLUDES_ */
 
-#include "../powerwindow_HeaderFiles/powerwindow_controlexclusion_types.h"
+#include "powerwindow_controlexclusion_types.h"
 
 /* Shared type includes */
-#include "../powerwindow_HeaderFiles/powerwindow_model_reference_types.h"
+#include "powerwindow_model_reference_types.h"
 
 /* user code (top of header file) */
 

@@ -20,20 +20,20 @@
 
 
 
-#include "powerwindow_HeaderFiles/powerwindow_controlexclusion.h"
-#include "powerwindow_HeaderFiles/powerwindow_controlexclusion_private.h"
+#include "powerwindow_controlexclusion.h"
+#include "powerwindow_controlexclusion_private.h"
 
 /*
   Forward declaration of functions
 */
 
-void powerwindow_controlexclusion_initialize( void );
-void powerwindow_controlexclusion_terminate( void );
-void powerwindow_controlexclusion_main( const powerwindow_boolean_T *rtu_Up_DRV,
-                                        const powerwindow_boolean_T *rtu_Down_DRV,
-                                        const powerwindow_boolean_T *rtu_Up_PSG,
-                                        const powerwindow_boolean_T *rtu_Down_PSG,
-                                        powerwindow_boolean_T *rty_Up, powerwindow_boolean_T *rty_Down );
+// void powerwindow_controlexclusion_initialize( void );
+// void powerwindow_controlexclusion_terminate( void );
+// void powerwindow_controlexclusion_main( const powerwindow_boolean_T *rtu_Up_DRV,
+//                                         const powerwindow_boolean_T *rtu_Down_DRV,
+//                                         const powerwindow_boolean_T *rtu_Up_PSG,
+//                                         const powerwindow_boolean_T *rtu_Down_PSG,
+//                                         powerwindow_boolean_T *rty_Up, powerwindow_boolean_T *rty_Down );
 
 /* Model initialize function */
 void powerwindow_controlexclusion_initialize( void )

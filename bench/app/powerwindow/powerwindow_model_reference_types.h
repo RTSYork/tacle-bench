@@ -19,7 +19,7 @@
 
 #ifndef powerwindow___MODEL_REFERENCE_TYPES_H__
 #define powerwindow___MODEL_REFERENCE_TYPES_H__
-#include "../powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
+#include "powerwindow_rtwtypes.h"
 #ifndef powerwindow___MODEL_REFERENCE_TYPES__
 #define powerwindow___MODEL_REFERENCE_TYPES__
 

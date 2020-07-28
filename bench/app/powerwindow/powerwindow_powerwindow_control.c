@@ -21,8 +21,8 @@
 */
 
 #include "wcclib.h"
-#include "powerwindow_HeaderFiles/powerwindow_powerwindow_control.h"
-#include "powerwindow_HeaderFiles/powerwindow_powerwindow_control_private.h"
+#include "powerwindow_powerwindow_control.h"
+#include "powerwindow_powerwindow_control_private.h"
 
 /* Named constants for Chart: '<S2>/stateflow control model' */
 #define powerwindow_powerwindow__IN_NO_ACTIVE_CHILD ((powerwindow_uint8_T)0U)
@@ -42,43 +42,43 @@
 #define powerwindow_powerwindow_control_IN_Up      ((powerwindow_uint8_T)3U)
 
 /* Forward declaration for local functions */
-void powerwindow_powerwindow_control_Start( powerwindow_rtDW_PowerWindow_control
-    *localDW );
+// void powerwindow_powerwindow_control_Start( powerwindow_rtDW_PowerWindow_control
+//     *localDW );
 
-void powerwindow_powerwindow_control_Init( powerwindow_boolean_T *rty_window_up,
-    powerwindow_boolean_T
-    *rty_window_down, powerwindow_boolean_T *rty_overcurrent,
-    powerwindow_boolean_T *rty_pinch, powerwindow_boolean_T *
-    rty_wake, powerwindow_rtDW_PowerWindow_control *localDW );
+// void powerwindow_powerwindow_control_Init( powerwindow_boolean_T *rty_window_up,
+//     powerwindow_boolean_T
+//     *rty_window_down, powerwindow_boolean_T *rty_overcurrent,
+//     powerwindow_boolean_T *rty_pinch, powerwindow_boolean_T *
+//     rty_wake, powerwindow_rtDW_PowerWindow_control *localDW );
 
-void powerwindow_powerwindow_control_Start( powerwindow_rtDW_PowerWindow_control
-    *localDW );
+// void powerwindow_powerwindow_control_Start( powerwindow_rtDW_PowerWindow_control
+//     *localDW );
 
-void powerwindow_powerwindow_control_initialize( const powerwindow_char_T
-    **rt_errorStatus,
-    powerwindow_RT_MODEL_PowerWindow_control *const PowerWindow_control_M,
-    powerwindow_rtB_PowerWindow_control *localB,
-    powerwindow_rtDW_PowerWindow_control *localDW,
-    powerwindow_rtZCE_PowerWindow_control *localZCE );
+// void powerwindow_powerwindow_control_initialize( const powerwindow_char_T
+//     **rt_errorStatus,
+//     powerwindow_RT_MODEL_PowerWindow_control *const PowerWindow_control_M,
+//     powerwindow_rtB_PowerWindow_control *localB,
+//     powerwindow_rtDW_PowerWindow_control *localDW,
+//     powerwindow_rtZCE_PowerWindow_control *localZCE );
 
-void powerwindow_powerwindow_control_main( const powerwindow_boolean_T *rtu_up,
-    const powerwindow_boolean_T *rtu_down,
-    const powerwindow_boolean_T *rtu_endofdetectionrange,
-    const powerwindow_uint8_T *rtu_currentsense,
-    powerwindow_boolean_T *rty_window_up, powerwindow_boolean_T *rty_window_down,
-    powerwindow_boolean_T
-    *rty_overcurrent, powerwindow_boolean_T *rty_pinch,
-    powerwindow_boolean_T *rty_wake,
-    powerwindow_rtB_PowerWindow_control *localB,
-    powerwindow_rtDW_PowerWindow_control *localDW,
-    powerwindow_rtZCE_PowerWindow_control *localZCE );
+// void powerwindow_powerwindow_control_main( const powerwindow_boolean_T *rtu_up,
+//     const powerwindow_boolean_T *rtu_down,
+//     const powerwindow_boolean_T *rtu_endofdetectionrange,
+//     const powerwindow_uint8_T *rtu_currentsense,
+//     powerwindow_boolean_T *rty_window_up, powerwindow_boolean_T *rty_window_down,
+//     powerwindow_boolean_T
+//     *rty_overcurrent, powerwindow_boolean_T *rty_pinch,
+//     powerwindow_boolean_T *rty_wake,
+//     powerwindow_rtB_PowerWindow_control *localB,
+//     powerwindow_rtDW_PowerWindow_control *localDW,
+//     powerwindow_rtZCE_PowerWindow_control *localZCE );
 
-void powerwindow_powerwindow_con_broadcast_ticks( powerwindow_boolean_T
-    *rty_window_up, powerwindow_boolean_T *
-    rty_window_down, powerwindow_boolean_T *rty_overcurrent,
-    powerwindow_boolean_T *rty_pinch, powerwindow_boolean_T
-    *rty_wake, powerwindow_rtB_PowerWindow_control *localB,
-    powerwindow_rtDW_PowerWindow_control *localDW );
+// void powerwindow_powerwindow_con_broadcast_ticks( powerwindow_boolean_T
+//     *rty_window_up, powerwindow_boolean_T *
+//     rty_window_down, powerwindow_boolean_T *rty_overcurrent,
+//     powerwindow_boolean_T *rty_pinch, powerwindow_boolean_T
+//     *rty_wake, powerwindow_rtB_PowerWindow_control *localB,
+//     powerwindow_rtDW_PowerWindow_control *localDW );
 
 /* Function for Chart: '<S2>/stateflow control model' */
 void powerwindow_powerwindow_con_broadcast_ticks( powerwindow_boolean_T
@@ -534,16 +534,15 @@ void powerwindow_powerwindow_control_initialize( const powerwindow_char_T
   /* Registration code */
 
   /* initialize error status */
-  powerwindow_powerwindow_control_rtmSetErrorStatusPointer( PowerWindow_control_M,
-      rt_errorStatus );
+  ((PowerWindow_control_M)->errorStatus = (rt_errorStatus));
 
   /* block I/O */
-  ( void ) memset( ( ( void * ) localB ), 0,
-                   sizeof( powerwindow_rtB_PowerWindow_control ) );
+  memset( ( ( void * ) localB ), 0,
+          sizeof( powerwindow_rtB_PowerWindow_control ) );
 
   /* states (dwork) */
-  ( void ) memset( ( void * )localDW, 0,
-                   sizeof( powerwindow_rtDW_PowerWindow_control ) );
+  memset( ( void * )localDW, 0,
+          sizeof( powerwindow_rtDW_PowerWindow_control ) );
   localZCE->stateflowcontrolmodel_Trig_ZCE = powerwindow_UNINITIALIZED_ZCSIG;
 }
 

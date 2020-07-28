@@ -1,4 +1,4 @@
-#include "powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
+#include "powerwindow_rtwtypes.h"
 
 powerwindow_boolean_T
 powerwindow_debounce_Driver_DRV_U_Up_Input_DRV_Array[powerwindow_input_length]

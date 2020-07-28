@@ -20,7 +20,7 @@
 #ifndef powerwindow___RTW_CONTINUOUS_H__
 #define powerwindow___RTW_CONTINUOUS_H__
 
-//#include "../powerwindow_HeaderFiles/powerwindow_tmwtypes.h"
+//#include "powerwindow_tmwtypes.h"
 
 /* For models registering MassMatrix */
 typedef enum {

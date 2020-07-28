@@ -18,8 +18,8 @@
 */
 #ifndef powerwindow_RTW_HEADER_PowerWindow_control_private_h_
 #define powerwindow_RTW_HEADER_PowerWindow_control_private_h_
-#include "../powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
-#include "../powerwindow_HeaderFiles/powerwindow_model_reference_types.h"
+#include "powerwindow_rtwtypes.h"
+#include "powerwindow_model_reference_types.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef powerwindow_powerwindow_control_rtmGetErrorStatus
@@ -34,9 +34,9 @@
  #define powerwindow_powerwindow_control_rtmGetErrorStatusPointer(rtm) (rtm)->errorStatus
 #endif
 
-#ifndef powerwindow_powerwindow_control_rtmSetErrorStatusPointer
- #define powerwindow_powerwindow_control_rtmSetErrorStatusPointer(rtm, val) ((rtm)->errorStatus = (val))
-#endif
+// #ifndef powerwindow_powerwindow_control_rtmSetErrorStatusPointer
+//  #define powerwindow_powerwindow_control_rtmSetErrorStatusPointer(rtm, val) ((rtm)->errorStatus = (val))
+// #endif
 
 extern const powerwindow_boolean_T powerwindow_rtCP_pooled_6bUUQf1tASYw[ 12 ];
 

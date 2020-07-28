@@ -19,16 +19,16 @@
 
 
 #include "wcclib.h"
-#include "powerwindow_HeaderFiles/powerwindow_PW_Control_PSG_BackL.h"
-#include "powerwindow_HeaderFiles/powerwindow_PW_Control_PSG_BackL_private.h"
+#include "powerwindow_PW_Control_PSG_BackL.h"
+#include "powerwindow_PW_Control_PSG_BackL_private.h"
 
 /*
   Forward declaration of functions
 */
 
-void powerwindow_PW_Control_PSG_BackL_initialize( void );
-void powerwindow_PW_Control_PSG_BackL_terminate( void );
-void powerwindow_PW_Control_PSG_BackL_main( void );
+// void powerwindow_PW_Control_PSG_BackL_initialize( void );
+// void powerwindow_PW_Control_PSG_BackL_terminate( void );
+// void powerwindow_PW_Control_PSG_BackL_main( void );
 
 
 /* Block states (auto storage) */
@@ -98,28 +98,26 @@ void powerwindow_PW_Control_PSG_BackL_initialize( void )
   /* Registration code */
 
   /* initialize error status */
-  powerwindow_PW_PSG_BackL_rtmSetErrorStatus( powerwindow_PW_Control_PSG_BackL_M,
-      ( NULL ) );
+  ((powerwindow_PW_Control_PSG_BackL_M)->errorStatus = (NULL));
 
   /* states (dwork) */
-  ( void ) memset( ( void * )&powerwindow_PW_Control_PSG_BackL_DWork, 0,
-                   sizeof( powerwindow_D_Work_PW_Control_PSG_BackL ) );
+  memset( ( void * )&powerwindow_PW_Control_PSG_BackL_DWork, 0,
+          sizeof( powerwindow_D_Work_PW_Control_PSG_BackL ) );
 
   /* external inputs */
-  ( void ) memset( ( void * )&powerwindow_PW_Control_PSG_BackL_U, 0,
-                   sizeof( powerwindow_ExternalInputs_PW_Control_PSG_BackL ) );
+  memset( ( void * )&powerwindow_PW_Control_PSG_BackL_U, 0,
+          sizeof( powerwindow_ExternalInputs_PW_Control_PSG_BackL ) );
 
   /* external outputs */
-  ( void ) memset( ( void * )&powerwindow_PW_Control_PSG_BackL_Y, 0,
-                   sizeof( powerwindow_ExternalOutputs_PW_Control_PSG_BackL ) );
+  memset( ( void * )&powerwindow_PW_Control_PSG_BackL_Y, 0,
+          sizeof( powerwindow_ExternalOutputs_PW_Control_PSG_BackL ) );
 
   /* Model Initialize fcn for ModelReference Block: '<S1>/ControlEx_PSG_BackL' */
   powerwindow_controlexclusion_initialize();
 
   /* Model Initialize fcn for ModelReference Block: '<S2>/debounce_Down' */
   powerwindow_debounce_initialize(
-    powerwindow_PW_PSG_BackL_rtmGetErrorStatusPointer(
-      powerwindow_PW_Control_PSG_BackL_M ),
+    ((powerwindow_char_T **)(&((powerwindow_PW_Control_PSG_BackL_M)->errorStatus))),
     &( powerwindow_PW_Control_PSG_BackL_DWork.Debounce_Down_DWORK1.rtm ),
     &( powerwindow_PW_Control_PSG_BackL_DWork.Debounce_Down_DWORK1.rtb ),
     &( powerwindow_PW_Control_PSG_BackL_DWork.Debounce_Down_DWORK1.rtdw ),
@@ -127,8 +125,7 @@ void powerwindow_PW_Control_PSG_BackL_initialize( void )
 
   /* Model Initialize fcn for ModelReference Block: '<S2>/debounce_Up' */
   powerwindow_debounce_initialize(
-    powerwindow_PW_PSG_BackL_rtmGetErrorStatusPointer(
-      powerwindow_PW_Control_PSG_BackL_M ),
+    ((powerwindow_char_T **)(&((powerwindow_PW_Control_PSG_BackL_M)->errorStatus))),
     &( powerwindow_PW_Control_PSG_BackL_DWork.Debounce_Up_DWORK1.rtm ),
     &( powerwindow_PW_Control_PSG_BackL_DWork.Debounce_Up_DWORK1.rtb ),
     &( powerwindow_PW_Control_PSG_BackL_DWork.Debounce_Up_DWORK1.rtdw ),
@@ -136,8 +133,7 @@ void powerwindow_PW_Control_PSG_BackL_initialize( void )
 
   /* Model Initialize fcn for ModelReference Block: '<S1>/PW_PSG_BackL' */
   powerwindow_powerwindow_control_initialize(
-    powerwindow_PW_PSG_BackL_rtmGetErrorStatusPointer(
-      powerwindow_PW_Control_PSG_BackL_M ),
+    ((powerwindow_char_T **)(&((powerwindow_PW_Control_PSG_BackL_M)->errorStatus))),
     &( powerwindow_PW_Control_PSG_BackL_DWork.PW_PSG_BackL_DWORK1.rtm ),
     &( powerwindow_PW_Control_PSG_BackL_DWork.PW_PSG_BackL_DWORK1.rtb ),
     &( powerwindow_PW_Control_PSG_BackL_DWork.PW_PSG_BackL_DWORK1.rtdw ),

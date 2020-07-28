@@ -21,16 +21,16 @@
 #define powerwindow_RTW_HEADER_PowerWindow_control_h_
 #ifndef powerwindow_powerWindow_control_COMMON_INCLUDES_
  #define powerwindow_powerWindow_control_COMMON_INCLUDES_
-#include "../powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
+#include "powerwindow_rtwtypes.h"
 
-#include "../powerwindow_HeaderFiles/powerwindow_rtw_solver.h"
+#include "powerwindow_rtw_solver.h"
 #endif                                 /* PowerWindow_control_COMMON_INCLUDES_ */
 
-#include "../powerwindow_HeaderFiles/powerwindow_powerwindow_control_types.h"
-#include "../powerwindow_HeaderFiles/powerwindow_powerwindow_control_private.h"
+#include "powerwindow_powerwindow_control_types.h"
+#include "powerwindow_powerwindow_control_private.h"
 
 /* Shared type includes */
-#include "../powerwindow_HeaderFiles/powerwindow_model_reference_types.h"
+#include "powerwindow_model_reference_types.h"
 
 /* user code (top of header file) */
 

@@ -23,17 +23,17 @@
 
 */
 
-#include "powerwindow_HeaderFiles/powerwindow.h"
-#include "powerwindow_HeaderFiles/powerwindow_PW_Control_PSG_Front.h"
-#include "powerwindow_HeaderFiles/powerwindow_PW_Control_PSG_BackL.h"
-#include "powerwindow_HeaderFiles/powerwindow_PW_Control_PSG_BackR.h"
-#include "powerwindow_HeaderFiles/powerwindow_PW_Control_DRV.h"
-#include "powerwindow_HeaderFiles/powerwindow_debounce.h"
-#include "powerwindow_HeaderFiles/powerwindow_controlexclusion.h"       /* Control Model's header file */
-#include "powerwindow_HeaderFiles/powerwindow_model_reference_types.h"
-#include "powerwindow_HeaderFiles/powerwindow_powerwindow_control.h"  /* PW passenger control Model's header file */
-#include "powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
-#include "powerwindow_HeaderFiles/powerwindow_model_reference_types.h"
+#include "powerwindow.h"
+#include "powerwindow_PW_Control_PSG_Front.h"
+#include "powerwindow_PW_Control_PSG_BackL.h"
+#include "powerwindow_PW_Control_PSG_BackR.h"
+#include "powerwindow_PW_Control_DRV.h"
+#include "powerwindow_debounce.h"
+#include "powerwindow_controlexclusion.h"       /* Control Model's header file */
+#include "powerwindow_model_reference_types.h"
+#include "powerwindow_powerwindow_control.h"  /* PW passenger control Model's header file */
+#include "powerwindow_rtwtypes.h"
+#include "powerwindow_model_reference_types.h"
 /*
   Forward declaration of functions
 */
@@ -555,8 +555,7 @@ void powerwindow_PSG_Front_main( void )
 
   /* Check for overrun */
   if ( OverrunFlag ) {
-    powerwindow_PW_PSG_Front_rtmSetErrorStatus( powerwindow_PW_Control_PSG_Front_M,
-        "Overrun" );
+    ((powerwindow_PW_Control_PSG_Front_M)->errorStatus = ("Overrun"));
 
     return;
   }
@@ -592,8 +591,7 @@ void powerwindow_PSG_BackL_main( void )
 
   /* Check for overrun */
   if ( OverrunFlag ) {
-    powerwindow_PW_PSG_BackL_rtmSetErrorStatus( powerwindow_PW_Control_PSG_BackL_M,
-        "Overrun" );
+    ((powerwindow_PW_Control_PSG_BackL_M)->errorStatus = ("Overrun"));
 
     return;
   }
@@ -629,8 +627,7 @@ void powerwindow_PSG_BackR_main( void )
 
   /* Check for overrun */
   if ( OverrunFlag ) {
-    powerwindow_PW_PSG_BackR_rtmSetErrorStatus( powerwindow_PW_Control_PSG_BackR_M,
-        "Overrun" );
+    ((powerwindow_PW_Control_PSG_BackR_M)->errorStatus = ("Overrun"));
 
     return;
   }

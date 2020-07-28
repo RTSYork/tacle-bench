@@ -20,14 +20,12 @@
 #define powerwindow__RTWTYPES_H__
 
 /* Logical type definitions */
-#if (!defined(__cplusplus))
-  #ifndef false
-   #define false                       (0U)
-  #endif
+#ifndef false
+ #define false                       (0U)
+#endif
 
-  #ifndef true
-   #define true                        (1U)
-  #endif
+#ifndef true
+ #define true                        (1U)
 #endif
 
 #define powerwindow__TMWTYPES__

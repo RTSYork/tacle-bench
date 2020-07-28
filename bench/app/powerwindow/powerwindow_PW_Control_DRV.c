@@ -19,8 +19,8 @@
 
 
 #include "wcclib.h"
-#include "powerwindow_HeaderFiles/powerwindow_PW_Control_DRV.h"
-#include "powerwindow_HeaderFiles/powerwindow_PW_Control_DRV_private.h"
+#include "powerwindow_PW_Control_DRV.h"
+#include "powerwindow_PW_Control_DRV_private.h"
 
 
 
@@ -28,9 +28,9 @@
   Forward declaration of functions
 */
 
-void powerwindow_PW_Control_DRV_initialize( void );
-void powerwindow_PW_Control_DRV_terminate( void );
-void powerwindow_PW_Control_DRV_main( void );
+// void powerwindow_PW_Control_DRV_initialize( void );
+// void powerwindow_PW_Control_DRV_terminate( void );
+// void powerwindow_PW_Control_DRV_main( void );
 
 
 /* Block states (auto storage) */
@@ -134,76 +134,68 @@ void powerwindow_PW_Control_DRV_initialize( void )
   /* Registration code */
 
   /* states (dwork) */
-  ( void ) memset( ( void * )&powerwindow_PW_Control_DR_DWork, 0,
-                   sizeof( powerwindow_D_Work_powerwindow_PW_Control_D ) );
+  memset( ( void * )&powerwindow_PW_Control_DR_DWork, 0,
+          sizeof( powerwindow_D_Work_powerwindow_PW_Control_D ) );
 
   /* external inputs */
-  ( void ) memset( ( void * )&powerwindow_PW_Control_DRV_U, 0,
-                   sizeof( powerwindow_ExternalInputs_powerwindow_PW_C ) );
+  memset( ( void * )&powerwindow_PW_Control_DRV_U, 0,
+          sizeof( powerwindow_ExternalInputs_powerwindow_PW_C ) );
 
   /* external outputs */
-  ( void ) memset( ( void * )&powerwindow_PW_Control_DRV_Y, 0,
-                   sizeof( powerwindow_ExternalOutputs_powerwindow_PW_ ) );
+  memset( ( void * )&powerwindow_PW_Control_DRV_Y, 0,
+          sizeof( powerwindow_ExternalOutputs_powerwindow_PW_ ) );
 
   /* Model Initialize fcn for ModelReference Block: '<S2>/Debounce_Down_DRV' */
-  powerwindow_debounce_initialize( powerwindow_PW_DRV_rtmGetErrorStatusPointer(
-                                     powerwindow_PW_Control_DRV_M ),
+  powerwindow_debounce_initialize( ((powerwindow_char_T **)(&((powerwindow_PW_Control_DRV_M)->errorStatus))),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_DRV_DWORK1.rtm ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_DRV_DWORK1.rtb ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_DRV_DWORK1.rtdw ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_DRV_DWORK1.rtzce ) );
 
   /* Model Initialize fcn for ModelReference Block: '<S2>/Debounce_Down_PSG_BackL' */
-  powerwindow_debounce_initialize( powerwindow_PW_DRV_rtmGetErrorStatusPointer(
-                                     powerwindow_PW_Control_DRV_M ),
+  powerwindow_debounce_initialize( ((powerwindow_char_T **)(&((powerwindow_PW_Control_DRV_M)->errorStatus))),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_BackL_DWORK1.rtm ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_BackL_DWORK1.rtb ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_BackL_DWORK1.rtdw ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_BackL_DWORK1.rtzce ) );
 
   /* Model Initialize fcn for ModelReference Block: '<S2>/Debounce_Down_PSG_BackR' */
-  powerwindow_debounce_initialize( powerwindow_PW_DRV_rtmGetErrorStatusPointer(
-                                     powerwindow_PW_Control_DRV_M ),
+  powerwindow_debounce_initialize( ((powerwindow_char_T **)(&((powerwindow_PW_Control_DRV_M)->errorStatus))),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_BackR_DWORK1.rtm ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_BackR_DWORK1.rtb ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_BackR_DWORK1.rtdw ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_BackR_DWORK1.rtzce ) );
 
   /* Model Initialize fcn for ModelReference Block: '<S2>/Debounce_Down_PSG_Front' */
-  powerwindow_debounce_initialize( powerwindow_PW_DRV_rtmGetErrorStatusPointer(
-                                     powerwindow_PW_Control_DRV_M ),
+  powerwindow_debounce_initialize( ((powerwindow_char_T **)(&((powerwindow_PW_Control_DRV_M)->errorStatus))),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_Front_DWORK1.rtm ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_Front_DWORK1.rtb ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_Front_DWORK1.rtdw ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Down_PSG_Front_DWORK1.rtzce ) );
 
   /* Model Initialize fcn for ModelReference Block: '<S2>/Debounce_Up_DRV' */
-  powerwindow_debounce_initialize( powerwindow_PW_DRV_rtmGetErrorStatusPointer(
-                                     powerwindow_PW_Control_DRV_M ),
+  powerwindow_debounce_initialize( ((powerwindow_char_T **)(&((powerwindow_PW_Control_DRV_M)->errorStatus))),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_DRV_DWORK1.rtm ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_DRV_DWORK1.rtb ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_DRV_DWORK1.rtdw ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_DRV_DWORK1.rtzce ) );
 
   /* Model Initialize fcn for ModelReference Block: '<S2>/Debounce_Up_PSG_BackL' */
-  powerwindow_debounce_initialize( powerwindow_PW_DRV_rtmGetErrorStatusPointer(
-                                     powerwindow_PW_Control_DRV_M ),
+  powerwindow_debounce_initialize( ((powerwindow_char_T **)(&((powerwindow_PW_Control_DRV_M)->errorStatus))),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_PSG_BackL_DWORK1.rtm ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_PSG_BackL_DWORK1.rtb ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_PSG_BackL_DWORK1.rtdw ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_PSG_BackL_DWORK1.rtzce ) );
 
   /* Model Initialize fcn for ModelReference Block: '<S2>/Debounce_Up_PSG_BackR' */
-  powerwindow_debounce_initialize( powerwindow_PW_DRV_rtmGetErrorStatusPointer(
-                                     powerwindow_PW_Control_DRV_M ),
+  powerwindow_debounce_initialize( ((powerwindow_char_T **)(&((powerwindow_PW_Control_DRV_M)->errorStatus))),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_PSG_BackR_DWORK1.rtm ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_PSG_BackR_DWORK1.rtb ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_PSG_BackR_DWORK1.rtdw ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_PSG_BackR_DWORK1.rtzce ) );
 
   /* Model Initialize fcn for ModelReference Block: '<S2>/Debounce_Up_PSG_Front' */
-  powerwindow_debounce_initialize( powerwindow_PW_DRV_rtmGetErrorStatusPointer(
-                                     powerwindow_PW_Control_DRV_M ),
+  powerwindow_debounce_initialize( ((powerwindow_char_T **)(&((powerwindow_PW_Control_DRV_M)->errorStatus))),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_PSG_Front_DWORK1.rtm ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_PSG_Front_DWORK1.rtb ),
                                    &( powerwindow_PW_Control_DR_DWork.Debounce_Up_PSG_Front_DWORK1.rtdw ),
@@ -211,7 +203,7 @@ void powerwindow_PW_Control_DRV_initialize( void )
 
   /* Model Initialize fcn for ModelReference Block: '<S1>/PW_DRV' */
   powerwindow_powerwindow_control_initialize(
-    powerwindow_PW_DRV_rtmGetErrorStatusPointer( powerwindow_PW_Control_DRV_M ),
+    ((powerwindow_char_T **)(&((powerwindow_PW_Control_DRV_M)->errorStatus))),
     &( powerwindow_PW_Control_DR_DWork.PW_DRV_DWORK1.rtm ),
     &( powerwindow_PW_Control_DR_DWork.PW_DRV_DWORK1.rtb ),
     &( powerwindow_PW_Control_DR_DWork.PW_DRV_DWORK1.rtdw ),

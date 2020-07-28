@@ -23,8 +23,8 @@
 
 
 #include "wcclib.h"
-#include "powerwindow_HeaderFiles/powerwindow_debounce.h"
-#include "powerwindow_HeaderFiles/powerwindow_debounce_private.h"
+#include "powerwindow_debounce.h"
+#include "powerwindow_debounce_private.h"
 
 /* Named constants for Chart: '<Root>/Chart' */
 #define debounce_IN_debounce           ((powerwindow_uint8_T)1U)
@@ -38,16 +38,16 @@
   Forward declaration of functions
 */
 
-void powerwindow_debounce_Init( powerwindow_rtB_debounce_T *,
-                                powerwindow_rtDW_debounce_T * );
-void powerwindow_debounce_Start( powerwindow_rtDW_debounce_T * );
-void powerwindow_debounce_initialize( const powerwindow_char_T **,
-                                      powerwindow_RT_MODEL_debounce_T *const,
-                                      powerwindow_rtB_debounce_T *, powerwindow_rtDW_debounce_T *,
-                                      powerwindow_rtZCE_debounce_T * );
-void powerwindow_debounce_main( const powerwindow_boolean_T *,
-                                powerwindow_boolean_T *, powerwindow_rtB_debounce_T *,
-                                powerwindow_rtDW_debounce_T *, powerwindow_rtZCE_debounce_T * );
+// void powerwindow_debounce_Init( powerwindow_rtB_debounce_T *,
+//                                 powerwindow_rtDW_debounce_T * );
+// void powerwindow_debounce_Start( powerwindow_rtDW_debounce_T * );
+// void powerwindow_debounce_initialize( const powerwindow_char_T **,
+//                                       powerwindow_RT_MODEL_debounce_T *const,
+//                                       powerwindow_rtB_debounce_T *, powerwindow_rtDW_debounce_T *,
+//                                       powerwindow_rtZCE_debounce_T * );
+// void powerwindow_debounce_main( const powerwindow_boolean_T *,
+//                                 powerwindow_boolean_T *, powerwindow_rtB_debounce_T *,
+//                                 powerwindow_rtDW_debounce_T *, powerwindow_rtZCE_debounce_T * );
 
 /*
   Initialization- and return-value-related functions
@@ -82,15 +82,15 @@ void powerwindow_debounce_initialize( const powerwindow_char_T **rt_errorStatus,
   /* Registration code */
 
   /* initialize error status */
-  powerwindow_rtmSetErrorStatusPointer( debounce_M, rt_errorStatus );
+  ((debounce_M)->errorStatus = (rt_errorStatus));
 
   /* block I/O */
-  ( void ) memset( ( ( void * ) localB ), 0,
-                   sizeof( powerwindow_rtB_debounce_T ) );
+  memset( ( ( void * ) localB ), 0,
+          sizeof( powerwindow_rtB_debounce_T ) );
 
   /* states (dwork) */
-  ( void ) memset( ( void * )localDW, 0,
-                   sizeof( powerwindow_rtDW_debounce_T ) );
+  memset( ( void * )localDW, 0,
+          sizeof( powerwindow_rtDW_debounce_T ) );
   localZCE->Chart_Trig_ZCE = powerwindow_POS_ZCSIG;
 }
 

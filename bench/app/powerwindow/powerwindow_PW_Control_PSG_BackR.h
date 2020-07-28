@@ -21,32 +21,32 @@
 #define powerwindow_RTW_HEADER_PW_Control_PSG_BackR_h_
 #ifndef powerwindow_PW_Control_PSG_BackR_COMMON_INCLUDES_
  #define powerwindow_PW_Control_PSG_BackR_COMMON_INCLUDES_
-#include "../powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
-#include "../powerwindow_HeaderFiles/powerwindow_rtw_solver.h"
+#include "powerwindow_rtwtypes.h"
+#include "powerwindow_rtw_solver.h"
 #endif                                 /* powerwindow_PW_Control_PSG_BackR_COMMON_INCLUDES_*/
 
-#include "../powerwindow_HeaderFiles/powerwindow_PW_Control_PSG_BackR_types.h"
+#include "powerwindow_PW_Control_PSG_BackR_types.h"
 
 /* Shared type includes */
-#include "../powerwindow_HeaderFiles/powerwindow_model_reference_types.h"
+#include "powerwindow_model_reference_types.h"
 
 /* Child system includes */
-#include "../powerwindow_HeaderFiles/powerwindow_powerwindow_control.h"
-#include "../powerwindow_HeaderFiles/powerwindow_debounce.h"
-#include "../powerwindow_HeaderFiles/powerwindow_controlexclusion.h"
+#include "powerwindow_powerwindow_control.h"
+#include "powerwindow_debounce.h"
+#include "powerwindow_controlexclusion.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef powerwindow_PW_PSG_BackR_rtmGetErrorStatus
  #define powerwindow_PW_PSG_BackR_rtmGetErrorStatus(rtm)        ((rtm)->errorStatus)
 #endif
 
-#ifndef powerwindow_PW_PSG_BackR_rtmSetErrorStatus
- #define powerwindow_PW_PSG_BackR_rtmSetErrorStatus(rtm, val)   ((rtm)->errorStatus = (val))
-#endif
+// #ifndef powerwindow_PW_PSG_BackR_rtmSetErrorStatus
+//  #define powerwindow_PW_PSG_BackR_rtmSetErrorStatus(rtm, val)   ((rtm)->errorStatus = (val))
+// #endif
 
-#ifndef powerwindow_PW_PSG_BackR_rtmGetErrorStatusPointer
- #define powerwindow_PW_PSG_BackR_rtmGetErrorStatusPointer(rtm) ((const powerwindow_char_T **)(&((rtm)->errorStatus)))
-#endif
+// #ifndef powerwindow_PW_PSG_BackR_rtmGetErrorStatusPointer
+//  #define powerwindow_PW_PSG_BackR_rtmGetErrorStatusPointer(rtm) ((const powerwindow_char_T **)(&((rtm)->errorStatus)))
+// #endif
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {

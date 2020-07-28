@@ -18,5 +18,5 @@
 */
 
 #ifndef NULL
-#define NULL  ((viod *) 0)
+#define NULL  ((void *) 0)
 #endif

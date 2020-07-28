@@ -17,7 +17,7 @@
 
 */
 
-#include "powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
+#include "powerwindow_rtwtypes.h"
 
 extern const powerwindow_boolean_T powerwindow_rtCP_pooled_6bUUQf1tASYw[ 12 ];
 const powerwindow_boolean_T powerwindow_rtCP_pooled_6bUUQf1tASYw[ 12 ] = { 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1,

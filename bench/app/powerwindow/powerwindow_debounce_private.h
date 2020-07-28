@@ -18,8 +18,8 @@
 */
 #ifndef powerwindow_RTW_HEADER_debounce_private_h_
 #define powerwindow_RTW_HEADER_debounce_private_h_
-#include "../powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
-#include "../powerwindow_HeaderFiles/powerwindow_model_reference_types.h"
+#include "powerwindow_rtwtypes.h"
+#include "powerwindow_model_reference_types.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef powerwindow_rtmGetErrorStatus
@@ -34,9 +34,9 @@
  #define powerwindow_rtmGetErrorStatusPointer(rtm) (rtm)->errorStatus
 #endif
 
-#ifndef powerwindow_rtmSetErrorStatusPointer
- #define powerwindow_rtmSetErrorStatusPointer(rtm, val) ((rtm)->errorStatus = (val))
-#endif
+// #ifndef powerwindow_rtmSetErrorStatusPointer
+//  #define powerwindow_rtmSetErrorStatusPointer(rtm, val) ((rtm)->errorStatus = (val))
+// #endif
 #endif                                 /* RTW_HEADER_debounce_private_h_ */
 
 /*

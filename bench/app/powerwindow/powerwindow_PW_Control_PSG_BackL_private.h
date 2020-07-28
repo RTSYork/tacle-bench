@@ -19,8 +19,8 @@
 
 #ifndef powerwindow_RTW_HEADER_PW_Control_PSG_BackL_private_h_
 #define powerwindow_RTW_HEADER_PW_Control_PSG_BackL_private_h_
-#include "../powerwindow_HeaderFiles/powerwindow_rtwtypes.h"
-#include "../powerwindow_HeaderFiles/powerwindow_model_reference_types.h"
+#include "powerwindow_rtwtypes.h"
+#include "powerwindow_model_reference_types.h"
 #endif                                 /* RTW_HEADER_PW_Control_PSG_BackL_private_h_ */
 
 /*
