@@ -109,7 +109,7 @@ void matrix1_pin_down( int A[  ], int B[  ], int C[  ] )
 
 void matrix1_init( void )
 {
-  matrix1_pin_down( &matrix1_A[ 0 ], &matrix1_B[ 0 ], &matrix1_C[ 0 ] );
+  matrix1_pin_down( matrix1_A, matrix1_B, matrix1_C );
 }
 
 /*
