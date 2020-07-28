@@ -16,7 +16,7 @@ Checking kernel/filterbank/ ... passed
 Checking kernel/fir2dim/ ... passed
 Checking kernel/iir/ ... passed
 Checking kernel/insertsort/ ... passed
-Checking kernel/isqrt/ ... failed (1)
+Checking kernel/isqrt/ ... failed (255)
 Checking kernel/jfdctint/ ... passed
 Checking kernel/lms/ ... failed (250)
 Checking kernel/ludcmp/ ... passed
