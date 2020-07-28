@@ -56,7 +56,8 @@ float basicmath___ieee754_acosf( float x )
 {
   float z, p, q, r, w, s, c, df;
   int32_t hx, ix;
-  GET_FLOAT_WORD( hx, x );
+  //GET_FLOAT_WORD( hx, x );
+  { ieee_float_shape_type gf_u; gf_u.value = (x); (hx) = gf_u.word; }
   ix = hx & 0x7fffffff;
   if ( ix == 0x3f800000 ) { /* |x|==1 */
     if ( hx > 0 ) return 0.0f; /* acos(1) = 0  */
@@ -93,8 +94,10 @@ float basicmath___ieee754_acosf( float x )
       z = ( basicmath_one - x ) * ( float )0.5f;
       s = basicmath___ieee754_sqrtf( z );
       df = s;
-      GET_FLOAT_WORD( idf, df );
-      SET_FLOAT_WORD( df, idf & 0xfffff000 );
+      //GET_FLOAT_WORD( idf, df );
+      { ieee_float_shape_type gf_u; gf_u.value = (df); (idf) = gf_u.word; }
+      //SET_FLOAT_WORD( df, idf & 0xfffff000 );
+      { ieee_float_shape_type sf_u; sf_u.word = (idf & 0xfffff000); (df) = sf_u.value; }
       c  = ( z - df * df ) / ( s + df );
       p = z * ( basicmath_pS0 + z * ( basicmath_pS1 + z * ( basicmath_pS2 + z *
                                       ( basicmath_pS3 + z *
@@ -145,8 +148,10 @@ float basicmath___ieee754_powf( float x, float y )
   int32_t i, j, k, yisint, n;
   int32_t hx, hy, ix, iy, is;
 
-  GET_FLOAT_WORD( hx, x );
-  GET_FLOAT_WORD( hy, y );
+  //GET_FLOAT_WORD( hx, x );
+  { ieee_float_shape_type gf_u; gf_u.value = (x); (hx) = gf_u.word; }
+  //GET_FLOAT_WORD( hy, y );
+  { ieee_float_shape_type gf_u; gf_u.value = (y); (hy) = gf_u.word; }
   ix = hx & 0x7fffffff;
   iy = hy & 0x7fffffff;
 
@@ -232,8 +237,10 @@ float basicmath___ieee754_powf( float x, float y )
     u = basicmath_ivln2_h * t; /* ivln2_h has 16 sig. bits */
     v = t * basicmath_ivln2_l - w * basicmath_ivln2;
     t1 = u + v;
-    GET_FLOAT_WORD( is, t1 );
-    SET_FLOAT_WORD( t1, is & 0xfffff000 );
+    //GET_FLOAT_WORD( is, t1 );
+    { ieee_float_shape_type gf_u; gf_u.value = (t1); (is) = gf_u.word; }
+    //SET_FLOAT_WORD( t1, is & 0xfffff000 );
+    { ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (t1) = sf_u.value; }
     t2 = v - ( t1 - u );
   } else {
     float s2, s_h, s_l, t_h, t_l;
@@ -242,7 +249,8 @@ float basicmath___ieee754_powf( float x, float y )
     if ( ix < 0x00800000 ) {
       ax *= basicmath_two24;
       n -= 24;
-      GET_FLOAT_WORD( ix, ax );
+      //GET_FLOAT_WORD( ix, ax );
+      { ieee_float_shape_type gf_u; gf_u.value = (ax); (ix) = gf_u.word; }
     }
     n  += ( ( ix ) >> 23 ) - 0x7f;
     j  = ix & 0x007fffff;
@@ -256,17 +264,21 @@ float basicmath___ieee754_powf( float x, float y )
         n += 1;
         ix -= 0x00800000;
       }
-    SET_FLOAT_WORD( ax, ix );
+    //SET_FLOAT_WORD( ax, ix );
+    { ieee_float_shape_type sf_u; sf_u.word = (ix); (ax) = sf_u.value; }
 
     /* compute s = s_h+s_l = (x-1)/(x+1) or (x-1.5)/(x+1.5) */
     u = ax - basicmath_bp[ k ]; /* bp[0]=1.0, bp[1]=1.5 */
     v = basicmath_one / ( ax + basicmath_bp[ k ] );
     s = u * v;
     s_h = s;
-    GET_FLOAT_WORD( is, s_h );
-    SET_FLOAT_WORD( s_h, is & 0xfffff000 );
+    //GET_FLOAT_WORD( is, s_h );
+    { ieee_float_shape_type gf_u; gf_u.value = (s_h); (is) = gf_u.word; }
+    //SET_FLOAT_WORD( s_h, is & 0xfffff000 );
+    { ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (s_h) = sf_u.value; }
     /* t_h=ax+bp[k] High */
-    SET_FLOAT_WORD( t_h, ( ( ix >> 1 ) | 0x20000000 ) + 0x0040000 + ( k << 21 ) );
+    //SET_FLOAT_WORD( t_h, ( ( ix >> 1 ) | 0x20000000 ) + 0x0040000 + ( k << 21 ) );
+    { ieee_float_shape_type sf_u; sf_u.word = (( ( ix >> 1 ) | 0x20000000 ) + 0x0040000 + ( k << 21 )); (t_h) = sf_u.value; }
     t_l = ax - ( t_h - basicmath_bp[ k ] );
     s_l = v * ( ( u - s_h * t_h ) - s_h * t_l );
     /* compute log(ax) */
@@ -277,24 +289,30 @@ float basicmath___ieee754_powf( float x, float y )
     r += s_l * ( s_h + s );
     s2  = s_h * s_h;
     t_h = ( float )3.0f + s2 + r;
-    GET_FLOAT_WORD( is, t_h );
-    SET_FLOAT_WORD( t_h, is & 0xfffff000 );
+    //GET_FLOAT_WORD( is, t_h );
+    { ieee_float_shape_type gf_u; gf_u.value = (t_h); (is) = gf_u.word; }
+    //SET_FLOAT_WORD( t_h, is & 0xfffff000 );
+    { ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (t_h) = sf_u.value; }
     t_l = r - ( ( t_h - ( float )3.0f ) - s2 );
     /* u+v = s*(1+...) */
     u = s_h * t_h;
     v = s_l * t_h + t_l * s;
     /* 2/(3log2)*(s+...) */
     p_h = u + v;
-    GET_FLOAT_WORD( is, p_h );
-    SET_FLOAT_WORD( p_h, is & 0xfffff000 );
+    //GET_FLOAT_WORD( is, p_h );
+    { ieee_float_shape_type gf_u; gf_u.value = (p_h); (is) = gf_u.word; }
+    //SET_FLOAT_WORD( p_h, is & 0xfffff000 );
+    { ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (p_h) = sf_u.value; }
     p_l = v - ( p_h - u );
     z_h = basicmath_cp_h * p_h; /* cp_h+cp_l = 2/(3*log2) */
     z_l = basicmath_cp_l * p_h + p_l * basicmath_cp + basicmath_dp_l[ k ];
     /* log2(ax) = (s+..)*2/(3*log2) = n + dp_h + z_h + z_l */
     t = ( float )n;
     t1 = ( ( ( z_h + z_l ) + basicmath_dp_h[ k ] ) + t );
-    GET_FLOAT_WORD( is, t1 );
-    SET_FLOAT_WORD( t1, is & 0xfffff000 );
+    //GET_FLOAT_WORD( is, t1 );
+    { ieee_float_shape_type gf_u; gf_u.value = (t1); (is) = gf_u.word; }
+    //SET_FLOAT_WORD( t1, is & 0xfffff000 );
+    { ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (t1) = sf_u.value; }
     t2 = z_l - ( ( ( t1 - t ) - basicmath_dp_h[ k ] ) - z_h );
   }
 
@@ -303,12 +321,15 @@ float basicmath___ieee754_powf( float x, float y )
     s = -basicmath_one; /* (-ve)**(odd int) */
 
   /* split up y into y1+y2 and compute (y1+y2)*(t1+t2) */
-  GET_FLOAT_WORD( is, y );
-  SET_FLOAT_WORD( y1, is & 0xfffff000 );
+  //GET_FLOAT_WORD( is, y );
+  { ieee_float_shape_type gf_u; gf_u.value = (y); (is) = gf_u.word; }
+  //SET_FLOAT_WORD( y1, is & 0xfffff000 );
+  { ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (y1) = sf_u.value; }
   p_l = ( y - y1 ) * t1 + y * t2;
   p_h = y1 * t1;
   z = p_l + p_h;
-  GET_FLOAT_WORD( j, z );
+  //GET_FLOAT_WORD( j, z );
+  { ieee_float_shape_type gf_u; gf_u.value = (z); (j) = gf_u.word; }
   if ( j > 0x43000000 )   /* if z > 128 */
     return s * basicmath_huge * basicmath_huge;   /* overflow */
   else
@@ -332,14 +353,17 @@ float basicmath___ieee754_powf( float x, float y )
   if ( i > 0x3f000000 ) { /* if |z| > 0.5, set n = [z+0.5] */
     n = j + ( 0x00800000 >> ( k + 1 ) );
     k = ( ( n & 0x7fffffff ) >> 23 ) - 0x7f; /* new k for n */
-    SET_FLOAT_WORD( t, n & ~( 0x007fffff >> k ) );
+    //SET_FLOAT_WORD( t, n & ~( 0x007fffff >> k ) );
+    { ieee_float_shape_type sf_u; sf_u.word = (n & ~( 0x007fffff >> k )); (t) = sf_u.value; }
     n = ( ( n & 0x007fffff ) | 0x00800000 ) >> ( 23 - k );
     if ( j < 0 ) n = -n;
     p_h -= t;
   }
   t = p_l + p_h;
-  GET_FLOAT_WORD( is, t );
-  SET_FLOAT_WORD( t, is & 0xfffff000 );
+  //GET_FLOAT_WORD( is, t );
+  { ieee_float_shape_type gf_u; gf_u.value = (t); (is) = gf_u.word; }
+  //SET_FLOAT_WORD( t, is & 0xfffff000 );
+  { ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (t) = sf_u.value; }
   u = t * basicmath_lg2_h;
   v = ( p_l - ( t - p_h ) ) * basicmath_lg2 + t * basicmath_lg2_l;
   z = u + v;
@@ -349,10 +373,12 @@ float basicmath___ieee754_powf( float x, float y )
                                        ( basicmath_P4 + t * basicmath_P5 ) ) ) );
   r  = ( z * t1 ) / ( t1 - basicmath_two ) - ( w + z * w );
   z  = basicmath_one - ( r - z );
-  GET_FLOAT_WORD( j, z );
+  //GET_FLOAT_WORD( j, z );
+  { ieee_float_shape_type gf_u; gf_u.value = (z); (j) = gf_u.word; }
   j += ( n << 23 );
   if ( ( j >> 23 ) <= 0 ) z = basicmath___scalbnf( z, n ); /* subnormal output */
-  else SET_FLOAT_WORD( z, j );
+  else //SET_FLOAT_WORD( z, j );
+  { ieee_float_shape_type sf_u; sf_u.word = (j); (z) = sf_u.value; }
   return s * z;
 }
 
@@ -400,7 +426,8 @@ int32_t basicmath___ieee754_rem_pio2f( float x, float *y )
   float z, w, t, r, fn;
   int32_t i, j, n, ix, hx;
 
-  GET_FLOAT_WORD( hx, x );
+  //GET_FLOAT_WORD( hx, x );
+  { ieee_float_shape_type gf_u; gf_u.value = (x); (hx) = gf_u.word; }
   ix = hx & 0x7fffffff;
   if ( ix <= 0x3f490fd8 ) { /* |x| ~<= pi/4 , no need for reduction */
     y[ 0 ] = x;
@@ -444,7 +471,8 @@ int32_t basicmath___ieee754_rem_pio2f( float x, float *y )
       u_int32_t high;
       j  = ix >> 23;
       y[ 0 ] = r - w;
-      GET_FLOAT_WORD( high, y[ 0 ] );
+      //GET_FLOAT_WORD( high, y[ 0 ] );
+      { ieee_float_shape_type gf_u; gf_u.value = (y[ 0 ]); (high) = gf_u.word; }
       i = j - ( ( high >> 23 ) & 0xff );
       if ( i > 8 ) { /* 2nd iteration needed, good to 57 */
         t  = r;
@@ -452,7 +480,8 @@ int32_t basicmath___ieee754_rem_pio2f( float x, float *y )
         r  = t - w;
         w  = fn * basicmath_pio2_2t - ( ( t - r ) - w );
         y[ 0 ] = r - w;
-        GET_FLOAT_WORD( high, y[ 0 ] );
+        //GET_FLOAT_WORD( high, y[ 0 ] );
+        { ieee_float_shape_type gf_u; gf_u.value = (y[ 0 ]); (high) = gf_u.word; }
         i = j - ( ( high >> 23 ) & 0xff );
         if ( i > 25 )  { /* 3rd iteration need, 74 bits acc */
           t  = r; /* will cover all possible cases */
@@ -497,7 +526,8 @@ float basicmath___ieee754_sqrtf( float x )
   int32_t ix, s, q, m, t, i;
   u_int32_t r;
 
-  GET_FLOAT_WORD( ix, x );
+  //GET_FLOAT_WORD( ix, x );
+  { ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
 
   /* take care of Inf and NaN */
   if ( ( ix & 0x7f800000 ) == 0x7f800000 ) {
@@ -555,7 +585,8 @@ float basicmath___ieee754_sqrtf( float x )
   }
   ix = ( q >> 1 ) + 0x3f000000;
   ix += ( m << 23 );
-  SET_FLOAT_WORD( z, ix );
+  //SET_FLOAT_WORD( z, ix );
+  { ieee_float_shape_type sf_u; sf_u.word = (ix); (z) = sf_u.value; }
   return z;
 }
 
@@ -575,7 +606,8 @@ float basicmath___kernel_cosf( float x, float y )
 {
   float a, hz, z, r, qx;
   int32_t ix;
-  GET_FLOAT_WORD( ix, x );
+  //GET_FLOAT_WORD( ix, x );
+  { ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   ix &= 0x7fffffff;     /* ix = |x|'s high word*/
   if ( ix < 0x32000000 ) { /* if x < 2**27 */
     if ( ( ( int )x ) == 0 ) return basicmath_one; /* generate inexact */
@@ -589,7 +621,8 @@ float basicmath___kernel_cosf( float x, float y )
     if ( ix > 0x3f480000 )  /* x > 0.78125 */
       qx = ( float )0.28125f;
     else {
-      SET_FLOAT_WORD( qx, ix - 0x01000000 ); /* x/4 */
+      //SET_FLOAT_WORD( qx, ix - 0x01000000 );
+      { ieee_float_shape_type sf_u; sf_u.word = (ix - 0x01000000); (qx) = sf_u.value; } /* x/4 */
     }
     hz = ( float )0.5f * z - qx;
     a  = basicmath_one - qx;
@@ -613,7 +646,8 @@ float basicmath___kernel_sinf( float x, float y, int iy )
 {
   float z, r, v;
   int32_t ix;
-  GET_FLOAT_WORD( ix, x );
+  //GET_FLOAT_WORD( ix, x );
+  { ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   ix &= 0x7fffffff;     /* high word of x */
   if ( ix < 0x32000000 ) { /* |x| < 2**-27 */
     if ( ( int )x == 0 ) return x; /* generate inexact */
@@ -642,9 +676,12 @@ float basicmath___kernel_sinf( float x, float y, int iy )
 float basicmath___copysignf( float x, float y )
 {
   u_int32_t ix, iy;
-  GET_FLOAT_WORD( ix, x );
-  GET_FLOAT_WORD( iy, y );
-  SET_FLOAT_WORD( x, ( ix & 0x7fffffff ) | ( iy & 0x80000000 ) );
+  //GET_FLOAT_WORD( ix, x );
+  { ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
+  //GET_FLOAT_WORD( iy, y );
+  { ieee_float_shape_type gf_u; gf_u.value = (y); (iy) = gf_u.word; }
+  //SET_FLOAT_WORD( x, ( ix & 0x7fffffff ) | ( iy & 0x80000000 ) );
+  { ieee_float_shape_type sf_u; sf_u.word = (( ix & 0x7fffffff ) | ( iy & 0x80000000 )); (x) = sf_u.value; }
   return x;
 }
 
@@ -658,7 +695,8 @@ float basicmath___cosf( float x )
   float y[ 2 ], z = 0.0f;
   int32_t n, ix;
 
-  GET_FLOAT_WORD( ix, x );
+  //GET_FLOAT_WORD( ix, x );
+  { ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
 
   /* |x| ~< pi/4 */
   ix &= 0x7fffffff;
@@ -696,8 +734,10 @@ float basicmath___cosf( float x )
 float basicmath___fabsf( float x )
 {
   u_int32_t ix;
-  GET_FLOAT_WORD( ix, x );
-  SET_FLOAT_WORD( x, ix & 0x7fffffff );
+  //GET_FLOAT_WORD( ix, x );
+  { ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
+  //SET_FLOAT_WORD( x, ix & 0x7fffffff );
+  { ieee_float_shape_type sf_u; sf_u.word = (ix & 0x7fffffff); (x) = sf_u.value; }
   return x;
 }
 
@@ -710,7 +750,8 @@ float basicmath___fabsf( float x )
 int basicmath___isinff ( float x )
 {
   int32_t ix, t;
-  GET_FLOAT_WORD( ix, x );
+  //GET_FLOAT_WORD( ix, x );
+  { ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   t = ix & 0x7fffffff;
   t ^= 0x7f800000;
   t |= -t;
@@ -728,12 +769,14 @@ static const float basicmath_two25 =  3.355443200e+07f,  /* 0x4c000000 */
 float basicmath___scalbnf ( float x, int n )
 {
   int32_t k, ix;
-  GET_FLOAT_WORD( ix, x );
+  //GET_FLOAT_WORD( ix, x );
+  { ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   k = ( ix & 0x7f800000 ) >> 23; /* extract exponent */
   if ( k == 0 ) {   /* 0 or subnormal x */
     if ( ( ix & 0x7fffffff ) == 0 ) return x; /* +-0 */
     x *= basicmath_two25;
-    GET_FLOAT_WORD( ix, x );
+    //GET_FLOAT_WORD( ix, x );
+    { ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
     k = ( ( ix & 0x7f800000 ) >> 23 ) - 25;
   }
   if ( k == 0xff ) return x + x; /* NaN or Inf */
@@ -745,13 +788,15 @@ float basicmath___scalbnf ( float x, int n )
     return basicmath_tiny * basicmath___copysignf( basicmath_tiny,
            x ); /*underflow*/
   if ( k > 0 ) {    /* normal result */
-    SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+    //SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+    { ieee_float_shape_type sf_u; sf_u.word = (( ix & 0x807fffff ) | ( k << 23 )); (x) = sf_u.value; }
     return x;
   }
   if ( k <= -25 )
     return basicmath_tiny * basicmath___copysignf( basicmath_tiny,
            x ); /*underflow*/
   k += 25;        /* subnormal result */
-  SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+  //SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+  { ieee_float_shape_type sf_u; sf_u.word = (( ix & 0x807fffff ) | ( k << 23 )); (x) = sf_u.value; }
   return x * basicmath_twom25;
 }

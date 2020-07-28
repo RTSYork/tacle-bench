@@ -6,7 +6,7 @@ Checking kernel/bitcount/ ... passed
 Checking kernel/bitonic/ ... passed
 Checking kernel/bsort/ ... passed
 Checking kernel/complex_updates/ ... passed
-Checking kernel/cosf/ ... failed (1)
+Checking kernel/cosf/ ... failed (255)
 Checking kernel/countnegative/ ... failed (255)
 Checking kernel/cubic/ ... passed
 Checking kernel/deg2rad/ ... passed

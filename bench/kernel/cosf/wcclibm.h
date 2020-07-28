@@ -34,8 +34,8 @@
 #ifndef _WCCLIBM
 #define _WCCLIBM
 
-#define int32_t      int
-#define u_int32_t    unsigned int
+typedef int int32_t;
+typedef unsigned int u_int32_t;
 
 // Often used variables/consts
 static const float basicmath_one    =  1.0f,
