@@ -37,16 +37,18 @@ sequential/mpeg2/mpeg2.c ... failed (bad return value 1).
 PicoC
 ---
 
-PASS: 27/57
-FAIL: 30/57
+PASS: 28/57
+FAIL: 29/57
 
 Notes:
 - Global variables seemingly share scope across all files
 - Pragmas must be on their own line (i.e. not in the middle of a definition)
 - Doesn't fully take into account types, qualifiers or storage classes, so results might be inconsistent
-- Benchmarks using `math_private.h` fail due to GET_FLOAT_WORD and SET_FLOAT_WORD macro issues
-- Benchmarks using `wcclibm.h` fail due to type macros - changing these to typdefs helps
+- All floating point numbers are stored internally as doubles
+- Some macros with parameters fail to parse correctly - moving the code inline works
+- Typed defined in macros do not parse - changing these to typdefs works
 - `long long` types are not supported (parsing fails)
+- Bit field structs are not supported
 
 
 CINT

@@ -32,8 +32,8 @@
 
 
 struct int_sqrt {
-  unsigned short sqrt,
-           frac;
+  unsigned short sqrt;
+  unsigned short frac;
 };
 
 

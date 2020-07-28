@@ -62,11 +62,11 @@ int cubic_checksum;
 
 void cubic_init( void )
 {
-  cubic_a1 = 1.0f, cubic_b1 = -10.5f, cubic_c1 = 32.0f, cubic_d1 = -30.0f;
-  cubic_a2 = 1.0f, cubic_b2 = -4.5f, cubic_c2 = 17.0f, cubic_d2 = -30.0f;
-  cubic_a3 = 1.0f, cubic_b3 = -3.5f, cubic_c3 = 22.0f, cubic_d3 = -31.0f;
-  cubic_a4 = 1.0f, cubic_b4 = -13.7f, cubic_c4 = 1.0f, cubic_d4 = -35.0f;
-  cubic_X = 0, cubic_Y = 0;
+  cubic_a1 = 1.0f; cubic_b1 = -10.5f; cubic_c1 = 32.0f; cubic_d1 = -30.0f;
+  cubic_a2 = 1.0f; cubic_b2 = -4.5f; cubic_c2 = 17.0f; cubic_d2 = -30.0f;
+  cubic_a3 = 1.0f; cubic_b3 = -3.5f; cubic_c3 = 22.0f; cubic_d3 = -31.0f;
+  cubic_a4 = 1.0f; cubic_b4 = -13.7f; cubic_c4 = 1.0f; cubic_d4 = -35.0f;
+  cubic_X = 0; cubic_Y = 0;
   cubic_checksum = 0;
 }
 
