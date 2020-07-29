@@ -1,10 +1,12 @@
 Benchmark,Function call depth, Loop depth, Conditional depth
 app/lift,5,1,6
+app/powerwindow,6,1,8
 kernel/binarysearch,3,1,2
 kernel/bitcount,10,3,7
 kernel/bitonic,9,1,5
 kernel/bsort,3,2,1
 kernel/complex_updates,3,1,0
+kernel/cubic,5,5,5
 kernel/deg2rad,2,1,1
 kernel/fac,8,1,6
 kernel/fft,6,2,2
@@ -14,6 +16,7 @@ kernel/iir,2,1,0
 kernel/insertsort,3,1,1
 kernel/jfdctint,3,1,0
 kernel/ludcmp,4,3,1
+kernel/matrix1,3,3,0
 kernel/minver,4,3,3
 kernel/prime,5,1,1
 kernel/recursion,12,0,1
@@ -21,7 +24,10 @@ sequential/adpcm_dec,5,2,2
 sequential/dijkstra,4,2,4
 sequential/g723_enc,6,3,5
 sequential/h264_dec,3,4,5
+sequential/huff_dec,5,2,4
 sequential/mpeg2,7,6,12
+sequential/ndes,5,2,2
 sequential/petrinet,2,1,0
+sequential/statemate,4,1,1
 test/cover,3,1,0
 test/duff,3,1,0

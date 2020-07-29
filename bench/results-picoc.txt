@@ -21,25 +21,25 @@ Checking kernel/jfdctint/ ... passed
 Checking kernel/lms/ ... failed (250)
 Checking kernel/ludcmp/ ... passed
 Checking kernel/matrix1/ ... passed
-Checking kernel/md5/ ... failed (1)
+Checking kernel/md5/ ... failed (139)
 Checking kernel/minver/ ... passed
 Checking kernel/pm/ ... failed (139)
 Checking kernel/prime/ ... passed
-Checking kernel/quicksort/ ... failed (1)
+Checking kernel/quicksort/ ... failed (139)
 Checking kernel/rad2deg/ ... failed (255)
 Checking kernel/recursion/ ... passed
-Checking kernel/sha/ ... failed (1)
+Checking kernel/sha/ ... failed (139)
 Checking kernel/st/ ... failed (255)
 
 Checking sequential/adpcm_dec/ ... passed
 Checking sequential/adpcm_enc/ ... failed (1)
 Checking sequential/ammunition/ ... failed (1)
-Checking sequential/anagram/ ... failed (1)
+Checking sequential/anagram/ ... failed (139)
 Checking sequential/audiobeam/ ... failed (1)
 Checking sequential/cjpeg_transupp/ ... failed (1)
 Checking sequential/cjpeg_wrbmp/ ... failed (1)
 Checking sequential/dijkstra/ ... passed
-Checking sequential/epic/ ... failed (1)
+Checking sequential/epic/ ... failed (139)
 Checking sequential/fmref/ ... failed (1)
 Checking sequential/g723_enc/ ... passed
 Checking sequential/gsm_dec/ ... failed (1)
