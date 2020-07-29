@@ -24,10 +24,13 @@
 */
 
 typedef struct NDES_IMMENSE {
-  unsigned long l, r;
+  unsigned long l;
+  unsigned long r;
 } ndes_immense;
 typedef struct NDES_GREAT {
-  unsigned long l, c, r;
+  unsigned long l;
+  unsigned long c;
+  unsigned long r;
 } ndes_great;
 
 unsigned long ndes_bit[ 33 ];
