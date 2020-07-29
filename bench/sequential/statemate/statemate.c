@@ -27,7 +27,7 @@
   Macro definitions
 */
 
-#define SYS_bit_get(a,b) (a)[ (b) ]
+// #define SYS_bit_get(a,b) (a)[ (b) ]
 #define SYS_bit_clr(a,b) (a)[ (b) ] = 0
 #define SYS_bit_set(a,b) (a)[ (b) ] = 1
 #define SYS_bit_cpy(a1,i1,a2,i2) (a1)[ (i1) ] = (a2)[ (i2) ]
@@ -225,12 +225,10 @@ void statemate_init( void )
 
 void statemate_interface( void )
 {
-  if ( SYS_bit_get( statemate_bitlist,
-                    entered_WIEDERHOLSPERRE_FH_TUERMODUL_CTRL_IDX ) )
+  if ( statemate_bitlist[ entered_WIEDERHOLSPERRE_FH_TUERMODUL_CTRL_IDX ] )
     statemate_tm_entered_WIEDERHOLSPERRE_FH_TUERMODUL_CTRL = statemate_time;
-  if ( SYS_bit_get( statemate_bitlist,
-                    entered_WIEDERHOLSPERRE_FH_TUERMODUL_CTRL_IDX ) ||
-       SYS_bit_get( statemate_bitlist, exited_BEREIT_FH_TUERMODUL_CTRL_IDX ) )
+  if ( statemate_bitlist[ entered_WIEDERHOLSPERRE_FH_TUERMODUL_CTRL_IDX ] ||
+       statemate_bitlist[ exited_BEREIT_FH_TUERMODUL_CTRL_IDX ] )
     statemate_tm_entered_WIEDERHOLSPERRE_FH_TUERMODUL_CTRLexited_BEREIT_FH_TUERMODUL_CTRL
       = statemate_time;
   if ( ( statemate_sc_FH_TUERMODUL_CTRL_2375_2 != 0 ) &&
@@ -256,8 +254,7 @@ void statemate_interface( void )
        ( statemate_time - statemate_sc_FH_TUERMODUL_CTRL_1739_10 >= 500 ) )
     statemate_sc_FH_TUERMODUL_CTRL_1739_10 = 0;
 
-  if ( ( SYS_bit_get( statemate_bitlist,
-                      entered_EINSCHALTSTROM_MESSEN_BLOCK_ERKENNUNG_CTRL_IDX ) ||
+  if ( ( statemate_bitlist[ entered_EINSCHALTSTROM_MESSEN_BLOCK_ERKENNUNG_CTRL_IDX ] ||
          statemate_BLOCK_ERKENNUNG_CTRL__N != statemate_BLOCK_ERKENNUNG_CTRL__N_old ) )
     statemate_tm_entered_EINSCHALTSTROM_MESSEN_BLOCK_ERKENNUNG_CTRLch_BLOCK_ERKENNUNG_CTRL__N_copy
       = statemate_time;
@@ -270,7 +267,7 @@ void statemate_interface( void )
 
 void statemate_generic_KINDERSICHERUNG_CTRL( void )
 {
-  if ( SYS_bit_get( statemate_bitlist, active_KINDERSICHERUNG_CTRL_IDX ) ) {
+  if ( statemate_bitlist[ active_KINDERSICHERUNG_CTRL_IDX ] ) {
     switch ( statemate_KINDERSICHERUNG_CTRL_KINDERSICHERUNG_CTRL_next_state ) {
       case 1: { /** state ZENTRAL in chart KINDERSICHERUNG_CTRL **/
           if ( !( statemate_FH_TUERMODUL__SFHA_ZENTRAL ||
@@ -448,17 +445,17 @@ void statemate_generic_KINDERSICHERUNG_CTRL( void )
 
 void statemate_generic_FH_TUERMODUL_CTRL( void )
 {
-  if ( !SYS_bit_get( statemate_bitlist, active_FH_TUERMODUL_CTRL_IDX ) &&
-       SYS_bit_get( statemate_bitlist, active_FH_TUERMODUL_CTRL_old_IDX ) &&
-       !SYS_bit_get( statemate_bitlist, active_FH_TUERMODUL_CTRL_copy_IDX ) ) {
+  if ( !statemate_bitlist[ active_FH_TUERMODUL_CTRL_IDX ] &&
+       statemate_bitlist[ active_FH_TUERMODUL_CTRL_old_IDX ] &&
+       !statemate_bitlist[ active_FH_TUERMODUL_CTRL_copy_IDX ] ) {
     SYS_bit_clr( statemate_bitlist, entered_WIEDERHOLSPERRE_FH_TUERMODUL_CTRL_IDX );
     SYS_bit_clr( statemate_bitlist, exited_BEREIT_FH_TUERMODUL_CTRL_IDX );
   }
-  if ( SYS_bit_get( statemate_bitlist, active_FH_TUERMODUL_CTRL_IDX ) ) {
-    if ( !SYS_bit_get( statemate_bitlist, active_KINDERSICHERUNG_CTRL_IDX ) )
+  if ( statemate_bitlist[ active_FH_TUERMODUL_CTRL_IDX ] ) {
+    if ( !statemate_bitlist[ active_KINDERSICHERUNG_CTRL_IDX ] )
       statemate_KINDERSICHERUNG_CTRL_KINDERSICHERUNG_CTRL_next_state = 3;
     SYS_bit_clr( statemate_bitlist, active_KINDERSICHERUNG_CTRL_copy_IDX );
-    if ( !SYS_bit_get( statemate_bitlist, active_BLOCK_ERKENNUNG_CTRL_IDX ) ) {
+    if ( !statemate_bitlist[ active_BLOCK_ERKENNUNG_CTRL_IDX ] ) {
       SYS_bit_clr( statemate_bitlist,
                    entered_EINSCHALTSTROM_MESSEN_BLOCK_ERKENNUNG_CTRL_IDX );
       statemate_BLOCK_ERKENNUNG_CTRL_BLOCK_ERKENNUNG_CTRL_next_state = 1;
@@ -642,7 +639,7 @@ void statemate_generic_FH_TUERMODUL_CTRL( void )
                       switch ( statemate_TIPP_SCHLIESSEN_FH_TUERMODUL_CTRL_next_state ) {
                         case 1: { /** state REVERSIEREN2 in chart FH_TUERMODUL_CTRL **/
                             SYS_bit_clr( statemate_bitlist, FH_TUERMODUL_CTRL__END_REVERS_copy_IDX );
-                            if ( SYS_bit_get( statemate_bitlist, FH_TUERMODUL_CTRL__END_REVERS_IDX ) ) {
+                            if ( statemate_bitlist[ FH_TUERMODUL_CTRL__END_REVERS_IDX ] ) {
                               statemate_stable = 0;
                               statemate_FH_TUERMODUL__MFHZ_copy = 1;
                               statemate_FH_TUERMODUL_CTRL__INREVERS2_copy = 0;
@@ -656,7 +653,7 @@ void statemate_generic_FH_TUERMODUL_CTRL( void )
                             break;
                           }
                         case 2: { /** state TIPP_SCHLIESSEN1 in chart FH_TUERMODUL_CTRL **/
-                            if ( SYS_bit_get( statemate_bitlist, FH_TUERMODUL__EINKLEMMUNG_IDX ) ) {
+                            if ( statemate_bitlist[ FH_TUERMODUL__EINKLEMMUNG_IDX ] ) {
                               statemate_stable = 0;
                               statemate_FH_TUERMODUL_CTRL__INREVERS2_copy = 1;
 
@@ -692,7 +689,7 @@ void statemate_generic_FH_TUERMODUL_CTRL( void )
                       switch ( statemate_MANUELL_SCHLIESSEN_FH_TUERMODUL_CTRL_next_state ) {
                         case 1: { /** state REVERSIEREN1 in chart FH_TUERMODUL_CTRL **/
                             SYS_bit_clr( statemate_bitlist, FH_TUERMODUL_CTRL__END_REVERS_copy_IDX );
-                            if ( SYS_bit_get( statemate_bitlist, FH_TUERMODUL_CTRL__END_REVERS_IDX ) ) {
+                            if ( statemate_bitlist[ FH_TUERMODUL_CTRL__END_REVERS_IDX ] ) {
                               statemate_stable = 0;
                               statemate_FH_TUERMODUL_CTRL__INREVERS1_copy = 0;
 
@@ -706,7 +703,7 @@ void statemate_generic_FH_TUERMODUL_CTRL( void )
                             break;
                           }
                         case 2: { /** state MAN_SCHLIESSEN in chart FH_TUERMODUL_CTRL **/
-                            if ( SYS_bit_get( statemate_bitlist, FH_TUERMODUL__EINKLEMMUNG_IDX ) ) {
+                            if ( statemate_bitlist[ FH_TUERMODUL__EINKLEMMUNG_IDX ] ) {
                               statemate_stable = 0;
                               statemate_FH_TUERMODUL__MFHZ_copy = 0;
                               statemate_FH_TUERMODUL_CTRL__INREVERS1_copy = 1;
@@ -858,7 +855,7 @@ void statemate_generic_FH_TUERMODUL_CTRL( void )
 
 void statemate_generic_EINKLEMMSCHUTZ_CTRL( void )
 {
-  if ( SYS_bit_get( statemate_bitlist, active_EINKLEMMSCHUTZ_CTRL_IDX ) ) {
+  if ( statemate_bitlist[ active_EINKLEMMSCHUTZ_CTRL_IDX ] ) {
     switch ( statemate_EINKLEMMSCHUTZ_CTRL_EINKLEMMSCHUTZ_CTRL_next_state ) {
       case 1: { /** state NORMALBETRIEB in chart EINKLEMMSCHUTZ_CTRL **/
           if ( ( ( statemate_FH_TUERMODUL__EKS_LEISTE_AKTIV &&
@@ -896,12 +893,12 @@ void statemate_generic_EINKLEMMSCHUTZ_CTRL( void )
 
 void statemate_generic_BLOCK_ERKENNUNG_CTRL( void )
 {
-  if ( !SYS_bit_get( statemate_bitlist, active_BLOCK_ERKENNUNG_CTRL_IDX ) &&
-       SYS_bit_get( statemate_bitlist, active_BLOCK_ERKENNUNG_CTRL_old_IDX ) &&
-       !SYS_bit_get( statemate_bitlist, active_BLOCK_ERKENNUNG_CTRL_copy_IDX ) )
+  if ( !statemate_bitlist[ active_BLOCK_ERKENNUNG_CTRL_IDX ] &&
+       statemate_bitlist[ active_BLOCK_ERKENNUNG_CTRL_old_IDX ] &&
+       !statemate_bitlist[ active_BLOCK_ERKENNUNG_CTRL_copy_IDX ] )
     SYS_bit_clr( statemate_bitlist,
                  entered_EINSCHALTSTROM_MESSEN_BLOCK_ERKENNUNG_CTRL_IDX );
-  if ( SYS_bit_get( statemate_bitlist, active_BLOCK_ERKENNUNG_CTRL_IDX ) ) {
+  if ( statemate_bitlist[ active_BLOCK_ERKENNUNG_CTRL_IDX ] ) {
     switch ( statemate_BLOCK_ERKENNUNG_CTRL_BLOCK_ERKENNUNG_CTRL_next_state ) {
       case 1: { /** state KEINE_BEWEGUNG in chart BLOCK_ERKENNUNG_CTRL **/
           if ( ( statemate_FH_TUERMODUL__I_EIN != statemate_FH_TUERMODUL__I_EIN_old ) &&
@@ -1054,19 +1051,19 @@ void statemate_FH_DU( void )
     }
     {
       {
-        if ( !SYS_bit_get( statemate_bitlist, active_KINDERSICHERUNG_CTRL_IDX ) )
+        if ( !statemate_bitlist[ active_KINDERSICHERUNG_CTRL_IDX ] )
           statemate_KINDERSICHERUNG_CTRL_KINDERSICHERUNG_CTRL_next_state = 3;
         SYS_bit_clr( statemate_bitlist, active_KINDERSICHERUNG_CTRL_copy_IDX );
-        if ( !SYS_bit_get( statemate_bitlist, active_EINKLEMMSCHUTZ_CTRL_IDX ) )
+        if ( !statemate_bitlist[ active_EINKLEMMSCHUTZ_CTRL_IDX ] )
           statemate_EINKLEMMSCHUTZ_CTRL_EINKLEMMSCHUTZ_CTRL_next_state = 1;
         SYS_bit_clr( statemate_bitlist, active_EINKLEMMSCHUTZ_CTRL_copy_IDX );
-        if ( !SYS_bit_get( statemate_bitlist, active_BLOCK_ERKENNUNG_CTRL_IDX ) ) {
+        if ( !statemate_bitlist[ active_BLOCK_ERKENNUNG_CTRL_IDX ] ) {
           SYS_bit_clr( statemate_bitlist,
                        entered_EINSCHALTSTROM_MESSEN_BLOCK_ERKENNUNG_CTRL_IDX );
           statemate_BLOCK_ERKENNUNG_CTRL_BLOCK_ERKENNUNG_CTRL_next_state = 1;
         }
         SYS_bit_clr( statemate_bitlist, active_BLOCK_ERKENNUNG_CTRL_copy_IDX );
-        if ( !SYS_bit_get( statemate_bitlist, active_FH_TUERMODUL_CTRL_IDX ) ) {
+        if ( !statemate_bitlist[ active_FH_TUERMODUL_CTRL_IDX ] ) {
           SYS_bit_clr( statemate_bitlist, entered_WIEDERHOLSPERRE_FH_TUERMODUL_CTRL_IDX );
           SYS_bit_clr( statemate_bitlist, exited_BEREIT_FH_TUERMODUL_CTRL_IDX );
           statemate_B_FH_TUERMODUL_CTRL_next_state = 2;

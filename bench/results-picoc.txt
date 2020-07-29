@@ -52,12 +52,12 @@ Checking sequential/ndes/ ... passed
 Checking sequential/petrinet/ ... passed
 Checking sequential/rijndael_dec/ ... failed (1)
 Checking sequential/rijndael_enc/ ... failed (1)
-Checking sequential/statemate/ ... failed (1)
+Checking sequential/statemate/ ... passed
 Checking sequential/susan/ ... failed (1)
 
 Checking test/cover/ ... passed
 Checking test/duff/ ... passed
 Checking test/test3/ ... failed (1)
 
-PASS: 31/57
-FAIL: 26/57
+PASS: 32/57
+FAIL: 25/57
