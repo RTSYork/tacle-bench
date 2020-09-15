@@ -20,6 +20,7 @@
 
 */
 
+#include "basicmath_libc.h"
 
 void basicmath_memcpy( void *a, const void *b, int c )
 {
