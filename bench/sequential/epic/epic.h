@@ -56,8 +56,8 @@ void epic_build_level( float *image, int level_x_size, int level_y_size,
 void epic_internal_transpose( register float *mat, int rows,
                               register int cols );
 
-void epic_reflect1( register float *filt, register int x_dim, int y_dim,
-                    int x_pos, int y_pos, register float *result, int f_or_e );
+// void epic_reflect1( register float *filt, register int x_dim, int y_dim,
+//                     int x_pos, int y_pos, register float *result, int f_or_e );
 
 void epic_internal_filter( register float *image, register int x_dim,
                            register int y_dim, float *filt,

@@ -564,10 +564,10 @@ float epic_image[  ]  = {
 #define abs(x)    (x>=0 ? x : -(x))
 #define FILTER 0
 #define EXPAND 1
-#define IS    ==
-#define ISNT  !=
-#define AND &&
-#define OR ||
+// #define IS    ==
+// #define ISNT  !=
+// #define AND &&
+// #define OR ||
 
 #define NUM_LEVELS  4
 
@@ -576,19 +576,19 @@ float epic_image[  ]  = {
   Forward declaration of functions
 */
 
-void epic_init( void );
-void epic_build_pyr( float *image, int x_size, int y_size, int num_levels,
-                     float *lo_filter, float *hi_filter, int filter_size );
-void epic_build_level( float *image, int level_x_size, int level_y_size,
-                       float *lo_filter, float *hi_filter,
-                       int filter_size, float *result_block );
-void epic_internal_transpose( float *mat, int rows, int cols );
-void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
-                           float *temp, int x_fdim, int y_fdim,
-                           int xgrid_start, int xgrid_step, int ygrid_start,
-                           int ygrid_step, float *result );
-void epic_reflect1( float *filt, int x_dim, int y_dim, int x_pos, int y_pos,
-                    float *result, int f_or_e );
+// void epic_init( void );
+// void epic_build_pyr( float *image, int x_size, int y_size, int num_levels,
+//                      float *lo_filter, float *hi_filter, int filter_size );
+// void epic_build_level( float *image, int level_x_size, int level_y_size,
+//                        float *lo_filter, float *hi_filter,
+//                        int filter_size, float *result_block );
+// void epic_internal_transpose( float *mat, int rows, int cols );
+// void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
+//                            float *temp, int x_fdim, int y_fdim,
+//                            int xgrid_start, int xgrid_step, int ygrid_start,
+//                            int ygrid_step, float *result );
+// void epic_reflect1( float *filt, int x_dim, int y_dim, int x_pos, int y_pos,
+//                     float *result, int f_or_e );
 void epic_main( void );
 int main( void );
 
@@ -856,7 +856,8 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
     for ( y_pos = first_row; y_pos < last_ctr_row;
           y_pos += ygrid_step_full ) {
       sum = 0.0f;
-      x_filt = 0, y_im_lin = y_pos;
+      x_filt = 0;
+      y_im_lin = y_pos;
       #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
@@ -884,7 +885,8 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
           x_pos < last_ctr_col;
           x_pos += xgrid_step ) {
       sum = 0.0f;
-      x_filt = 0, y_im_lin = y_pos;
+      x_filt = 0;
+      y_im_lin = y_pos;
       #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
@@ -912,7 +914,8 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
     for ( y_pos = first_row; y_pos < last_ctr_row;
           y_pos += ygrid_step_full ) {
       sum = 0.0f;
-      x_filt = 0, y_im_lin = y_pos;
+      x_filt = 0;
+      y_im_lin = y_pos;
       #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim;
             y_filt_lin <= filt_size;
@@ -943,7 +946,8 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
           x_pos += xgrid_step ) {
       epic_reflect1( filt, x_fdim, y_fdim, x_pos, y_pos, temp, FILTER );
       sum = 0.0f;
-      x_filt = 0, y_im_lin = last_ctr_row;
+      x_filt = 0;
+      y_im_lin = last_ctr_row;
       #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
@@ -965,7 +969,8 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
           x_pos < last_ctr_col;
           x_pos += xgrid_step ) {
       sum = 0.0f;
-      x_filt = 0, y_im_lin = last_ctr_row;
+      x_filt = 0;
+      y_im_lin = last_ctr_row;
       #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
@@ -987,7 +992,8 @@ void epic_internal_filter( float *image, int x_dim, int y_dim, float *filt,
           x_pos += xgrid_step ) {
       epic_reflect1( filt, x_fdim, y_fdim, x_pos, y_pos, temp, FILTER );
       sum = 0.0f;
-      x_filt = 0, y_im_lin = last_ctr_row;
+      x_filt = 0;
+      y_im_lin = last_ctr_row;
       #pragma loopbound min 1 max 15
       for ( y_filt_lin = x_fdim; y_filt_lin <= filt_size;
             y_filt_lin += x_fdim ) {
@@ -1063,17 +1069,17 @@ void epic_reflect1( float *filt, int x_dim, int y_dim, int x_pos, int y_pos,
   for ( i = 0; i < filt_sz; ++i ) result[ i ] = 0.0f;
 
   /* if EXPAND and filter is centered on image edge, do not reflect */
-  if ( f_or_e IS EXPAND ) {
-    if ( x_pos IS mx_pos ) x_stop = ( x_dim + 1 ) / 2;
+  if ( f_or_e == EXPAND ) {
+    if ( x_pos == mx_pos ) x_stop = ( x_dim + 1 ) / 2;
     else
-      if ( x_pos IS - mx_pos ) {
+      if ( x_pos == - mx_pos ) {
         x_start = x_dim / 2;
         x_edge_dist = 0;
       }
 
-    if ( y_pos IS my_pos ) y_stop = x_dim * ( ( y_dim + 1 ) / 2 );
+    if ( y_pos == my_pos ) y_stop = x_dim * ( ( y_dim + 1 ) / 2 );
     else
-      if ( y_pos IS - my_pos ) {
+      if ( y_pos == - my_pos ) {
         y_start = x_dim * ( y_dim / 2 );
         y_edge_dist = 0;
       }
@@ -1094,12 +1100,12 @@ void epic_reflect1( float *filt, int x_dim, int y_dim, int x_pos, int y_pos,
   }
 
   /* if EXPAND and filter is not centered on image edge, mult edge by 2 */
-  if ( f_or_e IS EXPAND ) {
-    if ( ( abs( x_pos ) ISNT mx_pos ) AND ( x_pos ISNT 0 ) )
+  if ( f_or_e == EXPAND ) {
+    if ( ( abs( x_pos ) != mx_pos ) && ( x_pos != 0 ) )
       #pragma loopbound min 0 max 0
       for ( y_filt = x_base; y_filt < filt_sz; y_filt += x_dim )
         result[ y_filt ] += result[ y_filt ];
-    if ( ( abs( y_pos ) ISNT my_pos ) AND ( y_pos ISNT 0 ) )
+    if ( ( abs( y_pos ) != my_pos ) && ( y_pos != 0 ) )
       #pragma loopbound min 0 max 0
       for ( x_filt = y_base; x_filt < y_base + x_dim; ++x_filt )
         result[ x_filt ] += result[ x_filt ];
