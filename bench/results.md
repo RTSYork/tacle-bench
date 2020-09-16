@@ -28,36 +28,32 @@ FAIL:   3/110
 
 Notes:
 - All three tests parse ok but take a very long time to create output then fail, suggesting that graphviz generation is probably an issue.
-
-sequential/huff_dec/huff_dec.c ... failed (bad return value 1).
-sequential/huff_enc/huff_enc.c ... failed (bad return value 1).
-sequential/mpeg2/mpeg2.c ... failed (bad return value 1).
+- Seems to fail when there is a "\" within a string constant
 
 
 PicoC
 ---
 
-PASS: 32/57
-FAIL: 25/57
+PASS: 41/57
+FAIL: 16/57
 
 Notes:
 - Global variables seemingly share scope across all files
 - Pragmas must be on their own line (i.e. not in the middle of a definition)
-- Doesn't fully take into account types, qualifiers or storage classes, so results might be inconsistent
-- All floating point numbers are stored internally as doubles
+- Doesn't fully take into account type qualifiers or storage classes, so results might be inconsistent
 - Some macros with parameters fail to parse correctly - moving the code inline works
 - Typed defined in macros do not parse - changing these to typdefs works
-- `long long` types are not supported (parsing fails)
 - Bit field structs are not supported
+- Function pointers are not supported
+- Some pointer arithmetic causes parse errors or segfaults
 
 
 CINT
 ---
 
-PASS: 42/57
-FAIL: 15/57
+PASS: 45/57
+FAIL: 12/57
 
 Notes:
 - Possibly misleading results as the interpreter doesn't always seem to exit with an error code when execution fails
 - Need to check some individual benchmarks to create a reliable test set-up
-
