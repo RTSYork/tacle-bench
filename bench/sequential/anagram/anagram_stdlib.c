@@ -26,7 +26,7 @@ int counter2 = 0;
 /* This function is included here because the WCC does not */
 /* support function pointers */
 #include "anagram_compare.h"
-int printf(const char * restrict format, ... );
+// int printf(const char * restrict format, ... );
 
 void anagram_swapi( char *ii, char *ij, unsigned long es )
 {

@@ -2,7 +2,9 @@
 #define __QUICKSORT_H
 
 struct quicksort_3DVertexStruct {
-  unsigned int x, y, z;
+  unsigned int x;
+  unsigned int y;
+  unsigned int z;
   double distance;
 };
 

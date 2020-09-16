@@ -25,32 +25,21 @@ extern word gsm_enc_asr   ( word a, int n );
     Inlined functions from add.h
 */
 
-#define GSM_MULT_R(a, b) /* word a, word b, !(a == b == MIN_WORD) */  \
-  (SASR( ((longword)(a) * (longword)(b) + 16384), 15 ))
+/* word a, word b, !(a == b == MIN_WORD) */
+#define GSM_MULT_R(a, b) (SASR( ((longword)(a) * (longword)(b) + 16384), 15 ))
 
- #define GSM_MULT(a,b)   /* word a, word b, !(a == b == MIN_WORD) */  \
-  (SASR( ((longword)(a) * (longword)(b)), 15 ))
+/* word a, word b, !(a == b == MIN_WORD) */
+#define GSM_MULT(a,b) (SASR( ((longword)(a) * (longword)(b)), 15 ))
 
- #define GSM_L_ADD(a, b)  \
-  ( (a) <  0 ? ( (b) >= 0 ? (a) + (b) \
-     : (utmp = (ulongword)-((a) + 1) + (ulongword)-((b) + 1)) \
-       >= MAX_LONGWORD ? MIN_LONGWORD : -(longword)utmp-2 )   \
-  : ((b) <= 0 ? (a) + (b)   \
-            : (utmp = (ulongword)(a) + (ulongword)(b)) >= (ulongword)MAX_LONGWORD \
-        ? MAX_LONGWORD : a + b))
+#define GSM_L_ADD(a, b) ( (a) <  0 ? ( (b) >= 0 ? (a) + (b) : (utmp = (ulongword)-((a) + 1) + (ulongword)-((b) + 1)) >= MAX_LONGWORD ? MIN_LONGWORD : -(longword)utmp-2 ) : ((b) <= 0 ? (a) + (b) : (utmp = (ulongword)(a) + (ulongword)(b)) >= (ulongword)MAX_LONGWORD ? MAX_LONGWORD : a + b))
 
-#define GSM_ADD(a, b) \
-  ((ulongword)((ltmp = (longword)(a) + (longword)(b)) - MIN_WORD) > \
-    MAX_WORD - MIN_WORD ? (ltmp > 0 ? MAX_WORD : MIN_WORD) : ltmp)
+#define GSM_ADD(a, b) ((ulongword)((ltmp = (longword)(a) + (longword)(b)) - MIN_WORD) > MAX_WORD - MIN_WORD ? (ltmp > 0 ? MAX_WORD : MIN_WORD) : ltmp)
 
- #define GSM_SUB(a, b)  \
-  ((ltmp = (longword)(a) - (longword)(b)) >= MAX_WORD \
-  ? MAX_WORD : ltmp <= MIN_WORD ? MIN_WORD : ltmp)
+#define GSM_SUB(a, b) ((ltmp = (longword)(a) - (longword)(b)) >= MAX_WORD ? MAX_WORD : ltmp <= MIN_WORD ? MIN_WORD : ltmp)
 
- #define GSM_ABS(a) ((a) < 0 ? ((a) == MIN_WORD ? MAX_WORD : -(a)) : (a))
+#define GSM_ABS(a) ((a) < 0 ? ((a) == MIN_WORD ? MAX_WORD : -(a)) : (a))
 
-#define saturate(x)   \
-  ((x) < MIN_WORD ? MIN_WORD : (x) > MAX_WORD ? MAX_WORD: (x))
+#define saturate(x) ((x) < MIN_WORD ? MIN_WORD : (x) > MAX_WORD ? MAX_WORD: (x))
 
 /* Use these if necessary:
 
@@ -500,7 +489,7 @@ void gsm_enc_Weighting_filter (
        }
     */
 
-#undef  STEP
+// #undef  STEP
 #define STEP( i, H )  (e[  k + i  ] * (longword)H)
 
     /*  Every one of these multiplications is done twice --
@@ -573,7 +562,7 @@ void gsm_enc_RPE_grid_selection (
 
   Mc = 0;
 
-#undef  STEP
+// #undef  STEP
 #define STEP( m, i )    L_temp = SASR( x[ m + 3 * i ], 2 ); \
   L_result += L_temp * L_temp;
 
@@ -1028,12 +1017,8 @@ void gsm_enc_Calculation_of_the_LTP_parameters (
   #pragma loopbound min 81 max 81
   for ( lambda = 40; lambda <= 120; lambda++ ) {
 
- #undef STEP
-    # ifdef USE_TABLE_MUL
-   #define STEP(k) (table_mul(wt[ k ], dp[ k - lambda ]))
-    # else
+ // #undef STEP
    #define STEP(k) (wt[ k ] * dp[ k - lambda ])
-    # endif
 
     longword L_result;
 
@@ -1459,7 +1444,7 @@ void gsm_enc_Decoding_of_the_coded_Log_Area_Ratios (
   /*  Compute the LARpp[ 1..8 ]
   */
 
-#undef  STEP
+// #undef  STEP
 #define STEP( B, MIC, INVA )  \
   temp1    = GSM_ADD( *LARc++, MIC ) << 10; \
   temp1    = GSM_SUB( temp1, (B >= 0 ? B << 1 : -((-B) << 1)));   \
@@ -1593,12 +1578,6 @@ void gsm_enc_LARp_to_rp (
 
 
 /* 4.2.10 */
-void gsm_enc_Short_term_analysis_filtering (
-  struct gsm_state *S,
-  word   *rp, /* [ 0..7 ] IN  */
-  int   k_n,  /*   k_end - k_start  */
-  word   *s /* [ 0..n-1 ] IN/OUT  */
-)
 /*
     This procedure computes the short term residual signal d[ .. ] to be fed
     to the RPE-LTP loop from the s[ .. ] signal and from the local rp[ .. ]
@@ -1609,6 +1588,10 @@ void gsm_enc_Short_term_analysis_filtering (
     (k_start and k_end are defined in 4.2.9.1).  This procedure also
     needs to keep the array u[ 0..7 ] in memory for each call.
 */
+/* [ 0..7 ] IN  */
+/*   k_end - k_start  */
+/* [ 0..n-1 ] IN/OUT  */
+void gsm_enc_Short_term_analysis_filtering ( struct gsm_state *S, word *rp, int k_n, word *s )
 {
   word     *u = S->u;
   int   i;
@@ -1619,10 +1602,12 @@ void gsm_enc_Short_term_analysis_filtering (
   #pragma loopbound min 13 max 120
   for ( j = 0; j < k_n; ++j ) {
 
-    di = sav = *s;
+    di = *s;
+    sav = *s;
 
     #pragma loopbound min 8 max 8
-    for ( i = 0; i < 8; i++ ) { /* YYY */
+    for ( i = 0; i < 8; i++ ) {
+    /* YYY */
 
       ui    = u[ i ];
       rpi   = rp[ i ];
@@ -1640,13 +1625,9 @@ void gsm_enc_Short_term_analysis_filtering (
   }
 }
 
-void gsm_enc_Gsm_Short_Term_Analysis_Filter (
-
-  struct gsm_state *S,
-
-  word   *LARc,   /* coded log area ratio [ 0..7 ]  IN  */
-  word   *s   /* signal [ 0..159 ]    IN/OUT  */
-)
+/* coded log area ratio [ 0..7 ]  IN  */
+/* signal [ 0..159 ]    IN/OUT  */
+void gsm_enc_Gsm_Short_Term_Analysis_Filter ( struct gsm_state *S, word *LARc, word *s )
 {
   word     *LARpp_j = S->LARpp[  S->j       ];
   word     *LARpp_j_1 = S->LARpp[  S->j ^= 1  ];

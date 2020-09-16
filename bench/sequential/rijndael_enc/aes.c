@@ -30,10 +30,7 @@
 
 #include "aestab.h"
 
-#define four_tables(x,tab,vf,rf,c)  ( tab[ 0 ][ bval(vf(x,0,c),rf(0,c)) ] ^ \
-                                      tab[ 1 ][ bval(vf(x,1,c),rf(1,c)) ] ^ \
-                                      tab[ 2 ][ bval(vf(x,2,c),rf(2,c)) ] ^ \
-                                      tab[ 3 ][ bval(vf(x,3,c),rf(3,c)) ] )
+#define four_tables(x,tab,vf,rf,c)  ( tab[ 0 ][ bval(vf(x,0,c),rf(0,c)) ] ^ tab[ 1 ][ bval(vf(x,1,c),rf(1,c)) ] ^ tab[ 2 ][ bval(vf(x,2,c),rf(2,c)) ] ^ tab[ 3 ][ bval(vf(x,3,c),rf(3,c)) ] )
 
 #define vf1(x,r,c)  (x)
 #define rf1(r,c)    (r)
@@ -69,8 +66,14 @@ aes_ret rijndael_enc_set_key( byte in_key[  ], const word n_bytes,
   word    *kf, *kt, rci;
 
   if ( ( n_bytes & 7 ) || n_bytes < 16 || n_bytes > 32 || ( !( f & 1 ) &&
-       !( f & 2 ) ) )
-    return ( n_bytes ? cx->mode &= ~0x03, aes_bad : ( aes_ret )( cx->Nkey << 2 ) );
+       !( f & 2 ) ) ) {
+    if ( n_bytes ) {
+      cx->mode &= ~0x03;
+      return aes_bad;
+    } else {
+      return ( aes_ret )( cx->Nkey << 2 );
+    }
+  }
 
   cx->mode = ( cx->mode & ~0x03 ) | ( ( byte )f & 0x03 );
   cx->Nkey = n_bytes >> 2;

@@ -68,9 +68,9 @@
    The following makes PROTOTYPES default to 1 if it has not already been
      defined as 0 with C compiler flags.
 */
-#ifndef PROTOTYPES
-#define PROTOTYPES 1
-#endif
+// #ifndef PROTOTYPES
+// #define PROTOTYPES 1
+// #endif
 
 /* POINTER defines a generic pointer type */
 typedef unsigned char *POINTER;
@@ -93,11 +93,11 @@ typedef unsigned long int UINT4;
    If using PROTOTYPES, then PROTO_LIST returns the list, otherwise it
      returns an empty list.
 */
-#if PROTOTYPES
-#define PROTO_LIST(list) list
-#else
-#define PROTO_LIST(list) ()
-#endif
+// #if PROTOTYPES
+// #define PROTO_LIST(list) list
+// #else
+// #define PROTO_LIST(list) ()
+// #endif
 
 #endif /* end _GLOBAL_H_ */
 //////// end global.h ///////////////
@@ -179,14 +179,14 @@ typedef struct {
   unsigned char output[ 16 ];
 } R_RANDOM_STRUCT;
 
-void md5_orig_init PROTO_LIST ( ( MD5_CTX * ) );
-void md5_update PROTO_LIST ( ( MD5_CTX *, unsigned char *, unsigned int ) );
-void md5_final PROTO_LIST ( ( unsigned char [ 64 ], MD5_CTX * ) );
-void md5_memset PROTO_LIST ( ( POINTER, int, unsigned int ) );
-void md5_transform PROTO_LIST ( ( UINT4 [ 4 ], unsigned char [ 64 ] ) );
-void md5_encode PROTO_LIST ( ( unsigned char *, UINT4 *, int ) );
-void md5_decode PROTO_LIST ( ( UINT4 *, unsigned char *, unsigned int ) );
-void md5_memcpy PROTO_LIST ( ( POINTER, POINTER, unsigned int ) );
+void md5_orig_init ( MD5_CTX *context );
+void md5_update ( MD5_CTX *context, unsigned char *, unsigned int );
+void md5_final ( unsigned char digest[ 64 ], MD5_CTX *context );
+void md5_memset ( POINTER, int, unsigned int );
+void md5_transform ( UINT4 state[ ], unsigned char block[ 64 ] );
+void md5_encode ( unsigned char *, UINT4 *, int );
+void md5_decode ( UINT4 *, unsigned char *, unsigned int );
+void md5_memcpy ( POINTER, POINTER, unsigned int );
 void md5_R_memset ( POINTER output, int value, unsigned int len );
 void md5_memset_x( unsigned char *ptr, int value, unsigned long len );
 int md5_R_RandomInit ( R_RANDOM_STRUCT *randomStruct );
@@ -223,26 +223,10 @@ unsigned char md5_PADDING[ 64 ] = {
 /* FF, GG, HH, and II transformations for rounds 1, 2, 3, and 4.
    Rotation is separate from addition to prevent recomputation.
 */
-#define FF(a, b, c, d, x, s, ac) { \
-    (a) += F ((b), (c), (d)) + (x) + (UINT4)(ac); \
-    (a) = ROTATE_LEFT ((a), (s)); \
-    (a) += (b); \
-  }
-#define GG(a, b, c, d, x, s, ac) { \
-    (a) += G ((b), (c), (d)) + (x) + (UINT4)(ac); \
-    (a) = ROTATE_LEFT ((a), (s)); \
-    (a) += (b); \
-  }
-#define HH(a, b, c, d, x, s, ac) { \
-    (a) += H ((b), (c), (d)) + (x) + (UINT4)(ac); \
-    (a) = ROTATE_LEFT ((a), (s)); \
-    (a) += (b); \
-  }
-#define II(a, b, c, d, x, s, ac) { \
-    (a) += I ((b), (c), (d)) + (x) + (UINT4)(ac); \
-    (a) = ROTATE_LEFT ((a), (s)); \
-    (a) += (b); \
-  }
+#define FF(a, b, c, d, x, s, ac) { (a) += F ((b), (c), (d)) + (x) + (UINT4)(ac); (a) = ROTATE_LEFT ((a), (s)); (a) += (b); }
+#define GG(a, b, c, d, x, s, ac) { (a) += G ((b), (c), (d)) + (x) + (UINT4)(ac); (a) = ROTATE_LEFT ((a), (s)); (a) += (b); }
+#define HH(a, b, c, d, x, s, ac) { (a) += H ((b), (c), (d)) + (x) + (UINT4)(ac); (a) = ROTATE_LEFT ((a), (s)); (a) += (b); }
+#define II(a, b, c, d, x, s, ac) { (a) += I ((b), (c), (d)) + (x) + (UINT4)(ac); (a) = ROTATE_LEFT ((a), (s)); (a) += (b); }
 
 
 /* MD5 initialization. Begins an MD5 operation, writing a new context.
@@ -357,7 +341,7 @@ void md5_memset ( POINTER output, int value, unsigned int len )
 
 /* MD5 basic transformation. Transforms state based on block.
 */
-void md5_transform ( UINT4 state[ 4 ], unsigned char block[ 64 ] )
+void md5_transform ( UINT4 state[ ], unsigned char block[ 64 ] )
 {
   UINT4 a = state[ 0 ], b = state[ 1 ], c = state[ 2 ], d = state[ 3 ], x[ 16 ];
 

@@ -1,18 +1,14 @@
 #ifndef _WCCLIBM
 #define _WCCLIBM
 
-#define size_t       unsigned long
-#define int32_t      int
-#define uint32_t     unsigned int
-#define u_int16_t    unsigned short
-#define u_int32_t    unsigned int
+typedef unsigned long size_t;
+typedef int int32_t;
+typedef unsigned int uint32_t;
+typedef unsigned short u_int16_t;
+typedef unsigned int u_int32_t;
 
 // Often used variables/consts
-#ifdef __STDC__
 static  const float
-#else
-static  float
-#endif
 fmref_one    =  1.0f,
 fmref_half   =  5.0000000000e-01f, /* 0x3f000000 */
 fmref_zero   =  0.0f,

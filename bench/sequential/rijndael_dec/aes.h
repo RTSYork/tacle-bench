@@ -127,10 +127,9 @@ typedef short           aes_ret;        /* function return value         */
 
 #define upr(x,n)        (((x) << 8 * (n)) | ((x) >> (32 - 8 * (n))))
 #define ups(x,n)        ((x) << 8 * (n))
-#define bval(x,n)       ((byte)((x) >> 8 * (n)))
+#define bval(x,n)       ((byte)((x) >> (8 * (n))))
 #define byte_swap(x)    (upr(x,1) & 0x00ff00ff | upr(x,3) & 0xff00ff00)
-#define bytes2word(b0, b1, b2, b3) ((word)(b3) << 24 | (word)(b2) << 16 | \
-                                    (word)(b1) << 8 | (b0))
+#define bytes2word(b0, b1, b2, b3) ((word)(b3) << 24 | (word)(b2) << 16 | (word)(b1) << 8 | (b0))
 
 #define word_in(x)      *(word*)(x)
 #define word_out(x,v)   *(word*)(x) = (v)

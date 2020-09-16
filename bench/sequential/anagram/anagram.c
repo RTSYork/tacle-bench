@@ -156,7 +156,7 @@
    If you increase it beyond 4, you'll have to add a few more loop unrolling
    steps to FindAnagram.
 */
-int printf(const char * restrict format, ... );
+// int printf(const char * restrict format, ... );
 #include "anagram_ctype.h"
 #include "anagram_stdlib.h"
 #include "anagram_strings.h"
@@ -175,11 +175,11 @@ int counter1 = 0;
 #define anagram_MAXSOL   51    /* words in the solution */
 #define anagram_ALPHABET 26    /* letters in the alphabet */
 
-#define anagram_OneStep( i ) \
-        if ( ( aqNext[ i ] = pqMask[ i ] - pw->aqMask[ i ] ) & anagram_aqMainSign[ i ] ) { \
-          ppwStart ++; \
-          continue; \
-        }
+// #define anagram_OneStep( i ) \
+//         if ( ( aqNext[ i ] = pqMask[ i ] - pw->aqMask[ i ] ) & anagram_aqMainSign[ i ] ) { \
+//           ppwStart ++; \
+//           continue; \
+//         }
 
 
 /*
@@ -378,17 +378,17 @@ int anagram_CompareFrequency( char *pch1, char *pch2 )
 
 void anagram_Reset( void )
 {
-  anagram_bzero( ( char * )anagram_alPhrase,
+  anagram_bzero( ( void * )anagram_alPhrase,
                  sizeof( anagram_Letter ) * anagram_ALPHABET );
-  anagram_bzero( ( char * )anagram_aqMainMask,
+  anagram_bzero( ( void * )anagram_aqMainMask,
                  sizeof( anagram_Quad ) * anagram_MAX_QUADS );
-  anagram_bzero( ( char * )anagram_aqMainSign,
+  anagram_bzero( ( void * )anagram_aqMainSign,
                  sizeof( anagram_Quad ) * anagram_MAX_QUADS );
-  anagram_bzero( ( char * )anagram_auGlobalFrequency,
+  anagram_bzero( ( void * )anagram_auGlobalFrequency,
                  sizeof( unsigned ) * anagram_ALPHABET );
-  anagram_bzero( ( char * )anagram_achByFrequency,
+  anagram_bzero( ( void * )anagram_achByFrequency,
                  sizeof( int ) * anagram_ALPHABET );
-  anagram_bzero( ( char * )anagram_apwCand,
+  anagram_bzero( ( void * )anagram_apwCand,
                  sizeof( anagram_PWord ) * anagram_MAXCAND );
   anagram_cchPhraseLength = 0;
   anagram_cpwCand = 0;
@@ -572,25 +572,41 @@ void anagram_FindAnagram( anagram_Quad *pqMask, anagram_PPWord ppwStart,
   while ( ppwStart < ppwEnd ) {
     pw = *ppwStart;
 
-    #if anagram_MAX_QUADS > 0
-    anagram_OneStep( 0 );
-    #endif
+    // #if anagram_MAX_QUADS > 0
+    // anagram_OneStep( 0 );
+    if ( ( aqNext[ 0 ] = pqMask[ 0 ] - pw->aqMask[ 0 ] ) & anagram_aqMainSign[ 0 ] ) {
+      ppwStart ++;
+      continue;
+    }
+    // #endif
 
-    #if anagram_MAX_QUADS > 1
-    anagram_OneStep( 1 );
-    #endif
+    // #if anagram_MAX_QUADS > 1
+    // anagram_OneStep( 1 );
+    if ( ( aqNext[ 1 ] = pqMask[ 1 ] - pw->aqMask[ 1 ] ) & anagram_aqMainSign[ 1 ] ) {
+      ppwStart ++;
+      continue;
+    }
+    // #endif
 
-    #if anagram_MAX_QUADS > 2
-    anagram_OneStep( 2 );
-    #endif
+    // #if anagram_MAX_QUADS > 2
+    // // anagram_OneStep( 2 );
+    // if ( ( aqNext[ 2 ] = pqMask[ 2 ] - pw->aqMask[ 2 ] ) & anagram_aqMainSign[ 2 ] ) {
+    //   ppwStart ++;
+    //   continue;
+    // }
+    // #endif
 
-    #if anagram_MAX_QUADS > 3
-    anagram_OneStep( 3 );
-    #endif
+    // #if anagram_MAX_QUADS > 3
+    // // anagram_OneStep( 3 );
+    // if ( ( aqNext[ 3 ] = pqMask[ 3 ] - pw->aqMask[ 3 ] ) & anagram_aqMainSign[ 3 ] ) {
+    //   ppwStart ++;
+    //   continue;
+    // }
+    // #endif
 
-    #if anagram_MAX_QUADS > 4
-    @@"Add more unrolling steps here, please."@@
-    #endif
+    // #if anagram_MAX_QUADS > 4
+    // /*@@"Add more unrolling steps here, please."@@*/
+    // #endif
 
     /* If the pivot letter isn't present, defer this word until later */
     if ( ( pw->aqMask[ iq ] & qMask ) == 0 ) {

@@ -45,24 +45,16 @@ typedef unsigned int cjpeg_wrbmp_size_t;
    but the pointer arrays can fit in near memory.
 */
 
-typedef CJPEG_WRBMP_JSAMPLE CJPEG_WRBMP_FAR
-*CJPEG_WRBMP_JSAMPROW;  /* ptr to one image row of pixel samples. */
-typedef CJPEG_WRBMP_JSAMPROW
-*CJPEG_WRBMP_JSAMPARRAY; /* ptr to some rows (a 2-D sample array) */
-typedef CJPEG_WRBMP_JSAMPARRAY
-*CJPEG_WRBMP_JSAMPIMAGE; /* a 3-D sample array: top index is color */
+typedef CJPEG_WRBMP_JSAMPLE *CJPEG_WRBMP_JSAMPROW;  /* ptr to one image row of pixel samples. */
+typedef CJPEG_WRBMP_JSAMPROW *CJPEG_WRBMP_JSAMPARRAY; /* ptr to some rows (a 2-D sample array) */
+typedef CJPEG_WRBMP_JSAMPARRAY *CJPEG_WRBMP_JSAMPIMAGE; /* a 3-D sample array: top index is color */
 
-typedef CJPEG_WRBMP_JCOEF
-CJPEG_WRBMP_JBLOCK[ 64 ]; /* one block of coefficients */
-typedef CJPEG_WRBMP_JBLOCK CJPEG_WRBMP_FAR
-*CJPEG_WRBMP_JBLOCKROW;  /* pointer to one row of coefficient blocks */
-typedef CJPEG_WRBMP_JBLOCKROW
-*CJPEG_WRBMP_JBLOCKARRAY;   /* a 2-D array of coefficient blocks */
-typedef CJPEG_WRBMP_JBLOCKARRAY
-*CJPEG_WRBMP_JBLOCKIMAGE; /* a 3-D array of coefficient blocks */
+typedef CJPEG_WRBMP_JCOEF CJPEG_WRBMP_JBLOCK[ 64 ]; /* one block of coefficients */
+typedef CJPEG_WRBMP_JBLOCK *CJPEG_WRBMP_JBLOCKROW;  /* pointer to one row of coefficient blocks */
+typedef CJPEG_WRBMP_JBLOCKROW *CJPEG_WRBMP_JBLOCKARRAY;   /* a 2-D array of coefficient blocks */
+typedef CJPEG_WRBMP_JBLOCKARRAY *CJPEG_WRBMP_JBLOCKIMAGE; /* a 3-D array of coefficient blocks */
 
-typedef CJPEG_WRBMP_JCOEF CJPEG_WRBMP_FAR
-*JCOEFPTR;  /* useful in a couple of places */
+typedef CJPEG_WRBMP_JCOEF *JCOEFPTR;  /* useful in a couple of places */
 
 
 /* Types for JPEG compression parameters and working tables. */
@@ -177,22 +169,22 @@ typedef struct {
 typedef struct {
   int comps_in_scan;    /* number of components encoded in this scan */
   int component_index[ 4 ]; /* their SOF/comp_info[  ] indexes */
-  int Ss, Se;     /* progressive JPEG spectral selection parms */
-  int Ah, Al;     /* progressive JPEG successive approx. parms */
+  int Ss;     /* progressive JPEG spectral selection parms */
+  int Se;     /* progressive JPEG spectral selection parms */
+  int Ah;     /* progressive JPEG successive approx. parms */
+  int Al;     /* progressive JPEG successive approx. parms */
 } cjpeg_wrbmp_jpeg_scan_info;
 
 /* The decompressor can save APPn and COM markers in a list of these: */
 
-typedef struct cjpeg_wrbmp_jpeg_marker_struct CJPEG_WRBMP_FAR
-  *jpeg_saved_marker_ptr;
+typedef struct cjpeg_wrbmp_jpeg_marker_struct *jpeg_saved_marker_ptr;
 
 struct cjpeg_wrbmp_jpeg_marker_struct {
   jpeg_saved_marker_ptr next; /* next in list, or NULL */
   CJPEG_WRBMP_UINT8 marker;     /* marker code: JPEG_COM, or JPEG_APP0+n */
   unsigned int original_length; /* # bytes of data in the file */
   unsigned int data_length; /* # bytes of data saved at data[  ] */
-  CJPEG_WRBMP_JOCTET CJPEG_WRBMP_FAR
-  *data;     /* the data contained in the marker */
+  CJPEG_WRBMP_JOCTET *data;     /* the data contained in the marker */
   /* the marker length word is not counted in data_length or original_length */
 };
 
@@ -226,20 +218,26 @@ typedef enum {
 
 /* Common fields between JPEG compression and decompression master structs. */
 
-#define cjpeg_wrbmp_jpeg_common_fields \
-  struct cjpeg_wrbmp_jpeg_error_mgr * err;  /* Error handler module */\
-  struct cjpeg_wrbmp_jpeg_memory_mgr * mem; /* Memory manager module */\
-  struct cjpeg_wrbmp_jpeg_progress_mgr * progress; /* Progress monitor, or NULL if none */\
-  void * client_data;   /* Available for use by application */\
-  cjpeg_wrbmp_boolean is_decompressor;  /* So common code can tell which is which */\
-  int global_state    /* For checking call sequence validity */
+// #define cjpeg_wrbmp_jpeg_common_fields \
+//   struct cjpeg_wrbmp_jpeg_error_mgr * err;  /* Error handler module */\
+//   struct cjpeg_wrbmp_jpeg_memory_mgr * mem; /* Memory manager module */\
+//   struct cjpeg_wrbmp_jpeg_progress_mgr * progress; /* Progress monitor, or NULL if none */\
+//   void * client_data;   /* Available for use by application */\
+//   cjpeg_wrbmp_boolean is_decompressor;  /* So common code can tell which is which */\
+//   int global_state    /* For checking call sequence validity */
 
 /* Routines that are to be used by both halves of the library are declared
    to receive a pointer to this structure.  There are no actual instances of
    jpeg_common_struct, only of jpeg_compress_struct and jpeg_decompress_struct.
 */
 struct cjpeg_wrbmp_jpeg_common_struct {
-  cjpeg_wrbmp_jpeg_common_fields;   /* Fields common to both master struct types */
+  // cjpeg_wrbmp_jpeg_common_fields;   /* Fields common to both master struct types */
+  struct cjpeg_wrbmp_jpeg_error_mgr * err;  /* Error handler module */
+  struct cjpeg_wrbmp_jpeg_memory_mgr * mem; /* Memory manager module */
+  struct cjpeg_wrbmp_jpeg_progress_mgr * progress; /* Progress monitor, or NULL if none */
+  void * client_data;   /* Available for use by application */
+  cjpeg_wrbmp_boolean is_decompressor;  /* So common code can tell which is which */
+  int global_state;    /* For checking call sequence validity */
   /* Additional fields follow in an actual jpeg_compress_struct or
      jpeg_decompress_struct.  All three structs must agree on these
      initial fields!  (This would be a lot cleaner in C++.)
@@ -257,7 +255,13 @@ typedef struct cjpeg_wrbmp_jpeg_decompress_struct
 /* Master record for a compression instance */
 
 struct cjpeg_wrbmp_jpeg_compress_struct {
-  cjpeg_wrbmp_jpeg_common_fields;   /* Fields shared with jpeg_decompress_struct */
+  // cjpeg_wrbmp_jpeg_common_fields;   /* Fields shared with jpeg_decompress_struct */
+  struct cjpeg_wrbmp_jpeg_error_mgr * err;  /* Error handler module */
+  struct cjpeg_wrbmp_jpeg_memory_mgr * mem; /* Memory manager module */
+  struct cjpeg_wrbmp_jpeg_progress_mgr * progress; /* Progress monitor, or NULL if none */
+  void * client_data;   /* Available for use by application */
+  cjpeg_wrbmp_boolean is_decompressor;  /* So common code can tell which is which */
+  int global_state;    /* For checking call sequence validity */
 
   /* Destination for compressed data */
   struct cjpeg_wrbmp_jpeg_destination_mgr *dest;
@@ -393,7 +397,10 @@ struct cjpeg_wrbmp_jpeg_compress_struct {
   /* MCU_membership[ i ] is index in cur_comp_info of component owning */
   /* i'th block in an MCU */
 
-  int Ss, Se, Ah, Al;   /* progressive JPEG parameters for scan */
+  int Ss;   /* progressive JPEG parameters for scan */
+  int Se;   /* progressive JPEG parameters for scan */
+  int Ah;   /* progressive JPEG parameters for scan */
+  int Al;   /* progressive JPEG parameters for scan */
 
   cjpeg_wrbmp_jpeg_scan_info
   *script_space;  /* workspace for jpeg_simple_progression */
@@ -404,7 +411,13 @@ struct cjpeg_wrbmp_jpeg_compress_struct {
 /* Master record for a decompression instance */
 
 struct cjpeg_wrbmp_jpeg_decompress_struct {
-  cjpeg_wrbmp_jpeg_common_fields;   /* Fields shared with jpeg_compress_struct */
+  // cjpeg_wrbmp_jpeg_common_fields;   /* Fields shared with jpeg_compress_struct */
+  struct cjpeg_wrbmp_jpeg_error_mgr * err;  /* Error handler module */
+  struct cjpeg_wrbmp_jpeg_memory_mgr * mem; /* Memory manager module */
+  struct cjpeg_wrbmp_jpeg_progress_mgr * progress; /* Progress monitor, or NULL if none */
+  void * client_data;   /* Available for use by application */
+  cjpeg_wrbmp_boolean is_decompressor;  /* So common code can tell which is which */
+  int global_state;    /* For checking call sequence validity */
 
   /* Source of compressed data */
   struct cjpeg_wrbmp_jpeg_source_mgr *src;
@@ -426,7 +439,8 @@ struct cjpeg_wrbmp_jpeg_decompress_struct {
 
   CJPEG_WRBMP_J_COLOR_SPACE out_color_space; /* colorspace for output */
 
-  unsigned int scale_num, scale_denom; /* fraction by which to scale image */
+  unsigned int scale_num;   /* fraction by which to scale image */
+  unsigned int scale_denom; /* fraction by which to scale image */
 
   float output_gamma;   /* image gamma wanted in output */
 
@@ -515,7 +529,7 @@ struct cjpeg_wrbmp_jpeg_decompress_struct {
      (thus, 0 at completion of the progression).
      This pointer is NULL when reading a non-progressive file.
   */
-  int ( *coef_bits )[ 64 ]; /* -1 or current Al value for each coef */
+  // int ( *coef_bits )[ 64 ]; /* -1 or current Al value for each coef */
 
   /* Internal JPEG parameters --- the application usually need not look at
      these fields.  Note that the decompressor output side may not use
@@ -624,7 +638,10 @@ struct cjpeg_wrbmp_jpeg_decompress_struct {
   /* MCU_membership[ i ] is index in cur_comp_info of component owning */
   /* i'th block in an MCU */
 
-  int Ss, Se, Ah, Al;   /* progressive JPEG parameters for scan */
+  int Ss;   /* progressive JPEG parameters for scan */
+  int Se;   /* progressive JPEG parameters for scan */
+  int Ah;   /* progressive JPEG parameters for scan */
+  int Al;   /* progressive JPEG parameters for scan */
 
   /* This field is shared between entropy decoder and marker parser.
      It is either zero or the code of a JPEG marker that has been
@@ -791,7 +808,7 @@ struct cjpeg_wrbmp_jpeg_memory_mgr {
   CJPEG_WRBMP_JMETHOD( void *, alloc_small,
                        ( cjpeg_wrbmp_j_common_ptr cinfo, int pool_id,
                          cjpeg_wrbmp_size_t sizeofobject ) );
-  CJPEG_WRBMP_JMETHOD( void CJPEG_WRBMP_FAR *, alloc_large,
+  CJPEG_WRBMP_JMETHOD( void *, alloc_large,
                        ( cjpeg_wrbmp_j_common_ptr cinfo, int pool_id,
                          cjpeg_wrbmp_size_t sizeofobject ) );
   CJPEG_WRBMP_JMETHOD( CJPEG_WRBMP_JSAMPARRAY, alloc_sarray,

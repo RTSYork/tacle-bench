@@ -241,10 +241,12 @@ typedef struct {
   int component_index[ 4 ];
 
   /* progressive JPEG spectral selection parms */
-  int Ss, Se;
+  int Ss;
+  int Se;
 
   /* progressive JPEG successive approx. parms */
-  int Ah, Al;
+  int Ah;
+  int Al;
 } jpeg_scan_info;
 
 
@@ -293,19 +295,19 @@ typedef enum {
   Common fields between JPEG compression and decompression master structs.
 */
 
-#define jpeg_common_fields \
-  /* Error handler module */\
-  struct jpeg_error_mgr *err; \
-  /* Memory manager module */\
-  struct jpeg_memory_mgr *mem; \
-  /* Progress monitor, or (void*)0 if none */\
-  struct jpeg_progress_mgr *progress; \
-  /* Available for use by application */\
-  void *client_data; \
-  /* So common code can tell which is which */\
-  int is_decompressor; \
-  /* For checking call sequence validity */\
-  int global_state
+// #define jpeg_common_fields \
+//   /* Error handler module */\
+//   struct jpeg_error_mgr *err; \
+//   /* Memory manager module */\
+//   struct jpeg_memory_mgr *mem; \
+//   /* Progress monitor, or (void*)0 if none */\
+//   struct jpeg_progress_mgr *progress; \
+//   /* Available for use by application */\
+//   void *client_data; \
+//   /* So common code can tell which is which */\
+//   int is_decompressor; \
+//   /* For checking call sequence validity */\
+//   int global_state
 
 
 /*
@@ -316,7 +318,19 @@ typedef enum {
 
 struct jpeg_common_struct {
   /* Fields common to both master struct types */
-  jpeg_common_fields;
+  // jpeg_common_fields;
+  /* Error handler module */
+  struct jpeg_error_mgr *err;
+  /* Memory manager module */
+  struct jpeg_memory_mgr *mem;
+  /* Progress monitor, or (void*)0 if none */
+  struct jpeg_progress_mgr *progress;
+  /* Available for use by application */
+  void *client_data;
+  /* So common code can tell which is which */
+  int is_decompressor;
+  /* For checking call sequence validity */
+  int global_state;
 
   /*
     Additional fields follow in an actual jpeg_compress_struct or
@@ -336,7 +350,19 @@ typedef struct jpeg_decompress_struct *j_decompress_ptr;
 
 struct jpeg_compress_struct {
   /* Fields shared with jpeg_decompress_struct */
-  jpeg_common_fields;
+  // jpeg_common_fields;
+  /* Error handler module */
+  struct jpeg_error_mgr *err;
+  /* Memory manager module */
+  struct jpeg_memory_mgr *mem;
+  /* Progress monitor, or (void*)0 if none */
+  struct jpeg_progress_mgr *progress;
+  /* Available for use by application */
+  void *client_data;
+  /* So common code can tell which is which */
+  int is_decompressor;
+  /* For checking call sequence validity */
+  int global_state;
 
   /* Destination for compressed data */
   struct jpeg_destination_mgr *dest;
@@ -536,7 +562,10 @@ struct jpeg_compress_struct {
   int MCU_membership[ 10 ];
 
   /* progressive JPEG parameters for scan */
-  int Ss, Se, Ah, Al;
+  int Ss;
+  int Se;
+  int Ah;
+  int Al;
 
   /*
      Links to compression subobjects (methods and private variables of modules)

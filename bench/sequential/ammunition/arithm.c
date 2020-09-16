@@ -41,7 +41,7 @@ int ammunition_overflow_bit;
    Result can be placed in any operand. */
 
 int ammunition_add_unsigned_integer_without_overflow_reaction
-( int size, const void *op1, const void *op2, void *result )
+( int size, const void *op1, const void *op2, unsigned char *result )
 {
   int digit_num;
   int carry;
@@ -55,7 +55,7 @@ int ammunition_add_unsigned_integer_without_overflow_reaction
       carry = 1;
     } else
       carry = 0;
-    ( ( unsigned char * ) result ) [ digit_num ] = sum;
+    result[ digit_num ] = sum;
   }
   return carry != 0;
 }
@@ -90,7 +90,7 @@ int ammunition_subtract_unsigned_integer_without_overflow_reaction
    can be placed in operand. */
 
 void ammunition_make_complementary_code
-( int size, const void *operand, void *result )
+( int size, const void *operand, unsigned char *result )
 {
   int digit_num;
   int carry;
@@ -104,7 +104,7 @@ void ammunition_make_complementary_code
       carry = 1;
     } else
       carry = 0;
-    ( ( unsigned char * ) result ) [ digit_num ] = subtraction;
+    result[ digit_num ] = subtraction;
   }
 }
 
@@ -113,7 +113,7 @@ void ammunition_make_complementary_code
    fixed, 0 otherwise. */
 
 int ammunition_multiply_unsigned_integer_by_digit_without_overflow_reaction
-( int size, void *operand, unsigned int digit )
+( int size, unsigned char *operand, unsigned int digit )
 {
   int digit_num;
   unsigned int carry;
@@ -127,7 +127,7 @@ int ammunition_multiply_unsigned_integer_by_digit_without_overflow_reaction
       sum %= UCHAR_MAX + 1;
     } else
       carry = 0;
-    ( ( unsigned char * ) operand ) [ digit_num ] = sum;
+    operand[ digit_num ] = sum;
   }
   return carry != 0;
 }
@@ -1259,7 +1259,7 @@ ammunition_integer_to_string ( int size, const void *operand, char *result )
    otherwise. */
 
 int ammunition_add_digit_to_unsigned_integer_without_overflow_reaction
-( int size, void *operand, unsigned int digit )
+( int size, unsigned char *operand, unsigned int digit )
 {
   int digit_num;
   unsigned int carry;
@@ -1274,7 +1274,7 @@ int ammunition_add_digit_to_unsigned_integer_without_overflow_reaction
       sum %= UCHAR_MAX + 1;
     } else
       carry = 0;
-    ( ( unsigned char * ) operand ) [ digit_num ] = sum;
+    operand[ digit_num ] = sum;
   }
   return carry != 0;
 }

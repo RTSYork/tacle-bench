@@ -147,8 +147,8 @@ void audiobeam_preprocess_delays( struct audiobeam_PreprocessedDelays
   #pragma loopbound min 15 max 15
   for ( i = 0; i < 15; i++ ) {
     prep_delays[ i ].delay = delays[ i ];
-    prep_delays[ i ].high = ( int ) audiobeam_ceil( delays[ i ] );
-    prep_delays[ i ].low = ( int ) audiobeam_floor( delays[ i ] );
+    prep_delays[ i ].high = ( int ) audiobeam___ceilf( delays[ i ] );
+    prep_delays[ i ].low = ( int ) audiobeam___floorf( delays[ i ] );
     prep_delays[ i ].offset = delays[ i ] - prep_delays[ i ].low;
   }
 }
@@ -177,7 +177,7 @@ long int audiobeam_find_max_in_arr( float *arr, int size )
       max = arr[ i ];
   }
 
-  return audiobeam_ceil( max );
+  return audiobeam___ceilf( max );
 }
 
 
@@ -192,7 +192,7 @@ long int audiobeam_find_min_in_arr( float *arr, int size )
       min = arr[ i ];
   }
 
-  return audiobeam_floor( min );
+  return audiobeam___floorf( min );
 }
 
 
@@ -285,7 +285,7 @@ void audiobeam_calc_distances( float *source_location,
 
   #pragma loopbound min 15 max 15
   for ( i = 0; i < num_mic; i++ ) {
-    distances[ i ] = ( audiobeam_sqrt( ( audiobeam_mic_locations[ i ][ 0 ]
+    distances[ i ] = ( audiobeam___ieee754_sqrtf( ( audiobeam_mic_locations[ i ][ 0 ]
                                        - source_location[ 0 ] ) *
                                      ( audiobeam_mic_locations[ i ][ 0 ]
                                        - source_location[ 0 ] ) +
@@ -335,13 +335,13 @@ float *audiobeam_calc_weights_lr ( int num_mic )
   for ( z = 1; z >= -1; z -= 2 ) {
     #pragma loopbound min 0 max 0
     for ( y = 0; y < half; y++ ) {
-      weights[ index ] = 0.54 + 0.46 * audiobeam_cos( audiobeam_M_PI * y
+      weights[ index ] = 0.54 + 0.46 * audiobeam___cosf( audiobeam_M_PI * y
                        / half );
       index++;
     }
     #pragma loopbound min 0 max 0
     for ( y = 0; y < half; y++ ) {
-      weights[ index ] = 0.54 + 0.46 * audiobeam_cos( audiobeam_M_PI * ( -y )
+      weights[ index ] = 0.54 + 0.46 * audiobeam___cosf( audiobeam_M_PI * ( -y )
                        / half );
       index++;
     }
@@ -361,7 +361,7 @@ float *audiobeam_calc_weights_left_only ( int num_mic )
 
   #pragma loopbound min 15 max 15
   for ( y = -half; y <= half; y++ ) {
-    weights[ index ] = 0.54 + 0.46 * audiobeam_cos( audiobeam_M_PI * y / half );
+    weights[ index ] = 0.54 + 0.46 * audiobeam___cosf( audiobeam_M_PI * y / half );
     index++;
   }
 

@@ -53,7 +53,15 @@ void *sha_glibc_memcpy( void *dstpp, const void *srcpp, size_t len )
       DSTP.  Number of bytes remaining is put in the third argument,
       i.e. in LEN.  This number may vary from machine to machine.  */
 
-    WORD_COPY_FWD ( dstp, srcp, len, len );
+    //WORD_COPY_FWD ( dstp, srcp, len, len );
+    {
+      if (srcp % OPSIZ == 0)
+        sha_wordcopy_fwd_aligned (dstp, srcp, (len) / OPSIZ);
+      else
+        srcp += (len) & -OPSIZ;
+      dstp += (len) & -OPSIZ;
+      (len) = (len) % OPSIZ;
+    }
 
     /* Fall out and copy the tail.  */
   }

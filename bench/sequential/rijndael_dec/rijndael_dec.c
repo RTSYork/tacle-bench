@@ -166,7 +166,7 @@ void rijndael_dec_decfile( struct rijndael_dec_FILE *fin, struct aes *ctx )
       outbuf[ i ] ^= bp2[ i ];
 
     /* swap buffer pointers                */
-    tp = bp1, bp1 = bp2, bp2 = tp;
+    tp = bp1; bp1 = bp2; bp2 = tp;
   }
 }
 

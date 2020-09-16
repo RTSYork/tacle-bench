@@ -19,7 +19,7 @@
   License: GNU Lesser General Public License
 */
 #include "memset.h"
-int printf(const char * restrict format, ... );
+// int printf(const char * restrict format, ... );
 
 void *sha_glibc_memset( void *dstpp, int c, size_t len )
 {

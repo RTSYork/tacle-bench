@@ -23,7 +23,7 @@ struct audiobeam_PreprocessedDelays {
 };
 
 
-#undef FLT_MAX
+// #undef FLT_MAX
 #define FLT_MAX 999e999
 
 #define SOUND_SPEED 342

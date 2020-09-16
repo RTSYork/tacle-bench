@@ -44,10 +44,6 @@ struct SHA_INFO sha_info;
 
 #define ROT32(x,n) ((x << n) | (x >> (32 - n)))
 
-#define FUNC(n,i)      \
-    temp = ROT32(A,5) + f##n(B,C,D) + E + W[ i ] + CONST##n; \
-    E = D; D = C; C = ROT32(B,30); B = A; A = temp
-
 /* do SHA transformation */
 void sha_transform( struct SHA_INFO *sha_info )
 {
@@ -70,16 +66,16 @@ void sha_transform( struct SHA_INFO *sha_info )
 
   #pragma loopbound min 20 max 20
   for ( i = 0; i < 20; ++i )
-    FUNC( 1, i );
+    temp = ROT32(A,5) + f1(B,C,D) + E + W[ i ] + CONST1; E = D; D = C; C = ROT32(B,30); B = A; A = temp;
   #pragma loopbound min 20 max 20
   for ( i = 20; i < 40; ++i )
-    FUNC( 2, i );
+    temp = ROT32(A,5) + f2(B,C,D) + E + W[ i ] + CONST2; E = D; D = C; C = ROT32(B,30); B = A; A = temp;
   #pragma loopbound min 20 max 20
   for ( i = 40; i < 60; ++i )
-    FUNC( 3, i );
+    temp = ROT32(A,5) + f3(B,C,D) + E + W[ i ] + CONST3; E = D; D = C; C = ROT32(B,30); B = A; A = temp;
   #pragma loopbound min 20 max 20
   for ( i = 60; i < 80; ++i )
-    FUNC( 4, i );
+    temp = ROT32(A,5) + f4(B,C,D) + E + W[ i ] + CONST4; E = D; D = C; C = ROT32(B,30); B = A; A = temp;
   sha_info->digest[ 0 ] += A;
   sha_info->digest[ 1 ] += B;
   sha_info->digest[ 2 ] += C;
@@ -125,7 +121,7 @@ void sha_init( void )
     sha_info.data[ i ] = 0;
 }
 
-size_t sha_fread( void *ptr, size_t size, size_t count,
+size_t sha_fread( unsigned char *ptr, size_t size, size_t count,
                   struct SHA_MY_FILE *stream )
 {
   unsigned i = stream->cur_pos, i2 = 0;
@@ -133,8 +129,11 @@ size_t sha_fread( void *ptr, size_t size, size_t count,
     stream->size - stream->cur_pos >= size * count ?
     size * count : stream->size - stream->cur_pos;
   #pragma loopbound min 0 max 8192
-  while ( i < stream->cur_pos + number_of_chars_to_read )
-    ( ( unsigned char * )ptr )[ i2++ ] = stream->data[ i++ ];
+  while ( i < stream->cur_pos + number_of_chars_to_read ) {
+    *( ptr + i2) = stream->data[ i ];
+    i++;
+    i2++;
+  }
   stream->cur_pos += number_of_chars_to_read;
   return ( number_of_chars_to_read );
 }

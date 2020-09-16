@@ -1,22 +1,16 @@
 #ifndef GSM_DEC_ADD_H
 #define GSM_DEC_ADD_H
 
-#define GSM_MULT_R(a, b) /* word a, word b, !(a == b == MIN_WORD) */  \
-  (SASR( ((longword)(a) * (longword)(b) + 16384), 15 ))
+/* word a, word b, !(a == b == MIN_WORD) */
+#define GSM_MULT_R(a, b) (SASR( ((longword)(a) * (longword)(b) + 16384), 15 ))
 
- #define GSM_MULT(a,b)   /* word a, word b, !(a == b == MIN_WORD) */  \
-  (SASR( ((longword)(a) * (longword)(b)), 15 ))
+/* word a, word b, !(a == b == MIN_WORD) */
+#define GSM_MULT(a,b) (SASR( ((longword)(a) * (longword)(b)), 15 ))
 
- #define GSM_L_MULT(a, b) /* word a, word b */  \
-  (((longword)(a) * (longword)(b)) << 1)
+/* word a, word b */
+#define GSM_L_MULT(a, b) (((longword)(a) * (longword)(b)) << 1)
 
- #define GSM_L_ADD(a, b)  \
-  ( (a) <  0 ? ( (b) >= 0 ? (a) + (b) \
-     : (utmp = (ulongword)-((a) + 1) + (ulongword)-((b) + 1)) \
-       >= MAX_LONGWORD ? MIN_LONGWORD : -(longword)utmp-2 )   \
-  : ((b) <= 0 ? (a) + (b)   \
-            : (utmp = (ulongword)(a) + (ulongword)(b)) >= MAX_LONGWORD \
-        ? MAX_LONGWORD : utmp))
+#define GSM_L_ADD(a, b) ( (a) <  0 ? ( (b) >= 0 ? (a) + (b) : (utmp = (ulongword)-((a) + 1) + (ulongword)-((b) + 1)) >= MAX_LONGWORD ? MIN_LONGWORD : -(longword)utmp-2 ) : ((b) <= 0 ? (a) + (b) : (utmp = (ulongword)(a) + (ulongword)(b)) >= MAX_LONGWORD ? MAX_LONGWORD : utmp))
 
 /*
    # define GSM_ADD(a, b) \
@@ -25,18 +19,13 @@
 */
 /* Nonportable, but faster: */
 
-#define GSM_ADD(a, b) \
-  ((ulongword)((ltmp = (longword)(a) + (longword)(b)) - MIN_WORD) > \
-    MAX_WORD - MIN_WORD ? (ltmp > 0 ? MAX_WORD : MIN_WORD) : ltmp)
+#define GSM_ADD(a, b) ((ulongword)((ltmp = (longword)(a) + (longword)(b)) - MIN_WORD) > MAX_WORD - MIN_WORD ? (ltmp > 0 ? MAX_WORD : MIN_WORD) : ltmp)
 
- #define GSM_SUB(a, b)  \
-  ((ltmp = (longword)(a) - (longword)(b)) >= MAX_WORD \
-  ? MAX_WORD : ltmp <= MIN_WORD ? MIN_WORD : ltmp)
+#define GSM_SUB(a, b) ((ltmp = (longword)(a) - (longword)(b)) >= MAX_WORD ? MAX_WORD : ltmp <= MIN_WORD ? MIN_WORD : ltmp)
 
- #define GSM_ABS(a) ((a) < 0 ? ((a) == MIN_WORD ? MAX_WORD : -(a)) : (a))
+#define GSM_ABS(a) ((a) < 0 ? ((a) == MIN_WORD ? MAX_WORD : -(a)) : (a))
 
-#define saturate(x)   \
-  ((x) < MIN_WORD ? MIN_WORD : (x) > MAX_WORD ? MAX_WORD: (x))
+#define saturate(x) ((x) < MIN_WORD ? MIN_WORD : (x) > MAX_WORD ? MAX_WORD: (x))
 
 /* Use these if necessary:
 

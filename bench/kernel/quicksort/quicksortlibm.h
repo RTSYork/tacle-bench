@@ -24,17 +24,17 @@
 #define __QUICKSORTLIBM
 
 // The following defines map the math functions to specialized calls
-#define quicksort_acos     quicksort___ieee754_acosf
-#define quicksort_atan     quicksort___atanf
-#define quicksort_cos      quicksort___cosf
-#define quicksort_fabs     quicksort___fabsf
-#define quicksort_fabsf    quicksort___fabsf
-#define quicksort_isinf    quicksort___isinff
-#define quicksort_pow      quicksort___ieee754_powf
-#define quicksort_sqrt     quicksort___ieee754_sqrtf
-#define quicksort_log10    quicksort___ieee754_log10f
-#define quicksort_log      quicksort___ieee754_logf
-#define quicksort_sin      quicksort___sinf
+#define quicksort_acos( a )     quicksort___ieee754_acosf( a )
+#define quicksort_atan( a )     quicksort___atanf( a )
+#define quicksort_cos( a )      quicksort___cosf( a )
+#define quicksort_fabs( a )     quicksort___fabsf( a )
+#define quicksort_fabsf( a )    quicksort___fabsf( a )
+#define quicksort_isinf( a )    quicksort___isinff( a )
+#define quicksort_pow( a, b )   quicksort___ieee754_powf( a, b )
+#define quicksort_sqrt( a )     quicksort___ieee754_sqrtf( a )
+#define quicksort_log10( a )    quicksort___ieee754_log10f( a )
+#define quicksort_log( a )      quicksort___ieee754_logf( a )
+#define quicksort_sin( a )      quicksort___sinf( a )
 
 float quicksort___atanf( float );
 float quicksort___copysignf( float, float );

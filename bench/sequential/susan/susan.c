@@ -272,7 +272,7 @@
 #include "wcclibm.h"
 #include "wccfile.h"
 #include "wccmalloc.h"
-int printf(const char * restrict format, ... );
+// int printf(const char * restrict format, ... );
 #define EXP_A 184
 #define EXP_C 16249
 
@@ -281,11 +281,8 @@ float susan_expf( float y )
   union {
     float d;
     struct {
-      #ifdef LITTLE_ENDIAN
-      short j, i;
-      #else
-      short i, j;
-      #endif
+      short j;
+      short i;
     } n;
   } eco;
   eco.n.i = EXP_A * ( y ) + ( EXP_C );
@@ -332,7 +329,12 @@ typedef int        TOTAL_TYPE;
 #define  abs(a)  ( (a) < 0 ? -a : a )
 typedef  unsigned char uchar;
 typedef  struct {
-  int x, y, info, dx, dy, I;
+  int x;
+  int y;
+  int info;
+  int dx;
+  int dy;
+  int I;
 } corner_rep;
 typedef  corner_rep CORNER_LIST[ MAX_CORNERS ];
 
@@ -676,7 +678,7 @@ void susan_smoothing( int three_by_three, uchar *in, float dt,
   tmp_image = ( uchar * )susan_wccmalloc( ( x_size + mask_size * 2 ) *
                                           ( y_size + mask_size * 2 ) );
   susan_enlarge( &in, tmp_image, &x_size, &y_size, mask_size );
-    printf("x_size: %d\n", x_size);
+    // printf("x_size: %d\n", x_size);
   if ( three_by_three == 0 ) {
     /* large Gaussian masks */
     /* {{{ setup distance lut */

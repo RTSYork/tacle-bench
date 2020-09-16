@@ -28,7 +28,9 @@ typedef unsigned size_t;
 /* Type to use for unaligned operations. */
 #define SHA_BLOCKSIZE   64
 #define SHA_DIGESTSIZE    20
-#define LITTLE_ENDIAN
+#ifndef LITTLE_ENDIAN
+  #define LITTLE_ENDIAN
+#endif
 #define NULL ((void*)0)
 
 extern unsigned volatile char sha_data[ 32743 ];
@@ -41,7 +43,8 @@ struct SHA_MY_FILE {
 
 struct SHA_INFO {
   LONG digest[ 5 ];   /* message digest */
-  LONG count_lo, count_hi;  /* 64-bit bit count */
+  LONG count_lo;      /* 64-bit bit count */
+  LONG count_hi;      /* 64-bit bit count */
   LONG data[ 16 ];    /* SHA data buffer */
 };
 
@@ -51,7 +54,7 @@ struct SHA_INFO {
 void sha_transform( struct SHA_INFO * );
 void sha_byte_reverse( LONG *buffer, int count );
 void sha_init( void );
-size_t sha_fread( void *, size_t, size_t, struct SHA_MY_FILE * );
+size_t sha_fread( unsigned char *, size_t, size_t, struct SHA_MY_FILE * );
 void sha_update( struct SHA_INFO *, BYTE *, int );
 void sha_final( struct SHA_INFO * );
 void sha_stream( struct SHA_INFO *, struct SHA_MY_FILE * );

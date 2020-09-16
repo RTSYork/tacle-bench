@@ -25,9 +25,7 @@
    `bit_displacement' must be nonegative and can be greater than
    CHAR_BIT. */
 
-#define BIT(start_byte, bit_displacement)\
-  ((((const char *) (start_byte)) [(bit_displacement) / CHAR_BIT]\
-    >> (CHAR_BIT - 1 - (bit_displacement) % CHAR_BIT)) & 1)
+#define BIT(start_byte, bit_displacement) ((((char *) (start_byte)) [(bit_displacement) / CHAR_BIT] >> (CHAR_BIT - 1 - (bit_displacement) % CHAR_BIT)) & 1)
 
 
 /* This macro value sets up new value (must be `0' or `1') of a given
@@ -35,11 +33,7 @@
    Value of `bit_displacement' must be nonegative and can be greater
    than CHAR_BIT. */
 
-#define SET_BIT(start_byte, bit_displacement, bit)\
-  (((char *) (start_byte)) [(bit_displacement) / CHAR_BIT]\
-   = (((char *) (start_byte)) [(bit_displacement) / CHAR_BIT]\
-      & ~(1 << (CHAR_BIT - 1 - (bit_displacement) % CHAR_BIT)))\
-     | ((bit) << (CHAR_BIT - 1 - (bit_displacement) % CHAR_BIT)))
+#define SET_BIT(start_byte, bit_displacement, bit) ( start_byte[ (bit_displacement) / CHAR_BIT ] = (((char *) (start_byte)) [(bit_displacement) / CHAR_BIT] & ~(1 << (CHAR_BIT - 1 - (bit_displacement) % CHAR_BIT))) | ((bit) << (CHAR_BIT - 1 - (bit_displacement) % CHAR_BIT)))
 
 int ammunition_is_zero_bit_string ( const void *start_byte,
                                     int bit_displacement,

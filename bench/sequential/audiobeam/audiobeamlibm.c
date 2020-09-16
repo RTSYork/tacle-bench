@@ -79,7 +79,8 @@ int audiobeam___ieee754_rem_pio2f( float x, float *y )
   float z, w, t, r, fn;
   int i, j, n = 0, ix, hx;
 
-  AUDIOBEAM_GET_FLOAT_WORD( hx, x );
+  //AUDIOBEAM_GET_FLOAT_WORD( hx, x );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (hx) = gf_u.word; }
   ix = hx & 0x7fffffff;
   if ( ix <= 0x3f490fd8 ) {
     y[ 0 ] = x;
@@ -112,7 +113,7 @@ int audiobeam___ieee754_rem_pio2f( float x, float *y )
     }
   }
   if ( ix <= 0x43490f80 ) {
-    t  = audiobeam_fabsf( x );
+    t  = audiobeam___fabsf( x );
     n  = ( int ) ( t * audiobeam_invpio2 + audiobeam_half );
     fn = ( float )n;
     r  = t - fn * audiobeam_pio2_1;
@@ -123,7 +124,8 @@ int audiobeam___ieee754_rem_pio2f( float x, float *y )
       unsigned int high;
       j  = ix >> 23;
       y[ 0 ] = r - w;
-      AUDIOBEAM_GET_FLOAT_WORD( high, y[ 0 ] );
+      //AUDIOBEAM_GET_FLOAT_WORD( high, y[ 0 ] );
+      { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (y[ 0 ]); (high) = gf_u.word; }
       i = j - ( ( high >> 23 ) & 0xff );
       if ( i > 8 ) {
         t  = r;
@@ -131,7 +133,8 @@ int audiobeam___ieee754_rem_pio2f( float x, float *y )
         r  = t - w;
         w  = fn * audiobeam_pio2_2t - ( ( t - r ) - w );
         y[ 0 ] = r - w;
-        AUDIOBEAM_GET_FLOAT_WORD( high, y[ 0 ] );
+        //AUDIOBEAM_GET_FLOAT_WORD( high, y[ 0 ] );
+        { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (y[ 0 ]); (high) = gf_u.word; }
         i = j - ( ( high >> 23 ) & 0xff );
         if ( i > 25 )  {
           t  = r;
@@ -162,7 +165,8 @@ float audiobeam___kernel_cosf( float x, float y )
 {
   float a, hz, z, r, qx;
   int ix;
-  AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  //AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   ix &= 0x7fffffff;
   if ( ix < 0x32000000 ) {
     if ( ( ( int )x ) == 0 ) return audiobeam_one;
@@ -177,7 +181,8 @@ float audiobeam___kernel_cosf( float x, float y )
     if ( ix > 0x3f480000 )
       qx = ( float )0.28125f;
     else
-      AUDIOBEAM_SET_FLOAT_WORD( qx, ix - 0x01000000 );
+      //AUDIOBEAM_SET_FLOAT_WORD( qx, ix - 0x01000000 );
+      { audiobeam_ieee_float_shape_type sf_u; sf_u.word = (ix - 0x01000000); (qx) = sf_u.value; }
     hz = ( float )0.5f * z - qx;
     a  = audiobeam_one - qx;
     return a - ( hz - ( z * r - x * y ) );
@@ -189,7 +194,8 @@ float audiobeam___kernel_sinf( float x, float y, int iy )
 {
   float z, r, v;
   int ix;
-  AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  //AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   ix &= 0x7fffffff;
   if ( ix < 0x32000000 ) {
     if ( ( int )x == 0 ) return x;
@@ -207,9 +213,12 @@ float audiobeam___kernel_sinf( float x, float y, int iy )
 float audiobeam___copysignf( float x, float y )
 {
   unsigned int ix, iy;
-  AUDIOBEAM_GET_FLOAT_WORD( ix, x );
-  AUDIOBEAM_GET_FLOAT_WORD( iy, y );
-  AUDIOBEAM_SET_FLOAT_WORD( x, ( ix & 0x7fffffff ) | ( iy & 0x80000000 ) );
+  //AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
+  //AUDIOBEAM_GET_FLOAT_WORD( iy, y );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (y); (iy) = gf_u.word; }
+  //AUDIOBEAM_SET_FLOAT_WORD( x, ( ix & 0x7fffffff ) | ( iy & 0x80000000 ) );
+  { audiobeam_ieee_float_shape_type sf_u; sf_u.word = (( ix & 0x7fffffff ) | ( iy & 0x80000000 )); (x) = sf_u.value; }
   return x;
 }
 
@@ -219,7 +228,8 @@ float audiobeam___cosf( float x )
   float y[ 2 ], z = 0.0f;
   int n, ix;
 
-  AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  //AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
 
   ix &= 0x7fffffff;
   if ( ix <= 0x3f490fd8 ) return audiobeam___kernel_cosf( x, z );
@@ -248,8 +258,10 @@ float audiobeam___cosf( float x )
 float audiobeam___fabsf( float x )
 {
   unsigned int ix;
-  AUDIOBEAM_GET_FLOAT_WORD( ix, x );
-  AUDIOBEAM_SET_FLOAT_WORD( x, ix & 0x7fffffff );
+  //AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
+  //AUDIOBEAM_SET_FLOAT_WORD( x, ix & 0x7fffffff );
+  { audiobeam_ieee_float_shape_type sf_u; sf_u.word = (ix & 0x7fffffff); (x) = sf_u.value; }
   return x;
 }
 
@@ -258,7 +270,8 @@ float audiobeam___floorf( float x )
 {
   int i0, j0;
   unsigned int i;
-  AUDIOBEAM_GET_FLOAT_WORD( i0, x );
+  //AUDIOBEAM_GET_FLOAT_WORD( i0, x );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (i0) = gf_u.word; }
   j0 = ( ( i0 >> 23 ) & 0xff ) - 0x7f;
   if ( j0 < 23 ) {
     if ( j0 < 0 ) {
@@ -281,7 +294,8 @@ float audiobeam___floorf( float x )
     if ( j0 == 0x80 ) return x + x;
     else return x;
   }
-  AUDIOBEAM_SET_FLOAT_WORD( x, i0 );
+  //AUDIOBEAM_SET_FLOAT_WORD( x, i0 );
+  { audiobeam_ieee_float_shape_type sf_u; sf_u.word = (i0); (x) = sf_u.value; }
   return x;
 }
 
@@ -289,7 +303,8 @@ float audiobeam___floorf( float x )
 int audiobeam___isinff ( float x )
 {
   int ix, t;
-  AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  //AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   t = ix & 0x7fffffff;
   t ^= 0x7f800000;
   t |= -t;
@@ -300,12 +315,14 @@ int audiobeam___isinff ( float x )
 float audiobeam___scalbnf ( float x, int n )
 {
   int k, ix;
-  AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  //AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   k = ( ix & 0x7f800000 ) >> 23;
   if ( k == 0 ) {
     if ( ( ix & 0x7fffffff ) == 0 ) return x;
     x *= audiobeam_two25;
-    AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+    //AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+    { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
     k = ( ( ix & 0x7f800000 ) >> 23 ) - 25;
   }
   if ( k == 0xff ) return x + x;
@@ -317,14 +334,16 @@ float audiobeam___scalbnf ( float x, int n )
     return audiobeam_tiny * audiobeam___copysignf( audiobeam_tiny,
            x );
   if ( k > 0 ) {
-    AUDIOBEAM_SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+    //AUDIOBEAM_SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+    { audiobeam_ieee_float_shape_type sf_u; sf_u.word = (( ix & 0x807fffff ) | ( k << 23 )); (x) = sf_u.value; }
     return x;
   }
   if ( k <= -25 )
     return audiobeam_tiny * audiobeam___copysignf( audiobeam_tiny,
            x );
   k += 25;
-  AUDIOBEAM_SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+  //AUDIOBEAM_SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+  { audiobeam_ieee_float_shape_type sf_u; sf_u.word = (( ix & 0x807fffff ) | ( k << 23 )); (x) = sf_u.value; }
   return x * audiobeam_twom25;
 }
 
@@ -334,7 +353,8 @@ float audiobeam___ceilf( float x )
   int i0, j0;
   unsigned int i;
 
-  AUDIOBEAM_GET_FLOAT_WORD( i0, x );
+  //AUDIOBEAM_GET_FLOAT_WORD( i0, x );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (i0) = gf_u.word; }
   j0 = ( ( i0 >> 23 ) & 0xff ) - 0x7f;
   if ( j0 < 23 ) {
     if ( j0 < 0 ) {
@@ -357,7 +377,8 @@ float audiobeam___ceilf( float x )
     if ( j0 == 0x80 ) return x + x;
     else return x;
   }
-  AUDIOBEAM_SET_FLOAT_WORD( x, i0 );
+  //AUDIOBEAM_SET_FLOAT_WORD( x, i0 );
+  { audiobeam_ieee_float_shape_type sf_u; sf_u.word = (i0); (x) = sf_u.value; }
   return x;
 }
 
@@ -369,7 +390,8 @@ float audiobeam___ieee754_sqrtf( float x )
   int ix, s, q, m, t, i;
   unsigned int r;
 
-  AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  //AUDIOBEAM_GET_FLOAT_WORD( ix, x );
+  { audiobeam_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
 
   if ( ( ix & 0x7f800000 ) == 0x7f800000 )
     return x * x + x;
@@ -420,6 +442,7 @@ float audiobeam___ieee754_sqrtf( float x )
   }
   ix = ( q >> 1 ) + 0x3f000000;
   ix += ( m << 23 );
-  AUDIOBEAM_SET_FLOAT_WORD( z, ix );
+  //AUDIOBEAM_SET_FLOAT_WORD( z, ix );
+  { audiobeam_ieee_float_shape_type sf_u; sf_u.word = (ix); (z) = sf_u.value; }
   return z;
 }

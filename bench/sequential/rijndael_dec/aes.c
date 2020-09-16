@@ -30,18 +30,17 @@
 
 #include "aestab.h"
 
-#define four_tables(x,tab,vf,rf,c)  ( tab[ 0 ][ bval(vf(x,0,c),rf(0,c)) ] ^ \
-                                      tab[ 1 ][ bval(vf(x,1,c),rf(1,c)) ] ^ \
-                                      tab[ 2 ][ bval(vf(x,2,c),rf(2,c)) ] ^ \
-                                      tab[ 3 ][ bval(vf(x,3,c),rf(3,c)) ] )
-
 #define vf1(x,r,c)  (x)
 #define rf1(r,c)    (r)
 #define rf2(r,c)    ((r-c)&3)
 
-#define ls_box(x,c)     four_tables(x,rijndael_dec_fl_tab,vf1,rf2,c)
+// #define four_tables(x,tab,vf,rf,c)  ( tab[ 0 ][ bval(vf(x,0,c),rf(0,c)) ] ^ tab[ 1 ][ bval(vf(x,1,c),rf(1,c)) ] ^ tab[ 2 ][ bval(vf(x,2,c),rf(2,c)) ] ^ tab[ 3 ][ bval(vf(x,3,c),rf(3,c)) ] )
+#define four_tables1(x,tab,c)  ( tab[ 0 ][ bval(x,rf2(0,c)) ] ^ tab[ 1 ][ bval(x,rf2(1,c)) ] ^ tab[ 2 ][ bval(x,rf2(2,c)) ] ^ tab[ 3 ][ bval(x,rf2(3,c)) ] )
+#define four_tables2(x,tab,c)  ( tab[ 0 ][ bval(vf1(x,0,c),rf1(0,c)) ] ^ tab[ 1 ][ bval(vf1(x,1,c),rf1(1,c)) ] ^ tab[ 2 ][ bval(vf1(x,2,c),rf1(2,c)) ] ^ tab[ 3 ][ bval(vf1(x,3,c),rf1(3,c)) ] )
 
-#define inv_mcol(x)     four_tables(x,rijndael_dec_im_tab,vf1,rf1,0)
+#define ls_box(x,c)     four_tables1(x,rijndael_dec_fl_tab,c)
+
+#define inv_mcol(x)     four_tables2(x,rijndael_dec_im_tab,0)
 
 /*
   Subroutine to set the block size (if variable) in bytes, legal
@@ -63,14 +62,20 @@
 #define cpy(d,s)    do { cp(d,s); cp(d,s); cp(d,s); cp(d,s); } while (0)    //min 1 max 1
 #define mix(d,s)    do { mx(d,s); mx(d,s); mx(d,s); mx(d,s); } while (0)    //min 1 max 1
 
-aes_ret rijndael_dec_set_key( byte in_key[  ], const word n_bytes,
+aes_ret rijndael_dec_set_key( byte *in_key, const word n_bytes,
                               const enum aes_key f, struct aes *cx )
 {
   word    *kf, *kt, rci;
 
   if ( ( n_bytes & 7 ) || n_bytes < 16 || n_bytes > 32 || ( !( f & 1 ) &&
-       !( f & 2 ) ) )
-    return ( n_bytes ? cx->mode &= ~0x03, aes_bad : ( aes_ret )( cx->Nkey << 2 ) );
+       !( f & 2 ) ) ) {
+    if ( n_bytes ) {
+      cx->mode &= ~0x03;
+      return aes_bad;
+    } else {
+      return ( aes_ret )( cx->Nkey << 2 );
+    }
+  }
 
   cx->mode = ( cx->mode & ~0x03 ) | ( ( byte )f & 0x03 );
   cx->Nkey = n_bytes >> 2;
@@ -89,7 +94,7 @@ aes_ret rijndael_dec_set_key( byte in_key[  ], const word n_bytes,
     case 4:
       #pragma loopbound min 0 max 0
       do {
-        kf[ 4 ] = kf[ 0 ] ^ ls_box( kf[ 3 ], 3 ) ^ rijndael_dec_rcon_tab[ rci++ ];
+        kf[ 4 ] = kf[ 4 ] = kf[ 0 ] ^ ( rijndael_dec_fl_tab[ 0 ][ ((byte)((kf[ 3 ]) >> (8 * (((0 -3)&3))))) ] ^ rijndael_dec_fl_tab[ 1 ][ ((byte)((kf[ 3 ]) >> (8 * (((1 -3)&3))))) ] ^ rijndael_dec_fl_tab[ 2 ][ ((byte)((kf[ 3 ]) >> (8 * (((2 -3)&3))))) ] ^ rijndael_dec_fl_tab[ 3 ][ ((byte)((kf[ 3 ]) >> (8 * (((3 -3)&3))))) ] ) ^ rijndael_dec_rcon_tab[ rci++ ];
         kf[ 5 ] = kf[ 1 ] ^ kf[ 4 ];
         kf[ 6 ] = kf[ 2 ] ^ kf[ 5 ];
         kf[ 7 ] = kf[ 3 ] ^ kf[ 6 ];
@@ -102,7 +107,7 @@ aes_ret rijndael_dec_set_key( byte in_key[  ], const word n_bytes,
       cx->e_key[ 5 ] = word_in( in_key + 20 );
       #pragma loopbound min 0 max 0
       do {
-        kf[  6 ] = kf[ 0 ] ^ ls_box( kf[ 5 ], 3 ) ^ rijndael_dec_rcon_tab[ rci++ ];
+        kf[  6 ] = kf[ 0 ] ^ ( rijndael_dec_fl_tab[ 0 ][ ((byte)((kf[ 5 ]) >> (8 * (((0 -3)&3))))) ] ^ rijndael_dec_fl_tab[ 1 ][ ((byte)((kf[ 5 ]) >> (8 * (((1 -3)&3))))) ] ^ rijndael_dec_fl_tab[ 2 ][ ((byte)((kf[ 5 ]) >> (8 * (((2 -3)&3))))) ] ^ rijndael_dec_fl_tab[ 3 ][ ((byte)((kf[ 5 ]) >> (8 * (((3 -3)&3))))) ] ) ^ rijndael_dec_rcon_tab[ rci++ ];
         kf[  7 ] = kf[ 1 ] ^ kf[  6 ];
         kf[  8 ] = kf[ 2 ] ^ kf[  7 ];
         kf[  9 ] = kf[ 3 ] ^ kf[  8 ];
@@ -119,16 +124,16 @@ aes_ret rijndael_dec_set_key( byte in_key[  ], const word n_bytes,
       cx->e_key[ 7 ] = word_in( in_key + 28 );
       #pragma loopbound min 7 max 7
       do {
-        kf[  8 ] = kf[ 0 ] ^ ls_box( kf[ 7 ], 3 ) ^ rijndael_dec_rcon_tab[ rci++ ];
+        kf[  8 ] = kf[ 0 ] ^ ( rijndael_dec_fl_tab[ 0 ][ ((byte)((kf[ 7 ]) >> (8 * (((0 -3)&3))))) ] ^ rijndael_dec_fl_tab[ 1 ][ ((byte)((kf[ 7 ]) >> (8 * (((1 -3)&3))))) ] ^ rijndael_dec_fl_tab[ 2 ][ ((byte)((kf[ 7 ]) >> (8 * (((2 -3)&3))))) ] ^ rijndael_dec_fl_tab[ 3 ][ ((byte)((kf[ 7 ]) >> (8 * (((3 -3)&3))))) ] ) ^ rijndael_dec_rcon_tab[ rci++ ];
         kf[  9 ] = kf[ 1 ] ^ kf[  8 ];
         kf[ 10 ] = kf[ 2 ] ^ kf[  9 ];
         kf[ 11 ] = kf[ 3 ] ^ kf[ 10 ];
-        kf[ 12 ] = kf[ 4 ] ^ ls_box( kf[ 11 ], 0 );
+        kf[ 12 ] = kf[ 4 ] ^ ( rijndael_dec_fl_tab[ 0 ][ ((byte)((kf[ 11 ]) >> (8 * (((0 -0)&3))))) ] ^ rijndael_dec_fl_tab[ 1 ][ ((byte)((kf[ 11 ]) >> (8 * (((1 -0)&3))))) ] ^ rijndael_dec_fl_tab[ 2 ][ ((byte)((kf[ 11 ]) >> (8 * (((2 -0)&3))))) ] ^ rijndael_dec_fl_tab[ 3 ][ ((byte)((kf[ 11 ]) >> (8 * (((3 -0)&3))))) ] );
         kf[ 13 ] = kf[ 5 ] ^ kf[ 12 ];
         kf[ 14 ] = kf[ 6 ] ^ kf[ 13 ];
         kf[ 15 ] = kf[ 7 ] ^ kf[ 14 ];
         kf += 8;
-      } while ( kf < kt );
+      } while ( (long)kf < (long)kt );
       break;
   }
 

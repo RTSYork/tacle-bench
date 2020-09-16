@@ -1,5 +1,5 @@
 #include "wccfile.h"
-#define EOF -1
+// #define EOF -1
 
 size_t susan_wccfread( void *ptr, size_t size, size_t count,
                        struct wccFILE *stream )

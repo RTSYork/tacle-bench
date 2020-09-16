@@ -109,6 +109,7 @@ int ammunition_bits_test()
   #pragma loopbound min 64 max 64
   for ( i = 0; i < sizeof ( str ) * CHAR_BIT; i++ ) {
     SET_BIT ( str, i, 1 );
+    // (((char *) (str)) [(i) / CHAR_BIT] = (((char *) (str)) [(i) / CHAR_BIT] & ~(1 << (CHAR_BIT - 1 - (i) % CHAR_BIT))) | ((1) << (CHAR_BIT - 1 - (i) % CHAR_BIT)));
     #pragma loopbound min 64 max 64
     for ( j = 0; j < sizeof ( str ) * CHAR_BIT; j++ )
       if ( j <= i ) {

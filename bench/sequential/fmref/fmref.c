@@ -24,14 +24,16 @@
 // Type declarations
 typedef struct FloatBuffer {
   float buff[ IN_BUFFER_LEN ];
-  int rpos, rlen;
+  int rpos;
+  int rlen;
 }
 FloatBuffer;
 /* Low pass filter: */
 typedef struct LPFData {
   float coeff[ NUM_TAPS ];
   float freq;
-  int taps, decimation;
+  int taps;
+  int decimation;
 }
 LPFData;
 typedef struct EqualizerData {

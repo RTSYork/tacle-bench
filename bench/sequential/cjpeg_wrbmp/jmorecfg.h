@@ -83,11 +83,11 @@ typedef unsigned int CJPEG_WRBMP_JDIMENSION;
    explicit coding is needed; see uses of the NEED_FAR_POINTERS symbol.
 */
 
-#ifdef CJPEG_JPEG6B_WRBMP_NEED_FAR_POINTERS
-#define CJPEG_WRBMP_FAR  far
-#else
-#define CJPEG_WRBMP_FAR
-#endif
+// #ifdef CJPEG_JPEG6B_WRBMP_NEED_FAR_POINTERS
+// #define CJPEG_WRBMP_FAR  far
+// #else
+// #define CJPEG_WRBMP_FAR
+// #endif
 
 #ifndef CJPEG_JPEG6B_WRBMP_HAVE_BOOLEAN
 typedef int cjpeg_wrbmp_boolean;

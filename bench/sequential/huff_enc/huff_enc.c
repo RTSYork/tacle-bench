@@ -48,7 +48,7 @@
 /*
   Declaration of types
 */
-int printf(const char * restrict format, ... );
+// int printf(const char * restrict format, ... );
 int counter1 = 0;
 typedef struct huff_enc_s_tree {
   unsigned int byte; /* A byte has to be coded as an unsigned integer to
@@ -107,14 +107,7 @@ static unsigned char huff_enc_val_to_write = 0;
 
 #define huff_enc_plaintext_len 600
 static const char *huff_enc_plaintext =
-  "You are doubtless asking \"How can I reduce the data size without losing "
-  "some informations?\". It's easy to answer to this question. I'll only take "
-  "an example. I'm sure you have heard about the morse. This system established "
-  "in the 19th century use a scheme very close to the huffman one. In the morse "
-  "you encode the letters to transmit with two kinds of signs. If you encode "
-  "these two sign possibilities in one bit, the symbol 'e' is transmitted in a "
-  "single bit and the symbols 'y' and 'z' need four bits. Look at the symbols "
-  "in the text you are reading, you'll fast understand the compression ratio...";
+  "You are doubtless asking \"How can I reduce the data size without losing some informations?\". It's easy to answer to this question. I'll only take an example. I'm sure you have heard about the morse. This system established in the 19th century use a scheme very close to the huffman one. In the morse you encode the letters to transmit with two kinds of signs. If you encode these two sign possibilities in one bit, the symbol 'e' is transmitted in a single bit and the symbols 'y' and 'z' need four bits. Look at the symbols in the text you are reading, you'll fast understand the compression ratio...";
 
 #define huff_enc_encoded_len 419
 static unsigned char huff_enc_encoded[ huff_enc_encoded_len ] = {

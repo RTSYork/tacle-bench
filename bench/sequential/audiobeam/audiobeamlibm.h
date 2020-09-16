@@ -33,13 +33,13 @@ audiobeam_two8   =  2.5600000000e+02, /* 0x43800000 */
 audiobeam_twon8  =  3.9062500000e-03, /* 0x3b800000 */
 audiobeam_zero   =  0.0;
 
-#define audiobeam_cos      audiobeam___cosf
-#define audiobeam_fabs     audiobeam___fabsf
-#define audiobeam_fabsf    audiobeam___fabsf
-#define audiobeam_isinf    audiobeam___isinff
-#define audiobeam_sqrt     audiobeam___ieee754_sqrtf
-#define audiobeam_ceil     audiobeam___ceilf
-#define audiobeam_floor    audiobeam___floorf
+// #define audiobeam_cos      audiobeam___cosf
+// #define audiobeam_fabs     audiobeam___fabsf
+// #define audiobeam_fabsf    audiobeam___fabsf
+// #define audiobeam_isinf    audiobeam___isinff
+// #define audiobeam_sqrt     audiobeam___ieee754_sqrtf
+// #define audiobeam_ceil     audiobeam___ceilf
+// #define audiobeam_floor    audiobeam___floorf
 
 float   audiobeam___copysignf( float x, float y );
 float   audiobeam___cosf( float x );
@@ -54,6 +54,6 @@ int     audiobeam___kernel_rem_pio2f( float *x, float *y, int e0, int nx,
                                       int prec, const int *ipio2 );
 float   audiobeam___scalbnf ( float x, int n );
 float   audiobeam___ceilf( float x );
-float   audiobeam___floorf( float x );
+// float   audiobeam___floorf( float x );
 
 #endif // AUDIOBEAM_LIBM

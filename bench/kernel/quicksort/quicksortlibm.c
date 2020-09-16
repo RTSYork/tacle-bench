@@ -24,11 +24,7 @@
 #include "math_private.h"
 
 // Often used variables/consts
-#ifdef __STDC__
 const float
-#else
-float
-#endif
 quicksort_one    =  1.0f,
 quicksort_half   =  5.0000000000e-01f, /* 0x3f000000 */
 quicksort_zero   =  0.0f,
@@ -52,11 +48,7 @@ quicksort_two24  =  16777216.0; /* 0x4b800000 */
    ====================================================
 */
 
-#ifdef __STDC__
 const float
-#else
-float
-#endif
 quicksort_bp[  ] = { 1.0f, 1.5f, },
                  quicksort_dp_h[  ] = { 0.0f, 5.84960938e-01f,}, /* 0x3f15c000 */
                                     quicksort_dp_l[  ] = { 0.0f, 1.56322085e-06f,}, /* 0x35d1cfdc */
@@ -83,12 +75,7 @@ quicksort_bp[  ] = { 1.0f, 1.5f, },
                                         quicksort_ivln2_l = 7.0526075433e-06f; /* 0x36eca570 =1/ln2 tail*/
 
 
-#ifdef __STDC__
 float quicksort___ieee754_powf( float x, float y )
-#else
-float quicksort___ieee754_powf( x, y )
-float x, y;
-#endif
 {
   float z, ax, z_h, z_l, p_h, p_l;
   float y1, t1, t2, r, s, t, u, v, w;
@@ -96,8 +83,10 @@ float x, y;
   int hx, hy, ix, iy, is;
 
 
-  QUICKSORT_GET_FLOAT_WORD( hx, x );
-  QUICKSORT_GET_FLOAT_WORD( hy, y );
+  //QUICKSORT_GET_FLOAT_WORD( hx, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (hx) = gf_u.word; }
+  //QUICKSORT_GET_FLOAT_WORD( hy, y );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (y); (hy) = gf_u.word; }
   ix = hx & 0x7fffffff;
   iy = hy & 0x7fffffff;
 
@@ -198,8 +187,10 @@ float x, y;
     u = quicksort_ivln2_h * t; /* ivln2_h has 16 sig. bits */
     v = t * quicksort_ivln2_l - w * quicksort_ivln2;
     t1 = u + v;
-    QUICKSORT_GET_FLOAT_WORD( is, t1 );
-    QUICKSORT_SET_FLOAT_WORD( t1, is & 0xfffff000 );
+    //QUICKSORT_GET_FLOAT_WORD( is, t1 );
+    { quicksort_ieee_float_shape_type gf_u; gf_u.value = (t1); (is) = gf_u.word; }
+    //QUICKSORT_SET_FLOAT_WORD( t1, is & 0xfffff000 );
+    { quicksort_ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (t1) = sf_u.value; }
     t2 = v - ( t1 - u );
   } else {
     float s2, s_h, s_l, t_h, t_l;
@@ -209,7 +200,8 @@ float x, y;
     if ( ix < 0x00800000 ) {
       ax *= quicksort_two24;
       n -= 24;
-      QUICKSORT_GET_FLOAT_WORD( ix, ax );
+      //QUICKSORT_GET_FLOAT_WORD( ix, ax );
+      { quicksort_ieee_float_shape_type gf_u; gf_u.value = (ax); (ix) = gf_u.word; }
     }
     n += ( ( ix ) >> 23 ) - 0x7f;
     j = ix & 0x007fffff;
@@ -226,18 +218,21 @@ float x, y;
         n += 1;
         ix -= 0x00800000;
       }
-    QUICKSORT_SET_FLOAT_WORD( ax, ix );
+    //QUICKSORT_SET_FLOAT_WORD( ax, ix );
+    { quicksort_ieee_float_shape_type sf_u; sf_u.word = (ix); (ax) = sf_u.value; }
 
     /* compute s = s_h+s_l = (x-1)/(x+1) or (x-1.5)/(x+1.5) */
     u = ax - quicksort_bp[ k ]; /* bp[ 0 ]=1.0, bp[ 1 ]=1.5 */
     v = quicksort_one / ( ax + quicksort_bp[ k ] );
     s = u * v;
     s_h = s;
-    QUICKSORT_GET_FLOAT_WORD( is, s_h );
-    QUICKSORT_SET_FLOAT_WORD( s_h, is & 0xfffff000 );
+    //QUICKSORT_GET_FLOAT_WORD( is, s_h );
+    { quicksort_ieee_float_shape_type gf_u; gf_u.value = (s_h); (is) = gf_u.word; }
+    //QUICKSORT_SET_FLOAT_WORD( s_h, is & 0xfffff000 );
+    { quicksort_ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (s_h) = sf_u.value; }
     /* t_h=ax+bp[ k ] High */
-    QUICKSORT_SET_FLOAT_WORD(
-      t_h, ( ( ix >> 1 ) | 0x20000000 ) + 0x0040000 + ( k << 21 ) );
+    //QUICKSORT_SET_FLOAT_WORD( t_h, ( ( ix >> 1 ) | 0x20000000 ) + 0x0040000 + ( k << 21 ) );
+    { quicksort_ieee_float_shape_type sf_u; sf_u.word = (( ( ix >> 1 ) | 0x20000000 ) + 0x0040000 + ( k << 21 )); (t_h) = sf_u.value; }
     t_l = ax - ( t_h - quicksort_bp[ k ] );
     s_l = v * ( ( u - s_h * t_h ) - s_h * t_l );
     /* compute log(ax) */
@@ -249,24 +244,30 @@ float x, y;
     r += s_l * ( s_h + s );
     s2 = s_h * s_h;
     t_h = ( float ) 3.0f + s2 + r;
-    QUICKSORT_GET_FLOAT_WORD( is, t_h );
-    QUICKSORT_SET_FLOAT_WORD( t_h, is & 0xfffff000 );
+    //QUICKSORT_GET_FLOAT_WORD( is, t_h );
+    { quicksort_ieee_float_shape_type gf_u; gf_u.value = (t_h); (is) = gf_u.word; }
+    //QUICKSORT_SET_FLOAT_WORD( t_h, is & 0xfffff000 );
+    { quicksort_ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (t_h) = sf_u.value; }
     t_l = r - ( ( t_h - ( float ) 3.0f ) - s2 );
     /* u+v = s*(1+...) */
     u = s_h * t_h;
     v = s_l * t_h + t_l * s;
     /* 2/(3log2)*(s+...) */
     p_h = u + v;
-    QUICKSORT_GET_FLOAT_WORD( is, p_h );
-    QUICKSORT_SET_FLOAT_WORD( p_h, is & 0xfffff000 );
+    //QUICKSORT_GET_FLOAT_WORD( is, p_h );
+    { quicksort_ieee_float_shape_type gf_u; gf_u.value = (p_h); (is) = gf_u.word; }
+    //QUICKSORT_SET_FLOAT_WORD( p_h, is & 0xfffff000 );
+    { quicksort_ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (p_h) = sf_u.value; }
     p_l = v - ( p_h - u );
     z_h = quicksort_cp_h * p_h; /* cp_h+cp_l = 2/(3*log2) */
     z_l = quicksort_cp_l * p_h + p_l * quicksort_cp + quicksort_dp_l[ k ];
     /* log2(ax) = (s+..)*2/(3*log2) = n + dp_h + z_h + z_l */
     t = ( float ) n;
     t1 = ( ( ( z_h + z_l ) + quicksort_dp_h[ k ] ) + t );
-    QUICKSORT_GET_FLOAT_WORD( is, t1 );
-    QUICKSORT_SET_FLOAT_WORD( t1, is & 0xfffff000 );
+    //QUICKSORT_GET_FLOAT_WORD( is, t1 );
+    { quicksort_ieee_float_shape_type gf_u; gf_u.value = (t1); (is) = gf_u.word; }
+    //QUICKSORT_SET_FLOAT_WORD( t1, is & 0xfffff000 );
+    { quicksort_ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (t1) = sf_u.value; }
     t2 = z_l - ( ( ( t1 - t ) - quicksort_dp_h[ k ] ) - z_h );
   }
 
@@ -275,12 +276,15 @@ float x, y;
     s = -quicksort_one; /* (-ve)**(odd int) */
 
   /* split up y into y1+y2 and compute (y1+y2)*(t1+t2) */
-  QUICKSORT_GET_FLOAT_WORD( is, y );
-  QUICKSORT_SET_FLOAT_WORD( y1, is & 0xfffff000 );
+  //QUICKSORT_GET_FLOAT_WORD( is, y );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (y); (is) = gf_u.word; }
+  //QUICKSORT_SET_FLOAT_WORD( y1, is & 0xfffff000 );
+  { quicksort_ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (y1) = sf_u.value; }
   p_l = ( y - y1 ) * t1 + y * t2;
   p_h = y1 * t1;
   z = p_l + p_h;
-  QUICKSORT_GET_FLOAT_WORD( j, z );
+  //QUICKSORT_GET_FLOAT_WORD( j, z );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (z); (j) = gf_u.word; }
   if ( j > 0x43000000 )   /* if z > 128 */
     return ( s * quicksort_huge * quicksort_huge );  /* overflow */
   else
@@ -308,15 +312,18 @@ float x, y;
   if ( i > 0x3f000000 ) { /* if |z| > 0.5, set n = [ z+0.5 ] */
     n = j + ( 0x00800000 >> ( k + 1 ) );
     k = ( ( n & 0x7fffffff ) >> 23 ) - 0x7f; /* new k for n */
-    QUICKSORT_SET_FLOAT_WORD( t, n & ~( 0x007fffff >> k ) );
+    //QUICKSORT_SET_FLOAT_WORD( t, n & ~( 0x007fffff >> k ) );
+    { quicksort_ieee_float_shape_type sf_u; sf_u.word = (n & ~( 0x007fffff >> k )); (t) = sf_u.value; }
     n = ( ( n & 0x007fffff ) | 0x00800000 ) >> ( 23 - k );
     if ( j < 0 )
       n = -n;
     p_h -= t;
   }
   t = p_l + p_h;
-  QUICKSORT_GET_FLOAT_WORD( is, t );
-  QUICKSORT_SET_FLOAT_WORD( t, is & 0xfffff000 );
+  //QUICKSORT_GET_FLOAT_WORD( is, t );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (t); (is) = gf_u.word; }
+  //QUICKSORT_SET_FLOAT_WORD( t, is & 0xfffff000 );
+  { quicksort_ieee_float_shape_type sf_u; sf_u.word = (is & 0xfffff000); (t) = sf_u.value; }
   u = t * quicksort_lg2_h;
   v = ( p_l - ( t - p_h ) ) * quicksort_lg2 + t * quicksort_lg2_l;
   z = u + v;
@@ -327,12 +334,14 @@ float x, y;
                                    ( quicksort_P4 + t * quicksort_P5 ) ) ) );
   r  = ( z * t1 ) / ( t1 - quicksort_two ) - ( w + z * w );
   z  = quicksort_one - ( r - z );
-  QUICKSORT_GET_FLOAT_WORD( j, z );
+  //QUICKSORT_GET_FLOAT_WORD( j, z );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (z); (j) = gf_u.word; }
   j += ( n << 23 );
   if ( ( j >> 23 ) <= 0 )
     z = quicksort___scalbnf( z, n ); /* subnormal output */
   else
-    QUICKSORT_SET_FLOAT_WORD( z, j );
+    //QUICKSORT_SET_FLOAT_WORD( z, j );
+    { quicksort_ieee_float_shape_type sf_u; sf_u.word = (j); (z) = sf_u.value; }
 
   return ( s * z );
 }
@@ -353,12 +362,7 @@ float x, y;
    ====================================================
 */
 
-#ifdef __STDC__
 float quicksort___ieee754_sqrtf( float x )
-#else
-float quicksort___ieee754_sqrtf( x )
-float x;
-#endif
 {
   float z;
   int sign = ( int ) 0x80000000;
@@ -366,7 +370,8 @@ float x;
   unsigned int r;
 
 
-  QUICKSORT_GET_FLOAT_WORD( ix, x );
+  //QUICKSORT_GET_FLOAT_WORD( ix, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
 
   /* take care of Inf and NaN */
   if ( ( ix & 0x7f800000 ) == 0x7f800000 )
@@ -427,7 +432,8 @@ float x;
   }
   ix = ( q >> 1 ) + 0x3f000000;
   ix += ( m << 23 );
-  QUICKSORT_SET_FLOAT_WORD( z, ix );
+  //QUICKSORT_SET_FLOAT_WORD( z, ix );
+  { quicksort_ieee_float_shape_type sf_u; sf_u.word = (ix); (z) = sf_u.value; }
 
   return ( z );
 }
@@ -454,19 +460,17 @@ float x;
    with the sign bit of y.
 */
 
-#ifdef __STDC__
 float quicksort___copysignf( float x, float y )
-#else
-float quicksort___copysignf( x, y )
-float x, y;
-#endif
 {
   unsigned int ix, iy;
 
 
-  QUICKSORT_GET_FLOAT_WORD( ix, x );
-  QUICKSORT_GET_FLOAT_WORD( iy, y );
-  QUICKSORT_SET_FLOAT_WORD( x, ( ix & 0x7fffffff ) | ( iy & 0x80000000 ) );
+  //QUICKSORT_GET_FLOAT_WORD( ix, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
+  //QUICKSORT_GET_FLOAT_WORD( iy, y );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (y); (iy) = gf_u.word; }
+  //QUICKSORT_SET_FLOAT_WORD( x, ( ix & 0x7fffffff ) | ( iy & 0x80000000 ) );
+  { quicksort_ieee_float_shape_type sf_u; sf_u.word = (( ix & 0x7fffffff ) | ( iy & 0x80000000 )); (x) = sf_u.value; }
 
   return ( x );
 }
@@ -496,11 +500,7 @@ float x, y;
 
 /* This array is like the one in e_rem_pio2.c, but the numbers are
    single precision and the last 8 bits are forced to 0.  */
-#ifdef __STDC__
 const int quicksort_npio2_hw[  ] = {
-#else
-int quicksort_npio2_hw[  ] = {
-#endif
   0x3fc90f00, 0x40490f00, 0x4096cb00, 0x40c90f00, 0x40fb5300, 0x4116cb00,
   0x412fed00, 0x41490f00, 0x41623100, 0x417b5300, 0x418a3a00, 0x4196cb00,
   0x41a35c00, 0x41afed00, 0x41bc7e00, 0x41c90f00, 0x41d5a000, 0x41e23100,
@@ -520,11 +520,7 @@ int quicksort_npio2_hw[  ] = {
    pio2_3t:  pi/2 - (pio2_1+pio2_2+pio2_3)
 */
 
-#ifdef __STDC__
 const float
-#else
-float
-#endif
 quicksort_invpio2 =  6.3661980629e-01f, /* 0x3f22f984 */
 quicksort_pio2_1  =  1.5707855225e+00f, /* 0x3fc90f80 */
 quicksort_pio2_1t =  1.0804334124e-05f, /* 0x37354443 */
@@ -534,18 +530,14 @@ quicksort_pio2_3  =  6.0770943833e-11f, /* 0x2e85a300 */
 quicksort_pio2_3t =  6.1232342629e-17f; /* 0x248d3132 */
 
 
-#ifdef __STDC__
 int quicksort___ieee754_rem_pio2f( float x, float *y )
-#else
-int quicksort___ieee754_rem_pio2f( x, y )
-float x, y[  ];
-#endif
 {
   float z, w, t, r, fn;
   int i, j, n, ix, hx;
 
 
-  QUICKSORT_GET_FLOAT_WORD( hx, x );
+  //QUICKSORT_GET_FLOAT_WORD( hx, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (hx) = gf_u.word; }
   ix = hx & 0x7fffffff;
   if ( ix <= 0x3f490fd8 ) { /* |x| ~<= pi/4 , no need for reduction */
     y[  0  ] = x;
@@ -595,7 +587,8 @@ float x, y[  ];
 
       j  = ix >> 23;
       y[  0  ] = r - w;
-      QUICKSORT_GET_FLOAT_WORD( high, y[  0  ] );
+      //QUICKSORT_GET_FLOAT_WORD( high, y[  0  ] );
+      { quicksort_ieee_float_shape_type gf_u; gf_u.value = (y[  0  ]); (high) = gf_u.word; }
       i = j - ( ( high >> 23 ) & 0xff );
       if ( i > 8 ) { /* 2nd iteration needed, good to 57 */
         t = r;
@@ -603,7 +596,8 @@ float x, y[  ];
         r = t - w;
         w = fn * quicksort_pio2_2t - ( ( t - r ) - w );
         y[  0  ] = r - w;
-        QUICKSORT_GET_FLOAT_WORD( high, y[  0  ] );
+        //QUICKSORT_GET_FLOAT_WORD( high, y[  0  ] );
+        { quicksort_ieee_float_shape_type gf_u; gf_u.value = (y[  0  ]); (high) = gf_u.word; }
         i = j - ( ( high >> 23 ) & 0xff );
         if ( i > 25 )  { /* 3rd iteration need, 74 bits acc */
           t  = r; /* will cover all possible cases */
@@ -652,11 +646,7 @@ float x, y[  ];
    ====================================================
 */
 
-#ifdef __STDC__
 const float
-#else
-float
-#endif
 quicksort_C1 =  4.1666667908e-02f, /* 0x3d2aaaab */
 quicksort_C2 = -1.3888889225e-03f, /* 0xbab60b61 */
 quicksort_C3 =  2.4801587642e-05f, /* 0x37d00d01 */
@@ -664,18 +654,14 @@ quicksort_C4 = -2.7557314297e-07f, /* 0xb493f27c */
 quicksort_C5 =  2.0875723372e-09f, /* 0x310f74f6 */
 quicksort_C6 = -1.1359647598e-11f; /* 0xad47d74e */
 
-#ifdef __STDC__
 float quicksort___kernel_cosf( float x, float y )
-#else
-float quicksort___kernel_cosf( x, y )
-float x, y;
-#endif
 {
   float a, hz, z, r, qx;
   int ix;
 
 
-  QUICKSORT_GET_FLOAT_WORD( ix, x );
+  //QUICKSORT_GET_FLOAT_WORD( ix, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   ix &= 0x7fffffff;     /* ix = |x|'s high word*/
   if ( ix < 0x32000000 ) { /* if x < 2**27 */
     if ( ( ( int ) x ) == 0 )
@@ -691,7 +677,8 @@ float x, y;
     if ( ix > 0x3f480000 )  /* x > 0.78125 */
       qx = ( float ) 0.28125f;
     else {
-      QUICKSORT_SET_FLOAT_WORD( qx, ix - 0x01000000 ); /* x/4 */
+      //QUICKSORT_SET_FLOAT_WORD( qx, ix - 0x01000000 );
+      { quicksort_ieee_float_shape_type sf_u; sf_u.word = (ix - 0x01000000); (qx) = sf_u.value; } /* x/4 */
     }
     hz = ( float ) 0.5f * z - qx;
     a = quicksort_one - qx;
@@ -715,11 +702,7 @@ float x, y;
    ====================================================
 */
 
-#ifdef __STDC__
 const float
-#else
-float
-#endif
 quicksort_S1  = -1.6666667163e-01f, /* 0xbe2aaaab */
 quicksort_S2  =  8.3333337680e-03f, /* 0x3c088889 */
 quicksort_S3  = -1.9841270114e-04f, /* 0xb9500d01 */
@@ -728,19 +711,14 @@ quicksort_S5  = -2.5050759689e-08f, /* 0xb2d72f34 */
 quicksort_S6  =  1.5896910177e-10f; /* 0x2f2ec9d3 */
 
 
-#ifdef __STDC__
 float quicksort___kernel_sinf( float x, float y, int iy )
-#else
-float quicksort___kernel_sinf( x, y, iy )
-float x, y;
-int iy;    /* iy=0 if y is zero */
-#endif
 {
   float z, r, v;
   int ix;
 
 
-  QUICKSORT_GET_FLOAT_WORD( ix, x );
+  //QUICKSORT_GET_FLOAT_WORD( ix, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   ix &= 0x7fffffff;     /* high word of x */
   if ( ix < 0x32000000 ) { /* |x| < 2**-27 */
     if ( ( int ) x == 0 )
@@ -775,11 +753,7 @@ int iy;    /* iy=0 if y is zero */
    ====================================================
 */
 
-#ifdef __STDC__
 const float quicksort_atanhi[  ] = {
-#else
-float quicksort_atanhi[  ] = {
-#endif
   4.6364760399e-01f, /* atan(0.5)hi 0x3eed6338 */
   7.8539812565e-01f, /* atan(1.0)hi 0x3f490fda */
   9.8279368877e-01f, /* atan(1.5)hi 0x3f7b985e */
@@ -787,11 +761,7 @@ float quicksort_atanhi[  ] = {
 };
 
 
-#ifdef __STDC__
 const float quicksort_atanlo[  ] = {
-#else
-float quicksort_atanlo[  ] = {
-#endif
   5.0121582440e-09f, /* atan(0.5)lo 0x31ac3769 */
   3.7748947079e-08f, /* atan(1.0)lo 0x33222168 */
   3.4473217170e-08f, /* atan(1.5)lo 0x33140fb4 */
@@ -799,11 +769,7 @@ float quicksort_atanlo[  ] = {
 };
 
 
-#ifdef __STDC__
 const float quicksort_aT[  ] = {
-#else
-float quicksort_aT[  ] = {
-#endif
   3.3333334327e-01f, /* 0x3eaaaaaa */
   -2.0000000298e-01f, /* 0xbe4ccccd */
   1.4285714924e-01f, /* 0x3e124925 */
@@ -818,18 +784,14 @@ float quicksort_aT[  ] = {
 };
 
 
-#ifdef __STDC__
 float quicksort___atanf( float x )
-#else
-float quicksort___atanf( x )
-float x;
-#endif
 {
   float w, s1, s2, z;
   int ix, hx, id;
 
 
-  QUICKSORT_GET_FLOAT_WORD( hx, x );
+  //QUICKSORT_GET_FLOAT_WORD( hx, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (hx) = gf_u.word; }
   ix = hx & 0x7fffffff;
   if ( ix >= 0x50800000 ) { /* if |x| >= 2^34 */
     if ( ix > 0x7f800000 )
@@ -908,18 +870,14 @@ float x;
    ====================================================
 */
 
-#ifdef __STDC__
 float quicksort___cosf( float x )
-#else
-float quicksort___cosf( x )
-float x;
-#endif
 {
   float y[  2  ], z = 0.0f;
   int n, ix;
 
 
-  QUICKSORT_GET_FLOAT_WORD( ix, x );
+  //QUICKSORT_GET_FLOAT_WORD( ix, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
 
   /* |x| ~< pi/4 */
   ix &= 0x7fffffff;
@@ -964,18 +922,14 @@ float x;
    ====================================================
 */
 
-#ifdef __STDC__
 float quicksort___sinf( float x )
-#else
-float quicksort___sinf( x )
-float x;
-#endif
 {
   float y[  2  ], z = 0.0;
   int n, ix;
 
 
-  QUICKSORT_GET_FLOAT_WORD( ix, x );
+  //QUICKSORT_GET_FLOAT_WORD( ix, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
 
   /* |x| ~< pi/4 */
   ix &= 0x7fffffff;
@@ -1024,18 +978,15 @@ float x;
    fabsf(x) returns the absolute value of x.
 */
 
-#ifdef __STDC__
 float quicksort___fabsf( float x )
-#else
-float quicksort___fabsf( x )
-float x;
-#endif
 {
   unsigned int ix;
 
 
-  QUICKSORT_GET_FLOAT_WORD( ix, x );
-  QUICKSORT_SET_FLOAT_WORD( x, ix & 0x7fffffff );
+  //QUICKSORT_GET_FLOAT_WORD( ix, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
+  //QUICKSORT_SET_FLOAT_WORD( x, ix & 0x7fffffff );
+  { quicksort_ieee_float_shape_type sf_u; sf_u.word = (ix & 0x7fffffff); (x) = sf_u.value; }
   return ( x );
 }
 
@@ -1055,32 +1006,24 @@ float x;
    ====================================================
 */
 
-#ifdef __STDC__
 const float
-#else
-float
-#endif
 quicksort_two25 =  3.355443200e+07f,  /* 0x4c000000 */
 quicksort_twom25 =  2.9802322388e-08f; /* 0x33000000 */
 
-#ifdef __STDC__
 float quicksort___scalbnf( float x, int n )
-#else
-float quicksort___scalbnf( x, n )
-float x;
-int n;
-#endif
 {
   int k, ix;
 
 
-  QUICKSORT_GET_FLOAT_WORD( ix, x );
+  //QUICKSORT_GET_FLOAT_WORD( ix, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   k = ( ix & 0x7f800000 ) >> 23; /* extract exponent */
   if ( k == 0 ) {   /* 0 or subnormal x */
     if ( ( ix & 0x7fffffff ) == 0 )
       return ( x ); /* +-0 */
     x *= quicksort_two25;
-    QUICKSORT_GET_FLOAT_WORD( ix, x );
+    //QUICKSORT_GET_FLOAT_WORD( ix, x );
+    { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
     k = ( ( ix & 0x7f800000 ) >> 23 ) - 25;
   }
 
@@ -1094,7 +1037,8 @@ int n;
     /* underflow */
     return ( quicksort_tiny * quicksort___copysignf( quicksort_tiny, x ) );
   if ( k > 0 ) {    /* normal result */
-    QUICKSORT_SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+    //QUICKSORT_SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+    { quicksort_ieee_float_shape_type sf_u; sf_u.word = (( ix & 0x807fffff ) | ( k << 23 )); (x) = sf_u.value; }
     return ( x );
   }
 
@@ -1102,7 +1046,8 @@ int n;
     /* underflow */
     return ( quicksort_tiny * quicksort___copysignf( quicksort_tiny, x ) );
   k += 25;        /* subnormal result */
-  QUICKSORT_SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+  //QUICKSORT_SET_FLOAT_WORD( x, ( ix & 0x807fffff ) | ( k << 23 ) );
+  { quicksort_ieee_float_shape_type sf_u; sf_u.word = (( ix & 0x807fffff ) | ( k << 23 )); (x) = sf_u.value; }
   return ( x * quicksort_twom25 );
 }
 
@@ -1121,7 +1066,8 @@ int quicksort___isinff( float x )
   int ix, t;
 
 
-  QUICKSORT_GET_FLOAT_WORD( ix, x );
+  //QUICKSORT_GET_FLOAT_WORD( ix, x );
+  { quicksort_ieee_float_shape_type gf_u; gf_u.value = (x); (ix) = gf_u.word; }
   t = ix & 0x7fffffff;
   t ^= 0x7f800000;
   t |= -t;

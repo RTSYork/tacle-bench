@@ -27,7 +27,7 @@ void sha_wordcopy_fwd_aligned( long int dstp, long int srcp, size_t len );
 /* Type to use for aligned memory operations.
    This should normally be the biggest type supported by a single load
    and store.  */
-#define op_t  unsigned long int
+typedef unsigned long int op_t;
 #define OPSIZ (sizeof(op_t))
 
 /* Threshold value for when to enter the unrolled loops.  */
@@ -41,15 +41,15 @@ void sha_wordcopy_fwd_aligned( long int dstp, long int srcp, size_t len );
    the assumption that DST_BP is aligned on an OPSIZ multiple.  If
    not all bytes could be easily copied, store remaining number of bytes
    in NBYTES_LEFT, otherwise store 0.  */
-#define WORD_COPY_FWD(dst_bp, src_bp, nbytes_left, nbytes)          \
-    {                       \
-      if (src_bp % OPSIZ == 0)                  \
-  sha_wordcopy_fwd_aligned (dst_bp, src_bp, (nbytes) / OPSIZ);        \
-      else                      \
-      src_bp += (nbytes) & -OPSIZ;                \
-      dst_bp += (nbytes) & -OPSIZ;                \
-      (nbytes_left) = (nbytes) % OPSIZ;               \
-    }
+// #define WORD_COPY_FWD(dst_bp, src_bp, nbytes_left, nbytes)          \
+//     {                       \
+//       if (src_bp % OPSIZ == 0)                  \
+//   sha_wordcopy_fwd_aligned (dst_bp, src_bp, (nbytes) / OPSIZ);        \
+//       else                      \
+//       src_bp += (nbytes) & -OPSIZ;                \
+//       dst_bp += (nbytes) & -OPSIZ;                \
+//       (nbytes_left) = (nbytes) % OPSIZ;               \
+//     }
 
 #endif  // MEM_HELPER_H
 

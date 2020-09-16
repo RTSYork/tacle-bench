@@ -24,23 +24,23 @@ int ammunition_isspace( int c )
   return ( c == ' ' ) | ( c == '\t' ) | ( c == '\n' ) | ( c == '\r' );
 }
 
-void *ammunition_memcpy( void *dest, const void *src, size_t size )
+void *ammunition_memcpy( unsigned char *dest, const void *src, size_t size )
 {
   size_t i;
   #pragma loopbound min 2 max 6
   for ( i = 0; i < size; i++ )
-    ( ( unsigned char * )dest )[ i ] = ( ( unsigned char * )src )[ i ];
+    dest[ i ] = ( ( unsigned char * )src )[ i ];
 
   return dest;
 }
 
 
-void *ammunition_memset( void *s, int c, size_t n )
+void *ammunition_memset( unsigned char *s, int c, size_t n )
 {
   size_t i;
   #pragma loopbound min 0 max 4
   for ( i = 0; i < n; i++ )
-    ( ( unsigned char * )s )[ i ] = ( unsigned char )c;
+    s[ i ] = ( unsigned char )c;
 
   return s;
 }
@@ -48,14 +48,16 @@ void *ammunition_memset( void *s, int c, size_t n )
 
 int ammunition_memcmp ( const void *mem1, const void *mem2, size_t size )
 {
-  const unsigned char *p1 = ( const unsigned char * ) mem1,
-                       *p2 = ( const unsigned char * ) mem2;
+  const unsigned char *p1 = ( unsigned char * ) mem1,
+                       *p2 = ( unsigned char * ) mem2;
   #pragma loopbound min 0 max 4
   while ( size-- )
     if ( *p1 != *p2 )
       return ( *p1 - *p2 );
-    else
-      p1++, p2++;
+    else {
+      p1++;
+      p2++;
+    }
   return 0;
 }
 
@@ -86,9 +88,11 @@ void *ammunition_memmove ( void *s1, const void *s2, size_t n )
 int ammunition_strcmp ( const char *str1, const char *str2 )
 {
   #pragma loopbound min 1 max 4008
-  while ( *str1 && ( *str1 == *str2 ) )
-    str1++, str2++;
-  return *( const unsigned char * )str1 - *( const unsigned char * )str2;
+  while ( *str1 && ( *str1 == *str2 ) ) {
+    str1++;
+    str2++;
+  }
+  return *( unsigned char * )str1 - *( unsigned char * )str2;
 }
 
 int ammunition_atoi ( const char *str )

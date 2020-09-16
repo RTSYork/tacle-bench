@@ -239,7 +239,7 @@ ammunition_bit_string_move ( void *to, int to_bit_displacement,
   to_bit_displacement %= CHAR_BIT;
   current_from_byte += from_bit_displacement / CHAR_BIT;
   from_bit_displacement %= CHAR_BIT;
-  if ( current_from_byte > current_to_byte
+  if ( (long)current_from_byte > (long)current_to_byte
        || ( current_from_byte == current_to_byte
             && from_bit_displacement > to_bit_displacement ) )
     ammunition_bit_string_copy ( current_to_byte, to_bit_displacement,
