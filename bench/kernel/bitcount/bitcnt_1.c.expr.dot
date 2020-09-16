@@ -53,24 +53,6 @@ strict graph "" {
 		105 -- end	[pos="425.01,255.5 436.65,255.5 448.3,255.5 459.95,255.5",
 			style=invis];
 	}
-	subgraph cluster105 {
-		graph [bb="353.5,152,451.5,310",
-			label="bitcnt_1.c:35:3",
-			lheight=0.21,
-			lp="402.5,298.5",
-			lwidth=1.14
-		];
-		105;
-		106	[fillcolor=lightblue,
-			height=0.5,
-			label=n,
-			pos="401.5,178",
-			shape=square,
-			style=filled,
-			width=0.5];
-		105 -- 106	[dir=back,
-			pos="s,401.5,231.85 401.5,221.76 401.5,212.93 401.5,203.71 401.5,196.11"];
-	}
 	subgraph cluster84 {
 		graph [bb="9.5,152,107.5,385",
 			label="bitcnt_1.c:24:7",
@@ -176,6 +158,24 @@ strict graph "" {
 			width=0.5];
 		103 -- 104	[dir=back,
 			pos="s,296.5,237.37 296.5,227.11 296.5,216.73 296.5,205.22 296.5,196.06"];
+	}
+	subgraph cluster105 {
+		graph [bb="353.5,152,451.5,310",
+			label="bitcnt_1.c:35:3",
+			lheight=0.21,
+			lp="402.5,298.5",
+			lwidth=1.14
+		];
+		105;
+		106	[fillcolor=lightblue,
+			height=0.5,
+			label=n,
+			pos="401.5,178",
+			shape=square,
+			style=filled,
+			width=0.5];
+		105 -- 106	[dir=back,
+			pos="s,401.5,231.85 401.5,221.76 401.5,212.93 401.5,203.71 401.5,196.11"];
 	}
 	rank1	[height=0.5,
 		label="",

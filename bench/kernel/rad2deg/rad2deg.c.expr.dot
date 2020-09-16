@@ -122,33 +122,6 @@ strict graph "" {
 		51 -- 50	[dir=back,
 			pos="s,58.5,462.79 58.5,452.66 58.5,440.49 58.5,428.18 58.5,418.69"];
 	}
-	subgraph cluster53 {
-		graph [bb="115.5,276.5,213.5,571",
-			label="rad2deg.c:53:3",
-			lheight=0.21,
-			lp="164.5,559.5",
-			lwidth=1.14
-		];
-		53;
-		55	[fillcolor=pink,
-			height=0.5,
-			label=0,
-			pos="164.5,302.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		53 -- 55	[dir=back,
-			pos="s,164.5,382.34 164.5,372.11 164.5,355.49 164.5,334.8 164.5,320.51"];
-		54	[fillcolor=lightblue,
-			height=1.0694,
-			label=rad2deg_Y,
-			pos="164.5,501.5",
-			shape=square,
-			style=filled,
-			width=1.0694];
-		54 -- 53	[dir=back,
-			pos="s,164.5,462.79 164.5,452.66 164.5,440.49 164.5,428.18 164.5,418.69"];
-	}
 	subgraph cluster66 {
 		graph [bb="221.5,256,319.5,554.5",
 			label="rad2deg.c:63:7",
@@ -175,6 +148,33 @@ strict graph "" {
 			width=0.61111];
 		67 -- 66	[dir=back,
 			pos="s,270.5,479.02 270.5,468.64 270.5,452.05 270.5,432.4 270.5,418.66"];
+	}
+	subgraph cluster53 {
+		graph [bb="115.5,276.5,213.5,571",
+			label="rad2deg.c:53:3",
+			lheight=0.21,
+			lp="164.5,559.5",
+			lwidth=1.14
+		];
+		53;
+		55	[fillcolor=pink,
+			height=0.5,
+			label=0,
+			pos="164.5,302.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		53 -- 55	[dir=back,
+			pos="s,164.5,382.34 164.5,372.11 164.5,355.49 164.5,334.8 164.5,320.51"];
+		54	[fillcolor=lightblue,
+			height=1.0694,
+			label=rad2deg_Y,
+			pos="164.5,501.5",
+			shape=square,
+			style=filled,
+			width=1.0694];
+		54 -- 53	[dir=back,
+			pos="s,164.5,462.79 164.5,452.66 164.5,440.49 164.5,428.18 164.5,418.69"];
 	}
 	subgraph cluster74 {
 		graph [bb="327.5,276.5,425.5,455",

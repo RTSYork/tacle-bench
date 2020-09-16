@@ -120,24 +120,6 @@ strict graph "" {
 		136 -- end	[pos="1342.4,512.5 1354.2,512.5 1366.1,512.5 1377.9,512.5",
 			style=invis];
 	}
-	subgraph cluster76 {
-		graph [bb="572.5,381,652.5,561.5",
-			label="fac.c:67:5",
-			lheight=0.21,
-			lp="612.5,550",
-			lwidth=0.76
-		];
-		76;
-		77	[fillcolor=lightblue,
-			height=0.88889,
-			label=counter1,
-			pos="612.5,421",
-			shape=square,
-			style=filled,
-			width=0.88889];
-		76 -- 77	[dir=back,
-			pos="s,612.5,494.24 612.5,483.96 612.5,474.27 612.5,463.31 612.5,453.33"];
-	}
 	subgraph cluster84 {
 		graph [bb="739.5,8,913.5,567",
 			label="fac.c:71:5",
@@ -215,6 +197,33 @@ strict graph "" {
 		90 -- 92	[dir=back,
 			pos="s,866.4,88.055 868.13,78.005 869.61,69.362 871.21,60.03 872.54,52.275"];
 	}
+	subgraph cluster30 {
+		graph [bb="11.5,395,91.5,688.5",
+			label="fac.c:32:5",
+			lheight=0.21,
+			lp="51.5,677",
+			lwidth=0.76
+		];
+		30;
+		33	[fillcolor=pink,
+			height=0.5,
+			label=0,
+			pos="51.5,421",
+			shape=square,
+			style=filled,
+			width=0.5];
+		30 -- 33	[dir=back,
+			pos="s,51.5,494.24 51.5,484.21 51.5,469.56 51.5,451.94 51.5,439.2"];
+		31	[fillcolor=lightblue,
+			height=0.88889,
+			label=counter1,
+			pos="51.5,625.5",
+			shape=square,
+			style=filled,
+			width=0.88889];
+		31 -- 30	[dir=back,
+			pos="s,51.5,593.28 51.5,583.19 51.5,565.04 51.5,544.71 51.5,530.72"];
+	}
 	subgraph cluster46 {
 		graph [bb="99.5,395,170.5,679",
 			label="fac.c:48:3",
@@ -241,24 +250,6 @@ strict graph "" {
 			width=0.625];
 		47 -- 46	[dir=back,
 			pos="s,134.5,602.83 134.5,592.83 134.5,572.65 134.5,547.28 134.5,530.74"];
-	}
-	subgraph cluster82 {
-		graph [bb="660.5,395,731.5,567",
-			label="fac.c:69:5",
-			lheight=0.21,
-			lp="696,555.5",
-			lwidth=0.76
-		];
-		82;
-		83	[fillcolor=pink,
-			height=0.5,
-			label=1,
-			pos="695.5,421",
-			shape=square,
-			style=filled,
-			width=0.5];
-		82 -- 83	[dir=back,
-			pos="s,695.5,488.92 695.5,478.62 695.5,465.26 695.5,450.37 695.5,439.21"];
 	}
 	subgraph cluster49 {
 		graph [bb="178.5,395,249.5,680",
@@ -348,6 +339,68 @@ strict graph "" {
 			width=1.4028];
 		63 -- 65	[dir=back,
 			pos="s,467.8,403.31 471.36,393.91 475.9,381.88 481.45,367.19 486.74,353.18"];
+	}
+	subgraph cluster76 {
+		graph [bb="572.5,381,652.5,561.5",
+			label="fac.c:67:5",
+			lheight=0.21,
+			lp="612.5,550",
+			lwidth=0.76
+		];
+		76;
+		77	[fillcolor=lightblue,
+			height=0.88889,
+			label=counter1,
+			pos="612.5,421",
+			shape=square,
+			style=filled,
+			width=0.88889];
+		76 -- 77	[dir=back,
+			pos="s,612.5,494.24 612.5,483.96 612.5,474.27 612.5,463.31 612.5,453.33"];
+	}
+	subgraph cluster82 {
+		graph [bb="660.5,395,731.5,567",
+			label="fac.c:69:5",
+			lheight=0.21,
+			lp="696,555.5",
+			lwidth=0.76
+		];
+		82;
+		83	[fillcolor=pink,
+			height=0.5,
+			label=1,
+			pos="695.5,421",
+			shape=square,
+			style=filled,
+			width=0.5];
+		82 -- 83	[dir=back,
+			pos="s,695.5,488.92 695.5,478.62 695.5,465.26 695.5,450.37 695.5,439.21"];
+	}
+	subgraph cluster136 {
+		graph [bb="1267.5,258.5,1369.5,567",
+			label="fac.c:100:3",
+			lheight=0.21,
+			lp="1318.5,555.5",
+			lwidth=0.85
+		];
+		136;
+		137	[fillcolor=red,
+			height=0.5,
+			label=FuncCall,
+			pos="1318.5,421",
+			style=filled,
+			width=1.1916];
+		136 -- 137	[dir=back,
+			pos="s,1318.5,488.92 1318.5,478.62 1318.5,465.26 1318.5,450.37 1318.5,439.21"];
+		138	[fillcolor=lightblue,
+			height=1,
+			label=fac_return,
+			pos="1318.5,302.5",
+			shape=square,
+			style=filled,
+			width=1];
+		137 -- 138	[dir=back,
+			pos="s,1318.5,402.81 1318.5,392.45 1318.5,376.34 1318.5,355.84 1318.5,338.59"];
 	}
 	subgraph cluster105 {
 		graph [bb="921.5,395,992.5,674.5",
@@ -445,59 +498,6 @@ strict graph "" {
 			width=0.625];
 		116 -- 115	[dir=back,
 			pos="s,1172.5,602.83 1172.5,592.83 1172.5,572.65 1172.5,547.28 1172.5,530.74"];
-	}
-	subgraph cluster136 {
-		graph [bb="1267.5,258.5,1369.5,567",
-			label="fac.c:100:3",
-			lheight=0.21,
-			lp="1318.5,555.5",
-			lwidth=0.85
-		];
-		136;
-		137	[fillcolor=red,
-			height=0.5,
-			label=FuncCall,
-			pos="1318.5,421",
-			style=filled,
-			width=1.1916];
-		136 -- 137	[dir=back,
-			pos="s,1318.5,488.92 1318.5,478.62 1318.5,465.26 1318.5,450.37 1318.5,439.21"];
-		138	[fillcolor=lightblue,
-			height=1,
-			label=fac_return,
-			pos="1318.5,302.5",
-			shape=square,
-			style=filled,
-			width=1];
-		137 -- 138	[dir=back,
-			pos="s,1318.5,402.81 1318.5,392.45 1318.5,376.34 1318.5,355.84 1318.5,338.59"];
-	}
-	subgraph cluster30 {
-		graph [bb="11.5,395,91.5,688.5",
-			label="fac.c:32:5",
-			lheight=0.21,
-			lp="51.5,677",
-			lwidth=0.76
-		];
-		30;
-		33	[fillcolor=pink,
-			height=0.5,
-			label=0,
-			pos="51.5,421",
-			shape=square,
-			style=filled,
-			width=0.5];
-		30 -- 33	[dir=back,
-			pos="s,51.5,494.24 51.5,484.21 51.5,469.56 51.5,451.94 51.5,439.2"];
-		31	[fillcolor=lightblue,
-			height=0.88889,
-			label=counter1,
-			pos="51.5,625.5",
-			shape=square,
-			style=filled,
-			width=0.88889];
-		31 -- 30	[dir=back,
-			pos="s,51.5,593.28 51.5,583.19 51.5,565.04 51.5,544.71 51.5,530.72"];
 	}
 	rank1	[height=0.5,
 		label="",

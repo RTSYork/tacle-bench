@@ -69,191 +69,6 @@ strict graph "" {
 42890,376.35 42888,368.54",
 			style=invis];
 	}
-	subgraph cluster825 {
-		graph [bb="42552,8,42878,498.87",
-			label="input.c:84:7",
-			lheight=0.21,
-			lp="42716,487.37",
-			lwidth=0.92
-		];
-		825;
-		831	[fillcolor=green,
-			height=0.5,
-			label=ArrayRef,
-			pos="42604,237",
-			style=filled,
-			width=1.2277];
-		825 -- 831	[dir=back,
-			pos="s,42625,347.87 42623,337.93 42619,312.93 42612,276.53 42608,255.26"];
-		832	[fillcolor=green,
-			height=0.5,
-			label=ArrayRef,
-			pos="42604,108",
-			style=filled,
-			width=1.2277];
-		831 -- 832	[dir=back,
-			pos="s,42604,218.87 42604,208.6 42604,183.6 42604,147.44 42604,126.26"];
-		835	[fillcolor=lightblue,
-			height=0.5,
-			label=j,
-			pos="42684,108",
-			shape=square,
-			style=filled,
-			width=0.5];
-		831 -- 835	[dir=back,
-			pos="s,42615,219.4 42620,210.77 42636,185.65 42660,147.77 42674,126.01"];
-		833	[fillcolor=lightblue,
-			height=0.52778,
-			label=tmp,
-			pos="42592,35",
-			shape=square,
-			style=filled,
-			width=0.52778];
-		832 -- 833	[dir=back,
-			pos="s,42601,89.813 42600,79.779 42598,71.152 42596,61.833 42595,54.02"];
-		834	[fillcolor=lightblue,
-			height=0.5,
-			label=i,
-			pos="42646,35",
-			shape=square,
-			style=filled,
-			width=0.5];
-		832 -- 834	[dir=back,
-			pos="s,42614,90.174 42620,81.562 42625,72.149 42631,61.708 42636,53.198"];
-		826	[fillcolor=green,
-			height=0.5,
-			label=ArrayRef,
-			pos="42742,449.87",
-			style=filled,
-			width=1.2277];
-		826 -- 825	[dir=back,
-			pos="s,42718,434.56 42709,429.09 42702,424.59 42695,419.74 42688,415 42673,404.05 42657,390.6 42645,380.72"];
-		827	[fillcolor=green,
-			height=0.5,
-			label=ArrayRef,
-			pos="42742,366",
-			style=filled,
-			width=1.2277];
-		826 -- 827	[dir=back,
-			pos="s,42742,431.51 42742,421.27 42742,408.95 42742,394.81 42742,384.06"];
-		830	[fillcolor=lightblue,
-			height=0.5,
-			label=j,
-			pos="42822,366",
-			shape=square,
-			style=filled,
-			width=0.5];
-		826 -- 830	[dir=back,
-			pos="s,42768,435.31 42777,429.77 42783,425.42 42789,420.46 42794,415 42803,406.11 42810,394.11 42814,384.33"];
-		828	[fillcolor=lightblue,
-			height=2.0833,
-			label=cjpeg_wrbmp_colormap,
-			pos="42742,237",
-			shape=square,
-			style=filled,
-			width=2.0833];
-		827 -- 828	[dir=back,
-			pos="s,42742,347.87 42742,337.75 42742,330.03 42742,321.24 42742,312.14"];
-		829	[fillcolor=lightblue,
-			height=0.5,
-			label=i,
-			pos="42852,237",
-			shape=square,
-			style=filled,
-			width=0.5];
-		827 -- 829	[dir=back,
-			pos="s,42771,352.41 42780,347.63 42796,338.88 42813,326.92 42826,312 42839,295.29 42846,271.24 42850,255.14"];
-	}
-	subgraph cluster823 {
-		graph [bb="42456,211,42544,415",
-			label="input.c:83:27",
-			lheight=0.21,
-			lp="42500,403.5",
-			lwidth=1.01
-		];
-		823;
-		824	[fillcolor=lightblue,
-			height=0.5,
-			label=j,
-			pos="42500,237",
-			shape=square,
-			style=filled,
-			width=0.5];
-		823 -- 824	[dir=back,
-			pos="s,42500,347.87 42500,337.6 42500,312.6 42500,276.44 42500,255.26"];
-	}
-	subgraph cluster817 {
-		graph [bb="42358,211,42448,498.87",
-			label="input.c:83:11",
-			lheight=0.21,
-			lp="42403,487.37",
-			lwidth=1.01
-		];
-		817;
-		819	[fillcolor=pink,
-			height=0.5,
-			label=0,
-			pos="42402,237",
-			shape=square,
-			style=filled,
-			width=0.5];
-		817 -- 819	[dir=back,
-			pos="s,42402,347.87 42402,337.6 42402,312.6 42402,276.44 42402,255.26"];
-		818	[fillcolor=lightblue,
-			height=0.5,
-			label=j,
-			pos="42402,449.87",
-			shape=square,
-			style=filled,
-			width=0.5];
-		818 -- 817	[dir=back,
-			pos="s,42402,431.51 42402,421.27 42402,408.95 42402,394.81 42402,384.06"];
-	}
-	subgraph cluster812 {
-		graph [bb="42262,211,42350,415",
-			label="input.c:81:23",
-			lheight=0.21,
-			lp="42306,403.5",
-			lwidth=1.01
-		];
-		812;
-		813	[fillcolor=lightblue,
-			height=0.5,
-			label=i,
-			pos="42306,237",
-			shape=square,
-			style=filled,
-			width=0.5];
-		812 -- 813	[dir=back,
-			pos="s,42306,347.87 42306,337.6 42306,312.6 42306,276.44 42306,255.26"];
-	}
-	subgraph cluster806 {
-		graph [bb="42172,211,42254,498.87",
-			label="input.c:81:9",
-			lheight=0.21,
-			lp="42212,487.37",
-			lwidth=0.92
-		];
-		806;
-		808	[fillcolor=pink,
-			height=0.5,
-			label=0,
-			pos="42212,237",
-			shape=square,
-			style=filled,
-			width=0.5];
-		806 -- 808	[dir=back,
-			pos="s,42212,347.87 42212,337.6 42212,312.6 42212,276.44 42212,255.26"];
-		807	[fillcolor=lightblue,
-			height=0.5,
-			label=i,
-			pos="42212,449.87",
-			shape=square,
-			style=filled,
-			width=0.5];
-		807 -- 806	[dir=back,
-			pos="s,42212,431.51 42212,421.27 42212,408.95 42212,394.81 42212,384.06"];
-	}
 	subgraph cluster25 {
 		graph [bb="9.5,8.5,42164,671.48",
 			label="input.c:25:26",
@@ -7251,6 +7066,191 @@ dim_quals: []",
 			width=0.52778];
 		28 -- 27	[dir=back,
 			pos="s,21178,602.36 21178,592.27 21178,583.9 21178,574.76 21178,566.54"];
+	}
+	subgraph cluster806 {
+		graph [bb="42172,211,42254,498.87",
+			label="input.c:81:9",
+			lheight=0.21,
+			lp="42212,487.37",
+			lwidth=0.92
+		];
+		806;
+		808	[fillcolor=pink,
+			height=0.5,
+			label=0,
+			pos="42212,237",
+			shape=square,
+			style=filled,
+			width=0.5];
+		806 -- 808	[dir=back,
+			pos="s,42212,347.87 42212,337.6 42212,312.6 42212,276.44 42212,255.26"];
+		807	[fillcolor=lightblue,
+			height=0.5,
+			label=i,
+			pos="42212,449.87",
+			shape=square,
+			style=filled,
+			width=0.5];
+		807 -- 806	[dir=back,
+			pos="s,42212,431.51 42212,421.27 42212,408.95 42212,394.81 42212,384.06"];
+	}
+	subgraph cluster812 {
+		graph [bb="42262,211,42350,415",
+			label="input.c:81:23",
+			lheight=0.21,
+			lp="42306,403.5",
+			lwidth=1.01
+		];
+		812;
+		813	[fillcolor=lightblue,
+			height=0.5,
+			label=i,
+			pos="42306,237",
+			shape=square,
+			style=filled,
+			width=0.5];
+		812 -- 813	[dir=back,
+			pos="s,42306,347.87 42306,337.6 42306,312.6 42306,276.44 42306,255.26"];
+	}
+	subgraph cluster817 {
+		graph [bb="42358,211,42448,498.87",
+			label="input.c:83:11",
+			lheight=0.21,
+			lp="42403,487.37",
+			lwidth=1.01
+		];
+		817;
+		819	[fillcolor=pink,
+			height=0.5,
+			label=0,
+			pos="42402,237",
+			shape=square,
+			style=filled,
+			width=0.5];
+		817 -- 819	[dir=back,
+			pos="s,42402,347.87 42402,337.6 42402,312.6 42402,276.44 42402,255.26"];
+		818	[fillcolor=lightblue,
+			height=0.5,
+			label=j,
+			pos="42402,449.87",
+			shape=square,
+			style=filled,
+			width=0.5];
+		818 -- 817	[dir=back,
+			pos="s,42402,431.51 42402,421.27 42402,408.95 42402,394.81 42402,384.06"];
+	}
+	subgraph cluster823 {
+		graph [bb="42456,211,42544,415",
+			label="input.c:83:27",
+			lheight=0.21,
+			lp="42500,403.5",
+			lwidth=1.01
+		];
+		823;
+		824	[fillcolor=lightblue,
+			height=0.5,
+			label=j,
+			pos="42500,237",
+			shape=square,
+			style=filled,
+			width=0.5];
+		823 -- 824	[dir=back,
+			pos="s,42500,347.87 42500,337.6 42500,312.6 42500,276.44 42500,255.26"];
+	}
+	subgraph cluster825 {
+		graph [bb="42552,8,42878,498.87",
+			label="input.c:84:7",
+			lheight=0.21,
+			lp="42716,487.37",
+			lwidth=0.92
+		];
+		825;
+		831	[fillcolor=green,
+			height=0.5,
+			label=ArrayRef,
+			pos="42604,237",
+			style=filled,
+			width=1.2277];
+		825 -- 831	[dir=back,
+			pos="s,42625,347.87 42623,337.93 42619,312.93 42612,276.53 42608,255.26"];
+		832	[fillcolor=green,
+			height=0.5,
+			label=ArrayRef,
+			pos="42604,108",
+			style=filled,
+			width=1.2277];
+		831 -- 832	[dir=back,
+			pos="s,42604,218.87 42604,208.6 42604,183.6 42604,147.44 42604,126.26"];
+		835	[fillcolor=lightblue,
+			height=0.5,
+			label=j,
+			pos="42684,108",
+			shape=square,
+			style=filled,
+			width=0.5];
+		831 -- 835	[dir=back,
+			pos="s,42615,219.4 42620,210.77 42636,185.65 42660,147.77 42674,126.01"];
+		833	[fillcolor=lightblue,
+			height=0.52778,
+			label=tmp,
+			pos="42592,35",
+			shape=square,
+			style=filled,
+			width=0.52778];
+		832 -- 833	[dir=back,
+			pos="s,42601,89.813 42600,79.779 42598,71.152 42596,61.833 42595,54.02"];
+		834	[fillcolor=lightblue,
+			height=0.5,
+			label=i,
+			pos="42646,35",
+			shape=square,
+			style=filled,
+			width=0.5];
+		832 -- 834	[dir=back,
+			pos="s,42614,90.174 42620,81.562 42625,72.149 42631,61.708 42636,53.198"];
+		826	[fillcolor=green,
+			height=0.5,
+			label=ArrayRef,
+			pos="42742,449.87",
+			style=filled,
+			width=1.2277];
+		826 -- 825	[dir=back,
+			pos="s,42718,434.56 42709,429.09 42702,424.59 42695,419.74 42688,415 42673,404.05 42657,390.6 42645,380.72"];
+		827	[fillcolor=green,
+			height=0.5,
+			label=ArrayRef,
+			pos="42742,366",
+			style=filled,
+			width=1.2277];
+		826 -- 827	[dir=back,
+			pos="s,42742,431.51 42742,421.27 42742,408.95 42742,394.81 42742,384.06"];
+		830	[fillcolor=lightblue,
+			height=0.5,
+			label=j,
+			pos="42822,366",
+			shape=square,
+			style=filled,
+			width=0.5];
+		826 -- 830	[dir=back,
+			pos="s,42768,435.31 42777,429.77 42783,425.42 42789,420.46 42794,415 42803,406.11 42810,394.11 42814,384.33"];
+		828	[fillcolor=lightblue,
+			height=2.0833,
+			label=cjpeg_wrbmp_colormap,
+			pos="42742,237",
+			shape=square,
+			style=filled,
+			width=2.0833];
+		827 -- 828	[dir=back,
+			pos="s,42742,347.87 42742,337.75 42742,330.03 42742,321.24 42742,312.14"];
+		829	[fillcolor=lightblue,
+			height=0.5,
+			label=i,
+			pos="42852,237",
+			shape=square,
+			style=filled,
+			width=0.5];
+		827 -- 829	[dir=back,
+			pos="s,42771,352.41 42780,347.63 42796,338.88 42813,326.92 42826,312 42839,295.29 42846,271.24 42850,255.14"];
 	}
 	rank1	[height=0.5,
 		label="",

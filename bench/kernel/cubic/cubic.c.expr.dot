@@ -487,195 +487,6 @@ strict graph "" {
 		753 -- end	[pos="8938.4,1088.5 8950.2,1088.5 8962.1,1088.5 8973.9,1088.5",
 			style=invis];
 	}
-	subgraph cluster8 {
-		graph [bb="11.5,933.5,125.5,1293.5",
-			label="wcclibm.h:41:20",
-			lheight=0.21,
-			lp="68.5,1282",
-			lwidth=1.29
-		];
-		8;
-		11	[fillcolor=pink,
-			height=0.52778,
-			label="1.0f",
-			pos="68.5,960.5",
-			shape=square,
-			style=filled,
-			width=0.52778];
-		8 -- 11	[dir=back,
-			pos="s,68.5,1070.2 68.5,1060.2 68.5,1035.9 68.5,1000.9 68.5,979.77"];
-		9	[fillcolor=lightblue,
-			height=1.3611,
-			label=basicmath_one,
-			pos="68.5,1213.5",
-			shape=square,
-			style=filled,
-			width=1.3611];
-		9 -- 8	[dir=back,
-			pos="s,68.5,1164.2 68.5,1154.1 68.5,1136.8 68.5,1119.1 68.5,1106.6"];
-	}
-	subgraph cluster12 {
-		graph [bb="133.5,921.5,249.5,1294.5",
-			label="wcclibm.h:42:20",
-			lheight=0.21,
-			lp="191.5,1283",
-			lwidth=1.29
-		];
-		12;
-		15	[fillcolor=pink,
-			height=0.86111,
-			label="1.0e-30f",
-			pos="191.5,960.5",
-			shape=square,
-			style=filled,
-			width=0.86111];
-		12 -- 15	[dir=back,
-			pos="s,191.5,1070.2 191.5,1060.1 191.5,1039.9 191.5,1012.4 191.5,991.59"];
-		13	[fillcolor=lightblue,
-			height=1.3889,
-			label=basicmath_tiny,
-			pos="191.5,1213.5",
-			shape=square,
-			style=filled,
-			width=1.3889];
-		13 -- 12	[dir=back,
-			pos="s,191.5,1163.2 191.5,1152.7 191.5,1135.8 191.5,1118.8 191.5,1106.6"];
-	}
-	subgraph cluster16 {
-		graph [bb="257.5,893,393.5,1294.5",
-			label="wcclibm.h:43:20",
-			lheight=0.21,
-			lp="325.5,1283",
-			lwidth=1.29
-		];
-		16;
-		19	[fillcolor=pink,
-			height=1.6528,
-			label="5.0000000000e-01",
-			pos="325.5,960.5",
-			shape=square,
-			style=filled,
-			width=1.6528];
-		16 -- 19	[dir=back,
-			pos="s,325.5,1070.2 325.5,1060.2 325.5,1048.4 325.5,1034.1 325.5,1020.1"];
-		17	[fillcolor=lightblue,
-			height=1.3889,
-			label=basicmath_half,
-			pos="325.5,1213.5",
-			shape=square,
-			style=filled,
-			width=1.3889];
-		17 -- 16	[dir=back,
-			pos="s,325.5,1163.2 325.5,1152.7 325.5,1135.8 325.5,1118.8 325.5,1106.6"];
-	}
-	subgraph cluster20 {
-		graph [bb="401.5,926,523.5,1297",
-			label="wcclibm.h:44:20",
-			lheight=0.21,
-			lp="462.5,1285.5",
-			lwidth=1.29
-		];
-		20;
-		23	[fillcolor=pink,
-			height=0.73611,
-			label="1.0e30",
-			pos="462.5,960.5",
-			shape=square,
-			style=filled,
-			width=0.73611];
-		20 -- 23	[dir=back,
-			pos="s,462.5,1070.2 462.5,1060.1 462.5,1038.4 462.5,1008.5 462.5,987.27"];
-		21	[fillcolor=lightblue,
-			height=1.4583,
-			label=basicmath_huge,
-			pos="462.5,1213.5",
-			shape=square,
-			style=filled,
-			width=1.4583];
-		21 -- 20	[dir=back,
-			pos="s,462.5,1160.7 462.5,1150.7 462.5,1134.5 462.5,1118.4 462.5,1106.7"];
-	}
-	subgraph cluster24 {
-		graph [bb="531.5,934.5,647.5,1294",
-			label="wcclibm.h:45:20",
-			lheight=0.21,
-			lp="589.5,1282.5",
-			lwidth=1.29
-		];
-		24;
-		27	[fillcolor=pink,
-			height=0.5,
-			label=2.0,
-			pos="589.5,960.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		24 -- 27	[dir=back,
-			pos="s,589.5,1070.2 589.5,1060 589.5,1035.2 589.5,999.47 589.5,978.55"];
-		25	[fillcolor=lightblue,
-			height=1.375,
-			label=basicmath_two,
-			pos="589.5,1213.5",
-			shape=square,
-			style=filled,
-			width=1.375];
-		25 -- 24	[dir=back,
-			pos="s,589.5,1163.9 589.5,1153.8 589.5,1136.5 589.5,1118.9 589.5,1106.5"];
-	}
-	subgraph cluster28 {
-		graph [bb="655.5,912,785.5,1301",
-			label="wcclibm.h:46:20",
-			lheight=0.21,
-			lp="720.5,1289.5",
-			lwidth=1.29
-		];
-		28;
-		31	[fillcolor=pink,
-			height=1.125,
-			label=16777216.0,
-			pos="720.5,960.5",
-			shape=square,
-			style=filled,
-			width=1.125];
-		28 -- 31	[dir=back,
-			pos="s,720.5,1070.2 720.5,1059.8 720.5,1042.5 720.5,1020.1 720.5,1001.1"];
-		29	[fillcolor=lightblue,
-			height=1.5694,
-			label=basicmath_two24,
-			pos="720.5,1213.5",
-			shape=square,
-			style=filled,
-			width=1.5694];
-		29 -- 28	[dir=back,
-			pos="s,720.5,1156.8 720.5,1146.5 720.5,1131.7 720.5,1117.3 720.5,1106.6"];
-	}
-	subgraph cluster32 {
-		graph [bb="793.5,934.5,911.5,1295.5",
-			label="wcclibm.h:47:20",
-			lheight=0.21,
-			lp="852.5,1284",
-			lwidth=1.29
-		];
-		32;
-		35	[fillcolor=pink,
-			height=0.5,
-			label=0.0,
-			pos="852.5,960.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		32 -- 35	[dir=back,
-			pos="s,852.5,1070.2 852.5,1060 852.5,1035.2 852.5,999.47 852.5,978.55"];
-		33	[fillcolor=lightblue,
-			height=1.4167,
-			label=basicmath_zero,
-			pos="852.5,1213.5",
-			shape=square,
-			style=filled,
-			width=1.4167];
-		33 -- 32	[dir=back,
-			pos="s,852.5,1162.5 852.5,1152.1 852.5,1135.5 852.5,1118.7 852.5,1106.7"];
-	}
 	subgraph cluster286 {
 		graph [bb="919.5,933.5,1002.5,1277",
 			label="cubic.c:65:3",
@@ -3426,6 +3237,195 @@ op: -",
 			width=1.1806];
 		754 -- 755	[dir=back,
 			pos="s,8914.5,942.38 8914.5,932.13 8914.5,902.99 8914.5,856.53 8914.5,822.81"];
+	}
+	subgraph cluster8 {
+		graph [bb="11.5,933.5,125.5,1293.5",
+			label="wcclibm.h:41:20",
+			lheight=0.21,
+			lp="68.5,1282",
+			lwidth=1.29
+		];
+		8;
+		11	[fillcolor=pink,
+			height=0.52778,
+			label="1.0f",
+			pos="68.5,960.5",
+			shape=square,
+			style=filled,
+			width=0.52778];
+		8 -- 11	[dir=back,
+			pos="s,68.5,1070.2 68.5,1060.2 68.5,1035.9 68.5,1000.9 68.5,979.77"];
+		9	[fillcolor=lightblue,
+			height=1.3611,
+			label=basicmath_one,
+			pos="68.5,1213.5",
+			shape=square,
+			style=filled,
+			width=1.3611];
+		9 -- 8	[dir=back,
+			pos="s,68.5,1164.2 68.5,1154.1 68.5,1136.8 68.5,1119.1 68.5,1106.6"];
+	}
+	subgraph cluster12 {
+		graph [bb="133.5,921.5,249.5,1294.5",
+			label="wcclibm.h:42:20",
+			lheight=0.21,
+			lp="191.5,1283",
+			lwidth=1.29
+		];
+		12;
+		15	[fillcolor=pink,
+			height=0.86111,
+			label="1.0e-30f",
+			pos="191.5,960.5",
+			shape=square,
+			style=filled,
+			width=0.86111];
+		12 -- 15	[dir=back,
+			pos="s,191.5,1070.2 191.5,1060.1 191.5,1039.9 191.5,1012.4 191.5,991.59"];
+		13	[fillcolor=lightblue,
+			height=1.3889,
+			label=basicmath_tiny,
+			pos="191.5,1213.5",
+			shape=square,
+			style=filled,
+			width=1.3889];
+		13 -- 12	[dir=back,
+			pos="s,191.5,1163.2 191.5,1152.7 191.5,1135.8 191.5,1118.8 191.5,1106.6"];
+	}
+	subgraph cluster16 {
+		graph [bb="257.5,893,393.5,1294.5",
+			label="wcclibm.h:43:20",
+			lheight=0.21,
+			lp="325.5,1283",
+			lwidth=1.29
+		];
+		16;
+		19	[fillcolor=pink,
+			height=1.6528,
+			label="5.0000000000e-01",
+			pos="325.5,960.5",
+			shape=square,
+			style=filled,
+			width=1.6528];
+		16 -- 19	[dir=back,
+			pos="s,325.5,1070.2 325.5,1060.2 325.5,1048.4 325.5,1034.1 325.5,1020.1"];
+		17	[fillcolor=lightblue,
+			height=1.3889,
+			label=basicmath_half,
+			pos="325.5,1213.5",
+			shape=square,
+			style=filled,
+			width=1.3889];
+		17 -- 16	[dir=back,
+			pos="s,325.5,1163.2 325.5,1152.7 325.5,1135.8 325.5,1118.8 325.5,1106.6"];
+	}
+	subgraph cluster20 {
+		graph [bb="401.5,926,523.5,1297",
+			label="wcclibm.h:44:20",
+			lheight=0.21,
+			lp="462.5,1285.5",
+			lwidth=1.29
+		];
+		20;
+		23	[fillcolor=pink,
+			height=0.73611,
+			label="1.0e30",
+			pos="462.5,960.5",
+			shape=square,
+			style=filled,
+			width=0.73611];
+		20 -- 23	[dir=back,
+			pos="s,462.5,1070.2 462.5,1060.1 462.5,1038.4 462.5,1008.5 462.5,987.27"];
+		21	[fillcolor=lightblue,
+			height=1.4583,
+			label=basicmath_huge,
+			pos="462.5,1213.5",
+			shape=square,
+			style=filled,
+			width=1.4583];
+		21 -- 20	[dir=back,
+			pos="s,462.5,1160.7 462.5,1150.7 462.5,1134.5 462.5,1118.4 462.5,1106.7"];
+	}
+	subgraph cluster24 {
+		graph [bb="531.5,934.5,647.5,1294",
+			label="wcclibm.h:45:20",
+			lheight=0.21,
+			lp="589.5,1282.5",
+			lwidth=1.29
+		];
+		24;
+		27	[fillcolor=pink,
+			height=0.5,
+			label=2.0,
+			pos="589.5,960.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		24 -- 27	[dir=back,
+			pos="s,589.5,1070.2 589.5,1060 589.5,1035.2 589.5,999.47 589.5,978.55"];
+		25	[fillcolor=lightblue,
+			height=1.375,
+			label=basicmath_two,
+			pos="589.5,1213.5",
+			shape=square,
+			style=filled,
+			width=1.375];
+		25 -- 24	[dir=back,
+			pos="s,589.5,1163.9 589.5,1153.8 589.5,1136.5 589.5,1118.9 589.5,1106.5"];
+	}
+	subgraph cluster28 {
+		graph [bb="655.5,912,785.5,1301",
+			label="wcclibm.h:46:20",
+			lheight=0.21,
+			lp="720.5,1289.5",
+			lwidth=1.29
+		];
+		28;
+		31	[fillcolor=pink,
+			height=1.125,
+			label=16777216.0,
+			pos="720.5,960.5",
+			shape=square,
+			style=filled,
+			width=1.125];
+		28 -- 31	[dir=back,
+			pos="s,720.5,1070.2 720.5,1059.8 720.5,1042.5 720.5,1020.1 720.5,1001.1"];
+		29	[fillcolor=lightblue,
+			height=1.5694,
+			label=basicmath_two24,
+			pos="720.5,1213.5",
+			shape=square,
+			style=filled,
+			width=1.5694];
+		29 -- 28	[dir=back,
+			pos="s,720.5,1156.8 720.5,1146.5 720.5,1131.7 720.5,1117.3 720.5,1106.6"];
+	}
+	subgraph cluster32 {
+		graph [bb="793.5,934.5,911.5,1295.5",
+			label="wcclibm.h:47:20",
+			lheight=0.21,
+			lp="852.5,1284",
+			lwidth=1.29
+		];
+		32;
+		35	[fillcolor=pink,
+			height=0.5,
+			label=0.0,
+			pos="852.5,960.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		32 -- 35	[dir=back,
+			pos="s,852.5,1070.2 852.5,1060 852.5,1035.2 852.5,999.47 852.5,978.55"];
+		33	[fillcolor=lightblue,
+			height=1.4167,
+			label=basicmath_zero,
+			pos="852.5,1213.5",
+			shape=square,
+			style=filled,
+			width=1.4167];
+		33 -- 32	[dir=back,
+			pos="s,852.5,1162.5 852.5,1152.1 852.5,1135.5 852.5,1118.7 852.5,1106.7"];
 	}
 	rank1	[height=0.5,
 		label="",

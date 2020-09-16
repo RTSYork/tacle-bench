@@ -38,6 +38,51 @@ strict graph "" {
 544.87",
 			style=invis];
 	}
+	subgraph cluster915 {
+		graph [bb="9.5,8,297.5,1097.5",
+			label="powerwindow_PW_Control_PSG_BackL.c:47:43",
+			lheight=0.21,
+			lp="153.5,1086",
+			lwidth=3.78
+		];
+		915;
+		919	[fillcolor=green,
+			height=0.74639,
+			label="UnaryOp
+op: &",
+			pos="153.5,348.87",
+			style=filled,
+			width=1.316];
+		915 -- 919	[dir=back,
+			pos="s,153.5,525.17 153.5,515.12 153.5,478.15 153.5,412.39 153.5,375.97"];
+		920	[fillcolor=lightblue,
+			height=3.75,
+			label=powerwindow_PW_Control_PSG_BackL_M_,
+			pos="153.5,151",
+			shape=square,
+			style=filled,
+			width=3.75];
+		919 -- 920	[dir=back,
+			pos="s,153.5,321.86 153.5,311.61 153.5,303.94 153.5,295.41 153.5,286.4"];
+		916	[fillcolor=green,
+			height=0.74639,
+			label="PtrDecl
+quals: ['const']",
+			pos="153.5,737.61",
+			style=filled,
+			width=1.866];
+		916 -- 915	[dir=back,
+			pos="s,153.5,710.67 153.5,700.41 153.5,658.83 153.5,592.34 153.5,561.27"];
+		917	[fillcolor=lightblue,
+			height=3.6528,
+			label=powerwindow_PW_Control_PSG_BackL_M,
+			pos="153.5,934.98",
+			shape=square,
+			style=filled,
+			width=3.6528];
+		917 -- 916	[dir=back,
+			pos="s,153.5,803.39 153.5,793.39 153.5,782.74 153.5,772.94 153.5,764.66"];
+	}
 	subgraph cluster1079 {
 		graph [bb="305.5,105.52,875.5,795.48",
 			label="powerwindow_PW_Control_PSG_BackL.c:101:5",
@@ -120,51 +165,6 @@ quals: []",
 			width=1.4722];
 		1086 -- 1085	[dir=back,
 			pos="s,367.31,490.18 367.47,479.95 368.02,444.62 368.68,402.3 369.1,375.74"];
-	}
-	subgraph cluster915 {
-		graph [bb="9.5,8,297.5,1097.5",
-			label="powerwindow_PW_Control_PSG_BackL.c:47:43",
-			lheight=0.21,
-			lp="153.5,1086",
-			lwidth=3.78
-		];
-		915;
-		919	[fillcolor=green,
-			height=0.74639,
-			label="UnaryOp
-op: &",
-			pos="153.5,348.87",
-			style=filled,
-			width=1.316];
-		915 -- 919	[dir=back,
-			pos="s,153.5,525.17 153.5,515.12 153.5,478.15 153.5,412.39 153.5,375.97"];
-		920	[fillcolor=lightblue,
-			height=3.75,
-			label=powerwindow_PW_Control_PSG_BackL_M_,
-			pos="153.5,151",
-			shape=square,
-			style=filled,
-			width=3.75];
-		919 -- 920	[dir=back,
-			pos="s,153.5,321.86 153.5,311.61 153.5,303.94 153.5,295.41 153.5,286.4"];
-		916	[fillcolor=green,
-			height=0.74639,
-			label="PtrDecl
-quals: ['const']",
-			pos="153.5,737.61",
-			style=filled,
-			width=1.866];
-		916 -- 915	[dir=back,
-			pos="s,153.5,710.67 153.5,700.41 153.5,658.83 153.5,592.34 153.5,561.27"];
-		917	[fillcolor=lightblue,
-			height=3.6528,
-			label=powerwindow_PW_Control_PSG_BackL_M,
-			pos="153.5,934.98",
-			shape=square,
-			style=filled,
-			width=3.6528];
-		917 -- 916	[dir=back,
-			pos="s,153.5,803.39 153.5,793.39 153.5,782.74 153.5,772.94 153.5,764.66"];
 	}
 	rank1	[height=0.5,
 		label="",

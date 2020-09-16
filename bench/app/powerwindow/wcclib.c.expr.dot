@@ -54,42 +54,6 @@ strict graph "" {
 		69 -- end	[pos="544.13,295.82 554.26,295.82 564.39,295.82 574.52,295.82",
 			style=invis];
 	}
-	subgraph cluster69 {
-		graph [bb="476.5,153.95,566.5,350.32",
-			label="wcclib.c:11:3",
-			lheight=0.21,
-			lp="521.5,338.82",
-			lwidth=1.03
-		];
-		69;
-		70	[fillcolor=lightblue,
-			height=0.5,
-			label=s,
-			pos="520.5,179.95",
-			shape=square,
-			style=filled,
-			width=0.5];
-		69 -- 70	[dir=back,
-			pos="s,520.5,272.05 520.5,262 520.5,241.14 520.5,214.98 520.5,198.12"];
-	}
-	subgraph cluster58 {
-		graph [bb="122.5,153.95,212.5,344.82",
-			label="wcclib.c:9:11",
-			lheight=0.21,
-			lp="167.5,333.32",
-			lwidth=1.03
-		];
-		58;
-		59	[fillcolor=lightblue,
-			height=0.5,
-			label=n,
-			pos="167.5,179.95",
-			shape=square,
-			style=filled,
-			width=0.5];
-		58 -- 59	[dir=back,
-			pos="s,167.5,277.53 167.5,267.35 167.5,245.76 167.5,216.37 167.5,198.04"];
-	}
 	subgraph cluster60 {
 		graph [bb="220.5,8,468.5,443.43",
 			label="wcclib.c:10:6",
@@ -163,6 +127,42 @@ quals: []",
 			width=1.4722];
 		66 -- 65	[dir=back,
 			pos="s,284.01,126.89 284.5,116.69 284.92,107.96 285.34,99.239 285.73,91.203"];
+	}
+	subgraph cluster69 {
+		graph [bb="476.5,153.95,566.5,350.32",
+			label="wcclib.c:11:3",
+			lheight=0.21,
+			lp="521.5,338.82",
+			lwidth=1.03
+		];
+		69;
+		70	[fillcolor=lightblue,
+			height=0.5,
+			label=s,
+			pos="520.5,179.95",
+			shape=square,
+			style=filled,
+			width=0.5];
+		69 -- 70	[dir=back,
+			pos="s,520.5,272.05 520.5,262 520.5,241.14 520.5,214.98 520.5,198.12"];
+	}
+	subgraph cluster58 {
+		graph [bb="122.5,153.95,212.5,344.82",
+			label="wcclib.c:9:11",
+			lheight=0.21,
+			lp="167.5,333.32",
+			lwidth=1.03
+		];
+		58;
+		59	[fillcolor=lightblue,
+			height=0.5,
+			label=n,
+			pos="167.5,179.95",
+			shape=square,
+			style=filled,
+			width=0.5];
+		58 -- 59	[dir=back,
+			pos="s,167.5,277.53 167.5,267.35 167.5,245.76 167.5,216.37 167.5,198.04"];
 	}
 	subgraph cluster51 {
 		graph [bb="10.5,153.95,114.5,518.43",

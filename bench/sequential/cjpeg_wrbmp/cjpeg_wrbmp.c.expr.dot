@@ -12,1296 +12,1027 @@ strict graph "" {
 			pos="0.5,809.5",
 			style=invis,
 			width=0.013889];
-		1614	[fillcolor=green,
+		1608	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="46.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		rank2 -- 1614	[pos="1.2188,809.5 7.2327,809.5 13.247,809.5 19.26,809.5",
+		rank2 -- 1608	[pos="1.2188,809.5 7.2327,809.5 13.247,809.5 19.26,809.5",
 			style=invis];
-		1619	[fillcolor=green,
+		1613	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="384.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1614 -- 1619	[pos="48.752,827.61 52.803,851.4 63.772,892.24 92.5,910 115.56,924.25 313.44,924.25 336.5,910 365.45,892.11 377.28,851.32 381.85,827.57",
+		1608 -- 1613	[pos="48.752,827.61 52.803,851.4 63.772,892.24 92.5,910 115.56,924.25 313.44,924.25 336.5,910 365.45,892.11 377.28,851.32 381.85,827.57",
 			style=invis];
-		1624	[fillcolor=green,
+		1618	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="752.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1619 -- 1624	[pos="386.75,827.61 390.8,851.4 401.77,892.24 430.5,910 456.4,926.01 678.6,926.01 704.5,910 733.45,892.11 745.28,851.32 749.85,827.57",
+		1613 -- 1618	[pos="386.75,827.61 390.8,851.4 401.77,892.24 430.5,910 456.4,926.01 678.6,926.01 704.5,910 733.45,892.11 745.28,851.32 749.85,827.57",
 			style=invis];
-		1629	[fillcolor=green,
+		1623	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="1183.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1624 -- 1629	[pos="754.75,827.61 758.8,851.4 769.77,892.24 798.5,910 830.35,929.69 1103.6,929.69 1135.5,910 1164.4,892.11 1176.3,851.32 1180.8,827.57",
+		1618 -- 1623	[pos="754.75,827.61 758.8,851.4 769.77,892.24 798.5,910 830.35,929.69 1103.6,929.69 1135.5,910 1164.4,892.11 1176.3,851.32 1180.8,827.57",
 			style=invis];
-		1634	[fillcolor=green,
+		1628	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="1600.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1629 -- 1634	[pos="1185.8,827.61 1189.8,851.4 1200.8,892.24 1229.5,910 1260,928.87 1522,928.87 1552.5,910 1581.4,892.11 1593.3,851.32 1597.8,827.57",
+		1623 -- 1628	[pos="1185.8,827.61 1189.8,851.4 1200.8,892.24 1229.5,910 1260,928.87 1522,928.87 1552.5,910 1581.4,892.11 1593.3,851.32 1597.8,827.57",
 			style=invis];
-		1639	[fillcolor=green,
+		1633	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="1938.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1634 -- 1639	[pos="1602.8,827.61 1606.8,851.4 1617.8,892.24 1646.5,910 1669.6,924.25 1867.4,924.25 1890.5,910 1919.4,892.11 1931.3,851.32 1935.8,827.57",
+		1628 -- 1633	[pos="1602.8,827.61 1606.8,851.4 1617.8,892.24 1646.5,910 1669.6,924.25 1867.4,924.25 1890.5,910 1919.4,892.11 1931.3,851.32 1935.8,827.57",
 			style=invis];
-		1644	[fillcolor=green,
+		1638	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="2306.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1639 -- 1644	[pos="1940.8,827.61 1944.8,851.4 1955.8,892.24 1984.5,910 2010.4,926.01 2232.6,926.01 2258.5,910 2287.4,892.11 2299.3,851.32 2303.8,827.57",
+		1633 -- 1638	[pos="1940.8,827.61 1944.8,851.4 1955.8,892.24 1984.5,910 2010.4,926.01 2232.6,926.01 2258.5,910 2287.4,892.11 2299.3,851.32 2303.8,827.57",
 			style=invis];
-		1649	[fillcolor=green,
+		1643	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="2737.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1644 -- 1649	[pos="2308.8,827.61 2312.8,851.4 2323.8,892.24 2352.5,910 2384.4,929.69 2657.6,929.69 2689.5,910 2718.4,892.11 2730.3,851.32 2734.8,827.57",
+		1638 -- 1643	[pos="2308.8,827.61 2312.8,851.4 2323.8,892.24 2352.5,910 2384.4,929.69 2657.6,929.69 2689.5,910 2718.4,892.11 2730.3,851.32 2734.8,827.57",
 			style=invis];
-		1654	[fillcolor=green,
+		1648	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="3211.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1649 -- 1654	[pos="2739.8,827.61 2743.8,851.4 2754.8,892.24 2783.5,910 2814,928.87 3073.2,923.37 3106.5,910 3148.7,893.08 3183.4,850.27 3200.4,826.34",
+		1643 -- 1648	[pos="2739.8,827.61 2743.8,851.4 2754.8,892.24 2783.5,910 2814,928.87 3073.2,923.37 3106.5,910 3148.7,893.08 3183.4,850.27 3200.4,826.34",
 			style=invis];
-		1657	[fillcolor=green,
+		1651	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="3396.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1654 -- 1657	[pos="3238.6,809.5 3282.2,809.5 3325.8,809.5 3369.4,809.5",
+		1648 -- 1651	[pos="3238.6,809.5 3282.2,809.5 3325.8,809.5 3369.4,809.5",
 			style=invis];
-		1670	[fillcolor=green,
+		1664	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="3524.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1657 -- 1670	[pos="3424,809.5 3448.5,809.5 3472.9,809.5 3497.4,809.5",
+		1651 -- 1664	[pos="3424,809.5 3448.5,809.5 3472.9,809.5 3497.4,809.5",
 			style=invis];
-		1674	[fillcolor=green,
+		1668	[fillcolor=green,
 			height=0.5,
 			label="++",
 			pos="3842.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1670 -- 1674	[pos="3526.8,827.61 3530.8,851.4 3541.8,892.24 3570.5,910 3602.3,929.63 3703.9,923.99 3738.5,910 3780.4,893.06 3814.8,850.26 3831.5,826.34",
+		1664 -- 1668	[pos="3526.8,827.61 3530.8,851.4 3541.8,892.24 3570.5,910 3602.3,929.63 3703.9,923.99 3738.5,910 3780.4,893.06 3814.8,850.26 3831.5,826.34",
 			style=invis];
-		1676	[fillcolor=green,
+		1670	[fillcolor=green,
 			height=0.5,
 			label="+=",
 			pos="4026.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1674 -- 1676	[pos="3869.8,809.5 3913,809.5 3956.1,809.5 3999.3,809.5",
+		1668 -- 1670	[pos="3869.8,809.5 3913,809.5 3956.1,809.5 3999.3,809.5",
 			style=invis];
-		1679	[fillcolor=red,
+		1673	[fillcolor=red,
 			height=0.65278,
 			label="\<ret\>",
 			pos="4187.5,809.5",
 			shape=square,
 			style="filled,bold",
 			width=0.65278];
-		1676 -- 1679	[pos="4053.5,809.5 4090.3,809.5 4127.1,809.5 4164,809.5",
+		1670 -- 1673	[pos="4053.5,809.5 4090.3,809.5 4127.1,809.5 4164,809.5",
 			style=invis];
-		1694	[fillcolor=green,
+		1688	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="4441.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1679 -- 1694	[pos="4211.3,809.5 4278.9,809.5 4346.5,809.5 4414.1,809.5",
+		1673 -- 1688	[pos="4211.3,809.5 4278.9,809.5 4346.5,809.5 4414.1,809.5",
 			style=invis];
-		1706	[fillcolor=green,
+		1700	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="4604.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1694 -- 1706	[pos="4468.6,809.5 4504.8,809.5 4541.1,809.5 4577.4,809.5",
+		1688 -- 1700	[pos="4468.6,809.5 4504.8,809.5 4541.1,809.5 4577.4,809.5",
 			style=invis];
-		1714	[fillcolor=green,
+		1708	[fillcolor=green,
 			height=0.5,
 			label="--",
 			pos="4768.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1706 -- 1714	[pos="4631.7,809.5 4668.2,809.5 4704.7,809.5 4741.3,809.5",
+		1700 -- 1708	[pos="4631.7,809.5 4668.2,809.5 4704.7,809.5 4741.3,809.5",
 			style=invis];
-		1722	[fillcolor=green,
+		1716	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="4923.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1714 -- 1722	[pos="4795.7,809.5 4829.2,809.5 4862.6,809.5 4896.1,809.5",
+		1708 -- 1716	[pos="4795.7,809.5 4829.2,809.5 4862.6,809.5 4896.1,809.5",
 			style=invis];
-		1737	[fillcolor=green,
+		1731	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="5275.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1722 -- 1737	[pos="4925.6,827.63 4929.3,851.44 4939.9,892.31 4968.5,910 5007.3,933.95 5131.3,927.28 5173.5,910 5214.9,893.03 5248.5,850.24 5264.8,826.33",
+		1716 -- 1731	[pos="4925.6,827.63 4929.3,851.44 4939.9,892.31 4968.5,910 5007.3,933.95 5131.3,927.28 5173.5,910 5214.9,893.03 5248.5,850.24 5264.8,826.33",
 			style=invis];
-		1754	[fillcolor=green,
+		1748	[fillcolor=green,
 			height=0.5,
 			label="p++",
 			pos="5633.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1737 -- 1754	[pos="5277.6,827.63 5281.3,851.44 5291.9,892.31 5320.5,910 5356.6,932.31 5471.5,924.34 5511.5,910 5558.5,893.13 5600.3,849.45 5620.6,825.61",
+		1731 -- 1748	[pos="5277.6,827.63 5281.3,851.44 5291.9,892.31 5320.5,910 5356.6,932.31 5471.5,924.34 5511.5,910 5558.5,893.13 5600.3,849.45 5620.6,825.61",
 			style=invis];
-		1777	[fillcolor=green,
+		1771	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="5880.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1754 -- 1777	[pos="5660.5,809.5 5724.8,809.5 5789.1,809.5 5853.4,809.5",
+		1748 -- 1771	[pos="5660.5,809.5 5724.8,809.5 5789.1,809.5 5853.4,809.5",
 			style=invis];
-		1800	[fillcolor=green,
+		1794	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="6091.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1777 -- 1800	[pos="5907.7,809.5 5959.9,809.5 6012,809.5 6064.2,809.5",
+		1771 -- 1794	[pos="5907.7,809.5 5959.9,809.5 6012,809.5 6064.2,809.5",
 			style=invis];
-		1806	[fillcolor=green,
+		1800	[fillcolor=green,
 			height=0.5,
 			label="p++",
 			pos="6242.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1800 -- 1806	[pos="6118.6,809.5 6150.9,809.5 6183.1,809.5 6215.4,809.5",
+		1794 -- 1800	[pos="6118.6,809.5 6150.9,809.5 6183.1,809.5 6215.4,809.5",
 			style=invis];
-		1856	[fillcolor=green,
+		1850	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="6393.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1806 -- 1856	[pos="6269.6,809.5 6301.9,809.5 6334.1,809.5 6366.4,809.5",
+		1800 -- 1850	[pos="6269.6,809.5 6301.9,809.5 6334.1,809.5 6366.4,809.5",
 			style=invis];
-		1862	[fillcolor=green,
+		1856	[fillcolor=green,
 			height=0.5,
 			label="p++",
 			pos="6544.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1856 -- 1862	[pos="6420.6,809.5 6452.9,809.5 6485.1,809.5 6517.4,809.5",
+		1850 -- 1856	[pos="6420.6,809.5 6452.9,809.5 6485.1,809.5 6517.4,809.5",
 			style=invis];
-		1912	[fillcolor=green,
+		1906	[fillcolor=green,
 			height=0.5,
 			label="=",
 			pos="6695.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1862 -- 1912	[pos="6571.6,809.5 6603.9,809.5 6636.1,809.5 6668.4,809.5",
+		1856 -- 1906	[pos="6571.6,809.5 6603.9,809.5 6636.1,809.5 6668.4,809.5",
 			style=invis];
-		1918	[fillcolor=green,
+		1912	[fillcolor=green,
 			height=0.5,
 			label="p++",
 			pos="6846.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1912 -- 1918	[pos="6722.6,809.5 6754.9,809.5 6787.1,809.5 6819.4,809.5",
+		1906 -- 1912	[pos="6722.6,809.5 6754.9,809.5 6787.1,809.5 6819.4,809.5",
 			style=invis];
-		1946	[fillcolor=green,
+		1940	[fillcolor=green,
 			height=0.5,
 			label="p++",
 			pos="6997.5,809.5",
 			style="filled,bold",
 			width=0.75];
-		1918 -- 1946	[pos="6873.6,809.5 6905.9,809.5 6938.1,809.5 6970.4,809.5",
+		1912 -- 1940	[pos="6873.6,809.5 6905.9,809.5 6938.1,809.5 6970.4,809.5",
 			style=invis];
-		2008	[fillcolor=red,
+		2002	[fillcolor=red,
 			height=0.65278,
 			label="\<ret\>",
 			pos="7247.5,809.5",
 			shape=square,
 			style="filled,bold",
 			width=0.65278];
-		1946 -- 2008	[pos="7024.8,809.5 7091.1,809.5 7157.3,809.5 7223.6,809.5",
+		1940 -- 2002	[pos="7024.8,809.5 7091.1,809.5 7157.3,809.5 7223.6,809.5",
 			style=invis];
-		2029	[fillcolor=red,
+		2023	[fillcolor=red,
 			height=0.65278,
 			label="\<ret\>",
 			pos="7441.5,809.5",
 			shape=square,
 			style="filled,bold",
 			width=0.65278];
-		2008 -- 2029	[pos="7271.4,809.5 7320.2,809.5 7369.1,809.5 7417.9,809.5",
+		2002 -- 2023	[pos="7271.4,809.5 7320.2,809.5 7369.1,809.5 7417.9,809.5",
 			style=invis];
 		end	[height=0.5,
 			label="",
 			pos="7524.5,809.5",
 			style=invis,
 			width=0.013889];
-		2029 -- end	[pos="7465.2,809.5 7484.6,809.5 7504.1,809.5 7523.6,809.5",
+		2023 -- end	[pos="7465.2,809.5 7484.6,809.5 7504.1,809.5 7523.6,809.5",
 			style=invis];
 	}
-	subgraph cluster1946 {
-		graph [bb="6926.5,581.5,7069.5,858.5",
-			label="cjpeg_wrbmp.c:186:27",
-			lheight=0.21,
-			lp="6998,847",
-			lwidth=1.76
-		];
-		1946;
-		1947	[fillcolor=lightblue,
-			height=0.5,
-			label=i,
-			pos="6997.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1946 -- 1947	[dir=back,
-			pos="s,6997.5,791.45 6997.5,781.41 6997.5,739.52 6997.5,660.23 6997.5,625.51"];
-	}
-	subgraph cluster1918 {
-		graph [bb="6775.5,581.5,6918.5,858.5",
-			label="cjpeg_wrbmp.c:174:27",
-			lheight=0.21,
-			lp="6847,847",
-			lwidth=1.76
-		];
-		1918;
-		1919	[fillcolor=lightblue,
-			height=0.5,
-			label=i,
-			pos="6846.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1918 -- 1919	[dir=back,
-			pos="s,6846.5,791.45 6846.5,781.41 6846.5,739.52 6846.5,660.23 6846.5,625.51"];
-	}
-	subgraph cluster1912 {
-		graph [bb="6624.5,581.5,6767.5,1059.5",
-			label="cjpeg_wrbmp.c:174:11",
-			lheight=0.21,
-			lp="6696,1048",
-			lwidth=1.76
-		];
-		1912;
-		1914	[fillcolor=pink,
-			height=0.5,
-			label=0,
-			pos="6695.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1912 -- 1914	[dir=back,
-			pos="s,6695.5,791.45 6695.5,781.41 6695.5,739.52 6695.5,660.23 6695.5,625.51"];
-		1913	[fillcolor=lightblue,
-			height=0.5,
-			label=i,
-			pos="6695.5,1010.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1913 -- 1912	[dir=back,
-			pos="s,6695.5,992.19 6695.5,982.19 6695.5,940.49 6695.5,862.19 6695.5,827.63"];
-	}
-	subgraph cluster1862 {
-		graph [bb="6473.5,581.5,6616.5,858.5",
-			label="cjpeg_wrbmp.c:158:36",
-			lheight=0.21,
-			lp="6545,847",
-			lwidth=1.76
-		];
-		1862;
-		1863	[fillcolor=lightblue,
-			height=0.5,
-			label=i,
-			pos="6544.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1862 -- 1863	[dir=back,
-			pos="s,6544.5,791.45 6544.5,781.41 6544.5,739.52 6544.5,660.23 6544.5,625.51"];
-	}
-	subgraph cluster1856 {
-		graph [bb="6322.5,581.5,6465.5,1059.5",
-			label="cjpeg_wrbmp.c:158:13",
-			lheight=0.21,
-			lp="6394,1048",
-			lwidth=1.76
-		];
-		1856;
-		1858	[fillcolor=pink,
-			height=0.5,
-			label=0,
-			pos="6393.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1856 -- 1858	[dir=back,
-			pos="s,6393.5,791.45 6393.5,781.41 6393.5,739.52 6393.5,660.23 6393.5,625.51"];
-		1857	[fillcolor=lightblue,
-			height=0.5,
-			label=i,
-			pos="6393.5,1010.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1857 -- 1856	[dir=back,
-			pos="s,6393.5,992.19 6393.5,982.19 6393.5,940.49 6393.5,862.19 6393.5,827.63"];
-	}
-	subgraph cluster1806 {
-		graph [bb="6171.5,581.5,6314.5,858.5",
-			label="cjpeg_wrbmp.c:144:36",
-			lheight=0.21,
-			lp="6243,847",
-			lwidth=1.76
-		];
-		1806;
-		1807	[fillcolor=lightblue,
-			height=0.5,
-			label=i,
-			pos="6242.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1806 -- 1807	[dir=back,
-			pos="s,6242.5,791.45 6242.5,781.41 6242.5,739.52 6242.5,660.23 6242.5,625.51"];
-	}
-	subgraph cluster1800 {
+	subgraph cluster1794 {
 		graph [bb="6020.5,581.5,6163.5,1059.5",
 			label="cjpeg_wrbmp.c:144:13",
 			lheight=0.21,
 			lp="6092,1048",
 			lwidth=1.76
 		];
-		1800;
-		1802	[fillcolor=pink,
+		1794;
+		1796	[fillcolor=pink,
 			height=0.5,
 			label=0,
 			pos="6091.5,607.5",
 			shape=square,
 			style=filled,
 			width=0.5];
-		1800 -- 1802	[dir=back,
+		1794 -- 1796	[dir=back,
 			pos="s,6091.5,791.45 6091.5,781.41 6091.5,739.52 6091.5,660.23 6091.5,625.51"];
-		1801	[fillcolor=lightblue,
+		1795	[fillcolor=lightblue,
 			height=0.5,
 			label=i,
 			pos="6091.5,1010.5",
 			shape=square,
 			style=filled,
 			width=0.5];
-		1801 -- 1800	[dir=back,
+		1795 -- 1794	[dir=back,
 			pos="s,6091.5,992.19 6091.5,982.19 6091.5,940.49 6091.5,862.19 6091.5,827.63"];
 	}
-	subgraph cluster1777 {
-		graph [bb="5778.5,325,6012.5,1082",
-			label="cjpeg_wrbmp.c:136:7",
+	subgraph cluster1800 {
+		graph [bb="6171.5,581.5,6314.5,858.5",
+			label="cjpeg_wrbmp.c:144:36",
 			lheight=0.21,
-			lp="5895.5,1070.5",
-			lwidth=1.67
-		];
-		1777;
-		1780	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: ->",
-			pos="5880.5,607.5",
-			style=filled,
-			width=1.3356];
-		1777 -- 1780	[dir=back,
-			pos="s,5880.5,791.45 5880.5,780.97 5880.5,742.28 5880.5,672.35 5880.5,634.51"];
-		1781	[fillcolor=lightblue,
-			height=0.61111,
-			label=cinfo,
-			pos="5808.5,410.5",
-			shape=square,
-			style=filled,
-			width=0.61111];
-		1780 -- 1781	[dir=back,
-			pos="s,5871.1,581.01 5867.6,571.54 5852.7,531.11 5828.6,465.83 5816.3,432.52"];
-		1782	[fillcolor=lightblue,
-			height=2.1528,
-			label=actual_number_of_colors,
-			pos="5926.5,410.5",
-			shape=square,
-			style=filled,
-			width=2.1528];
-		1780 -- 1782	[dir=back,
-			pos="s,5886.6,580.61 5889,570.57 5894.4,547.45 5901.7,516.51 5908.4,488.07"];
-		1778	[fillcolor=lightblue,
-			height=1.125,
-			label=num_colors,
-			pos="5880.5,1010.5",
-			shape=square,
-			style=filled,
-			width=1.125];
-		1778 -- 1777	[dir=back,
-			pos="s,5880.5,969.71 5880.5,959.69 5880.5,916.59 5880.5,856.75 5880.5,827.7"];
-	}
-	subgraph cluster1754 {
-		graph [bb="5524.5,328,5770.5,858.5",
-			label="cjpeg_wrbmp.c:128:5",
-			lheight=0.21,
-			lp="5647.5,847",
-			lwidth=1.67
-		];
-		1754;
-		1755	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: ->",
-			pos="5633.5,607.5",
-			style=filled,
-			width=1.3356];
-		1754 -- 1755	[dir=back,
-			pos="s,5633.5,791.45 5633.5,780.97 5633.5,742.28 5633.5,672.35 5633.5,634.51"];
-		1756	[fillcolor=lightblue,
-			height=0.86111,
-			label=progress,
-			pos="5563.5,410.5",
-			shape=square,
-			style=filled,
-			width=0.86111];
-		1755 -- 1756	[dir=back,
-			pos="s,5624.3,581.01 5620.8,571.16 5607.5,534.19 5586.9,476.77 5574.4,441.8"];
-		1757	[fillcolor=lightblue,
-			height=2.0694,
-			label=completed_extra_passes,
-			pos="5687.5,410.5",
-			shape=square,
-			style=filled,
-			width=2.0694];
-		1755 -- 1757	[dir=back,
-			pos="s,5640.7,580.61 5643.4,570.89 5650,546.92 5659,514.44 5667.1,485.06"];
-	}
-	subgraph cluster1676 {
-		graph [bb="3941.5,566.5,4111.5,1118",
-			label="cjpeg_wrbmp.c:107:3",
-			lheight=0.21,
-			lp="4026.5,1106.5",
-			lwidth=1.67
-		];
-		1676;
-		1678	[fillcolor=lightblue,
-			height=0.91667,
-			label=character,
-			pos="4026.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.91667];
-		1676 -- 1678	[dir=back,
-			pos="s,4026.5,791.45 4026.5,781.05 4026.5,744.44 4026.5,679.75 4026.5,640.82"];
-		1677	[fillcolor=lightblue,
-			height=2.125,
-			label=cjpeg_wrbmp_checksum,
-			pos="4026.5,1010.5",
-			shape=square,
-			style=filled,
-			width=2.125];
-		1677 -- 1676	[dir=back,
-			pos="s,4026.5,933.98 4026.5,923.91 4026.5,887.89 4026.5,849.4 4026.5,827.8"];
-	}
-	subgraph cluster1654 {
-		graph [bb="3119.5,516,3303.5,1124",
-			label="cjpeg_wrbmp.c:93:3",
-			lheight=0.21,
-			lp="3211.5,1112.5",
-			lwidth=1.57
-		];
-		1654;
-		1656	[fillcolor=lightblue,
-			height=2.3194,
-			label=cjpeg_wrbmp_output_array,
-			pos="3211.5,607.5",
-			shape=square,
-			style=filled,
-			width=2.3194];
-		1654 -- 1656	[dir=back,
-			pos="s,3211.5,791.45 3211.5,781.33 3211.5,758.11 3211.5,723.44 3211.5,691.24"];
-		1655	[fillcolor=lightblue,
-			height=2.2917,
-			label=cjpeg_wrbmp_jpeg_stream,
-			pos="3211.5,1010.5",
-			shape=square,
-			style=filled,
-			width=2.2917];
-		1655 -- 1654	[dir=back,
-			pos="s,3211.5,927.98 3211.5,917.91 3211.5,883.7 3211.5,848.24 3211.5,827.83"];
-	}
-	subgraph cluster1649 {
-		graph [bb="2702.5,581.5,3111.5,1068.4",
-			label="cjpeg_wrbmp.c:91:3",
-			lheight=0.21,
-			lp="2907,1056.9",
-			lwidth=1.57
-		];
-		1649;
-		1653	[fillcolor=pink,
-			height=0.5,
-			label=3,
-			pos="2737.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1649 -- 1653	[dir=back,
-			pos="s,2737.5,791.45 2737.5,781.41 2737.5,739.52 2737.5,660.23 2737.5,625.51"];
-		1650	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: .",
-			pos="2863.5,1010.5",
-			style=filled,
-			width=1.3356];
-		1650 -- 1649	[dir=back,
-			pos="s,2843.1,985.86 2836.5,977.86 2817.7,954.96 2792.8,922.74 2774.5,892 2761.8,870.64 2750.5,844.14 2743.8,827.28"];
-		1651	[fillcolor=lightblue,
-			height=2.2361,
-			label=cjpeg_wrbmp_jpeg_dec_2,
-			pos="2863.5,809.5",
-			shape=square,
-			style=filled,
-			width=2.2361];
-		1650 -- 1651	[dir=back,
-			pos="s,2863.5,983.48 2863.5,973.41 2863.5,950.2 2863.5,919.09 2863.5,890.28"];
-		1652	[fillcolor=lightblue,
-			height=1.9583,
-			label=out_color_components,
-			pos="3032.5,809.5",
-			shape=square,
-			style=filled,
-			width=1.9583];
-		1650 -- 1652	[dir=back,
-			pos="s,2883.6,985.89 2890.1,978.17 2912.4,951.96 2944.9,913.6 2973.3,880.18"];
-	}
-	subgraph cluster1737 {
-		graph [bb="5186.5,166.5,5516.5,1068.4",
-			label="cjpeg_wrbmp.c:123:7",
-			lheight=0.21,
-			lp="5351.5,1056.9",
-			lwidth=1.67
-		];
-		1737;
-		1743	[fillcolor=green,
-			height=0.5,
-			label=Cast,
-			pos="5345.5,607.5",
-			style=filled,
-			width=0.75];
-		1737 -- 1743	[dir=back,
-			pos="s,5281.3,791.79 5284.7,782.31 5299.3,740.57 5327.4,660.16 5339.6,625.3"];
-		1744	[fillcolor=green,
-			height=1.041,
-			label="Typename
-name: None
-quals: []",
-			pos="5253.5,410.5",
-			style=filled,
-			width=1.6303];
-		1743 -- 1744	[dir=back,
-			pos="s,5339.5,589.91 5336.1,580.51 5329.2,562.24 5319.4,537.35 5309.5,516 5298.4,492.11 5284.4,465.99 5273.2,445.83"];
-		1747	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: ->",
-			pos="5378.5,410.5",
-			style=filled,
-			width=1.3356];
-		1743 -- 1747	[dir=back,
-			pos="s,5348.4,589.54 5350.1,579.33 5356.5,541.74 5367.9,474.32 5374.1,437.4"];
-		1748	[fillcolor=lightblue,
-			height=0.61111,
-			label=cinfo,
-			pos="5334.5,220.5",
-			shape=square,
-			style=filled,
-			width=0.61111];
-		1747 -- 1748	[dir=back,
-			pos="s,5372.5,383.75 5370.2,373.92 5361.1,335.16 5346.9,274.43 5339.4,242.59"];
-		1749	[fillcolor=lightblue,
-			height=1.2778,
-			label=output_height,
-			pos="5420.5,220.5",
-			shape=square,
-			style=filled,
-			width=1.2778];
-		1747 -- 1749	[dir=back,
-			pos="s,5384.3,383.75 5386.5,373.6 5393.3,343.23 5403.1,299.54 5410.4,266.77"];
-		1738	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: .",
-			pos="5368.5,1010.5",
-			style=filled,
-			width=1.3356];
-		1738 -- 1737	[dir=back,
-			pos="s,5356,984.41 5351.5,975.26 5340,951.9 5324.6,920.21 5311.5,892 5301.2,869.68 5289.8,843.65 5282.6,827.12"];
-		1739	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: ->",
-			pos="5368.5,809.5",
-			style=filled,
-			width=1.3356];
-		1738 -- 1739	[dir=back,
-			pos="s,5368.5,983.48 5368.5,973.48 5368.5,933.97 5368.5,871.54 5368.5,836.52"];
-		1742	[fillcolor=lightblue,
-			height=1.0139,
-			label=pass_limit,
-			pos="5471.5,809.5",
-			shape=square,
-			style=filled,
-			width=1.0139];
-		1738 -- 1742	[dir=back,
-			pos="s,5381.5,984.3 5386.3,975.16 5404.9,939.14 5434.1,882.78 5453,846.25"];
-		1740	[fillcolor=lightblue,
-			height=0.86111,
-			label=progress,
-			pos="5421.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.86111];
-		1739 -- 1740	[dir=back,
-			pos="s,5375.3,782.76 5377.9,773.08 5388,734.89 5403.9,674.74 5413.5,638.71"];
-		1741	[fillcolor=lightblue,
-			height=0.51389,
-			label=pub,
-			pos="5489.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.51389];
-		1739 -- 1741	[dir=back,
-			pos="s,5384.6,783.89 5390.4,775.34 5400.8,760.2 5413.8,742.28 5426.5,727 5440.8,709.86 5449.9,710.03 5461.5,691 5474.1,670.49 5481.8,\
-643.63 5485.9,626.22"];
-		1745	[fillcolor=lightblue,
-			height=1.4722,
-			label="TypeDecl
-declname: None
-quals: []",
-			pos="5247.5,607.5",
-			shape=square,
-			style=filled,
-			width=1.4722];
-		1745 -- 1744	[dir=back,
-			pos="s,5249.1,554.5 5249.4,544.44 5250.4,512.76 5251.5,475.31 5252.4,448.24"];
-	}
-	subgraph cluster1644 {
-		graph [bb="2271.5,581,2694.5,1068.4",
-			label="cjpeg_wrbmp.c:90:3",
-			lheight=0.21,
-			lp="2483,1056.9",
-			lwidth=1.57
-		];
-		1644;
-		1648	[fillcolor=pink,
-			height=0.51389,
-			label=256,
-			pos="2306.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.51389];
-		1644 -- 1648	[dir=back,
-			pos="s,2306.5,791.45 2306.5,781.2 2306.5,739.48 2306.5,661.03 2306.5,626.08"];
-		1645	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: .",
-			pos="2432.5,1010.5",
-			style=filled,
-			width=1.3356];
-		1645 -- 1644	[dir=back,
-			pos="s,2412.1,985.86 2405.5,977.86 2386.7,954.96 2361.8,922.74 2343.5,892 2330.8,870.64 2319.5,844.14 2312.8,827.28"];
-		1646	[fillcolor=lightblue,
-			height=2.2361,
-			label=cjpeg_wrbmp_jpeg_dec_2,
-			pos="2432.5,809.5",
-			shape=square,
-			style=filled,
-			width=2.2361];
-		1645 -- 1646	[dir=back,
-			pos="s,2432.5,983.48 2432.5,973.41 2432.5,950.2 2432.5,919.09 2432.5,890.28"];
-		1647	[fillcolor=lightblue,
-			height=2.1528,
-			label=actual_number_of_colors,
-			pos="2608.5,809.5",
-			shape=square,
-			style=filled,
-			width=2.1528];
-		1645 -- 1647	[dir=back,
-			pos="s,2453.4,985.89 2460,978.36 2481.6,953.98 2512.5,919 2540.6,887.27"];
-	}
-	subgraph cluster1674 {
-		graph [bb="3751.5,517,3933.5,858.5",
-			label="cjpeg_wrbmp.c:105:5",
-			lheight=0.21,
-			lp="3842.5,847",
-			lwidth=1.67
-		];
-		1674;
-		1675	[fillcolor=lightblue,
-			height=2.2917,
-			label=cjpeg_wrbmp_jpeg_stream,
-			pos="3842.5,607.5",
-			shape=square,
-			style=filled,
-			width=2.2917];
-		1674 -- 1675	[dir=back,
-			pos="s,3842.5,791.45 3842.5,781.24 3842.5,757.79 3842.5,722.72 3842.5,690.29"];
-	}
-	subgraph cluster1639 {
-		graph [bb="1903.5,581.5,2263.5,1068.4",
-			label="cjpeg_wrbmp.c:89:3",
-			lheight=0.21,
-			lp="2083.5,1056.9",
-			lwidth=1.57
-		];
-		1639;
-		1643	[fillcolor=pink,
-			height=0.5,
-			label=30,
-			pos="1938.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1639 -- 1643	[dir=back,
-			pos="s,1938.5,791.45 1938.5,781.41 1938.5,739.52 1938.5,660.23 1938.5,625.51"];
-		1640	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: .",
-			pos="2064.5,1010.5",
-			style=filled,
-			width=1.3356];
-		1640 -- 1639	[dir=back,
-			pos="s,2044.1,985.86 2037.5,977.86 2018.7,954.96 1993.8,922.74 1975.5,892 1962.8,870.64 1951.5,844.14 1944.8,827.28"];
-		1641	[fillcolor=lightblue,
-			height=2.2361,
-			label=cjpeg_wrbmp_jpeg_dec_2,
-			pos="2064.5,809.5",
-			shape=square,
-			style=filled,
-			width=2.2361];
-		1640 -- 1641	[dir=back,
-			pos="s,2064.5,983.48 2064.5,973.41 2064.5,950.2 2064.5,919.09 2064.5,890.28"];
-		1642	[fillcolor=lightblue,
-			height=1.2778,
-			label=output_height,
-			pos="2209.5,809.5",
-			shape=square,
-			style=filled,
-			width=1.2778];
-		1640 -- 1642	[dir=back,
-			pos="s,2083.5,985.52 2089.7,977.64 2108.1,954.22 2133.3,921.48 2154.5,892 2162.9,880.36 2171.7,867.58 2179.7,855.67"];
-	}
-	subgraph cluster1634 {
-		graph [bb="1565.5,581.5,1895.5,1068.4",
-			label="cjpeg_wrbmp.c:88:3",
-			lheight=0.21,
-			lp="1730.5,1056.9",
-			lwidth=1.57
-		];
-		1634;
-		1638	[fillcolor=pink,
-			height=0.5,
-			label=0,
-			pos="1600.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1634 -- 1638	[dir=back,
-			pos="s,1600.5,791.45 1600.5,781.41 1600.5,739.52 1600.5,660.23 1600.5,625.51"];
-		1635	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: .",
-			pos="1726.5,1010.5",
-			style=filled,
-			width=1.3356];
-		1635 -- 1634	[dir=back,
-			pos="s,1706.1,985.86 1699.5,977.86 1680.7,954.96 1655.8,922.74 1637.5,892 1624.8,870.64 1613.5,844.14 1606.8,827.28"];
-		1636	[fillcolor=lightblue,
-			height=2.2361,
-			label=cjpeg_wrbmp_jpeg_dec_2,
-			pos="1726.5,809.5",
-			shape=square,
-			style=filled,
-			width=2.2361];
-		1635 -- 1636	[dir=back,
-			pos="s,1726.5,983.48 1726.5,973.41 1726.5,950.2 1726.5,919.09 1726.5,890.28"];
-		1637	[fillcolor=lightblue,
-			height=0.86111,
-			label=progress,
-			pos="1856.5,809.5",
-			shape=square,
-			style=filled,
-			width=0.86111];
-		1635 -- 1637	[dir=back,
-			pos="s,1746.9,985.76 1753.3,978.04 1772.2,955.05 1797.5,922.67 1816.5,892 1826.6,875.66 1836.2,856.38 1843.4,840.68"];
-	}
-	subgraph cluster1629 {
-		graph [bb="1148.5,581.5,1557.5,1068.4",
-			label="cjpeg_wrbmp.c:86:3",
-			lheight=0.21,
-			lp="1353,1056.9",
-			lwidth=1.57
-		];
-		1629;
-		1633	[fillcolor=pink,
-			height=0.5,
-			label=2,
-			pos="1183.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1629 -- 1633	[dir=back,
-			pos="s,1183.5,791.45 1183.5,781.41 1183.5,739.52 1183.5,660.23 1183.5,625.51"];
-		1630	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: .",
-			pos="1309.5,1010.5",
-			style=filled,
-			width=1.3356];
-		1630 -- 1629	[dir=back,
-			pos="s,1289.1,985.86 1282.5,977.86 1263.7,954.96 1238.8,922.74 1220.5,892 1207.8,870.64 1196.5,844.14 1189.8,827.28"];
-		1631	[fillcolor=lightblue,
-			height=2.2361,
-			label=cjpeg_wrbmp_jpeg_dec_1,
-			pos="1309.5,809.5",
-			shape=square,
-			style=filled,
-			width=2.2361];
-		1630 -- 1631	[dir=back,
-			pos="s,1309.5,983.48 1309.5,973.41 1309.5,950.2 1309.5,919.09 1309.5,890.28"];
-		1632	[fillcolor=lightblue,
-			height=1.9583,
-			label=out_color_components,
-			pos="1478.5,809.5",
-			shape=square,
-			style=filled,
-			width=1.9583];
-		1630 -- 1632	[dir=back,
-			pos="s,1329.6,985.89 1336.1,978.17 1358.4,951.96 1390.9,913.6 1419.3,880.18"];
-	}
-	subgraph cluster1722 {
-		graph [bb="4848.5,8,5178.5,1068.4",
-			label="cjpeg_wrbmp.c:122:7",
-			lheight=0.21,
-			lp="5013.5,1056.9",
-			lwidth=1.67
-		];
-		1722;
-		1728	[fillcolor=green,
-			height=0.5,
-			label=Cast,
-			pos="5007.5,607.5",
-			style=filled,
-			width=0.75];
-		1722 -- 1728	[dir=back,
-			pos="s,4930.5,791.79 4934.4,782.54 4951.9,740.77 4986,659.79 5000.6,625.02"];
-		1729	[fillcolor=green,
-			height=1.041,
-			label="Typename
-name: None
-quals: []",
-			pos="4915.5,410.5",
-			style=filled,
-			width=1.6303];
-		1728 -- 1729	[dir=back,
-			pos="s,5001.5,589.91 4998.1,580.51 4991.2,562.24 4981.4,537.35 4971.5,516 4960.4,492.11 4946.4,465.99 4935.2,445.83"];
-		1732	[fillcolor=yellow,
-			height=0.5,
-			label="-",
-			pos="5019.5,410.5",
-			style=filled,
-			width=0.75];
-		1728 -- 1732	[dir=back,
-			pos="s,5008.6,589.2 5009.2,579.12 5011.7,538.19 5016.4,462.28 5018.5,428.49"];
-		1733	[fillcolor=yellow,
-			height=0.74639,
-			label="StructRef
-type: ->",
-			pos="4963.5,220.5",
-			style=filled,
-			width=1.3356];
-		1732 -- 1733	[dir=back,
-			pos="s,5014.4,392.48 5011.5,382.65 5000.7,346.53 4981.7,282.74 4971.2,247.21"];
-		1736	[fillcolor=lightblue,
-			height=0.52778,
-			label=row,
-			pos="5048.5,220.5",
-			shape=square,
-			style=filled,
-			width=0.52778];
-		1732 -- 1736	[dir=back,
-			pos="s,5022.1,392.48 5023.7,382.42 5029.7,343.54 5040.6,272.94 5045.7,239.71"];
-		1723	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: .",
-			pos="5016.5,1010.5",
-			style=filled,
-			width=1.3356];
-		1723 -- 1722	[dir=back,
-			pos="s,5004,984.41 4999.5,975.26 4988,951.9 4972.6,920.21 4959.5,892 4949.2,869.68 4937.8,843.65 4930.6,827.12"];
-		1724	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: ->",
-			pos="5016.5,809.5",
-			style=filled,
-			width=1.3356];
-		1723 -- 1724	[dir=back,
-			pos="s,5016.5,983.48 5016.5,973.48 5016.5,933.97 5016.5,871.54 5016.5,836.52"];
-		1727	[fillcolor=lightblue,
-			height=1.2083,
-			label=pass_counter,
-			pos="5126.5,809.5",
-			shape=square,
-			style=filled,
-			width=1.2083];
-		1723 -- 1727	[dir=back,
-			pos="s,5030.2,984.7 5035.2,975.67 5053.9,941.83 5082.7,889.69 5103,853.06"];
-		1725	[fillcolor=lightblue,
-			height=0.86111,
-			label=progress,
-			pos="5083.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.86111];
-		1724 -- 1725	[dir=back,
-			pos="s,5025.1,782.76 5028.4,773.08 5041.2,734.89 5061.3,674.74 5073.4,638.71"];
-		1726	[fillcolor=lightblue,
-			height=0.51389,
-			label=pub,
-			pos="5151.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.51389];
-		1724 -- 1726	[dir=back,
-			pos="s,5031.2,783.77 5036.8,774.99 5047.1,759.49 5060.3,741.38 5074.5,727 5093.5,707.75 5107.5,712.8 5123.5,691 5137.9,671.35 5145.3,\
-643.79 5148.7,626.04"];
-		1734	[fillcolor=lightblue,
-			height=0.61111,
-			label=cinfo,
-			pos="4906.5,62",
-			shape=square,
-			style=filled,
-			width=0.61111];
-		1733 -- 1734	[dir=back,
-			pos="s,4954.2,194.01 4950.8,184.54 4939.6,153.87 4923.7,110.24 4914.3,84.453"];
-		1735	[fillcolor=lightblue,
-			height=1.2778,
-			label=output_height,
-			pos="4992.5,62",
-			shape=square,
-			style=filled,
-			width=1.2778];
-		1733 -- 1735	[dir=back,
-			pos="s,4968.3,193.66 4970.2,183.56 4974.3,161.16 4979.7,132.15 4984.1,108.2"];
-		1730	[fillcolor=lightblue,
-			height=1.4722,
-			label="TypeDecl
-declname: None
-quals: []",
-			pos="4909.5,607.5",
-			shape=square,
-			style=filled,
-			width=1.4722];
-		1730 -- 1729	[dir=back,
-			pos="s,4911.1,554.5 4911.4,544.44 4912.4,512.76 4913.5,475.31 4914.4,448.24"];
-	}
-	subgraph cluster1679 {
-		graph [bb="4119.5,566.5,4255.5,864",
-			label="cjpeg_wrbmp.c:109:3",
-			lheight=0.21,
-			lp="4187.5,852.5",
-			lwidth=1.67
-		];
-		1679;
-		1680	[fillcolor=lightblue,
-			height=0.91667,
-			label=character,
-			pos="4187.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.91667];
-		1679 -- 1680	[dir=back,
-			pos="s,4187.5,785.95 4187.5,775.59 4187.5,738.19 4187.5,677.54 4187.5,640.51"];
-	}
-	subgraph cluster1624 {
-		graph [bb="717.5,581,1140.5,1068.4",
-			label="cjpeg_wrbmp.c:85:3",
-			lheight=0.21,
-			lp="929,1056.9",
-			lwidth=1.57
-		];
-		1624;
-		1628	[fillcolor=pink,
-			height=0.51389,
-			label=256,
-			pos="752.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.51389];
-		1624 -- 1628	[dir=back,
-			pos="s,752.5,791.45 752.5,781.2 752.5,739.48 752.5,661.03 752.5,626.08"];
-		1625	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: .",
-			pos="878.5,1010.5",
-			style=filled,
-			width=1.3356];
-		1625 -- 1624	[dir=back,
-			pos="s,858.09,985.86 851.46,977.86 832.67,954.96 807.81,922.74 789.5,892 776.78,870.64 765.5,844.14 758.84,827.28"];
-		1626	[fillcolor=lightblue,
-			height=2.2361,
-			label=cjpeg_wrbmp_jpeg_dec_1,
-			pos="878.5,809.5",
-			shape=square,
-			style=filled,
-			width=2.2361];
-		1625 -- 1626	[dir=back,
-			pos="s,878.5,983.48 878.5,973.41 878.5,950.2 878.5,919.09 878.5,890.28"];
-		1627	[fillcolor=lightblue,
-			height=2.1528,
-			label=actual_number_of_colors,
-			pos="1054.5,809.5",
-			shape=square,
-			style=filled,
-			width=2.1528];
-		1625 -- 1627	[dir=back,
-			pos="s,899.38,985.89 906.04,978.36 927.6,953.98 958.54,919 986.6,887.27"];
-	}
-	subgraph cluster1714 {
-		graph [bb="4697.5,580.5,4840.5,858.5",
-			label="cjpeg_wrbmp.c:120:48",
-			lheight=0.21,
-			lp="4769,847",
+			lp="6243,847",
 			lwidth=1.76
 		];
-		1714;
-		1715	[fillcolor=lightblue,
-			height=0.52778,
-			label=row,
-			pos="4768.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.52778];
-		1714 -- 1715	[dir=back,
-			pos="s,4768.5,791.45 4768.5,781.26 4768.5,739.78 4768.5,661.91 4768.5,626.66"];
-	}
-	subgraph cluster1619 {
-		graph [bb="349.5,581.5,709.5,1068.4",
-			label="cjpeg_wrbmp.c:84:3",
-			lheight=0.21,
-			lp="529.5,1056.9",
-			lwidth=1.57
-		];
-		1619;
-		1623	[fillcolor=pink,
+		1800;
+		1801	[fillcolor=lightblue,
 			height=0.5,
-			label=30,
-			pos="384.5,607.5",
+			label=i,
+			pos="6242.5,607.5",
 			shape=square,
 			style=filled,
 			width=0.5];
-		1619 -- 1623	[dir=back,
-			pos="s,384.5,791.45 384.5,781.41 384.5,739.52 384.5,660.23 384.5,625.51"];
-		1620	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: .",
-			pos="510.5,1010.5",
-			style=filled,
-			width=1.3356];
-		1620 -- 1619	[dir=back,
-			pos="s,490.09,985.86 483.46,977.86 464.67,954.96 439.81,922.74 421.5,892 408.78,870.64 397.5,844.14 390.84,827.28"];
-		1621	[fillcolor=lightblue,
-			height=2.2361,
-			label=cjpeg_wrbmp_jpeg_dec_1,
-			pos="510.5,809.5",
-			shape=square,
-			style=filled,
-			width=2.2361];
-		1620 -- 1621	[dir=back,
-			pos="s,510.5,983.48 510.5,973.41 510.5,950.2 510.5,919.09 510.5,890.28"];
-		1622	[fillcolor=lightblue,
-			height=1.2778,
-			label=output_height,
-			pos="655.5,809.5",
-			shape=square,
-			style=filled,
-			width=1.2778];
-		1620 -- 1622	[dir=back,
-			pos="s,529.55,985.52 535.73,977.64 554.07,954.22 579.29,921.48 600.5,892 608.87,880.36 617.67,867.58 625.72,855.67"];
+		1800 -- 1801	[dir=back,
+			pos="s,6242.5,791.45 6242.5,781.41 6242.5,739.52 6242.5,660.23 6242.5,625.51"];
 	}
-	subgraph cluster1614 {
+	subgraph cluster1850 {
+		graph [bb="6322.5,581.5,6465.5,1059.5",
+			label="cjpeg_wrbmp.c:158:13",
+			lheight=0.21,
+			lp="6394,1048",
+			lwidth=1.76
+		];
+		1850;
+		1852	[fillcolor=pink,
+			height=0.5,
+			label=0,
+			pos="6393.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1850 -- 1852	[dir=back,
+			pos="s,6393.5,791.45 6393.5,781.41 6393.5,739.52 6393.5,660.23 6393.5,625.51"];
+		1851	[fillcolor=lightblue,
+			height=0.5,
+			label=i,
+			pos="6393.5,1010.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1851 -- 1850	[dir=back,
+			pos="s,6393.5,992.19 6393.5,982.19 6393.5,940.49 6393.5,862.19 6393.5,827.63"];
+	}
+	subgraph cluster1856 {
+		graph [bb="6473.5,581.5,6616.5,858.5",
+			label="cjpeg_wrbmp.c:158:36",
+			lheight=0.21,
+			lp="6545,847",
+			lwidth=1.76
+		];
+		1856;
+		1857	[fillcolor=lightblue,
+			height=0.5,
+			label=i,
+			pos="6544.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1856 -- 1857	[dir=back,
+			pos="s,6544.5,791.45 6544.5,781.41 6544.5,739.52 6544.5,660.23 6544.5,625.51"];
+	}
+	subgraph cluster1906 {
+		graph [bb="6624.5,581.5,6767.5,1059.5",
+			label="cjpeg_wrbmp.c:174:11",
+			lheight=0.21,
+			lp="6696,1048",
+			lwidth=1.76
+		];
+		1906;
+		1908	[fillcolor=pink,
+			height=0.5,
+			label=0,
+			pos="6695.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1906 -- 1908	[dir=back,
+			pos="s,6695.5,791.45 6695.5,781.41 6695.5,739.52 6695.5,660.23 6695.5,625.51"];
+		1907	[fillcolor=lightblue,
+			height=0.5,
+			label=i,
+			pos="6695.5,1010.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1907 -- 1906	[dir=back,
+			pos="s,6695.5,992.19 6695.5,982.19 6695.5,940.49 6695.5,862.19 6695.5,827.63"];
+	}
+	subgraph cluster1608 {
 		graph [bb="11.5,581.5,341.5,1068.4",
 			label="cjpeg_wrbmp.c:83:3",
 			lheight=0.21,
 			lp="176.5,1056.9",
 			lwidth=1.57
 		];
-		1614;
-		1618	[fillcolor=pink,
+		1608;
+		1612	[fillcolor=pink,
 			height=0.5,
 			label=0,
 			pos="46.5,607.5",
 			shape=square,
 			style=filled,
 			width=0.5];
-		1614 -- 1618	[dir=back,
+		1608 -- 1612	[dir=back,
 			pos="s,46.5,791.45 46.5,781.41 46.5,739.52 46.5,660.23 46.5,625.51"];
-		1615	[fillcolor=green,
+		1609	[fillcolor=green,
 			height=0.74639,
 			label="StructRef
 type: .",
 			pos="172.5,1010.5",
 			style=filled,
 			width=1.3356];
-		1615 -- 1614	[dir=back,
+		1609 -- 1608	[dir=back,
 			pos="s,152.09,985.86 145.46,977.86 126.67,954.96 101.81,922.74 83.5,892 70.777,870.64 59.504,844.14 52.839,827.28"];
-		1616	[fillcolor=lightblue,
+		1610	[fillcolor=lightblue,
 			height=2.2361,
 			label=cjpeg_wrbmp_jpeg_dec_1,
 			pos="172.5,809.5",
 			shape=square,
 			style=filled,
 			width=2.2361];
-		1615 -- 1616	[dir=back,
+		1609 -- 1610	[dir=back,
 			pos="s,172.5,983.48 172.5,973.41 172.5,950.2 172.5,919.09 172.5,890.28"];
-		1617	[fillcolor=lightblue,
+		1611	[fillcolor=lightblue,
 			height=0.86111,
 			label=progress,
 			pos="302.5,809.5",
 			shape=square,
 			style=filled,
 			width=0.86111];
-		1615 -- 1617	[dir=back,
+		1609 -- 1611	[dir=back,
 			pos="s,192.93,985.76 199.34,978.04 218.25,955.05 243.49,922.67 262.5,892 272.63,875.66 282.19,856.38 289.42,840.68"];
 	}
-	subgraph cluster1706 {
-		graph [bb="4519.5,356.5,4689.5,1060.5",
-			label="cjpeg_wrbmp.c:120:9",
+	subgraph cluster1613 {
+		graph [bb="349.5,581.5,709.5,1068.4",
+			label="cjpeg_wrbmp.c:84:3",
 			lheight=0.21,
-			lp="4604.5,1049",
-			lwidth=1.67
+			lp="529.5,1056.9",
+			lwidth=1.57
 		];
-		1706;
-		1708	[fillcolor=green,
-			height=0.74639,
-			label="StructRef
-type: ->",
-			pos="4604.5,607.5",
-			style=filled,
-			width=1.3356];
-		1706 -- 1708	[dir=back,
-			pos="s,4604.5,791.45 4604.5,780.97 4604.5,742.28 4604.5,672.35 4604.5,634.51"];
-		1709	[fillcolor=lightblue,
-			height=0.61111,
-			label=cinfo,
-			pos="4549.5,410.5",
+		1613;
+		1617	[fillcolor=pink,
+			height=0.5,
+			label=30,
+			pos="384.5,607.5",
 			shape=square,
 			style=filled,
-			width=0.61111];
-		1708 -- 1709	[dir=back,
-			pos="s,4597.2,580.61 4594.5,570.89 4583.1,530.48 4564.8,465.9 4555.5,432.71"];
-		1710	[fillcolor=lightblue,
+			width=0.5];
+		1613 -- 1617	[dir=back,
+			pos="s,384.5,791.45 384.5,781.41 384.5,739.52 384.5,660.23 384.5,625.51"];
+		1614	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: .",
+			pos="510.5,1010.5",
+			style=filled,
+			width=1.3356];
+		1614 -- 1613	[dir=back,
+			pos="s,490.09,985.86 483.46,977.86 464.67,954.96 439.81,922.74 421.5,892 408.78,870.64 397.5,844.14 390.84,827.28"];
+		1615	[fillcolor=lightblue,
+			height=2.2361,
+			label=cjpeg_wrbmp_jpeg_dec_1,
+			pos="510.5,809.5",
+			shape=square,
+			style=filled,
+			width=2.2361];
+		1614 -- 1615	[dir=back,
+			pos="s,510.5,983.48 510.5,973.41 510.5,950.2 510.5,919.09 510.5,890.28"];
+		1616	[fillcolor=lightblue,
 			height=1.2778,
 			label=output_height,
-			pos="4635.5,410.5",
+			pos="655.5,809.5",
 			shape=square,
 			style=filled,
 			width=1.2778];
-		1708 -- 1710	[dir=back,
-			pos="s,4608.6,580.61 4610.3,570.33 4615.4,538.21 4622.8,491.14 4628.3,456.58"];
-		1707	[fillcolor=lightblue,
-			height=0.52778,
-			label=row,
-			pos="4604.5,1010.5",
+		1614 -- 1616	[dir=back,
+			pos="s,529.55,985.52 535.73,977.64 554.07,954.22 579.29,921.48 600.5,892 608.87,880.36 617.67,867.58 625.72,855.67"];
+	}
+	subgraph cluster1618 {
+		graph [bb="717.5,581,1140.5,1068.4",
+			label="cjpeg_wrbmp.c:85:3",
+			lheight=0.21,
+			lp="929,1056.9",
+			lwidth=1.57
+		];
+		1618;
+		1622	[fillcolor=pink,
+			height=0.51389,
+			label=256,
+			pos="752.5,607.5",
 			shape=square,
 			style=filled,
-			width=0.52778];
-		1707 -- 1706	[dir=back,
-			pos="s,4604.5,991.49 4604.5,981.43 4604.5,939.6 4604.5,862.17 4604.5,827.76"];
+			width=0.51389];
+		1618 -- 1622	[dir=back,
+			pos="s,752.5,791.45 752.5,781.2 752.5,739.48 752.5,661.03 752.5,626.08"];
+		1619	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: .",
+			pos="878.5,1010.5",
+			style=filled,
+			width=1.3356];
+		1619 -- 1618	[dir=back,
+			pos="s,858.09,985.86 851.46,977.86 832.67,954.96 807.81,922.74 789.5,892 776.78,870.64 765.5,844.14 758.84,827.28"];
+		1620	[fillcolor=lightblue,
+			height=2.2361,
+			label=cjpeg_wrbmp_jpeg_dec_1,
+			pos="878.5,809.5",
+			shape=square,
+			style=filled,
+			width=2.2361];
+		1619 -- 1620	[dir=back,
+			pos="s,878.5,983.48 878.5,973.41 878.5,950.2 878.5,919.09 878.5,890.28"];
+		1621	[fillcolor=lightblue,
+			height=2.1528,
+			label=actual_number_of_colors,
+			pos="1054.5,809.5",
+			shape=square,
+			style=filled,
+			width=2.1528];
+		1619 -- 1621	[dir=back,
+			pos="s,899.38,985.89 906.04,978.36 927.6,953.98 958.54,919 986.6,887.27"];
 	}
-	subgraph cluster1670 {
+	subgraph cluster1623 {
+		graph [bb="1148.5,581.5,1557.5,1068.4",
+			label="cjpeg_wrbmp.c:86:3",
+			lheight=0.21,
+			lp="1353,1056.9",
+			lwidth=1.57
+		];
+		1623;
+		1627	[fillcolor=pink,
+			height=0.5,
+			label=2,
+			pos="1183.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1623 -- 1627	[dir=back,
+			pos="s,1183.5,791.45 1183.5,781.41 1183.5,739.52 1183.5,660.23 1183.5,625.51"];
+		1624	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: .",
+			pos="1309.5,1010.5",
+			style=filled,
+			width=1.3356];
+		1624 -- 1623	[dir=back,
+			pos="s,1289.1,985.86 1282.5,977.86 1263.7,954.96 1238.8,922.74 1220.5,892 1207.8,870.64 1196.5,844.14 1189.8,827.28"];
+		1625	[fillcolor=lightblue,
+			height=2.2361,
+			label=cjpeg_wrbmp_jpeg_dec_1,
+			pos="1309.5,809.5",
+			shape=square,
+			style=filled,
+			width=2.2361];
+		1624 -- 1625	[dir=back,
+			pos="s,1309.5,983.48 1309.5,973.41 1309.5,950.2 1309.5,919.09 1309.5,890.28"];
+		1626	[fillcolor=lightblue,
+			height=1.9583,
+			label=out_color_components,
+			pos="1478.5,809.5",
+			shape=square,
+			style=filled,
+			width=1.9583];
+		1624 -- 1626	[dir=back,
+			pos="s,1329.6,985.89 1336.1,978.17 1358.4,951.96 1390.9,913.6 1419.3,880.18"];
+	}
+	subgraph cluster1628 {
+		graph [bb="1565.5,581.5,1895.5,1068.4",
+			label="cjpeg_wrbmp.c:88:3",
+			lheight=0.21,
+			lp="1730.5,1056.9",
+			lwidth=1.57
+		];
+		1628;
+		1632	[fillcolor=pink,
+			height=0.5,
+			label=0,
+			pos="1600.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1628 -- 1632	[dir=back,
+			pos="s,1600.5,791.45 1600.5,781.41 1600.5,739.52 1600.5,660.23 1600.5,625.51"];
+		1629	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: .",
+			pos="1726.5,1010.5",
+			style=filled,
+			width=1.3356];
+		1629 -- 1628	[dir=back,
+			pos="s,1706.1,985.86 1699.5,977.86 1680.7,954.96 1655.8,922.74 1637.5,892 1624.8,870.64 1613.5,844.14 1606.8,827.28"];
+		1630	[fillcolor=lightblue,
+			height=2.2361,
+			label=cjpeg_wrbmp_jpeg_dec_2,
+			pos="1726.5,809.5",
+			shape=square,
+			style=filled,
+			width=2.2361];
+		1629 -- 1630	[dir=back,
+			pos="s,1726.5,983.48 1726.5,973.41 1726.5,950.2 1726.5,919.09 1726.5,890.28"];
+		1631	[fillcolor=lightblue,
+			height=0.86111,
+			label=progress,
+			pos="1856.5,809.5",
+			shape=square,
+			style=filled,
+			width=0.86111];
+		1629 -- 1631	[dir=back,
+			pos="s,1746.9,985.76 1753.3,978.04 1772.2,955.05 1797.5,922.67 1816.5,892 1826.6,875.66 1836.2,856.38 1843.4,840.68"];
+	}
+	subgraph cluster1633 {
+		graph [bb="1903.5,581.5,2263.5,1068.4",
+			label="cjpeg_wrbmp.c:89:3",
+			lheight=0.21,
+			lp="2083.5,1056.9",
+			lwidth=1.57
+		];
+		1633;
+		1637	[fillcolor=pink,
+			height=0.5,
+			label=30,
+			pos="1938.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1633 -- 1637	[dir=back,
+			pos="s,1938.5,791.45 1938.5,781.41 1938.5,739.52 1938.5,660.23 1938.5,625.51"];
+		1634	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: .",
+			pos="2064.5,1010.5",
+			style=filled,
+			width=1.3356];
+		1634 -- 1633	[dir=back,
+			pos="s,2044.1,985.86 2037.5,977.86 2018.7,954.96 1993.8,922.74 1975.5,892 1962.8,870.64 1951.5,844.14 1944.8,827.28"];
+		1635	[fillcolor=lightblue,
+			height=2.2361,
+			label=cjpeg_wrbmp_jpeg_dec_2,
+			pos="2064.5,809.5",
+			shape=square,
+			style=filled,
+			width=2.2361];
+		1634 -- 1635	[dir=back,
+			pos="s,2064.5,983.48 2064.5,973.41 2064.5,950.2 2064.5,919.09 2064.5,890.28"];
+		1636	[fillcolor=lightblue,
+			height=1.2778,
+			label=output_height,
+			pos="2209.5,809.5",
+			shape=square,
+			style=filled,
+			width=1.2778];
+		1634 -- 1636	[dir=back,
+			pos="s,2083.5,985.52 2089.7,977.64 2108.1,954.22 2133.3,921.48 2154.5,892 2162.9,880.36 2171.7,867.58 2179.7,855.67"];
+	}
+	subgraph cluster1638 {
+		graph [bb="2271.5,581,2694.5,1068.4",
+			label="cjpeg_wrbmp.c:90:3",
+			lheight=0.21,
+			lp="2483,1056.9",
+			lwidth=1.57
+		];
+		1638;
+		1642	[fillcolor=pink,
+			height=0.51389,
+			label=256,
+			pos="2306.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.51389];
+		1638 -- 1642	[dir=back,
+			pos="s,2306.5,791.45 2306.5,781.2 2306.5,739.48 2306.5,661.03 2306.5,626.08"];
+		1639	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: .",
+			pos="2432.5,1010.5",
+			style=filled,
+			width=1.3356];
+		1639 -- 1638	[dir=back,
+			pos="s,2412.1,985.86 2405.5,977.86 2386.7,954.96 2361.8,922.74 2343.5,892 2330.8,870.64 2319.5,844.14 2312.8,827.28"];
+		1640	[fillcolor=lightblue,
+			height=2.2361,
+			label=cjpeg_wrbmp_jpeg_dec_2,
+			pos="2432.5,809.5",
+			shape=square,
+			style=filled,
+			width=2.2361];
+		1639 -- 1640	[dir=back,
+			pos="s,2432.5,983.48 2432.5,973.41 2432.5,950.2 2432.5,919.09 2432.5,890.28"];
+		1641	[fillcolor=lightblue,
+			height=2.1528,
+			label=actual_number_of_colors,
+			pos="2608.5,809.5",
+			shape=square,
+			style=filled,
+			width=2.1528];
+		1639 -- 1641	[dir=back,
+			pos="s,2453.4,985.89 2460,978.36 2481.6,953.98 2512.5,919 2540.6,887.27"];
+	}
+	subgraph cluster1643 {
+		graph [bb="2702.5,581.5,3111.5,1068.4",
+			label="cjpeg_wrbmp.c:91:3",
+			lheight=0.21,
+			lp="2907,1056.9",
+			lwidth=1.57
+		];
+		1643;
+		1647	[fillcolor=pink,
+			height=0.5,
+			label=3,
+			pos="2737.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1643 -- 1647	[dir=back,
+			pos="s,2737.5,791.45 2737.5,781.41 2737.5,739.52 2737.5,660.23 2737.5,625.51"];
+		1644	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: .",
+			pos="2863.5,1010.5",
+			style=filled,
+			width=1.3356];
+		1644 -- 1643	[dir=back,
+			pos="s,2843.1,985.86 2836.5,977.86 2817.7,954.96 2792.8,922.74 2774.5,892 2761.8,870.64 2750.5,844.14 2743.8,827.28"];
+		1645	[fillcolor=lightblue,
+			height=2.2361,
+			label=cjpeg_wrbmp_jpeg_dec_2,
+			pos="2863.5,809.5",
+			shape=square,
+			style=filled,
+			width=2.2361];
+		1644 -- 1645	[dir=back,
+			pos="s,2863.5,983.48 2863.5,973.41 2863.5,950.2 2863.5,919.09 2863.5,890.28"];
+		1646	[fillcolor=lightblue,
+			height=1.9583,
+			label=out_color_components,
+			pos="3032.5,809.5",
+			shape=square,
+			style=filled,
+			width=1.9583];
+		1644 -- 1646	[dir=back,
+			pos="s,2883.6,985.89 2890.1,978.17 2912.4,951.96 2944.9,913.6 2973.3,880.18"];
+	}
+	subgraph cluster1912 {
+		graph [bb="6775.5,581.5,6918.5,858.5",
+			label="cjpeg_wrbmp.c:174:27",
+			lheight=0.21,
+			lp="6847,847",
+			lwidth=1.76
+		];
+		1912;
+		1913	[fillcolor=lightblue,
+			height=0.5,
+			label=i,
+			pos="6846.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1912 -- 1913	[dir=back,
+			pos="s,6846.5,791.45 6846.5,781.41 6846.5,739.52 6846.5,660.23 6846.5,625.51"];
+	}
+	subgraph cluster1940 {
+		graph [bb="6926.5,581.5,7069.5,858.5",
+			label="cjpeg_wrbmp.c:186:27",
+			lheight=0.21,
+			lp="6998,847",
+			lwidth=1.76
+		];
+		1940;
+		1941	[fillcolor=lightblue,
+			height=0.5,
+			label=i,
+			pos="6997.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1940 -- 1941	[dir=back,
+			pos="s,6997.5,791.45 6997.5,781.41 6997.5,739.52 6997.5,660.23 6997.5,625.51"];
+	}
+	subgraph cluster2002 {
+		graph [bb="7077.5,25.5,7359.5,864",
+			label="cjpeg_wrbmp.c:208:3",
+			lheight=0.21,
+			lp="7218.5,852.5",
+			lwidth=1.67
+		];
+		2002;
+		2003	[fillcolor=yellow,
+			height=0.5,
+			label="!=",
+			pos="7247.5,607.5",
+			style=filled,
+			width=0.75];
+		2002 -- 2003	[dir=back,
+			pos="s,7247.5,785.95 7247.5,775.74 7247.5,732.81 7247.5,659.07 7247.5,625.74"];
+		2004	[fillcolor=yellow,
+			height=0.5,
+			label="+",
+			pos="7216.5,410.5",
+			style=filled,
+			width=0.75];
+		2003 -- 2004	[dir=back,
+			pos="s,7244.8,589.54 7243.2,579.5 7236.7,538.7 7224.6,462.5 7219.2,428.56"];
+		2008	[fillcolor=pink,
+			height=0.5,
+			label=0,
+			pos="7279.5,410.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		2003 -- 2008	[dir=back,
+			pos="s,7250.3,589.54 7251.9,579.5 7258.6,538.7 7271.1,462.5 7276.7,428.56"];
+		2005	[fillcolor=lightblue,
+			height=2.125,
+			label=cjpeg_wrbmp_checksum,
+			pos="7162.5,220.5",
+			shape=square,
+			style=filled,
+			width=2.125];
+		2004 -- 2005	[dir=back,
+			pos="s,7211.6,392.48 7208.8,382.72 7202.4,360.37 7192.9,327.39 7184.2,297.07"];
+		2006	[fillcolor=green,
+			height=0.74639,
+			label="UnaryOp
+op: -",
+			pos="7304.5,220.5",
+			style=filled,
+			width=1.316];
+		2004 -- 2006	[dir=back,
+			pos="s,7223.2,392.85 7227.2,383.17 7234.2,366.41 7243.6,344.29 7252.5,325 7265.1,297.82 7280.7,267.22 7291.4,246.38"];
+		2007	[fillcolor=pink,
+			height=0.79167,
+			label=209330,
+			pos="7304.5,62",
+			shape=square,
+			style=filled,
+			width=0.79167];
+		2006 -- 2007	[dir=back,
+			pos="s,7304.5,193.31 7304.5,183.04 7304.5,154.81 7304.5,116.31 7304.5,90.598"];
+	}
+	subgraph cluster2023 {
+		graph [bb="7367.5,337,7515.5,864",
+			label="cjpeg_wrbmp.c:216:3",
+			lheight=0.21,
+			lp="7441.5,852.5",
+			lwidth=1.67
+		];
+		2023;
+		2024	[fillcolor=red,
+			height=0.5,
+			label=FuncCall,
+			pos="7441.5,607.5",
+			style=filled,
+			width=1.1916];
+		2023 -- 2024	[dir=back,
+			pos="s,7441.5,785.95 7441.5,775.74 7441.5,732.81 7441.5,659.07 7441.5,625.74"];
+		2025	[fillcolor=lightblue,
+			height=1.8194,
+			label=cjpeg_wrbmp_return,
+			pos="7441.5,410.5",
+			shape=square,
+			style=filled,
+			width=1.8194];
+		2024 -- 2025	[dir=back,
+			pos="s,7441.5,589.2 7441.5,579.1 7441.5,552.51 7441.5,511.17 7441.5,476.2"];
+	}
+	subgraph cluster1648 {
+		graph [bb="3119.5,516,3303.5,1124",
+			label="cjpeg_wrbmp.c:93:3",
+			lheight=0.21,
+			lp="3211.5,1112.5",
+			lwidth=1.57
+		];
+		1648;
+		1650	[fillcolor=lightblue,
+			height=2.3194,
+			label=cjpeg_wrbmp_output_array,
+			pos="3211.5,607.5",
+			shape=square,
+			style=filled,
+			width=2.3194];
+		1648 -- 1650	[dir=back,
+			pos="s,3211.5,791.45 3211.5,781.33 3211.5,758.11 3211.5,723.44 3211.5,691.24"];
+		1649	[fillcolor=lightblue,
+			height=2.2917,
+			label=cjpeg_wrbmp_jpeg_stream,
+			pos="3211.5,1010.5",
+			shape=square,
+			style=filled,
+			width=2.2917];
+		1649 -- 1648	[dir=back,
+			pos="s,3211.5,927.98 3211.5,917.91 3211.5,883.7 3211.5,848.24 3211.5,827.83"];
+	}
+	subgraph cluster1651 {
+		graph [bb="3311.5,581.5,3481.5,1118",
+			label="cjpeg_wrbmp.c:95:3",
+			lheight=0.21,
+			lp="3396.5,1106.5",
+			lwidth=1.57
+		];
+		1651;
+		1653	[fillcolor=pink,
+			height=0.5,
+			label=0,
+			pos="3396.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.5];
+		1651 -- 1653	[dir=back,
+			pos="s,3396.5,791.45 3396.5,781.41 3396.5,739.52 3396.5,660.23 3396.5,625.51"];
+		1652	[fillcolor=lightblue,
+			height=2.125,
+			label=cjpeg_wrbmp_checksum,
+			pos="3396.5,1010.5",
+			shape=square,
+			style=filled,
+			width=2.125];
+		1652 -- 1651	[dir=back,
+			pos="s,3396.5,933.98 3396.5,923.91 3396.5,887.89 3396.5,849.4 3396.5,827.8"];
+	}
+	subgraph cluster1664 {
 		graph [bb="3489.5,566.5,3743.5,1068.4",
 			label="cjpeg_wrbmp.c:103:6",
 			lheight=0.21,
 			lp="3616.5,1056.9",
 			lwidth=1.67
 		];
-		1670;
-		1673	[fillcolor=lightblue,
+		1664;
+		1667	[fillcolor=lightblue,
 			height=0.91667,
 			label=character,
 			pos="3530.5,607.5",
 			shape=square,
 			style=filled,
 			width=0.91667];
-		1670 -- 1673	[dir=back,
+		1664 -- 1667	[dir=back,
 			pos="s,3525,791.45 3525.3,781.05 3526.4,744.44 3528.4,679.75 3529.5,640.82"];
-		1671	[fillcolor=green,
+		1665	[fillcolor=green,
 			height=0.74639,
 			label="UnaryOp
 op: *",
 			pos="3598.5,1010.5",
 			style=filled,
 			width=1.316];
-		1671 -- 1670	[dir=back,
+		1665 -- 1664	[dir=back,
 			pos="s,3589,983.89 3585.4,974.32 3569.3,931.01 3542.6,859.23 3530.6,827.03"];
-		1672	[fillcolor=lightblue,
+		1666	[fillcolor=lightblue,
 			height=2.2917,
 			label=cjpeg_wrbmp_jpeg_stream,
 			pos="3652.5,809.5",
 			shape=square,
 			style=filled,
 			width=2.2917];
-		1671 -- 1672	[dir=back,
+		1665 -- 1666	[dir=back,
 			pos="s,3605.4,983.89 3608.1,974.03 3614.3,951.32 3622.6,920.85 3630.3,892.38"];
 	}
-	subgraph cluster1694 {
+	subgraph cluster1668 {
+		graph [bb="3751.5,517,3933.5,858.5",
+			label="cjpeg_wrbmp.c:105:5",
+			lheight=0.21,
+			lp="3842.5,847",
+			lwidth=1.67
+		];
+		1668;
+		1669	[fillcolor=lightblue,
+			height=2.2917,
+			label=cjpeg_wrbmp_jpeg_stream,
+			pos="3842.5,607.5",
+			shape=square,
+			style=filled,
+			width=2.2917];
+		1668 -- 1669	[dir=back,
+			pos="s,3842.5,791.45 3842.5,781.24 3842.5,757.79 3842.5,722.72 3842.5,690.29"];
+	}
+	subgraph cluster1670 {
+		graph [bb="3941.5,566.5,4111.5,1118",
+			label="cjpeg_wrbmp.c:107:3",
+			lheight=0.21,
+			lp="4026.5,1106.5",
+			lwidth=1.67
+		];
+		1670;
+		1672	[fillcolor=lightblue,
+			height=0.91667,
+			label=character,
+			pos="4026.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.91667];
+		1670 -- 1672	[dir=back,
+			pos="s,4026.5,791.45 4026.5,781.05 4026.5,744.44 4026.5,679.75 4026.5,640.82"];
+		1671	[fillcolor=lightblue,
+			height=2.125,
+			label=cjpeg_wrbmp_checksum,
+			pos="4026.5,1010.5",
+			shape=square,
+			style=filled,
+			width=2.125];
+		1671 -- 1670	[dir=back,
+			pos="s,4026.5,933.98 4026.5,923.91 4026.5,887.89 4026.5,849.4 4026.5,827.8"];
+	}
+	subgraph cluster1673 {
+		graph [bb="4119.5,566.5,4255.5,864",
+			label="cjpeg_wrbmp.c:109:3",
+			lheight=0.21,
+			lp="4187.5,852.5",
+			lwidth=1.67
+		];
+		1673;
+		1674	[fillcolor=lightblue,
+			height=0.91667,
+			label=character,
+			pos="4187.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.91667];
+		1673 -- 1674	[dir=back,
+			pos="s,4187.5,785.95 4187.5,775.59 4187.5,738.19 4187.5,677.54 4187.5,640.51"];
+	}
+	subgraph cluster1688 {
 		graph [bb="4263.5,181.5,4511.5,1072.5",
 			label="cjpeg_wrbmp.c:115:31",
 			lheight=0.21,
 			lp="4387.5,1061",
 			lwidth=1.76
 		];
-		1694;
-		1697	[fillcolor=green,
+		1688;
+		1691	[fillcolor=green,
 			height=0.5,
 			label=Cast,
 			pos="4441.5,607.5",
 			style=filled,
 			width=0.75];
-		1694 -- 1697	[dir=back,
+		1688 -- 1691	[dir=back,
 			pos="s,4441.5,791.45 4441.5,781.41 4441.5,739.52 4441.5,660.23 4441.5,625.51"];
-		1698	[fillcolor=green,
+		1692	[fillcolor=green,
 			height=1.041,
 			label="Typename
 name: None
@@ -1309,45 +1040,45 @@ quals: []",
 			pos="4330.5,410.5",
 			style=filled,
 			width=1.6303];
-		1697 -- 1698	[dir=back,
+		1691 -- 1692	[dir=back,
 			pos="s,4433,590.37 4428.3,581.53 4418.6,563.27 4405,537.97 4392.5,516 4379.1,492.33 4363.4,465.98 4351.2,445.66"];
-		1701	[fillcolor=green,
+		1695	[fillcolor=green,
 			height=0.74639,
 			label="StructRef
 type: ->",
 			pos="4455.5,410.5",
 			style=filled,
 			width=1.3356];
-		1697 -- 1701	[dir=back,
+		1691 -- 1695	[dir=back,
 			pos="s,4442.7,589.2 4443.5,578.98 4446.2,541.39 4451,474.47 4453.6,437.62"];
-		1702	[fillcolor=lightblue,
+		1696	[fillcolor=lightblue,
 			height=0.61111,
 			label=cinfo,
 			pos="4392.5,220.5",
 			shape=square,
 			style=filled,
 			width=0.61111];
-		1701 -- 1702	[dir=back,
+		1695 -- 1696	[dir=back,
 			pos="s,4446.9,383.75 4443.6,373.92 4430.6,335.16 4410.2,274.43 4399.6,242.59"];
-		1703	[fillcolor=lightblue,
+		1697	[fillcolor=lightblue,
 			height=0.86111,
 			label=progress,
 			pos="4463.5,220.5",
 			shape=square,
 			style=filled,
 			width=0.86111];
-		1701 -- 1703	[dir=back,
+		1695 -- 1697	[dir=back,
 			pos="s,4456.6,383.36 4457.1,373.01 4458.6,337.7 4460.8,284.81 4462.2,251.77"];
-		1695	[fillcolor=lightblue,
+		1689	[fillcolor=lightblue,
 			height=0.86111,
 			label=progress,
 			pos="4441.5,1010.5",
 			shape=square,
 			style=filled,
 			width=0.86111];
-		1695 -- 1694	[dir=back,
+		1689 -- 1688	[dir=back,
 			pos="s,4441.5,979.28 4441.5,969.07 4441.5,925.73 4441.5,858.95 4441.5,827.72"];
-		1699	[fillcolor=lightblue,
+		1693	[fillcolor=lightblue,
 			height=1.4722,
 			label="TypeDecl
 declname: None
@@ -1356,122 +1087,391 @@ quals: []",
 			shape=square,
 			style=filled,
 			width=1.4722];
-		1699 -- 1698	[dir=back,
+		1693 -- 1692	[dir=back,
 			pos="s,4330.5,554.5 4330.5,544.44 4330.5,512.76 4330.5,475.31 4330.5,448.24"];
 	}
-	subgraph cluster1657 {
-		graph [bb="3311.5,581.5,3481.5,1118",
-			label="cjpeg_wrbmp.c:95:3",
+	subgraph cluster1700 {
+		graph [bb="4519.5,356.5,4689.5,1060.5",
+			label="cjpeg_wrbmp.c:120:9",
 			lheight=0.21,
-			lp="3396.5,1106.5",
-			lwidth=1.57
-		];
-		1657;
-		1659	[fillcolor=pink,
-			height=0.5,
-			label=0,
-			pos="3396.5,607.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		1657 -- 1659	[dir=back,
-			pos="s,3396.5,791.45 3396.5,781.41 3396.5,739.52 3396.5,660.23 3396.5,625.51"];
-		1658	[fillcolor=lightblue,
-			height=2.125,
-			label=cjpeg_wrbmp_checksum,
-			pos="3396.5,1010.5",
-			shape=square,
-			style=filled,
-			width=2.125];
-		1658 -- 1657	[dir=back,
-			pos="s,3396.5,933.98 3396.5,923.91 3396.5,887.89 3396.5,849.4 3396.5,827.8"];
-	}
-	subgraph cluster2008 {
-		graph [bb="7077.5,25.5,7359.5,864",
-			label="cjpeg_wrbmp.c:208:3",
-			lheight=0.21,
-			lp="7218.5,852.5",
+			lp="4604.5,1049",
 			lwidth=1.67
 		];
-		2008;
-		2009	[fillcolor=yellow,
-			height=0.5,
-			label="!=",
-			pos="7247.5,607.5",
-			style=filled,
-			width=0.75];
-		2008 -- 2009	[dir=back,
-			pos="s,7247.5,785.95 7247.5,775.74 7247.5,732.81 7247.5,659.07 7247.5,625.74"];
-		2010	[fillcolor=yellow,
-			height=0.5,
-			label="+",
-			pos="7216.5,410.5",
-			style=filled,
-			width=0.75];
-		2009 -- 2010	[dir=back,
-			pos="s,7244.8,589.54 7243.2,579.5 7236.7,538.7 7224.6,462.5 7219.2,428.56"];
-		2014	[fillcolor=pink,
-			height=0.5,
-			label=0,
-			pos="7279.5,410.5",
-			shape=square,
-			style=filled,
-			width=0.5];
-		2009 -- 2014	[dir=back,
-			pos="s,7250.3,589.54 7251.9,579.5 7258.6,538.7 7271.1,462.5 7276.7,428.56"];
-		2011	[fillcolor=lightblue,
-			height=2.125,
-			label=cjpeg_wrbmp_checksum,
-			pos="7162.5,220.5",
-			shape=square,
-			style=filled,
-			width=2.125];
-		2010 -- 2011	[dir=back,
-			pos="s,7211.6,392.48 7208.8,382.72 7202.4,360.37 7192.9,327.39 7184.2,297.07"];
-		2012	[fillcolor=green,
+		1700;
+		1702	[fillcolor=green,
 			height=0.74639,
-			label="UnaryOp
-op: -",
-			pos="7304.5,220.5",
+			label="StructRef
+type: ->",
+			pos="4604.5,607.5",
 			style=filled,
-			width=1.316];
-		2010 -- 2012	[dir=back,
-			pos="s,7223.2,392.85 7227.2,383.17 7234.2,366.41 7243.6,344.29 7252.5,325 7265.1,297.82 7280.7,267.22 7291.4,246.38"];
-		2013	[fillcolor=pink,
-			height=0.79167,
-			label=209330,
-			pos="7304.5,62",
+			width=1.3356];
+		1700 -- 1702	[dir=back,
+			pos="s,4604.5,791.45 4604.5,780.97 4604.5,742.28 4604.5,672.35 4604.5,634.51"];
+		1703	[fillcolor=lightblue,
+			height=0.61111,
+			label=cinfo,
+			pos="4549.5,410.5",
 			shape=square,
 			style=filled,
-			width=0.79167];
-		2012 -- 2013	[dir=back,
-			pos="s,7304.5,193.31 7304.5,183.04 7304.5,154.81 7304.5,116.31 7304.5,90.598"];
+			width=0.61111];
+		1702 -- 1703	[dir=back,
+			pos="s,4597.2,580.61 4594.5,570.89 4583.1,530.48 4564.8,465.9 4555.5,432.71"];
+		1704	[fillcolor=lightblue,
+			height=1.2778,
+			label=output_height,
+			pos="4635.5,410.5",
+			shape=square,
+			style=filled,
+			width=1.2778];
+		1702 -- 1704	[dir=back,
+			pos="s,4608.6,580.61 4610.3,570.33 4615.4,538.21 4622.8,491.14 4628.3,456.58"];
+		1701	[fillcolor=lightblue,
+			height=0.52778,
+			label=row,
+			pos="4604.5,1010.5",
+			shape=square,
+			style=filled,
+			width=0.52778];
+		1701 -- 1700	[dir=back,
+			pos="s,4604.5,991.49 4604.5,981.43 4604.5,939.6 4604.5,862.17 4604.5,827.76"];
 	}
-	subgraph cluster2029 {
-		graph [bb="7367.5,337,7515.5,864",
-			label="cjpeg_wrbmp.c:216:3",
+	subgraph cluster1708 {
+		graph [bb="4697.5,580.5,4840.5,858.5",
+			label="cjpeg_wrbmp.c:120:48",
 			lheight=0.21,
-			lp="7441.5,852.5",
+			lp="4769,847",
+			lwidth=1.76
+		];
+		1708;
+		1709	[fillcolor=lightblue,
+			height=0.52778,
+			label=row,
+			pos="4768.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.52778];
+		1708 -- 1709	[dir=back,
+			pos="s,4768.5,791.45 4768.5,781.26 4768.5,739.78 4768.5,661.91 4768.5,626.66"];
+	}
+	subgraph cluster1716 {
+		graph [bb="4848.5,8,5178.5,1068.4",
+			label="cjpeg_wrbmp.c:122:7",
+			lheight=0.21,
+			lp="5013.5,1056.9",
 			lwidth=1.67
 		];
-		2029;
-		2030	[fillcolor=red,
+		1716;
+		1722	[fillcolor=green,
 			height=0.5,
-			label=FuncCall,
-			pos="7441.5,607.5",
+			label=Cast,
+			pos="5007.5,607.5",
 			style=filled,
-			width=1.1916];
-		2029 -- 2030	[dir=back,
-			pos="s,7441.5,785.95 7441.5,775.74 7441.5,732.81 7441.5,659.07 7441.5,625.74"];
-		2031	[fillcolor=lightblue,
-			height=1.8194,
-			label=cjpeg_wrbmp_return,
-			pos="7441.5,410.5",
+			width=0.75];
+		1716 -- 1722	[dir=back,
+			pos="s,4930.5,791.79 4934.4,782.54 4951.9,740.77 4986,659.79 5000.6,625.02"];
+		1723	[fillcolor=green,
+			height=1.041,
+			label="Typename
+name: None
+quals: []",
+			pos="4915.5,410.5",
+			style=filled,
+			width=1.6303];
+		1722 -- 1723	[dir=back,
+			pos="s,5001.5,589.91 4998.1,580.51 4991.2,562.24 4981.4,537.35 4971.5,516 4960.4,492.11 4946.4,465.99 4935.2,445.83"];
+		1726	[fillcolor=yellow,
+			height=0.5,
+			label="-",
+			pos="5019.5,410.5",
+			style=filled,
+			width=0.75];
+		1722 -- 1726	[dir=back,
+			pos="s,5008.6,589.2 5009.2,579.12 5011.7,538.19 5016.4,462.28 5018.5,428.49"];
+		1727	[fillcolor=yellow,
+			height=0.74639,
+			label="StructRef
+type: ->",
+			pos="4963.5,220.5",
+			style=filled,
+			width=1.3356];
+		1726 -- 1727	[dir=back,
+			pos="s,5014.4,392.48 5011.5,382.65 5000.7,346.53 4981.7,282.74 4971.2,247.21"];
+		1730	[fillcolor=lightblue,
+			height=0.52778,
+			label=row,
+			pos="5048.5,220.5",
 			shape=square,
 			style=filled,
-			width=1.8194];
-		2030 -- 2031	[dir=back,
-			pos="s,7441.5,589.2 7441.5,579.1 7441.5,552.51 7441.5,511.17 7441.5,476.2"];
+			width=0.52778];
+		1726 -- 1730	[dir=back,
+			pos="s,5022.1,392.48 5023.7,382.42 5029.7,343.54 5040.6,272.94 5045.7,239.71"];
+		1717	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: .",
+			pos="5016.5,1010.5",
+			style=filled,
+			width=1.3356];
+		1717 -- 1716	[dir=back,
+			pos="s,5004,984.41 4999.5,975.26 4988,951.9 4972.6,920.21 4959.5,892 4949.2,869.68 4937.8,843.65 4930.6,827.12"];
+		1718	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: ->",
+			pos="5016.5,809.5",
+			style=filled,
+			width=1.3356];
+		1717 -- 1718	[dir=back,
+			pos="s,5016.5,983.48 5016.5,973.48 5016.5,933.97 5016.5,871.54 5016.5,836.52"];
+		1721	[fillcolor=lightblue,
+			height=1.2083,
+			label=pass_counter,
+			pos="5126.5,809.5",
+			shape=square,
+			style=filled,
+			width=1.2083];
+		1717 -- 1721	[dir=back,
+			pos="s,5030.2,984.7 5035.2,975.67 5053.9,941.83 5082.7,889.69 5103,853.06"];
+		1719	[fillcolor=lightblue,
+			height=0.86111,
+			label=progress,
+			pos="5083.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.86111];
+		1718 -- 1719	[dir=back,
+			pos="s,5025.1,782.76 5028.4,773.08 5041.2,734.89 5061.3,674.74 5073.4,638.71"];
+		1720	[fillcolor=lightblue,
+			height=0.51389,
+			label=pub,
+			pos="5151.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.51389];
+		1718 -- 1720	[dir=back,
+			pos="s,5031.2,783.77 5036.8,774.99 5047.1,759.49 5060.3,741.38 5074.5,727 5093.5,707.75 5107.5,712.8 5123.5,691 5137.9,671.35 5145.3,\
+643.79 5148.7,626.04"];
+		1728	[fillcolor=lightblue,
+			height=0.61111,
+			label=cinfo,
+			pos="4906.5,62",
+			shape=square,
+			style=filled,
+			width=0.61111];
+		1727 -- 1728	[dir=back,
+			pos="s,4954.2,194.01 4950.8,184.54 4939.6,153.87 4923.7,110.24 4914.3,84.453"];
+		1729	[fillcolor=lightblue,
+			height=1.2778,
+			label=output_height,
+			pos="4992.5,62",
+			shape=square,
+			style=filled,
+			width=1.2778];
+		1727 -- 1729	[dir=back,
+			pos="s,4968.3,193.66 4970.2,183.56 4974.3,161.16 4979.7,132.15 4984.1,108.2"];
+		1724	[fillcolor=lightblue,
+			height=1.4722,
+			label="TypeDecl
+declname: None
+quals: []",
+			pos="4909.5,607.5",
+			shape=square,
+			style=filled,
+			width=1.4722];
+		1724 -- 1723	[dir=back,
+			pos="s,4911.1,554.5 4911.4,544.44 4912.4,512.76 4913.5,475.31 4914.4,448.24"];
+	}
+	subgraph cluster1731 {
+		graph [bb="5186.5,166.5,5516.5,1068.4",
+			label="cjpeg_wrbmp.c:123:7",
+			lheight=0.21,
+			lp="5351.5,1056.9",
+			lwidth=1.67
+		];
+		1731;
+		1737	[fillcolor=green,
+			height=0.5,
+			label=Cast,
+			pos="5345.5,607.5",
+			style=filled,
+			width=0.75];
+		1731 -- 1737	[dir=back,
+			pos="s,5281.3,791.79 5284.7,782.31 5299.3,740.57 5327.4,660.16 5339.6,625.3"];
+		1738	[fillcolor=green,
+			height=1.041,
+			label="Typename
+name: None
+quals: []",
+			pos="5253.5,410.5",
+			style=filled,
+			width=1.6303];
+		1737 -- 1738	[dir=back,
+			pos="s,5339.5,589.91 5336.1,580.51 5329.2,562.24 5319.4,537.35 5309.5,516 5298.4,492.11 5284.4,465.99 5273.2,445.83"];
+		1741	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: ->",
+			pos="5378.5,410.5",
+			style=filled,
+			width=1.3356];
+		1737 -- 1741	[dir=back,
+			pos="s,5348.4,589.54 5350.1,579.33 5356.5,541.74 5367.9,474.32 5374.1,437.4"];
+		1742	[fillcolor=lightblue,
+			height=0.61111,
+			label=cinfo,
+			pos="5334.5,220.5",
+			shape=square,
+			style=filled,
+			width=0.61111];
+		1741 -- 1742	[dir=back,
+			pos="s,5372.5,383.75 5370.2,373.92 5361.1,335.16 5346.9,274.43 5339.4,242.59"];
+		1743	[fillcolor=lightblue,
+			height=1.2778,
+			label=output_height,
+			pos="5420.5,220.5",
+			shape=square,
+			style=filled,
+			width=1.2778];
+		1741 -- 1743	[dir=back,
+			pos="s,5384.3,383.75 5386.5,373.6 5393.3,343.23 5403.1,299.54 5410.4,266.77"];
+		1732	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: .",
+			pos="5368.5,1010.5",
+			style=filled,
+			width=1.3356];
+		1732 -- 1731	[dir=back,
+			pos="s,5356,984.41 5351.5,975.26 5340,951.9 5324.6,920.21 5311.5,892 5301.2,869.68 5289.8,843.65 5282.6,827.12"];
+		1733	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: ->",
+			pos="5368.5,809.5",
+			style=filled,
+			width=1.3356];
+		1732 -- 1733	[dir=back,
+			pos="s,5368.5,983.48 5368.5,973.48 5368.5,933.97 5368.5,871.54 5368.5,836.52"];
+		1736	[fillcolor=lightblue,
+			height=1.0139,
+			label=pass_limit,
+			pos="5471.5,809.5",
+			shape=square,
+			style=filled,
+			width=1.0139];
+		1732 -- 1736	[dir=back,
+			pos="s,5381.5,984.3 5386.3,975.16 5404.9,939.14 5434.1,882.78 5453,846.25"];
+		1734	[fillcolor=lightblue,
+			height=0.86111,
+			label=progress,
+			pos="5421.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.86111];
+		1733 -- 1734	[dir=back,
+			pos="s,5375.3,782.76 5377.9,773.08 5388,734.89 5403.9,674.74 5413.5,638.71"];
+		1735	[fillcolor=lightblue,
+			height=0.51389,
+			label=pub,
+			pos="5489.5,607.5",
+			shape=square,
+			style=filled,
+			width=0.51389];
+		1733 -- 1735	[dir=back,
+			pos="s,5384.6,783.89 5390.4,775.34 5400.8,760.2 5413.8,742.28 5426.5,727 5440.8,709.86 5449.9,710.03 5461.5,691 5474.1,670.49 5481.8,\
+643.63 5485.9,626.22"];
+		1739	[fillcolor=lightblue,
+			height=1.4722,
+			label="TypeDecl
+declname: None
+quals: []",
+			pos="5247.5,607.5",
+			shape=square,
+			style=filled,
+			width=1.4722];
+		1739 -- 1738	[dir=back,
+			pos="s,5249.1,554.5 5249.4,544.44 5250.4,512.76 5251.5,475.31 5252.4,448.24"];
+	}
+	subgraph cluster1748 {
+		graph [bb="5524.5,328,5770.5,858.5",
+			label="cjpeg_wrbmp.c:128:5",
+			lheight=0.21,
+			lp="5647.5,847",
+			lwidth=1.67
+		];
+		1748;
+		1749	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: ->",
+			pos="5633.5,607.5",
+			style=filled,
+			width=1.3356];
+		1748 -- 1749	[dir=back,
+			pos="s,5633.5,791.45 5633.5,780.97 5633.5,742.28 5633.5,672.35 5633.5,634.51"];
+		1750	[fillcolor=lightblue,
+			height=0.86111,
+			label=progress,
+			pos="5563.5,410.5",
+			shape=square,
+			style=filled,
+			width=0.86111];
+		1749 -- 1750	[dir=back,
+			pos="s,5624.3,581.01 5620.8,571.16 5607.5,534.19 5586.9,476.77 5574.4,441.8"];
+		1751	[fillcolor=lightblue,
+			height=2.0694,
+			label=completed_extra_passes,
+			pos="5687.5,410.5",
+			shape=square,
+			style=filled,
+			width=2.0694];
+		1749 -- 1751	[dir=back,
+			pos="s,5640.7,580.61 5643.4,570.89 5650,546.92 5659,514.44 5667.1,485.06"];
+	}
+	subgraph cluster1771 {
+		graph [bb="5778.5,325,6012.5,1082",
+			label="cjpeg_wrbmp.c:136:7",
+			lheight=0.21,
+			lp="5895.5,1070.5",
+			lwidth=1.67
+		];
+		1771;
+		1774	[fillcolor=green,
+			height=0.74639,
+			label="StructRef
+type: ->",
+			pos="5880.5,607.5",
+			style=filled,
+			width=1.3356];
+		1771 -- 1774	[dir=back,
+			pos="s,5880.5,791.45 5880.5,780.97 5880.5,742.28 5880.5,672.35 5880.5,634.51"];
+		1775	[fillcolor=lightblue,
+			height=0.61111,
+			label=cinfo,
+			pos="5808.5,410.5",
+			shape=square,
+			style=filled,
+			width=0.61111];
+		1774 -- 1775	[dir=back,
+			pos="s,5871.1,581.01 5867.6,571.54 5852.7,531.11 5828.6,465.83 5816.3,432.52"];
+		1776	[fillcolor=lightblue,
+			height=2.1528,
+			label=actual_number_of_colors,
+			pos="5926.5,410.5",
+			shape=square,
+			style=filled,
+			width=2.1528];
+		1774 -- 1776	[dir=back,
+			pos="s,5886.6,580.61 5889,570.57 5894.4,547.45 5901.7,516.51 5908.4,488.07"];
+		1772	[fillcolor=lightblue,
+			height=1.125,
+			label=num_colors,
+			pos="5880.5,1010.5",
+			shape=square,
+			style=filled,
+			width=1.125];
+		1772 -- 1771	[dir=back,
+			pos="s,5880.5,969.71 5880.5,959.69 5880.5,916.59 5880.5,856.75 5880.5,827.7"];
 	}
 	rank1	[height=0.5,
 		label="",
