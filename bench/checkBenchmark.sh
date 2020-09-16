@@ -3,7 +3,7 @@
 COMPILER=gcc # Please adapt this line to your favorite compiler.
 #COMPILER=patmos-clang
 
-OPTIONS=" -Wall -Wno-unknown-pragmas -Werror "
+OPTIONS=" -Wall -Wno-unknown-pragmas "
 
 EXEC= # Adapt if the executable is to be executed via another program
 #EXEC=valgrind\ -q
@@ -46,7 +46,7 @@ for dir in app/ kernel/ sequential/ test/; do
                 ((FAIL_EXEC++))
             fi
         else
-            printf "failed (compiled with errors/warnings). \n"
+            printf "failed (compiled with errors). \n"
             ((FAIL_COMP++))
         fi 
         
