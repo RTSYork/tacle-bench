@@ -1,0 +1,10 @@
+       5   assign expressions of type   var<Int> = Int
+       6    infix expressions of type   Int += Int
+      21    infix expressions of type   Int == Int
+       7    infix expressions of type   Int <= Int
+      16    infix expressions of type   Int - Int
+      15    infix expressions of type   Int * Int
+      27  postfix expressions of type   Int++
+      23   return expressions of type   ret<Int> = Int
+
+Maximum expression depth: 12

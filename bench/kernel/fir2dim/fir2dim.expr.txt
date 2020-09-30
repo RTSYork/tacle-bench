@@ -1,0 +1,34 @@
+      48   prefix expressions of type   &Float
+     942   prefix expressions of type   *Pointer
+     308   prefix expressions of type   ++UnsignedInt
+     308   prefix expressions of type   ++Pointer
+     312   prefix expressions of type   sizeofArray
+      53   assign expressions of type   var<Int> = Int
+       1   assign expressions of type   var<Char> = Int
+       4   assign expressions of type   var<UnsignedInt> = Int
+     166   assign expressions of type   var<Float> = Int
+       1   assign expressions of type   var<Int> = Float
+      32   assign expressions of type   var<Float> = Float
+      74   assign expressions of type   var<Pointer> = Pointer
+     144    infix expressions of type   Float += Float
+     308    infix expressions of type   UnsignedChar ^= Char
+       1    infix expressions of type   Int != Int
+     217    infix expressions of type   Int < Int
+     182    infix expressions of type   Float < Int
+     312    infix expressions of type   UnsignedInt < LongLong
+      16    infix expressions of type   Int + Int
+      48    infix expressions of type   Pointer + Int
+       2    infix expressions of type   Float + Float
+       1    infix expressions of type   Int - Int
+       2    infix expressions of type   Pointer - Int
+      76    infix expressions of type   Int * Int
+     144    infix expressions of type   Float * Float
+       4    infix expressions of type   _Type cast Pointer
+      51    array expressions of type   arr<Float>[Int]
+     164  postfix expressions of type   Int++
+     154  postfix expressions of type   Float++
+     490  postfix expressions of type   Pointer++
+       1   return expressions of type   ret<Int> = Int
+       1   return expressions of type   ret<Int> = LongLong
+
+Maximum expression depth: 7

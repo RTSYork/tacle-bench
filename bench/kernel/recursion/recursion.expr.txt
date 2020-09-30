@@ -1,0 +1,10 @@
+       1   prefix expressions of type   -Int
+       3   assign expressions of type   var<Int> = Int
+     320    infix expressions of type   Int == Int
+       1    infix expressions of type   Int != Int
+      89    infix expressions of type   Int + Int
+     176    infix expressions of type   Int - Int
+     178   return expressions of type   ret<Int> = Int
+       1   return expressions of type   ret<Int> = LongLong
+
+Maximum expression depth: 12

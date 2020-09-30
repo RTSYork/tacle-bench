@@ -1,0 +1,44 @@
+       3   prefix expressions of type   &Array
+       1   prefix expressions of type   &Struct
+      13   prefix expressions of type   -Int
+   17574   prefix expressions of type   *Pointer
+   17574   prefix expressions of type   ++UnsignedInt
+   17574   prefix expressions of type   ++Pointer
+     272   prefix expressions of type   !Int
+   17577   prefix expressions of type   sizeofArray
+    1605   assign expressions of type   var<Int> = Int
+       8   assign expressions of type   var<Short> = Int
+     257   assign expressions of type   var<Char> = Int
+       5   assign expressions of type   var<UnsignedInt> = Int
+       1   assign expressions of type   var<Int> = LongLong
+       3   assign expressions of type   var<Pointer> = Pointer
+     128    infix expressions of type   Int += Int
+   17574    infix expressions of type   UnsignedChar ^= Char
+    1536    infix expressions of type   LongLong ? Int
+    1024    infix expressions of type   Void : Int
+     512    infix expressions of type   Int : Int
+     256    infix expressions of type   Int & Int
+     128    infix expressions of type   Short == Int
+       9    infix expressions of type   Int != Int
+     929    infix expressions of type   Int < Int
+   17577    infix expressions of type   UnsignedInt < LongLong
+    1024    infix expressions of type   Int > Int
+       1    infix expressions of type   Int >> Int
+    2481    infix expressions of type   Int + Int
+     256    infix expressions of type   Int + Char
+       1    infix expressions of type   Char + Char
+    1282    infix expressions of type   Int - Int
+     769    infix expressions of type   Int * Int
+     512    infix expressions of type   Int * Short
+    2502    infix expressions of type   Int / Int
+     928    infix expressions of type   Int % Int
+       3    infix expressions of type   _Type cast Pointer
+     128    array expressions of type   arr<Int>[Int]
+     512    array expressions of type   arr<Short>[Int]
+     514    array expressions of type   arr<Char>[Int]
+    2054    array expressions of type   arr<Array>[Int]
+     332  postfix expressions of type   Int++
+       1   return expressions of type   ret<Int> = Int
+       1   return expressions of type   ret<Int> = LongLong
+
+Maximum expression depth: 30

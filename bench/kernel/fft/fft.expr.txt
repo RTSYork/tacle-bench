@@ -1,0 +1,48 @@
+       4   prefix expressions of type   &Int
+    1024   prefix expressions of type   &Float
+    3670   prefix expressions of type   -Int
+    1920   prefix expressions of type   -Float
+  103294   prefix expressions of type   *Pointer
+   15360   prefix expressions of type   ++Int
+   39238   assign expressions of type   var<Int> = Int
+    2048   assign expressions of type   var<Float> = Int
+   30731   assign expressions of type   var<Int> = LongLong
+    1024   assign expressions of type   var<UnsignedLong> = UnsignedLong
+    1024   assign expressions of type   var<UnsignedLong> = Float
+    5120   assign expressions of type   var<Float> = Float
+   10253   assign expressions of type   var<Pointer> = Pointer
+   30716    infix expressions of type   Int += Int
+    6143    infix expressions of type   Int -= Int
+   13312    infix expressions of type   Float *= Float
+    1023    infix expressions of type   Int >>= Int
+    2047    infix expressions of type   LongLong && LongLong
+       1    infix expressions of type   Int != Int
+   28697    infix expressions of type   Int < Int
+   14336    infix expressions of type   Int < Float
+    1408    infix expressions of type   Float < Float
+    1035    infix expressions of type   Int > Int
+     640    infix expressions of type   Float > Float
+    6143    infix expressions of type   Int <= Int
+    4094    infix expressions of type   Int >= Int
+      11    infix expressions of type   Int << Int
+   30720    infix expressions of type   Int >> Int
+    5120    infix expressions of type   Int + Int
+    2048    infix expressions of type   Float + Int
+   19261    infix expressions of type   Pointer + Int
+   13312    infix expressions of type   Int - Int
+    1024    infix expressions of type   Float - Int
+   25600    infix expressions of type   Pointer - Int
+    1024    infix expressions of type   Float - Float
+   45070    infix expressions of type   Int * Int
+    1024    infix expressions of type   Float * Float
+    1024    infix expressions of type   _Type cast UnsignedLong
+    1024    infix expressions of type   _Type cast Float
+    7170    array expressions of type   arr<Int>[Int]
+    1024    array expressions of type   arr<Float>[Int]
+   24576  postfix expressions of type   Int++
+   23552  postfix expressions of type   Pointer++
+    1025   return expressions of type   ret<Int> = Int
+       1   return expressions of type   ret<Int> = LongLong
+    2048   return expressions of type   ret<Float> = Float
+
+Maximum expression depth: 7

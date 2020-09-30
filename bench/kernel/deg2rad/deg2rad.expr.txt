@@ -1,0 +1,12 @@
+       2   assign expressions of type   var<Float> = Int
+       1   assign expressions of type   var<Int> = Float
+       1   assign expressions of type   var<Float> = Float
+     361    infix expressions of type   Float += Float
+     361    infix expressions of type   Float += Double
+       1    infix expressions of type   Int == Int
+     362    infix expressions of type   Float <= Float
+     361    infix expressions of type   Float * Float
+     361    infix expressions of type   Float / Int
+       2   return expressions of type   ret<Int> = Int
+
+Maximum expression depth: 3

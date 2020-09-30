@@ -1,0 +1,20 @@
+  705431   prefix expressions of type   &Int
+33860688   prefix expressions of type   *Pointer
+ 1427511   assign expressions of type   var<Int> = Int
+  705431   assign expressions of type   var<Pointer> = Pointer
+33860688    infix expressions of type   Int += Int
+33860688    infix expressions of type   Pointer += Int
+ 2821724    infix expressions of type   Int >>= Int
+       1    infix expressions of type   Int != Int
+ 3535867    infix expressions of type   Int < Int
+    8192    infix expressions of type   Int + Int
+       1    infix expressions of type   Int - Int
+    8192    infix expressions of type   Int * Int
+    8192    infix expressions of type   Int % Int
+  713623    array expressions of type   arr<Int>[Int]
+  713623    array expressions of type   arr<Array>[Int]
+ 2830172  postfix expressions of type   Int++
+    8193   return expressions of type   ret<Int> = Int
+       1   return expressions of type   ret<Int> = LongLong
+
+Maximum expression depth: 4

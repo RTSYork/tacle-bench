@@ -1,0 +1,41 @@
+   17280   prefix expressions of type   -Int
+   16200   prefix expressions of type   -LongLong
+      32   prefix expressions of type   -Double
+  347564   prefix expressions of type   ++Int
+  142180   assign expressions of type   var<Int> = Int
+   31674   assign expressions of type   var<Float> = Float
+  197068    infix expressions of type   Int += Int
+      12    infix expressions of type   Pointer += Int
+      64    infix expressions of type   Int += Float
+  170280    infix expressions of type   Float += Float
+      24    infix expressions of type   Int -= Int
+    4096    infix expressions of type   Float *= Int
+      12    infix expressions of type   Int /= Int
+   19441    infix expressions of type   LongLong ? Int
+   16200    infix expressions of type   LongLong ? LongLong
+    5432    infix expressions of type   Void : Int
+   14009    infix expressions of type   Int : Int
+    4776    infix expressions of type   Void : LongLong
+   11424    infix expressions of type   LongLong : LongLong
+    1081    infix expressions of type   Int == Int
+    1352    infix expressions of type   Int != Int
+  297465    infix expressions of type   Int < Int
+    2160    infix expressions of type   Int > Int
+   96888    infix expressions of type   Int <= Int
+   16200    infix expressions of type   Int >= Int
+   16200    infix expressions of type   LongLong >= Int
+  104028    infix expressions of type   Int + Int
+    8100    infix expressions of type   LongLong + LongLong
+    2732    infix expressions of type   Int - Int
+   16200    infix expressions of type   Int - LongLong
+    7890    infix expressions of type   Int * Int
+  162180    infix expressions of type   Float * Float
+    1194    infix expressions of type   Int / Int
+    2002    infix expressions of type   Int % Int
+    4160    array expressions of type   arr<Float>[Int]
+  353972    array expressions of type   arr<Pointer>[Int]
+    8100    array expressions of type   arr<Pointer>[LongLong]
+   15480  postfix expressions of type   Int++
+       2   return expressions of type   ret<Int> = Int
+
+Maximum expression depth: 11

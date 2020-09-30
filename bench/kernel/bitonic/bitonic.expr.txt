@@ -1,0 +1,18 @@
+       1   prefix expressions of type   -Int
+     808   assign expressions of type   var<Int> = Int
+       1    infix expressions of type   Int += Int
+      63    infix expressions of type   Int /= Int
+       1    infix expressions of type   LongLong ? Int
+       1    infix expressions of type   Int : Int
+       1    infix expressions of type   Int == Int
+     240    infix expressions of type   Int == LongLong
+     467    infix expressions of type   Int < Int
+     464    infix expressions of type   Int > Int
+     723    infix expressions of type   Int + Int
+      32    infix expressions of type   Int - Int
+     161    infix expressions of type   Int / Int
+    1027    array expressions of type   arr<Int>[Int]
+     304  postfix expressions of type   Int++
+       2   return expressions of type   ret<Int> = Int
+
+Maximum expression depth: 6

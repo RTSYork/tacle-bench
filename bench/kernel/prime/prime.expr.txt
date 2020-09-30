@@ -1,0 +1,24 @@
+       2   prefix expressions of type   &UnsignedInt
+       4   prefix expressions of type   *Pointer
+       1   prefix expressions of type   !LongLong
+       2   prefix expressions of type   !UnsignedChar
+       3   assign expressions of type   var<Int> = Int
+       2   assign expressions of type   var<UnsignedInt> = Int
+       1   assign expressions of type   var<Int> = LongLong
+       5   assign expressions of type   var<UnsignedInt> = UnsignedInt
+      14    infix expressions of type   UnsignedInt += Int
+       1    infix expressions of type   LongLong && LongLong
+      18    infix expressions of type   UnsignedInt == Int
+      16    infix expressions of type   UnsignedInt <= UnsignedInt
+       2    infix expressions of type   Int + Int
+       2    infix expressions of type   Int * Int
+      16    infix expressions of type   UnsignedInt * UnsignedInt
+       2    infix expressions of type   Int % Int
+      18    infix expressions of type   UnsignedInt % UnsignedInt
+       2   return expressions of type   ret<Int> = Int
+       2   return expressions of type   ret<UnsignedInt> = Int
+       2   return expressions of type   ret<UnsignedChar> = Int
+      18   return expressions of type   ret<UnsignedChar> = LongLong
+       2   return expressions of type   ret<UnsignedChar> = UnsignedChar
+
+Maximum expression depth: 5
