@@ -1,7 +1,0 @@
-       7   assign expressions of type   var<Int> = Int
-     183    infix expressions of type   Int < Int
-       1    infix expressions of type   Int - Int
-     360  postfix expressions of type   Int++
-       5   return expressions of type   ret<Int> = Int
-
-Maximum expression depth: 3

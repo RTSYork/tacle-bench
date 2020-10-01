@@ -13,7 +13,7 @@ for dir in app/ kernel/ sequential/ test/; do
         OUTPUT=$($COMMAND $OPTIONS *.c)
         RETURNVALUE=$(echo $?)
         if [ $RETURNVALUE -eq 0 ]; then
-            echo "$OUTPUT" > ${BENCH%/}.expr.txt
+            echo "$OUTPUT" > ../../../stats/${BENCH%/}.expr.txt
             printf "ok\n"
         else
             printf "failed ($RETURNVALUE)\n"
