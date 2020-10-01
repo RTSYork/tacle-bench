@@ -1,0 +1,60 @@
+     186    var<Int> = Int
+       2    var<UnsignedInt> = Int
+     108    UnsignedInt < Int
+     106    arr<Char>[UnsignedInt]  ->  arr<Char>[UnsignedInt]  ->  var<Char> = Char
+     106    UnsignedInt++
+       4    Int * Int  ->  var<UnsignedLong> = Int
+       1    &Int
+      17    &Struct
+       1    arr<UnsignedLong>[Int]  ->  var<UnsignedLong> = Long  ->  var<UnsignedLong> = UnsignedLong
+      31    arr<UnsignedLong>[Int]  ->  UnsignedLong <<= Int  ->  var<UnsignedLong> = LongLong
+      74    arr<UnsignedLong>[Int]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Long  ->  Void : Long  ->  ret<UnsignedLong> = Long  ->  UnsignedLong | UnsignedLong  ->  var<UnsignedLong> = UnsignedLong
+      12    arr<UnsignedLong>[Int]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Long  ->  Void : Long  ->  ret<UnsignedLong> = Long  ->  LongLong | UnsignedLong  ->  var<UnsignedLong> = UnsignedLongLong
+     369    arr<UnsignedLong>[Int]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Long  ->  Void : Long  ->  ret<UnsignedLong> = Long  ->  _Type cast UnsignedLong  ->  UnsignedLong | UnsignedShort  ->  var<UnsignedLong> = UnsignedLong
+       6    arr<UnsignedLong>[Int]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Long  ->  Long : Long  ->  ret<UnsignedLong> = Long  ->  UnsignedLong | UnsignedLong  ->  var<UnsignedLong> = UnsignedLong
+      15    arr<UnsignedLong>[Int]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Long  ->  Long : Long  ->  ret<UnsignedLong> = Long  ->  _Type cast UnsignedLong  ->  UnsignedLong | UnsignedShort  ->  var<UnsignedLong> = UnsignedLong
+    1134    Int <= Int
+     215    Int++
+       1    *Pointer
+       1    *Pointer  ->  var<Int> = Int
+     832    *Pointer  ->  *Pointer
+      16    *Pointer  ->  *Pointer  ->  *Pointer  ->  var<UnsignedLong> = Int  ->  var<UnsignedLong> = UnsignedLong  ->  var<UnsignedLong> = UnsignedLong
+    1344    *Pointer  ->  *Pointer  ->  UnsignedLong << Int  ->  var<UnsignedLong> = LongLong
+       1    *Pointer  ->  *Pointer  ->  var<UnsignedLong> = Long  ->  var<UnsignedLong> = UnsignedLong
+      16    *Pointer  ->  var<UnsignedLong> = Long
+      16    *Pointer  ->  arr<Long>[Int]  ->  arr<Pointer>[Long]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Int  ->  Void : Int  ->  UnsignedLong |= Int
+      16    var<UnsignedLong> = Long
+       2    var<UnsignedLong> = Long  ->  var<UnsignedLong> = UnsignedLong
+    1311    Int >= Int
+      28    UnsignedLong << Int
+      92    UnsignedLong << Int  ->  var<UnsignedLong> = LongLong
+     672    UnsignedLong << Int  ->  arr<Long>[Int]  ->  arr<Pointer>[Long]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Int  ->  Void : Int  ->  LongLong | Int  ->  var<UnsignedLong> = LongLong
+      96    UnsignedLong << Int  ->  arr<Long>[Int]  ->  arr<Pointer>[Long]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Int  ->  Int : Int  ->  LongLong | Int  ->  var<UnsignedLong> = LongLong
+     128    UnsignedLong << Int  ->  arr<Char>[Int]  ->  LongLong | Char  ->  var<UnsignedLong> = LongLong
+     952    arr<Char>[Int]
+     128    arr<Char>[Int]  ->  UnsignedLong & Long  ->  var<Char> = UnsignedLong
+     128    arr<Char>[Int]  ->  var<Int> = Char
+      15    Int - Int  ->  arr<UnsignedLong>[Int]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Long  ->  Void : Long  ->  ret<UnsignedLong> = Long  ->  LongLong | UnsignedLong  ->  var<UnsignedLong> = UnsignedLongLong
+      69    Int - Int  ->  arr<UnsignedLong>[Int]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Long  ->  Void : Long  ->  ret<UnsignedLong> = Long  ->  UnsignedLong | UnsignedLong  ->  var<UnsignedLong> = UnsignedLong
+     370    Int - Int  ->  arr<UnsignedLong>[Int]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Long  ->  Void : Long  ->  ret<UnsignedLong> = Long  ->  _Type cast UnsignedLong  ->  UnsignedLong | UnsignedShort  ->  var<UnsignedLong> = UnsignedLong
+       1    Int - Int  ->  arr<UnsignedLong>[Int]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Long  ->  Long : Long  ->  ret<UnsignedLong> = Long  ->  LongLong | UnsignedLong  ->  var<UnsignedLong> = UnsignedLongLong
+      14    Int - Int  ->  arr<UnsignedLong>[Int]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Long  ->  Long : Long  ->  ret<UnsignedLong> = Long  ->  _Type cast UnsignedLong  ->  UnsignedLong | UnsignedShort  ->  var<UnsignedLong> = UnsignedLong
+       7    Int - Int  ->  arr<UnsignedLong>[Int]  ->  UnsignedLong & UnsignedLong  ->  UnsignedLong ? Long  ->  Long : Long  ->  ret<UnsignedLong> = Long  ->  UnsignedLong | UnsignedLong  ->  var<UnsignedLong> = UnsignedLong
+    2360    Int--
+      16    arr<Struct>[Int]
+      32    arr<Struct>[Int]  ->  var<Struct> = Struct
+      16    Int == Int  ->  Int == Int  ->  LongLong || LongLong  ->  Int == Int  ->  LongLong || LongLong  ->  Int == Int  ->  LongLong || LongLong
+      16    Int == Int  ->  Int - Int  ->  LongLong ? Int  ->  Int : Int  ->  var<Int> = Int
+      56    UnsignedLong & Long  ->  UnsignedLong << Int  ->  UnsignedLong | LongLong  ->  UnsignedLongLong >> Int  ->  var<UnsignedLong> = LongLong
+      16    &UnsignedLong
+      32    var<Pointer> = Array
+      16    var<UnsignedLong> = Int  ->  var<UnsignedLong> = UnsignedLong  ->  var<UnsignedLong> = UnsignedLong
+      64    UnsignedLong ^= UnsignedLong
+      16    _Type cast UnsignedLong  ->  UnsignedLong << Int  ->  _Type cast UnsignedLong  ->  LongLong + UnsignedLong  ->  var<UnsignedLong> = UnsignedLongLong
+      16    _Type cast UnsignedLong  ->  UnsignedLong << Int  ->  _Type cast UnsignedLong  ->  UnsignedLong >> Int  ->  LongLong + LongLong  ->  var<UnsignedLong> = LongLong
+     128    UnsignedLong >>= Int
+     128    Int & Int  ->  Int << Int  ->  Int & Int  ->  Int >> Int  ->  LongLong + LongLong  ->  var<Int> = LongLong
+     128    Int & Int  ->  Int << Int  ->  Int & Int  ->  LongLong + Int  ->  Int & Int  ->  Int >> Int  ->  LongLong + LongLong  ->  Int & Int  ->  Int >> Int  ->  LongLong + LongLong  ->  var<Int> = LongLong
+     128    arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Long>[Int]  ->  var<Int> = Long
+      35    var<UnsignedLong> = UnsignedLong
+       1    UnsignedLong + UnsignedLong  ->  -Int  ->  UnsignedLong + Int  ->  UnsignedLong != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int

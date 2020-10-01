@@ -1,0 +1,10 @@
+       1    var<Long> = Int
+       5    var<Int> = Int
+       3    Int > Int
+       2    Int--
+      12    Int >= Int  ->  Int + Int  ->  Int <= Int  ->  LongLong && LongLong  ->  arr<Long>[Int]  ->  arr<Long>[Int]  ->  Long == Long  ->  LongLong && LongLong
+      40    Int >= Int  ->  Int + Int  ->  Int <= Int  ->  LongLong && LongLong  ->  arr<Long>[Int]  ->  arr<Long>[Int]  ->  Long == Long  ->  arr<Long>[Int]  ->  arr<Long>[Int]  ->  Long == Long  ->  LongLong && LongLong  ->  LongLong && LongLong
+      17    Int < Int
+      14    arr<Long>[Int]  ->  Int += Long
+      14    ++Int
+       1    Int == Long  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int

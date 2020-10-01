@@ -1,0 +1,29 @@
+   64107    var<Int> = Int
+ 1524717    Int < Int
+   10000    arr<Array>[Int]  ->  arr<UnsignedChar>[Int]  ->  UnsignedChar ^= Int
+ 1497500    arr<Array>[Int]  ->  arr<UnsignedChar>[Int]  ->  var<Int> = UnsignedChar
+ 1524615    Int++
+       1    _Type cast Int  ->  var<Pointer> = Pointer
+       1    Int / Int  ->  var<Int> = Int
+      20    Int % Int  ->  var<Int> = Int
+    4020    arr<Struct>[Int]
+   14975    arr<Struct>[Int]  ->  var<Int> = Int
+   14975    arr<Struct>[Int]  ->  &Struct  ->  var<Pointer> = Pointer
+ 1497500    arr<Struct>[Int]  ->  Int == Int  ->  arr<Struct>[Int]  ->  Int + Int  ->  Int > Int  ->  LongLong || LongLong
+   14955    arr<Struct>[Int]  ->  Int + Int  ->  var<Int> = Int
+      20    arr<Struct>[Int]  ->  Int += Int
+      20    Int == Int
+       1    Int == Int  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+ 1862668    var<Pointer> = Pointer
+   14975    ++Int
+   14975    Int >= Int
+   14975    var<Pointer> = Int
+   14975    !Pointer
+   14995    ret<Int> = Int
+   14995    ret<Int> = Int  ->  Int > Int
+   14995    -Int  ->  Int == Int
+   44925    &Int
+   44925    *Pointer  ->  var<Int> = Int
+   14975    Int--
+ 1497500    Int != Int
+   14955    Int + Int

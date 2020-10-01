@@ -1,0 +1,16 @@
+       1    var<Char> = Int
+       1    var<Int> = Int
+     101    Int < Int
+     100    arr<Pointer>[Int]  ->  Int - Int  ->  var<Char> = Int
+     100    Int++
+       1    arr<Char>[Int]  ->  &Char  ->  _Type cast Pointer  ->  var<Pointer> = Pointer
+       1    arr<Char>[Int]  ->  Char - Int  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+       1    var<UnsignedInt> = Int
+     101    sizeofArray  ->  UnsignedInt < LongLong
+     100    *Pointer  ->  UnsignedChar ^= Char
+     100    ++UnsignedInt
+     100    ++Pointer
+       1    Int + Int  ->  Int / Int  ->  var<Int> = Int
+       1    Int % Int
+      43    Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  var<Char> = Char
+       6    --Int  ->  Int > Int

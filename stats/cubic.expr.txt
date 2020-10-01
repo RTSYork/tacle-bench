@@ -1,0 +1,79 @@
+0.2%      879   prefix expressions of type   &Int
+0.4%     2018   prefix expressions of type   -Int
+0.2%     1162   prefix expressions of type   -Float
+0.2%      879   prefix expressions of type   *Pointer
+0.1%      793   prefix expressions of type   ~LongLong
+2.3%    13379   assign expressions of type   var<Int> = Int
+0.7%     4056   assign expressions of type   var<UnsignedInt> = Int
+0.0%      208   assign expressions of type   var<Float> = Int
+1.0%     5566   assign expressions of type   var<Int> = LongLong
+0.3%     1586   assign expressions of type   var<UnsignedInt> = LongLong
+9.6%    55256   assign expressions of type   var<Int> = UnsignedInt
+1.4%     8251   assign expressions of type   var<UnsignedInt> = UnsignedInt
+10.6%    61055   assign expressions of type   var<Float> = Float
+0.0%        5   assign expressions of type   var<Float> = Double
+5.9%    33965    infix expressions of type   Int += Int
+0.0%        5    infix expressions of type   Float += Int
+0.5%     2783    infix expressions of type   Int += LongLong
+2.7%    15372    infix expressions of type   Int += UnsignedInt
+0.3%     1761    infix expressions of type   Float += Float
+2.9%    16741    infix expressions of type   Int -= Int
+0.2%      900    infix expressions of type   Float -= Int
+0.3%     1586    infix expressions of type   Float -= Float
+0.1%      793    infix expressions of type   Float *= Int
+0.2%     1197    infix expressions of type   Int >>= Int
+5.2%    29925    infix expressions of type   UnsignedInt >>= Int
+0.1%      516    infix expressions of type   Int &= Int
+0.1%      793    infix expressions of type   LongLong ? Int
+0.1%      793    infix expressions of type   Int : Int
+0.4%     2379    infix expressions of type   LongLong || LongLong
+0.2%      927    infix expressions of type   LongLong && LongLong
+0.5%     2783    infix expressions of type   Int | Int
+0.4%     2379    infix expressions of type   LongLong | Int
+1.9%    10779    infix expressions of type   Int & Int
+0.3%     1720    infix expressions of type   UnsignedInt & Int
+0.1%      793    infix expressions of type   Int & LongLong
+0.9%     4988    infix expressions of type   Int & UnsignedInt
+1.7%     9747    infix expressions of type   Int == Int
+0.3%     1586    infix expressions of type   LongLong == Int
+0.1%      793    infix expressions of type   UnsignedInt == UnsignedInt
+0.3%     1586    infix expressions of type   Float == Float
+0.2%     1331    infix expressions of type   Int != Int
+5.4%    31165    infix expressions of type   UnsignedInt != Int
+0.7%     3908    infix expressions of type   Int < Int
+0.0%      206    infix expressions of type   Float < Int
+0.1%      793    infix expressions of type   Float < Float
+0.9%     4965    infix expressions of type   Int > Int
+0.2%     1080    infix expressions of type   Float > Int
+0.2%     1197    infix expressions of type   Float > Float
+5.7%    32510    infix expressions of type   Int <= Int
+0.1%      793    infix expressions of type   LongLong <= Int
+0.2%      879    infix expressions of type   Float <= Int
+0.0%      177    infix expressions of type   Int >= Int
+0.2%     1197    infix expressions of type   Float >= Float
+0.5%     2783    infix expressions of type   Int << Int
+1.5%     8738    infix expressions of type   Int >> Int
+0.3%     1586    infix expressions of type   UnsignedInt >> Int
+0.1%      793    infix expressions of type   Int + Int
+0.3%     1990    infix expressions of type   LongLong + Int
+0.1%      793    infix expressions of type   Int + LongLong
+0.1%      793    infix expressions of type   LongLong + LongLong
+7.9%    45297    infix expressions of type   Int + UnsignedInt
+4.5%    25893    infix expressions of type   Float + Float
+0.3%     1796    infix expressions of type   Int - Int
+0.7%     3965    infix expressions of type   LongLong - Int
+4.4%    25086    infix expressions of type   Float - Float
+7.4%    42399    infix expressions of type   Float * Float
+0.1%      793    infix expressions of type   Int / Float
+1.4%     8307    infix expressions of type   Float / Float
+0.6%     3306    infix expressions of type   _Type cast Int
+0.2%     1331    infix expressions of type   _Type cast UnsignedInt
+0.3%     1971    infix expressions of type   _Type cast Float
+0.0%      134    array expressions of type   arr<Int>[Int]
+0.9%     5112    array expressions of type   arr<Float>[Int]
+0.8%     4754    array expressions of type   arr<Pointer>[Int]
+0.0%      179   return expressions of type   ret<Int> = Int
+0.7%     4312   return expressions of type   ret<Float> = Float
+
+Total expressions: 574995
+Maximum expression chain depth: 15

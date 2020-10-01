@@ -1,0 +1,26 @@
+       2    Int * Int
+      39    Int * Int  ->  Int < Int
+       1    var<Char> = Int
+       4    var<Int> = Int
+      28    arr<Float>[Int]  ->  var<Float> = Int
+       2    arr<Float>[Int]  ->  &Float  ->  _Type cast Pointer  ->  var<Pointer> = Pointer
+       3    arr<Float>[Int]  ->  &Float  ->  var<Pointer> = Pointer
+       8    arr<Float>[Int]  ->  Float += Float
+      40    Int++
+       1    _Type cast Int  ->  var<Float> = Float
+       2    var<UnsignedInt> = Int
+     114    sizeofArray  ->  UnsignedInt < LongLong
+     112    *Pointer  ->  UnsignedChar ^= Char
+     112    ++UnsignedInt
+     112    ++Pointer
+       1    var<Float> = Float
+       5    Int < Int
+       8    Pointer++
+       4    Pointer++  ->  *Pointer  ->  *Pointer  ->  Float * Float  ->  Float - Float  ->  var<Float> = Float
+       4    Pointer++  ->  *Pointer  ->  *Pointer  ->  Float * Float  ->  Float -= Float
+       8    Pointer++  ->  *Pointer  ->  *Pointer  ->  Float * Float  ->  Float += Float
+       4    Pointer++  ->  *Pointer  ->  *Pointer  ->  var<Float> = Float
+       4    Pointer++  ->  *Pointer  ->  Float * Float  ->  var<Float> = Float
+       4    Pointer++  ->  *Pointer  ->  var<Float> = Float
+       1    var<Float> = Double
+       1    _Type cast Float  ->  ret<Int> = Int  ->  Int - Int  ->  Int != Int  ->  ret<Int> = LongLong

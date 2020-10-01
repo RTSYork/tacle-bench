@@ -1,0 +1,14 @@
+       1    var<Int> = Int
+       2    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
+       2    ret<UnsignedInt> = Int  ->  var<UnsignedInt> = UnsignedInt
+       2    &UnsignedInt
+       2    *Pointer  ->  var<UnsignedInt> = UnsignedInt
+       1    *Pointer  ->  *Pointer  ->  var<UnsignedInt> = UnsignedInt
+      16    UnsignedInt % UnsignedInt  ->  UnsignedInt == Int  ->  ret<UnsignedChar> = LongLong
+       2    UnsignedInt % UnsignedInt  ->  UnsignedInt == Int  ->  ret<UnsignedChar> = LongLong  ->  ret<UnsignedChar> = UnsignedChar
+       2    var<UnsignedInt> = Int
+      16    UnsignedInt * UnsignedInt  ->  UnsignedInt <= UnsignedInt
+      14    UnsignedInt += Int
+       1    ret<UnsignedChar> = Int  ->  !UnsignedChar
+       1    ret<UnsignedChar> = Int  ->  !UnsignedChar  ->  LongLong && LongLong  ->  !LongLong  ->  var<Int> = LongLong
+       1    ret<Int> = Int  ->  ret<Int> = Int

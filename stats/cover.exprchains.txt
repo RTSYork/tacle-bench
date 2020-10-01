@@ -1,0 +1,5 @@
+       4    var<Int> = Int
+     183    Int < Int
+     360    Int++
+       3    ret<Int> = Int  ->  var<Int> = Int
+       1    Int - Int  ->  ret<Int> = Int  ->  ret<Int> = Int

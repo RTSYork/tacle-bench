@@ -1,0 +1,15 @@
+       4    Int * Int
+       2    var<Float> = Int
+       4    arr<Float>[Int]  ->  &Float
+       4    arr<Float>[Int]  ->  &Float  ->  var<Pointer> = Pointer
+      80    arr<Float>[Int]  ->  Float += Float
+       4    var<Int> = Int
+      68    Int < Int
+      16    Pointer++
+     128    Pointer++  ->  *Pointer  ->  var<Float> = Int
+      16    Pointer++  ->  *Pointer  ->  *Pointer  ->  Pointer--  ->  *Pointer  ->  Float * Float  ->  Float -= Float
+      16    Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Float * Float  ->  Float += Float
+      64    Int++
+      16    *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
+      16    *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer--  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
+       1    Float != Float  ->  ret<Int> = LongLong  ->  ret<Int> = Int

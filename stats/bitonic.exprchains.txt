@@ -1,0 +1,14 @@
+     231    var<Int> = Int
+      66    Int < Int
+      32    arr<Int>[Int]  ->  Int - Int  ->  var<Int> = Int
+     240    arr<Int>[Int]  ->  arr<Int>[Int]  ->  Int > Int  ->  Int == LongLong
+     128    arr<Int>[Int]  ->  arr<Int>[Int]  ->  var<Int> = Int
+       1    arr<Int>[Int]  ->  arr<Int>[Int]  ->  Int + Int  ->  arr<Int>[Int]  ->  Int + Int  ->  Int += Int
+     256    arr<Int>[Int]  ->  var<Int> = Int
+     304    Int++
+      63    Int /= Int
+     224    Int > Int
+     161    Int / Int  ->  var<Int> = Int
+     320    Int + Int
+     401    Int + Int  ->  Int < Int
+       1    Int == Int  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int

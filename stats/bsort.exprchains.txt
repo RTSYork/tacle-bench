@@ -1,0 +1,13 @@
+    5153    var<Int> = Int
+     101    Int < Int
+     100    arr<Int>[Int]  ->  Int + Int  ->  -Int  ->  Int * Int  ->  var<Int> = Int
+    5145    arr<Int>[Int]  ->  Int + Int  ->  arr<Int>[Int]  ->  Int > Int
+    4950    arr<Int>[Int]  ->  Int + Int  ->  arr<Int>[Int]  ->  var<Int> = Int
+      99    arr<Int>[Int]  ->  Int + Int  ->  arr<Int>[Int]  ->  Int < Int  ->  Int && LongLong  ->  var<Int> = LongLong
+    4950    arr<Int>[Int]  ->  var<Int> = Int
+    5443    Int++
+       2    ret<Int> = Int
+    5444    Int - Int  ->  Int < Int
+    5241    Int - Int  ->  Int > Int
+       1    Int - Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+    4950    Int + Int  ->  arr<Int>[Int]  ->  var<Int> = Int

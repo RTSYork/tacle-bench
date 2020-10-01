@@ -1,0 +1,13 @@
+      41    var<Int> = Int
+      32    Int < Int
+      10    arr<UnsignedInt>[Int]  ->  arr<Pointer>[Int]  ->  var<UnsignedInt> = UnsignedInt
+      54    arr<UnsignedInt>[Int]  ->  Int - Int  ->  arr<UnsignedInt>[Int]  ->  UnsignedInt < UnsignedInt
+      45    arr<UnsignedInt>[Int]  ->  Int - Int  ->  arr<UnsignedInt>[Int]  ->  var<UnsignedInt> = UnsignedInt
+      45    arr<UnsignedInt>[Int]  ->  var<Int> = UnsignedInt
+      10    arr<UnsignedInt>[Int]  ->  Int += UnsignedInt
+      83    Int++
+      10    Int <= Int
+      45    Int - Int  ->  arr<UnsignedInt>[Int]  ->  var<UnsignedInt> = Int
+      45    Int--
+      10    Int > Int
+       1    -Int  ->  Int + Int  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int

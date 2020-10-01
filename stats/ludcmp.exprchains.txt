@@ -1,0 +1,33 @@
+      44    var<Int> = Int
+     172    Int <= Int
+       8    var<Double> = Int
+       5    arr<Array>[Int]  ->  arr<Double>[Int]
+      36    arr<Array>[Int]  ->  arr<Double>[Int]  ->  Int + Int  ->  Int + Int  ->  Int + Int  ->  var<Double> = Int
+       6    arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double *= Int
+      36    arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double += Double
+      15    arr<Array>[Int]  ->  arr<Double>[Int]  ->  var<Double> = Double
+      15    arr<Array>[Int]  ->  arr<Double>[Int]  ->  arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double / Double  ->  var<Double> = Double
+      20    arr<Array>[Int]  ->  arr<Double>[Int]  ->  arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double * Double  ->  Double -= Double
+      30    arr<Array>[Int]  ->  arr<Double>[Int]  ->  arr<Double>[Int]  ->  Double * Double  ->  Double -= Double
+      36    Int == Int
+     173    Int++
+      21    arr<Double>[Int]  ->  var<Double> = Double
+       1    arr<Double>[Int]  ->  arr<Double>[Int]  ->  var<Double> = Double
+       1    arr<Double>[Int]  ->  arr<Double>[Int]  ->  arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double / Double  ->  var<Double> = Double
+       5    arr<Double>[Int]  ->  arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double / Double  ->  var<Double> = Double
+       6    arr<Double>[Int]  ->  Double += Double
+       1    Int > Int  ->  Double <= Int  ->  LongLong || LongLong
+      56    Int < Int
+       5    Double >= Int
+       5    var<Double> = Double
+       5    ret<Double> = Double  ->  Double <= Double
+      15    Int + Int  ->  var<Int> = Int
+      30    Int + Int  ->  arr<Array>[Int]  ->  arr<Double>[Int]  ->  var<Double> = Double
+      35    Int + Int  ->  arr<Array>[Int]  ->  arr<Double>[Int]  ->  arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double * Double  ->  Double -= Double
+      15    Int != Int
+       1    Int - Int  ->  var<Int> = Int
+       6    Int >= Int
+       5    Int--
+       1    ret<Int> = Int  ->  var<Int> = Int
+       1    Double -= Double
+       1    Double < Double  ->  -Double  ->  Double > Double  ->  LongLong && LongLong  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int

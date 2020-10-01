@@ -1,0 +1,31 @@
+      19    var<Int> = Int
+    7087    Int < Int
+    2000    arr<Pointer>[Int]
+    4000    arr<Pointer>[Int]  ->  Float - Float
+    1000    arr<Pointer>[Int]  ->  Float - Float  ->  arr<Pointer>[Int]  ->  Float - Float  ->  Float * Float  ->  Float += Float
+    2000    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
+    2000    ret<Long> = Int  ->  Int + Long  ->  var<Float> = Long
+    7076    Int++
+       9    &Float
+       5    *Pointer
+       2    *Pointer  ->  var<Float> = Int
+    2000    *Pointer  ->  arr<Pointer>[Int]  ->  Float += Float
+       2    *Pointer  ->  *Pointer  ->  Float / Int  ->  var<Float> = Float
+       2    *Pointer  ->  Float / Int  ->  var<Float> = Float
+      12    var<Float> = Float
+    4000    Float * Float  ->  ret<Float> = Float  ->  Float += Float
+      64    Float * Float  ->  Float - Float  ->  Float * Float  ->  Float / Float  ->  var<Float> = Float
+      64    Float * Float  ->  Float - Float  ->  var<Float> = Float
+       4    Float / Int  ->  var<Float> = Float
+       4    Float == Int
+      76    !Int
+      64    Float + Float  ->  var<Float> = Float
+       1    Float + Float  ->  Float + Float  ->  Float + Float  ->  Float + Float  ->  var<Float> = Float
+      64    Float >= Int
+      61    -Float  ->  var<Float> = Float
+       1    ret<Float> = Float
+      64    ret<Float> = Float  ->  Float <= Float
+       2    ret<Float> = Float  ->  var<Float> = Float
+       1    ret<Float> = Float  ->  Float * Float  ->  Float / Float  ->  var<Float> = Float
+       1    Float -= Double
+       1    Float < Double  ->  -Double  ->  Float > Double  ->  LongLong && LongLong  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int

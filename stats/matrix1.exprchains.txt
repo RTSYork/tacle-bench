@@ -1,0 +1,13 @@
+       3    Int * Int
+     404    Int * Int  ->  Int < Int
+     100    Int * Int  ->  arr<Int>[Int]  ->  &Int  ->  var<Pointer> = Pointer
+     117    var<Int> = Int
+     300    arr<Int>[Int]  ->  var<Int> = Int
+      13    arr<Int>[Int]  ->  &Int  ->  var<Pointer> = Pointer
+     100    arr<Int>[Int]  ->  Int += Int
+    1510    Int++
+    1221    Int < Int
+     100    *Pointer  ->  var<Int> = Int
+    1000    *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Int * Int  ->  Int += Int
+     100    Pointer++
+       1    Int == Int  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int

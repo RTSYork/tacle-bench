@@ -1,0 +1,49 @@
+0.2%      201   prefix expressions of type   &Float
+0.1%      100   prefix expressions of type   -Double
+0.7%      603   prefix expressions of type   *Pointer
+0.9%      808   assign expressions of type   var<Int> = Int
+0.0%        1   assign expressions of type   var<UnsignedLong> = Int
+0.3%      246   assign expressions of type   var<UnsignedLong> = UnsignedLong
+5.4%     4824   assign expressions of type   var<Float> = Float
+0.5%      446   assign expressions of type   var<Float> = Double
+0.6%      572   assign expressions of type   var<Double> = Double
+0.1%      100    infix expressions of type   Int += Int
+9.5%     8442    infix expressions of type   Float += Float
+0.2%      201    infix expressions of type   Double += Float
+0.2%      201    infix expressions of type   LongLong ? Int
+0.1%      121    infix expressions of type   Void : Int
+0.1%       80    infix expressions of type   Int : Int
+0.3%      246    infix expressions of type   UnsignedLong & Int
+0.6%      505    infix expressions of type   Int < Int
+0.2%      201    infix expressions of type   Int > Int
+0.1%      123    infix expressions of type   Double > Double
+10.0%     8866    infix expressions of type   Int <= Int
+5.0%     4422    infix expressions of type   Int >= Int
+0.7%      609    infix expressions of type   Int + Int
+0.3%      246    infix expressions of type   UnsignedLong + Int
+0.2%      201    infix expressions of type   Float + Float
+0.4%      325    infix expressions of type   Double + Double
+4.9%     4321    infix expressions of type   Int - Int
+0.2%      201    infix expressions of type   Int - Float
+0.2%      201    infix expressions of type   Float - Float
+0.3%      246    infix expressions of type   Double - Double
+0.9%      803    infix expressions of type   Int * Int
+0.3%      246    infix expressions of type   UnsignedLong * Int
+10.4%     9246    infix expressions of type   Float * Float
+0.3%      246    infix expressions of type   UnsignedLong * Double
+0.5%      448    infix expressions of type   Double * Double
+0.2%      201    infix expressions of type   Double / Int
+0.2%      201    infix expressions of type   Float / Float
+0.1%      101    infix expressions of type   Int / Double
+0.2%      201    infix expressions of type   Int % Int
+0.0%        1    infix expressions of type   _Type cast Double
+29.4%    26173    array expressions of type   arr<Float>[Int]
+0.2%      201    array expressions of type   arr<Double>[Int]
+10.0%     8865  postfix expressions of type   Int++
+4.5%     4020  postfix expressions of type   Int--
+0.0%        2   return expressions of type   ret<Int> = Int
+0.2%      201   return expressions of type   ret<Float> = Float
+0.2%      201   return expressions of type   ret<Double> = Double
+
+Total expressions: 89016
+Maximum expression chain depth: 9

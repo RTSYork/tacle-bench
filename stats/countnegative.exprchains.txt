@@ -1,0 +1,10 @@
+      51    var<Int> = Int
+     882    Int < Int
+     400    arr<Array>[Int]  ->  arr<Int>[Int]
+     400    arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int >= Int
+     400    arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int += Int
+     400    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
+     400    ret<Int> = Int  ->  var<Int> = Int
+    1240    Int++
+       1    Int + Int  ->  Int + Int  ->  Int + Int  ->  var<Int> = Int
+       1    _Type cast Int  ->  Int == Int  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int

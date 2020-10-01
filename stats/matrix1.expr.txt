@@ -1,0 +1,18 @@
+0.9%      113   prefix expressions of type   &Int
+0.0%        1   prefix expressions of type   -Int
+25.4%     3100   prefix expressions of type   *Pointer
+4.2%      517   assign expressions of type   var<Int> = Int
+0.9%      113   assign expressions of type   var<Pointer> = Pointer
+9.0%     1100    infix expressions of type   Int += Int
+0.0%        1    infix expressions of type   LongLong ? Int
+0.0%        1    infix expressions of type   Int : Int
+0.0%        1    infix expressions of type   Int == Int
+13.3%     1625    infix expressions of type   Int < Int
+12.3%     1507    infix expressions of type   Int * Int
+4.2%      513    array expressions of type   arr<Int>[Int]
+12.4%     1510  postfix expressions of type   Int++
+17.2%     2100  postfix expressions of type   Pointer++
+0.0%        2   return expressions of type   ret<Int> = Int
+
+Total expressions: 12204
+Maximum expression chain depth: 7

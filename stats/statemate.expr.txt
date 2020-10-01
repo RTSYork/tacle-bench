@@ -1,0 +1,30 @@
+5.2%      998   prefix expressions of type   !Char
+7.3%     1403   assign expressions of type   var<Int> = Int
+10.0%     1920   assign expressions of type   var<Char> = Int
+0.0%        5   assign expressions of type   var<UnsignedLong> = Int
+46.8%     9000   assign expressions of type   var<Char> = Char
+0.3%       64    infix expressions of type   UnsignedLong += UnsignedLong
+0.0%        1    infix expressions of type   Char || Char
+0.0%        1    infix expressions of type   Char || LongLong
+1.0%      200    infix expressions of type   LongLong && Char
+1.0%      198    infix expressions of type   Char && LongLong
+1.1%      205    infix expressions of type   LongLong && LongLong
+0.0%        1    infix expressions of type   UnsignedLong == UnsignedLong
+0.0%        1    infix expressions of type   Int != Int
+0.0%        5    infix expressions of type   UnsignedLong != Int
+2.1%      400    infix expressions of type   Char != Char
+0.5%      101    infix expressions of type   Int < Int
+0.3%       65    infix expressions of type   Int >= Int
+0.0%        5    infix expressions of type   UnsignedLong >= Int
+0.3%       64    infix expressions of type   Char << Int
+0.0%        5    infix expressions of type   UnsignedLong - UnsignedLong
+0.3%       64    infix expressions of type   _Type cast LongLong
+22.2%     4268    array expressions of type   arr<Char>[Int]
+0.5%      100  postfix expressions of type   Int++
+0.5%      100  postfix expressions of type   Char++
+0.3%       64  postfix expressions of type   Int--
+0.0%        1   return expressions of type   ret<Int> = Int
+0.0%        1   return expressions of type   ret<Int> = LongLong
+
+Total expressions: 19240
+Maximum expression chain depth: 4

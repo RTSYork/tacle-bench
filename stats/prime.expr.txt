@@ -1,0 +1,25 @@
+1.5%        2   prefix expressions of type   &UnsignedInt
+3.0%        4   prefix expressions of type   *Pointer
+0.7%        1   prefix expressions of type   !LongLong
+1.5%        2   prefix expressions of type   !UnsignedChar
+2.2%        3   assign expressions of type   var<Int> = Int
+1.5%        2   assign expressions of type   var<UnsignedInt> = Int
+0.7%        1   assign expressions of type   var<Int> = LongLong
+3.7%        5   assign expressions of type   var<UnsignedInt> = UnsignedInt
+10.4%       14    infix expressions of type   UnsignedInt += Int
+0.7%        1    infix expressions of type   LongLong && LongLong
+13.3%       18    infix expressions of type   UnsignedInt == Int
+11.9%       16    infix expressions of type   UnsignedInt <= UnsignedInt
+1.5%        2    infix expressions of type   Int + Int
+1.5%        2    infix expressions of type   Int * Int
+11.9%       16    infix expressions of type   UnsignedInt * UnsignedInt
+1.5%        2    infix expressions of type   Int % Int
+13.3%       18    infix expressions of type   UnsignedInt % UnsignedInt
+1.5%        2   return expressions of type   ret<Int> = Int
+1.5%        2   return expressions of type   ret<UnsignedInt> = Int
+1.5%        2   return expressions of type   ret<UnsignedChar> = Int
+13.3%       18   return expressions of type   ret<UnsignedChar> = LongLong
+1.5%        2   return expressions of type   ret<UnsignedChar> = UnsignedChar
+
+Total expressions: 135
+Maximum expression chain depth: 5

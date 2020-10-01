@@ -1,0 +1,59 @@
+       1    Int * Int
+   22542    Int * Int  ->  Int < Int
+    3030    -Int
+     640    -Int  ->  var<Int> = Int
+    1280    -Float
+     640    -Float  ->  Float > Float
+    3880    var<Int> = Int
+    3083    Int < Int
+    1024    arr<Float>[Int]  ->  var<Float> = Float
+    1024    var<Float> = Int
+    1024    Float + Int
+    1024    Float + Int  ->  var<UnsignedLong> = Float
+    1024    var<Float> = Float
+   14336    Int < Float
+   13312    Float *= Float
+   15360    ++Int
+    1024    ret<Float> = Float  ->  Float - Int  ->  var<Float> = Float
+    1024    Float * Float  ->  var<Float> = Float
+    1024    &Float
+    1024    *Pointer  ->  _Type cast Float  ->  var<Float> = Int
+    1024    *Pointer  ->  Float - Float  ->  ret<Float> = Float  ->  var<Float> = Float
+    5120    *Pointer  ->  Int * Int  ->  Int -= Int
+    5120    *Pointer  ->  Int * Int  ->  var<Int> = Int
+    5120    *Pointer  ->  *Pointer  ->  Int - Int  ->  var<Int> = Int
+   20480    *Pointer  ->  *Pointer  ->  Int >> Int  ->  var<Int> = LongLong
+    5120    *Pointer  ->  Int += Int
+    1408    Float < Float
+    1024    var<UnsignedLong> = UnsignedLong
+    1024    _Type cast UnsignedLong  ->  ret<Int> = Int  ->  var<Int> = Int
+    1024    arr<Int>[Int]  ->  var<Int> = Int
+       1    arr<Int>[Int]  ->  &Int
+       3    arr<Int>[Int]  ->  &Int  ->  var<Pointer> = Pointer
+    6142    arr<Int>[Int]  ->  Int += Int
+   24576    Int++
+   20480    Pointer++
+    1024    Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  var<Int> = Int
+    1024    Pointer++  ->  *Pointer  ->  var<Int> = Int
+    2047    Int - Int  ->  Int * Int  ->  Int < Int
+    1025    Int - Int  ->  Int < Int
+      11    Int << Int  ->  var<Int> = LongLong
+    1035    Int > Int
+    2047    Int >= Int  ->  Int >= Int  ->  LongLong && LongLong
+    9214    Int += Int
+    2015    Pointer + Int  ->  *Pointer  ->  var<Int> = Int
+     496    Pointer + Int  ->  *Pointer  ->  Pointer + Int  ->  *Pointer  ->  var<Int> = Int
+    2015    Pointer + Int  ->  Pointer + Int  ->  *Pointer  ->  var<Int> = Int
+     496    Pointer + Int  ->  Pointer + Int  ->  *Pointer  ->  Pointer + Int  ->  Pointer + Int  ->  *Pointer  ->  var<Int> = Int
+   10240    Pointer + Int  ->  var<Pointer> = Pointer
+    1023    Int -= Int
+    1023    Int >>= Int
+    6143    Int <= Int
+    5120    Int + Int  ->  var<Int> = Int
+    5120    Pointer - Int  ->  *Pointer  ->  Int * Int  ->  var<Int> = Int
+    5120    Pointer - Int  ->  *Pointer  ->  Int * Int  ->  Int += Int
+    5120    Pointer - Int  ->  *Pointer  ->  Pointer - Int  ->  *Pointer  ->  Int - Int  ->  var<Int> = Int
+    5120    Pointer - Int  ->  *Pointer  ->  Int += Int
+   10240    Int >> Int  ->  var<Int> = LongLong
+      10    var<Pointer> = Pointer
+       1    Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int

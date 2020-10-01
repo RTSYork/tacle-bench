@@ -1,0 +1,50 @@
+     360    var<UnsignedChar> = Int
+     653    var<UnsignedInt> = Int
+    3714    var<Pointer> = Pointer
+       3    var<Int> = Int
+       1    Int >= Int  ->  ret<Int> = LongLong  ->  !Int
+      60    Int >= Int  ->  ret<Int> = LongLong  ->  !Int  ->  LongLong && LongLong
+    8739    UnsignedInt < Int
+     513    arr<Struct>[UnsignedInt]
+     257    arr<Struct>[UnsignedInt]  ->  var<UnsignedInt> = Int
+      49    arr<Struct>[UnsignedInt]  ->  arr<UnsignedChar>[UnsignedInt]
+    8224    arr<Struct>[UnsignedInt]  ->  arr<UnsignedChar>[UnsignedInt]  ->  var<UnsignedChar> = Int
+     296    arr<Struct>[UnsignedInt]  ->  var<UnsignedInt> = UnsignedInt
+     252    arr<Struct>[UnsignedInt]  ->  UnsignedInt - Int  ->  UnsignedInt >> Int  ->  arr<UnsignedChar>[LongLong]  ->  UnsignedInt - Int  ->  UnsignedInt & Int  ->  Int << UnsignedInt  ->  UnsignedChar & LongLong
+    9251    UnsignedInt++
+      77    UnsignedInt++  ->  arr<Struct>[UnsignedInt]  ->  &Struct  ->  var<Pointer> = Pointer
+     600    Int++
+     359    Int++  ->  arr<UnsignedChar>[Int]  ->  ret<Int> = UnsignedChar  ->  var<UnsignedInt> = Int
+      60    Int++  ->  arr<UnsignedChar>[Int]  ->  ret<Int> = UnsignedChar  ->  LongLong + Int  ->  var<UnsignedInt> = LongLong
+     600    Int++  ->  arr<Char>[Int]  ->  var<Char> = Char
+     327    UnsignedInt >> Int  ->  LongLong & Int  ->  ret<UnsignedChar> = LongLong
+      32    UnsignedInt >> Int  ->  LongLong & Int  ->  ret<UnsignedChar> = LongLong  ->  var<UnsignedChar> = UnsignedChar
+    1374    UnsignedInt <= Int
+    2540    UnsignedChar--
+    2316    UnsignedInt >> UnsignedChar  ->  LongLong & Int  ->  ret<UnsignedChar> = LongLong
+     224    UnsignedInt >> UnsignedChar  ->  LongLong & Int  ->  ret<UnsignedChar> = LongLong  ->  var<UnsignedChar> = UnsignedChar
+       1    arr<Struct>[Int]  ->  var<UnsignedChar> = Int
+     127    var<UnsignedInt> = UnsignedInt
+      60    UnsignedChar < Int
+      88    UnsignedChar < Int  ->  !LongLong  ->  LongLong && LongLong
+      60    UnsignedInt << Int
+      60    UnsignedChar += Int
+      88    UnsignedInt >= UnsignedChar
+      88    UnsignedInt << UnsignedInt  ->  UnsignedChar - UnsignedInt  ->  UnsignedInt >> UnsignedInt  ->  Int << UnsignedInt  ->  LongLong - Int  ->  LongLong & LongLong  ->  LongLong + LongLong  ->  var<UnsignedInt> = LongLong
+      88    UnsignedChar -= UnsignedInt
+      39    ret<UnsignedInt> = UnsignedInt  ->  UnsignedInt + Int  ->  var<UnsignedInt> = UnsignedInt
+      49    ret<UnsignedInt> = UnsignedInt  ->  _Type cast UnsignedInt  ->  var<UnsignedChar> = UnsignedChar
+      39    UnsignedInt - Int  ->  UnsignedInt >> Int  ->  var<UnsignedInt> = LongLong
+      73    UnsignedInt & Int
+      34    UnsignedInt & Int  ->  UnsignedInt -= UnsignedInt
+     301    UnsignedInt--
+      54    UnsignedInt >= Int
+      15    UnsignedInt -= Int
+     154    var<Pointer> = Int
+     252    Pointer == Int
+    3456    UnsignedInt == Int
+       1    ret<Pointer> = Pointer  ->  var<Pointer> = Pointer
+     601    UnsignedInt != Int
+     601    Int < Int
+     600    arr<Pointer>[Int]  ->  arr<Char>[Int]  ->  Char != Char
+       1    ret<Int> = Int  ->  ret<Int> = Int

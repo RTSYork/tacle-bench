@@ -1,0 +1,31 @@
+       1    var<Char> = Int
+    5005    arr<Int>[Int]
+       4    arr<Int>[Int]  ->  &Int  ->  _Type cast Pointer  ->  var<Pointer> = Pointer
+    3004    arr<Int>[Int]  ->  var<Int> = Int
+   10010    arr<Int>[Int]  ->  UnsignedShort & Int  ->  UnsignedShort & Int  ->  Int + Int  ->  UnsignedShort & Int  ->  Int + Int  ->  Int > Int  ->  var<Int> = LongLong
+   14014    arr<Int>[Int]  ->  Int - Int  ->  Int == Int  ->  var<Int> = LongLong
+    1001    arr<Int>[Int]  ->  Int & Int  ->  Int != Int  ->  var<Int> = LongLong
+   17529    arr<Int>[Int]  ->  Int ? Int  ->  Void : Int  ->  Int |= Int
+     489    arr<Int>[Int]  ->  Int ? Int  ->  Int : Int  ->  Int |= Int
+       4    var<UnsignedInt> = Int
+     140    sizeofArray  ->  UnsignedInt < LongLong
+     136    *Pointer  ->  UnsignedChar ^= Char
+     136    ++UnsignedInt
+     136    ++Pointer
+   11027    var<Int> = Int
+      16    Int++  ->  arr<Int>[Int]  ->  var<Int> = Int
+    1001    Int++  ->  Int >= Int
+    3003    var<UnsignedShort> = Int
+    1001    var<Int> = UnsignedShort
+   26026    Int < Int
+   30030    UnsignedShort >>= Int
+   25025    ++Int
+    1001    Int == Int
+    1001    Int != Int
+    1001    Int >> Int  ->  var<Int> = LongLong
+    2002    Int - Int  ->  var<Int> = Int
+       1    Int - Int  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+   20020    Int >= Int
+   18018    Int <<= Int
+   18018    --Int
+    1001    Int += Int

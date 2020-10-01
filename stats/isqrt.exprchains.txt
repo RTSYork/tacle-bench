@@ -1,0 +1,26 @@
+      45    var<Float> = Float
+       5    var<Float> = Double
+      12    -Float  ->  var<Float> = Float
+    3004    var<UnsignedLong> = Long
+       1    var<UnsignedLong> = Int
+    2003    var<Int> = Int
+   39039    Int < Int
+    1001    &Struct
+   32032    UnsignedLong << Int
+   32032    UnsignedLong << Int  ->  LongLong + Int  ->  var<UnsignedLong> = LongLong
+   32032    Int - Int  ->  Long << Int  ->  UnsignedLong & LongLong
+   32032    Int - Int  ->  UnsignedLongLong >> Int  ->  LongLong + LongLong  ->  var<UnsignedLong> = LongLong
+   64064    UnsignedLong <<= Int
+   32032    UnsignedLong >= UnsignedLong
+   36036    Int++
+   10840    UnsignedLong -= UnsignedLong
+   10840    UnsignedLong++
+    1001    &UnsignedLong
+    1001    *Pointer  ->  sizeofPointer
+    4004    *Pointer  ->  *Pointer  ->  var<Char> = Char
+    2002    _Type cast Pointer  ->  var<Pointer> = Pointer
+    8008    Pointer++
+    1001    UnsignedLong += UnsignedShort
+    1000    Int += Int
+       1    UnsignedLong == Int
+       1    ret<Int> = Int  ->  ret<Int> = Int

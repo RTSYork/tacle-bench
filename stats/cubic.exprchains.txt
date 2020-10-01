@@ -1,0 +1,132 @@
+   24605    var<Float> = Float
+       5    var<Float> = Double
+      20    -Float  ->  var<Float> = Float
+     793    -Float  ->  Float == Float  ->  LongLong && LongLong
+      33    var<Float> = Int
+    3173    var<Int> = Int
+    1197    var<Int> = Int  ->  var<Int> = Int
+     879    &Int
+      86    Float / Float
+    2722    Float / Float  ->  var<Float> = Float
+      86    Float * Float  ->  Float * Float
+     879    Float * Float  ->  Float * Float  ->  Float - Float  ->  Float / Float  ->  var<Float> = Float
+      43    Float * Float  ->  Float * Float  ->  Float - Float  ->  Float * Float  ->  Float - Float  ->  Float * Float  ->  Float - Float  ->  Float - Float  ->  ret<Float> = Float  ->  -Float  ->  ret<Float> = Float  ->  Float * Float  ->  Float / Float  ->  Float - Float  ->  var<Float> = Float
+      86    Float * Float  ->  Float * Float  ->  Float - Float  ->  Float * Float  ->  Float - Float  ->  Float * Float  ->  Float - Float  ->  Float - Float  ->  ret<Float> = Float  ->  ret<Float> = Float  ->  Float * Float  ->  Float / Float  ->  Float - Float  ->  var<Float> = Float
+      42    Float * Float  ->  Float * Float  ->  Float - Float  ->  Float - Float  ->  Float - Float  ->  ret<Float> = Float  ->  -Float  ->  ret<Float> = Float  ->  Float * Float  ->  Float / Float  ->  Float - Float  ->  var<Float> = Float
+      36    Float * Float  ->  Float * Float  ->  Float - Float  ->  Float - Float  ->  Float - Float  ->  ret<Float> = Float  ->  ret<Float> = Float  ->  Float * Float  ->  Float / Float  ->  Float - Float  ->  var<Float> = Float
+     879    Float * Float  ->  Float * Float  ->  Float * Float  ->  Float * Float  ->  Float * Float  ->  Float - Float  ->  Float * Float  ->  Float + Float  ->  Float / Float  ->  var<Float> = Float
+     879    Float * Float  ->  Float * Float  ->  Float * Float  ->  Float - Float  ->  var<Float> = Float
+     793    Float * Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  var<Float> = Float
+     793    Float * Float  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
+     793    Float * Float  ->  Float * Float  ->  Float + Float  ->  arr<Float>[Int]  ->  Float + Float  ->  var<Float> = Float
+     214    Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  var<Float> = Float
+     793    Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float - Float  ->  var<Float> = Float
+     214    Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
+     172    Float * Float  ->  Float + Float  ->  Float / Float
+     134    Float * Float  ->  Float + Float  ->  _Type cast Float  ->  var<Int> = Int
+      53    Float * Float  ->  Float + Float  ->  var<Float> = Float
+     141    Float * Float  ->  Float - Float  ->  var<Float> = Float
+     793    Float * Float  ->  Float - Float  ->  Float * Float  ->  Float - Float  ->  Float * Float  ->  var<Float> = Float
+     793    Float * Float  ->  Float - Float  ->  Float / Float  ->  Float * Float  ->  Float + Float  ->  Float - Float  ->  var<Float> = Float
+      53    Float * Float  ->  Float - Float  ->  Float + Float  ->  Float / Float  ->  var<Float> = Float
+      25    Float * Float  ->  Float - Float  ->  Float - Float  ->  Float - Float  ->  ret<Float> = Float  ->  var<Float> = Float
+    6890    Float * Float  ->  var<Float> = Float
+     793    Float * Float  ->  ret<Float> = Float  ->  var<Float> = Float
+     879    Float <= Int
+     879    *Pointer  ->  var<Int> = Int
+    1197    _Type cast UnsignedInt  ->  var<Int> = Int
+    9959    var<Int> = UnsignedInt
+    1374    Int & Int
+    1197    Int & Int  ->  Int == Int
+    1197    Int & Int  ->  Int | Int  ->  var<Int> = Int
+     793    Int & Int  ->  Int | Int  ->  Int - Int  ->  Int >> Int  ->  var<Int> = LongLong
+    1197    Int & Int  ->  Int += Int
+    3435    Int & Int  ->  var<Int> = Int
+     793    Int & Int  ->  Int > Int
+     793    Int & Int  ->  Int >> Int  ->  LongLong - Int  ->  var<Int> = LongLong
+   32510    Int <= Int
+    1197    Int >> Int  ->  var<Int> = LongLong
+    1197    Int >> Int  ->  LongLong + Int  ->  var<Int> = LongLong
+     793    Int >> Int  ->  LongLong - Int  ->  Int += LongLong
+     793    Int >> Int  ->  LongLong - Int  ->  var<Int> = LongLong
+     793    Int >> Int  ->  LongLong | Int  ->  LongLong + Int  ->  Int << Int  ->  LongLong + LongLong  ->  var<UnsignedInt> = LongLong
+     793    Int >> Int  ->  ~LongLong  ->  Int & LongLong  ->  var<UnsignedInt> = LongLong
+     793    Int >> Int  ->  LongLong <= Int
+    6171    Int == Int
+     793    Int == Int  ->  Int == Int  ->  LongLong || LongLong  ->  Int == Int  ->  LongLong || LongLong
+   16741    Int -= Int
+   32768    Int += Int
+    1197    Int >>= Int
+    3980    var<UnsignedInt> = Int
+   31122    UnsignedInt != Int
+   45297    Int + UnsignedInt  ->  var<Int> = UnsignedInt
+   15372    Int += UnsignedInt
+   29925    UnsignedInt >>= Int
+    1197    Int != Int
+    1318    Float - Float  ->  var<Float> = Float
+    2379    Float - Float  ->  Float - Float  ->  var<Float> = Float
+     793    Float - Float  ->  Float - Float  ->  Float * Float  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
+     793    Float - Float  ->  arr<Float>[Int]  ->  Float - Float  ->  Float - Float  ->  Float - Float  ->  var<Float> = Float
+     793    Float - Float  ->  Float * Float  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
+      53    Float - Float  ->  _Type cast Float  ->  Float * Float  ->  var<Float> = Float
+    1197    Float >= Float
+    4369    Float + Float  ->  var<Float> = Float
+       7    Float + Float  ->  _Type cast Float  ->  Float * Float  ->  var<Float> = Float
+     793    Float + Float  ->  Float * Float  ->  Float += Float
+     793    Float + Float  ->  arr<Float>[Int]  ->  Float + Float  ->  Float + Float  ->  var<Float> = Float
+       1    Float + Float  ->  ret<Float> = Float  ->  var<Float> = Float
+    1197    Float > Float
+    1990    Int << Int  ->  Int += LongLong
+     793    ret<Float> = Float
+      86    ret<Float> = Float  ->  Float / Float
+     987    ret<Float> = Float  ->  var<Float> = Float
+     258    ret<Float> = Float  ->  Float * Float
+     793    ret<Float> = Float  ->  Float + Float
+    2586    Int > Int
+     793    Int > Int  ->  Int > Int  ->  LongLong || LongLong
+    3774    Int < Int
+     134    Int < Int  ->  Int & UnsignedInt  ->  _Type cast UnsignedInt  ->  Int - Int  ->  arr<Int>[Int]  ->  Int != Int  ->  LongLong && LongLong
+       7    _Type cast Float  ->  Float + Float  ->  Float * Float  ->  Float - Float  ->  ret<Float> = Float  ->  var<Float> = Float
+      53    _Type cast Float  ->  Float + Float  ->  Float * Float  ->  ret<Float> = Float  ->  var<Float> = Float
+     793    _Type cast Float  ->  Float + Float  ->  Float + Float  ->  var<Float> = Float
+       6    _Type cast Float  ->  Float * Float  ->  Float * Float  ->  Float * Float  ->  Float - Float  ->  Float - Float  ->  Float - Float  ->  ret<Float> = Float  ->  -Float  ->  ret<Float> = Float  ->  Float * Float  ->  Float / Float  ->  Float - Float  ->  var<Float> = Float
+      45    _Type cast Float  ->  Float * Float  ->  Float * Float  ->  Float * Float  ->  Float - Float  ->  Float - Float  ->  Float - Float  ->  ret<Float> = Float  ->  ret<Float> = Float  ->  Float * Float  ->  Float / Float  ->  Float - Float  ->  var<Float> = Float
+      78    _Type cast Float  ->  Float * Float  ->  Float - Float  ->  var<Float> = Float
+     793    _Type cast Float  ->  Float - Float  ->  Float - Float  ->  Float - Float  ->  var<Float> = Float
+       2    _Type cast Float  ->  var<Float> = Float
+     793    arr<Pointer>[Int]
+     258    arr<Pointer>[Int]  ->  -Float
+     177    arr<Pointer>[Int]  ->  Float - Float  ->  var<Float> = Float
+     177    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  Float - Float  ->  Float - Float  ->  var<Float> = Float
+     793    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  Float / Float  ->  Float += Float
+     793    arr<Pointer>[Int]  ->  Float < Float  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  Float *= Int
+     793    arr<Pointer>[Int]  ->  Float / Float  ->  Float -= Float
+     516    Int &= Int
+     177    Int >= Int
+      43    Int & UnsignedInt  ->  UnsignedInt != Int
+    4811    Int & UnsignedInt  ->  var<UnsignedInt> = UnsignedInt
+     177    ret<Int> = Int  ->  var<Int> = Int
+       1    ret<Int> = Int  ->  ret<Int> = Int
+     354    arr<Float>[Int]
+     793    arr<Float>[Int]  ->  Float - Float  ->  var<Float> = Float
+     793    arr<Float>[Int]  ->  Float - Float  ->  Float - Float  ->  var<Float> = Float
+     793    arr<Float>[Int]  ->  Float + Float  ->  Float / Float  ->  var<Float> = Float
+    1720    var<UnsignedInt> = UnsignedInt
+    1720    UnsignedInt & Int  ->  var<UnsignedInt> = UnsignedInt
+     927    _Type cast Int  ->  var<Float> = Float
+     793    _Type cast Int  ->  UnsignedInt >> Int  ->  LongLong - Int  ->  LongLong | Int  ->  LongLong == Int
+     793    _Type cast Int  ->  UnsignedInt >> Int  ->  LongLong - Int  ->  Int - Int  ->  LongLong | Int  ->  LongLong == Int
+     793    _Type cast Int  ->  UnsignedInt == UnsignedInt
+     793    Int / Float
+     793    Float == Float
+     793    Int | Int  ->  var<Int> = Int
+     793    Int + Int  ->  Int >> Int  ->  Int + LongLong  ->  var<Int> = LongLong
+     793    Float -= Float
+     206    Float < Int
+      30    Float > Int
+     175    -Int  ->  var<Float> = Int
+    1050    -Int  ->  Float > Int
+     900    Float -= Int
+     175    Float += Float
+      76    Int - Int  ->  var<UnsignedInt> = Int
+       5    Float += Int

@@ -1,0 +1,31 @@
+       9    -Double
+       5    -Double  ->  var<Double> = Double
+      59    var<Int> = Int
+     197    Int < Int
+       1    Int < Int  ->  Int > Int  ->  LongLong || LongLong  ->  Double <= Double  ->  LongLong || LongLong
+       1    Int < Int  ->  Int < Int  ->  LongLong || LongLong  ->  Int < Int  ->  LongLong || LongLong  ->  Int != Int  ->  LongLong || LongLong
+       6    arr<Array>[Int]  ->  arr<Double>[Int]
+       9    arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double += Int
+      30    arr<Array>[Int]  ->  arr<Double>[Int]  ->  arr<Array>[Int]  ->  arr<Double>[Int]  ->  var<Double> = Double
+      10    arr<Array>[Int]  ->  arr<Double>[Int]  ->  arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double * Double  ->  Double -= Double
+      27    arr<Array>[Int]  ->  arr<Double>[Int]  ->  arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double * Double  ->  Double += Double
+      42    arr<Array>[Int]  ->  arr<Double>[Int]  ->  var<Double> = Double
+       9    arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double /= Double
+       5    arr<Array>[Int]  ->  arr<Double>[Int]  ->  -Double  ->  Double / Double  ->  var<Double> = Double
+       3    arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double / Double  ->  var<Double> = Double
+       9    arr<Array>[Int]  ->  arr<Double>[Int]  ->  Double += Double
+     147    Int++
+      26    var<Double> = Double
+       2    var<Double> = Int
+      16    arr<Int>[Int]  ->  var<Int> = Int
+       4    arr<Int>[Int]  ->  arr<Int>[Int]  ->  var<Int> = Int
+       9    Double >= Int
+       9    ret<Double> = Double  ->  var<Double> = Double
+       6    Double > Double
+       3    Double <= Double
+       3    Double *= Double
+      27    Int != Int
+       6    Double != Double
+       5    Int == Int
+       2    ret<Int> = Int
+       1    Double * Int  ->  _Type cast Double  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int

@@ -1,0 +1,13 @@
+0.1%        2   assign expressions of type   var<Float> = Int
+0.1%        1   assign expressions of type   var<Int> = Float
+0.1%        1   assign expressions of type   var<Float> = Float
+19.9%      361    infix expressions of type   Float += Float
+19.9%      361    infix expressions of type   Float += Double
+0.1%        1    infix expressions of type   Int == Int
+20.0%      362    infix expressions of type   Float <= Float
+19.9%      361    infix expressions of type   Float * Float
+19.9%      361    infix expressions of type   Float / Int
+0.1%        2   return expressions of type   ret<Int> = Int
+
+Total expressions: 1813
+Maximum expression chain depth: 3

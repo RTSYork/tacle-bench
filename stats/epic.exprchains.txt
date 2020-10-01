@@ -1,0 +1,56 @@
+       2    Int * Int  ->  Int / Int
+    4162    Int * Int  ->  Int < Int
+     592    Int * Int  ->  var<Int> = Int
+       4    Int * Int  ->  Int - Int  ->  var<Int> = Int
+    2002    Int * Int  ->  Int % Int  ->  var<Int> = Int
+      32    -Double
+   45810    var<Int> = Int
+    1012    var<Int> = Int  ->  var<Int> = Int
+    4096    arr<Float>[Int]
+      64    arr<Float>[Int]  ->  Int += Float
+    4096    Float *= Int
+  347564    ++Int
+  278655    Int < Int
+     176    Int - Int  ->  var<Int> = Int
+      24    Int - Int  ->  Int * Int  ->  var<Int> = Int
+      72    Int - Int  ->  Int + Int  ->  var<Int> = Int
+      24    Int - Int  ->  Int + Int  ->  Int - Int  ->  Int / Int  ->  var<Int> = Int
+      24    Int - Int  ->  Int - Int  ->  var<Int> = Int
+     152    Int - Int  ->  Int += Int
+      24    Int - Int  ->  Int -= Int
+      24    Int - Int  ->  Int / Int  ->  Int + Int  ->  var<Int> = Int
+       4    Int / Int
+      48    Int / Int  ->  var<Int> = Int
+    1080    Int / Int  ->  Int + Int  ->  var<Int> = Int
+      12    Int / Int  ->  Pointer += Int
+     340    Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  Void : Int  ->  var<Int> = Int
+      88    Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  -Int  ->  Int < Int  ->  Int + Int  ->  LongLong ? Int  ->  Int : Int  ->  Void : Int  ->  var<Int> = Int
+     112    Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  -Int  ->  Int < Int  ->  Int + Int  ->  LongLong ? Int  ->  Int : Int  ->  Void : Int  ->  Int * Int  ->  var<Int> = Int
+     220    Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  -Int  ->  Int < Int  ->  Int + Int  ->  LongLong ? Int  ->  Void : Int  ->  Void : Int  ->  Int * Int  ->  var<Int> = Int
+     252    Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  -Int  ->  Int < Int  ->  Int + Int  ->  LongLong ? Int  ->  Void : Int  ->  Void : Int  ->  var<Int> = Int
+     200    Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  -Int  ->  Int < Int  ->  Int + Int  ->  LongLong ? Int  ->  Void : Int  ->  Int : Int  ->  var<Int> = Int
+     208    Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  -Int  ->  Int < Int  ->  Int + Int  ->  LongLong ? Int  ->  Void : Int  ->  Int : Int  ->  Int * Int  ->  var<Int> = Int
+     200    Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  Int : Int  ->  var<Int> = Int
+     332    Int > Int  ->  Int - Int  ->  Int * Int  ->  LongLong ? Int  ->  Void : Int  ->  var<Int> = Int
+     208    Int > Int  ->  Int - Int  ->  Int * Int  ->  LongLong ? Int  ->  Int : Int  ->  var<Int> = Int
+   20212    arr<Pointer>[Int]  ->  var<Float> = Float
+  162180    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  Float * Float  ->  Float += Float
+     650    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  var<Float> = Float
+    1080    Int == Int
+       1    Int == Int  ->  LongLong ? Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+   88092    Int + Int  ->  var<Int> = Int
+   13568    Int + Int  ->  Int < Int
+      24    Int + Int  ->  Int * Int  ->  var<Int> = Int
+      64    Int + Int  ->  Int += Int
+   12992    Int >= Int  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  Int - LongLong
+    3208    Int >= Int  ->  LongLong ? Int  ->  -Int  ->  Void : Int  ->  Int - LongLong
+    5188    LongLong >= Int  ->  LongLong ? LongLong  ->  -LongLong  ->  LongLong : LongLong
+    6236    LongLong >= Int  ->  LongLong ? LongLong  ->  -LongLong  ->  LongLong : LongLong  ->  LongLong + LongLong  ->  arr<Pointer>[LongLong]  ->  arr<Pointer>[Int]  ->  Float += Float
+    2912    LongLong >= Int  ->  LongLong ? LongLong  ->  -LongLong  ->  Void : LongLong
+    1864    LongLong >= Int  ->  LongLong ? LongLong  ->  -LongLong  ->  Void : LongLong  ->  LongLong + LongLong  ->  arr<Pointer>[LongLong]  ->  arr<Pointer>[Int]  ->  Float += Float
+  196852    Int += Int
+   10812    var<Float> = Float
+   96888    Int <= Int
+   15480    Int++
+      12    Int /= Int
+    1352    Int != Int

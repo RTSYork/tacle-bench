@@ -1,0 +1,123 @@
+       8    -Int
+     512    -Int  ->  Short < Int
+     256    -Int  ->  Short <= Int
+     256    -Int  ->  Int > Int
+     290    -Int  ->  var<Short> = Int
+   11590    var<Int> = Int
+     257    &Struct
+       1    var<Long> = Int
+       4    var<Short> = Int
+   26126    Int < Int
+     254    Int < Int  ->  -Int  ->  LongLong ? Int  ->  Int : Int  ->  ret<Int> = Int  ->  var<Short> = Int
+       2    Int < Int  ->  -Int  ->  LongLong ? Int  ->  Void : Int  ->  ret<Int> = Int  ->  var<Short> = Int
+     256    Int < Int  ->  LongLong ? Int  ->  Int : Int  ->  var<Short> = Int
+    2048    arr<Short>[Int]
+      18    arr<Short>[Int]  ->  var<Short> = Int
+    2048    arr<Short>[Int]  ->  Short >> Int
+     256    arr<Short>[Int]  ->  Short ^ Short
+     256    arr<Short>[Int]  ->  Short ^ Short  ->  var<Short> = Int
+     256    arr<Short>[Int]  ->  arr<Short>[Int]  ->  Short >> Int  ->  Short - LongLong  ->  var<Short> = LongLong
+    1792    arr<Short>[Int]  ->  arr<Short>[Int]  ->  Short >> Int  ->  Short -= LongLong
+     512    arr<Short>[Int]  ->  arr<Short>[Int]  ->  var<Short> = Short
+       1    arr<Short>[Int]  ->  Short ? Short  ->  arr<Short>[Int]  ->  -Short  ->  Short : Int  ->  var<Short> = Short
+     255    arr<Short>[Int]  ->  Short ? Short  ->  arr<Short>[Int]  ->  -Short  ->  Void : Int  ->  var<Short> = Int
+     563    arr<Short>[Int]  ->  var<Short> = Short
+      22    arr<Short>[Int]  ->  Short -= Int
+     256    arr<Short>[Int]  ->  -Short  ->  Short < Int
+     256    arr<Short>[Int]  ->  Short > Short
+    1536    arr<Short>[Int]  ->  Int ^ Short  ->  Int >= Int
+    1280    arr<Short>[Int]  ->  Int - Int  ->  arr<Short>[Int]  ->  var<Short> = Short
+     256    arr<Short>[Int]  ->  Int >= Int  ->  Short << Int  ->  Short << Int  ->  LongLong >> Short  ->  LongLong + LongLong  ->  LongLong ? LongLong  ->  Short << Int  ->  Short << Int  ->  LongLong >> Short  ->  LongLong + LongLong  ->  LongLong - Int  ->  Void : LongLong  ->  var<Short> = LongLong
+     256    arr<Short>[Int]  ->  Short << Int  ->  Short << Int  ->  LongLong >> Short  ->  LongLong + LongLong  ->  LongLong - Int  ->  var<Short> = LongLong
+    1770    arr<Short>[Int]  ->  Short += Int
+    3592    Int++
+     513    var<Char> = Int
+     256    arr<UnsignedInt>[Int]  ->  UnsignedInt += Int
+      96    arr<UnsignedInt>[Int]  ->  var<UnsignedInt> = UnsignedChar
+     256    arr<UnsignedInt>[Int]  ->  Int += UnsignedInt
+       1    &Short  ->  var<Pointer> = Pointer
+     256    *Pointer  ->  arr<UnsignedInt>[Int]  ->  var<Short> = UnsignedInt
+     256    UnsignedChar ^= Int
+     256    UnsignedChar & Int  ->  Int << Int  ->  var<Int> = LongLong
+     256    UnsignedChar & Int  ->  Int ? Int  ->  -Int  ->  Void : Int  ->  ret<Int> = Int  ->  Int >> Int  ->  var<Int> = LongLong
+     256    _Type cast UnsignedChar
+     256    UnsignedInt & Int
+      96    UnsignedInt & Int  ->  var<UnsignedChar> = UnsignedInt
+     256    UnsignedInt >> Int  ->  var<Int> = LongLong
+     512    Int += Int
+     183    Int - Int  ->  Int <<= Int
+     256    Int - Int  ->  Int >> Int  ->  Int + LongLong  ->  var<Short> = LongLong
+    1803    Int > Int
+     264    Int > Int  ->  LongLong ? Int  ->  -Int  ->  Int & Int  ->  Void : Int  ->  var<Short> = Int
+    1784    Int > Int  ->  LongLong ? Int  ->  -Int  ->  Int & Int  ->  Int : Int  ->  var<Short> = Int
+     256    Int > Int  ->  ret<Int> = LongLong  ->  var<Int> = Int
+   12890    Pointer++  ->  *Pointer  ->  Int < Short
+   18432    ++Int
+    2048    ret<Int> = Int  ->  Int - Int  ->  var<Short> = Int
+    1035    ret<Int> = Int  ->  var<Short> = Int
+     256    ret<Int> = Int  ->  var<Int> = Int
+     512    Short == Int
+      12    Short == Int  ->  LongLong ? Int  ->  Short >= Int  ->  Int : LongLong  ->  Short >> Short  ->  Int ? LongLong  ->  -Short  ->  Short << Int  ->  LongLong : LongLong  ->  var<Short> = LongLong
+    2036    Short == Int  ->  LongLong ? Int  ->  Short >= Int  ->  Void : LongLong  ->  Short >> Short  ->  LongLong ? LongLong  ->  -Short  ->  Short << Int  ->  Void : LongLong  ->  var<Short> = LongLong
+    2048    Int >> Int  ->  LongLong & Int  ->  Short + LongLong  ->  LongLong - Int  ->  var<Short> = LongLong
+     256    Int >> Int  ->  Short - LongLong  ->  var<Short> = LongLong
+     256    Int >> Int  ->  Int + LongLong  ->  var<Short> = LongLong
+    1536    Int & Int
+    2048    Int & Int  ->  Short * Int  ->  Int + Int  ->  Int >> Int  ->  var<Short> = LongLong
+     256    Int & Int  ->  var<Short> = Int
+     478    Short >= Int
+    2048    Short >= Int  ->  Short << Short  ->  LongLong & Int  ->  LongLong ? LongLong  ->  -Short  ->  Short >> Int  ->  Void : LongLong  ->  var<Short> = LongLong
+     215    Int ^ Int  ->  Int < Int  ->  -Short  ->  LongLong ? Int  ->  Void : Short  ->  ret<Int> = Short
+       2    Int ^ Int  ->  Int < Int  ->  -Short  ->  LongLong ? Int  ->  Void : Short  ->  ret<Int> = Short  ->  var<Int> = Int
+      25    Int ^ Int  ->  Int < Int  ->  -Short  ->  LongLong ? Int  ->  Void : Short  ->  ret<Int> = Short  ->  Int += Int
+       2    Int ^ Int  ->  Int < Int  ->  -Short  ->  LongLong ? Int  ->  Void : Short  ->  ret<Int> = Short  ->  Int + Int  ->  ret<Int> = Int  ->  Short + Int  ->  var<Short> = Int
+      41    Int ^ Int  ->  Int < Int  ->  -Short  ->  LongLong ? Int  ->  Int : Short  ->  ret<Int> = Int
+    1255    Int ^ Int  ->  Int < Int  ->  -Short  ->  LongLong ? Int  ->  Int : Short  ->  ret<Int> = Int  ->  Int += Int
+     254    Int ^ Int  ->  Int < Int  ->  -Short  ->  LongLong ? Int  ->  Int : Short  ->  ret<Int> = Int  ->  var<Int> = Int
+     254    Int ^ Int  ->  Int < Int  ->  -Short  ->  LongLong ? Int  ->  Int : Short  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Short + Int  ->  var<Short> = Int
+     256    Short >> Int
+     512    Short >> Int  ->  var<Short> = LongLong
+      11    Short >> Int  ->  var<Int> = LongLong
+     256    Short >> Int  ->  LongLong & Int  ->  var<Short> = LongLong
+     256    Short >> Int  ->  Short + LongLong  ->  LongLong >> Int  ->  var<Short> = LongLong
+      49    Short >> Int  ->  Short += LongLong
+     512    Int - Short  ->  var<Short> = Int
+     512    Int - Short  ->  Int >> Int  ->  Short += LongLong
+      11    Long >> Int  ->  var<Int> = LongLong
+     256    Long >> Int  ->  var<Short> = LongLong
+     256    Long >> Int  ->  LongLong & Int  ->  var<Short> = LongLong
+      11    Short - Int  ->  var<Int> = Int
+     256    Short - Int  ->  Int ? Int  ->  Int : Short  ->  ret<Int> = Int  ->  var<Short> = Int
+     256    Short << Int  ->  LongLong >> Short  ->  LongLong & Int  ->  var<Short> = LongLong
+     256    Short << Int  ->  LongLong + Short  ->  var<Short> = LongLong
+     256    Short << Int  ->  Int - Short  ->  LongLong >> Int  ->  var<Short> = LongLong
+     254    Int << Int  ->  LongLong + Int  ->  LongLong - Int  ->  ret<Int> = LongLong  ->  var<Short> = Int
+       2    Int << Int  ->  LongLong + Int  ->  ret<Int> = LongLong  ->  var<Short> = Int
+     256    Int << Int  ->  LongLong - Short  ->  LongLong >> Int  ->  Short += LongLong
+     256    Short & Int
+     256    Short & Int  ->  Int + Int  ->  var<Short> = Int
+     768    arr<Short>[Short]
+     512    Short < Int
+     256    Short < Int  ->  Short & Int  ->  Short - Int  ->  LongLong ? Int  ->  Short + Short  ->  Int : Int  ->  var<Short> = Int
+     256    Short + Short  ->  Int - Short  ->  var<Short> = Int
+     256    Int + Short  ->  Int << Short  ->  var<Short> = LongLong
+     305    Short > Int
+     256    Short > Int  ->  Int << Int  ->  LongLong ? LongLong  ->  Void : Short  ->  var<Short> = Short
+    1024    Char == Int
+     256    -Long  ->  Long >> Int  ->  Short + LongLong  ->  Long += LongLong
+     512    Int != Int
+       1    Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+     209    Short -= Int
+    1794    Int == Int
+    1280    Int--
+     256    ret<Int> = Short  ->  var<UnsignedChar> = Int
+     245    ret<Int> = Short  ->  var<Short> = Int
+       1    var<UnsignedInt> = Int
+     256    UnsignedChar << Int  ->  UnsignedInt |= LongLong
+     256    Int >= Int
+      10    Int * Int  ->  Int >> Int  ->  Int += LongLong
+     220    Short += Int
+      96    Int -= Int
+      96    UnsignedInt >>= Int
+      96    Int + Int  ->  var<Int> = Int
+      48    Short <= Short

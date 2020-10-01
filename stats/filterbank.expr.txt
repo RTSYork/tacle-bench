@@ -1,0 +1,23 @@
+0.3%     8328   assign expressions of type   var<Int> = Int
+0.4%    13568   assign expressions of type   var<Float> = Int
+0.0%     1024   assign expressions of type   var<Float> = Float
+8.1%   250368    infix expressions of type   Float += Float
+8.3%   254464    infix expressions of type   LongLong & LongLong
+8.9%   273078    infix expressions of type   Int < Int
+0.0%        3    infix expressions of type   Int > Int
+8.3%   254464    infix expressions of type   Int >= Int
+0.1%     2304    infix expressions of type   Int + Int
+16.2%   500737    infix expressions of type   Int - Int
+0.1%     2048    infix expressions of type   Int * Int
+8.0%   246272    infix expressions of type   Float * Float
+0.0%     1073    infix expressions of type   Int / Int
+0.0%       17    infix expressions of type   _Type cast Int
+0.0%        1    infix expressions of type   _Type cast Float
+24.7%   762625    array expressions of type   arr<Float>[Int]
+8.0%   246784    array expressions of type   arr<Array>[Int]
+8.6%   264752  postfix expressions of type   Int++
+0.0%        3  postfix expressions of type   Int--
+0.0%        2   return expressions of type   ret<Int> = Int
+
+Total expressions: 3081915
+Maximum expression chain depth: 10

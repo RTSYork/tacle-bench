@@ -1,0 +1,35 @@
+0.2%     1001   prefix expressions of type   &UnsignedLong
+0.2%     1001   prefix expressions of type   &Struct
+0.0%       12   prefix expressions of type   -Float
+1.6%     9009   prefix expressions of type   *Pointer
+0.2%     1001   prefix expressions of type   sizeofPointer
+0.3%     2003   assign expressions of type   var<Int> = Int
+0.0%        1   assign expressions of type   var<UnsignedLong> = Int
+0.7%     4004   assign expressions of type   var<Char> = Char
+0.5%     3004   assign expressions of type   var<UnsignedLong> = Long
+11.0%    64064   assign expressions of type   var<UnsignedLong> = LongLong
+0.0%       57   assign expressions of type   var<Float> = Float
+0.0%        5   assign expressions of type   var<Float> = Double
+0.3%     2002   assign expressions of type   var<Pointer> = Pointer
+0.2%     1000    infix expressions of type   Int += Int
+0.2%     1001    infix expressions of type   UnsignedLong += UnsignedShort
+1.9%    10840    infix expressions of type   UnsignedLong -= UnsignedLong
+11.0%    64064    infix expressions of type   UnsignedLong <<= Int
+5.5%    32032    infix expressions of type   UnsignedLong & LongLong
+0.0%        1    infix expressions of type   UnsignedLong == Int
+6.7%    39039    infix expressions of type   Int < Int
+5.5%    32032    infix expressions of type   UnsignedLong >= UnsignedLong
+5.5%    32032    infix expressions of type   Long << Int
+11.0%    64064    infix expressions of type   UnsignedLong << Int
+5.5%    32032    infix expressions of type   UnsignedLongLong >> Int
+5.5%    32032    infix expressions of type   LongLong + Int
+5.5%    32032    infix expressions of type   LongLong + LongLong
+11.0%    64064    infix expressions of type   Int - Int
+0.3%     2002    infix expressions of type   _Type cast Pointer
+6.2%    36036  postfix expressions of type   Int++
+1.9%    10840  postfix expressions of type   UnsignedLong++
+1.4%     8008  postfix expressions of type   Pointer++
+0.0%        2   return expressions of type   ret<Int> = Int
+
+Total expressions: 580317
+Maximum expression chain depth: 4

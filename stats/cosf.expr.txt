@@ -1,0 +1,38 @@
+0.0%        1   prefix expressions of type   -Int
+0.9%       73   prefix expressions of type   -Float
+3.3%      260   assign expressions of type   var<Int> = Int
+0.4%       31   assign expressions of type   var<UnsignedInt> = Int
+3.7%      292   assign expressions of type   var<Int> = UnsignedInt
+1.9%      152   assign expressions of type   var<UnsignedInt> = UnsignedInt
+0.0%        1   assign expressions of type   var<Int> = Float
+18.2%     1448   assign expressions of type   var<Float> = Float
+0.1%        5   assign expressions of type   var<Float> = Double
+2.5%      200    infix expressions of type   Float += Float
+2.5%      200    infix expressions of type   Int &= Int
+1.0%       76    infix expressions of type   LongLong && LongLong
+2.3%      184    infix expressions of type   Int & Int
+1.0%       76    infix expressions of type   UnsignedInt & Int
+1.2%       92    infix expressions of type   Int & UnsignedInt
+0.6%       49    infix expressions of type   Int == Int
+1.0%       76    infix expressions of type   Int != Int
+0.2%       16    infix expressions of type   UnsignedInt != Int
+5.0%      396    infix expressions of type   Int < Int
+1.3%      101    infix expressions of type   Float < Int
+0.6%       48    infix expressions of type   Int > Int
+3.4%      268    infix expressions of type   Int <= Int
+1.2%       92    infix expressions of type   Int >= Int
+6.6%      524    infix expressions of type   Float + Float
+1.3%      107    infix expressions of type   Int - Int
+9.8%      776    infix expressions of type   Float - Float
+15.3%     1218    infix expressions of type   Float * Float
+1.0%       76    infix expressions of type   _Type cast Int
+1.0%       76    infix expressions of type   _Type cast UnsignedInt
+1.6%      130    infix expressions of type   _Type cast Float
+1.0%       76    array expressions of type   arr<Int>[Int]
+2.3%      184    array expressions of type   arr<Float>[Int]
+3.5%      276    array expressions of type   arr<Pointer>[Int]
+1.2%       94   return expressions of type   ret<Int> = Int
+3.5%      276   return expressions of type   ret<Float> = Float
+
+Total expressions: 7950
+Maximum expression chain depth: 12

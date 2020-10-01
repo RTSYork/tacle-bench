@@ -1,0 +1,22 @@
+       5    var<UnsignedLong> = Int
+     720    var<Char> = Int
+     402    arr<Char>[Int]
+       1    arr<Char>[Int]  ->  Char || Char
+       1    arr<Char>[Int]  ->  Int != Int  ->  Char || LongLong
+     600    arr<Char>[Int]  ->  !Char
+     200    arr<Char>[Int]  ->  !Char  ->  LongLong && LongLong
+    1200    arr<Char>[Int]  ->  var<Char> = Int
+     800    arr<Char>[Int]  ->  arr<Char>[Int]  ->  var<Char> = Char
+     200    arr<Char>[Int]  ->  LongLong && Char
+      64    arr<Char>[Int]  ->  Char << Int  ->  _Type cast LongLong  ->  UnsignedLong += UnsignedLong
+       5    UnsignedLong != Int  ->  UnsignedLong - UnsignedLong  ->  UnsignedLong >= Int  ->  LongLong && LongLong
+    1403    var<Int> = Int
+     101    Int < Int
+     100    Char++
+     400    Char != Char
+    8200    var<Char> = Char
+     100    Int++
+     198    !Char  ->  Char && LongLong
+      65    Int >= Int
+      64    Int--
+       1    UnsignedLong == UnsignedLong  ->  ret<Int> = LongLong  ->  ret<Int> = Int
