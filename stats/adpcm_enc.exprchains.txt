@@ -1,75 +1,79 @@
-       1    Int * Int
-       3    Int * Int  ->  Int * Int
-       3    Int * Int  ->  Int > Int
-    3001    Int * Int  ->  Int < Int
-    5700    Int * Int  ->  -Int  ->  Int * Int  ->  Int * Int  ->  Int * Int  ->  Int + Int  ->  Int * Int  ->  Int / Int  ->  var<Int> = Int
-    2998    Int * Int  ->  Int += Int
-       8    Int * Int  ->  var<LongLong> = Int
-    3153    -Int
-    2876    -Int  ->  var<Int> = Int
-       8    -Int  ->  Int < Int
-    2898    var<Int> = Int
-       2    var<Int> = Int  ->  var<Int> = Int  ->  var<Int> = Int  ->  var<Int> = Int  ->  var<Int> = Int  ->  var<Int> = Int  ->  var<Int> = Int
-     204    Int < Int
-       2    arr<Int>[Int]
-      49    arr<Int>[Int]  ->  var<Int> = Int
-       3    arr<Int>[Int]  ->  _Type cast Int
-      31    arr<Int>[Int]  ->  _Type cast Int  ->  Int * LongLong  ->  LongLong >> Long  ->  var<LongLong> = LongLong
-       3    arr<Int>[Int]  ->  Int += Int
-       4    arr<Int>[Int]  ->  Int + Int  ->  Int - Int  ->  Int >> Int  ->  var<Int> = LongLong
-       2    arr<Int>[Int]  ->  Int + Int  ->  var<Int> = Int
-    5876    Int++
-       3    Int / Int  ->  Int - Int
-       2    Int / Int  ->  arr<Int>[Int]
-       2    Int / Int  ->  arr<Int>[Int]  ->  Int += Int
-    5712    Int + Int  ->  var<Int> = Int
-       2    Int + Int  ->  arr<Int>[Int]
-    5708    Int >= Int
-    5700    ret<Int> = Int  ->  Int >= Int
-       3    ret<Int> = Int  ->  ret<Int> = Int  ->  Int * Int  ->  var<Int> = Int
-       2    ret<Int> = Int  ->  var<LongLong> = Int
-      14    ret<Int> = Int  ->  var<Int> = Int
-       2    ret<Int> = Int  ->  Int > Int
-       4    var<Pointer> = Array
-       8    Pointer++  ->  *Pointer  ->  _Type cast Int  ->  Pointer++  ->  *Pointer  ->  LongLong * Int  ->  var<LongLong> = LongLong
-      62    Pointer++  ->  *Pointer  ->  _Type cast Int  ->  Pointer++  ->  *Pointer  ->  LongLong * Int  ->  LongLong += LongLong
-       2    *Pointer  ->  _Type cast Int  ->  Pointer++  ->  *Pointer  ->  LongLong * Int  ->  LongLong += LongLong
-       2    *Pointer  ->  var<Int> = Int
-       2    Pointer - Int  ->  var<Pointer> = Pointer
-      44    Pointer--  ->  *Pointer  ->  Pointer--  ->  *Pointer  ->  var<Int> = Int
-       2    Pointer--  ->  *Pointer  ->  var<Int> = Int
-       2    LongLong + LongLong  ->  LongLong >> Int  ->  var<Int> = LongLong
-       2    LongLong - LongLong  ->  LongLong >> Int  ->  var<Int> = LongLong
-       8    LongLong >> Int  ->  _Type cast LongLong  ->  ret<Int> = Int  ->  var<Int> = Int
-       4    LongLong >> Int  ->  var<LongLong> = LongLong
-       4    _Type cast Int  ->  LongLong * LongLong  ->  var<LongLong> = LongLong
-       4    _Type cast Int  ->  LongLong * LongLong  ->  LongLong += LongLong
-       2    _Type cast Int  ->  Int >> Int  ->  arr<Int>[LongLong]  ->  LongLong * Int  ->  LongLong >> Int  ->  var<Int> = LongLong
-       6    _Type cast Int  ->  LongLong * Long  ->  LongLong >> Long  ->  var<LongLong> = LongLong
-       2    _Type cast Int  ->  LongLong * Long  ->  LongLong >> Long  ->  var<Int> = LongLong
-       4    _Type cast Int  ->  Long * LongLong  ->  var<LongLong> = LongLong
-       4    _Type cast Int  ->  Long * LongLong  ->  LongLong >> Long  ->  LongLong + LongLong  ->  var<Int> = LongLong
-       2    _Type cast Int  ->  Long * LongLong  ->  LongLong >> Long  ->  var<Int> = LongLong
-      12    _Type cast Int  ->  LongLong * Int  ->  LongLong >= Long
-       2    _Type cast Int  ->  arr<Int>[Int]  ->  LongLong * Int  ->  LongLong >> Long  ->  var<Int> = LongLong
-      12    _Type cast Int  ->  arr<Pointer>[Int]  ->  LongLong * Int  ->  LongLong >= Int
-       8    Int - Int  ->  var<Int> = Int
-      31    LongLong <= LongLong
-       2    _Type cast LongLong  ->  Int >> Int  ->  arr<Int>[LongLong]  ->  Int + Int  ->  var<Int> = Int
-       4    _Type cast LongLong  ->  Int + Int  ->  var<Int> = Int
-      12    Int > Int
-       4    Int >> Int  ->  LongLong & Int  ->  var<Int> = LongLong
-       4    Int >> Int  ->  var<Int> = LongLong
-       4    Int << Int  ->  ret<Int> = LongLong  ->  var<Int> = Int
-       2    Int << Int  ->  Int | LongLong  ->  ret<Int> = LongLong  ->  var<Int> = Int
-       4    Int == Int
-      12    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  Long * Int  ->  Long >> Long  ->  _Type cast LongLong  ->  var<Int> = Int
-      16    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  var<Int> = Int
-       4    arr<Pointer>[Int]  ->  var<Int> = Int
-      12    arr<Pointer>[Int]  ->  Long * Int  ->  Long >> Long  ->  _Type cast LongLong  ->  var<Int> = Int
-      12    arr<Pointer>[Int]  ->  Int + Int  ->  var<Int> = Int
-       4    -LongLong  ->  var<LongLong> = LongLong
-       4    LongLong + Int  ->  var<LongLong> = LongLong
-       4    Int += Int
-       1    Int--
-       1    Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+  0.0%        1    Int * Int
+  0.0%        3    Int * Int  ->  Int * Int
+  0.0%        3    Int * Int  ->  Int > Int
+  5.1%     3001    Int * Int  ->  Int < Int
+  9.6%     5700    Int * Int  ->  -Int  ->  Int * Int  ->  Int * Int  ->  Int * Int  ->  Int + Int  ->  Int * Int  ->  Int / Int  ->  var<Int> = Int
+  5.1%     2998    Int * Int  ->  Int += Int
+  0.0%        8    Int * Int  ->  var<LongLong> = Int
+  5.3%     3153    -Int
+  4.8%     2876    -Int  ->  var<Int> = Int
+  0.0%        8    -Int  ->  Int < Int
+  4.9%     2898    var<Int> = Int
+  0.0%        2    var<Int> = Int  ->  var<Int> = Int  ->  var<Int> = Int  ->  var<Int> = Int  ->  var<Int> = Int  ->  var<Int> = Int  ->  var<Int> = Int
+  0.3%      204    Int < Int
+  0.0%        2    arr<Int>[Int]
+  0.1%       49    arr<Int>[Int]  ->  var<Int> = Int
+  0.0%        3    arr<Int>[Int]  ->  _Type cast Int
+  0.1%       31    arr<Int>[Int]  ->  _Type cast Int  ->  Int * LongLong  ->  LongLong >> Long  ->  var<LongLong> = LongLong
+  0.0%        3    arr<Int>[Int]  ->  Int += Int
+  0.0%        4    arr<Int>[Int]  ->  Int + Int  ->  Int - Int  ->  Int >> Int  ->  var<Int> = LongLong
+  0.0%        2    arr<Int>[Int]  ->  Int + Int  ->  var<Int> = Int
+  9.9%     5876    Int++
+  0.0%        3    Int / Int  ->  Int - Int
+  0.0%        2    Int / Int  ->  arr<Int>[Int]
+  0.0%        2    Int / Int  ->  arr<Int>[Int]  ->  Int += Int
+  9.6%     5712    Int + Int  ->  var<Int> = Int
+  0.0%        2    Int + Int  ->  arr<Int>[Int]
+  9.6%     5708    Int >= Int
+  9.6%     5700    ret<Int> = Int  ->  Int >= Int
+  0.0%        3    ret<Int> = Int  ->  ret<Int> = Int  ->  Int * Int  ->  var<Int> = Int
+  0.0%        2    ret<Int> = Int  ->  var<LongLong> = Int
+  0.0%       14    ret<Int> = Int  ->  var<Int> = Int
+  0.0%        2    ret<Int> = Int  ->  Int > Int
+  0.0%        4    var<Pointer> = Array
+  0.0%        8    Pointer++  ->  *Pointer  ->  _Type cast Int  ->  Pointer++  ->  *Pointer  ->  LongLong * Int  ->  var<LongLong> = LongLong
+  0.1%       62    Pointer++  ->  *Pointer  ->  _Type cast Int  ->  Pointer++  ->  *Pointer  ->  LongLong * Int  ->  LongLong += LongLong
+  0.0%        2    *Pointer  ->  _Type cast Int  ->  Pointer++  ->  *Pointer  ->  LongLong * Int  ->  LongLong += LongLong
+  0.0%        2    *Pointer  ->  var<Int> = Int
+  0.0%        2    Pointer - Int  ->  var<Pointer> = Pointer
+  0.1%       44    Pointer--  ->  *Pointer  ->  Pointer--  ->  *Pointer  ->  var<Int> = Int
+  0.0%        2    Pointer--  ->  *Pointer  ->  var<Int> = Int
+  0.0%        2    LongLong + LongLong  ->  LongLong >> Int  ->  var<Int> = LongLong
+  0.0%        2    LongLong - LongLong  ->  LongLong >> Int  ->  var<Int> = LongLong
+  0.0%        8    LongLong >> Int  ->  _Type cast LongLong  ->  ret<Int> = Int  ->  var<Int> = Int
+  0.0%        4    LongLong >> Int  ->  var<LongLong> = LongLong
+  0.0%        4    _Type cast Int  ->  LongLong * LongLong  ->  var<LongLong> = LongLong
+  0.0%        4    _Type cast Int  ->  LongLong * LongLong  ->  LongLong += LongLong
+  0.0%        2    _Type cast Int  ->  Int >> Int  ->  arr<Int>[LongLong]  ->  LongLong * Int  ->  LongLong >> Int  ->  var<Int> = LongLong
+  0.0%        6    _Type cast Int  ->  LongLong * Long  ->  LongLong >> Long  ->  var<LongLong> = LongLong
+  0.0%        2    _Type cast Int  ->  LongLong * Long  ->  LongLong >> Long  ->  var<Int> = LongLong
+  0.0%        4    _Type cast Int  ->  Long * LongLong  ->  var<LongLong> = LongLong
+  0.0%        4    _Type cast Int  ->  Long * LongLong  ->  LongLong >> Long  ->  LongLong + LongLong  ->  var<Int> = LongLong
+  0.0%        2    _Type cast Int  ->  Long * LongLong  ->  LongLong >> Long  ->  var<Int> = LongLong
+  0.0%       12    _Type cast Int  ->  LongLong * Int  ->  LongLong >= Long
+  0.0%        2    _Type cast Int  ->  arr<Int>[Int]  ->  LongLong * Int  ->  LongLong >> Long  ->  var<Int> = LongLong
+  0.0%       12    _Type cast Int  ->  arr<Pointer>[Int]  ->  LongLong * Int  ->  LongLong >= Int
+  0.0%        8    Int - Int  ->  var<Int> = Int
+  0.1%       31    LongLong <= LongLong
+  0.0%        2    _Type cast LongLong  ->  Int >> Int  ->  arr<Int>[LongLong]  ->  Int + Int  ->  var<Int> = Int
+  0.0%        4    _Type cast LongLong  ->  Int + Int  ->  var<Int> = Int
+  0.0%       12    Int > Int
+  0.0%        4    Int >> Int  ->  LongLong & Int  ->  var<Int> = LongLong
+  0.0%        4    Int >> Int  ->  var<Int> = LongLong
+  0.0%        4    Int << Int  ->  ret<Int> = LongLong  ->  var<Int> = Int
+  0.0%        2    Int << Int  ->  Int | LongLong  ->  ret<Int> = LongLong  ->  var<Int> = Int
+  0.0%        4    Int == Int
+  0.0%       12    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  Long * Int  ->  Long >> Long  ->  _Type cast LongLong  ->  var<Int> = Int
+  0.0%       16    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  var<Int> = Int
+  0.0%        4    arr<Pointer>[Int]  ->  var<Int> = Int
+  0.0%       12    arr<Pointer>[Int]  ->  Long * Int  ->  Long >> Long  ->  _Type cast LongLong  ->  var<Int> = Int
+  0.0%       12    arr<Pointer>[Int]  ->  Int + Int  ->  var<Int> = Int
+  0.0%        4    -LongLong  ->  var<LongLong> = LongLong
+  0.0%        4    LongLong + Int  ->  var<LongLong> = LongLong
+  0.0%        4    Int += Int
+  0.0%        1    Int--
+  0.0%        1    Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+
+Total expressions: 111500
+Total expression chains: 59314
+Maximum expression chain depth: 9

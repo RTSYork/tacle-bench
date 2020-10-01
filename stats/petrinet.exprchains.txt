@@ -1,10 +1,14 @@
-       1    var<Long> = Int
-       5    var<Int> = Int
-       3    Int > Int
-       2    Int--
-      12    Int >= Int  ->  Int + Int  ->  Int <= Int  ->  LongLong && LongLong  ->  arr<Long>[Int]  ->  arr<Long>[Int]  ->  Long == Long  ->  LongLong && LongLong
-      40    Int >= Int  ->  Int + Int  ->  Int <= Int  ->  LongLong && LongLong  ->  arr<Long>[Int]  ->  arr<Long>[Int]  ->  Long == Long  ->  arr<Long>[Int]  ->  arr<Long>[Int]  ->  Long == Long  ->  LongLong && LongLong  ->  LongLong && LongLong
-      17    Int < Int
-      14    arr<Long>[Int]  ->  Int += Long
-      14    ++Int
-       1    Int == Long  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+  0.9%        1    var<Long> = Int
+  4.3%        5    var<Int> = Int
+  2.6%        3    Int > Int
+  1.7%        2    Int--
+ 10.3%       12    Int >= Int  ->  Int + Int  ->  Int <= Int  ->  LongLong && LongLong  ->  arr<Long>[Int]  ->  arr<Long>[Int]  ->  Long == Long  ->  LongLong && LongLong
+ 34.5%       40    Int >= Int  ->  Int + Int  ->  Int <= Int  ->  LongLong && LongLong  ->  arr<Long>[Int]  ->  arr<Long>[Int]  ->  Long == Long  ->  arr<Long>[Int]  ->  arr<Long>[Int]  ->  Long == Long  ->  LongLong && LongLong  ->  LongLong && LongLong
+ 14.7%       17    Int < Int
+ 12.1%       14    arr<Long>[Int]  ->  Int += Long
+ 12.1%       14    ++Int
+  0.9%        1    Int == Long  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+
+Total expressions: 652
+Total expression chains: 116
+Maximum expression chain depth: 12

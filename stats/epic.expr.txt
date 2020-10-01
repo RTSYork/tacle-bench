@@ -1,42 +1,42 @@
-0.8%    17280   prefix expressions of type   -Int
-0.8%    16200   prefix expressions of type   -LongLong
-0.0%       32   prefix expressions of type   -Double
-16.4%   347564   prefix expressions of type   ++Int
-6.7%   142180   assign expressions of type   var<Int> = Int
-1.5%    31674   assign expressions of type   var<Float> = Float
-9.3%   197068    infix expressions of type   Int += Int
-0.0%       12    infix expressions of type   Pointer += Int
-0.0%       64    infix expressions of type   Int += Float
-8.1%   170280    infix expressions of type   Float += Float
-0.0%       24    infix expressions of type   Int -= Int
-0.2%     4096    infix expressions of type   Float *= Int
-0.0%       12    infix expressions of type   Int /= Int
-0.9%    19441    infix expressions of type   LongLong ? Int
-0.8%    16200    infix expressions of type   LongLong ? LongLong
-0.3%     5432    infix expressions of type   Void : Int
-0.7%    14009    infix expressions of type   Int : Int
-0.2%     4776    infix expressions of type   Void : LongLong
-0.5%    11424    infix expressions of type   LongLong : LongLong
-0.1%     1081    infix expressions of type   Int == Int
-0.1%     1352    infix expressions of type   Int != Int
-14.1%   297465    infix expressions of type   Int < Int
-0.1%     2160    infix expressions of type   Int > Int
-4.6%    96888    infix expressions of type   Int <= Int
-0.8%    16200    infix expressions of type   Int >= Int
-0.8%    16200    infix expressions of type   LongLong >= Int
-4.9%   104028    infix expressions of type   Int + Int
-0.4%     8100    infix expressions of type   LongLong + LongLong
-0.1%     2732    infix expressions of type   Int - Int
-0.8%    16200    infix expressions of type   Int - LongLong
-0.4%     7890    infix expressions of type   Int * Int
-7.7%   162180    infix expressions of type   Float * Float
-0.1%     1194    infix expressions of type   Int / Int
-0.1%     2002    infix expressions of type   Int % Int
-0.2%     4160    array expressions of type   arr<Float>[Int]
-16.7%   353972    array expressions of type   arr<Pointer>[Int]
-0.4%     8100    array expressions of type   arr<Pointer>[LongLong]
-0.7%    15480  postfix expressions of type   Int++
-0.0%        2   return expressions of type   ret<Int> = Int
+  0.8%    17280   prefix expressions of type   -Int
+  0.8%    16200   prefix expressions of type   -LongLong
+  0.0%       32   prefix expressions of type   -Double
+ 16.4%   347564   prefix expressions of type   ++Int
+  6.7%   142180   assign expressions of type   var<Int> = Int
+  1.5%    31674   assign expressions of type   var<Float> = Float
+  9.3%   197068    infix expressions of type   Int += Int
+  0.0%       12    infix expressions of type   Pointer += Int
+  0.0%       64    infix expressions of type   Int += Float
+  8.1%   170280    infix expressions of type   Float += Float
+  0.0%       24    infix expressions of type   Int -= Int
+  0.2%     4096    infix expressions of type   Float *= Int
+  0.0%       12    infix expressions of type   Int /= Int
+  0.9%    19441    infix expressions of type   LongLong ? Int
+  0.8%    16200    infix expressions of type   LongLong ? LongLong
+  0.3%     5432    infix expressions of type   Void : Int
+  0.7%    14009    infix expressions of type   Int : Int
+  0.2%     4776    infix expressions of type   Void : LongLong
+  0.5%    11424    infix expressions of type   LongLong : LongLong
+  0.1%     1081    infix expressions of type   Int == Int
+  0.1%     1352    infix expressions of type   Int != Int
+ 14.1%   297465    infix expressions of type   Int < Int
+  0.1%     2160    infix expressions of type   Int > Int
+  4.6%    96888    infix expressions of type   Int <= Int
+  0.8%    16200    infix expressions of type   Int >= Int
+  0.8%    16200    infix expressions of type   LongLong >= Int
+  4.9%   104028    infix expressions of type   Int + Int
+  0.4%     8100    infix expressions of type   LongLong + LongLong
+  0.1%     2732    infix expressions of type   Int - Int
+  0.8%    16200    infix expressions of type   Int - LongLong
+  0.4%     7890    infix expressions of type   Int * Int
+  7.7%   162180    infix expressions of type   Float * Float
+  0.1%     1194    infix expressions of type   Int / Int
+  0.1%     2002    infix expressions of type   Int % Int
+  0.2%     4160    array expressions of type   arr<Float>[Int]
+ 16.7%   353972    array expressions of type   arr<Pointer>[Int]
+  0.4%     8100    array expressions of type   arr<Pointer>[LongLong]
+  0.7%    15480  postfix expressions of type   Int++
+  0.0%        2   return expressions of type   ret<Int> = Int
 
 Total expressions: 2115154
 Maximum expression chain depth: 11

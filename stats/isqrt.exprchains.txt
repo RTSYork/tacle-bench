@@ -1,26 +1,30 @@
-      45    var<Float> = Float
-       5    var<Float> = Double
-      12    -Float  ->  var<Float> = Float
-    3004    var<UnsignedLong> = Long
-       1    var<UnsignedLong> = Int
-    2003    var<Int> = Int
-   39039    Int < Int
-    1001    &Struct
-   32032    UnsignedLong << Int
-   32032    UnsignedLong << Int  ->  LongLong + Int  ->  var<UnsignedLong> = LongLong
-   32032    Int - Int  ->  Long << Int  ->  UnsignedLong & LongLong
-   32032    Int - Int  ->  UnsignedLongLong >> Int  ->  LongLong + LongLong  ->  var<UnsignedLong> = LongLong
-   64064    UnsignedLong <<= Int
-   32032    UnsignedLong >= UnsignedLong
-   36036    Int++
-   10840    UnsignedLong -= UnsignedLong
-   10840    UnsignedLong++
-    1001    &UnsignedLong
-    1001    *Pointer  ->  sizeofPointer
-    4004    *Pointer  ->  *Pointer  ->  var<Char> = Char
-    2002    _Type cast Pointer  ->  var<Pointer> = Pointer
-    8008    Pointer++
-    1001    UnsignedLong += UnsignedShort
-    1000    Int += Int
-       1    UnsignedLong == Int
-       1    ret<Int> = Int  ->  ret<Int> = Int
+  0.0%       45    var<Float> = Float
+  0.0%        5    var<Float> = Double
+  0.0%       12    -Float  ->  var<Float> = Float
+  0.7%     3004    var<UnsignedLong> = Long
+  0.0%        1    var<UnsignedLong> = Int
+  0.4%     2003    var<Int> = Int
+  8.7%    39039    Int < Int
+  0.2%     1001    &Struct
+  7.2%    32032    UnsignedLong << Int
+  7.2%    32032    UnsignedLong << Int  ->  LongLong + Int  ->  var<UnsignedLong> = LongLong
+  7.2%    32032    Int - Int  ->  Long << Int  ->  UnsignedLong & LongLong
+  7.2%    32032    Int - Int  ->  UnsignedLongLong >> Int  ->  LongLong + LongLong  ->  var<UnsignedLong> = LongLong
+ 14.4%    64064    UnsignedLong <<= Int
+  7.2%    32032    UnsignedLong >= UnsignedLong
+  8.1%    36036    Int++
+  2.4%    10840    UnsignedLong -= UnsignedLong
+  2.4%    10840    UnsignedLong++
+  0.2%     1001    &UnsignedLong
+  0.2%     1001    *Pointer  ->  sizeofPointer
+  0.9%     4004    *Pointer  ->  *Pointer  ->  var<Char> = Char
+  0.4%     2002    _Type cast Pointer  ->  var<Pointer> = Pointer
+  1.8%     8008    Pointer++
+  0.2%     1001    UnsignedLong += UnsignedShort
+  0.2%     1000    Int += Int
+  0.0%        1    UnsignedLong == Int
+  0.0%        1    ret<Int> = Int  ->  ret<Int> = Int
+
+Total expressions: 580317
+Total expression chains: 446253
+Maximum expression chain depth: 4

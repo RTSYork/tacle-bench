@@ -1,22 +1,26 @@
-       5    var<UnsignedLong> = Int
-     720    var<Char> = Int
-     402    arr<Char>[Int]
-       1    arr<Char>[Int]  ->  Char || Char
-       1    arr<Char>[Int]  ->  Int != Int  ->  Char || LongLong
-     600    arr<Char>[Int]  ->  !Char
-     200    arr<Char>[Int]  ->  !Char  ->  LongLong && LongLong
-    1200    arr<Char>[Int]  ->  var<Char> = Int
-     800    arr<Char>[Int]  ->  arr<Char>[Int]  ->  var<Char> = Char
-     200    arr<Char>[Int]  ->  LongLong && Char
-      64    arr<Char>[Int]  ->  Char << Int  ->  _Type cast LongLong  ->  UnsignedLong += UnsignedLong
-       5    UnsignedLong != Int  ->  UnsignedLong - UnsignedLong  ->  UnsignedLong >= Int  ->  LongLong && LongLong
-    1403    var<Int> = Int
-     101    Int < Int
-     100    Char++
-     400    Char != Char
-    8200    var<Char> = Char
-     100    Int++
-     198    !Char  ->  Char && LongLong
-      65    Int >= Int
-      64    Int--
-       1    UnsignedLong == UnsignedLong  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+  0.0%        5    var<UnsignedLong> = Int
+  2.6%      720    var<Char> = Int
+  1.5%      402    arr<Char>[Int]
+  0.0%        1    arr<Char>[Int]  ->  Char || Char
+  0.0%        1    arr<Char>[Int]  ->  Int != Int  ->  Char || LongLong
+  2.2%      600    arr<Char>[Int]  ->  !Char
+  0.7%      200    arr<Char>[Int]  ->  !Char  ->  LongLong && LongLong
+  4.4%     1200    arr<Char>[Int]  ->  var<Char> = Int
+  2.9%      800    arr<Char>[Int]  ->  arr<Char>[Int]  ->  var<Char> = Char
+  0.7%      200    arr<Char>[Int]  ->  LongLong && Char
+  0.2%       64    arr<Char>[Int]  ->  Char << Int  ->  _Type cast LongLong  ->  UnsignedLong += UnsignedLong
+  0.0%        5    UnsignedLong != Int  ->  UnsignedLong - UnsignedLong  ->  UnsignedLong >= Int  ->  LongLong && LongLong
+  5.1%     1403    var<Int> = Int
+  0.4%      101    Int < Int
+  0.4%      100    Char++
+  1.5%      400    Char != Char
+ 30.0%     8200    var<Char> = Char
+  0.4%      100    Int++
+  0.7%      198    !Char  ->  Char && LongLong
+  0.2%       65    Int >= Int
+  0.2%       64    Int--
+  0.0%        1    UnsignedLong == UnsignedLong  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+
+Total expressions: 19240
+Total expression chains: 27345
+Maximum expression chain depth: 4

@@ -1,38 +1,42 @@
-       2    var<UnsignedLong> = Int
-      10    var<UnsignedInt> = Int
-      14    var<Int> = Int
-      10    var<Int> = Int  ->  var<UnsignedInt> = Int
-     514    Int < Int
-     512    arr<Char>[Int]  ->  arr<Char>[Int]  ->  var<Char> = Char
-     573    Int++
-       9    UnsignedInt < Int
-       8    var<Long> = UnsignedLong
-       8    Long / Int  ->  var<Long> = Long
-       8    Long % Int  ->  var<Long> = Long
-       8    Int * Long  ->  Int * Long  ->  Long - Long  ->  var<Long> = Long
-       8    Long <= Int
-       8    var<UnsignedLong> = Long
-       8    ret<UnsignedLong> = Long  ->  var<UnsignedLong> = UnsignedLong
-      88    UnsignedInt < UnsignedInt
-      61    Long - Int  ->  Long & Long  ->  var<Long> = Long  ->  Int != Long
-      50    ret<Int> = Int  ->  var<Int> = Int
-     100    ret<Int> = Int  ->  Int += Int
-     160    UnsignedLong += Int
-      88    UnsignedInt++
-      50    Long & Long  ->  Long >> Int  ->  Long & Long  ->  LongLong + Long  ->  var<Long> = LongLong
-     310    Long & Long  ->  _Type cast Long  ->  Int += Int
-      10    _Type cast Long  ->  ret<Int> = Int  ->  var<Int> = Int
-      80    UnsignedLong & Long  ->  _Type cast UnsignedLong  ->  arr<Char>[Int]  ->  var<Int> = Char
-     120    UnsignedLong >>= Int  ->  Long != LongLong
-      40    &UnsignedLong  ->  _Type cast Pointer  ->  arr<Pointer>[Int]  ->  Char & Int  ->  arr<Char>[Int]  ->  var<Int> = Char
-      10    Long & UnsignedLong  ->  _Type cast UnsignedLong  ->  arr<Char>[Int]  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Char + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  ret<Int> = Int  ->  var<Int> = Int
-      10    var<Long> = Long
-      10    arr<UnsignedChar>[Int]  ->  arr<Char>[UnsignedChar]  ->  arr<UnsignedChar>[Int]  ->  arr<Char>[UnsignedChar]  ->  Char + Char  ->  arr<UnsignedChar>[Int]  ->  arr<Char>[UnsignedChar]  ->  Int + Char  ->  arr<UnsignedChar>[Int]  ->  arr<Char>[UnsignedChar]  ->  Int + Char  ->  ret<Int> = Int  ->  var<Int> = Int
-      10    &Long  ->  _Type cast Pointer  ->  var<Pointer> = Pointer
-      10    Pointer++  ->  *Pointer  ->  arr<Char>[UnsignedChar]  ->  var<Int> = Char
-      20    Pointer++  ->  *Pointer  ->  arr<Char>[UnsignedChar]  ->  Int += Char
-      10    *Pointer  ->  arr<Char>[UnsignedChar]  ->  Int += Char
-     320    sizeof_Type  ->  LongLong * Int  ->  UnsignedInt < LongLong  ->  Long && LongLong
-     310    ++UnsignedInt
-     310    Long >>= Int
-       1    -Int  ->  UnsignedLong + Int  ->  UnsignedLong != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+  0.0%        2    var<UnsignedLong> = Int
+  0.2%       10    var<UnsignedInt> = Int
+  0.2%       14    var<Int> = Int
+  0.2%       10    var<Int> = Int  ->  var<UnsignedInt> = Int
+  8.9%      514    Int < Int
+  8.9%      512    arr<Char>[Int]  ->  arr<Char>[Int]  ->  var<Char> = Char
+ 10.0%      573    Int++
+  0.2%        9    UnsignedInt < Int
+  0.1%        8    var<Long> = UnsignedLong
+  0.1%        8    Long / Int  ->  var<Long> = Long
+  0.1%        8    Long % Int  ->  var<Long> = Long
+  0.1%        8    Int * Long  ->  Int * Long  ->  Long - Long  ->  var<Long> = Long
+  0.1%        8    Long <= Int
+  0.1%        8    var<UnsignedLong> = Long
+  0.1%        8    ret<UnsignedLong> = Long  ->  var<UnsignedLong> = UnsignedLong
+  1.5%       88    UnsignedInt < UnsignedInt
+  1.1%       61    Long - Int  ->  Long & Long  ->  var<Long> = Long  ->  Int != Long
+  0.9%       50    ret<Int> = Int  ->  var<Int> = Int
+  1.7%      100    ret<Int> = Int  ->  Int += Int
+  2.8%      160    UnsignedLong += Int
+  1.5%       88    UnsignedInt++
+  0.9%       50    Long & Long  ->  Long >> Int  ->  Long & Long  ->  LongLong + Long  ->  var<Long> = LongLong
+  5.4%      310    Long & Long  ->  _Type cast Long  ->  Int += Int
+  0.2%       10    _Type cast Long  ->  ret<Int> = Int  ->  var<Int> = Int
+  1.4%       80    UnsignedLong & Long  ->  _Type cast UnsignedLong  ->  arr<Char>[Int]  ->  var<Int> = Char
+  2.1%      120    UnsignedLong >>= Int  ->  Long != LongLong
+  0.7%       40    &UnsignedLong  ->  _Type cast Pointer  ->  arr<Pointer>[Int]  ->  Char & Int  ->  arr<Char>[Int]  ->  var<Int> = Char
+  0.2%       10    Long & UnsignedLong  ->  _Type cast UnsignedLong  ->  arr<Char>[Int]  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Char + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  Long & UnsignedLong  ->  UnsignedLong >> Int  ->  _Type cast LongLong  ->  arr<Char>[Int]  ->  Int + Char  ->  ret<Int> = Int  ->  var<Int> = Int
+  0.2%       10    var<Long> = Long
+  0.2%       10    arr<UnsignedChar>[Int]  ->  arr<Char>[UnsignedChar]  ->  arr<UnsignedChar>[Int]  ->  arr<Char>[UnsignedChar]  ->  Char + Char  ->  arr<UnsignedChar>[Int]  ->  arr<Char>[UnsignedChar]  ->  Int + Char  ->  arr<UnsignedChar>[Int]  ->  arr<Char>[UnsignedChar]  ->  Int + Char  ->  ret<Int> = Int  ->  var<Int> = Int
+  0.2%       10    &Long  ->  _Type cast Pointer  ->  var<Pointer> = Pointer
+  0.2%       10    Pointer++  ->  *Pointer  ->  arr<Char>[UnsignedChar]  ->  var<Int> = Char
+  0.3%       20    Pointer++  ->  *Pointer  ->  arr<Char>[UnsignedChar]  ->  Int += Char
+  0.2%       10    *Pointer  ->  arr<Char>[UnsignedChar]  ->  Int += Char
+  5.6%      320    sizeof_Type  ->  LongLong * Int  ->  UnsignedInt < LongLong  ->  Long && LongLong
+  5.4%      310    ++UnsignedInt
+  5.4%      310    Long >>= Int
+  0.0%        1    -Int  ->  UnsignedLong + Int  ->  UnsignedLong != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+
+Total expressions: 8297
+Total expression chains: 5754
+Maximum expression chain depth: 40

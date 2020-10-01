@@ -1,34 +1,38 @@
-       1    var<Char> = Int
-       3    arr<Array>[Int]  ->  &Array  ->  _Type cast Pointer  ->  var<Pointer> = Pointer
-     128    arr<Array>[Int]  ->  Int + Int  ->  Int % Int  ->  arr<Array>[Int]  ->  Int + Int  ->  Int % Int  ->  arr<Char>[Int]  ->  arr<Array>[Int]  ->  arr<Int>[Int]  ->  var<Char> = Int
-       1    arr<Array>[Int]  ->  arr<Char>[Int]  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Char>[Int]  ->  Char + Char  ->  Int + Int  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
-       5    var<UnsignedInt> = Int
-   17577    sizeofArray  ->  UnsignedInt < LongLong
-   17574    *Pointer  ->  UnsignedChar ^= Char
-   17574    ++UnsignedInt
-   17574    ++Pointer
-     135    var<Int> = Int
-       1    &Struct
-       4    -Int  ->  var<Short> = Int
-       9    -Int  ->  var<Int> = Int
-       4    var<Short> = Int
-       2    Int / Int  ->  var<Int> = Int
-       4    Int / Int  ->  Int < Int
-     128    Int / Int  ->  Int - Int  ->  Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  Int / Int  ->  Void : Int  ->  Int < Int  ->  Int / Int  ->  Int - Int  ->  Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  Int / Int  ->  Void : Int  ->  LongLong ? Int  ->  Int : Int  ->  Int % Int  ->  var<Int> = Int
-     128    Int / Int  ->  Int > Int  ->  LongLong ? Int  ->  Int / Int  ->  Void : Int  ->  Int < Int  ->  Int / Int  ->  Int > Int  ->  LongLong ? Int  ->  Int / Int  ->  Void : Int  ->  LongLong ? Int  ->  Int : Int  ->  Int % Int  ->  var<Int> = Int
-     258    Int - Int  ->  var<Int> = Int
-       1    Int * Int  ->  var<Int> = Int
-       1    Int >> Int  ->  var<Int> = LongLong
-     413    Int < Int
-      16    Int + Int  ->  var<Int> = Int
-     160    Int + Int  ->  Int / Int  ->  Int / Int  ->  Int % Int  ->  var<Int> = Int
-     128    Int + Int  ->  Int / Int  ->  Int - Int  ->  Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  Int + Int  ->  Int / Int  ->  Void : Int  ->  Int < Int  ->  Int + Int  ->  Int / Int  ->  Int - Int  ->  Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  Int + Int  ->  Int / Int  ->  Void : Int  ->  LongLong ? Int  ->  Int : Int  ->  Int % Int  ->  var<Int> = Int
-     128    Int + Int  ->  Int / Int  ->  Int > Int  ->  LongLong ? Int  ->  Int + Int  ->  Int / Int  ->  Void : Int  ->  Int < Int  ->  Int + Int  ->  Int / Int  ->  Int > Int  ->  LongLong ? Int  ->  Int + Int  ->  Int / Int  ->  Void : Int  ->  LongLong ? Int  ->  Int : Int  ->  Int % Int  ->  var<Int> = Int
-     256    Int + Int  ->  Int * Int  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Char>[Int]  ->  Int + Char  ->  var<Int> = Int
-     128    Int + Int  ->  arr<Array>[Int]  ->  Int + Int  ->  arr<Char>[Int]  ->  Int * Int  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Short>[Int]  ->  Int * Short  ->  Int * Int  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Short>[Int]  ->  Int * Short  ->  Int + Int  ->  Int * Int  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Short>[Int]  ->  Int * Short  ->  Int + Int  ->  Int * Int  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Short>[Int]  ->  Int * Short  ->  Int + Int  ->  Int + Int  ->  Int / Int  ->  var<Char> = Int
-     272    !Int
-       8    Int != Int
-     128    Short == Int
-     128    Int += Int
-     256    Int & Int  ->  var<Int> = Int
-     332    Int++
+  0.0%        1    var<Char> = Int
+  0.0%        3    arr<Array>[Int]  ->  &Array  ->  _Type cast Pointer  ->  var<Pointer> = Pointer
+  0.1%      128    arr<Array>[Int]  ->  Int + Int  ->  Int % Int  ->  arr<Array>[Int]  ->  Int + Int  ->  Int % Int  ->  arr<Char>[Int]  ->  arr<Array>[Int]  ->  arr<Int>[Int]  ->  var<Char> = Int
+  0.0%        1    arr<Array>[Int]  ->  arr<Char>[Int]  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Char>[Int]  ->  Char + Char  ->  Int + Int  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+  0.0%        5    var<UnsignedInt> = Int
+ 14.1%    17577    sizeofArray  ->  UnsignedInt < LongLong
+ 14.1%    17574    *Pointer  ->  UnsignedChar ^= Char
+ 14.1%    17574    ++UnsignedInt
+ 14.1%    17574    ++Pointer
+  0.1%      135    var<Int> = Int
+  0.0%        1    &Struct
+  0.0%        4    -Int  ->  var<Short> = Int
+  0.0%        9    -Int  ->  var<Int> = Int
+  0.0%        4    var<Short> = Int
+  0.0%        2    Int / Int  ->  var<Int> = Int
+  0.0%        4    Int / Int  ->  Int < Int
+  0.1%      128    Int / Int  ->  Int - Int  ->  Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  Int / Int  ->  Void : Int  ->  Int < Int  ->  Int / Int  ->  Int - Int  ->  Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  Int / Int  ->  Void : Int  ->  LongLong ? Int  ->  Int : Int  ->  Int % Int  ->  var<Int> = Int
+  0.1%      128    Int / Int  ->  Int > Int  ->  LongLong ? Int  ->  Int / Int  ->  Void : Int  ->  Int < Int  ->  Int / Int  ->  Int > Int  ->  LongLong ? Int  ->  Int / Int  ->  Void : Int  ->  LongLong ? Int  ->  Int : Int  ->  Int % Int  ->  var<Int> = Int
+  0.2%      258    Int - Int  ->  var<Int> = Int
+  0.0%        1    Int * Int  ->  var<Int> = Int
+  0.0%        1    Int >> Int  ->  var<Int> = LongLong
+  0.3%      413    Int < Int
+  0.0%       16    Int + Int  ->  var<Int> = Int
+  0.1%      160    Int + Int  ->  Int / Int  ->  Int / Int  ->  Int % Int  ->  var<Int> = Int
+  0.1%      128    Int + Int  ->  Int / Int  ->  Int - Int  ->  Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  Int + Int  ->  Int / Int  ->  Void : Int  ->  Int < Int  ->  Int + Int  ->  Int / Int  ->  Int - Int  ->  Int > Int  ->  Int - Int  ->  LongLong ? Int  ->  Int + Int  ->  Int / Int  ->  Void : Int  ->  LongLong ? Int  ->  Int : Int  ->  Int % Int  ->  var<Int> = Int
+  0.1%      128    Int + Int  ->  Int / Int  ->  Int > Int  ->  LongLong ? Int  ->  Int + Int  ->  Int / Int  ->  Void : Int  ->  Int < Int  ->  Int + Int  ->  Int / Int  ->  Int > Int  ->  LongLong ? Int  ->  Int + Int  ->  Int / Int  ->  Void : Int  ->  LongLong ? Int  ->  Int : Int  ->  Int % Int  ->  var<Int> = Int
+  0.2%      256    Int + Int  ->  Int * Int  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Char>[Int]  ->  Int + Char  ->  var<Int> = Int
+  0.1%      128    Int + Int  ->  arr<Array>[Int]  ->  Int + Int  ->  arr<Char>[Int]  ->  Int * Int  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Short>[Int]  ->  Int * Short  ->  Int * Int  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Short>[Int]  ->  Int * Short  ->  Int + Int  ->  Int * Int  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Short>[Int]  ->  Int * Short  ->  Int + Int  ->  Int * Int  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Short>[Int]  ->  Int * Short  ->  Int + Int  ->  Int + Int  ->  Int / Int  ->  var<Char> = Int
+  0.2%      272    !Int
+  0.0%        8    Int != Int
+  0.1%      128    Short == Int
+  0.1%      128    Int += Int
+  0.2%      256    Int & Int  ->  var<Int> = Int
+  0.3%      332    Int++
+
+Total expressions: 125441
+Total expression chains: 124395
+Maximum expression chain depth: 30

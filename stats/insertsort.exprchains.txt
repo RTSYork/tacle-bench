@@ -1,13 +1,17 @@
-      41    var<Int> = Int
-      32    Int < Int
-      10    arr<UnsignedInt>[Int]  ->  arr<Pointer>[Int]  ->  var<UnsignedInt> = UnsignedInt
-      54    arr<UnsignedInt>[Int]  ->  Int - Int  ->  arr<UnsignedInt>[Int]  ->  UnsignedInt < UnsignedInt
-      45    arr<UnsignedInt>[Int]  ->  Int - Int  ->  arr<UnsignedInt>[Int]  ->  var<UnsignedInt> = UnsignedInt
-      45    arr<UnsignedInt>[Int]  ->  var<Int> = UnsignedInt
-      10    arr<UnsignedInt>[Int]  ->  Int += UnsignedInt
-      83    Int++
-      10    Int <= Int
-      45    Int - Int  ->  arr<UnsignedInt>[Int]  ->  var<UnsignedInt> = Int
-      45    Int--
-      10    Int > Int
-       1    -Int  ->  Int + Int  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+  8.8%       41    var<Int> = Int
+  6.9%       32    Int < Int
+  2.2%       10    arr<UnsignedInt>[Int]  ->  arr<Pointer>[Int]  ->  var<UnsignedInt> = UnsignedInt
+ 11.6%       54    arr<UnsignedInt>[Int]  ->  Int - Int  ->  arr<UnsignedInt>[Int]  ->  UnsignedInt < UnsignedInt
+  9.7%       45    arr<UnsignedInt>[Int]  ->  Int - Int  ->  arr<UnsignedInt>[Int]  ->  var<UnsignedInt> = UnsignedInt
+  9.7%       45    arr<UnsignedInt>[Int]  ->  var<Int> = UnsignedInt
+  2.2%       10    arr<UnsignedInt>[Int]  ->  Int += UnsignedInt
+ 17.9%       83    Int++
+  2.2%       10    Int <= Int
+  9.7%       45    Int - Int  ->  arr<UnsignedInt>[Int]  ->  var<UnsignedInt> = Int
+  9.7%       45    Int--
+  2.2%       10    Int > Int
+  0.2%        1    -Int  ->  Int + Int  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+
+Total expressions: 897
+Total expression chains: 464
+Maximum expression chain depth: 5

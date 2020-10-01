@@ -1,22 +1,22 @@
-0.6%        8   prefix expressions of type   &Float
-27.4%      352   prefix expressions of type   *Pointer
-0.3%        4   assign expressions of type   var<Int> = Int
-10.1%      130   assign expressions of type   var<Float> = Int
-2.5%       32   assign expressions of type   var<Float> = Float
-0.3%        4   assign expressions of type   var<Pointer> = Pointer
-7.5%       96    infix expressions of type   Float += Float
-1.2%       16    infix expressions of type   Float -= Float
-0.1%        1    infix expressions of type   Float != Float
-5.3%       68    infix expressions of type   Int < Int
-2.5%       32    infix expressions of type   Float + Float
-0.3%        4    infix expressions of type   Int * Int
-5.0%       64    infix expressions of type   Float * Float
-6.8%       88    array expressions of type   arr<Float>[Int]
-5.0%       64  postfix expressions of type   Int++
-22.4%      288  postfix expressions of type   Pointer++
-2.5%       32  postfix expressions of type   Pointer--
-0.1%        1   return expressions of type   ret<Int> = Int
-0.1%        1   return expressions of type   ret<Int> = LongLong
+  0.6%        8   prefix expressions of type   &Float
+ 27.4%      352   prefix expressions of type   *Pointer
+  0.3%        4   assign expressions of type   var<Int> = Int
+ 10.1%      130   assign expressions of type   var<Float> = Int
+  2.5%       32   assign expressions of type   var<Float> = Float
+  0.3%        4   assign expressions of type   var<Pointer> = Pointer
+  7.5%       96    infix expressions of type   Float += Float
+  1.2%       16    infix expressions of type   Float -= Float
+  0.1%        1    infix expressions of type   Float != Float
+  5.3%       68    infix expressions of type   Int < Int
+  2.5%       32    infix expressions of type   Float + Float
+  0.3%        4    infix expressions of type   Int * Int
+  5.0%       64    infix expressions of type   Float * Float
+  6.8%       88    array expressions of type   arr<Float>[Int]
+  5.0%       64  postfix expressions of type   Int++
+ 22.4%      288  postfix expressions of type   Pointer++
+  2.5%       32  postfix expressions of type   Pointer--
+  0.1%        1   return expressions of type   ret<Int> = Int
+  0.1%        1   return expressions of type   ret<Int> = LongLong
 
 Total expressions: 1285
 Maximum expression chain depth: 10

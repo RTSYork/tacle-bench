@@ -1,32 +1,32 @@
-1.6%       19   prefix expressions of type   -Double
-6.5%       79   assign expressions of type   var<Int> = Int
-0.2%        2   assign expressions of type   var<Double> = Int
-9.9%      120   assign expressions of type   var<Double> = Double
-0.7%        9    infix expressions of type   Double += Int
-3.0%       36    infix expressions of type   Double += Double
-0.8%       10    infix expressions of type   Double -= Double
-0.2%        3    infix expressions of type   Double *= Double
-0.7%        9    infix expressions of type   Double /= Double
-0.4%        5    infix expressions of type   LongLong || LongLong
-0.4%        5    infix expressions of type   Int == Int
-2.4%       29    infix expressions of type   Int != Int
-0.5%        6    infix expressions of type   Double != Double
-16.5%      201    infix expressions of type   Int < Int
-0.1%        1    infix expressions of type   Int > Int
-0.5%        6    infix expressions of type   Double > Double
-0.3%        4    infix expressions of type   Double <= Double
-0.7%        9    infix expressions of type   Double >= Int
-0.1%        1    infix expressions of type   Double * Int
-3.0%       37    infix expressions of type   Double * Double
-0.7%        8    infix expressions of type   Double / Double
-0.1%        1    infix expressions of type   _Type cast Double
-2.0%       24    array expressions of type   arr<Int>[Int]
-17.8%      217    array expressions of type   arr<Double>[Int]
-17.8%      217    array expressions of type   arr<Array>[Int]
-12.1%      147  postfix expressions of type   Int++
-0.2%        3   return expressions of type   ret<Int> = Int
-0.1%        1   return expressions of type   ret<Int> = LongLong
-0.7%        9   return expressions of type   ret<Double> = Double
+  1.6%       19   prefix expressions of type   -Double
+  6.5%       79   assign expressions of type   var<Int> = Int
+  0.2%        2   assign expressions of type   var<Double> = Int
+  9.9%      120   assign expressions of type   var<Double> = Double
+  0.7%        9    infix expressions of type   Double += Int
+  3.0%       36    infix expressions of type   Double += Double
+  0.8%       10    infix expressions of type   Double -= Double
+  0.2%        3    infix expressions of type   Double *= Double
+  0.7%        9    infix expressions of type   Double /= Double
+  0.4%        5    infix expressions of type   LongLong || LongLong
+  0.4%        5    infix expressions of type   Int == Int
+  2.4%       29    infix expressions of type   Int != Int
+  0.5%        6    infix expressions of type   Double != Double
+ 16.5%      201    infix expressions of type   Int < Int
+  0.1%        1    infix expressions of type   Int > Int
+  0.5%        6    infix expressions of type   Double > Double
+  0.3%        4    infix expressions of type   Double <= Double
+  0.7%        9    infix expressions of type   Double >= Int
+  0.1%        1    infix expressions of type   Double * Int
+  3.0%       37    infix expressions of type   Double * Double
+  0.7%        8    infix expressions of type   Double / Double
+  0.1%        1    infix expressions of type   _Type cast Double
+  2.0%       24    array expressions of type   arr<Int>[Int]
+ 17.8%      217    array expressions of type   arr<Double>[Int]
+ 17.8%      217    array expressions of type   arr<Array>[Int]
+ 12.1%      147  postfix expressions of type   Int++
+  0.2%        3   return expressions of type   ret<Int> = Int
+  0.1%        1   return expressions of type   ret<Int> = LongLong
+  0.7%        9   return expressions of type   ret<Double> = Double
 
 Total expressions: 1218
 Maximum expression chain depth: 7

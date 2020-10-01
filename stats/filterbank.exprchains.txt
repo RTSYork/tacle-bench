@@ -1,17 +1,21 @@
-      17    _Type cast Int  ->  Int / Int
-    8327    var<Int> = Int
-   17558    Int < Int
-  254464    Int < Int  ->  Int - Int  ->  Int >= Int  ->  LongLong & LongLong
-     256    arr<Float>[Int]  ->  Int + Int  ->  var<Float> = Int
-   12800    arr<Float>[Int]  ->  var<Float> = Int
-  246272    arr<Float>[Int]  ->  arr<Array>[Int]  ->  arr<Float>[Int]  ->  Int - Int  ->  arr<Float>[Int]  ->  Float * Float  ->  Float += Float
-     512    arr<Float>[Int]  ->  Int * Int  ->  arr<Float>[Int]  ->  var<Float> = Float
-    4096    arr<Float>[Int]  ->  arr<Float>[Int]  ->  Float += Float
-       1    arr<Float>[Int]  ->  _Type cast Float  ->  Int - Int  ->  var<Int> = Int
-  264752    Int++
-     256    arr<Array>[Int]  ->  arr<Float>[Int]  ->  Int * Int  ->  Int * Int  ->  Int + Int  ->  Int + Int  ->  Int + Int  ->  Int + Int  ->  Int + Int  ->  var<Float> = Int
-     256    arr<Array>[Int]  ->  arr<Float>[Int]  ->  Int * Int  ->  Int * Int  ->  Int + Int  ->  Int + Int  ->  Int + Int  ->  var<Float> = Int
-       3    Int--  ->  Int > Int
-    1056    Int / Int  ->  Int < Int
-     512    Int * Int  ->  arr<Float>[Int]  ->  arr<Float>[Int]  ->  var<Float> = Float
-       1    ret<Int> = Int  ->  ret<Int> = Int
+  0.0%       17    _Type cast Int  ->  Int / Int
+  1.0%     8327    var<Int> = Int
+  2.2%    17558    Int < Int
+ 31.4%   254464    Int < Int  ->  Int - Int  ->  Int >= Int  ->  LongLong & LongLong
+  0.0%      256    arr<Float>[Int]  ->  Int + Int  ->  var<Float> = Int
+  1.6%    12800    arr<Float>[Int]  ->  var<Float> = Int
+ 30.4%   246272    arr<Float>[Int]  ->  arr<Array>[Int]  ->  arr<Float>[Int]  ->  Int - Int  ->  arr<Float>[Int]  ->  Float * Float  ->  Float += Float
+  0.1%      512    arr<Float>[Int]  ->  Int * Int  ->  arr<Float>[Int]  ->  var<Float> = Float
+  0.5%     4096    arr<Float>[Int]  ->  arr<Float>[Int]  ->  Float += Float
+  0.0%        1    arr<Float>[Int]  ->  _Type cast Float  ->  Int - Int  ->  var<Int> = Int
+ 32.6%   264752    Int++
+  0.0%      256    arr<Array>[Int]  ->  arr<Float>[Int]  ->  Int * Int  ->  Int * Int  ->  Int + Int  ->  Int + Int  ->  Int + Int  ->  Int + Int  ->  Int + Int  ->  var<Float> = Int
+  0.0%      256    arr<Array>[Int]  ->  arr<Float>[Int]  ->  Int * Int  ->  Int * Int  ->  Int + Int  ->  Int + Int  ->  Int + Int  ->  var<Float> = Int
+  0.0%        3    Int--  ->  Int > Int
+  0.1%     1056    Int / Int  ->  Int < Int
+  0.1%      512    Int * Int  ->  arr<Float>[Int]  ->  arr<Float>[Int]  ->  var<Float> = Float
+  0.0%        1    ret<Int> = Int  ->  ret<Int> = Int
+
+Total expressions: 3081915
+Total expression chains: 811230
+Maximum expression chain depth: 10

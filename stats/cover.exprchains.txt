@@ -1,5 +1,9 @@
-       4    var<Int> = Int
-     183    Int < Int
-     360    Int++
-       3    ret<Int> = Int  ->  var<Int> = Int
-       1    Int - Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+  0.0%        4    var<Int> = Int
+  2.0%      183    Int < Int
+  3.9%      360    Int++
+  0.0%        3    ret<Int> = Int  ->  var<Int> = Int
+  0.0%        1    Int - Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+
+Total expressions: 556
+Total expression chains: 9333
+Maximum expression chain depth: 3

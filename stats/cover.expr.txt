@@ -1,8 +1,8 @@
-1.3%        7   assign expressions of type   var<Int> = Int
-32.9%      183    infix expressions of type   Int < Int
-0.2%        1    infix expressions of type   Int - Int
-64.7%      360  postfix expressions of type   Int++
-0.9%        5   return expressions of type   ret<Int> = Int
+  1.3%        7   assign expressions of type   var<Int> = Int
+ 32.9%      183    infix expressions of type   Int < Int
+  0.2%        1    infix expressions of type   Int - Int
+ 64.7%      360  postfix expressions of type   Int++
+  0.9%        5   return expressions of type   ret<Int> = Int
 
 Total expressions: 556
 Maximum expression chain depth: 3

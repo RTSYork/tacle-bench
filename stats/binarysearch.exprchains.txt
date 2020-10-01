@@ -1,14 +1,18 @@
-       4    var<Int> = Int
-      16    Int < Int
-      30    arr<Struct>[Int]
-       4    arr<Struct>[Int]  ->  Int == Int
-       4    arr<Struct>[Int]  ->  Int > Int
-      30    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
-      30    ret<Long> = Int  ->  var<Int> = Long
-      15    ++Int
-       1    -Int  ->  var<Int> = Int
-       5    Int <= Int
-       4    Int + Int  ->  Int >> Int  ->  var<Int> = LongLong
-       4    Int - Int  ->  var<Int> = Int
-       1    ret<Int> = Int  ->  var<Int> = Int
-       1    ret<Int> = Int  ->  -Int  ->  Int - Int  ->  Int != Int  ->  ret<Int> = LongLong
+  2.1%        4    var<Int> = Int
+  8.4%       16    Int < Int
+ 15.8%       30    arr<Struct>[Int]
+  2.1%        4    arr<Struct>[Int]  ->  Int == Int
+  2.1%        4    arr<Struct>[Int]  ->  Int > Int
+ 15.8%       30    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
+ 15.8%       30    ret<Long> = Int  ->  var<Int> = Long
+  7.9%       15    ++Int
+  0.5%        1    -Int  ->  var<Int> = Int
+  2.6%        5    Int <= Int
+  2.1%        4    Int + Int  ->  Int >> Int  ->  var<Int> = LongLong
+  2.1%        4    Int - Int  ->  var<Int> = Int
+  0.5%        1    ret<Int> = Int  ->  var<Int> = Int
+  0.5%        1    ret<Int> = Int  ->  -Int  ->  Int - Int  ->  Int != Int  ->  ret<Int> = LongLong
+
+Total expressions: 295
+Total expression chains: 190
+Maximum expression chain depth: 5

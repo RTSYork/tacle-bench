@@ -1,76 +1,76 @@
-0.0%    12672   prefix expressions of type   &Int
-0.0%        1   prefix expressions of type   &UnsignedChar
-2.8%  4529287   prefix expressions of type   -Int
-1.1%  1814912   prefix expressions of type   *Pointer
-0.1%    90112   prefix expressions of type   ++UnsignedInt
-0.1%    90112   prefix expressions of type   ++Pointer
-0.4%   602559   prefix expressions of type   !Int
-0.1%    90113   prefix expressions of type   sizeofArray
-10.0% 16146125   assign expressions of type   var<Int> = Int
-0.0%        1   assign expressions of type   var<Char> = Int
-0.0%      353   assign expressions of type   var<UnsignedInt> = Int
-2.6%  4197248   assign expressions of type   var<Int> = LongLong
-0.0%      352   assign expressions of type   var<UnsignedInt> = UnsignedInt
-0.1%    90112   assign expressions of type   var<UnsignedInt> = UnsignedChar
-0.5%   768525   assign expressions of type   var<Pointer> = Pointer
-8.0% 12872345    infix expressions of type   Int += Int
-0.9%  1411616    infix expressions of type   Pointer += Int
-0.1%   180224    infix expressions of type   UnsignedInt += UnsignedInt
-1.0%  1648839    infix expressions of type   Int -= Int
-0.0%     7040    infix expressions of type   Int <<= Int
-0.1%    90112    infix expressions of type   UnsignedChar ^= Char
-0.0%     2112    infix expressions of type   Int ? Int
-0.0%     3520    infix expressions of type   LongLong ? Int
-0.0%     1760    infix expressions of type   Void : Int
-0.0%     3872    infix expressions of type   Int : Int
-0.0%    19328    infix expressions of type   LongLong && Int
-0.0%    26067    infix expressions of type   Int && LongLong
-1.1%  1718614    infix expressions of type   LongLong && LongLong
-0.0%    64748    infix expressions of type   Int & Int
-0.0%     1408    infix expressions of type   Int == Int
-0.0%        1    infix expressions of type   Int != Int
-11.0% 17697150    infix expressions of type   Int < Int
-0.0%     7040    infix expressions of type   Int < LongLong
-0.1%    90113    infix expressions of type   UnsignedInt < LongLong
-0.0%    17952    infix expressions of type   Int > Int
-0.6%  1033328    infix expressions of type   Int <= Int
-3.6%  5775091    infix expressions of type   Int >= Int
-0.0%    17600    infix expressions of type   Int << Int
-0.0%    73196    infix expressions of type   Int >> Int
-0.1%   180224    infix expressions of type   LongLong >> Int
-2.7%  4360576    infix expressions of type   UnsignedInt >> Int
-5.8%  9293632    infix expressions of type   Int + Int
-0.1%   180224    infix expressions of type   LongLong + Int
-0.3%   530048    infix expressions of type   Pointer + Int
-0.0%     7040    infix expressions of type   Int + LongLong
-0.1%   180224    infix expressions of type   LongLong + LongLong
-0.0%    64748    infix expressions of type   Pointer + LongLong
-2.9%  4611584    infix expressions of type   Int + UnsignedChar
-2.7%  4360576    infix expressions of type   UnsignedChar + UnsignedChar
-0.1%   163709    infix expressions of type   Int - Int
-0.0%     8448    infix expressions of type   Int - LongLong
-0.0%     1408    infix expressions of type   LongLong - LongLong
-0.0%      352    infix expressions of type   UnsignedInt - UnsignedInt
-2.6%  4180352    infix expressions of type   LongLong - UnsignedChar
-6.4% 10336944    infix expressions of type   UnsignedChar - UnsignedChar
-1.2%  1914688    infix expressions of type   Int * Int
-0.0%    30262    infix expressions of type   Int * LongLong
-0.0%     2112    infix expressions of type   LongLong * LongLong
-0.1%    90464    infix expressions of type   UnsignedInt * UnsignedInt
-0.0%      352    infix expressions of type   UnsignedInt / Int
-2.7%  4360576    infix expressions of type   _Type cast Int
-0.0%        1    infix expressions of type   _Type cast Pointer
-0.0%    12672    array expressions of type   arr<Int>[Int]
-0.0%        1    array expressions of type   arr<UnsignedChar>[Int]
-22.8% 36564960    array expressions of type   arr<Pointer>[Int]
-0.0%    18304    array expressions of type   arr<Array>[Int]
-0.0%     2816    array expressions of type   arr<Struct>[Int]
-3.6%  5806723  postfix expressions of type   Int++
-1.1%  1712480  postfix expressions of type   Pointer++
-0.1%   239360  postfix expressions of type   Int--
-0.2%   283159   return expressions of type   ret<Int> = Int
-0.0%        1   return expressions of type   ret<Int> = LongLong
-0.0%      352   return expressions of type   ret<Int> = UnsignedInt
+  0.0%    12672   prefix expressions of type   &Int
+  0.0%        1   prefix expressions of type   &UnsignedChar
+  2.8%  4529287   prefix expressions of type   -Int
+  1.1%  1814912   prefix expressions of type   *Pointer
+  0.1%    90112   prefix expressions of type   ++UnsignedInt
+  0.1%    90112   prefix expressions of type   ++Pointer
+  0.4%   602559   prefix expressions of type   !Int
+  0.1%    90113   prefix expressions of type   sizeofArray
+ 10.0% 16146125   assign expressions of type   var<Int> = Int
+  0.0%        1   assign expressions of type   var<Char> = Int
+  0.0%      353   assign expressions of type   var<UnsignedInt> = Int
+  2.6%  4197248   assign expressions of type   var<Int> = LongLong
+  0.0%      352   assign expressions of type   var<UnsignedInt> = UnsignedInt
+  0.1%    90112   assign expressions of type   var<UnsignedInt> = UnsignedChar
+  0.5%   768525   assign expressions of type   var<Pointer> = Pointer
+  8.0% 12872345    infix expressions of type   Int += Int
+  0.9%  1411616    infix expressions of type   Pointer += Int
+  0.1%   180224    infix expressions of type   UnsignedInt += UnsignedInt
+  1.0%  1648839    infix expressions of type   Int -= Int
+  0.0%     7040    infix expressions of type   Int <<= Int
+  0.1%    90112    infix expressions of type   UnsignedChar ^= Char
+  0.0%     2112    infix expressions of type   Int ? Int
+  0.0%     3520    infix expressions of type   LongLong ? Int
+  0.0%     1760    infix expressions of type   Void : Int
+  0.0%     3872    infix expressions of type   Int : Int
+  0.0%    19328    infix expressions of type   LongLong && Int
+  0.0%    26067    infix expressions of type   Int && LongLong
+  1.1%  1718614    infix expressions of type   LongLong && LongLong
+  0.0%    64748    infix expressions of type   Int & Int
+  0.0%     1408    infix expressions of type   Int == Int
+  0.0%        1    infix expressions of type   Int != Int
+ 11.0% 17697150    infix expressions of type   Int < Int
+  0.0%     7040    infix expressions of type   Int < LongLong
+  0.1%    90113    infix expressions of type   UnsignedInt < LongLong
+  0.0%    17952    infix expressions of type   Int > Int
+  0.6%  1033328    infix expressions of type   Int <= Int
+  3.6%  5775091    infix expressions of type   Int >= Int
+  0.0%    17600    infix expressions of type   Int << Int
+  0.0%    73196    infix expressions of type   Int >> Int
+  0.1%   180224    infix expressions of type   LongLong >> Int
+  2.7%  4360576    infix expressions of type   UnsignedInt >> Int
+  5.8%  9293632    infix expressions of type   Int + Int
+  0.1%   180224    infix expressions of type   LongLong + Int
+  0.3%   530048    infix expressions of type   Pointer + Int
+  0.0%     7040    infix expressions of type   Int + LongLong
+  0.1%   180224    infix expressions of type   LongLong + LongLong
+  0.0%    64748    infix expressions of type   Pointer + LongLong
+  2.9%  4611584    infix expressions of type   Int + UnsignedChar
+  2.7%  4360576    infix expressions of type   UnsignedChar + UnsignedChar
+  0.1%   163709    infix expressions of type   Int - Int
+  0.0%     8448    infix expressions of type   Int - LongLong
+  0.0%     1408    infix expressions of type   LongLong - LongLong
+  0.0%      352    infix expressions of type   UnsignedInt - UnsignedInt
+  2.6%  4180352    infix expressions of type   LongLong - UnsignedChar
+  6.4% 10336944    infix expressions of type   UnsignedChar - UnsignedChar
+  1.2%  1914688    infix expressions of type   Int * Int
+  0.0%    30262    infix expressions of type   Int * LongLong
+  0.0%     2112    infix expressions of type   LongLong * LongLong
+  0.1%    90464    infix expressions of type   UnsignedInt * UnsignedInt
+  0.0%      352    infix expressions of type   UnsignedInt / Int
+  2.7%  4360576    infix expressions of type   _Type cast Int
+  0.0%        1    infix expressions of type   _Type cast Pointer
+  0.0%    12672    array expressions of type   arr<Int>[Int]
+  0.0%        1    array expressions of type   arr<UnsignedChar>[Int]
+ 22.8% 36564960    array expressions of type   arr<Pointer>[Int]
+  0.0%    18304    array expressions of type   arr<Array>[Int]
+  0.0%     2816    array expressions of type   arr<Struct>[Int]
+  3.6%  5806723  postfix expressions of type   Int++
+  1.1%  1712480  postfix expressions of type   Pointer++
+  0.1%   239360  postfix expressions of type   Int--
+  0.2%   283159   return expressions of type   ret<Int> = Int
+  0.0%        1   return expressions of type   ret<Int> = LongLong
+  0.0%      352   return expressions of type   ret<Int> = UnsignedInt
 
 Total expressions: 160694932
 Maximum expression chain depth: 35

@@ -1,28 +1,32 @@
-       4    Int * Int
-       2    Int * Int  ->  Pointer - Int  ->  var<Pointer> = Pointer
-      54    Int * Int  ->  Float < Int
-      16    Int * Int  ->  Int + Int  ->  arr<Float>[Int]  ->  &Float  ->  var<Pointer> = Pointer
-       1    var<Char> = Int
-       8    arr<Float>[Int]  ->  &Float
-       4    arr<Float>[Int]  ->  &Float  ->  _Type cast Pointer  ->  var<Pointer> = Pointer
-      20    arr<Float>[Int]  ->  &Float  ->  var<Pointer> = Pointer
-       1    arr<Float>[Int]  ->  arr<Float>[Int]  ->  Float + Float  ->  arr<Float>[Int]  ->  Float + Float  ->  var<Int> = Float
-       4    var<UnsignedInt> = Int
-     312    sizeofArray  ->  UnsignedInt < LongLong
-     308    *Pointer  ->  UnsignedChar ^= Char
-      16    *Pointer  ->  var<Float> = Int
-     144    *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Float * Float  ->  Float += Float
-     308    ++UnsignedInt
-     308    ++Pointer
-      28    var<Float> = Int
-     128    Float < Int
-      16    Pointer++
-     122    Pointer++  ->  *Pointer  ->  var<Float> = Int
-      32    Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  var<Float> = Float
-     154    Float++
-      53    var<Int> = Int
-     217    Int < Int
-      16    Pointer + Int  ->  var<Pointer> = Pointer
-      16    Pointer + Int  ->  Pointer + Int  ->  var<Pointer> = Pointer
-     164    Int++
-       1    Int - Int  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+  0.2%        4    Int * Int
+  0.1%        2    Int * Int  ->  Pointer - Int  ->  var<Pointer> = Pointer
+  2.1%       54    Int * Int  ->  Float < Int
+  0.6%       16    Int * Int  ->  Int + Int  ->  arr<Float>[Int]  ->  &Float  ->  var<Pointer> = Pointer
+  0.0%        1    var<Char> = Int
+  0.3%        8    arr<Float>[Int]  ->  &Float
+  0.2%        4    arr<Float>[Int]  ->  &Float  ->  _Type cast Pointer  ->  var<Pointer> = Pointer
+  0.8%       20    arr<Float>[Int]  ->  &Float  ->  var<Pointer> = Pointer
+  0.0%        1    arr<Float>[Int]  ->  arr<Float>[Int]  ->  Float + Float  ->  arr<Float>[Int]  ->  Float + Float  ->  var<Int> = Float
+  0.2%        4    var<UnsignedInt> = Int
+ 11.9%      312    sizeofArray  ->  UnsignedInt < LongLong
+ 11.8%      308    *Pointer  ->  UnsignedChar ^= Char
+  0.6%       16    *Pointer  ->  var<Float> = Int
+  5.5%      144    *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Float * Float  ->  Float += Float
+ 11.8%      308    ++UnsignedInt
+ 11.8%      308    ++Pointer
+  1.1%       28    var<Float> = Int
+  4.9%      128    Float < Int
+  0.6%       16    Pointer++
+  4.7%      122    Pointer++  ->  *Pointer  ->  var<Float> = Int
+  1.2%       32    Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  var<Float> = Float
+  5.9%      154    Float++
+  2.0%       53    var<Int> = Int
+  8.3%      217    Int < Int
+  0.6%       16    Pointer + Int  ->  var<Pointer> = Pointer
+  0.6%       16    Pointer + Int  ->  Pointer + Int  ->  var<Pointer> = Pointer
+  6.3%      164    Int++
+  0.0%        1    Int - Int  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+
+Total expressions: 4567
+Total expression chains: 2619
+Maximum expression chain depth: 7

@@ -1,12 +1,16 @@
-       5    var<Int> = Int
-       7    Int <= Int
-      27    Int++
-      21    Int == Int
-       1    ret<Int> = Int  ->  Int += Int
-       1    ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int += Int
-       1    ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int += Int
-       1    ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int += Int
-       1    ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int += Int
-       1    ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int += Int
-      15    Int - Int
-       1    Int - Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+  4.3%        5    var<Int> = Int
+  6.1%        7    Int <= Int
+ 23.5%       27    Int++
+ 18.3%       21    Int == Int
+  0.9%        1    ret<Int> = Int  ->  Int += Int
+  0.9%        1    ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int += Int
+  0.9%        1    ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int += Int
+  0.9%        1    ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int += Int
+  0.9%        1    ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int += Int
+  0.9%        1    ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int * Int  ->  ret<Int> = Int  ->  Int += Int
+ 13.0%       15    Int - Int
+  0.9%        1    Int - Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+
+Total expressions: 120
+Total expression chains: 115
+Maximum expression chain depth: 12

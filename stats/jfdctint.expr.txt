@@ -1,29 +1,29 @@
-2.2%       81   prefix expressions of type   -Int
-1.7%       64   prefix expressions of type   ++Int
-18.2%      679   assign expressions of type   var<Int> = Int
-0.1%        2   assign expressions of type   var<Pointer> = Array
-2.6%       96    infix expressions of type   Int += Int
-0.2%        8    infix expressions of type   Pointer += Int
-0.0%        1    infix expressions of type   LongLong ? Int
-0.0%        1    infix expressions of type   Int : Int
-0.0%        1    infix expressions of type   Int == Int
-3.5%      130    infix expressions of type   Int < Int
-0.5%       18    infix expressions of type   Int >= Int
-3.4%      128    infix expressions of type   Int << Int
-3.0%      112    infix expressions of type   LongLong >> Int
-12.9%      480    infix expressions of type   Int + Int
-3.0%      112    infix expressions of type   Int + LongLong
-7.3%      274    infix expressions of type   Int - Int
-12.0%      448    infix expressions of type   Int * Int
-1.7%       64    infix expressions of type   Int % Int
-8.1%      304    infix expressions of type   _Type cast Int
-3.4%      128    infix expressions of type   _Type cast LongLong
-3.4%      128    array expressions of type   arr<Int>[Int]
-10.3%      384    array expressions of type   arr<Pointer>[Int]
-1.7%       64  postfix expressions of type   Int++
-0.2%        8  postfix expressions of type   Pointer++
-0.4%       16  postfix expressions of type   Int--
-0.1%        2   return expressions of type   ret<Int> = Int
+  2.2%       81   prefix expressions of type   -Int
+  1.7%       64   prefix expressions of type   ++Int
+ 18.2%      679   assign expressions of type   var<Int> = Int
+  0.1%        2   assign expressions of type   var<Pointer> = Array
+  2.6%       96    infix expressions of type   Int += Int
+  0.2%        8    infix expressions of type   Pointer += Int
+  0.0%        1    infix expressions of type   LongLong ? Int
+  0.0%        1    infix expressions of type   Int : Int
+  0.0%        1    infix expressions of type   Int == Int
+  3.5%      130    infix expressions of type   Int < Int
+  0.5%       18    infix expressions of type   Int >= Int
+  3.4%      128    infix expressions of type   Int << Int
+  3.0%      112    infix expressions of type   LongLong >> Int
+ 12.9%      480    infix expressions of type   Int + Int
+  3.0%      112    infix expressions of type   Int + LongLong
+  7.3%      274    infix expressions of type   Int - Int
+ 12.0%      448    infix expressions of type   Int * Int
+  1.7%       64    infix expressions of type   Int % Int
+  8.1%      304    infix expressions of type   _Type cast Int
+  3.4%      128    infix expressions of type   _Type cast LongLong
+  3.4%      128    array expressions of type   arr<Int>[Int]
+ 10.3%      384    array expressions of type   arr<Pointer>[Int]
+  1.7%       64  postfix expressions of type   Int++
+  0.2%        8  postfix expressions of type   Pointer++
+  0.4%       16  postfix expressions of type   Int--
+  0.1%        2   return expressions of type   ret<Int> = Int
 
 Total expressions: 3733
 Maximum expression chain depth: 7

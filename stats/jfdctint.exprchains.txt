@@ -1,33 +1,37 @@
-       5    var<Int> = Int
-     130    Int < Int
-      64    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
-     128    Int * Int  ->  arr<Pointer>[Int]
-      32    Int * Int  ->  arr<Pointer>[Int]  ->  Int + Int  ->  var<Int> = Int
-      32    Int * Int  ->  arr<Pointer>[Int]  ->  Int - Int  ->  var<Int> = Int
-      64    arr<Int>[Int]  ->  var<Int> = Int
-      64    arr<Int>[Int]  ->  Int += Int
-      64    Int++
-       2    var<Pointer> = Array
-      56    Int - Int
-      34    Int - Int  ->  var<Int> = Int
-      18    Int >= Int
-      48    arr<Pointer>[Int]
-      32    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  Int + Int  ->  var<Int> = Int
-      32    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  Int - Int  ->  var<Int> = Int
-       8    arr<Pointer>[Int]  ->  Int + Int
-       8    arr<Pointer>[Int]  ->  Int - Int
-      88    Int + Int
-      96    Int + Int  ->  var<Int> = Int
-      64    Int + Int  ->  Int + Int
-      16    Int << Int  ->  _Type cast LongLong  ->  var<Int> = Int
-      96    _Type cast Int  ->  Int * Int  ->  var<Int> = Int
-      16    _Type cast Int  ->  Int * Int  ->  Int + Int
-     112    _Type cast Int  ->  Int - Int  ->  Int << Int  ->  Int + LongLong  ->  LongLong >> Int  ->  _Type cast LongLong  ->  var<Int> = Int
-      16    _Type cast Int  ->  -Int  ->  Int * Int  ->  Int + Int
-      64    _Type cast Int  ->  -Int  ->  Int * Int  ->  var<Int> = Int
-      32    Int += Int
-       8    Pointer += Int
-      16    Int--
-       8    Pointer++
-      64    ++Int
-       1    Int == Int  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+  0.2%        5    var<Int> = Int
+  6.3%      130    Int < Int
+  3.1%       64    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
+  6.2%      128    Int * Int  ->  arr<Pointer>[Int]
+  1.6%       32    Int * Int  ->  arr<Pointer>[Int]  ->  Int + Int  ->  var<Int> = Int
+  1.6%       32    Int * Int  ->  arr<Pointer>[Int]  ->  Int - Int  ->  var<Int> = Int
+  3.1%       64    arr<Int>[Int]  ->  var<Int> = Int
+  3.1%       64    arr<Int>[Int]  ->  Int += Int
+  3.1%       64    Int++
+  0.1%        2    var<Pointer> = Array
+  2.7%       56    Int - Int
+  1.7%       34    Int - Int  ->  var<Int> = Int
+  0.9%       18    Int >= Int
+  2.3%       48    arr<Pointer>[Int]
+  1.6%       32    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  Int + Int  ->  var<Int> = Int
+  1.6%       32    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  Int - Int  ->  var<Int> = Int
+  0.4%        8    arr<Pointer>[Int]  ->  Int + Int
+  0.4%        8    arr<Pointer>[Int]  ->  Int - Int
+  4.3%       88    Int + Int
+  4.7%       96    Int + Int  ->  var<Int> = Int
+  3.1%       64    Int + Int  ->  Int + Int
+  0.8%       16    Int << Int  ->  _Type cast LongLong  ->  var<Int> = Int
+  4.7%       96    _Type cast Int  ->  Int * Int  ->  var<Int> = Int
+  0.8%       16    _Type cast Int  ->  Int * Int  ->  Int + Int
+  5.5%      112    _Type cast Int  ->  Int - Int  ->  Int << Int  ->  Int + LongLong  ->  LongLong >> Int  ->  _Type cast LongLong  ->  var<Int> = Int
+  0.8%       16    _Type cast Int  ->  -Int  ->  Int * Int  ->  Int + Int
+  3.1%       64    _Type cast Int  ->  -Int  ->  Int * Int  ->  var<Int> = Int
+  1.6%       32    Int += Int
+  0.4%        8    Pointer += Int
+  0.8%       16    Int--
+  0.4%        8    Pointer++
+  3.1%       64    ++Int
+  0.0%        1    Int == Int  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+
+Total expressions: 3733
+Total expression chains: 2049
+Maximum expression chain depth: 7

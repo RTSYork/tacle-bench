@@ -1,15 +1,19 @@
-       4    Int * Int
-       2    var<Float> = Int
-       4    arr<Float>[Int]  ->  &Float
-       4    arr<Float>[Int]  ->  &Float  ->  var<Pointer> = Pointer
-      80    arr<Float>[Int]  ->  Float += Float
-       4    var<Int> = Int
-      68    Int < Int
-      16    Pointer++
-     128    Pointer++  ->  *Pointer  ->  var<Float> = Int
-      16    Pointer++  ->  *Pointer  ->  *Pointer  ->  Pointer--  ->  *Pointer  ->  Float * Float  ->  Float -= Float
-      16    Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Float * Float  ->  Float += Float
-      64    Int++
-      16    *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
-      16    *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer--  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
-       1    Float != Float  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+  0.8%        4    Int * Int
+  0.4%        2    var<Float> = Int
+  0.8%        4    arr<Float>[Int]  ->  &Float
+  0.8%        4    arr<Float>[Int]  ->  &Float  ->  var<Pointer> = Pointer
+ 15.4%       80    arr<Float>[Int]  ->  Float += Float
+  0.8%        4    var<Int> = Int
+ 13.1%       68    Int < Int
+  3.1%       16    Pointer++
+ 24.7%      128    Pointer++  ->  *Pointer  ->  var<Float> = Int
+  3.1%       16    Pointer++  ->  *Pointer  ->  *Pointer  ->  Pointer--  ->  *Pointer  ->  Float * Float  ->  Float -= Float
+  3.1%       16    Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Float * Float  ->  Float += Float
+ 12.4%       64    Int++
+  3.1%       16    *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
+  3.1%       16    *Pointer  ->  Pointer++  ->  *Pointer  ->  Pointer--  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
+  0.2%        1    Float != Float  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+
+Total expressions: 1285
+Total expression chains: 518
+Maximum expression chain depth: 10

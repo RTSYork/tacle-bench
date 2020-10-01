@@ -1,38 +1,42 @@
-     107    Int + Int
-     301    Int + Int  ->  arr<Float>[Int]
-     201    Int + Int  ->  Double / Int
-       1    var<UnsignedLong> = Int
-     503    arr<Float>[Int]
-      43    arr<Float>[Int]  ->  var<Float> = Double
-    4020    arr<Float>[Int]  ->  Int - Int  ->  arr<Float>[Int]  ->  var<Float> = Float
-     201    arr<Float>[Int]  ->  var<Float> = Float
-    8442    arr<Float>[Int]  ->  arr<Float>[Int]  ->  Float * Float  ->  Float += Float
-     201    arr<Float>[Int]  ->  Double += Float
-     102    var<Double> = Double
-     246    UnsignedLong * Int  ->  UnsignedLong + Int  ->  var<UnsignedLong> = UnsignedLong
-     246    UnsignedLong & Int  ->  UnsignedLong * Double  ->  Double - Double  ->  var<Double> = Double
-     123    Double * Double  ->  Double * Double  ->  Double + Double  ->  var<Double> = Double
-     123    Double > Double
-     101    Int / Double  ->  var<Double> = Double
-     201    Int * Int  ->  Int % Int  ->  var<Int> = Int
-     201    Int * Int  ->  Int >= Int
-     100    Int * Int  ->  Int - Int  ->  LongLong ? Int
-      61    Int * Int  ->  Int - Int  ->  LongLong ? Int  ->  Void : Int  ->  arr<Double>[Int]  ->  ret<Double> = Double  ->  Double * Double  ->  Double + Double  ->  var<Float> = Double
-      40    Int * Int  ->  Int - Int  ->  LongLong ? Int  ->  Int : Int  ->  arr<Double>[Int]  ->  ret<Double> = Double  ->  Double * Double  ->  Double + Double  ->  var<Float> = Double
-      60    Int * Int  ->  Int - Int  ->  Void : Int  ->  arr<Double>[Int]  ->  -Double  ->  ret<Double> = Double  ->  Double * Double  ->  Double + Double  ->  var<Float> = Double
-      40    Int * Int  ->  Int - Int  ->  Int : Int  ->  arr<Double>[Int]  ->  -Double  ->  ret<Double> = Double  ->  Double * Double  ->  Double + Double  ->  var<Float> = Double
-     100    Int * Int  ->  Int > Int
-     101    Int > Int
-     607    var<Int> = Int
-     505    Int < Int
-     100    Int += Int
-     202    var<Float> = Double
-    8866    Int <= Int
-    8865    Int++
-     201    &Float
-    4221    Int >= Int
-    4020    Int--
-     201    *Pointer  ->  Float * Float  ->  Float * Float  ->  Int - Float  ->  *Pointer  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
-     201    Float - Float  ->  Float * Float  ->  *Pointer  ->  Float / Float  ->  var<Float> = Float
-     201    ret<Float> = Float  ->  var<Float> = Float
-       1    Double + Double  ->  Double * Double  ->  _Type cast Double  ->  ret<Int> = Int  ->  ret<Int> = Int
+  0.2%      107    Int + Int
+  0.6%      301    Int + Int  ->  arr<Float>[Int]
+  0.4%      201    Int + Int  ->  Double / Int
+  0.0%        1    var<UnsignedLong> = Int
+  1.1%      503    arr<Float>[Int]
+  0.1%       43    arr<Float>[Int]  ->  var<Float> = Double
+  8.6%     4020    arr<Float>[Int]  ->  Int - Int  ->  arr<Float>[Int]  ->  var<Float> = Float
+  0.4%      201    arr<Float>[Int]  ->  var<Float> = Float
+ 18.1%     8442    arr<Float>[Int]  ->  arr<Float>[Int]  ->  Float * Float  ->  Float += Float
+  0.4%      201    arr<Float>[Int]  ->  Double += Float
+  0.2%      102    var<Double> = Double
+  0.5%      246    UnsignedLong * Int  ->  UnsignedLong + Int  ->  var<UnsignedLong> = UnsignedLong
+  0.5%      246    UnsignedLong & Int  ->  UnsignedLong * Double  ->  Double - Double  ->  var<Double> = Double
+  0.3%      123    Double * Double  ->  Double * Double  ->  Double + Double  ->  var<Double> = Double
+  0.3%      123    Double > Double
+  0.2%      101    Int / Double  ->  var<Double> = Double
+  0.4%      201    Int * Int  ->  Int % Int  ->  var<Int> = Int
+  0.4%      201    Int * Int  ->  Int >= Int
+  0.2%      100    Int * Int  ->  Int - Int  ->  LongLong ? Int
+  0.1%       61    Int * Int  ->  Int - Int  ->  LongLong ? Int  ->  Void : Int  ->  arr<Double>[Int]  ->  ret<Double> = Double  ->  Double * Double  ->  Double + Double  ->  var<Float> = Double
+  0.1%       40    Int * Int  ->  Int - Int  ->  LongLong ? Int  ->  Int : Int  ->  arr<Double>[Int]  ->  ret<Double> = Double  ->  Double * Double  ->  Double + Double  ->  var<Float> = Double
+  0.1%       60    Int * Int  ->  Int - Int  ->  Void : Int  ->  arr<Double>[Int]  ->  -Double  ->  ret<Double> = Double  ->  Double * Double  ->  Double + Double  ->  var<Float> = Double
+  0.1%       40    Int * Int  ->  Int - Int  ->  Int : Int  ->  arr<Double>[Int]  ->  -Double  ->  ret<Double> = Double  ->  Double * Double  ->  Double + Double  ->  var<Float> = Double
+  0.2%      100    Int * Int  ->  Int > Int
+  0.2%      101    Int > Int
+  1.3%      607    var<Int> = Int
+  1.1%      505    Int < Int
+  0.2%      100    Int += Int
+  0.4%      202    var<Float> = Double
+ 19.1%     8866    Int <= Int
+ 19.1%     8865    Int++
+  0.4%      201    &Float
+  9.1%     4221    Int >= Int
+  8.6%     4020    Int--
+  0.4%      201    *Pointer  ->  Float * Float  ->  Float * Float  ->  Int - Float  ->  *Pointer  ->  Float * Float  ->  Float + Float  ->  var<Float> = Float
+  0.4%      201    Float - Float  ->  Float * Float  ->  *Pointer  ->  Float / Float  ->  var<Float> = Float
+  0.4%      201    ret<Float> = Float  ->  var<Float> = Float
+  0.0%        1    Double + Double  ->  Double * Double  ->  _Type cast Double  ->  ret<Int> = Int  ->  ret<Int> = Int
+
+Total expressions: 89016
+Total expression chains: 46518
+Maximum expression chain depth: 9

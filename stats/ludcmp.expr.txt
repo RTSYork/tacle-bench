@@ -1,36 +1,36 @@
-0.1%        1   prefix expressions of type   -Int
-0.1%        1   prefix expressions of type   -Double
-3.4%       61   assign expressions of type   var<Int> = Int
-2.5%       44   assign expressions of type   var<Double> = Int
-5.2%       93   assign expressions of type   var<Double> = Double
-2.3%       42    infix expressions of type   Double += Double
-4.8%       86    infix expressions of type   Double -= Double
-0.3%        6    infix expressions of type   Double *= Int
-0.1%        1    infix expressions of type   LongLong ? Int
-0.1%        1    infix expressions of type   Int : Int
-0.1%        1    infix expressions of type   LongLong || LongLong
-0.1%        1    infix expressions of type   LongLong && LongLong
-2.0%       36    infix expressions of type   Int == Int
-0.8%       15    infix expressions of type   Int != Int
-3.1%       56    infix expressions of type   Int < Int
-0.1%        1    infix expressions of type   Double < Double
-0.1%        1    infix expressions of type   Int > Int
-0.1%        1    infix expressions of type   Double > Double
-9.6%      172    infix expressions of type   Int <= Int
-0.1%        1    infix expressions of type   Double <= Int
-0.3%        5    infix expressions of type   Double <= Double
-0.3%        6    infix expressions of type   Int >= Int
-0.3%        5    infix expressions of type   Double >= Int
-10.5%      188    infix expressions of type   Int + Int
-0.1%        1    infix expressions of type   Int - Int
-4.7%       85    infix expressions of type   Double * Double
-1.2%       21    infix expressions of type   Double / Double
-20.6%      370    array expressions of type   arr<Double>[Int]
-17.0%      304    array expressions of type   arr<Array>[Int]
-9.7%      173  postfix expressions of type   Int++
-0.3%        5  postfix expressions of type   Int--
-0.2%        3   return expressions of type   ret<Int> = Int
-0.3%        5   return expressions of type   ret<Double> = Double
+  0.1%        1   prefix expressions of type   -Int
+  0.1%        1   prefix expressions of type   -Double
+  3.4%       61   assign expressions of type   var<Int> = Int
+  2.5%       44   assign expressions of type   var<Double> = Int
+  5.2%       93   assign expressions of type   var<Double> = Double
+  2.3%       42    infix expressions of type   Double += Double
+  4.8%       86    infix expressions of type   Double -= Double
+  0.3%        6    infix expressions of type   Double *= Int
+  0.1%        1    infix expressions of type   LongLong ? Int
+  0.1%        1    infix expressions of type   Int : Int
+  0.1%        1    infix expressions of type   LongLong || LongLong
+  0.1%        1    infix expressions of type   LongLong && LongLong
+  2.0%       36    infix expressions of type   Int == Int
+  0.8%       15    infix expressions of type   Int != Int
+  3.1%       56    infix expressions of type   Int < Int
+  0.1%        1    infix expressions of type   Double < Double
+  0.1%        1    infix expressions of type   Int > Int
+  0.1%        1    infix expressions of type   Double > Double
+  9.6%      172    infix expressions of type   Int <= Int
+  0.1%        1    infix expressions of type   Double <= Int
+  0.3%        5    infix expressions of type   Double <= Double
+  0.3%        6    infix expressions of type   Int >= Int
+  0.3%        5    infix expressions of type   Double >= Int
+ 10.5%      188    infix expressions of type   Int + Int
+  0.1%        1    infix expressions of type   Int - Int
+  4.7%       85    infix expressions of type   Double * Double
+  1.2%       21    infix expressions of type   Double / Double
+ 20.6%      370    array expressions of type   arr<Double>[Int]
+ 17.0%      304    array expressions of type   arr<Array>[Int]
+  9.7%      173  postfix expressions of type   Int++
+  0.3%        5  postfix expressions of type   Int--
+  0.2%        3   return expressions of type   ret<Int> = Int
+  0.3%        5   return expressions of type   ret<Double> = Double
 
 Total expressions: 1792
 Maximum expression chain depth: 9

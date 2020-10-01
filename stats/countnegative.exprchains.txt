@@ -1,10 +1,14 @@
-      51    var<Int> = Int
-     882    Int < Int
-     400    arr<Array>[Int]  ->  arr<Int>[Int]
-     400    arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int >= Int
-     400    arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int += Int
-     400    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
-     400    ret<Int> = Int  ->  var<Int> = Int
-    1240    Int++
-       1    Int + Int  ->  Int + Int  ->  Int + Int  ->  var<Int> = Int
-       1    _Type cast Int  ->  Int == Int  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+  0.9%       51    var<Int> = Int
+ 16.1%      882    Int < Int
+  7.3%      400    arr<Array>[Int]  ->  arr<Int>[Int]
+  7.3%      400    arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int >= Int
+  7.3%      400    arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int += Int
+  7.3%      400    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
+  7.3%      400    ret<Int> = Int  ->  var<Int> = Int
+ 22.7%     1240    Int++
+  0.0%        1    Int + Int  ->  Int + Int  ->  Int + Int  ->  var<Int> = Int
+  0.0%        1    _Type cast Int  ->  Int == Int  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+
+Total expressions: 7784
+Total expression chains: 5473
+Maximum expression chain depth: 7

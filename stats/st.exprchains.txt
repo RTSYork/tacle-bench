@@ -1,31 +1,35 @@
-      19    var<Int> = Int
-    7087    Int < Int
-    2000    arr<Pointer>[Int]
-    4000    arr<Pointer>[Int]  ->  Float - Float
-    1000    arr<Pointer>[Int]  ->  Float - Float  ->  arr<Pointer>[Int]  ->  Float - Float  ->  Float * Float  ->  Float += Float
-    2000    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
-    2000    ret<Long> = Int  ->  Int + Long  ->  var<Float> = Long
-    7076    Int++
-       9    &Float
-       5    *Pointer
-       2    *Pointer  ->  var<Float> = Int
-    2000    *Pointer  ->  arr<Pointer>[Int]  ->  Float += Float
-       2    *Pointer  ->  *Pointer  ->  Float / Int  ->  var<Float> = Float
-       2    *Pointer  ->  Float / Int  ->  var<Float> = Float
-      12    var<Float> = Float
-    4000    Float * Float  ->  ret<Float> = Float  ->  Float += Float
-      64    Float * Float  ->  Float - Float  ->  Float * Float  ->  Float / Float  ->  var<Float> = Float
-      64    Float * Float  ->  Float - Float  ->  var<Float> = Float
-       4    Float / Int  ->  var<Float> = Float
-       4    Float == Int
-      76    !Int
-      64    Float + Float  ->  var<Float> = Float
-       1    Float + Float  ->  Float + Float  ->  Float + Float  ->  Float + Float  ->  var<Float> = Float
-      64    Float >= Int
-      61    -Float  ->  var<Float> = Float
-       1    ret<Float> = Float
-      64    ret<Float> = Float  ->  Float <= Float
-       2    ret<Float> = Float  ->  var<Float> = Float
-       1    ret<Float> = Float  ->  Float * Float  ->  Float / Float  ->  var<Float> = Float
-       1    Float -= Double
-       1    Float < Double  ->  -Double  ->  Float > Double  ->  LongLong && LongLong  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+  0.1%       19    var<Int> = Int
+ 18.7%     7087    Int < Int
+  5.3%     2000    arr<Pointer>[Int]
+ 10.6%     4000    arr<Pointer>[Int]  ->  Float - Float
+  2.6%     1000    arr<Pointer>[Int]  ->  Float - Float  ->  arr<Pointer>[Int]  ->  Float - Float  ->  Float * Float  ->  Float += Float
+  5.3%     2000    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
+  5.3%     2000    ret<Long> = Int  ->  Int + Long  ->  var<Float> = Long
+ 18.7%     7076    Int++
+  0.0%        9    &Float
+  0.0%        5    *Pointer
+  0.0%        2    *Pointer  ->  var<Float> = Int
+  5.3%     2000    *Pointer  ->  arr<Pointer>[Int]  ->  Float += Float
+  0.0%        2    *Pointer  ->  *Pointer  ->  Float / Int  ->  var<Float> = Float
+  0.0%        2    *Pointer  ->  Float / Int  ->  var<Float> = Float
+  0.0%       12    var<Float> = Float
+ 10.6%     4000    Float * Float  ->  ret<Float> = Float  ->  Float += Float
+  0.2%       64    Float * Float  ->  Float - Float  ->  Float * Float  ->  Float / Float  ->  var<Float> = Float
+  0.2%       64    Float * Float  ->  Float - Float  ->  var<Float> = Float
+  0.0%        4    Float / Int  ->  var<Float> = Float
+  0.0%        4    Float == Int
+  0.2%       76    !Int
+  0.2%       64    Float + Float  ->  var<Float> = Float
+  0.0%        1    Float + Float  ->  Float + Float  ->  Float + Float  ->  Float + Float  ->  var<Float> = Float
+  0.2%       64    Float >= Int
+  0.2%       61    -Float  ->  var<Float> = Float
+  0.0%        1    ret<Float> = Float
+  0.2%       64    ret<Float> = Float  ->  Float <= Float
+  0.0%        2    ret<Float> = Float  ->  var<Float> = Float
+  0.0%        1    ret<Float> = Float  ->  Float * Float  ->  Float / Float  ->  var<Float> = Float
+  0.0%        1    Float -= Double
+  0.0%        1    Float < Double  ->  -Double  ->  Float > Double  ->  LongLong && LongLong  ->  LongLong ? Int  ->  -Int  ->  Int : Int  ->  ret<Int> = Int  ->  ret<Int> = Int
+
+Total expressions: 63292
+Total expression chains: 37845
+Maximum expression chain depth: 9

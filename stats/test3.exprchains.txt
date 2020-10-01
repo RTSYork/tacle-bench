@@ -1,11 +1,15 @@
- 1411127    var<Int> = Int
- 3535867    Int < Int
-    8192    arr<Array>[Int]  ->  arr<Int>[Int]
-  705431    arr<Array>[Int]  ->  arr<Int>[Int]  ->  &Int  ->  var<Pointer> = Pointer
-    8192    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
-    8192    ret<Int> = Int  ->  var<Int> = Int
-       1    ret<Int> = Int  ->  Int - Int  ->  Int != Int  ->  ret<Int> = LongLong
- 2830172    Int++
-33860688    *Pointer  ->  Int += Int
-33860688    Pointer += Int
- 2821724    Int >>= Int
+  1.8%  1411127    var<Int> = Int
+  4.4%  3535867    Int < Int
+  0.0%     8192    arr<Array>[Int]  ->  arr<Int>[Int]
+  0.9%   705431    arr<Array>[Int]  ->  arr<Int>[Int]  ->  &Int  ->  var<Pointer> = Pointer
+  0.0%     8192    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
+  0.0%     8192    ret<Int> = Int  ->  var<Int> = Int
+  0.0%        1    ret<Int> = Int  ->  Int - Int  ->  Int != Int  ->  ret<Int> = LongLong
+  3.5%  2830172    Int++
+ 42.1% 33860688    *Pointer  ->  Int += Int
+ 42.1% 33860688    Pointer += Int
+  3.5%  2821724    Int >>= Int
+
+Total expressions: 115068218
+Total expression chains: 80469350
+Maximum expression chain depth: 4

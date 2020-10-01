@@ -1,38 +1,38 @@
-0.0%        9   prefix expressions of type   &Float
-0.0%        1   prefix expressions of type   -Int
-0.1%       61   prefix expressions of type   -Float
-0.0%        1   prefix expressions of type   -Double
-3.2%     2013   prefix expressions of type   *Pointer
-0.1%       76   prefix expressions of type   !Int
-3.2%     2019   assign expressions of type   var<Int> = Int
-0.0%        2   assign expressions of type   var<Float> = Int
-3.2%     2000   assign expressions of type   var<Float> = Long
-0.4%      277   assign expressions of type   var<Float> = Float
-11.1%     7000    infix expressions of type   Float += Float
-0.0%        1    infix expressions of type   Float -= Double
-0.0%        1    infix expressions of type   LongLong ? Int
-0.0%        1    infix expressions of type   Int : Int
-0.0%        1    infix expressions of type   LongLong && LongLong
-0.0%        4    infix expressions of type   Float == Int
-11.2%     7087    infix expressions of type   Int < Int
-0.0%        1    infix expressions of type   Float < Double
-0.0%        1    infix expressions of type   Float > Double
-0.1%       64    infix expressions of type   Float <= Float
-0.1%       64    infix expressions of type   Float >= Int
-3.2%     2000    infix expressions of type   Int + Int
-3.2%     2000    infix expressions of type   Int + Long
-0.1%       68    infix expressions of type   Float + Float
-9.7%     6128    infix expressions of type   Float - Float
-3.2%     2000    infix expressions of type   Int * Int
-8.2%     5193    infix expressions of type   Float * Float
-0.0%        8    infix expressions of type   Float / Int
-0.1%       65    infix expressions of type   Float / Float
-3.2%     2000    infix expressions of type   Int % Int
-15.8%    10000    array expressions of type   arr<Pointer>[Int]
-11.2%     7076  postfix expressions of type   Int++
-0.0%        2   return expressions of type   ret<Int> = Int
-3.2%     2000   return expressions of type   ret<Long> = Int
-6.4%     4068   return expressions of type   ret<Float> = Float
+  0.0%        9   prefix expressions of type   &Float
+  0.0%        1   prefix expressions of type   -Int
+  0.1%       61   prefix expressions of type   -Float
+  0.0%        1   prefix expressions of type   -Double
+  3.2%     2013   prefix expressions of type   *Pointer
+  0.1%       76   prefix expressions of type   !Int
+  3.2%     2019   assign expressions of type   var<Int> = Int
+  0.0%        2   assign expressions of type   var<Float> = Int
+  3.2%     2000   assign expressions of type   var<Float> = Long
+  0.4%      277   assign expressions of type   var<Float> = Float
+ 11.1%     7000    infix expressions of type   Float += Float
+  0.0%        1    infix expressions of type   Float -= Double
+  0.0%        1    infix expressions of type   LongLong ? Int
+  0.0%        1    infix expressions of type   Int : Int
+  0.0%        1    infix expressions of type   LongLong && LongLong
+  0.0%        4    infix expressions of type   Float == Int
+ 11.2%     7087    infix expressions of type   Int < Int
+  0.0%        1    infix expressions of type   Float < Double
+  0.0%        1    infix expressions of type   Float > Double
+  0.1%       64    infix expressions of type   Float <= Float
+  0.1%       64    infix expressions of type   Float >= Int
+  3.2%     2000    infix expressions of type   Int + Int
+  3.2%     2000    infix expressions of type   Int + Long
+  0.1%       68    infix expressions of type   Float + Float
+  9.7%     6128    infix expressions of type   Float - Float
+  3.2%     2000    infix expressions of type   Int * Int
+  8.2%     5193    infix expressions of type   Float * Float
+  0.0%        8    infix expressions of type   Float / Int
+  0.1%       65    infix expressions of type   Float / Float
+  3.2%     2000    infix expressions of type   Int % Int
+ 15.8%    10000    array expressions of type   arr<Pointer>[Int]
+ 11.2%     7076  postfix expressions of type   Int++
+  0.0%        2   return expressions of type   ret<Int> = Int
+  3.2%     2000   return expressions of type   ret<Long> = Int
+  6.4%     4068   return expressions of type   ret<Float> = Float
 
 Total expressions: 63292
 Maximum expression chain depth: 9

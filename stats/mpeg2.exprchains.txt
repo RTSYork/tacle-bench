@@ -1,75 +1,79 @@
-  924901    var<Int> = Int
-       1    var<Char> = Int
-       1    arr<UnsignedChar>[Int]  ->  &UnsignedChar  ->  _Type cast Pointer  ->  var<Pointer> = Pointer
-       1    var<UnsignedInt> = Int
-     352    var<UnsignedInt> = Int  ->  var<UnsignedInt> = UnsignedInt
-   90113    sizeofArray  ->  UnsignedInt < LongLong
-     704    *Pointer
-   90112    *Pointer  ->  UnsignedChar ^= Char
-   11264    *Pointer  ->  var<Int> = Int
-     704    *Pointer  ->  Int + Int  ->  var<Int> = Int
-   90112    ++UnsignedInt
-   90112    ++Pointer
- 5868238    Int < Int
-     352    Int < Int  ->  Int < Int  ->  LongLong && LongLong
-     352    Int < Int  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong
-     352    Int < Int  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong
-     352    Int < Int  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong
-    1408    Int == Int
-    4928    Pointer + Int
-  248320    Pointer + Int  ->  Int * Int  ->  Pointer + Int
-     352    Pointer + Int  ->  Int * Int  ->  Pointer + Int  ->  var<Pointer> = Pointer
-   23552    Pointer + Int  ->  var<Pointer> = Pointer
-     352    Pointer++
-   90112    Pointer++  ->  *Pointer  ->  var<UnsignedInt> = UnsignedChar
-  180224    Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  UnsignedChar + UnsignedChar  ->  Pointer++  ->  *Pointer  ->  Int + UnsignedChar  ->  Pointer++  ->  *Pointer  ->  Int + UnsignedChar  ->  Int + Int  ->  _Type cast Int  ->  UnsignedInt >> Int  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  UnsignedChar + UnsignedChar  ->  Pointer++  ->  *Pointer  ->  Int + UnsignedChar  ->  Pointer++  ->  *Pointer  ->  Int + UnsignedChar  ->  Int + Int  ->  _Type cast Int  ->  UnsignedInt >> Int  ->  LongLong + LongLong  ->  LongLong + Int  ->  LongLong >> Int  ->  Pointer++  ->  *Pointer  ->  LongLong - UnsignedChar  ->  var<Int> = LongLong
-   90112    UnsignedInt += UnsignedInt
-   90112    UnsignedInt * UnsignedInt  ->  UnsignedInt += UnsignedInt
-     352    UnsignedInt * UnsignedInt  ->  UnsignedInt / Int  ->  UnsignedInt - UnsignedInt  ->  ret<Int> = UnsignedInt  ->  var<Int> = Int
- 5806723    Int++
-  107008    Int - Int  ->  Pointer += Int
-   42620    Int - Int  ->  var<Int> = Int
-    7040    Int - Int  ->  Int > Int
-    7040    Int - Int  ->  Int << Int  ->  Int < LongLong  ->  Int + LongLong  ->  var<Int> = LongLong
-   12672    &Int
-    7040    Int + Int  ->  var<Int> = Int
-  742508    var<Pointer> = Pointer
-  278582    !Int  ->  !Int  ->  LongLong && LongLong
-   26067    !Int  ->  Int && LongLong
-   19328    !Int  ->  LongLong && Int
-   86400    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  UnsignedChar - UnsignedChar  ->  var<Int> = Int
-10250544    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  UnsignedChar - UnsignedChar  ->  var<Int> = Int  ->  Int < Int
- 1020160    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  UnsignedChar + UnsignedChar  ->  Int + Int  ->  _Type cast Int  ->  UnsignedInt >> Int  ->  arr<Pointer>[Int]  ->  LongLong - UnsignedChar  ->  var<Int> = LongLong
- 1034624    arr<Pointer>[Int]  ->  Int + Int  ->  arr<Pointer>[Int]  ->  UnsignedChar + UnsignedChar  ->  Int + Int  ->  _Type cast Int  ->  UnsignedInt >> Int  ->  arr<Pointer>[Int]  ->  LongLong - UnsignedChar  ->  var<Int> = LongLong
- 1945344    arr<Pointer>[Int]  ->  Int + Int  ->  arr<Pointer>[Int]  ->  UnsignedChar + UnsignedChar  ->  arr<Pointer>[Int]  ->  Int + UnsignedChar  ->  Int + Int  ->  arr<Pointer>[Int]  ->  Int + UnsignedChar  ->  Int + Int  ->  _Type cast Int  ->  UnsignedInt >> Int  ->  arr<Pointer>[Int]  ->  LongLong - UnsignedChar  ->  var<Int> = LongLong
-12778713    Int += Int
- 4817299    Int >= Int
-  478720    Int >= Int  ->  Int <= Int  ->  LongLong && LongLong  ->  Int >= Int  ->  LongLong && LongLong  ->  Int <= Int  ->  LongLong && LongLong
- 1304608    Pointer += Int
-  282454    ret<Int> = Int  ->  var<Int> = Int
-     704    ret<Int> = Int  ->  Int += Int
-       1    ret<Int> = Int  ->  -Int  ->  Int - Int  ->  Int != Int  ->  ret<Int> = LongLong
-     704    Int > Int  ->  LongLong ? Int  ->  Void : Int  ->  var<Int> = Int
-    2816    Int > Int  ->  LongLong ? Int  ->  Int : Int  ->  var<Int> = Int
-    7040    Int > Int  ->  Int - LongLong  ->  var<Int> = LongLong
-     352    Int > Int  ->  Int * Int  ->  Int >= Int  ->  LongLong && LongLong
-   75888    Int <= Int
- 1573440    Int * Int  ->  Int < Int
-    2112    Int * Int  ->  Pointer + Int  ->  var<Pointer> = Pointer
-   90112    Int * Int  ->  Int += Int
- 4529286    -Int  ->  var<Int> = Int
-  239360    Int--
-    7040    Int <<= Int
-    8448    Int >> Int
-   30262    Int >> Int  ->  Pointer + LongLong  ->  Int >> Int  ->  Int * LongLong  ->  Pointer + LongLong
-     704    Int >> Int  ->  Pointer + LongLong  ->  Int ? Int  ->  Void : Int  ->  Pointer + Int  ->  Int << Int  ->  Int >> Int  ->  LongLong * LongLong  ->  Pointer + LongLong
-     704    Int >> Int  ->  Pointer + LongLong  ->  Int ? Int  ->  Int : Int  ->  Pointer + Int  ->  Int << Int  ->  Int >> Int  ->  LongLong * LongLong  ->  Pointer + LongLong
-   64748    Int & Int
- 1648839    Int -= Int
-    4224    Int << Int
-    7040    arr<Array>[Int]  ->  arr<Int>[Int]  ->  var<Int> = Int
-    1408    arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int << Int  ->  Int - LongLong  ->  var<Int> = LongLong
-    1408    arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int << Int  ->  Int << Int  ->  LongLong - LongLong  ->  var<Int> = LongLong
-     352    Int ? Int  ->  Void : Int  ->  Pointer + Int  ->  Int >> Int  ->  Pointer + LongLong  ->  Int << Int  ->  Int >> Int  ->  LongLong * LongLong  ->  Pointer + LongLong
-     352    Int ? Int  ->  Int : Int  ->  Pointer + Int  ->  Int >> Int  ->  Pointer + LongLong  ->  Int << Int  ->  Int >> Int  ->  LongLong * LongLong  ->  Pointer + LongLong
-    2816    arr<Struct>[Int]  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int += Int
+  1.6%   924901    var<Int> = Int
+  0.0%        1    var<Char> = Int
+  0.0%        1    arr<UnsignedChar>[Int]  ->  &UnsignedChar  ->  _Type cast Pointer  ->  var<Pointer> = Pointer
+  0.0%        1    var<UnsignedInt> = Int
+  0.0%      352    var<UnsignedInt> = Int  ->  var<UnsignedInt> = UnsignedInt
+  0.2%    90113    sizeofArray  ->  UnsignedInt < LongLong
+  0.0%      704    *Pointer
+  0.2%    90112    *Pointer  ->  UnsignedChar ^= Char
+  0.0%    11264    *Pointer  ->  var<Int> = Int
+  0.0%      704    *Pointer  ->  Int + Int  ->  var<Int> = Int
+  0.2%    90112    ++UnsignedInt
+  0.2%    90112    ++Pointer
+  9.9%  5868238    Int < Int
+  0.0%      352    Int < Int  ->  Int < Int  ->  LongLong && LongLong
+  0.0%      352    Int < Int  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong
+  0.0%      352    Int < Int  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong
+  0.0%      352    Int < Int  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong  ->  Int < Int  ->  LongLong && LongLong
+  0.0%     1408    Int == Int
+  0.0%     4928    Pointer + Int
+  0.4%   248320    Pointer + Int  ->  Int * Int  ->  Pointer + Int
+  0.0%      352    Pointer + Int  ->  Int * Int  ->  Pointer + Int  ->  var<Pointer> = Pointer
+  0.0%    23552    Pointer + Int  ->  var<Pointer> = Pointer
+  0.0%      352    Pointer++
+  0.2%    90112    Pointer++  ->  *Pointer  ->  var<UnsignedInt> = UnsignedChar
+  0.3%   180224    Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  UnsignedChar + UnsignedChar  ->  Pointer++  ->  *Pointer  ->  Int + UnsignedChar  ->  Pointer++  ->  *Pointer  ->  Int + UnsignedChar  ->  Int + Int  ->  _Type cast Int  ->  UnsignedInt >> Int  ->  Pointer++  ->  *Pointer  ->  Pointer++  ->  *Pointer  ->  UnsignedChar + UnsignedChar  ->  Pointer++  ->  *Pointer  ->  Int + UnsignedChar  ->  Pointer++  ->  *Pointer  ->  Int + UnsignedChar  ->  Int + Int  ->  _Type cast Int  ->  UnsignedInt >> Int  ->  LongLong + LongLong  ->  LongLong + Int  ->  LongLong >> Int  ->  Pointer++  ->  *Pointer  ->  LongLong - UnsignedChar  ->  var<Int> = LongLong
+  0.2%    90112    UnsignedInt += UnsignedInt
+  0.2%    90112    UnsignedInt * UnsignedInt  ->  UnsignedInt += UnsignedInt
+  0.0%      352    UnsignedInt * UnsignedInt  ->  UnsignedInt / Int  ->  UnsignedInt - UnsignedInt  ->  ret<Int> = UnsignedInt  ->  var<Int> = Int
+  9.8%  5806723    Int++
+  0.2%   107008    Int - Int  ->  Pointer += Int
+  0.1%    42620    Int - Int  ->  var<Int> = Int
+  0.0%     7040    Int - Int  ->  Int > Int
+  0.0%     7040    Int - Int  ->  Int << Int  ->  Int < LongLong  ->  Int + LongLong  ->  var<Int> = LongLong
+  0.0%    12672    &Int
+  0.0%     7040    Int + Int  ->  var<Int> = Int
+  1.3%   742508    var<Pointer> = Pointer
+  0.5%   278582    !Int  ->  !Int  ->  LongLong && LongLong
+  0.0%    26067    !Int  ->  Int && LongLong
+  0.0%    19328    !Int  ->  LongLong && Int
+  0.1%    86400    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  UnsignedChar - UnsignedChar  ->  var<Int> = Int
+ 17.3% 10250544    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  UnsignedChar - UnsignedChar  ->  var<Int> = Int  ->  Int < Int
+  1.7%  1020160    arr<Pointer>[Int]  ->  arr<Pointer>[Int]  ->  UnsignedChar + UnsignedChar  ->  Int + Int  ->  _Type cast Int  ->  UnsignedInt >> Int  ->  arr<Pointer>[Int]  ->  LongLong - UnsignedChar  ->  var<Int> = LongLong
+  1.7%  1034624    arr<Pointer>[Int]  ->  Int + Int  ->  arr<Pointer>[Int]  ->  UnsignedChar + UnsignedChar  ->  Int + Int  ->  _Type cast Int  ->  UnsignedInt >> Int  ->  arr<Pointer>[Int]  ->  LongLong - UnsignedChar  ->  var<Int> = LongLong
+  3.3%  1945344    arr<Pointer>[Int]  ->  Int + Int  ->  arr<Pointer>[Int]  ->  UnsignedChar + UnsignedChar  ->  arr<Pointer>[Int]  ->  Int + UnsignedChar  ->  Int + Int  ->  arr<Pointer>[Int]  ->  Int + UnsignedChar  ->  Int + Int  ->  _Type cast Int  ->  UnsignedInt >> Int  ->  arr<Pointer>[Int]  ->  LongLong - UnsignedChar  ->  var<Int> = LongLong
+ 21.5% 12778713    Int += Int
+  8.1%  4817299    Int >= Int
+  0.8%   478720    Int >= Int  ->  Int <= Int  ->  LongLong && LongLong  ->  Int >= Int  ->  LongLong && LongLong  ->  Int <= Int  ->  LongLong && LongLong
+  2.2%  1304608    Pointer += Int
+  0.5%   282454    ret<Int> = Int  ->  var<Int> = Int
+  0.0%      704    ret<Int> = Int  ->  Int += Int
+  0.0%        1    ret<Int> = Int  ->  -Int  ->  Int - Int  ->  Int != Int  ->  ret<Int> = LongLong
+  0.0%      704    Int > Int  ->  LongLong ? Int  ->  Void : Int  ->  var<Int> = Int
+  0.0%     2816    Int > Int  ->  LongLong ? Int  ->  Int : Int  ->  var<Int> = Int
+  0.0%     7040    Int > Int  ->  Int - LongLong  ->  var<Int> = LongLong
+  0.0%      352    Int > Int  ->  Int * Int  ->  Int >= Int  ->  LongLong && LongLong
+  0.1%    75888    Int <= Int
+  2.7%  1573440    Int * Int  ->  Int < Int
+  0.0%     2112    Int * Int  ->  Pointer + Int  ->  var<Pointer> = Pointer
+  0.2%    90112    Int * Int  ->  Int += Int
+  7.6%  4529286    -Int  ->  var<Int> = Int
+  0.4%   239360    Int--
+  0.0%     7040    Int <<= Int
+  0.0%     8448    Int >> Int
+  0.1%    30262    Int >> Int  ->  Pointer + LongLong  ->  Int >> Int  ->  Int * LongLong  ->  Pointer + LongLong
+  0.0%      704    Int >> Int  ->  Pointer + LongLong  ->  Int ? Int  ->  Void : Int  ->  Pointer + Int  ->  Int << Int  ->  Int >> Int  ->  LongLong * LongLong  ->  Pointer + LongLong
+  0.0%      704    Int >> Int  ->  Pointer + LongLong  ->  Int ? Int  ->  Int : Int  ->  Pointer + Int  ->  Int << Int  ->  Int >> Int  ->  LongLong * LongLong  ->  Pointer + LongLong
+  0.1%    64748    Int & Int
+  2.8%  1648839    Int -= Int
+  0.0%     4224    Int << Int
+  0.0%     7040    arr<Array>[Int]  ->  arr<Int>[Int]  ->  var<Int> = Int
+  0.0%     1408    arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int << Int  ->  Int - LongLong  ->  var<Int> = LongLong
+  0.0%     1408    arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int << Int  ->  Int << Int  ->  LongLong - LongLong  ->  var<Int> = LongLong
+  0.0%      352    Int ? Int  ->  Void : Int  ->  Pointer + Int  ->  Int >> Int  ->  Pointer + LongLong  ->  Int << Int  ->  Int >> Int  ->  LongLong * LongLong  ->  Pointer + LongLong
+  0.0%      352    Int ? Int  ->  Int : Int  ->  Pointer + Int  ->  Int >> Int  ->  Pointer + LongLong  ->  Int << Int  ->  Int >> Int  ->  LongLong * LongLong  ->  Pointer + LongLong
+  0.0%     2816    arr<Struct>[Int]  ->  arr<Array>[Int]  ->  arr<Array>[Int]  ->  arr<Int>[Int]  ->  Int += Int
+
+Total expressions: 160694932
+Total expression chains: 59366618
+Maximum expression chain depth: 35

@@ -1,10 +1,14 @@
-       2    var<Int> = Int
-     320    Int == Int
-     176    Int - Int
-      34    ret<Int> = Int
-      34    ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int
-      13    ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int
-       5    ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int
-       2    ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int
-       1    ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  var<Int> = Int
-       1    -Int  ->  Int + Int  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+  0.3%        2    var<Int> = Int
+ 46.8%      320    Int == Int
+ 25.7%      176    Int - Int
+  5.0%       34    ret<Int> = Int
+  5.0%       34    ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int
+  1.9%       13    ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int
+  0.7%        5    ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int
+  0.3%        2    ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int
+  0.1%        1    ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  Int + Int  ->  ret<Int> = Int  ->  var<Int> = Int
+  0.1%        1    -Int  ->  Int + Int  ->  Int != Int  ->  ret<Int> = LongLong  ->  ret<Int> = Int
+
+Total expressions: 769
+Total expression chains: 684
+Maximum expression chain depth: 12

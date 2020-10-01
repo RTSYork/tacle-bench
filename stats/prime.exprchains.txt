@@ -1,14 +1,18 @@
-       1    var<Int> = Int
-       2    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
-       2    ret<UnsignedInt> = Int  ->  var<UnsignedInt> = UnsignedInt
-       2    &UnsignedInt
-       2    *Pointer  ->  var<UnsignedInt> = UnsignedInt
-       1    *Pointer  ->  *Pointer  ->  var<UnsignedInt> = UnsignedInt
-      16    UnsignedInt % UnsignedInt  ->  UnsignedInt == Int  ->  ret<UnsignedChar> = LongLong
-       2    UnsignedInt % UnsignedInt  ->  UnsignedInt == Int  ->  ret<UnsignedChar> = LongLong  ->  ret<UnsignedChar> = UnsignedChar
-       2    var<UnsignedInt> = Int
-      16    UnsignedInt * UnsignedInt  ->  UnsignedInt <= UnsignedInt
-      14    UnsignedInt += Int
-       1    ret<UnsignedChar> = Int  ->  !UnsignedChar
-       1    ret<UnsignedChar> = Int  ->  !UnsignedChar  ->  LongLong && LongLong  ->  !LongLong  ->  var<Int> = LongLong
-       1    ret<Int> = Int  ->  ret<Int> = Int
+  0.7%        1    var<Int> = Int
+  1.5%        2    Int * Int  ->  Int + Int  ->  Int % Int  ->  var<Int> = Int
+  1.5%        2    ret<UnsignedInt> = Int  ->  var<UnsignedInt> = UnsignedInt
+  1.5%        2    &UnsignedInt
+  1.5%        2    *Pointer  ->  var<UnsignedInt> = UnsignedInt
+  0.7%        1    *Pointer  ->  *Pointer  ->  var<UnsignedInt> = UnsignedInt
+ 11.7%       16    UnsignedInt % UnsignedInt  ->  UnsignedInt == Int  ->  ret<UnsignedChar> = LongLong
+  1.5%        2    UnsignedInt % UnsignedInt  ->  UnsignedInt == Int  ->  ret<UnsignedChar> = LongLong  ->  ret<UnsignedChar> = UnsignedChar
+  1.5%        2    var<UnsignedInt> = Int
+ 11.7%       16    UnsignedInt * UnsignedInt  ->  UnsignedInt <= UnsignedInt
+ 10.2%       14    UnsignedInt += Int
+  0.7%        1    ret<UnsignedChar> = Int  ->  !UnsignedChar
+  0.7%        1    ret<UnsignedChar> = Int  ->  !UnsignedChar  ->  LongLong && LongLong  ->  !LongLong  ->  var<Int> = LongLong
+  0.7%        1    ret<Int> = Int  ->  ret<Int> = Int
+
+Total expressions: 135
+Total expression chains: 137
+Maximum expression chain depth: 5
