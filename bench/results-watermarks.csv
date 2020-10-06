@@ -27,13 +27,13 @@ kernel/rad2deg,2,1,1,3
 kernel/recursion,12,0,1,12
 kernel/st,5,1,3,9
 sequential/adpcm_dec,5,2,2,9
-sequential/adpcm_enc,5,1,2,9
+sequential/adpcm_enc,5,2,2,9
 sequential/dijkstra,4,2,4,6
 sequential/epic,6,5,1,11
 sequential/g723_enc,6,3,5,14
 sequential/h264_dec,3,4,5,30
 sequential/huff_dec,5,2,4,8
-sequential/mpeg2,7,4294967295,12,35
+sequential/mpeg2,7,6,12,35
 sequential/ndes,5,2,2,11
 sequential/petrinet,2,1,0,12
 sequential/statemate,4,1,1,4
