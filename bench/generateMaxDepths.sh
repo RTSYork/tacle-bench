@@ -3,7 +3,7 @@
 COMMAND=~/picoc/cmake-build-debug/picoc
 OPTIONS="-d6"
 
-printf "Benchmark,Function call depth,Loop depth,Conditional depth,Expression chain depth\n"
+printf "Benchmark,Function call depth,Loop depth,Conditional depth,Expression chain depth,Stack frames depth\n"
 
 for dir in app/ kernel/ sequential/ test/; do
 
