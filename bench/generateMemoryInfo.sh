@@ -3,7 +3,7 @@
 COMMAND=~/picoc/cmake-build-debug/picoc
 OPTIONS="-d0xd"
 
-printf "Benchmark,Stack frames depth,Stack frame allocation (bytes),Cumulative stack allocation (bytes),Stack frame lvalues (bytes),Cumulative stack lvalues (bytes)\n"
+printf "Benchmark,Stack frames depth,Stack frame size (bytes),Cumulative stack size (bytes),Global variables,Global variables size (bytes)\n"
 
 for dir in app/ kernel/ sequential/ test/; do
 
