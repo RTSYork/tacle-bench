@@ -1,0 +1,429 @@
+Expression hash,Expression string,Total execution count,Benchmark usage
+70400,&Int,764029,8
+990720,*Pointer,35952498,22
+73984,++Int,421449,8
+401664,++UnsignedInt,108652,7
+991488,++Pointer,108342,6
+74240,--Int,18024,2
+1058048,sizeofArray,108357,6
+16843265,var<Int> = Int,18032254,39
+50397697,var<Char> = Int,2795,8
+100729345,var<UnsignedInt> = Int,5795,14
+117506561,var<UnsignedShort> = Int,3003,1
+17105409,var<Int> = LongLong,4260780,12
+17236481,var<Int> = UnsignedShort,1001,1
+252641793,var<Pointer> = Pointer,3367941,18
+16843521,Int += Int,47006850,19
+16844801,Int <<= Int,25241,3
+117508353,UnsignedShort >>= Int,30030,1
+16845569,Int |= Int,18018,1
+134417409,UnsignedChar ^= Char,108342,6
+16846081,Int ? Int,20642,3
+69121,Void : Int,44891,8
+16846337,Int : Int,40037,17
+16847617,Int & Int,83626,8
+117510913,UnsignedShort & Int,30030,1
+16847873,Int == Int,1542090,21
+16848129,Int != Int,1538012,22
+16848385,Int < Int,23507397,35
+100996609,UnsignedInt < LongLong,108677,7
+16848641,Int > Int,1567885,22
+16849153,Int >= Int,6117305,19
+16849665,Int >> Int,119720,10
+16849921,Int + Int,11009356,26
+16850177,Int - Int,783802,27
+353314305,_Type cast Pointer,2133,9
+16852737,arr<Int>[Int],818341,15
+73986,Int++,10569619,33
+16843267,ret<Int> = Int,341108,41
+17105411,ret<Int> = LongLong,602,20
+529152,&UnsignedChar,80135,2
+987904,&Pointer,18,1
+1118976,&Struct,69224,7
+72960,-Int,4594782,24
+336640,!LongLong,5951,3
+533248,!UnsignedChar,15634,2
+1385728,sizeof_Type,368,2
+134283777,var<UnsignedChar> = Int,8845,3
+67371521,var<Long> = Long,7357,3
+134545921,var<UnsignedChar> = LongLong,10133,1
+134611457,var<UnsignedChar> = UnsignedInt,10649,2
+134742529,var<UnsignedChar> = UnsignedChar,100598,2
+83954945,LongLong ? Int,67599,16
+84217601,LongLong || LongLong,1505847,6
+84217857,LongLong && LongLong,1760609,11
+134549505,UnsignedChar && LongLong,5862,1
+84414465,LongLong && UnsignedChar,5862,1
+134746113,UnsignedChar && UnsignedChar,2931,1
+134288385,UnsignedChar == Int,1875,1
+134616065,UnsignedChar == UnsignedInt,11520,1
+134747137,UnsignedChar == UnsignedChar,1825,1
+84219137,LongLong != LongLong,3908,1
+134616321,UnsignedChar != UnsignedInt,17586,1
+67376641,Long < Long,17586,1
+134616577,UnsignedChar < UnsignedInt,8392,1
+134289153,UnsignedChar > Int,363,1
+134289665,UnsignedChar >= Int,2600,1
+67377409,Long >= Long,35184,2
+100735489,UnsignedInt << Int,3968,2
+17177601,Int + UnsignedInt,53113,2
+84417537,LongLong + UnsignedChar,3908,1
+352396801,_Type cast Int,4387222,11
+352658945,_Type cast LongLong,4240,6
+352724481,_Type cast UnsignedInt,60752,4
+352855553,_Type cast UnsignedChar,10982,2
+134293249,arr<UnsignedChar>[Int],1531560,5
+251733761,arr<Pointer>[Int],36978270,13
+134620929,arr<UnsignedChar>[UnsignedInt],31721,2
+270594,Long++,10366,1
+532738,UnsignedChar++,3428,1
+991490,Pointer++,1761406,14
+598530,UnsignedLong--,1208,1
+252641795,ret<Pointer> = Pointer,49,2
+17039873,var<Int> = Long,158,2
+16848897,Int <= Int,1179383,12
+16850433,Int * Int,2053138,22
+16850945,Int % Int,13840,11
+285288193,arr<Struct>[Int],3046848,5
+67174915,ret<Long> = Int,2030,2
+267008,&Long,10,1
+594688,&UnsignedLong,1057,3
+151060993,var<UnsignedLong> = Int,45,5
+16974337,var<Int> = Char,258,2
+50528769,var<Char> = Char,14265,6
+151257601,var<UnsignedLong> = Long,3048,3
+67437057,var<Long> = LongLong,60,2
+67699201,var<Long> = UnsignedLong,8,1
+151585281,var<UnsignedLong> = UnsignedLong,2305,4
+151061249,UnsignedLong += Int,160,1
+16974593,Int += Char,30,1
+67176705,Long >>= Int,310,1
+151062785,UnsignedLong >>= Int,248,2
+67440641,Long && LongLong,320,1
+50402049,Char & Int,40,1
+67375873,Long & Long,471,1
+151261953,UnsignedLong & Long,264,2
+67703553,Long & UnsignedLong,80,1
+151065857,UnsignedLong != Int,7,3
+17044737,Int != Long,61,1
+67441921,Long != LongLong,120,1
+100734465,UnsignedInt < Int,8856,3
+101062145,UnsignedInt < UnsignedInt,142,2
+67180545,Long <= Int,8,1
+67181313,Long >> Int,849,3
+151067393,UnsignedLong >> Int,86,2
+151067649,UnsignedLong + Int,248,3
+16980993,Int + Char,336,2
+50535425,Char + Char,21,2
+84155393,LongLong + Long,50,1
+67181825,Long - Int,61,1
+67378433,Long - Long,8,1
+83959297,LongLong * Int,420,2
+17047041,Int * Long,16,1
+67182337,Long / Int,8,1
+67182593,Long % Int,8,1
+352593409,_Type cast Long,326,2
+352921089,_Type cast UnsignedLong,1946,3
+50407169,arr<Char>[Int],8544,6
+50865921,arr<Char>[UnsignedChar],80,1
+401666,UnsignedInt++,9522,3
+151257603,ret<UnsignedLong> = Long,960,2
+16844289,Int /= Int,75,2
+17110017,Int == LongLong,240,1
+16850689,Int / Int,16344,8
+17108993,Int && LongLong,26166,2
+725760,&Float,1295,6
+184615425,var<Float> = Int,16154,9
+185270785,var<Float> = Float,105563,13
+185271041,Float += Float,439028,11
+185271297,Float -= Float,1606,3
+185275649,Float != Float,1,1
+185277441,Float + Float,27081,7
+185277953,Float * Float,468121,11
+184624897,arr<Float>[Int],799458,9
+991746,Pointer--,202,3
+728320,-Float,3228,5
+17170945,var<Int> = UnsignedInt,55593,3
+101057025,var<UnsignedInt> = UnsignedInt,9277,6
+17498625,var<Int> = Float,4,4
+185336321,var<Float> = Double,462,5
+16845313,Int &= Int,716,2
+100733697,UnsignedInt & Int,2507,4
+17175297,Int & UnsignedInt,5080,2
+100734209,UnsignedInt != Int,31782,3
+184620545,Float < Int,489,3
+185277697,Float - Float,33219,6
+353052161,_Type cast Float,3127,5
+185270787,ret<Float> = Float,10905,5
+268510977,arr<Array>[Int],2490242,9
+336896,~LongLong,793,1
+100991489,var<UnsignedInt> = LongLong,1773,2
+184615681,Float += Int,5,1
+17105665,Int += LongLong,2793,2
+17171201,Int += UnsignedInt,15638,3
+16843777,Int -= Int,1671843,5
+184615937,Float -= Int,900,1
+184616193,Float *= Int,4889,2
+16845057,Int >>= Int,2823944,3
+100731137,UnsignedInt >>= Int,30021,2
+16847105,Int | Int,2783,1
+83955969,LongLong | Int,3147,2
+17109761,Int & LongLong,793,1
+83956737,LongLong == Int,1586,1
+101061633,UnsignedInt == UnsignedInt,793,1
+185275393,Float == Float,1586,1
+185275905,Float < Float,2201,2
+184620801,Float > Int,1080,1
+185276161,Float > Float,1837,2
+83957761,LongLong <= Int,793,1
+184621057,Float <= Int,879,1
+185276673,Float >= Float,1197,1
+16849409,Int << Int,21812,8
+100735745,UnsignedInt >> Int,4363068,4
+83958785,LongLong + Int,214694,7
+17112065,Int + LongLong,8457,4
+84220929,LongLong + LongLong,222411,8
+83959041,LongLong - Int,6867,3
+17506049,Int / Float,793,1
+185278209,Float / Float,8933,4
+185336577,Float += Double,721,2
+185276417,Float <= Float,787,3
+184622849,Float / Int,729,3
+151716353,var<UnsignedLong> = Float,1024,1
+185271553,Float *= Float,13312,1
+17503745,Int < Float,14336,1
+184622081,Float + Int,2048,1
+251730945,Pointer + Int,549357,3
+184622337,Float - Int,1024,1
+251731201,Pointer - Int,25608,4
+84218625,LongLong & LongLong,254552,2
+74242,Int--,262131,12
+729346,Float++,154,1
+100738817,arr<UnsignedInt>[Int],1172,2
+992512,sizeofPointer,1001,1
+151323137,var<UnsignedLong> = LongLong,66499,2
+151454465,UnsignedLong += UnsignedShort,1001,1
+151585793,UnsignedLong -= UnsignedLong,10840,1
+151062529,UnsignedLong <<= Int,64095,2
+151327489,UnsignedLong & LongLong,32032,1
+151065601,UnsignedLong == Int,1,1
+151591169,UnsignedLong >= UnsignedLong,32032,1
+67181057,Long << Int,32032,1
+151067137,UnsignedLong << Int,66512,2
+167844609,UnsignedLongLong >> Int,32088,2
+598274,UnsignedLong++,10840,1
+252707329,var<Pointer> = Array,44,4
+251724545,Pointer += Int,35272324,4
+83958529,LongLong >> Int,181122,4
+793856,-Double,153,5
+202113537,var<Double> = Double,785,3
+202048257,Double += Float,201,1
+151065345,UnsignedLong & Int,246,1
+202118913,Double > Double,130,3
+202120193,Double + Double,325,1
+17505537,Int - Float,201,1
+202120449,Double - Double,246,1
+151068161,UnsignedLong * Int,246,1
+151789057,UnsignedLong * Double,246,1
+202120705,Double * Double,570,3
+201400065,Double / Int,201,1
+17571585,Int / Double,101,1
+353117697,_Type cast Double,2,2
+201402113,arr<Double>[Int],788,3
+202113539,ret<Double> = Double,215,3
+201392641,var<Double> = Int,46,2
+202113793,Double += Double,78,2
+202114049,Double -= Double,96,2
+201393409,Double *= Int,6,1
+202118657,Double < Double,1,1
+201398273,Double <= Int,1,1
+202119169,Double <= Double,9,2
+201398529,Double >= Int,14,2
+202120961,Double / Double,29,2
+201392897,Double += Int,9,1
+202114305,Double *= Double,3,1
+202114561,Double /= Double,9,1
+202118401,Double != Double,6,1
+201399809,Double * Int,1,1
+398080,&UnsignedInt,2,1
+100729601,UnsignedInt += Int,270,2
+100733953,UnsignedInt == Int,3474,2
+101062657,UnsignedInt <= UnsignedInt,16,1
+101064193,UnsignedInt * UnsignedInt,90480,2
+101064705,UnsignedInt % UnsignedInt,18,1
+100729347,ret<UnsignedInt> = Int,2,1
+134283779,ret<UnsignedChar> = Int,2,1
+134545923,ret<UnsignedChar> = LongLong,2917,2
+134742531,ret<UnsignedChar> = UnsignedChar,2,1
+184622593,Float * Int,360,1
+17505793,Int * Float,361,1
+74496,!Int,602968,4
+184812033,var<Float> = Long,2000,1
+185336833,Float -= Double,1,1
+184620033,Float == Int,4,1
+185341441,Float < Double,1,1
+185341697,Float > Double,1,1
+184621313,Float >= Int,64,1
+17046529,Int + Long,2000,1
+269568,-Long,260,2
+67174913,var<Long> = Int,10,3
+67371777,Long += Long,68,1
+83956481,LongLong & Int,7771,4
+67180801,Long >= Int,6,1
+67377921,Long >> Long,62,2
+67181569,Long + Int,4,1
+67443713,Long + LongLong,4,1
+67182081,Long * Int,144,2
+67378689,Long * Long,24,1
+17114881,arr<Int>[LongLong],8,2
+335104,-LongLong,16204,2
+83952129,var<LongLong> = Int,10,1
+84214273,var<LongLong> = LongLong,65,1
+84214529,LongLong += LongLong,68,1
+17109249,Int | LongLong,2,1
+84219905,LongLong <= LongLong,31,1
+83958017,LongLong >= Int,16212,2
+84154625,LongLong >= Long,12,1
+84155137,LongLong >> Long,47,1
+84221185,LongLong - LongLong,1410,2
+84155905,LongLong * Long,8,1
+17112577,Int * LongLong,30293,2
+67444225,Long * LongLong,10,1
+84221441,LongLong * LongLong,2120,2
+992000,!Pointer,14975,1
+251724289,var<Pointer> = Int,15129,2
+17302017,var<Int> = UnsignedChar,1497500,1
+134286337,UnsignedChar ^= Int,10256,2
+17498881,Int += Float,64,1
+84217089,LongLong ? LongLong,20796,2
+331265,Void : LongLong,11152,2
+84217345,LongLong : LongLong,11436,2
+17112321,Int - LongLong,24648,2
+251995905,arr<Pointer>[LongLong],8100,1
+135936,&Short,1,1
+138496,-Short,6656,1
+33620481,var<Short> = Int,9023,2
+33686017,var<Short> = Short,2612,1
+33882625,var<Short> = LongLong,12288,1
+33948161,var<Short> = UnsignedInt,256,1
+101188097,var<UnsignedInt> = UnsignedChar,90208,2
+33620737,Short += Int,1990,1
+33882881,Short += LongLong,817,1
+67437313,Long += LongLong,256,1
+33620993,Short -= Int,231,1
+33883137,Short -= LongLong,1792,1
+100993793,UnsignedInt |= LongLong,256,1
+33688833,Short ? Short,256,1
+17108225,Int ? LongLong,12,1
+33623553,Short : Int,1,1
+134657,Void : Short,500,1
+16911873,Int : Short,2060,1
+17108481,Int : LongLong,12,1
+16847361,Int ^ Int,2048,1
+16912897,Int ^ Short,1536,1
+33690113,Short ^ Short,512,1
+33624833,Short & Int,768,1
+134288129,UnsignedChar & Int,512,1
+33625089,Short == Int,2688,2
+50402305,Char == Int,1024,1
+33625601,Short < Int,1536,1
+16913921,Int < Short,12890,1
+33625857,Short > Int,561,1
+33691393,Short > Short,256,1
+33626113,Short <= Int,256,1
+33691649,Short <= Short,48,1
+33626369,Short >= Int,4574,1
+33626625,Short << Int,4352,1
+134289921,UnsignedChar << Int,256,1
+16914945,Int << Short,256,1
+33692161,Short << Short,2048,1
+33626881,Short >> Int,7484,1
+33692417,Short >> Short,2048,1
+84024065,LongLong >> Short,1024,1
+33627137,Short + Int,256,1
+16915457,Int + Short,256,1
+33692673,Short + Short,512,1
+84024321,LongLong + Short,256,1
+33889281,Short + LongLong,2560,1
+33627393,Short - Int,523,1
+16915713,Int - Short,1536,1
+84024577,LongLong - Short,256,1
+33889537,Short - LongLong,512,1
+33627649,Short * Int,2048,1
+33629953,arr<Short>[Int],18245,2
+33695489,arr<Short>[Short],768,1
+16908803,ret<Int> = Short,745,1
+1053440,&Array,3,1
+16915969,Int * Short,512,1
+134284033,UnsignedChar += Int,60,1
+100729857,UnsignedInt -= Int,15,1
+101057537,UnsignedInt -= UnsignedInt,34,1
+134611969,UnsignedChar -= UnsignedInt,88,1
+134550273,UnsignedChar & LongLong,252,1
+251728897,Pointer == Int,252,1
+50533633,Char != Char,1000,2
+134288897,UnsignedChar < Int,148,1
+100734977,UnsignedInt <= Int,1374,1
+100735233,UnsignedInt >= Int,54,1
+101193985,UnsignedInt >= UnsignedChar,88,1
+17177089,Int << UnsignedInt,340,1
+101063169,UnsignedInt << UnsignedInt,88,1
+101063425,UnsignedInt >> UnsignedInt,88,1
+101194497,UnsignedInt >> UnsignedChar,2540,1
+100736001,UnsignedInt + Int,39,1
+100736257,UnsignedInt - Int,543,1
+134618369,UnsignedChar - UnsignedInt,88,1
+134555393,arr<UnsignedChar>[LongLong],252,1
+285615873,arr<Struct>[UnsignedInt],9668,1
+401922,UnsignedInt--,301,1
+532994,UnsignedChar--,2540,1
+101057027,ret<UnsignedInt> = UnsignedInt,88,1
+17302019,ret<Int> = UnsignedChar,419,1
+101057281,UnsignedInt += UnsignedInt,180224,1
+83955713,LongLong && Int,19328,1
+17110529,Int < LongLong,7040,1
+251993089,Pointer + LongLong,64748,1
+17308673,Int + UnsignedChar,4611584,1
+134749185,UnsignedChar + UnsignedChar,4360576,1
+101063937,UnsignedInt - UnsignedInt,352,1
+84417793,LongLong - UnsignedChar,4180352,1
+134749441,UnsignedChar - UnsignedChar,10336944,1
+100736769,UnsignedInt / Int,352,1
+17170947,ret<Int> = UnsignedInt,352,1
+50921985,var<Char> = UnsignedLong,128,1
+151650817,var<UnsignedLong> = UnsignedLongLong,44,1
+286327297,var<Struct> = Struct,32,1
+151063297,UnsignedLong |= Int,16,1
+151587841,UnsignedLong ^= UnsignedLong,64,1
+151063809,UnsignedLong ? Int,784,1
+151260417,UnsignedLong ? Long,952,1
+265729,Void : Long,909,1
+67374593,Long : Long,43,1
+84087041,LongLong | Char,128,1
+151326977,UnsignedLong | LongLong,56,1
+151458049,UnsignedLong | UnsignedShort,768,1
+84480257,LongLong | UnsignedLong,28,1
+151589121,UnsignedLong | UnsignedLong,156,1
+151589633,UnsignedLong & UnsignedLong,1736,1
+84483073,LongLong + UnsignedLong,16,1
+151591937,UnsignedLong + UnsignedLong,1,1
+67184385,arr<Long>[Int],1110,2
+151070465,arr<UnsignedLong>[Int],984,1
+251930369,arr<Pointer>[Long],784,1
+50734849,arr<Char>[UnsignedInt],212,1
+17040129,Int += Long,14,1
+17044481,Int == Long,1,1
+67376129,Long == Long,92,1
+205568,!Char,998,1
+151585537,UnsignedLong += UnsignedLong,64,1
+50532097,Char || Char,1,1
+50663169,Char || LongLong,1,1
+84086785,LongLong && Char,200,1
+50663425,Char && LongLong,198,1
+151589889,UnsignedLong == UnsignedLong,1,1
+151066881,UnsignedLong >= Int,5,1
+50403841,Char << Int,64,1
+151592193,UnsignedLong - UnsignedLong,5,1
+205058,Char++,100,1
+201472,&Char,1,1
+50404609,Char - Int,1,1
